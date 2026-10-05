@@ -17,6 +17,8 @@ Gitbook is where agents, collaborators, and AIs submit instructions, conversion 
 3. Review the [two-repository source map](merge/source-map.md).
 4. Check the [duplicate disposition and cleanup policy](merge/duplicate-disposition.md).
 5. Use the existing [mesh flow](mesh/flow.md) and [roles](mesh/roles.md) for lane boundaries.
+6. Read the [HYB-005 braces decision](merge/hyb-005-braces-decision.md). The narrow ignore is on TESSERA main `5c1137fa` (`pnpm-workspace.yaml` `auditConfig.ignoreGhsas` for GHSA-vfj7-8cjw-p6xm). Review date 2026-11-05. braces ≥ 3.0.4 is still the removal condition.
+7. Use the [hybrid consolidation backlog](intake/HYBRID-CONSOLIDATION-BACKLOG.md) as the authoritative task board.
 
 ## Boundaries
 

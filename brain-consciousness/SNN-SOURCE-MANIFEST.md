@@ -6,6 +6,8 @@
 
 These projects provide complementary software models of spiking neural networks (SNNs). They do **not** reproduce Cortical Labs' CL1, which uses living biological cells and laboratory hardware. They are proposed as references for a safe, software-only Tessera research lane.
 
+See also [Cortical Labs readiness](../intake/CORTICAL-LABS-READINESS.md) (HYB-019, BLOCKED on section (d)).
+
 | Source | Official repository | License shown by upstream | Best use in Tessera research | Incorporation rule |
 |---|---|---|---|---|
 | BindsNET | [BindsNET/bindsnet](https://github.com/BindsNET/bindsnet) | AGPL-3.0 | PyTorch-based SNN simulation, learning rules, reinforcement-learning experiments | Use as an external research dependency or isolated experiment. Do not copy code into TESSERA without an AGPL compatibility review. |

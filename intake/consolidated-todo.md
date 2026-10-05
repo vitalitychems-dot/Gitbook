@@ -12,10 +12,11 @@ The authoritative, deduplicated work board is now [HYBRID-CONSOLIDATION-BACKLOG.
 
 ## Current open work
 
-- **HYB-005:** track the unpatched transitive `braces` advisory.
+- **HYB-005:** the narrow ignore for GHSA-vfj7-8cjw-p6xm is on TESSERA main `5c1137fa` (`pnpm-workspace.yaml` `auditConfig.ignoreGhsas`). Review date 2026-11-05 remains. braces ≥ 3.0.4 is still the removal condition.
 - **HYB-006–HYB-008:** review historical functionality from `Grok-ready`, `Zz`, and `olive-giant-ever-glade` without importing alternate application contracts.
 - **HYB-009–HYB-011:** classify archives, media, private/runtime data, and protected material.
-- **HYB-012–HYB-014:** audit routes/UI and add a repeatable historical merge gate.
+- **HYB-012:** the route inventory landed on TESSERA `50876d40`. The quantum allow-list is retained. Remaining work is to resolve the 8 non-quantum duplicate routes (not assigned).
+- **HYB-013–HYB-014:** the UI audit and the repeatable historical merge gate are still open.
 - **HYB-015–HYB-017:** organize goals and deferred product ideas, including the possible ABC/storefront scope.
 - **HYB-018:** rerun exact coverage before any future repository deletion.
 

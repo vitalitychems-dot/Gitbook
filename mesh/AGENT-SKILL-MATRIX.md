@@ -25,6 +25,7 @@ Use skill IDs in every task claim (a task is claimed only after Tessera assigns 
 | SK-10 | Coordination and moderation | Non-overlap check, review decision, and follow-up assignment |
 | SK-11 | Product/claims review | Separates capability, goal, hypothesis, and unknown |
 | SK-12 | Release/change control | Commit, migration note, validation record, and publication packet |
+| SK-13 | CI log diagnosis and allow-list classification | A cited failing log line, the allow-list class, and a suggest-only disposition when the class is inside selffix phase 0 (no pull request) |
 
 ## Role-to-skill baseline
 

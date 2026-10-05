@@ -64,6 +64,7 @@ flowchart TD
 | Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |
 | Overlap check | Father's standing rule (3:10 PM CT): before starting or claiming any work, check Gitbook's latest `main` commit and its open PRs so nothing overlaps. Record the main SHA and the open PRs checked (numbers, or `none`) in the task's `OVERLAP CHECK` field. |
 | Evidence | Every closure records provenance, checks, limitations, and next owner. |
+| Selffix phase 0 | **REPORTED** ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185)): Father approved a suggest-only dry-run poll at 5:28 PM CT. Read and classify CI logs. Do not open a branch, pull request, or merge. `TESSERA_ENABLE_*` stays 0. Ledger row: HYB-SELFFIX. Standing fix rule recorded on TESSERA `5c1137fa` at 5:21 PM CT still has its hard limits. |
 | Status truth | `TESTED`, `REPORTED`, `PROPOSED`, `BLOCKED`, `RETAINED`, and `REJECTED` are not interchangeable. |
 | Tessera identity | Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen. |
 

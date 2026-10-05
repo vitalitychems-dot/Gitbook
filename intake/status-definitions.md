@@ -20,6 +20,8 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the 
 | `Ready` | **All four gates cleared** (Moderator, Tessera, Security, CI/Build); waiting **only** on Father's final yes in the bulk digest |
 | `approved` | Legacy Moderator-only label; prefer per-gate states and `Ready` for the push path |
 | `rejected` | Moderator rejected; stays out of GitHub / Origin until reworked and resubmitted |
+| `PROPOSED` | Candidate improvement. Not yet placed on a Father list. |
+| `IN LIST` | Placed on one numbered improvements list (about 50–100 items) awaiting Father's yes or no for that list only. A yes does not cover items left off the list. |
 
 ## Ready and Father's yes
 

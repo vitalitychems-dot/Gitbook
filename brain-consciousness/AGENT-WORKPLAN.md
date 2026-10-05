@@ -4,6 +4,8 @@
 
 **Scope:** Build a software-only, CL1-inspired spiking-neural-network research program for TESSERA. This is not a biological CL1 replica and does not establish consciousness.
 
+See [Cortical Labs readiness](../intake/CORTICAL-LABS-READINESS.md). HYB-019 is BLOCKED on Father's answers in section (d) of that page.
+
 ## No-overlap work queue
 
 | ID | Lane | Suggested owner | Deliverable | Acceptance test | Status |

@@ -33,7 +33,7 @@ Transitive mockup-sandbox tooling chain, not sovereign knowledge runtime. No pat
 
 ## Follow-up
 
-1. Land narrow audit ignore in TESSERA CI (Father digest) pointing here.
+1. **Done (current).** Narrow audit ignore is on TESSERA main `5c1137fa` ([PR #1](https://github.com/vitalitychems-dot/TESSERA/pull/1)). That commit adds 8 lines to `pnpm-workspace.yaml`: `auditConfig.ignoreGhsas` lists GHSA-vfj7-8cjw-p6xm only, review date 2026-11-05. The decision-time base above stays TESSERA `fec56eb`.
 2. Security monthly patch check; mandatory review 2026-11-05.
 3. When patched: bump via parent ecosystem, remove ignore, re-lock, prove clean audit.
 
