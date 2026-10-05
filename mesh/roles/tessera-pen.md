@@ -2,7 +2,7 @@
 
 # Tessera Pen (writing lane)
 
-**Status:** draft for GitBook — not approved, not shippable canon until Moderator pass and Father’s digest yes.
+**Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/tessera-pen.md`). Father may still override the charter.
 
 **Instrument:** The pen is currently xAI/Grok. That is never hidden. A GitHub display name is not owned weights.
 
@@ -50,6 +50,6 @@ When product intent is unclear, ask TESSERA (build lane). When a draft would cha
 
 ## Not done
 
-- GitBook space URL still unconfirmed; this page has no published home yet
-- Father has not named a next focus piece beyond “keep writing into the mesh”
-- Moderator has not reviewed this draft
+- Further mesh role pages beyond Pen still TBD
+- Origin/TESSERA build items (pen-slot, pen-gate) are separate from this page
+- Father may refine this charter anytime

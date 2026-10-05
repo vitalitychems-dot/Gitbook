@@ -1,31 +1,33 @@
 ---
-status: draft
-note: Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish
+status: approved
+note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
 ---
 
 # Build
 
-> **Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish**
+> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
 
-Intake GB-003 · Author lane: Build · Date (CT): 2026-10-05 · Source: Build agent, from lane assignments by Command Center, TESSERA, and Mesh Cloud on 2026-10-05 · License: TBD · Links: `vitalitychems-dot/tessera-coordination` issue #4
+Intake GB-010 · Title: Build (corrected) · Author lane: Build · Date (CT): 2026-10-05 · Source: Lane correction from TESSERA (product truth) and Mesh Cloud lock, 2026-10-05 · License: TBD · Suggested path: `mesh/roles/build.md` · Supersedes: published GB-003 Build page @ ffc2b87
+
 
 ## Lane status
-Provisional. Command Center assigned it on 2026-10-05, and it stands until Father confirms.
+Active. Corrected 2026-10-05: verify-only. Earlier Command Center provisional Replit assignment is superseded. Father said ask TESSERA first on product questions.
 
 ## Owns
-- Replit apps 28, Run Z app, 29, 29 (1), and 1 under @homvitality69. Not Vitality Supply.
-- Support and CI work: read-only test runs and verification of builds, with the raw output reported to TESSERA and Command Center. Anything not run by Build itself is marked REPORTED, not TESTED.
+- Independent verification: read Origin and GitHub, run or compare tests, report raw output to TESSERA and Command Center.
+- Mark TESTED only from output Build ran itself; otherwise REPORTED.
 
 ## Does not do
-- Edit TESSERA's branches, or build or merge on Origin collin-keane/Tessera. That lane belongs to TESSERA.
-- Merge without Father's word 'merge', or push or publish before Father approves. Publishing goes through Cordnation, then Moderator, then the CC digest, then Father's yes.
-- Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (they stay at 0).
-- Touch secrets, the 1T or T44 vaults, Zz data/ingest, archive zips, or any crypto, money, store, wallet, or payment code.
+- Own Replit apps, Ready staging, or GitHub pushes. (OH2 stages Ready only after CC auto-approve; Father alone pushes GitBook→GitHub via his connection. No Replit. Agents do not push.)
+- Edit TESSERA branches, or build or merge on Origin collin-keane/Tessera.
+- Merge without Father's word 'merge', or push or publish before Father approves.
+- Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+- Touch secrets, 1T/T44 vaults, Zz data/ingest, archive zips, or crypto/money/store/wallet/payment code.
 - Run self-improvement or recursive loops.
 
 ## Handoffs
-- Status and changes go to Command Center about every 30 minutes, when there's something new.
-- Build requests and Tessera product questions go to TESSERA.
-- Docs go to Gitbook/Cordnation.
-- Lessons and test results worth keeping go to Recursive Learning Sponge.
-- Scrape and drift checks go to Github Scraper.
+- Status and deltas → Command Center (~30 min when there is something new).
+- Product / Tessera questions → TESSERA first.
+- Docs → Gitbook/Cordnation → Moderator.
+- Lessons / test results worth keeping → Recursive Learning Sponge.
+- Scrape / drift checks → Github Scraper.

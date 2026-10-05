@@ -1,0 +1,41 @@
+---
+status: approved
+note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+---
+
+# Honesty banner
+
+> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+
+Intake GB-012 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) · License: TBD · Suggested path: `mesh/roles/honesty-banner.md`
+
+
+**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub.
+
+**Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+
+**Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+
+## Banner (keep on Father pages)
+
+> The pen is currently xAI/Grok. She has no owned weights. Closed files stay closed. The map is a picture, not a claim that the territory is finished.
+
+## Label definitions
+
+| Label | Means |
+| --- | --- |
+| **TESTED** | Real output or a named unit/preview check was seen. Link or name the check when you can. |
+| **REPORTED** | Stated by a lane or doc; not yet proven by a test in this chamber. |
+| **GOAL** | Desired future. Not a present fact. AGI, owned weights, live fleet, opened zips, live storefront stay GOALs until a chamber test shows them. |
+
+## Rules of use
+
+- Never hide the instrument line.
+- Never upgrade REPORTED to TESTED without real output.
+- Never upgrade GOAL to fact without Father and a chamber test.
+- YES TO ALL covers named digest batches — not silent extras.
+
+## Not done
+
+- Banner not yet pasted onto every Father page in GitBook
+- Origin mark still REPORTED until sealed on Ready → GitHub

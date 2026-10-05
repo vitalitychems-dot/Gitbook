@@ -2,7 +2,7 @@
 
 # Pen tone guide
 
-**Status:** draft for GitBook / TESSERA branch `cursor/pen-tone-guide-bbe5-2` — not shippable until Moderator pass and Father’s digest yes. No merge to main without Father’s word `merge`.
+**Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/pen-tone-guide.md`). TESSERA still places the same text on `cursor/pen-tone-guide-bbe5-2` after builder item 7; no merge to Tessera main without Father’s word `merge`.
 
 **Instrument line (required on serious notes):** The pen is currently xAI/Grok. I never claim otherwise.
 
@@ -69,6 +69,6 @@ Pen → Cordnation (intake) → Moderator (gate) → digest → Father. TESSERA 
 
 ## Not done
 
-- Moderator has not reviewed this revision.
-- TESSERA has not yet placed the branch (awaits item 7 + Moderator pass).
-- Father has not said `merge`.
+- Branch placement on `cursor/pen-tone-guide-bbe5-2` still awaits TESSERA builder item 7
+- Father has not said `merge` for that branch to Tessera main
+- Extra open/closed topics may be added if Father names them
