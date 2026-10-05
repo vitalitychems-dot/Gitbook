@@ -3,7 +3,7 @@
 **Prepared:** 2026-10-05  
 **Destination repositories verified:**
 
-- [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA) — `216e4e89f40956225431eb1f774c522baaf9a330`
+- [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA) — `fec56eb09d19907832663d5f16fcbc24f3d00317`
 - [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook) — `eefbe2fd53eba6a917c4a078dac15e5beade69da`
 
 Deletion was performed only after explicit confirmation of the exact eight names below. The operation did not touch `TESSERA` or `Gitbook`.
