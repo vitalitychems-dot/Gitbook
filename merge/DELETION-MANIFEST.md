@@ -8,6 +8,14 @@
 
 Deletion is irreversible. This manifest is a review gate, not an authorization. No repository in the candidate list has been deleted.
 
+## Exact coverage result
+
+The post-migration SHA-256 scan compared every currently tracked file in each source repository with the published `TESSERA` and `Gitbook` trees. The only repositories reaching **100% tracked-file coverage or zero tracked files** are:
+
+`Everything`, `TX`, `Tessera-main`, `tessera-coordination`, `tessera-gitbook`, `tessera-replit`, `tessera-unified`, and `z`.
+
+These eight are the only repositories eligible for deletion under the owner's “100% copied/moved or empty” rule. All other candidates retain un-moved unique files and must be retained.
+
 ## Candidate repositories for deletion
 
 The following **19** repositories are the exact account-level candidates remaining after the two destination repositories were published:
@@ -38,8 +46,8 @@ The following **19** repositories are the exact account-level candidates remaini
 
 Before deletion, confirm one of these exact scopes:
 
-1. **Delete all 19 candidates above**, including the protected/uninspected `1T` vault and all non-main branches in the candidate repositories.
-2. **Delete a smaller exact subset**, naming every repository to delete and every repository to retain.
-3. **Do not delete yet**; keep all candidates archived while the owner reviews the source branches, open PRs, and protected vault.
+1. **Delete only the eight 100%-covered/empty repositories** listed above.
+2. **Delete a smaller exact subset** of those eight; reply with the names.
+3. **Do not delete yet**; retain all repositories.
 
 The deletion operation will be run only against the exact confirmed names and will not touch `TESSERA` or `Gitbook`.
