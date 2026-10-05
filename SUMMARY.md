@@ -26,6 +26,7 @@
 * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
 * [Tessera Pen research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
+* [20-item AGI collaboration improvement roadmap](brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md)
 
 ## Mesh
 
