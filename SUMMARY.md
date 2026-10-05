@@ -63,3 +63,7 @@
 * [Source index](history/source-index/z-repository-index.md)
 * [Handoff summary](history/handoffs/privacy-screened-handoff-summary.md)
 * [Complete archive summary](history/handoffs/complete-source-archives-summary.md)
+
+## Recovered exact records
+
+* [Recovered-record index](history/recovered/README.md)
