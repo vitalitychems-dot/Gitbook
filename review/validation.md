@@ -5,8 +5,8 @@
 ## Environment and dependency checks
 
 - Validation ran on Node.js 22 with pnpm 11.25.0. `pnpm install --frozen-lockfile --ignore-scripts` completed for all 9 staged workspace projects.
-- `pnpm audit --prod --audit-level=high` is clean. Full-tree audit reports one high-severity transitive `braces@3.0.3` advisory through the dev-only `fast-glob` path in `@workspace/mockup-sandbox`; the advisory reports no patched version. Production dependency exposure is not affected; the advisory remains a TODO for dependency replacement or upstream remediation.
-- The `.github/workflows/ci.yml` file parses as YAML and contains push/PR checks with read-only `contents` permission. GitHub-hosted CI has been configured but has not yet run on GitHub.
+- `pnpm audit --prod --audit-level=high` is clean. Full-tree audit reports one high-severity transitive `braces@3.0.3` advisory through the dev-only `fast-glob` path in `@workspace/mockup-sandbox`; the advisory reports no patched version. Production dependency exposure is not affected; the advisory remains a TODO for dependency replacement or upstream remediation. **Current (TESTED 2026-10-05):** TESSERA main `5c1137fa` `pnpm-workspace.yaml` sets `auditConfig.ignoreGhsas` to GHSA-vfj7-8cjw-p6xm only, with review date 2026-11-05. That commit does not change the lockfile. The file comment still says to remove the ignore once braces ≥ 3.0.4 ships.
+- The `.github/workflows/ci.yml` file parses as YAML and contains push/PR checks with read-only `contents` permission. GitHub-hosted CI has been configured but has not yet run on GitHub. **Current:** TESSERA main is `5c1137fa` (TESTED via the GitHub commit API). [Issue #2 comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185) reports CI run 37382015797 green on that main (REPORTED here; this page did not re-fetch the Actions log).
 
 ## Build, test, and runtime checks
 

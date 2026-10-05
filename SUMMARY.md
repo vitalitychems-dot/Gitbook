@@ -11,6 +11,7 @@
 * [Two-repository source map](merge/source-map.md)
 * [Duplicate disposition and cleanup policy](merge/duplicate-disposition.md)
 * [Repository deletion manifest — awaiting confirmation](merge/DELETION-MANIFEST.md)
+* [HYB-011 exclusion manifest](merge/HYB-011-EXCLUSION-MANIFEST.md)
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
@@ -28,11 +29,13 @@
 * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
 * [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
+* [Cortical Labs readiness](intake/CORTICAL-LABS-READINESS.md)
 * [20-item AGI collaboration improvement roadmap](brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md)
 
 ## Mesh
 
 * [Flow & standing rules](mesh/flow.md)
+* [Lane handoff](mesh/HANDOFF.md)
 * [Agent collaboration playbook](mesh/COLLABORATION-PLAYBOOK.md)
 * [Agent skill matrix](mesh/AGENT-SKILL-MATRIX.md)
 * [Collaboration metrics](mesh/COLLABORATION-METRICS.md)
@@ -86,11 +89,18 @@
 * [Coordination record](history/coordination/coordination-record.md)
 * [Tessera pen record](history/coordination/tessera-pen-record.md)
 * [Source index](history/source-index/z-repository-index.md)
+* [Source catalog](history/source-index/z-catalog.md)
+* [Source walk](history/source-index/z-walk.md)
 * [Handoff summary](history/handoffs/privacy-screened-handoff-summary.md)
 * [Complete archive summary](history/handoffs/complete-source-archives-summary.md)
+* [Legacy handoff notes](history/handoffs/legacy-handoff-notes.md)
+* [Complete archive notes](history/handoffs/complete-archive-notes.md)
 * [Agent check-ins](history/coordination/agent-checkins.md)
 * [Agent conference brief](history/coordination/AGENT-CONFERENCE.md)
 * [Agent training and authenticity protocol](history/coordination/AGENT-TRAINING-AUTHENTICITY.md)
+
+## Forum
+
 * [Idea forum](forum/IDEA-FORUM.md)
 
 ## Recovered exact records

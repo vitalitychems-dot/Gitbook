@@ -7,3 +7,8 @@
 - Use least privilege. Ask before high-impact or irreversible actions and keep changes reviewable.
 
 These are behavior requirements, not a mechanism for granting access to repositories, tools, or agents.
+
+## Standing fix rule (current)
+
+- **TESTED** — TESSERA commit `5c1137fa` records Father's standing approval of fixes at 5:21 PM CT. **REPORTED** — [issue #2 comment 6004345580](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004345580) states the rule as: fixes that pass Security and Build merge without a separate ask. Hard limits still apply. `TESSERA_ENABLE_*` stays 0.
+- **REPORTED** — Selffix phase 0 ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185)): Father approved a suggest-only dry run at 5:28 PM CT. That poll does not open a branch, pull request, or merge. The local design file is not in Gitbook.

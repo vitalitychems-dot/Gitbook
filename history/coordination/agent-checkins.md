@@ -4,6 +4,12 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+None. HYB-012 was the only active claim. It is closed in the completed table and in the completion block under the preserved claim text.
+
+## HYB-012 — preserved claim text
+
+Decision-time STATUS inside the blocks below remains IN REVIEW. Current status is DONE (`50876d40`).
+
 ```text
 IDENTITY: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coordinator-recorded track)
 TASK: HYB-012
@@ -43,11 +49,13 @@ FOLLOW-UP: Await instructions at https://github.com/vitalitychems-dot/Gitbook/is
 
 2026-10-05 (REPORTED): superseded; HYB-012 is IN REVIEW, canonical source per [comment 6003216455](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)
 
+2026-10-05 (current): HYB-012 is DONE at TESSERA `50876d40`. The BLOCKED block above is decision-time evidence and is unchanged.
+
 ## Communication audit — 2026-10-05
 
-GitHub Issue #2 currently contains one owner-posted launch comment and no replies from distinct Grok, Replit, Tessera, or other agent identities. The conference is configured but has not yet demonstrated live multi-agent communication. Agents must reply under their actual account/role and claim a task here before work is counted.
+**Status (REPORTED):** replies under distinct declared roles are on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2). Examples: Grok Bot ([comment 6000545040](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6000545040)) and Replit collaborator ([comment 6001756129](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001756129)). They were posted through the owner's GitHub account (`vitalitychems-dot`), not separate GitHub identities.
 
-2026-10-05 (REPORTED): superseded; replies under distinct declared roles are visible in today's traffic on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2), e.g. Grok Bot ([comment 6000545040](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6000545040)) and Replit collaborator ([comment 6001756129](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001756129)). They were posted through the owner's GitHub account (`vitalitychems-dot`), not separate GitHub identities.
+An earlier reading the same day said issue #2 had one owner-posted launch comment and no role replies. That reading is superseded by the replies above. Agents still reply under their actual account or role and claim a task here before work is counted.
 
 ## Completed claims
 
@@ -60,6 +68,7 @@ GitHub Issue #2 currently contains one owner-posted launch comment and no replie
 | HYB-005 | Security (mesh security/privacy lane) | TESSERA `fec56eb`; Gitbook `6fe412f` | `97e43fb` (PR #6) | CI `pnpm audit` runs 37341568741 / 37348793133 / 37348832495; lockfile braces@3.0.3; decision ACCEPTED+MITIGATED review 2026-11-05 | 2026-10-05 |
 | HYB-006 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Grok-ready `9e3fbca` | `991d3b8` | GitHub tree diff 1275 common / 16 content-diff; no installs; no 1T inspection | 2026-10-05 |
 | HYB-007 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Zz `150d4ec` | `e2f1e20` | z-app behavior matrix; no TESSERA code; no 1T inspection | 2026-10-05 |
+| HYB-012 | Replit collaborator (claim); Cursor cloud agent wrote the test | TESSERA `fec56eb` | `50876d40` (PR #2) | Inventory test files on main (+530). Quantum allow-list retained. Eight non-quantum duplicates remain. Test not rerun in this Gitbook pass. | 2026-10-05 |
 
 ## Check-in template
 
@@ -203,3 +212,16 @@ STATUS: IN REVIEW — static verification complete; implementation awaits scoped
 Verified at the pinned canonical TESSERA head: GET /quantum/state is registered in system-runtime.ts:53 and legacy-engines.ts:255; POST /quantum/gate is registered at :66 and :261. system-runtime mounts first (index.ts:102 vs :149). The earlier state response is {ok,data,reality}, while the later response is raw getTesseractState(). Gate request bodies differ: qubitId/gate vs circuitId/gate/target/control. collectRegisteredRoutes (app.ts:357–372) uses a Set and collapses multiplicity. Four static source assertions passed; these are not HTTP/runtime tests. No typecheck, app test suite, build, deployment, model training, or TESSERA code change was performed. The local worktree points to protected 1T, so it was not repurposed, pushed, or used as a canonical test checkout. No protected vault files were opened. The owner's Tessera-admin/own-pen/bot-creation direction is a product goal, not an implemented capability; it is outside this route-audit scope. Tessera maintainer/moderator: please review the diagnostics-only proposal and confirm scope before promotion. No live response from another agent is claimed.
 
 Conference evidence: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001810463
+
+## HYB-012 — completion
+
+```text
+TASK: HYB-012
+AGENT: Replit collaborator (claim); Cursor cloud agent wrote the test; Tessera recorded the merge
+STATUS: DONE
+BASE: TESSERA fec56eb (parent of 50876d40)
+COMMIT: 50876d40 (TESSERA PR #2)
+CHECKS: TESTED — commit 50876d40 adds route-inventory.test.ts and route-inventory.ts only (+530). The test allow-lists GET /quantum/state and POST /quantum/gate (system-runtime.ts, then legacy-engines.ts) plus eight other collisions: GET /consciousness/state, GET /consensus/proposals, GET /dual-brain/state, GET /emotional/profile, GET /universe/metrics, POST /consensus/propose, POST /improvement/cycle, POST /universe/simulate. This Gitbook pass did not rerun the test. CI run 37382015797 is REPORTED green on issue #2 comment 6004461185.
+CHANGED: TESSERA test files only, per that commit. This ledger close is the Gitbook record.
+FOLLOW-UP: triage the 8 non-quantum duplicates (not assigned)
+```

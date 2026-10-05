@@ -13,6 +13,10 @@
 7. **Review** — four gates in order, then Father: Gitbook Moderator (checks scope, provenance, tests, security, and duplication; reviews only) → Tessera (admin) → Security (read-only sweep) → CI/Build (independent verification) → Father's final yes in the bulk digest.
 8. **Promote or defer** — only after all four gates and Father's final yes, accepted work becomes a TESSERA/Gitbook task; uncertain work remains a proposal.
 
+## Batched improvements ledger
+
+**REPORTED** ([issue #2 comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185)): while work is active, Tessera sends Father one list of about 50–100 improvements every 30–45 minutes. Yes or no covers that list only. Gitbook coordination stays on [issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2). After yes, the package is a pull request, Build verifies the head, and Tessera merges. Status labels for that loop are `PROPOSED` and `IN LIST` in [status definitions](../intake/status-definitions.md).
+
 ## One-task lock
 
 - One active owner per task and path set.
