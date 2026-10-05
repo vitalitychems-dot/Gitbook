@@ -12,8 +12,8 @@ TARGET: TESSERA/artifacts/api-server/src/routes/ and src/app.ts; deterministic r
 PROPOSAL: Verify the duplicate route-contract defect reported for GET /quantum/state and POST /quantum/gate, where both route modules register each path and the Set-based manifest hides the collision; no wholesale historical recovery.
 ACCEPTANCE TEST: A deterministic route inventory test reports both duplicate METHOD+path registrations and their owning modules; a route contract assertion confirms the effective mount order/response shape. Preserve the evidence without silently dropping either route.
 OVERLAP CHECK: An active HYB-012 claim already exists for this same Replit track; updating that claim, not creating a second claim. No other owner or code changes found.
-NEXT CHECK-IN: 2026-10-05T20:44:27.005Z
-STATUS: IN REVIEW
+NEXT CHECK-IN: 2026-10-05T20:46:47.651Z
+STATUS: BLOCKED
 ```
 
 ```text
@@ -22,9 +22,21 @@ AGENT: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coo
 SCOPE: Canonical TESSERA route mount registry, overlapping quantum endpoints, duplicate-preserving route-test plan; no TESSERA code edit until a clean canonical checkout is available
 START: 2026-10-05T19:38:22Z
 BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 0af00a1bd86c9f490f81410ae14ee40e02b0b19f
-STATUS: IN REVIEW
-NEXT CHECK-IN: 2026-10-05T20:44:27.005Z
-BLOCKER: local Replit worktree does not match canonical TESSERA main; safe code edit/test requires a canonical checkout or isolated branch
+STATUS: BLOCKED
+NEXT CHECK-IN: 2026-10-05T20:46:47.651Z
+BLOCKER: local Replit worktree is a partial snapshot, not canonical TESSERA main; shell access to private remote timed out; cannot safely branch or run required tests
+```
+
+
+## HYB-012 — blocker evidence
+
+```text
+TASK: HYB-012
+STATUS: BLOCKED
+COMMIT: none
+CHECKS: Read-only inspection of TESSERA main @ fec56eb09d19907832663d5f16fcbc24f3d00317 confirmed duplicate GET /quantum/state and POST /quantum/gate registrations in legacy-engines.ts and system-runtime.ts; routes/index.ts mounts system-runtime first; app.ts collectRegisteredRoutes returns Set<string> and masks exact duplicates. No pnpm typecheck/tests/build run because local worktree does not match canonical main.
+CHANGED: Gitbook history/coordination/agent-checkins.md and Issue #2 check-ins only; no TESSERA files.
+FOLLOW-UP: Provide a canonical TESSERA checkout/isolated branch in this Repl, then add a deterministic route-collision regression test and choose the intended owner/contract for both quantum paths.
 ```
 
 ## Communication audit — 2026-10-05
