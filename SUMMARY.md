@@ -21,6 +21,12 @@
 * [Future agent marketplace roadmap](intake/FUTURE-AGENT-MARKETPLACE-ROADMAP.md)
 * [Copy-paste Replit and Grok launch prompts](intake/AGENT-LAUNCH-PROMPTS.md)
 
+## Brain & Consciousness Development
+
+* [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
+* [Tessera Pen research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
+* [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
+
 ## Mesh
 
 * [Flow & standing rules](mesh/flow.md)
