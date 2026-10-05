@@ -23,10 +23,10 @@ Compare **behavior and tests**, not package manifests or file counts. Prefer the
 | ID | Behavior | In TESSERA? | Portable? | Target | Disposition |
 |---|---|---|---|---|---|
 | C1 | Canonical API + Tessera UI + mockup + libs | Yes | Already | `artifacts/*`, `lib/*` | ACCEPTED |
-| C2 | `safeFetch` fixed-host allowlist | Yes + tests | Already | `api-server/src/lib/safe-fetch.ts` | ACCEPTED |
-| C3 | Sovereign fetch guard / secure external wrapper | Yes + tests | Already | `api-server/src/lib/` | ACCEPTED |
-| C4 | Admin session cookie gate + origin/rate limits | Yes | Already | `routes/admin-session.ts` | ACCEPTED |
-| C5 | Father natal chart from env secret | Yes | Already | `lib/father-natal.ts` | ACCEPTED |
+| C2 | `safeFetch` fixed-host allowlist | Yes + tests | Already | `artifacts/api-server/src/lib/safe-fetch.ts` | ACCEPTED |
+| C3 | Sovereign fetch guard / secure external wrapper | Yes + tests | Already | `artifacts/api-server/src/lib/sovereign-fetch-guard.ts`, `artifacts/api-server/src/lib/secureExternalWrapper.ts` | ACCEPTED |
+| C4 | Admin session cookie gate + origin/rate limits | Yes | Already | `artifacts/api-server/src/routes/admin-session.ts` | ACCEPTED |
+| C5 | Father natal chart from env secret | Yes | Already | `artifacts/api-server/src/lib/father-natal.ts` | ACCEPTED |
 | C6 | Observation-only outbound / no-mocks / truthfulness docs | Yes (docs) | Policy | Gitbook + `docs/TESSERA_SYSTEM.md` | ACCEPTED |
 | C7 | Vote-integrity / genuine council ballots | Yes | Already | council / grand-evolution | ACCEPTED |
 | C8 | Sacred-timing scheduler | Yes | Already | API scheduler libs | ACCEPTED |
@@ -34,7 +34,7 @@ Compare **behavior and tests**, not package manifests or file counts. Prefer the
 | C10 | Sovereignty readiness / hard-disconnect / local models | Yes | Already | sovereignty routes + UI | ACCEPTED |
 | C11 | Unified suite runner + loopback DB policy | Yes (TESSERA-only) | Keep | `scripts/*-unified.mjs` | ACCEPTED |
 | C12 | Mockup Vite plugin type boundary | Yes (HYB-003 fix) | Keep | `mockup-sandbox/vite.config.ts` | ACCEPTED |
-| C13 | Storefront / `projects/*` app | No active tree (removed upstream) | No wholesale | Product brief only | RETAINED → HYB-017 |
+| C13 | Storefront / `projects/*` app | No `projects/` directory (removed upstream); `pnpm-workspace.yaml` still lists `projects/*` for HYB-017 to clean up | No wholesale | Product brief only | RETAINED → HYB-017 |
 | C14 | Grok packet + isolated-mockup sample | Partial handoff docs | Docs yes; sample no | Gitbook provenance | RETAINED / REJECTED (sample) |
 | C15 | Separate assistant/simulation service claims | Unverified in packet | Idea only | Future HYB if scoped | NEEDS-EVIDENCE |
 | C16 | CI + blank `.env.example` / SECRETS docs | Yes (TESSERA-only) | Keep | `.github/`, docs | ACCEPTED |
