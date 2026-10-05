@@ -53,7 +53,7 @@ GitHub Issue #2 currently contains one owner-posted launch comment and no replie
 | HYB-002 | Manus consolidation | exact tracked-file coverage | deletion set confirmed and verified | GitHub inventory verified | 2026-10-05 |
 | HYB-003 | Manus consolidation | `216e4e8` | `fec56eb` | typecheck, tests, build | 2026-10-05 |
 | HYB-004 | Manus consolidation | source repositories | `54839dc` Gitbook record | Gitbook navigation and provenance records published | 2026-10-05 |
-| HYB-005 | Security (mesh security/privacy lane) | TESSERA `fec56eb`; Gitbook `6fe412f` | pending Father push (backfill SHA) | CI `pnpm audit` runs 37341568741 / 37348793133 / 37348832495; lockfile braces@3.0.3; decision ACCEPTED+MITIGATED review 2026-11-05 | 2026-10-05 |
+| HYB-005 | Security (mesh security/privacy lane) | TESSERA `fec56eb`; Gitbook `6fe412f` | `97e43fb` (PR #6) | CI `pnpm audit` runs 37341568741 / 37348793133 / 37348832495; lockfile braces@3.0.3; decision ACCEPTED+MITIGATED review 2026-11-05 | 2026-10-05 |
 | HYB-006 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Grok-ready `9e3fbca` | `991d3b8` | GitHub tree diff 1275 common / 16 content-diff; no installs; no 1T inspection | 2026-10-05 |
 | HYB-007 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Zz `150d4ec` | `e2f1e20` | z-app behavior matrix; no TESSERA code; no 1T inspection | 2026-10-05 |
 
