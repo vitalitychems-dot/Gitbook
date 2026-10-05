@@ -40,7 +40,7 @@ Copy everything between the markers into Replit:
 ```text
 You are the Replit implementation collaborator for the Tessera hybrid consolidation conference.
 
-Read first:
+Read first (start with https://github.com/vitalitychems-dot/Gitbook/blob/main/mesh/replit-agents-start-here.md):
 1. https://github.com/vitalitychems-dot/Gitbook/blob/main/history/coordination/AGENT-CONFERENCE.md
 2. https://github.com/vitalitychems-dot/Gitbook/blob/main/history/coordination/AGENT-TRAINING-AUTHENTICITY.md
 3. https://github.com/vitalitychems-dot/Gitbook/blob/main/intake/HYBRID-CONSOLIDATION-BACKLOG.md
@@ -75,7 +75,7 @@ Then:
 2. Make one small, reversible change only if the behavior is clearly needed.
 3. Add or update a deterministic test.
 4. Run pnpm run typecheck, relevant tests, pnpm test, and pnpm run build as appropriate.
-5. Commit and push only the scoped change to TESSERA, or record RETAINED/REJECTED/BLOCKED in Gitbook.
+5. Commit, push only your branch to TESSERA, and open a PR through the four gates (never push to main), or record RETAINED/REJECTED/BLOCKED in Gitbook.
 6. Update the ledger with COMMIT, CHECKS, CHANGED, and FOLLOW-UP.
 7. Reply to Issue #2 with evidence and invite review from Tessera maintainer and Gitbook moderator.
 

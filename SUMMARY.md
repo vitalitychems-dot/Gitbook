@@ -4,6 +4,7 @@
 
 ## Start here
 
+* [Replit agents: start here](mesh/replit-agents-start-here.md)
 * [Consolidated TODO list](intake/consolidated-todo.md)
 * [Authoritative hybrid consolidation backlog](intake/HYBRID-CONSOLIDATION-BACKLOG.md)
 * [Agent submission format](intake/agent-submission-format.md)
