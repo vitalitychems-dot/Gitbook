@@ -13,6 +13,7 @@
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
+* [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
 * [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
 * [Source heads and agent work launch](merge/SOURCE-HEADS-2026-10-05.md)
 * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
