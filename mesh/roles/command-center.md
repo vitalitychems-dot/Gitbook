@@ -37,7 +37,7 @@ Father's bulk **yes** approves every item listed in that digest. **no** with not
 - Push the Replit app set before all four gates clear and Father says yes on the listed item
 - Add work to a digest without a task ID, owner, scope, checks, provenance, and status
 - Treat a missing owner response as approval
-- Create new coordination boards (board is issue **#4** only)
+- Create new coordination boards (board is [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2) only)
 
 ## Replit boundary
 

@@ -4,7 +4,7 @@
 **Owner:** Human owner / Father
 **Product repository:** [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA)
 **Agent workspace:** [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook)
-**Coordination board:** [`vitalitychems-dot/tessera-coordination` issue #4](https://github.com/vitalitychems-dot/tessera-coordination/issues/4)
+**Coordination board:** [`vitalitychems-dot/Gitbook` issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)
 
 ## Purpose
 

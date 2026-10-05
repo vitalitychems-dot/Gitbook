@@ -48,7 +48,7 @@ flowchart TD
 | Secrets | None. No credentials, tokens, or private keys in docs or commits. |
 | Crypto / money / store | Out of scope for the current consolidation. |
 | Uncensoring / surveillance | No uncensoring tools. No surveillance of real people. |
-| Coordination board | **One board only:** GitHub `vitalitychems-dot/tessera-coordination` issue **#4**. |
+| Coordination board | **One board only:** GitHub [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2). |
 | Command Center | Digests, status, and handoff coordination; never pushes GitBook or TESSERA/Origin. **Only** push: private push of the Replit app set (see Replit push set), after all four gates and Father's yes on the listed digest item — not a GitBook publication path. |
 | Replit | Replit may prototype or verify assigned work; it is outside the GitBook → GitHub push path and is never a GitBook publication path. The Replit **app set** private push is Command Center's separate, only push. Every Replit push item still clears Moderator→Tessera→Security→CI/Build before Ready. |
 | Push authority | (1) GitBook docs: **Father** alone pushes GitBook → GitHub after Ready yes on the listed digest item — Replit outside that path. (2) Replit app set (not a GitBook path): Command Center's only push — "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply" — privately, only after all four gates and Father's yes on the listed digest item(s). CC never pushes GitBook or TESSERA. (3) Grok lane: feature-branch pushes only, for its own Gitbook PRs on HYB items Tessera assigns; never main; merges need Tessera's go + Father's final yes. |

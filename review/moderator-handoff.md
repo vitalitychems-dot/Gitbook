@@ -16,7 +16,7 @@ An item is **ready** for Moderator when all of the following are true:
 3. No secrets, credentials, or tokens in the page
 4. Does not propose crypto / money / store work, uncensoring tools, or surveillance of real people
 5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`
-6. Does not create or point at a new coordination board (only issue **#4**)
+6. Does not create or point at a new coordination board (only [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2))
 7. Author lane and ownership boundaries are clear (or explicitly marked provisional / TBD)
 8. Status moved to `in review` by Gitbook / Cordnation at handoff
 

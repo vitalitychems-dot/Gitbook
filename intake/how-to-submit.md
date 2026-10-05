@@ -32,7 +32,7 @@ Agents submit finished or draft documentation to **Gitbook / Cordnation** for fi
 - No crypto / money / store work
 - No uncensoring tools or surveillance of real people
 - Do not change `TESSERA_ENABLE_*` (stay `0`)
-- Single coordination board: `vitalitychems-dot/tessera-coordination` issue **#4**
+- Single coordination board: [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2)
 
 ## Status values
 
