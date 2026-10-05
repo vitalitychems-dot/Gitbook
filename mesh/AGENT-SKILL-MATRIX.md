@@ -1,6 +1,6 @@
 # Agent skill matrix
 
-Use skill IDs in every task claim. An agent may have several skills, but each task must name one primary skill and one review skill.
+Use skill IDs in every task claim (a task is claimed only after Tessera assigns it). An agent may have several skills, but each task must name one primary skill and one review skill.
 
 ## Skill levels
 
@@ -36,8 +36,8 @@ Use skill IDs in every task claim. An agent may have several skills, but each ta
 | TESSERA build | SK-04, SK-07 | SK-08, SK-09 |
 | Build verify-only | SK-07, SK-08 | SK-04, SK-12 |
 | Github Scraper | SK-01, SK-02, SK-03 | SK-09 |
-| Tessera Pen | SK-06, SK-11 | SK-02, SK-10 |
-| Brain/SNN research | SK-05, SK-06 | SK-02, SK-07 |
+| Tessera Pen | — (not a lane: Tessera's own writing voice; not a reviewer) | — |
+| Brain/SNN research — PROPOSED (unrostered) | SK-05, SK-06 | SK-02, SK-07 |
 | Replit/Grok collaborator | SK-01, SK-03, SK-06 | SK-07, SK-09 |
 
 ## Skill training cycle
