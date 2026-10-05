@@ -18,7 +18,7 @@ Active. Corrected 2026-10-05: verify-only. Earlier Command Center provisional Re
 - Mark TESTED only from output Build ran itself; otherwise REPORTED.
 
 ## Does not do
-- Own Replit apps, Ready staging, or GitHub pushes. (OH2 stages Ready only after CC auto-approve; Father alone pushes GitBook→GitHub via his connection. No Replit. Agents do not push.)
+- Own Replit apps, Ready staging, or GitHub pushes. (Moderator reviews; Command Center prepares the Ready digest; Father alone pushes GitBook→GitHub via his connection. No Replit proxy. Agents do not push.)
 - Edit TESSERA branches, or build or merge on Origin collin-keane/Tessera.
 - Merge without Father's word 'merge', or push or publish before Father approves.
 - Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).

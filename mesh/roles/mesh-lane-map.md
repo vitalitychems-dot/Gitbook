@@ -1,11 +1,11 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+ status: corrected-pending-publish
+ note: Father is sole GitBook → GitHub push authority; Command Center coordinates only.
 ---
 
 # Mesh lane map (for Father)
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+> **Status: corrected — pending Gitbook publication**
 
 Intake GB-014 (supersedes GB-013 publish/Delivery sections) · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (Father bulk sync; no new backlog) · License: TBD · Suggested path: `mesh/roles/mesh-lane-map.md`
 
@@ -40,11 +40,11 @@ Intake GB-014 (supersedes GB-013 publish/Delivery sections) · Author lane: Tess
 4. Testers if needed
 5. TESSERA product-truth edit
 6. Bulk into Command Center (~30–45 min, one message)
-7. Command Center auto-approve → Ready
+7. Command Center prepares digest → Ready request
 8. Father decides yes
 9. **Father** pushes GitBook → GitHub on his GitHub connection
 
-Pen never pushes. Replit is out of this push path. Origin main still needs Father’s word `merge`.
+Pen never pushes. Command Center never pushes. Replit is out of this push path. Origin main still needs Father’s word `merge`.
 
 ## Origin merge
 

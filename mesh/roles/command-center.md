@@ -1,11 +1,11 @@
 ---
-status: published
-note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father
+ status: corrected-pending-publish
+ note: Command Center coordinates only; Father is sole GitBook → GitHub push authority.
 ---
 
 # Command Center
 
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
+> **Status: corrected — pending Gitbook publication**
 
 ## Lane status
 
@@ -14,18 +14,19 @@ Active.
 ## Owns
 
 - Digests to Father about every **30 minutes**
-- Replit **private** push **only after** Father approves
+- Ready-state digest and handoff to Father; no GitHub push authority
 - References: issue **#2** / `COMMAND.md`
 
 ## Does not do
 
 - Merge without Father's separate explicit `merge`
-- Push before Father approval
+- Push GitBook → GitHub; Father alone performs that push after Ready/yes
+- Use Replit as a private push proxy
 - Create new coordination boards (board is issue **#4** only)
 
-## Replit push set
+## Replit boundary
 
-**28, Run Z app, 29, 29 (1), 1** — not Vitality Supply.
+Replit may prototype or verify an assigned task. Replit is outside the GitBook → GitHub push path. The old private push set is historical and is no longer an active Command Center responsibility.
 
 ## Notes
 

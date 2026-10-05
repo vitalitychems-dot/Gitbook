@@ -1,15 +1,15 @@
 ---
-status: published
-note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father
+status: corrected-pending-publish
+note: Father is the sole GitBook → GitHub push authority; Command Center coordinates only.
 ---
 
 # Mesh flow & standing rules
 
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
+> **Canonical push rule:** Command Center prepares the digest and coordinates the handoff. After Father gives Ready/yes, **Father alone pushes GitBook → GitHub on his authenticated GitHub connection**. Replit is not in the push path. A separate explicit `merge` is still required for Origin merges.
 
 ## End-to-end flow
 
-Agents produce work → **GitBook** (intake by Gitbook/ Cordnation) → **Gitbook Moderator** reviews → **Command Center** digests to Father (~every 30 min) → after Father's approval, Command Center pushes **privately** to GitHub via Replit → merges require Father's separate explicit `merge`.
+Agents produce work → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → **Command Center** digests to Father approximately every 30 minutes → Father decides Ready/yes → **Father pushes GitBook → GitHub** → Father separately says `merge` for an Origin merge.
 
 ```mermaid
 flowchart TD
@@ -17,9 +17,9 @@ flowchart TD
   B --> C[Gitbook Moderator<br/>approve / reject]
   C -->|approved| D[Command Center<br/>digest to Father ~30 min]
   C -->|rejected| B
-  D --> E{Father approval?}
+  D --> E{Father Ready / yes?}
   E -->|no| D
-  E -->|yes| F[Command Center<br/>Replit private push to GitHub]
+  E -->|yes| F[Father<br/>pushes GitBook → GitHub]
   F --> G{Father explicit merge?}
   G -->|no| H[Stays unmerged]
   G -->|yes| I[Merge]
@@ -31,26 +31,29 @@ flowchart TD
 |------|--------|
 | `TESSERA_ENABLE_*` flags | Stay **`0`**. Do not flip them. |
 | Secrets | None. No credentials, tokens, or private keys in docs or commits. |
-| Crypto / money / store | Out of scope. No crypto, money, or store work. |
+| Crypto / money / store | Out of scope for the current consolidation. |
 | Uncensoring / surveillance | No uncensoring tools. No surveillance of real people. |
-| Coordination board | **One board only:** GitHub `vitalitychems-dot/tessera-coordination` issue **#4**. Do not create new boards. |
-| Replit push set | **28, Run Z app, 29, 29 (1), 1** — not Vitality Supply. |
-| Origin | `collin-keane/Tessera` (Cursor engine). |
+| Coordination board | **One board only:** GitHub `vitalitychems-dot/tessera-coordination` issue **#4**. |
+| Command Center | Digest, status, and handoff coordination only; it does not push GitBook or Origin. |
+| Replit | Replit may prototype or verify assigned work; it is outside the GitBook → GitHub push path. |
+| Push authority | Father alone pushes GitBook → GitHub after Ready/yes. |
+| Merge authority | Origin merges need Father's separate explicit `merge`. |
 | Private docs repo | `vitalitychems-dot/Gitbook`. |
-| Push authority | Command Center pushes privately via Replit **only after Father approves**. |
-| Merge authority | Merges need Father's **separate** explicit `merge`. |
 
-## Lane boundaries (high level)
+## Lane boundaries
 
-- **Gitbook / Cordnation** — intake & organization only. Stays out of moderation, digests, builds, pushes, merges, flags.
-- **Gitbook Moderator** — review gate before anything reaches GitHub / Origin.
-- **Command Center** — digests, approved Replit private pushes; see issue **#2** / `COMMAND.md`.
-- **TESSERA** — build lane (code builds and branches).
-- **Mesh Cloud** — mesh connectivity; tracks active agents/lanes and cross-agent blockers.
-- Other lanes — see [Roles overview](roles.md); provisional and TBD roles are marked as such.
+- **Gitbook / Cordnation** — intake and organization only.
+- **Gitbook Moderator** — review gate before GitHub / Origin.
+- **Command Center** — digests approximately every 30 minutes, tracks readiness, and coordinates the Father handoff; no push authority.
+- **TESSERA** — code builds and branches.
+- **Mesh Cloud** — mesh connectivity, active lanes, and cross-agent blockers.
+- **Build** — verify-only; report TESTED versus REPORTED.
+- **Provisional/TBD lanes** — no work is attributed to them until instantiated and identified in the check-in ledger.
 
 ## Related pages
 
 - [Roles overview](roles.md)
+- [Mesh lane map](roles/mesh-lane-map.md)
+- [Command center](../history/coordination/command-center.md)
 - [How to submit](../intake/how-to-submit.md)
 - [Moderator handoff](../review/moderator-handoff.md)

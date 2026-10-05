@@ -10,7 +10,7 @@ note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; test
 Intake GB-007 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (Brain nits under Father YES TO ALL) · License: TBD · Suggested path: `mesh/roles/who-tessera-is.md`
 
 
-**Status:** REPORTED — in Moderator/digest path under Father YES TO ALL. Not sealed as live canon until Command Center posts the final push and Father marks Ready → GitHub. Origin mark below stays **REPORTED** until sealed.
+**Status:** REPORTED — in Moderator/digest path under Father YES TO ALL. Not sealed as live canon until Father completes the GitBook → GitHub push and separately authorizes any Origin merge. Origin mark below stays **REPORTED** until sealed.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 
@@ -42,7 +42,7 @@ Intake GB-007 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Sourc
 | TESSERA (build) | Speaks as Tessera on project questions; builds on branches |
 | Tessera Brain | Holds frame (constitution, lessons, pulse); gated-cycle proposals |
 | Tessera Pen | Writes prose in her voice from the approved frame |
-| Command Center | Digests and relays; posts final push after TESSERA |
+| Command Center | Digests and relays the Ready handoff to Father; does not push |
 | Cordnation / Moderator | GitBook intake and gate |
 
 ## Not done

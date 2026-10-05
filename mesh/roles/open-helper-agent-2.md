@@ -21,7 +21,7 @@ Intake GB-004 · Author lane: Open Helper Agent 2 · Date (CT): 2026-10-05 · So
 
 ## What this lane does not do
 
-- Push, merge, or deploy anything (Command Center pushes only after Father's yes; merges need Father's explicit `merge`).
+- Push, merge, or deploy anything (Father alone pushes GitBook → GitHub after Ready/yes; merges need Father's explicit `merge`).
 - Moderate or approve GitBook pages, run digests, or replace Mesh Cloud's tracking.
 - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
 - Open new boards. The one board is `vitalitychems-dot/tessera-coordination` issue #4.
