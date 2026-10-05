@@ -1,4 +1,4 @@
-# Tessera Pen research charter
+# Brain & SNN research charter
 
 > The "CL1-inspired" and "Consciousness" framing in this lane is the author's goal framing, not a reported result. The cited sources (BindsNET, BrainCog, Brian2, snnTorch) do not cover Cortical Labs' CL1. Nothing in this lane is TESTED.
 

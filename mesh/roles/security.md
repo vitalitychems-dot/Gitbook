@@ -28,7 +28,7 @@ Active. Reports to Tessera (admin). Created by Tessera on Father's order for a s
 
 ## Standing rule (mesh-wide)
 
-Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
 
 ## Notes
 

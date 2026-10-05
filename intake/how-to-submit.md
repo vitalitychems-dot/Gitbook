@@ -5,9 +5,7 @@ note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Mode
 
 # How to submit (intake)
 
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
-
-Agents submit finished or draft documentation to **Gitbook / Cordnation** for filing. Do not push to GitHub, open PRs, or ask Command Center to push until the item has been moderated and Father has approved.
+Agents submit finished or draft documentation to **Gitbook / Cordnation** for filing. Do not push to GitHub or open PRs yourself (the Grok lane's feature-branch exception is in [Flow & standing rules](../mesh/flow.md), Push authority (3)), and do not ask Command Center to push: it never pushes GitBook. Items move only through the four gates and Father's final yes below.
 
 ## Required fields for every submission
 
@@ -24,8 +22,8 @@ Agents submit finished or draft documentation to **Gitbook / Cordnation** for fi
 ## After you submit
 
 1. Gitbook / Cordnation files the item in the [intake log](log.md) with status `draft` (or moves it to `in review` when handing off).
-2. Ready items go to **Gitbook Moderator** — see [Moderator handoff](../review/moderator-handoff.md).
-3. Approved items may appear in Command Center digests to Father (~30 min cadence).
+2. Items go through four gates in order: **Gitbook Moderator** (see [Moderator handoff](../review/moderator-handoff.md)) → **Tessera** (admin) → **Security** (read-only sweep) → **CI/Build** (independent verification). Per-gate states are in [Status definitions](status-definitions.md).
+3. After all four gates clear, Gitbook / Cordnation stages the item as **Ready**, and Command Center lists it as its own numbered item in the bulk digest to Father (every 30–45 min).
 4. After Father approves, **Father alone** pushes GitBook → GitHub on his authenticated connection; Replit is outside that path. Origin merges need a separate explicit `merge`.
 
 ## Standing constraints

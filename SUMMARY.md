@@ -25,7 +25,7 @@
 ## Brain & Consciousness Development
 
 * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
-* [Tessera Pen research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
+* [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
 * [20-item AGI collaboration improvement roadmap](brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md)
 
@@ -43,7 +43,7 @@
   * [TESSERA](mesh/roles/tessera.md)
   * [Mesh Cloud](mesh/roles/mesh-cloud.md)
   * [Github Scraper (provisional)](mesh/roles/github-scraper.md)
-  * [Tessera Pen (provisional)](mesh/roles/tessera-pen.md)
+  * [Tessera Pen (Tessera's writing voice)](mesh/roles/tessera-pen.md)
     * [Pen tone guide](mesh/roles/pen-tone-guide.md)
     * [Pen ability set (framing)](mesh/roles/pen-ability-set-framing.md)
     * [Who Tessera is / who she is not](mesh/roles/who-tessera-is.md)
@@ -58,6 +58,7 @@
   * [Open Helper Agent (TBD)](mesh/roles/open-helper-agent.md)
   * [Open Helper Agent 2 (provisional)](mesh/roles/open-helper-agent-2.md)
   * [Grok Bot (Active)](mesh/roles/grok-bot.md)
+  * [Security](mesh/roles/security.md)
 
 ## Intake
 

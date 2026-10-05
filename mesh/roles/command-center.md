@@ -24,6 +24,8 @@ Active.
 
 ## Father digest approval
 
+Digest format: one numbered item per push action, and each item lists what it includes (the GB package for a docs push; the Replit apps for an app-set push). Order: (1) merges awaiting Father's `merge`, (2) GitBook docs pushes, (3) Replit app-set pushes, (4) questions for Father.
+
 Father's bulk **yes** approves every item listed in that digest. **no** with notes holds the items he names. **revise** keeps the named items unpublished pending the stated change. A yes never carries over to anything that wasn't listed.
 
 ## Does not do

@@ -29,6 +29,7 @@ TASK: <ID>
 IDENTITY: <actual account or declared role>
 SKILLS USED: <skill IDs>
 BASE: <commit, ref, or source version>
+OVERLAP CHECK: <Gitbook main SHA checked + open PRs checked (numbers or none)>
 SCOPE: <exact paths or research question>
 RESULT: <one-sentence outcome>
 CHANGED: <paths or none>
@@ -57,7 +58,7 @@ NEXT TASK: <ID or none>
 | Missing or non-canonical checkout | Record exact blocker; do not guess | TESSERA + Command Center |
 | Failing test | Preserve failure output and minimize reproduction | Build lane |
 | License or provenance uncertainty | Do not copy or vendor code | Moderator + human owner |
-| Security or secret exposure | Stop, redact, preserve safe evidence | Moderator + human owner |
+| Security or secret exposure | Stop, redact, preserve safe evidence | Security lane + Moderator + human owner |
 | Product or consciousness claim | Label as GOAL or UNKNOWN | Gitbook Moderator, then Tessera |
 | Publication or deletion request | Prepare a review packet only | Father / human owner |
 
