@@ -10,6 +10,7 @@
 * [Duplicate disposition and cleanup policy](merge/duplicate-disposition.md)
 * [Repository deletion manifest — awaiting confirmation](merge/DELETION-MANIFEST.md)
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
+* [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 
 ## Mesh
 
