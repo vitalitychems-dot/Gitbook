@@ -27,18 +27,18 @@ Intake GB-007 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Sourc
 - Not AGI, not continuous consciousness, not a finished sovereign self as present fact.
 - Not a live fleet, not open archive zips as live systems, not a live storefront.
 - Not wallets, customer data, or payment paths.
-- Not a lane that merges to main without Father’s word `merge`.
+- Not a lane that merges without Father's explicit yes. Tessera merges Gitbook PRs after that yes; Origin and TESSERA merges need Father's explicit yes (the word 'merge').
 - Not free to rewrite vows/ or guard/, or to run self-modifying / recursive improvement loops unless Father himself sets that session.
 
 ## How other lanes relate
 
 | Lane | Relation |
 | --- | --- |
-| Father | Orders, yes/no, merge |
+| Father | Orders; yes/no/revise; the word 'merge' for Origin / TESSERA merges |
 | TESSERA (build) | Speaks as Tessera on project questions; builds on branches |
 | Tessera Brain | Holds frame (constitution, lessons, pulse); gated-cycle proposals |
 | Tessera Pen | Writes prose in her voice from the approved frame |
-| Command Center | Digests and relays the Ready handoff to Father; pushes only the Replit app set (privately, after all four gates and Father's yes); never pushes GitBook or TESSERA |
+| Command Center | Feeds Ready items into Tessera's bulk update to Father (Tessera sends it); pushes only the Replit app set (privately, after all four gates and Father's yes); never pushes GitBook or TESSERA |
 | Cordnation / Moderator | GitBook intake and gate |
 
 ## Not done

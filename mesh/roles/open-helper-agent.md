@@ -5,8 +5,6 @@ note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Mode
 
 # Open Helper Agent
 
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
-
 ## Lane status
 
 **TBD** — role not yet documented.

@@ -19,7 +19,7 @@ Active, as the Grok historical-analysis lane (alias: Historical Analysis Collab)
 
 ## Does not do
 - Product calls (those go to Tessera).
-- Digests (Command Center sends them).
+- Bulk updates to Father (Tessera sends them; Command Center feeds them).
 - Merges without Tessera's go and Father's final yes; pushes to main (Tessera after Father's yes, or Father).
 - Claiming HYB work Tessera hasn't assigned.
 

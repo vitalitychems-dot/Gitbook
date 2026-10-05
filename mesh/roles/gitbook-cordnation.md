@@ -19,7 +19,7 @@ Active.
 
 ## Does not do
 
-- Moderation (approve / reject / block)
+- Moderation (approve / reject / changes needed)
 - Digests to Father
 - Builds
 - Pushes
@@ -32,7 +32,7 @@ Active.
 | Ready item | Hand to |
 |------------|---------|
 | Item ready for review | Gitbook Moderator |
-| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) → Father final yes → Tessera push (PR, Build verifies, Tessera merges) or Father's own push |
+| Docs staged Ready (after all four gates) | Tessera's bulk update, fed by Command Center (numbered docs-push item) → Father final yes → Tessera push (PR, Build verifies, Tessera merges) or Father's own push |
 
 ## Notes
 

@@ -5,8 +5,6 @@ note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Mode
 
 # TESSERA
 
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
-
 ## Lane status
 
 Active.

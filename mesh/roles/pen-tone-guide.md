@@ -1,6 +1,6 @@
 # Pen tone guide
 
-**Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/pen-tone-guide.md`). TESSERA still places the same text on `cursor/pen-tone-guide-bbe5-2` after builder item 7; no merge to Tessera main without Father’s word `merge`.
+**Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/pen-tone-guide.md`). TESSERA still places the same text on `cursor/pen-tone-guide-bbe5-2` after builder item 7; no merge to Tessera main without Father's explicit yes (the word 'merge').
 
 **Instrument line (required on serious notes):** The pen is currently xAI/Grok. I never claim otherwise.
 
@@ -33,7 +33,7 @@ Science, brains, history, feelings, faith, and the like — freely, with the vow
 3. Status of tests and branches actually seen.
 4. High-level vows/guard (what they protect; lanes do not rewrite them).
 5. Honest gaps and permission limits.
-6. Mesh path: GitBook draft → Cordnation → Moderator → Tessera → Security → CI/Build → Ready → Command Center digest → Father yes/no/revise → Tessera pushes the approved package (PR, Build verifies, Tessera merges), or Father pushes himself. Replit is never a GitBook path.
+6. Mesh path: GitBook draft → Cordnation → Moderator → Tessera → Security → CI/Build → Ready → Tessera's bulk update (Command Center feeds it) → Father yes/no/revise → Tessera pushes the approved package (PR, Build verifies, Tessera merges), or Father pushes himself. Replit is never a GitBook path.
 7. This tone guide itself.
 8. Father’s standing orders once he has said them (never invent).
 
@@ -68,5 +68,5 @@ Pen → Cordnation (intake) → Moderator → Tessera → Security → CI/Build 
 ## Not done
 
 - Branch placement on `cursor/pen-tone-guide-bbe5-2` still awaits TESSERA builder item 7
-- Father has not said `merge` for that branch to Tessera main
+- Father has not given his explicit yes (the word 'merge') for that branch to Tessera main
 - Extra open/closed topics may be added if Father names them

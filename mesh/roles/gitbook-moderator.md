@@ -22,7 +22,7 @@ TBD (beyond: this lane is the review gate, not intake filing, digests, builds, p
 
 | Outcome | Next |
 |---------|------|
-| Approved | Eligible for Command Center digest / later Father-gated push |
+| Approved | Goes to Tessera → Security → CI/Build; once all four gates clear, Gitbook / Cordnation stages it Ready for Tessera's bulk update to Father (Command Center feeds it) |
 | Rejected | Returned via intake status; Gitbook / Cordnation keeps the record |
 | Changes needed | Held; does not proceed to digest/push until fixed and resubmitted per Moderator note |
 
