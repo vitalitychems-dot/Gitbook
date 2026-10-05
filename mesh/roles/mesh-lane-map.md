@@ -1,6 +1,6 @@
 ---
 status: published
-note: Father is sole GitBook → GitHub push authority; Command Center coordinates only.
+note: After Father's yes, Tessera pushes approved GitBook packages (Father may push himself); Command Center coordinates only.
 ---
 
 # Mesh lane map (for Father)
@@ -26,7 +26,7 @@ Intake GB-014 (supersedes GB-013 publish/Delivery sections) · Author lane: Tess
 | Build / branches / pen-slot / pen-gate | TESSERA; Build verifies after a branch exists |
 | Digest / final push coordination | Command Center |
 | Docs Ready staging | **Gitbook / Cordnation** (only after all four gates: Moderator, Tessera, Security, CI/Build), for Father's final yes |
-| GitBook → GitHub push | **Father** on his GitHub connection (after Ready yes on the listed digest item). Replit outside that path. |
+| GitBook → GitHub push | **Tessera** after Father's yes on the listed digest item: opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2. Father may still push himself on his GitHub connection. Replit outside that path. |
 | Replit app set staging (not a GitBook path) | **Command Center** (stages each Replit app-set push as its own digest item) |
 | Replit app set private push (not a GitBook path) | **Command Center** — its only push: apps "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply", privately, only after all four gates and Father's yes on the listed digest item; never GitBook or TESSERA. "29" stays flagged until Father confirms it is detached from 1T. |
 | Cross-agent stall | Mesh Cloud |
@@ -47,13 +47,13 @@ Intake GB-014 (supersedes GB-013 publish/Delivery sections) · Author lane: Tess
 8. **Gitbook / Cordnation** stages docs as **Ready** (only after all four gates cleared; waiting only on Father's final yes)
 9. Command Center lists each docs push as its own numbered digest item (30–45 min digest); Replit app-set items (not part of this GitBook path) use the same four gates before Ready
 10. Father's bulk yes (approves every item listed) / no with notes (holds the items he names). A yes never carries over to anything that wasn't listed.
-11. **Father** pushes GitBook → GitHub on his GitHub connection
+11. **Tessera** opens a PR with the package Father said yes to; **Build** verifies it; Tessera merges and posts on Gitbook issue #2 (Father may still push himself on his GitHub connection)
 
 Pen never pushes. Grok lane: feature-branch pushes only for its own Gitbook PRs on Tessera-assigned HYB items; never main. Command Center never pushes GitBook or TESSERA. Replit is outside this (GitBook → GitHub) push path. Origin main still needs Father’s word `merge`.
 
 ## Replit app set push (Command Center's only push; not a GitBook path)
 
-Command Center **stages** each Replit app-set push and lists it as a separate numbered digest item. Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and Father alone pushes GitBook → GitHub.
+Command Center **stages** each Replit app-set push and lists it as a separate numbered digest item. Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and after Father's yes Tessera pushes approved GitBook packages (Father may still push himself).
 
 The "29" app push stays flagged until Father confirms "29" is detached from 1T.
 

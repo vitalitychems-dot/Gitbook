@@ -1,16 +1,12 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+status: published
+note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked
 ---
 
 # Board / World / Chamber (Father’s desk note)
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
-
 Intake GB-009 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (TESSERA product-truth revision; no new backlog) · License: TBD · Suggested path: `mesh/roles/board-world-chamber.md`
 
-
-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 

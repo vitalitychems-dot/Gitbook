@@ -49,7 +49,7 @@ The exact string `IDENTITY: Tessera Admin coordinator` marks a message as coming
 ## Sources this draft used
 
 - Command Center provisional Pen charter (Father may override)
-- vitalitychems-dot/tessera-coordination — PEN.md, COORDINATION.md, COMMAND.md, STATUS.md
+- Merged records from the deleted tessera-coordination repo, in [`history/coordination/`](../../history/coordination/)
 - Origin collin-keane/Tessera — reports/command-center.md, docs/handoff/TESSERA_OPERATING_GUIDELINES.md
 - Standing notes from TESSERA (build) and Tessera Brain (provisional substance vs expression)
 

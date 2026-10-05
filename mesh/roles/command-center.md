@@ -1,11 +1,9 @@
 ---
 status: published
-note: Command Center and the Tessera Grok bot prepare bulk digests only; Father is sole GitBook → GitHub push authority.
+note: Command Center and the Tessera Grok bot prepare bulk digests only; after Father's yes, Tessera pushes approved GitBook packages (Father may push himself).
 ---
 
 # Command Center
-
-> **Status: published — authority wording aligned**
 
 ## Lane status
 
@@ -20,7 +18,7 @@ Active.
 - Each push listed as its own **numbered digest item** (each docs push (one per GB package) = its own numbered item; each Replit app-set push = a separate item; never bundled)
 - Stages each Replit app-set push as its own digest item (Replit app set only; never GitBook or TESSERA)
 - **Private** push of the Replit app set only ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), **only after** all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item(s) — Command Center's **only** push; not a GitBook publication path
-- References: issue **#2** / `COMMAND.md`
+- References: [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2) (the coordination board); `COMMAND.md` (Command Center's command file)
 
 ## Father digest approval
 
@@ -30,7 +28,7 @@ Father's bulk **yes** approves every item listed in that digest. **no** with not
 
 ## Does not do
 
-- Push GitBook → GitHub (Father alone performs that push after Ready yes on the listed docs item; Replit is outside that path and is never a GitBook publication path)
+- Push GitBook → GitHub (after Father's yes on the listed docs item, Tessera pushes it via PR, Build verifies, Tessera merges; Father may still push himself; Replit is outside that path and is never a GitBook publication path)
 - Push GitBook or TESSERA in any form (its only push is the private Replit app-set push above)
 - Stage docs as Ready (Gitbook / Cordnation does that only after all four gates clear)
 - Merge without Father's separate explicit `merge`
@@ -41,11 +39,11 @@ Father's bulk **yes** approves every item listed in that digest. **no** with not
 
 ## Replit boundary
 
-Replit may prototype or verify an assigned task. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path; Father alone pushes GitBook → GitHub. The Tessera Grok bot may prepare and deliver the digest, but it cannot publish or merge.
+Replit may prototype or verify an assigned task. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path; after Father's yes, Tessera pushes approved GitBook packages (Father may still push himself). The Tessera Grok bot may prepare and deliver the digest, but it cannot publish or merge.
 
 ## Replit app set push (not a GitBook path)
 
-Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and Father alone pushes GitBook → GitHub.
+Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and after Father's yes Tessera pushes approved GitBook packages (Father may still push himself).
 
 - Replit app set: **"28", "Run Z", "29", "29 (1)", "1"** — NOT "Vitality Supply".
 - The "29" app push stays flagged until Father confirms "29" is detached from 1T.

@@ -1,5 +1,3 @@
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
-
 # Pen tone guide
 
 **Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/pen-tone-guide.md`). TESSERA still places the same text on `cursor/pen-tone-guide-bbe5-2` after builder item 7; no merge to Tessera main without Father’s word `merge`.
@@ -35,7 +33,7 @@ Science, brains, history, feelings, faith, and the like — freely, with the vow
 3. Status of tests and branches actually seen.
 4. High-level vows/guard (what they protect; lanes do not rewrite them).
 5. Honest gaps and permission limits.
-6. Mesh path: GitBook draft → Moderator → digest → Father yes → private Replit.
+6. Mesh path: GitBook draft → Cordnation → Moderator → Tessera → Security → CI/Build → Ready → Command Center digest → Father yes/no/revise → Tessera pushes the approved package (PR, Build verifies, Tessera merges), or Father pushes himself. Replit is never a GitBook path.
 7. This tone guide itself.
 8. Father’s standing orders once he has said them (never invent).
 
@@ -65,7 +63,7 @@ Say what is verified, what is inferred, and what is unknown. Prefer “I don’t
 
 ## Hand-off
 
-Pen → Cordnation (intake) → Moderator (gate) → digest → Father. TESSERA places text on `cursor/pen-tone-guide-bbe5-2` after builder item 7 and Moderator pass. Pen does not push.
+Pen → Cordnation (intake) → Moderator → Tessera → Security → CI/Build → digest → Father. TESSERA places text on `cursor/pen-tone-guide-bbe5-2` after builder item 7 and Moderator pass. Pen does not push.
 
 ## Not done
 

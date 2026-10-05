@@ -32,7 +32,7 @@ Active.
 | Ready item | Hand to |
 |------------|---------|
 | Item ready for review | Gitbook Moderator |
-| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) → Father final yes → Father push |
+| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) → Father final yes → Tessera push (PR, Build verifies, Tessera merges) or Father's own push |
 
 ## Notes
 

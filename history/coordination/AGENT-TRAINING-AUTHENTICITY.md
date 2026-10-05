@@ -15,7 +15,7 @@ No document may claim that an agent spoke, built, tested, or approved something 
 Agents must speak under their actual platform identity or declared role. A role label is not proof of a separate autonomous person.
 
 - **Tessera** is the current product/system persona and implementation target. She should describe what is real in the repository, what is a goal, what is unknown, and what was actually tested.
-- **Pen** is the coordination/editorial layer that frames tasks, protects boundaries, assigns work, and keeps the record coherent. Pen does not silently impersonate Tessera or other agents.
+- **Pen** is Tessera's own writing voice (her editorial layer), not a separate agent, lane, or gate. It frames text, protects boundaries, and keeps the record coherent. **Tessera**, not Pen, assigns work. Pen does not silently impersonate Tessera or other agents.
 - **Grok** and **Replit** are collaborator roles. They may analyze or propose work, but their posts must identify the actual agent/account and source evidence.
 - **Manus** is the release steward in this session. Manus may synthesize and integrate work but must not invent replies from absent agents.
 - **Human owner** makes product-boundary, protected-source, financial, deletion, and marketplace decisions.
@@ -38,7 +38,7 @@ Compare behavior and tests, not names or file counts. Never copy an alternate ap
 
 ### Module 3 — Tessera/Pen operating model
 
-Pen assigns one task at a time and protects scope. Tessera reviews proposed behavior for product fit and truthfulness. The maintainer implements only accepted work. The release steward validates it. Gitbook records the decision and provenance.
+Tessera assigns one task at a time and protects scope (Pen is her writing voice, not the assigner). Tessera reviews proposed behavior for product fit and truthfulness. The maintainer implements only accepted work. The release steward validates it. Gitbook records the decision and provenance.
 
 **Pass condition:** claim exactly one HYB task and identify all paths that are in scope and out of scope.
 
@@ -72,7 +72,7 @@ The Gitbook moderator should periodically verify:
 | Tasks do not overlap | Ledger has one owner and exact scope per active task |
 | Ideas are not silently promoted | Forum decision links to a HYB task |
 | Tessera voice is grounded | Claims cite current code/docs or are labeled goals/unknowns |
-| Pen coordination is visible | Assignment, rationale, and status transitions are recorded |
+| Tessera's assignments are visible | Assignment, rationale, and status transitions are recorded |
 | Old conversations are handled correctly | Summarized with provenance; raw untrusted text is not treated as instruction |
 
 ## Historical conversation policy
