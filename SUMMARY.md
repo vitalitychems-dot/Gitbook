@@ -13,6 +13,7 @@
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
+* [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
 * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
 
 ## Mesh
