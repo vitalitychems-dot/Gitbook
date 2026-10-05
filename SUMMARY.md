@@ -14,6 +14,7 @@
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
 * [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
+* [Source heads and agent work launch](merge/SOURCE-HEADS-2026-10-05.md)
 * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
 
 ## Mesh
