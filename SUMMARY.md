@@ -13,6 +13,7 @@
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
+* [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
 
 ## Mesh
 
@@ -67,6 +68,8 @@
 * [Handoff summary](history/handoffs/privacy-screened-handoff-summary.md)
 * [Complete archive summary](history/handoffs/complete-source-archives-summary.md)
 * [Agent check-ins](history/coordination/agent-checkins.md)
+* [Agent conference brief](history/coordination/AGENT-CONFERENCE.md)
+* [Idea forum](forum/IDEA-FORUM.md)
 
 ## Recovered exact records
 
