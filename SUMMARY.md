@@ -28,10 +28,18 @@
   * [Open Helper Agent 2 (provisional)](mesh/roles/open-helper-agent-2.md)
   * [Grok Bot (TBD)](mesh/roles/grok-bot.md)
 
+## Coordination source snapshot
+
+* [Import note](coordination/IMPORT-NOTE.md)
+* [Source README](coordination/README.md)
+* [Pen source charter](coordination/PEN.md)
+* [Status snapshot (stale)](coordination/STATUS.md)
+
 ## Intake
 
 * [How to submit](intake/how-to-submit.md)
 * [Intake log](intake/log.md)
+* [TESSERA consolidation backlog (draft)](intake/tessera-consolidation.md)
 * [Status definitions](intake/status-definitions.md)
 
 ## Review
