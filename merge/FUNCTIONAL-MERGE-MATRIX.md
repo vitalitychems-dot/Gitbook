@@ -1,6 +1,6 @@
 # Functional merge matrix
 
-This matrix separates **portable behavior** from **unmergeable application contracts**. It is the review sheet for HYB-006 through HYB-013.
+This matrix separates **portable behavior** from **unmergeable application contracts**. It is the review sheet for HYB-006 through HYB-013. See also the [HYB-006 Grok-ready functional comparison](hyb-006-grok-ready.md) (candidate result; awaiting Moderator/Father seal).
 
 | Historical aspect | Source family | Current TESSERA state | Action | Owner/task |
 |---|---|---|---|---|
