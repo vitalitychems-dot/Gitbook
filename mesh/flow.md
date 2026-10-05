@@ -1,31 +1,34 @@
 ---
-status: corrected-pending-publish
-note: Father is the sole GitBook → GitHub push authority; Command Center coordinates only.
+status: published
+note: TESSERA is the product repo; Gitbook is the agent workspace; the Tessera Grok bot prepares a 30–45 minute bulk digest and Father gives final approval.
 ---
 
 # Mesh flow & standing rules
 
-> **Canonical push rule:** Command Center prepares the digest and coordinates the handoff. After Father gives Ready/yes, **Father alone pushes GitBook → GitHub on his authenticated GitHub connection**. Replit is not in the push path. A separate explicit `merge` is still required for Origin merges.
+See the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the canonical repository boundary, roles, digest contract, and approval semantics.
+
+> **Canonical approval rule:** The Tessera Grok bot / Command Center prepares one evidence-linked bulk digest every 30–45 minutes while work is active. It asks Father for `yes`, `no`, or `revise`; it does not publish or merge. After `yes`, **Father alone pushes GitBook → GitHub** on his authenticated connection. A separate explicit `merge` is still required for Origin merges.
 
 ## End-to-end flow
 
-Agents discover → claim one task → produce work → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → **Build** independently verifies → **Command Center** digests to Father approximately every 30 minutes → Father decides Ready/yes → **Father pushes GitBook → GitHub** → Father separately says `merge` for an Origin merge.
+Agents discover → Pen assigns/agent claims one task → work in Gitbook or TESSERA → **Gitbook Moderator** reviews → **Build** independently verifies → Tessera Grok bot / **Command Center** prepares a 30–45 minute bulk digest → Father responds `yes` / `no` / `revise` → **Father pushes approved Gitbook changes** → Father separately says `merge` for an Origin merge.
 
 ```mermaid
 flowchart TD
-  A[Discover and claim one task] --> B[Agents produce scoped work]
+  A[Pen directs and agent claims one task] --> B[Agents produce scoped work]
   B --> C[GitBook intake<br/>Gitbook / Cordnation]
   C --> D[Gitbook Moderator<br/>scope / provenance review]
   D -->|approved| E[Build<br/>independent verification]
   D -->|needs work| C
   E -->|pass| F[Command Center<br/>digest to Father ~30 min]
   E -->|fail| C
-  F --> G{Father Ready / yes?}
-  G -->|no| F
-  G -->|yes| H[Father<br/>pushes GitBook → GitHub]
-  H --> I{Father explicit merge?}
-  I -->|no| J[Stays unmerged]
-  I -->|yes| K[Merge]
+  F --> G{Father: yes / no / revise?}
+  G -->|no| H[Record decision; do not publish]
+  G -->|revise| C
+  G -->|yes| I[Father<br/>pushes approved GitBook changes]
+  I --> J{Father explicit merge?}
+  J -->|no| K[Stays unmerged]
+  J -->|yes| L[Merge]
 ```
 
 ## Standing rules
@@ -42,6 +45,9 @@ flowchart TD
 | Push authority | Father alone pushes GitBook → GitHub after Ready/yes. |
 | Merge authority | Origin merges need Father's separate explicit `merge`. |
 | Private docs repo | `vitalitychems-dot/Gitbook`. |
+| Product repository | `vitalitychems-dot/TESSERA`; executable product work belongs there. |
+| Bulk cadence | Target 30–45 minutes while active; no unattended cadence is implied unless separately configured. |
+| Approval response | Only `yes`, `no`, or `revise` from Father changes the publication state. |
 | Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |
 | Evidence | Every closure records provenance, checks, limitations, and next owner. |
 | Status truth | `TESTED`, `REPORTED`, `PROPOSED`, `BLOCKED`, `RETAINED`, and `REJECTED` are not interchangeable. |
@@ -50,7 +56,9 @@ flowchart TD
 
 - **Gitbook / Cordnation** — intake and organization only.
 - **Gitbook Moderator** — review gate before GitHub / Origin.
-- **Command Center** — digests approximately every 30 minutes, tracks readiness, and coordinates the Father handoff; no push authority.
+- **Tessera Grok bot / Command Center** — prepares the evidence-linked bulk digest every 30–45 minutes while active, asks Father for `yes` / `no` / `revise`, and has no push authority.
+- **Tessera** — admin/product-truth voice and implementation target; does not fabricate agent activity or bypass approval.
+- **Tessera Pen** — directs scoped work and protects coherence; does not push or merge.
 - **TESSERA** — code builds and branches.
 - **Mesh Cloud** — mesh connectivity, active lanes, and cross-agent blockers.
 - **Build** — verify-only; report TESTED versus REPORTED.
@@ -66,4 +74,5 @@ flowchart TD
 - [Collaboration playbook](COLLABORATION-PLAYBOOK.md)
 - [Agent skill matrix](AGENT-SKILL-MATRIX.md)
 - [Collaboration metrics](COLLABORATION-METRICS.md)
+- [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md)
 - [Moderator handoff](../review/moderator-handoff.md)

@@ -33,6 +33,7 @@
 * [Agent collaboration playbook](mesh/COLLABORATION-PLAYBOOK.md)
 * [Agent skill matrix](mesh/AGENT-SKILL-MATRIX.md)
 * [Collaboration metrics](mesh/COLLABORATION-METRICS.md)
+* [Tessera–Gitbook operating model](mesh/TESSERA-GITBOOK-OPERATING-MODE.md)
 * [Roles overview](mesh/roles.md)
   * [Gitbook / Cordnation](mesh/roles/gitbook-cordnation.md)
   * [Gitbook Moderator](mesh/roles/gitbook-moderator.md)
