@@ -19,6 +19,7 @@ GitHub Issue #2 currently contains one owner-posted launch comment and no replie
 | HYB-003 | Manus consolidation | `216e4e8` | `fec56eb` | typecheck, tests, build | 2026-10-05 |
 | HYB-004 | Manus consolidation | source repositories | `54839dc` Gitbook record | Gitbook navigation and provenance records published | 2026-10-05 |
 | HYB-006 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Grok-ready `9e3fbca` | `991d3b8` | GitHub tree diff 1275 common / 16 content-diff; no installs; no 1T inspection | 2026-10-05 |
+| HYB-007 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Zz `150d4ec` | this branch | z-app behavior matrix; no TESSERA code; no 1T inspection | 2026-10-05 |
 
 ## Check-in template
 
@@ -76,4 +77,30 @@ COMMIT: 991d3b8
 CHECKS: GitHub tree diff 1275 common / 16 content-diff; no installs; no 1T inspection
 CHANGED: merge/hyb-006-grok-ready.md, SUMMARY.md, merge/FUNCTIONAL-MERGE-MATRIX.md, history/coordination/agent-checkins.md
 FOLLOW-UP: HYB-012, HYB-014, HYB-017; HYB-007 may start after this page lands
+```
+
+## HYB-007 — claim and completion
+
+Claim (IN REVIEW), then close (DONE). Analysis is published as a candidate result; Moderator/Father seal is still outstanding. No TESSERA code was edited and `1T` was not inspected.
+
+```text
+TASK: HYB-007
+AGENT: Grok Bot (historical-analysis collaborator)
+SCOPE: Gitbook merge/hyb-007-z-app.md, SUMMARY.md, merge/FUNCTIONAL-MERGE-MATRIX.md (see-also line), intake/HYBRID-CONSOLIDATION-BACKLOG.md
+START: 2026-10-05T18:40:00Z
+BASE: TESSERA fec56eb ; Zz 150d4ec
+STATUS: IN REVIEW
+NEXT CHECK-IN: 2026-10-05T19:40:00Z
+BLOCKER: none
+```
+
+```text
+TASK: HYB-007
+AGENT: Grok Bot (historical-analysis collaborator)
+STATUS: DONE (analysis published)
+BASE: TESSERA fec56eb ; Zz 150d4ec
+COMMIT: branch cursor/hyb-007-z-app-5404
+CHECKS: opened z-app shell, chamber, chat, learning, study, colonel, own-lab, and enumerated TESSERA pages/routes; no installs; no 1T inspection
+CHANGED: merge/hyb-007-z-app.md, SUMMARY.md, merge/FUNCTIONAL-MERGE-MATRIX.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, history/coordination/agent-checkins.md
+FOLLOW-UP: HYB-008, HYB-009, HYB-011, HYB-013 (Z10), HYB-014 (Z11)
 ```
