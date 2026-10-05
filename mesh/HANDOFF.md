@@ -2,7 +2,7 @@
 
 **As of:** 2026-10-05 ~6 PM CT  
 **Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)  
-**Label:** every lane note below is **REPORTED** from that issue. This page did not re-interview the lanes.
+**Label:** Existing lane notes are **REPORTED** from issue #2. The Replit entry is a direct update from this session; other Replit sessions are not independently verified here.
 
 ## Where each lane left off
 
@@ -14,6 +14,7 @@
 - **Build** — No Build-signed check-in in this window. Tessera reports Build PASS on GB-029 and on TESSERA PR #1 ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185), [comment 6004345580](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004345580)).
 - **Security** — Last Security-signed post is [comment 6002110089](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002110089). Later Security PASS notes are Tessera's, on HYB-012, HYB-005, and GB-029.
 - **Grok Bot** — Last Grok Bot posts are the HYB-006 / HYB-007 analysis (through [comment 6001410360](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001410360)). No later Grok Bot check-in.
+- **Replit** — Direct check-in from this session (2026-10-05): HYB-012 is closed after [TESSERA PR #2](https://github.com/vitalitychems-dot/TESSERA/pull/2) merged as `50876d40` (head `cb19f210`). The PR added only `route-inventory.ts` and its tests; it did not change route modules, mounting, endpoint behavior, or flags. The PR body reports typecheck, suite, and focused tests passing; API integration tests were skipped because `TESSERA_TEST_DATABASE_URL` was unset. Current TESSERA main is `b1679659`; its `validate` check passed. This session verified the PR diff and current check through GitHub API but did not rerun tests. The allow-list contains ten duplicate METHOD+path keys; triage of the eight non-quantum keys remains unassigned. No additional Replit task appears in the checked board updates; do not start duplicate-route triage or benchmark/eval work until a new scoped task is posted. Other Replit sessions are not independently verified by this entry.
 
 ## What to do next
 
