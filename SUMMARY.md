@@ -2,6 +2,13 @@
 
 * [Home](README.md)
 
+## Start here
+
+* [Consolidated TODO list](intake/consolidated-todo.md)
+* [Agent submission format](intake/agent-submission-format.md)
+* [Two-repository source map](merge/source-map.md)
+* [Duplicate disposition and cleanup policy](merge/duplicate-disposition.md)
+
 ## Mesh
 
 * [Flow & standing rules](mesh/flow.md)
@@ -37,3 +44,20 @@
 ## Review
 
 * [Moderator handoff](review/moderator-handoff.md)
+* [Source-branch review](review/source-branch-review.md)
+* [Validation](review/validation.md)
+* [Screenshot supplement](review/source-screenshot-supplement/00-START-HERE.md)
+* [Image/text review](review/image-text/README.md)
+
+## Operations
+
+* [Tessera operating guidelines](operations/tessera-operating-guidelines.md)
+
+## Historical coordination
+
+* [Command center record](history/coordination/command-center.md)
+* [Coordination record](history/coordination/coordination-record.md)
+* [Tessera pen record](history/coordination/tessera-pen-record.md)
+* [Source index](history/source-index/z-repository-index.md)
+* [Handoff summary](history/handoffs/privacy-screened-handoff-summary.md)
+* [Complete archive summary](history/handoffs/complete-source-archives-summary.md)
