@@ -53,4 +53,4 @@ Read WALK.md. Then read collink1007/z one file at a time. One file, one test, on
 
 ## Shared handoff
 
-Read [TESSERA_AGENT_HANDOFF.md](TESSERA_AGENT_HANDOFF.md) for the current consolidation status and next actions. The canonical destination is [vitalitychems-dot/Zz](https://github.com/vitalitychems-dot/Zz).
+Read [Tessera agent handoff](tessera-agent-handoff.md) for the current consolidation status and next actions. The canonical destination is [vitalitychems-dot/Zz](https://github.com/vitalitychems-dot/Zz).

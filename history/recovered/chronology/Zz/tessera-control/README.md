@@ -71,5 +71,5 @@ Read [TESSERA_AGENT_HANDOFF.md](TESSERA_AGENT_HANDOFF.md) for the current
 consolidation status and next actions. The canonical destination is
 [vitalitychems-dot/Zz](https://github.com/vitalitychems-dot/Zz).
 
-The root [TESSERA_AGENT_HANDOFF.md](../../TESSERA_AGENT_HANDOFF.md) covers the
+The root [TESSERA_AGENT_HANDOFF.md](TESSERA_AGENT_HANDOFF.md) covers the
 consolidated workspace.
