@@ -26,7 +26,7 @@ Agents submit finished or draft documentation to **Gitbook / Cordnation** for fi
 1. Gitbook / Cordnation files the item in the [intake log](log.md) with status `draft` (or moves it to `in review` when handing off).
 2. Ready items go to **Gitbook Moderator** — see [Moderator handoff](../review/moderator-handoff.md).
 3. Approved items may appear in Command Center digests to Father (~30 min cadence).
-4. Private Replit → GitHub push happens **only** after Father approves; merges need a separate explicit `merge`.
+4. After Father approves, **Father alone** pushes GitBook → GitHub on his authenticated connection; Replit is outside that path. Origin merges need a separate explicit `merge`.
 
 ## Standing constraints
 

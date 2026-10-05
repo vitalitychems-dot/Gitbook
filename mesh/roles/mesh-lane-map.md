@@ -1,6 +1,6 @@
 ---
- status: corrected-pending-publish
- note: Father is sole GitBook → GitHub push authority; Command Center coordinates only.
+status: published
+note: Father is sole GitBook → GitHub push authority; Command Center coordinates only.
 ---
 
 # Mesh lane map (for Father)
@@ -10,7 +10,7 @@
 Intake GB-014 (supersedes GB-013 publish/Delivery sections) · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (Father bulk sync; no new backlog) · License: TBD · Suggested path: `mesh/roles/mesh-lane-map.md`
 
 
-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub.
+**Status:** PUBLISHED — authority map aligned; each new change still requires the normal Moderator and Father gates.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 

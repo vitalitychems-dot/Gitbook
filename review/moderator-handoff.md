@@ -44,7 +44,7 @@ An item is **ready** for Moderator when all of the following are true:
 ## Out of Moderator scope
 
 - Digests to Father (Command Center)
-- Replit / GitHub pushes (Command Center, Father-gated)
+- GitBook → GitHub pushes (Father only after approval)
 - Merges (Father only)
 - Builds / branches (TESSERA)
 - Intake filing itself (Gitbook / Cordnation)

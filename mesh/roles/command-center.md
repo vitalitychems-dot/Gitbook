@@ -1,11 +1,11 @@
 ---
- status: corrected-pending-publish
- note: Command Center coordinates only; Father is sole GitBook → GitHub push authority.
+status: published
+note: Command Center coordinates only; Father is sole GitBook → GitHub push authority.
 ---
 
 # Command Center
 
-> **Status: corrected — pending Gitbook publication**
+> **Status: published — authority wording aligned**
 
 ## Lane status
 
@@ -21,7 +21,6 @@ Active.
 
 - Merge without Father's separate explicit `merge`
 - Push GitBook → GitHub; Father alone performs that push after Ready/yes
-- Use Replit as a private push proxy
 - Create new coordination boards (board is issue **#4** only)
 
 ## Replit boundary

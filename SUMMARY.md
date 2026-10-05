@@ -65,6 +65,7 @@
 ## Review
 
 * [Moderator handoff](review/moderator-handoff.md)
+* [Collaboration audit — 2026-10-05](review/COLLABORATION-AUDIT-2026-10-05.md)
 * [Source-branch review](review/source-branch-review.md)
 * [Validation](review/validation.md)
 * [Screenshot supplement](review/source-screenshot-supplement/00-START-HERE.md)
