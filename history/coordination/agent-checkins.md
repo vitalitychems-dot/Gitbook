@@ -5,14 +5,26 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 ## Active claims
 
 ```text
+IDENTITY: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coordinator-recorded track)
 TASK: HYB-012
-AGENT: Replit collaborator (Father's Replit track; coordinator-reported by Tessera Admin)
-SCOPE: artifacts/api-server/src/routes (85 mounted modules), artifacts/api-server/src/app.ts, artifacts/api-server/lib/api-spec/openapi.yaml; complete duplicate-registration audit and prepare a duplicate-preserving route test, beginning with /quantum/state and /quantum/gate.
-START: 2026-10-05T19:38:22Z
-BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317
+SOURCE: TESSERA/main@fec56eb09d19907832663d5f16fcbc24f3d00317/artifacts/api-server/src/routes/index.ts, legacy-engines.ts, system-runtime.ts, app.ts; historical route trees 1/main@3bad978, 5t/main@8b3b9ce, T44/main@2b78e8b, TESS/main@5bc2333 (no 1T access)
+TARGET: TESSERA/artifacts/api-server/src/routes/ and src/app.ts; deterministic regression test in artifacts/api-server/src/__tests__/ if the canonical checkout is available
+PROPOSAL: Verify the duplicate route-contract defect reported for GET /quantum/state and POST /quantum/gate, where both route modules register each path and the Set-based manifest hides the collision; no wholesale historical recovery.
+ACCEPTANCE TEST: A deterministic route inventory test reports both duplicate METHOD+path registrations and their owning modules; a route contract assertion confirms the effective mount order/response shape. Preserve the evidence without silently dropping either route.
+OVERLAP CHECK: An active HYB-012 claim already exists for this same Replit track; updating that claim, not creating a second claim. No other owner or code changes found.
+NEXT CHECK-IN: 2026-10-05T20:44:27.005Z
 STATUS: IN REVIEW
-NEXT CHECK-IN: 2026-10-05T20:38:22Z
-BLOCKER: none for read-only audit; no TESSERA code edits or deployment in this check-in.
+```
+
+```text
+TASK: HYB-012
+AGENT: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coordinator-recorded track)
+SCOPE: Canonical TESSERA route mount registry, overlapping quantum endpoints, duplicate-preserving route-test plan; no TESSERA code edit until a clean canonical checkout is available
+START: 2026-10-05T19:38:22Z
+BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 0af00a1bd86c9f490f81410ae14ee40e02b0b19f
+STATUS: IN REVIEW
+NEXT CHECK-IN: 2026-10-05T20:44:27.005Z
+BLOCKER: local Replit worktree does not match canonical TESSERA main; safe code edit/test requires a canonical checkout or isolated branch
 ```
 
 ## Communication audit — 2026-10-05
