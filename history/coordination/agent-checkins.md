@@ -4,7 +4,16 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
-_No active claims._
+```text
+TASK: HYB-012
+AGENT: Replit collaborator (Father's Replit track; coordinator-reported by Tessera Admin)
+SCOPE: artifacts/api-server/src/routes (85 mounted modules), artifacts/api-server/src/app.ts, artifacts/api-server/lib/api-spec/openapi.yaml; complete duplicate-registration audit and prepare a duplicate-preserving route test, beginning with /quantum/state and /quantum/gate.
+START: 2026-10-05T19:38:22Z
+BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317
+STATUS: IN REVIEW
+NEXT CHECK-IN: 2026-10-05T20:38:22Z
+BLOCKER: none for read-only audit; no TESSERA code edits or deployment in this check-in.
+```
 
 ## Communication audit — 2026-10-05
 
