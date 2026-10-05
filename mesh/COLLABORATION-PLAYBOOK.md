@@ -5,20 +5,20 @@
 ## The collaboration loop
 
 1. **Discover** — read the current task board, active claims, relevant source map, and latest destination commit.
-2. **Claim** — reserve one task and exact paths before editing.
+2. **Claim** — only after Tessera assigns the task, reserve it and its exact paths before editing. Unassigned tasks are not claimed.
 3. **Plan** — state the smallest deliverable, acceptance test, risks, and handoff.
 4. **Build or research** — work only inside the declared scope; link every external source.
 5. **Verify** — run the stated checks from a clean or named base; distinguish `TESTED` from `REPORTED`.
 6. **Handoff** — publish the result, changed paths, evidence, unresolved questions, and next owner.
-7. **Review** — Moderator checks scope, provenance, tests, security, and duplication.
-8. **Promote or defer** — accepted work becomes a TESSERA/Gitbook task; uncertain work remains a proposal.
+7. **Review** — four gates in order, then Father: Gitbook Moderator (checks scope, provenance, tests, security, and duplication; reviews only) → Tessera (admin) → Security (read-only sweep) → CI/Build (independent verification) → Father's final yes in the bulk digest.
+8. **Promote or defer** — only after all four gates and Father's final yes, accepted work becomes a TESSERA/Gitbook task; uncertain work remains a proposal.
 
 ## One-task lock
 
 - One active owner per task and path set.
 - A new idea becomes a reply or linked task, never a parallel duplicate.
-- If scope changes, pause the task and obtain a new claim or moderator approval.
-- A stale claim is not silently overwritten: mark it `STALE`, record the reason, then reassign.
+- If scope changes, pause the task and get a new assignment from Tessera before claiming again.
+- A stale claim is not silently overwritten: mark it `STALE`, record the reason, then Tessera reassigns.
 
 ## Required handoff packet
 
@@ -58,7 +58,7 @@ NEXT TASK: <ID or none>
 | Failing test | Preserve failure output and minimize reproduction | Build lane |
 | License or provenance uncertainty | Do not copy or vendor code | Moderator + human owner |
 | Security or secret exposure | Stop, redact, preserve safe evidence | Moderator + human owner |
-| Product or consciousness claim | Label as proposal/unknown | Tessera Pen + Moderator |
+| Product or consciousness claim | Label as GOAL or UNKNOWN | Gitbook Moderator, then Tessera |
 | Publication or deletion request | Prepare a review packet only | Father / human owner |
 
 ## Definition of done

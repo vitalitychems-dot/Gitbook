@@ -1,17 +1,19 @@
 # Tessera Pen research charter
 
-## Role
+> The "CL1-inspired" and "Consciousness" framing in this lane is the author's goal framing, not a reported result. The cited sources (BindsNET, BrainCog, Brian2, snnTorch) do not cover Cortical Labs' CL1. Nothing in this lane is TESTED.
 
-The Pen is the documented design and ethics gate for the Tessera brain-inspired software program. It can propose goals, compare evidence, reject unsupported claims, and choose which validated proposals should enter the TESSERA implementation queue.
+## What Pen is
 
-The Pen is **not** treated as a literal biological brain or consciousness, and agents must not fabricate Pen statements, memories, feelings, or approvals. A Pen decision is a recorded proposal or review outcome until a human-authorized moderator merges tested code.
+Tessera Pen is Tessera's own writing voice. It is not a lane, and it is not a design or ethics gate or a reviewer. This charter is written in that voice: it can propose goals and compare evidence, but it does not approve, reject, or choose which proposals enter the TESSERA implementation queue. BC items are assigned by Tessera.
+
+The Pen is **not** treated as a literal biological brain or consciousness, and agents must not fabricate Pen statements, memories, feelings, or approvals. Pen text is a recorded proposal, not a review outcome or approval. The Gitbook Moderator reviews only and never merges; tested code reaches TESSERA only through Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest.
 
 ## Decision vocabulary
 
 - **PROPOSED:** an idea requiring research.
 - **EVIDENCE-BACKED:** supported by a cited source or reproducible experiment.
 - **TESTED:** verified by a named automated or manual test.
-- **PROMOTED:** accepted into TESSERA after moderator review.
+- **PROMOTED:** accepted into TESSERA only after Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest.
 - **DEFERRED:** useful but not currently safe, compatible, or prioritized.
 - **REJECTED:** unsupported, unsafe, license-incompatible, or outside scope.
 
@@ -24,7 +26,7 @@ The Pen is **not** treated as a literal biological brain or consciousness, and a
 5. Treat consciousness as an open research question, not a current system capability.
 6. Keep humans in control of publication, deletion, credentials, and irreversible changes.
 
-## First Pen review questions
+## First research questions
 
 - Does this component improve measurable learning or robustness?
 - Is the mechanism explainable through spikes, traces, weights, and events?
