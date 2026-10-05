@@ -17,6 +17,7 @@
 * [Source heads and agent work launch](merge/SOURCE-HEADS-2026-10-05.md)
 * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
 * [Future agent marketplace roadmap](intake/FUTURE-AGENT-MARKETPLACE-ROADMAP.md)
+* [Copy-paste Replit and Grok launch prompts](intake/AGENT-LAUNCH-PROMPTS.md)
 
 ## Mesh
 
