@@ -9,20 +9,23 @@ note: Father is the sole GitBook → GitHub push authority; Command Center coord
 
 ## End-to-end flow
 
-Agents produce work → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → **Command Center** digests to Father approximately every 30 minutes → Father decides Ready/yes → **Father pushes GitBook → GitHub** → Father separately says `merge` for an Origin merge.
+Agents discover → claim one task → produce work → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → **Build** independently verifies → **Command Center** digests to Father approximately every 30 minutes → Father decides Ready/yes → **Father pushes GitBook → GitHub** → Father separately says `merge` for an Origin merge.
 
 ```mermaid
 flowchart TD
-  A[Agents produce work] --> B[GitBook intake<br/>Gitbook / Cordnation]
-  B --> C[Gitbook Moderator<br/>approve / reject]
-  C -->|approved| D[Command Center<br/>digest to Father ~30 min]
-  C -->|rejected| B
-  D --> E{Father Ready / yes?}
-  E -->|no| D
-  E -->|yes| F[Father<br/>pushes GitBook → GitHub]
-  F --> G{Father explicit merge?}
-  G -->|no| H[Stays unmerged]
-  G -->|yes| I[Merge]
+  A[Discover and claim one task] --> B[Agents produce scoped work]
+  B --> C[GitBook intake<br/>Gitbook / Cordnation]
+  C --> D[Gitbook Moderator<br/>scope / provenance review]
+  D -->|approved| E[Build<br/>independent verification]
+  D -->|needs work| C
+  E -->|pass| F[Command Center<br/>digest to Father ~30 min]
+  E -->|fail| C
+  F --> G{Father Ready / yes?}
+  G -->|no| F
+  G -->|yes| H[Father<br/>pushes GitBook → GitHub]
+  H --> I{Father explicit merge?}
+  I -->|no| J[Stays unmerged]
+  I -->|yes| K[Merge]
 ```
 
 ## Standing rules
@@ -39,6 +42,9 @@ flowchart TD
 | Push authority | Father alone pushes GitBook → GitHub after Ready/yes. |
 | Merge authority | Origin merges need Father's separate explicit `merge`. |
 | Private docs repo | `vitalitychems-dot/Gitbook`. |
+| Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |
+| Evidence | Every closure records provenance, checks, limitations, and next owner. |
+| Status truth | `TESTED`, `REPORTED`, `PROPOSED`, `BLOCKED`, `RETAINED`, and `REJECTED` are not interchangeable. |
 
 ## Lane boundaries
 
@@ -48,6 +54,7 @@ flowchart TD
 - **TESSERA** — code builds and branches.
 - **Mesh Cloud** — mesh connectivity, active lanes, and cross-agent blockers.
 - **Build** — verify-only; report TESTED versus REPORTED.
+- **All lanes** — declare skills used, use the handoff packet, and check in at claim, blocker, candidate result, and closure.
 - **Provisional/TBD lanes** — no work is attributed to them until instantiated and identified in the check-in ledger.
 
 ## Related pages
@@ -56,4 +63,7 @@ flowchart TD
 - [Mesh lane map](roles/mesh-lane-map.md)
 - [Command center](../history/coordination/command-center.md)
 - [How to submit](../intake/how-to-submit.md)
+- [Collaboration playbook](COLLABORATION-PLAYBOOK.md)
+- [Agent skill matrix](AGENT-SKILL-MATRIX.md)
+- [Collaboration metrics](COLLABORATION-METRICS.md)
 - [Moderator handoff](../review/moderator-handoff.md)
