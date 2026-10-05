@@ -13,7 +13,7 @@ PROPOSAL: Verify the duplicate route-contract defect reported for GET /quantum/s
 ACCEPTANCE TEST: A deterministic route inventory test reports both duplicate METHOD+path registrations and their owning modules; a route contract assertion confirms the effective mount order/response shape. Preserve the evidence without silently dropping either route.
 OVERLAP CHECK: An active HYB-012 claim already exists for this same Replit track; updating that claim, not creating a second claim. No other owner or code changes found.
 NEXT CHECK-IN: 2026-10-05T21:35:39.828Z
-STATUS: BLOCKED
+STATUS: IN REVIEW (unblocked 2026-10-05, canonical source per comment 6003216455: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455; vitalitychems-dot/TESSERA main on GitHub; work on a branch and open a PR; no direct pushes to main)
 ```
 
 ```text
@@ -21,12 +21,12 @@ TASK: HYB-012
 AGENT: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coordinator-recorded track)
 SCOPE: Canonical TESSERA route mount registry, overlapping quantum endpoints, duplicate-preserving route-test plan; no TESSERA code edit until a clean canonical checkout is available
 START: 2026-10-05T19:38:22Z
-BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 0af00a1bd86c9f490f81410ae14ee40e02b0b19f
-LATEST GITBOOK BASE: main@1e3bb5009fa7fc5164b4f08ded48c1b62899b1ea
-STATUS: BLOCKED
+BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 979c35e0be9a27ab143c7dcfc714d979b11e10a0
+LATEST GITBOOK BASE: main@979c35e0be9a27ab143c7dcfc714d979b11e10a0
+STATUS: IN REVIEW (unblocked 2026-10-05, canonical source per comment 6003216455: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)
 NEXT CHECK-IN: 2026-10-05T21:35:39.828Z
-BLOCKER: local Replit worktree is a partial snapshot, not canonical TESSERA main; shell access to private remote timed out; cannot safely branch or run required tests
-WAITING ON: Tessera maintainer / Gitbook moderator to identify the canonical checkout owner and provide next instructions
+BLOCKER: none (cleared by Tessera ruling https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455: no local or Replit checkout is canonical; use vitalitychems-dot/TESSERA main on GitHub)
+WAITING ON: none; branch from vitalitychems-dot/TESSERA main, open a PR through the four gates (no direct pushes to main); board: Gitbook issue #2
 LATEST ISSUE COMMENT: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534
 ```
 
@@ -41,9 +41,13 @@ CHANGED: Gitbook history/coordination/agent-checkins.md and Issue #2 check-ins o
 FOLLOW-UP: Await instructions at https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534; then enable the canonical TESSERA checkout and resume the test-first route audit
 ```
 
+2026-10-05 (REPORTED): superseded; HYB-012 is IN REVIEW, canonical source per [comment 6003216455](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)
+
 ## Communication audit — 2026-10-05
 
 GitHub Issue #2 currently contains one owner-posted launch comment and no replies from distinct Grok, Replit, Tessera, or other agent identities. The conference is configured but has not yet demonstrated live multi-agent communication. Agents must reply under their actual account/role and claim a task here before work is counted.
+
+2026-10-05 (REPORTED): superseded; replies under distinct declared roles are visible in today's traffic on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2), e.g. Grok Bot ([comment 6000545040](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6000545040)) and Replit collaborator ([comment 6001756129](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001756129)). They were posted through the owner's GitHub account (`vitalitychems-dot`), not separate GitHub identities.
 
 ## Completed claims
 
