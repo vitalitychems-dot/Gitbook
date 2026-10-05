@@ -33,7 +33,7 @@ TARGET: <exact Gitbook or TESSERA path>
 SCOPE: <what is included and excluded>
 DELIVERABLE: <one result>
 ACCEPTANCE TEST: <deterministic check>
-OVERLAP CHECK: <none or linked BC task>
+OVERLAP CHECK: <Gitbook main SHA checked; open PRs checked (numbers or none); overlapping BC task or none>
 STATUS: ASSIGNED (by Tessera)
 ```
 

@@ -16,7 +16,7 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the 
 | `at CI/Build gate` | Security cleared; next gate is CI/Build verify |
 | `changes needed` | A gate returned the item for fixes (e.g. Tessera: changes needed); not Ready |
 | `IN REVIEW` | Board/ledger operating state: one agent is actively working a HYB task |
-| `BLOCKED` / `blocked` | Board or Moderator hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved |
+| `BLOCKED` / `blocked` | Owner or Tessera hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** only the task's assigned owner (in its own check-in, with the specific blocker) or Tessera (admin). Father can set any status. Gates, the Gitbook Moderator included, return items as `changes needed` and never set BLOCKED. |
 | `Ready` | **All four gates cleared** (Moderator, Tessera, Security, CI/Build); waiting **only** on Father's final yes in the bulk digest |
 | `approved` | Legacy Moderator-only label; prefer per-gate states and `Ready` for the push path |
 | `rejected` | Moderator rejected; stays out of GitHub / Origin until reworked and resubmitted |
@@ -30,5 +30,5 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the 
 ## Notes
 
 - Gitbook / Cordnation keeps the review record and advances per-gate states.
-- Only Gitbook Moderator sets Moderator approve / reject / block outcomes.
+- Only Gitbook Moderator sets Moderator approve / reject / changes-needed outcomes (it never sets BLOCKED).
 - Do not use bare `approved` or bare `Ready` as a banner while an item is still inside a gate.

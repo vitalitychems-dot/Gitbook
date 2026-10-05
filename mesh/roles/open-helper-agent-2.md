@@ -21,7 +21,7 @@ Intake GB-004 · Author lane: Open Helper Agent 2 · Date (CT): 2026-10-05 · So
 - Own Ready staging or the Replit app set push (docs Ready staging: Gitbook / Cordnation only after all four gates; Replit app set staging and push: Command Center). OHA2 stays a floating helper.
 - Moderate or approve GitBook pages, run digests, or replace Mesh Cloud's tracking.
 - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
-- Open new boards. The one board is `vitalitychems-dot/tessera-coordination` issue #4.
+- Open new boards. The one board is [`vitalitychems-dot/Gitbook` issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2).
 
 ## Handoffs
 

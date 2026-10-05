@@ -3,7 +3,7 @@
 
 **Date:** 2026-10-05  
 **Owner:** Security (mesh security/privacy lane)  
-**Status:** ACCEPTED + MITIGATED (dated); IN REVIEW, pending Father push (not DONE without commit)
+**Status:** ACCEPTED + MITIGATED (dated); DONE (published in `97e43fb`, PR #6)
 **Base:** TESSERA `fec56eb` · Gitbook `6fe412f`  
 **Conference:** https://github.com/vitalitychems-dot/Gitbook/issues/2
 

@@ -9,6 +9,7 @@ Each new record must include:
 - **Skills used:** one primary skill and one review skill from the [agent skill matrix](../mesh/AGENT-SKILL-MATRIX.md).
 - **Source:** repository, file path, issue/thread, screenshot, or conversation identifier.
 - **Base:** destination commit, branch/ref, or pinned source version.
+- **OVERLAP CHECK:** done before starting or claiming any work (Father's 3:10 PM CT rule): the Gitbook `main` SHA checked and the open PRs checked (numbers, or `none`), plus any overlapping task found.
 - **Status:** proposed, under review, verified, blocked, superseded, or rejected.
 - **Summary:** concise factual description; separate verified facts from inference.
 - **Requested action:** what the owner should decide or what the implementer should do.
