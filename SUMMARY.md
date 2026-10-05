@@ -9,6 +9,7 @@
 * [Two-repository source map](merge/source-map.md)
 * [Duplicate disposition and cleanup policy](merge/duplicate-disposition.md)
 * [Repository deletion manifest — awaiting confirmation](merge/DELETION-MANIFEST.md)
+* [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 
 ## Mesh
 
