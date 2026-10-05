@@ -1,6 +1,6 @@
 # Grok-ready
 
-This is the single consolidated repository for the Tessera project and its related Grok handoff material. It replaces the separate repositories `1`, `1T`, `5t`, `TESS`, `T44`, `TX`, `tessera-grok-handoff`, `tessera-grok-handoff-complete`, and `tessera-complete-archives`, plus the 38 `subrepl-*` agent branches. Duplicates and generated files were removed, and unique work from every source was kept. Source-by-source details are in [`docs/CONSOLIDATION.md`](docs/CONSOLIDATION.md).
+This is the single consolidated repository for the Tessera project and its related Grok handoff material. It replaces the separate repositories `1`, `1T`, `5t`, `TESS`, `T44`, `TX`, `tessera-grok-handoff`, `tessera-grok-handoff-complete`, and `tessera-complete-archives`, plus the 38 `subrepl-*` agent branches. Duplicates and generated files were removed, and unique work from every source was kept. Source-by-source details are in [`docs/CONSOLIDATION.md`](../../../../merge/CHRONOLOGICAL-SOURCE-REVIEW.md).
 
 `main` is the source of truth. It starts from a single fresh commit with no history, so private data in the old commit histories doesn't carry over.
 
