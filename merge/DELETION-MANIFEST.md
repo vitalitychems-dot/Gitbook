@@ -1,4 +1,4 @@
-# Repository deletion manifest — awaiting confirmation
+# Repository deletion manifest — completed safe cleanup
 
 **Prepared:** 2026-10-05  
 **Destination repositories verified:**
@@ -6,7 +6,7 @@
 - [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA) — `216e4e89f40956225431eb1f774c522baaf9a330`
 - [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook) — `eefbe2fd53eba6a917c4a078dac15e5beade69da`
 
-Deletion is irreversible. This manifest is a review gate, not an authorization. No repository in the candidate list has been deleted.
+Deletion was performed only after explicit confirmation of the exact eight names below. The operation did not touch `TESSERA` or `Gitbook`.
 
 ## Exact coverage result
 
@@ -14,7 +14,15 @@ The post-migration SHA-256 scan compared every currently tracked file in each so
 
 `Everything`, `TX`, `Tessera-main`, `tessera-coordination`, `tessera-gitbook`, `tessera-replit`, `tessera-unified`, and `z`.
 
-These eight are the only repositories eligible for deletion under the owner's “100% copied/moved or empty” rule. All other candidates retain un-moved unique files and must be retained.
+These eight were the only repositories eligible for deletion under the owner's “100% copied/moved or empty” rule. They have now been deleted. All other candidates retain un-moved unique files and remain intact.
+
+## Completed deletion
+
+Deleted after confirmation:
+
+`Everything`, `TX`, `Tessera-main`, `tessera-coordination`, `tessera-gitbook`, `tessera-replit`, `tessera-unified`, and `z`.
+
+GitHub verification confirmed the protected destinations remain present, private, and on `main`.
 
 ## Candidate repositories for deletion
 
@@ -46,8 +54,8 @@ The following **19** repositories are the exact account-level candidates remaini
 
 Before deletion, confirm one of these exact scopes:
 
-1. **Delete only the eight 100%-covered/empty repositories** listed above.
-2. **Delete a smaller exact subset** of those eight; reply with the names.
-3. **Do not delete yet**; retain all repositories.
+1. The confirmed safe cleanup is complete.
+2. The remaining 11 source repositories are retained because their tracked files are not 100% represented in the destinations.
+3. Any future deletion requires a new exact coverage scan and a new explicit confirmation.
 
 The deletion operation will be run only against the exact confirmed names and will not touch `TESSERA` or `Gitbook`.
