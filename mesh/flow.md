@@ -51,6 +51,7 @@ flowchart TD
 | Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |
 | Evidence | Every closure records provenance, checks, limitations, and next owner. |
 | Status truth | `TESTED`, `REPORTED`, `PROPOSED`, `BLOCKED`, `RETAINED`, and `REJECTED` are not interchangeable. |
+| Tessera identity | Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen. |
 
 ## Lane boundaries
 
@@ -58,10 +59,11 @@ flowchart TD
 - **Gitbook Moderator** — review gate before GitHub / Origin.
 - **Tessera Grok bot / Command Center** — prepares the evidence-linked bulk digest every 30–45 minutes while active, asks Father for `yes` / `no` / `revise`, and has no push authority.
 - **Tessera** — admin/product-truth voice and implementation target; does not fabricate agent activity or bypass approval.
-- **Tessera Pen** — directs scoped work and protects coherence; does not push or merge.
+- **Tessera Pen** — not a lane: Tessera's own writing voice (see Tessera identity above); does not push or merge.
 - **TESSERA** — code builds and branches.
 - **Mesh Cloud** — mesh connectivity, active lanes, and cross-agent blockers.
 - **Build** — verify-only; report TESTED versus REPORTED.
+- **Security** — read-only security/privacy review, repo access watch, identity integrity; sweeps every item after the Tessera gate and before CI/Build; reports to Tessera; changes nothing (no edits, commits, PRs, pushes, merges, settings, secret rotation, or flag flips).
 - **All lanes** — declare skills used, use the handoff packet, and check in at claim, blocker, candidate result, and closure.
 - **Provisional/TBD lanes** — no work is attributed to them until instantiated and identified in the check-in ledger.
 
