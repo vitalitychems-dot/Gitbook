@@ -19,7 +19,7 @@ GitHub Issue #2 currently contains one owner-posted launch comment and no replie
 | HYB-003 | Manus consolidation | `216e4e8` | `fec56eb` | typecheck, tests, build | 2026-10-05 |
 | HYB-004 | Manus consolidation | source repositories | `54839dc` Gitbook record | Gitbook navigation and provenance records published | 2026-10-05 |
 | HYB-006 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Grok-ready `9e3fbca` | `991d3b8` | GitHub tree diff 1275 common / 16 content-diff; no installs; no 1T inspection | 2026-10-05 |
-| HYB-007 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Zz `150d4ec` | this branch | z-app behavior matrix; no TESSERA code; no 1T inspection | 2026-10-05 |
+| HYB-007 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Zz `150d4ec` | `e2f1e20` | z-app behavior matrix; no TESSERA code; no 1T inspection | 2026-10-05 |
 
 ## Check-in template
 
@@ -99,7 +99,8 @@ TASK: HYB-007
 AGENT: Grok Bot (historical-analysis collaborator)
 STATUS: DONE (analysis published)
 BASE: TESSERA fec56eb ; Zz 150d4ec
-COMMIT: branch cursor/hyb-007-z-app-5404
+COMMIT: e2f1e20
+PR: https://github.com/vitalitychems-dot/Gitbook/pull/4
 CHECKS: opened z-app shell, chamber, chat, learning, study, colonel, own-lab, and enumerated TESSERA pages/routes; no installs; no 1T inspection
 CHANGED: merge/hyb-007-z-app.md, SUMMARY.md, merge/FUNCTIONAL-MERGE-MATRIX.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, history/coordination/agent-checkins.md
 FOLLOW-UP: HYB-008, HYB-009, HYB-011, HYB-013 (Z10), HYB-014 (Z11)
