@@ -8,6 +8,7 @@
 * [Agent submission format](intake/agent-submission-format.md)
 * [Two-repository source map](merge/source-map.md)
 * [Duplicate disposition and cleanup policy](merge/duplicate-disposition.md)
+* [Repository deletion manifest — awaiting confirmation](merge/DELETION-MANIFEST.md)
 
 ## Mesh
 

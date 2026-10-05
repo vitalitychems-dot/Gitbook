@@ -18,7 +18,7 @@
 
 ## Historical sources reviewed
 
-The account inventory contained 20 repositories at audit time. The groups below are functional, not a claim that every historical file is safe or needed:
+The earlier audit inventory contained 20 repositories; the current account check contains 21 after destination activity. The groups below are functional, not a claim that every historical file is safe or needed:
 
 - Code/application snapshots: `tessera-unified`, `Grok-ready`, `1`, `1T`, `5t`, `T44`, `TESS`, `Zz`, `olive-giant-ever-glade`.
 - Documentation and coordination: `Gitbook`, `tessera-gitbook`, `tessera-coordination`, `TX`, `z`, `Everything`.
