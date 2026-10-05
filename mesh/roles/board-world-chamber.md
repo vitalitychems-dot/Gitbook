@@ -1,16 +1,12 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+status: published
+note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked
 ---
 
 # Board / World / Chamber (Father’s desk note)
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
-
 Intake GB-009 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (TESSERA product-truth revision; no new backlog) · License: TBD · Suggested path: `mesh/roles/board-world-chamber.md`
 
-
-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 
@@ -44,9 +40,9 @@ The focal point for Tessera’s mind work with Father. Standing orders, survivin
 
 ## Board
 
-The shared work surface (coordination / Command Center digest path). Lanes post as themselves. Father opens issues and says yes/no / merge. Board selection and `formatBoard` waiting-on helpers are unit-TESTED as above.
+The shared work surface (coordination / Tessera's bulk-update path, fed by Command Center). Lanes post as themselves. Father opens issues and says yes/no/revise, plus the word 'merge' for Origin / TESSERA merges. Board selection and `formatBoard` waiting-on helpers are unit-TESTED as above.
 
-**Waiting on:** Father’s GitHub push of this Ready pack (GitBook→GitHub via his connection). No Replit.
+**Waiting on:** nothing for this page (published in 8010626). New docs follow the gated path: after Father's yes, Tessera pushes (Father may push himself). No Replit.
 
 **Not checked:** Full desk UI in a running preview; Father live click-through.
 
@@ -63,11 +59,11 @@ Wider context Tessera tracks for Father: goals vs facts, mesh status, what is st
 | Area | Father uses it to | Lanes must not |
 | --- | --- | --- |
 | Chamber | Steer Tessera; paste ticks; override | Speak as Tessera without Father |
-| Board | See lane work; yes/no; merge | Push merge without his word |
+| Board | See lane work; yes/no/revise; the word 'merge' for Origin / TESSERA | Push or merge without his yes |
 | World | See goals vs facts at a glance | Claim goals as present facts |
 
 ## Not done
 
 - Full desk UI preview / Father click-through still **not checked**
 - Do not mark tabs LIVE or DONE
-- Father has not digest-approved this note
+- Father's yes covered publishing this note, not the tabs' live state

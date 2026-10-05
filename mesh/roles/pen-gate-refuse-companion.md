@@ -1,16 +1,14 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+status: published
+note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked
 ---
 
 # Pen-gate refuse companion
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
-
 Intake GB-011 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) · License: TBD · Suggested path: `mesh/roles/pen-gate-refuse-companion.md`
 
 
-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub. Must match tone guide / refuse-and-offer IDs. No new refuse categories without TESSERA.
+Must match tone guide / refuse-and-offer IDs. No new refuse categories without TESSERA.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 

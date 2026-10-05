@@ -1,15 +1,11 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+status: published
+note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked
 ---
 
 # Pen ability set (framing)
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
-
 Intake GB-006 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (Father ordered continue writing) · License: TBD · Suggested path: `mesh/roles/pen-ability-set-framing.md`
-
-**Status:** draft for GitBook — not shippable until Moderator pass and Father’s digest yes.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 

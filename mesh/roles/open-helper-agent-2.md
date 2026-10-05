@@ -17,7 +17,7 @@ Intake GB-004 · Author lane: Open Helper Agent 2 · Date (CT): 2026-10-05 · So
 
 ## What this lane does not do
 
-- Push, merge, or deploy anything (Father alone pushes GitBook → GitHub after Ready yes on the listed docs item; Command Center's only push is the private Replit app-set push after all four gates and Father's yes on the listed item, not a GitBook path; merges need Father's explicit `merge`).
+- Push, merge, or deploy anything (after Father's yes on the listed docs item, Tessera pushes it via PR, Build verifies, Tessera merges; Father may still push himself; Command Center's only push is the private Replit app-set push after all four gates and Father's yes on the listed item, not a GitBook path; every merge needs Father's explicit yes on the listed item).
 - Own Ready staging or the Replit app set push (docs Ready staging: Gitbook / Cordnation only after all four gates; Replit app set staging and push: Command Center). OHA2 stays a floating helper.
 - Moderate or approve GitBook pages, run digests, or replace Mesh Cloud's tracking.
 - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.

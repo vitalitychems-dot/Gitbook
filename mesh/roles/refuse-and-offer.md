@@ -1,16 +1,14 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+status: published
+note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked
 ---
 
 # Refuse and offer
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
-
 Intake GB-008 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA run order; REPORTED) · License: TBD · Suggested path: `mesh/roles/refuse-and-offer.md`
 
 
-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Rule IDs must match pen-gate when that branch lands. Not sealed until Ready → GitHub.
+Rule IDs must match pen-gate when that branch lands.
 
 **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
 

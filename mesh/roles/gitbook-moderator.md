@@ -5,8 +5,6 @@ note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Mode
 
 # Gitbook Moderator
 
-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
-
 ## Lane status
 
 Active.
@@ -14,7 +12,7 @@ Active.
 ## Owns
 
 - Review gate **before** anything reaches GitHub / Origin
-- Decide on intake items: **approve**, **reject**, or **block**
+- Decide on intake items: **approve**, **reject**, or **changes needed**
 
 ## Does not do
 
@@ -24,9 +22,9 @@ TBD (beyond: this lane is the review gate, not intake filing, digests, builds, p
 
 | Outcome | Next |
 |---------|------|
-| Approved | Eligible for Command Center digest / later Father-gated push |
+| Approved | Goes to Tessera → Security → CI/Build; once all four gates clear, Gitbook / Cordnation stages it Ready for Tessera's bulk update to Father (Command Center feeds it) |
 | Rejected | Returned via intake status; Gitbook / Cordnation keeps the record |
-| Blocked | Held; does not proceed to digest/push until unblocked or resubmitted per Moderator note |
+| Changes needed | Held; does not proceed to digest/push until fixed and resubmitted per Moderator note |
 
 ## Notes
 
