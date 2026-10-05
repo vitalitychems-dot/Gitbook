@@ -5,12 +5,14 @@
 ## Start here
 
 * [Consolidated TODO list](intake/consolidated-todo.md)
+* [Authoritative hybrid consolidation backlog](intake/HYBRID-CONSOLIDATION-BACKLOG.md)
 * [Agent submission format](intake/agent-submission-format.md)
 * [Two-repository source map](merge/source-map.md)
 * [Duplicate disposition and cleanup policy](merge/duplicate-disposition.md)
 * [Repository deletion manifest — awaiting confirmation](merge/DELETION-MANIFEST.md)
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
+* [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
 
 ## Mesh
 
@@ -64,6 +66,7 @@
 * [Source index](history/source-index/z-repository-index.md)
 * [Handoff summary](history/handoffs/privacy-screened-handoff-summary.md)
 * [Complete archive summary](history/handoffs/complete-source-archives-summary.md)
+* [Agent check-ins](history/coordination/agent-checkins.md)
 
 ## Recovered exact records
 
