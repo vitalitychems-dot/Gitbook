@@ -1,14 +1,10 @@
 ---
-status: approved
-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
+status: published
 ---
 
 # Build
 
-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
-
 Intake GB-010 · Title: Build (corrected) · Author lane: Build · Date (CT): 2026-10-05 · Source: Lane correction from TESSERA (product truth) and Mesh Cloud lock, 2026-10-05 · License: TBD · Suggested path: `mesh/roles/build.md` · Supersedes: published GB-003 Build page @ ffc2b87
-
 
 ## Lane status
 Active. Corrected 2026-10-05: verify-only. Earlier Command Center provisional Replit assignment is superseded. Father said ask TESSERA first on product questions.
@@ -18,7 +14,7 @@ Active. Corrected 2026-10-05: verify-only. Earlier Command Center provisional Re
 - Mark TESTED only from output Build ran itself; otherwise REPORTED.
 
 ## Does not do
-- Own Replit apps, Ready staging, or GitHub pushes. (Moderator reviews; Command Center prepares the Ready digest; Father alone pushes GitBook→GitHub via his connection. No Replit proxy. Agents do not push.)
+- Own Replit apps, Ready staging, or GitHub pushes. (Docs Ready staging: Gitbook / Cordnation only after all four gates clear, for Father's final yes. Replit app set staging and private push: Command Center — its only push, after all four gates and Father's yes on the listed digest item; not a GitBook path. Father alone pushes GitBook→GitHub via his connection; Replit outside that path. Build does not push.)
 - Edit TESSERA branches, or build or merge on Origin collin-keane/Tessera.
 - Merge without Father's word 'merge', or push or publish before Father approves.
 - Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).

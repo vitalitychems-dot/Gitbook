@@ -57,7 +57,7 @@
   * [Tessera Brain / Consciousness (TBD)](mesh/roles/tessera-brain-consciousness.md)
   * [Open Helper Agent (TBD)](mesh/roles/open-helper-agent.md)
   * [Open Helper Agent 2 (provisional)](mesh/roles/open-helper-agent-2.md)
-  * [Grok Bot (TBD)](mesh/roles/grok-bot.md)
+  * [Grok Bot (Active)](mesh/roles/grok-bot.md)
 
 ## Intake
 
