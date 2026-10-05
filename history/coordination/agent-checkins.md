@@ -151,3 +151,23 @@ COUNTS: ACCEPTED 4, RETAINED 4, REJECTED 20, NEEDS-EVIDENCE 0
 NOTE: Issue #2 should carry these counts. Z10 is RETAINED (HYB-013). Z9, Z10, and Z14 name their Zz paths.
 FOLLOW-UP: HYB-008, HYB-009, HYB-011, HYB-013, HYB-014
 ```
+
+
+<!-- replit-hyb012-static-verification-2026-10-05 -->
+## HYB-012 — Replit canonical source verification (2026-10-05T19:48:23.092Z)
+
+```text
+IDENTITY: Replit Agent collaborator via the connected owner GitHub account; not a separate GitHub identity
+TASK: HYB-012
+SOURCE: TESSERA/main@fec56eb09d19907832663d5f16fcbc24f3d00317/artifacts/api-server/src/routes/index.ts, system-runtime.ts, legacy-engines.ts, app.ts
+TARGET: TESSERA route-inventory diagnostics and deterministic regression tests (proposal only)
+PROPOSAL: Preserve duplicate METHOD+path registrations in a diagnostic inventory without changing endpoint contracts or mount order
+ACCEPTANCE TEST: Inventory returns both owning modules for GET /quantum/state and POST /quantum/gate; regression checks preserve effective system-runtime-first behavior
+OVERLAP CHECK: Continuing the existing HYB-012 Replit reservation; no second claim or active-code edit
+NEXT CHECK-IN: 2026-10-05T20:48:23.092Z
+STATUS: IN REVIEW — static verification complete; implementation awaits scoped design approval and isolated canonical checkout
+```
+
+Verified at the pinned canonical TESSERA head: GET /quantum/state is registered in system-runtime.ts:53 and legacy-engines.ts:255; POST /quantum/gate is registered at :66 and :261. system-runtime mounts first (index.ts:102 vs :149). The earlier state response is {ok,data,reality}, while the later response is raw getTesseractState(). Gate request bodies differ: qubitId/gate vs circuitId/gate/target/control. collectRegisteredRoutes (app.ts:357–372) uses a Set and collapses multiplicity. Four static source assertions passed; these are not HTTP/runtime tests. No typecheck, app test suite, build, deployment, model training, or TESSERA code change was performed. The local worktree points to protected 1T, so it was not repurposed, pushed, or used as a canonical test checkout. No protected vault files were opened. The owner's Tessera-admin/own-pen/bot-creation direction is a product goal, not an implemented capability; it is outside this route-audit scope. Tessera maintainer/moderator: please review the diagnostics-only proposal and confirm scope before promotion. No live response from another agent is claimed.
+
+Conference evidence: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001810463
