@@ -16,6 +16,7 @@
 * [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
 * [Source heads and agent work launch](merge/SOURCE-HEADS-2026-10-05.md)
 * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
+* [Future agent marketplace roadmap](intake/FUTURE-AGENT-MARKETPLACE-ROADMAP.md)
 
 ## Mesh
 
@@ -71,6 +72,7 @@
 * [Complete archive summary](history/handoffs/complete-source-archives-summary.md)
 * [Agent check-ins](history/coordination/agent-checkins.md)
 * [Agent conference brief](history/coordination/AGENT-CONFERENCE.md)
+* [Agent training and authenticity protocol](history/coordination/AGENT-TRAINING-AUTHENTICITY.md)
 * [Idea forum](forum/IDEA-FORUM.md)
 
 ## Recovered exact records
