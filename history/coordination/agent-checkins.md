@@ -105,3 +105,16 @@ CHECKS: opened z-app shell, chamber, chat, learning, study, colonel, own-lab, an
 CHANGED: merge/hyb-007-z-app.md, SUMMARY.md, merge/FUNCTIONAL-MERGE-MATRIX.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, history/coordination/agent-checkins.md
 FOLLOW-UP: HYB-008, HYB-009, HYB-011, HYB-013 (Z10), HYB-014 (Z11)
 ```
+
+```text
+TASK: HYB-007
+AGENT: Grok Bot (historical-analysis collaborator)
+STATUS: DONE (Tessera review applied; PR stays draft)
+BASE: TESSERA fec56eb ; Zz 150d4ec
+PR: https://github.com/vitalitychems-dot/Gitbook/pull/4
+CHECKS: line-level read of theorem-lab.ts and CompressionLabPage.tsx against own-lab.ts; no installs; no 1T inspection
+CHANGED: merge/hyb-007-z-app.md, history/coordination/agent-checkins.md
+COUNTS: ACCEPTED 4, RETAINED 4, REJECTED 20, NEEDS-EVIDENCE 0
+NOTE: Issue #2 should carry these counts. Z10 is RETAINED (HYB-013). Z9, Z10, and Z14 name their Zz paths.
+FOLLOW-UP: HYB-008, HYB-009, HYB-011, HYB-013, HYB-014
+```

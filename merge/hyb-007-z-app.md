@@ -34,12 +34,12 @@ Compare **behavior**, not package manifests or file counts. Port isolated ideas 
 | Z6 | Grok scaffold: share-card brand gate, PWA middleware, atomic handoff into `public/`, preview and browser smoke | Absent from TESSERA `scripts/` | No | — | REJECTED | VERIFIED-IN-CODE |
 | Z7 | WebRTC `P2PRoom` client that posts to `/api/rtc` | Unmounted. The shell does not import it, and `server/` has no signaling route | No | — | REJECTED | VERIFIED-IN-CODE |
 | Z8 | Nitro/Vercel build that runs database migrations (`vercel.json`, `package.json` `build`) | Outside the workspace contract | No | — | REJECTED → HYB-009 | VERIFIED-IN-CODE |
-| Z9 | Colonel stack machine: arithmetic and jumps run; mesh-style opcodes are recorded and not sent. `scripts/colonel.test.mjs` exists | No colonel module in the enumerated trees. `/colonel-language` redirects to `/sovereign-language` | Isolated idea; leave it in Zz until a maintainer names a target | — | RETAINED | VERIFIED-IN-CODE |
-| Z10 | Own-lab local stand-ins (body, spike, short memory, atom match) with `scripts/own-lab.test.mjs` | `theorem-lab.ts` and `CompressionLabPage.tsx` exist; their bodies were not diffed | Wait for that diff | `artifacts/api-server/src/routes/theorem-lab.ts`, `artifacts/tessera/src/pages/CompressionLabPage.tsx` | NEEDS-EVIDENCE | VERIFIED-IN-CODE (z-app); REPORTED (TESSERA filenames) |
+| Z9 | Colonel stack machine: arithmetic and jumps run; mesh-style opcodes are recorded and not sent. `scripts/colonel.test.mjs` exists | No colonel module in the enumerated trees. `/colonel-language` redirects to `/sovereign-language` | Stays in Zz until a maintainer names a TESSERA target, a test, and a rollback | `Zz/artifacts/z-app/src/lib/tessera/colonel.ts` | RETAINED | VERIFIED-IN-CODE |
+| Z10 | Own-lab local stand-ins (body, spike, short memory, atom match) with `scripts/own-lab.test.mjs` | No. `theorem-lab.ts` stores generated math proofs; `CompressionLabPage.tsx` compresses NASA images | Stays in Zz | `Zz/artifacts/z-app/src/lib/tessera/own-lab.ts` | RETAINED → HYB-013 | VERIFIED-IN-CODE |
 | Z11 | Vow check before a lesson is sealed: refuse credentials, recipes, trading, impersonation, and a false “fully detached” claim | No `vowCheck` symbol in the enumerated trees. The honesty banner already states the pen and the closed-file rule | Policy idea for a later test | `mesh/roles/honesty-banner.md` | RETAINED → HYB-014 | VERIFIED-IN-CODE |
 | Z12 | Living loop: unattended HTTPS search, public-page read, and a disposable task-copy lesson | `GrandEvolutionPage` is a separate surface. This loop is an outbound fetcher | No. Outbound fetch stays on the allowlisted guard | `artifacts/api-server/src/lib/safe-fetch.ts` | REJECTED | VERIFIED-IN-CODE |
 | Z13 | Small HTTPS client that refuses non-HTTPS and the host `mesh.tessera.sovereign` | The allowlisted fetch guard and its test are already in the API tree | Already | `artifacts/api-server/src/lib/safe-fetch.ts`, `artifacts/api-server/src/__tests__/safe-fetch-policy.test.ts` | ACCEPTED | VERIFIED-IN-CODE |
-| Z14 | Local world sandbox: six districts, sealed laws, and speech that can place a short name on the map | `/universe` is the world surface. This browser sandbox is a separate toy | Idea only | `artifacts/tessera/src/pages/UniverseHubPage.tsx` | RETAINED | VERIFIED-IN-CODE |
+| Z14 | Local world sandbox: six districts, sealed laws, and speech that can place a short name on the map | `/universe` is the world surface. This browser sandbox is a separate toy | Stays in Zz | `Zz/artifacts/z-app/src/lib/tessera/world.ts` | RETAINED | VERIFIED-IN-CODE |
 | Z15 | Fraction ballots that vote yea when an expertise tag hits the proposal | Council pages and `council.ts` exist. This tally is a keyword match | No | `artifacts/tessera/src/pages/GrandCouncilPage.tsx`, `artifacts/api-server/src/routes/council.ts` | REJECTED | VERIFIED-IN-CODE |
 | Z16 | Local sacred clock (`sacredNow`) | Sacred timing is already on the API. `/sacred-conference` redirects to `/universe` | No second clock | `artifacts/api-server/src/routes/sacred-conference.ts` | REJECTED | VERIFIED-IN-CODE |
 | Z17 | Proof rotator that reads `main` for a fixed repo list, including `1T`, and appends `data/tessera-proof.json` | `/proof-center` exists. This rotator is a different mechanism. `1T` was not opened | No | `artifacts/tessera/src/pages/ProofCenterPage.tsx` | REJECTED → HYB-011 | VERIFIED-IN-CODE |
@@ -55,7 +55,9 @@ Compare **behavior**, not package manifests or file counts. Port isolated ideas 
 | Z27 | Glyph reader that names standard signs and refuses to invent plaintext | Origin mark, not a product surface | No | — | REJECTED | VERIFIED-IN-CODE |
 | Z28 | Sovereignty pillars that keep weights, training compute, and a live fleet unowned | `/sovereignty-readiness` is the product surface. The same honesty line is already on the banner | Already | `artifacts/tessera/src/pages/SovereigntyReadinessPage.tsx`, `mesh/roles/honesty-banner.md` | ACCEPTED | VERIFIED-IN-CODE (z-app pillars and the banner). Readiness page body was not re-read |
 
-Disposition counts: **ACCEPTED 4** (Z2, Z3, Z13, Z28) · **RETAINED 3** (Z9, Z11, Z14) · **NEEDS-EVIDENCE 1** (Z10) · **REJECTED 20** (Z1, Z4–Z8, Z12, Z15–Z27).
+Disposition counts: **ACCEPTED 4** (Z2, Z3, Z13, Z28) · **RETAINED 4** (Z9, Z10, Z11, Z14) · **REJECTED 20** (Z1, Z4–Z8, Z12, Z15–Z27) · **NEEDS-EVIDENCE 0**.
+
+A line-level comparison shows own-lab has no behavioral overlap with theorem-lab or CompressionLab, so it stays in Zz until it has a named TESSERA target, a test, and a rollback.
 
 ## Acceptance tests
 
@@ -74,7 +76,7 @@ This pass did not install dependencies or start either app. A maintainer can re-
 - **HYB-009** — `imports/`, held packet, study log, and `data/` runtime.
 - **HYB-011** — the proof rotator names `1T`. This pass did not open that repository or the closed vault shelf.
 - **HYB-012** — z-app server functions are not new API routes.
-- **HYB-013** — own-lab versus theorem-lab and the compression lab (Z10).
+- **HYB-013** — Z10 stays RETAINED. Own-lab does not share behavior with theorem-lab or Compression Lab.
 - **HYB-014** — a vow-check assertion can join the historical merge gate later (Z11). It is not added here.
 - **HYB-017** — the code view states that wallet, token, and webhook snippets do not run. Storefront scope stays with that task.
 
@@ -84,4 +86,4 @@ This page is documentation only. Reverting it leaves TESSERA unchanged. No appli
 
 ## Provenance
 
-Read from GitHub at the SHAs above. Opened z-app routes, the shell, the chamber store, chat, learning, study, world, colonel, own-lab, conference, proof, recall, vault index, glyphs, SDK, tools, living loop, code view, memory view, brand-check, auth invariant, sign-in gate, connector readiness, and the P2P client. Enumerated TESSERA pages, tessera lib, API routes, tests, and scripts, and opened `App.tsx`, `ChatPage.tsx`, `package.json`, and `admin-session.ts`. `imports/objects`, `held-packet.ts`, `study-log.ts`, `father-profile.ts`, and `data/**` bodies were not opened. `1T` was not opened. No TESSERA file was edited. Moderator/Father seal is still outstanding.
+Read from GitHub at the SHAs above. Opened z-app routes, the shell, the chamber store, chat, learning, study, world, colonel, own-lab, conference, proof, recall, vault index, glyphs, SDK, tools, living loop, code view, memory view, brand-check, auth invariant, sign-in gate, connector readiness, and the P2P client. Enumerated TESSERA pages, tessera lib, API routes, tests, and scripts, and opened `App.tsx`, `ChatPage.tsx`, `package.json`, `admin-session.ts`, `artifacts/api-server/src/routes/theorem-lab.ts`, and `artifacts/tessera/src/pages/CompressionLabPage.tsx`. `imports/objects`, `held-packet.ts`, `study-log.ts`, `father-profile.ts`, and `data/**` bodies were not opened. `1T` was not opened. No TESSERA file was edited. Moderator/Father seal is still outstanding.
