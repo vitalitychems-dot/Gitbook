@@ -1,10 +1,10 @@
 # CL1-inspired software research source manifest
 
-**Status:** Research sources approved for evaluation; no upstream repository is copied into Gitbook.
+**Status:** Research sources PROPOSED for evaluation (no approver on record); no upstream repository is copied into Gitbook.
 
 ## Purpose
 
-These projects provide complementary software models of spiking neural networks (SNNs). They do **not** reproduce Cortical Labs' CL1, which uses living biological cells and laboratory hardware. They are approved as references for a safe, software-only Tessera research lane.
+These projects provide complementary software models of spiking neural networks (SNNs). They do **not** reproduce Cortical Labs' CL1, which uses living biological cells and laboratory hardware. They are proposed as references for a safe, software-only Tessera research lane.
 
 | Source | Official repository | License shown by upstream | Best use in Tessera research | Incorporation rule |
 |---|---|---|---|---|
@@ -20,7 +20,7 @@ These projects provide complementary software models of spiking neural networks 
 3. Agents must pin versions or commits before running experiments and must record the exact version in the check-in ledger.
 4. Never run `pip install` from an unreviewed fork, pull request, archive, or pasted command.
 5. Do not vendor whole upstream repositories into Gitbook or TESSERA. Build small, tested, original adapters instead.
-6. Any code copied or adapted must include provenance, license text/notice requirements, and a moderator review before merge.
+6. Any code copied or adapted must include provenance, license text/notice requirements, and the full review path before merge: Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest. The Moderator reviews only; it does not merge.
 
 ## Proposed hybrid boundary
 
