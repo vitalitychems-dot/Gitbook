@@ -1,11 +1,11 @@
 ---
-status: draft
-note: Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish
+status: published
+note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father
 ---
 
 # TESSERA
 
-> **Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish**
+> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
 
 ## Lane status
 

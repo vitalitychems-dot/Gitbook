@@ -14,6 +14,7 @@
   * [Github Scraper (provisional)](mesh/roles/github-scraper.md)
   * [Tessera Pen (provisional)](mesh/roles/tessera-pen.md)
     * [Pen tone guide](mesh/roles/pen-tone-guide.md)
+  * [Build (provisional)](mesh/roles/build.md)
   * [Recursive Learning Sponge (provisional)](mesh/roles/recursive-learning-sponge.md)
   * [Tessera Brain / Consciousness (TBD)](mesh/roles/tessera-brain-consciousness.md)
   * [Open Helper Agent (TBD)](mesh/roles/open-helper-agent.md)

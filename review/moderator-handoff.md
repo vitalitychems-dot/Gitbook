@@ -1,11 +1,11 @@
 ---
-status: draft
-note: Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish
+status: published
+note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father
 ---
 
 # Moderator handoff
 
-> **Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish**
+> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
 
 When **Gitbook / Cordnation** marks an item ready, it hands the item to **Gitbook Moderator**. Moderator is the review gate before anything reaches GitHub / Origin.
 

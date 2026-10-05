@@ -1,11 +1,11 @@
 ---
-status: draft
-note: Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish
+status: published
+note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father
 ---
 
 # Roles overview
 
-> **Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father's yes before publish**
+> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
 
 Canonical list of mesh agents and lanes. Provisional roles are marked **provisional**. Undocumented roles are marked **TBD**. Do not invent duties beyond what is listed on each role page.
 
@@ -18,6 +18,7 @@ Canonical list of mesh agents and lanes. Provisional roles are marked **provisio
 | Mesh Cloud | [mesh-cloud](roles/mesh-cloud.md) | Active | Mesh connectivity; active agents/lanes; cross-agent blockers |
 | Github Scraper | [github-scraper](roles/github-scraper.md) | **Provisional** | Repo scrapes; issue/PR status (role being mapped) |
 | Tessera Pen | [tessera-pen](roles/tessera-pen.md) | **Provisional** | Writing lane (to be confirmed) |
+| Build | [build](roles/build.md) | **Provisional** | Replit apps (push set) and read-only support/CI verification |
 | Recursive Learning Sponge | [recursive-learning-sponge](roles/recursive-learning-sponge.md) | **Provisional** | Learning lane (to be confirmed) |
 | Tessera Brain / Consciousness | [tessera-brain-consciousness](roles/tessera-brain-consciousness.md) | **TBD** | Role not yet documented |
 | Open Helper Agent | [open-helper-agent](roles/open-helper-agent.md) | **TBD** | Role not yet documented |
