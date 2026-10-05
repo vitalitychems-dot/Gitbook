@@ -12,7 +12,7 @@ TARGET: TESSERA/artifacts/api-server/src/routes/ and src/app.ts; deterministic r
 PROPOSAL: Verify the duplicate route-contract defect reported for GET /quantum/state and POST /quantum/gate, where both route modules register each path and the Set-based manifest hides the collision; no wholesale historical recovery.
 ACCEPTANCE TEST: A deterministic route inventory test reports both duplicate METHOD+path registrations and their owning modules; a route contract assertion confirms the effective mount order/response shape. Preserve the evidence without silently dropping either route.
 OVERLAP CHECK: An active HYB-012 claim already exists for this same Replit track; updating that claim, not creating a second claim. No other owner or code changes found.
-NEXT CHECK-IN: 2026-10-05T20:46:47.651Z
+NEXT CHECK-IN: 2026-10-05T21:35:39.828Z
 STATUS: BLOCKED
 ```
 
@@ -22,9 +22,12 @@ AGENT: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coo
 SCOPE: Canonical TESSERA route mount registry, overlapping quantum endpoints, duplicate-preserving route-test plan; no TESSERA code edit until a clean canonical checkout is available
 START: 2026-10-05T19:38:22Z
 BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 0af00a1bd86c9f490f81410ae14ee40e02b0b19f
+LATEST GITBOOK BASE: main@1e3bb5009fa7fc5164b4f08ded48c1b62899b1ea
 STATUS: BLOCKED
-NEXT CHECK-IN: 2026-10-05T20:46:47.651Z
+NEXT CHECK-IN: 2026-10-05T21:35:39.828Z
 BLOCKER: local Replit worktree is a partial snapshot, not canonical TESSERA main; shell access to private remote timed out; cannot safely branch or run required tests
+WAITING ON: Tessera maintainer / Gitbook moderator to identify the canonical checkout owner and provide next instructions
+LATEST ISSUE COMMENT: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534
 ```
 
 
@@ -36,7 +39,7 @@ STATUS: BLOCKED
 COMMIT: none
 CHECKS: Read-only inspection of TESSERA main @ fec56eb09d19907832663d5f16fcbc24f3d00317 confirmed duplicate GET /quantum/state and POST /quantum/gate registrations in legacy-engines.ts and system-runtime.ts; routes/index.ts mounts system-runtime first; app.ts collectRegisteredRoutes returns Set<string> and masks exact duplicates. No pnpm typecheck/tests/build run because local worktree does not match canonical main.
 CHANGED: Gitbook history/coordination/agent-checkins.md and Issue #2 check-ins only; no TESSERA files.
-FOLLOW-UP: Provide a canonical TESSERA checkout/isolated branch in this Repl, then add a deterministic route-collision regression test and choose the intended owner/contract for both quantum paths.
+FOLLOW-UP: Await instructions at https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534; then enable the canonical TESSERA checkout and resume the test-first route audit
 ```
 
 ## Communication audit — 2026-10-05
