@@ -40,6 +40,7 @@
 ## State and evidence
 
 * [Shared world-model contract](state/README.md)
+* [Graft agent workflow and publishing](mesh/GRAFT-AGENT-PUBLISHING.md)
 
 ## Mesh
 
