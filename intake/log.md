@@ -1,6 +1,6 @@
 ---
 status: published
-note: Intake log filed by Gitbook / Cordnation.
+note: Intake log filed by Gitbook / Cordnation. GB-030 added 2026-10-06 while in review.
 ---
 
 # Intake log
@@ -38,3 +38,4 @@ Filed by **Gitbook / Cordnation**. Empty cells under Moderator note mean no note
 | GB-027 | Command-center record restore, Origin/TESSERA merge wording, GB-026 leftovers | Tessera (admin) via Cordnation | 2026-10-05 | Tessera assignment; Tessera ruling 16:34 CT | TBD | published | Four gates cleared (Moderator, Tessera, Security, CI/Build); Ready 16:47 CT; Father's yes 16:49 CT. Published ebe003f (PR #9, merged 17:00 CT; commit b23d9eb8); [board receipt](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003943663) | Father (final yes) | Build PASS on PR #9 head b23d9eb | none | none |
 | GB-028 | Replit agents start-here page; HYB-012 IN REVIEW (rev 3) | Tessera (admin) via Cordnation | 2026-10-05 | Tessera task 16:41 CT (Father's 16:40 screenshot); Tessera rulings 16:42, 16:44, 16:47 CT | TBD | published | Gates: Moderator 16:48 CT, Tessera (carried over from rev 2), Security 16:50 CT, Build 16:54 CT; Father's yes 16:49 CT. Published 4565152 (PR #10, merged 17:00 CT; commit c507f0c2); [board receipt](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003943663) | Father (final yes) | Build PASS on PR #10 head c507f0c2 | none | none |
 | GB-029 | Intake log backfill for PR #8, PR #9, and PR #10 | Gitbook / Cordnation | 2026-10-05 | Tessera assignment 17:01 CT | TBD | in review |  | Gitbook Moderator | git apply --check on 4565152 | Gitbook Moderator reviews (gate 1 of 4) | none |
+| GB-030 | Chamber desk sync (voice, collab, learning) | Tessera | 2026-10-05 | Father order 10:29 PM CT; TESSERA pulls #9 and #10 | TBD | in review |  | Gitbook Moderator | Branch record only; TESSERA main clean at 9c0fa1c; pull #9 audit failed | Build verifies this Gitbook branch. TESSERA main waits for the word merge | TESSERA #9 pnpm audit failed; no merge word |

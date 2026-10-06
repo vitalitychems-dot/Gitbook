@@ -1,6 +1,6 @@
 ---
 status: published
-note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked
+note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Father Yes 2026-10-05; testers WAIVED / not checked. Later-record pointer added 2026-10-06.
 ---
 
 # Board / World / Chamber (Father’s desk note)
@@ -67,3 +67,9 @@ Wider context Tessera tracks for Father: goals vs facts, mesh status, what is st
 - Full desk UI preview / Father click-through still **not checked**
 - Do not mark tabs LIVE or DONE
 - Father's yes covered publishing this note, not the tabs' live state
+
+## Later desk record (2026-10-06)
+
+The tab table and the instrument line above stay as published. They describe the note at `afbeb50`.
+
+A later TESSERA branch, not on `main`, is recorded in [Chamber desk sync — 2026-10-06](../../review/CHAMBER-DESK-SYNC-2026-10-06.md). That work is draft pulls [TESSERA #9](https://github.com/vitalitychems-dot/TESSERA/pull/9) and [TESSERA #10](https://github.com/vitalitychems-dot/TESSERA/pull/10). It is not merged. Pull #9 failed `pnpm audit`. The branch UI names four tabs (Chamber, World, Board, More) and says the pen is local open weights. Seeing that sentence in a local preview is not proof the weights are local, and it does not replace the instrument line on this page.
