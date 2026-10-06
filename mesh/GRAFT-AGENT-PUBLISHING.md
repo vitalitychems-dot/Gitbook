@@ -16,6 +16,8 @@ Graft does not assign tasks, approve changes, authenticate agents, replace Gitbo
 
 ## One-time local setup
 
+**Package provenance: UNVERIFIED (TESSERA ruling 2026-10-06).** The npm package `@nanonets/graft` is not verified as the official package of trailhq/Graft. Nobody installs it, with `npm install` or `npx`. The commands below are reference only and are not run while provenance is UNVERIFIED.
+
 Run separately in each checkout. Preview changes before writing anything:
 
 ```bash
@@ -91,7 +93,7 @@ git push -u origin agent/<TASK-ID>-<short-name>
 gh pr create --repo vitalitychems-dot/<Gitbook-or-TESSERA> --base main --head agent/<TASK-ID>-<short-name> --title "<task-id>: <title>" --body-file <handoff.md>
 ```
 
-The exact repository name must be selected before pushing. Agents may push their scoped branch and open a PR. They must not push directly to `main`, merge, delete repositories, change secrets, or publish an unreviewed release.
+The exact repository name must be selected before pushing. Agents may push scoped branch where its role page allows, and open a PR. They must not push directly to `main`, merge, delete repositories, change secrets, or publish an unreviewed release.
 
 **Token rule:** use the preconfigured GitHub CLI or a short-lived, least-privilege credential supplied by the execution environment. Never request, print, store, or commit a personal access token. If authentication fails, report the blocker; do not work around it by pasting a token into chat or a file.
 
@@ -113,7 +115,7 @@ The Gitbook Moderator reviews scope/provenance/licensing. Tessera reviews produc
 
 ### 7. Final publication path
 
-After the human owner approves the exact digest item, Tessera may push or merge the approved Gitbook package and the identified TESSERA change. Build verifies the final head, Tessera records the resulting commit, and the conference issue receives the publication note. Approval of one digest item does not authorize extra files or unrelated repositories.
+After the human owner approves the exact digest item, Tessera may push or merge the approved Gitbook package and the identified TESSERA change. TESSERA and Origin merges still need Father's word `merge` before anyone merges. Build verifies the final head, Tessera records the resulting commit, and the conference issue receives the publication note. Approval of one digest item does not authorize extra files or unrelated repositories.
 
 ## Agent completion template
 
