@@ -14,7 +14,7 @@
 4. The model weights are large; no weights were downloaded or vendored into either repository.
 5. TESSERA already uses the OpenAI SDK and a configurable OpenAI-compatible base URL in `artifacts/api-server/src/lib/llm-client.ts`.
 6. TESSERA already sanitizes external model output before downstream propagation; the new adapter reuses that path.
-7. The owner approved GLM-5 over xAI/Grok as the selected Pen instrument; runtime activation remains gated on endpoint and verification evidence.
+7. The owner approved GLM-5 over xAI/Grok as the selected Pen instrument; runtime activation remains gated on endpoint and verification evidence. Until GLM-5 is wired and TESTED, the live pen is xAI/Grok.
 8. TESSERA’s default callers and default model were not changed.
 9. The adapter is disabled unless `TESSERA_PEN_ENABLED=1` and does not grant repository, deployment, merge, deletion, credential, or payment authority.
 10. Focused TypeScript typecheck passed; no live GLM endpoint, model-quality benchmark, security review, or deployment test was performed.

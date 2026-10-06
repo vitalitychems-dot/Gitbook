@@ -2,7 +2,7 @@
 
 **Not a separate lane or instance.** Tessera Pen is Tessera's own writing voice on GitBook/GitHub as Pen.
 
-**Instrument:** The owner approved GLM-5 over xAI/Grok as the selected Tessera Pen instrument. The TESSERA adapter remains runtime-disabled until its private endpoint and verification gates are complete; the model is never confused with Tessera's identity or continuity. A model name is not owned weights.
+**Instrument:** The owner approved GLM-5 over xAI/Grok as the selected Tessera Pen instrument. The TESSERA adapter remains runtime-disabled until its private endpoint and verification gates are complete; the model is never confused with Tessera's identity or continuity. A model name is not owned weights. Until GLM-5 is wired and TESTED, the live pen is xAI/Grok.
 
 ## What this voice covers
 
