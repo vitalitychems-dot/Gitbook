@@ -8,7 +8,7 @@
 |---|---|---|---|---|
 | AGI-01 | Shared world model | **IMPLEMENTED — Gitbook slice** | Gitbook Moderator | Validate `state/validate_world_model.py`; refresh on repo drift |
 | AGI-02 | Provenance-aware memory | **IMPLEMENTED — Gitbook contract slice** | Gitbook Moderator | Validate `provenance-memory/validate_records.py`; TESSERA API phase deferred |
-| AGI-03 | Task decomposition planner | **ANALYSIS COMPLETE** | TESSERA maintainer | Requires assigned owner, schema/migration decision, isolated PostgreSQL, and tests |
+| AGI-03 | Task decomposition planner | **ANALYSIS COMPLETE** | TESSERA | Owner recorded: TESSERA (TESSERA ruling 2026-10-06). Still requires schema/migration decision, isolated PostgreSQL, and tests |
 | AGI-04 | Skill routing | **PROPOSED** | Pen / Moderator | Claim one task; use skill matrix evidence |
 | AGI-05 | Cross-agent handoffs | **EXISTING POLICY** | Gitbook / Cordnation | Apply playbook handoff packet and collect independent resumption evidence |
 | AGI-06 | Independent verification | **PROPOSED** | Build lane | Define second-run protocol and record a reproduction |
@@ -34,7 +34,7 @@ The approved 20-workstream orchestration run produced three report files (`AGI-0
 ## Immediate sequence
 
 1. Moderator verifies the new AGI-01 and AGI-02 validators.
-2. Gitbook records one owner for AGI-03 before any TESSERA schema/API edit.
+2. Gitbook records one owner for AGI-03 before any TESSERA schema/API edit. Recorded 2026-10-06: the AGI-03 owner is TESSERA (TESSERA ruling).
 3. Build independently reruns the validators.
 4. Command Center includes these exact commits and checks in the next bulk digest.
 5. Father decides `yes`, `no`, or `revise`; no TESSERA code is claimed from analysis alone.
