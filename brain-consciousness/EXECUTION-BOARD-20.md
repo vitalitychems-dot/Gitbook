@@ -11,7 +11,7 @@
 | AGI-03 | Task decomposition planner | **ANALYSIS COMPLETE** | TESSERA | Owner recorded: TESSERA (TESSERA ruling 2026-10-06). Still requires schema/migration decision, isolated PostgreSQL, and tests |
 | AGI-04 | Skill routing | **PROPOSED** | Pen / Moderator | Claim one task; use skill matrix evidence |
 | AGI-05 | Cross-agent handoffs | **EXISTING POLICY** | Gitbook / Cordnation | Packet applied in `review/handoff-packet-batch-013.md` (batch 013, Cordnation → Moderator); independent resumption evidence pending from the receiving agent |
-| AGI-06 | Independent verification | **PROPOSED** | Build lane | Define second-run protocol and record a reproduction |
+| AGI-06 | Independent verification | **PROPOSED** | Build lane | Second-run protocol proposed in `brain-consciousness/AGI-06-second-run-protocol.md`; record a reproduction |
 | AGI-07 | Self-critique/red-team | **PROPOSED** | Moderator | Add critique section to proposal submissions |
 | AGI-08 | Evidence confidence | **EXISTING POLICY** | Moderator | Normalize status vocabulary across records |
 | AGI-09 | Safe tool planning | **PROPOSED** | Operations lane | Produce dry-run/rollback template |
