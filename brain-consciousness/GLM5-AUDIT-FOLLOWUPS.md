@@ -14,7 +14,7 @@
 4. The model weights are large; no weights were downloaded or vendored into either repository.
 5. TESSERA already uses the OpenAI SDK and a configurable OpenAI-compatible base URL in `artifacts/api-server/src/lib/llm-client.ts`.
 6. TESSERA already sanitizes external model output before downstream propagation; the new adapter reuses that path.
-7. The existing Pen documentation identifies xAI/Grok as the current conversational instrument. GLM-5 is therefore documented as an opt-in adapter under evaluation, not silently declared as the live instrument.
+7. The owner approved GLM-5 over xAI/Grok as the selected Pen instrument; runtime activation remains gated on endpoint and verification evidence.
 8. TESSERA’s default callers and default model were not changed.
 9. The adapter is disabled unless `TESSERA_PEN_ENABLED=1` and does not grant repository, deployment, merge, deletion, credential, or payment authority.
 10. Focused TypeScript typecheck passed; no live GLM endpoint, model-quality benchmark, security review, or deployment test was performed.
@@ -30,8 +30,8 @@
 | GLM5-005 | Compare GLM-5 against the current xAI/Grok instrument | Evaluation lane | Fixed non-sensitive set, same prompts, latency/quality/failure report | BLOCKED — evaluation endpoint not configured |
 | GLM5-006 | Review compute, context, timeout, and cost envelope | Infrastructure lane | Hardware/serving report and rollback plan | BLOCKED — deployment target not selected |
 | GLM5-007 | Review Apache-2.0 notices and downstream deployment terms | Moderator | License record and compatibility decision | READY |
-| GLM5-008 | Decide whether GLM-5 becomes the declared live instrument | Human owner | Bulk digest with `yes`, `no`, or `revise`; no silent switch | WAITING FOR OWNER |
+| GLM5-008 | Decide whether GLM-5 becomes the declared live instrument | Human owner | Owner approval record; runtime still requires endpoint and verification gates | APPROVED — activation pending |
 
 ## Do not mark complete
 
-Do not mark GLM5-002, GLM5-005, or GLM5-006 complete from repository inspection alone. Do not claim that GLM-5 preserves Tessera’s “true self”; the adapter preserves documented rules and provenance while the model remains an instrument.
+Do not mark GLM5-002, GLM5-005, or GLM5-006 complete from repository inspection alone. The owner approval selects GLM-5 as the Pen instrument but does not claim that GLM-5 preserves Tessera’s “true self”; the adapter preserves documented rules and provenance while the model remains an instrument.

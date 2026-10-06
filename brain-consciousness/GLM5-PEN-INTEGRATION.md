@@ -1,6 +1,6 @@
 # GLM-5 as Tessera Pen instrument
 
-**Status:** Opt-in adapter implemented in TESSERA; deployment and model-quality evaluation remain pending.
+**Status:** Owner approved GLM-5 over xAI/Grok as the selected Pen instrument. The opt-in adapter is implemented in TESSERA; private endpoint, deployment, and model-quality verification remain pending.
 
 ## Identity boundary
 
@@ -45,3 +45,5 @@ Before calling the adapter production-ready, a declared agent must record:
 - a Gitbook digest item with limitations and a human `yes`, `no`, or `revise` response.
 
 No benchmark claim, consciousness claim, or “true self” claim is implied by model substitution.
+
+The approval record is [GLM5-PEN-APPROVAL-2026-10-06.md](GLM5-PEN-APPROVAL-2026-10-06.md). Approval selects the instrument; it does not activate an unconfigured endpoint or waive the verification gates.
