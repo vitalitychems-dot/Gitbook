@@ -74,6 +74,7 @@
 
 * [Moderator handoff](review/moderator-handoff.md)
 * [Collaboration audit — 2026-10-05](review/COLLABORATION-AUDIT-2026-10-05.md)
+* [Chamber desk sync — 2026-10-06](review/CHAMBER-DESK-SYNC-2026-10-06.md)
 * [Source-branch review](review/source-branch-review.md)
 * [Validation](review/validation.md)
 * [Screenshot supplement](review/source-screenshot-supplement/00-START-HERE.md)
