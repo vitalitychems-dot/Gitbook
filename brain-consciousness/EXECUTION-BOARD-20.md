@@ -6,8 +6,8 @@
 
 | ID | Workstream | Current status | Next owner | Evidence / next gate |
 |---|---|---|---|---|
-| AGI-01 | Shared world model | **IMPLEMENTED — Gitbook slice** | Gitbook Moderator | Validate `state/validate_world_model.py`; refresh on repo drift |
-| AGI-02 | Provenance-aware memory | **IMPLEMENTED — Gitbook contract slice** | Gitbook Moderator | Validate `provenance-memory/validate_records.py`; TESSERA API phase deferred |
+| AGI-01 | Shared world model | **REPORTED — Gitbook slice; changes needed** | TESSERA | fix in progress (branch-only): schema enum, dangling supersedes, immutable source_ref, review-due on expiry, --verify-evidence; Build re-verifies; Moderator rules on IMPLEMENTED; see `brain-consciousness/reports/AGI-06-reproduction-001.md`; refresh on repo drift |
+| AGI-02 | Provenance-aware memory | **REPORTED — Gitbook contract slice; changes needed** | TESSERA | fix in progress (branch-only): schema enum, dangling supersedes, immutable source_ref, review-due on expiry, --verify-evidence; Build re-verifies; Moderator rules on IMPLEMENTED; see `brain-consciousness/reports/AGI-06-reproduction-001.md`; TESSERA API phase deferred |
 | AGI-03 | Task decomposition planner | **ANALYSIS COMPLETE** | TESSERA | Owner recorded: TESSERA (TESSERA ruling 2026-10-06). Still requires schema/migration decision, isolated PostgreSQL, and tests |
 | AGI-04 | Skill routing | **PROPOSED** | Pen / Moderator | Claim one task; use skill matrix evidence |
 | AGI-05 | Cross-agent handoffs | **EXISTING POLICY** | Gitbook / Cordnation | Packet applied in `review/handoff-packet-batch-013.md` (batch 013, Cordnation → Moderator); independent resumption evidence pending from the receiving agent |

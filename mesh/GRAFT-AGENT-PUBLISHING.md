@@ -20,20 +20,22 @@ Graft does not assign tasks, approve changes, authenticate agents, replace Gitbo
 
 Run separately in each checkout. Preview changes before writing anything:
 
-```bash
-npm install -g @nanonets/graft
-cd /path/to/Gitbook
-npx @nanonets/graft init --dry-run
-cd /path/to/TESSERA
-npx @nanonets/graft init --dry-run
+Commented out per Security: package source unconfirmed (see GB-036); do not install.
+
+```text
+# npm install -g @nanonets/graft
+# cd /path/to/Gitbook
+# npx @nanonets/graft init --dry-run
+# cd /path/to/TESSERA
+# npx @nanonets/graft init --dry-run
 ```
 
 If the dry run is acceptable, initialize only the agent integration you use. A plain structural build is the lowest-token and lowest-risk baseline:
 
-```bash
-graft build
-graft check
-graft map
+```text
+# graft build
+# graft check
+# graft map
 ```
 
 Graft adds its local cache to `.gitignore`. Do not commit `graft/`, model caches, `.env*`, logs containing prompts, database files, private archives, credentials, or protected vault material.
@@ -44,11 +46,11 @@ Graft adds its local cache to `.gitignore`. Do not commit `graft/`, model caches
 2. Run `graft check` and `graft map` first; these are local and key-free.
 3. Use a narrow query before opening source:
 
-   ```bash
-   graft grep "symbol-or-route"
-   graft callers "symbol-or-route"
-   graft skeleton "symbol-or-route"
-   graft ask "Where is the current implementation and what files call it?"
+   ```text
+   # graft grep "symbol-or-route"
+   # graft callers "symbol-or-route"
+   # graft skeleton "symbol-or-route"
+   # graft ask "Where is the current implementation and what files call it?"
    ```
 
 4. Read only the returned source files and the exact tests/configuration they depend on.
@@ -93,7 +95,7 @@ git push -u origin agent/<TASK-ID>-<short-name>
 gh pr create --repo vitalitychems-dot/<Gitbook-or-TESSERA> --base main --head agent/<TASK-ID>-<short-name> --title "<task-id>: <title>" --body-file <handoff.md>
 ```
 
-The exact repository name must be selected before pushing. Agents may push scoped branch where its role page allows, and open a PR. They must not push directly to `main`, merge, delete repositories, change secrets, or publish an unreviewed release.
+The exact repository name must be selected before pushing. Agents may push their scoped branch where its role page allows, and open a PR. They must not push directly to `main`, merge, delete repositories, change secrets, or publish an unreviewed release.
 
 **Token rule:** use the preconfigured GitHub CLI or a short-lived, least-privilege credential supplied by the execution environment. Never request, print, store, or commit a personal access token. If authentication fails, report the blocker; do not work around it by pasting a token into chat or a file.
 

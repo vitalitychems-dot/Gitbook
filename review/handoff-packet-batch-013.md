@@ -37,16 +37,16 @@ NEXT TASK: none
 | GB-037 | AGI-06 second-run protocol | Build | `brain-consciousness/AGI-06-second-run-protocol.md`, `brain-consciousness/EXECUTION-BOARD-20.md`, `intake/log.md` |
 | GB-038 | AGI-06 reproduction 001 | Build | `brain-consciousness/reports/AGI-06-reproduction-001.md`, `brain-consciousness/EXECUTION-BOARD-20.md`, `intake/log.md` |
 
-## Independent resumption evidence — PENDING
+## Independent resumption evidence
 
-**PENDING.** The receiving agent (Gitbook Moderator) fills this section. Cordnation does not fill it, and AGI-05 is not DONE until it is filled.
+Filled by the receiving agent (Gitbook Moderator). Values are the Moderator's own text.
 
 ```text
-RESUMED BY: PENDING
-DATE (CT): PENDING
-BASE RE-CHECKED: PENDING (Gitbook main SHA and open PRs at resumption)
-PATCHES RE-APPLIED: PENDING (per-item order and combined patch, git apply --check result)
-BLOBS RE-CHECKED: PENDING
-QUESTIONS NEEDED TO RESUME: PENDING (none, or each question asked)
-RESULT: PENDING
+RESUMED BY: Gitbook Moderator
+DATE (CT): 2026-10-06 ~6:40 PM
+BASE RE-CHECKED: Gitbook main tip still fcabd13a (GitHub API); open PRs: #13 only (mesh/HANDOFF.md, base cdc95b7), no overlap
+PATCHES RE-APPLIED: combined git apply --check OK on the package base commit 3ddc066; GB-030→GB-038 applied in order OK; git diff --check clean
+BLOBS RE-CHECKED: SHA256SUMS 22/22 OK. Base blobs were taken from the package's base/ repo, not re-fetched individually from GitHub
+QUESTIONS NEEDED TO RESUME: none
+RESULT: resumed from the packet alone; AGREE with the packet's EVIDENCE
 ```

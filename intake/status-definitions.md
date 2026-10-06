@@ -27,7 +27,7 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the 
 
 - **Ready** is set by Gitbook / Cordnation (docs) or Command Center (Replit app set) only after all four gates clear.
 - Father's bulk **yes** covers **only the numbered items listed in that digest**. A yes never carries over to anything that wasn't listed.
-- Ready does **not** mean pushed or merged. Push requires Father's final yes on the listed item (then Tessera opens a PR and Build verifies it; Father may push himself). Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (`collin-keane/Tessera`) and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges.
+- Ready does **not** mean pushed or merged. Push requires Father's final yes on the listed item (then Tessera opens a PR and Build verifies it; Father may push himself). Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (Father's Tessera repository) and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges.
 
 ## Notes
 

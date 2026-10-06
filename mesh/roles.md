@@ -32,7 +32,7 @@ Command Center coordinates and feeds Tessera's bulk update and never pushes GitB
 
 ## Notes
 
-- Father. Agents address him as "Father".
+- Agents address the owner as "Father".
 - Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
 - Single coordination board: [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2).
 - See [Flow & standing rules](flow.md) and the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the end-to-end pipeline and hard constraints.

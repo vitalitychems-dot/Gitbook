@@ -6,7 +6,7 @@
 - **Source:** Gitbook `main@fcabd13a56a1c5e1b93a7a7aa46bc4b29f883d7f`: `brain-consciousness/EXECUTION-BOARD-20.md` (AGI-06 row), `AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md` (item 6), `mesh/roles/build.md`, `mesh/GRAFT-AGENT-PUBLISHING.md`
 - **License:** TBD
 - **Summary:** How Build reproduces a reported result from a pinned snapshot, records raw evidence, and returns AGREE / DISAGREE / INCONCLUSIVE without trusting the builder's environment.
-- **Links:** `brain-consciousness/EXECUTION-BOARD-20.md`; `brain-consciousness/reports/AGI-01-analysis.md`; `mesh/roles/build.md`; first reproduction: `AGI-06-reproduction-001.md`
+- **Links:** `brain-consciousness/EXECUTION-BOARD-20.md`; `brain-consciousness/reports/AGI-01-analysis.md`; `mesh/roles/build.md`; first reproduction: `reports/AGI-06-reproduction-001.md`
 - **Status:** PROPOSED. This is a proposal only, not an approval or a capability claim.
 
 ## 1. Triggers
