@@ -31,6 +31,13 @@
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
 * [Cortical Labs readiness](intake/CORTICAL-LABS-READINESS.md)
 * [20-item AGI collaboration improvement roadmap](brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md)
+* [20-item execution board](brain-consciousness/EXECUTION-BOARD-20.md)
+* [Provenance-aware memory contract](brain-consciousness/provenance-memory/README.md)
+* [Roadmap audit reports](brain-consciousness/reports/README.md)
+
+## State and evidence
+
+* [Shared world-model contract](state/README.md)
 
 ## Mesh
 
