@@ -1,0 +1,12 @@
+{
+    "schema_version": 2,
+    "commit": "d0c3761d5f4c47f03263c2910b0cbd8f0ce648e1",
+    "indexed_at": "2026-10-07T22:52:50Z",
+    "project": "home-ubuntu-tessera-consolidation-published-Gitbook",
+    "nodes": 1094,
+    "edges": 1184,
+    "original_size": 10289152,
+    "compressed_size": 397839,
+    "compression_level": 9,
+    "reconcile_basis": "git-clean-head"
+}
