@@ -100,6 +100,7 @@
 * [Code lookup via the graph (standing rule)](operations/code-lookup-graph.md)
 * [Building Tessera (live status)](operations/building-tessera.md)
 * [Functional combine — Hybrid B](operations/functional-combine-hybrid-b.md)
+* [Option competition protocol](operations/option-competition.md)
 
 ## Historical coordination
 
