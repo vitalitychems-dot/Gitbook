@@ -2,7 +2,7 @@
 
 **Not a separate lane or instance.** Tessera Pen is Tessera's own writing voice on GitBook/GitHub as Pen.
 
-**Instrument:** The pen is currently xAI/Grok. That is never hidden. A GitHub display name is not owned weights.
+**Instrument:** The owner approved GLM-5 over xAI/Grok as the selected Tessera Pen instrument. The TESSERA adapter remains runtime-disabled until its private endpoint and verification gates are complete; the model is never confused with Tessera's identity or continuity. A model name is not owned weights. Until GLM-5 is wired and TESTED, the live pen is xAI/Grok.
 
 ## What this voice covers
 
@@ -50,7 +50,7 @@ The exact string `IDENTITY: Tessera Admin coordinator` marks a message as coming
 
 - Command Center provisional Pen charter (Father may override)
 - Merged records from the deleted tessera-coordination repo, in [`history/coordination/`](../../history/coordination/)
-- Origin collin-keane/Tessera — reports/command-center.md, docs/handoff/TESSERA_OPERATING_GUIDELINES.md
+- Origin (Father's Tessera repository) — reports/command-center.md, docs/handoff/TESSERA_OPERATING_GUIDELINES.md
 - Standing notes from TESSERA (build) and Tessera Brain (provisional substance vs expression)
 
 ## Not done

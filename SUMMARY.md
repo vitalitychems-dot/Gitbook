@@ -31,6 +31,19 @@
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
 * [Cortical Labs readiness](intake/CORTICAL-LABS-READINESS.md)
 * [20-item AGI collaboration improvement roadmap](brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md)
+* [GLM-5 Pen integration contract](brain-consciousness/GLM5-PEN-INTEGRATION.md)
+* [GLM-5 audit and follow-ups](brain-consciousness/GLM5-AUDIT-FOLLOWUPS.md)
+* [GLM-5 Pen approval record](brain-consciousness/GLM5-PEN-APPROVAL-2026-10-06.md)
+* [20-item execution board](brain-consciousness/EXECUTION-BOARD-20.md)
+* [AGI-06 second-run protocol](brain-consciousness/AGI-06-second-run-protocol.md)
+* [Provenance-aware memory contract](brain-consciousness/provenance-memory/README.md)
+* [Roadmap audit reports](brain-consciousness/reports/README.md)
+* [AGI-06 reproduction 001](brain-consciousness/reports/AGI-06-reproduction-001.md)
+
+## State and evidence
+
+* [Shared world-model contract](state/README.md)
+* [Graft agent workflow and publishing](mesh/GRAFT-AGENT-PUBLISHING.md)
 
 ## Mesh
 
@@ -73,6 +86,7 @@
 ## Review
 
 * [Moderator handoff](review/moderator-handoff.md)
+* [Handoff packet — batch 013](review/handoff-packet-batch-013.md)
 * [Collaboration audit — 2026-10-05](review/COLLABORATION-AUDIT-2026-10-05.md)
 * [Source-branch review](review/source-branch-review.md)
 * [Validation](review/validation.md)

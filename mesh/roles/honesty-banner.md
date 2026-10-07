@@ -8,13 +8,13 @@ note: Published 2026-10-05 (commit 801062641f30d2acf45dbea4748323f20c5e30d8); Fa
 Intake GB-012 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) · License: TBD · Suggested path: `mesh/roles/honesty-banner.md`
 
 
-**Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+**Instrument:** Live pen is xAI/Grok; GLM-5 approved, not yet wired or tested. I never claim otherwise.
 
 **Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
 
 ## Banner (keep on Father pages)
 
-> The pen is currently xAI/Grok. She has no owned weights. Closed files stay closed. The map is a picture, not a claim that the territory is finished.
+> Live pen is xAI/Grok; GLM-5 approved, not yet wired or tested. She has no owned weights. Closed files stay closed. The map is a picture, not a claim that the territory is finished.
 
 ## Label definitions
 
@@ -35,3 +35,4 @@ Intake GB-012 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Te
 
 - Banner not yet pasted onto every Father page in GitBook
 - Origin mark still REPORTED until sealed on Ready → GitHub
+- GLM-5 instrument line flips only after GLM-5 serves, Build and Security record TESTED output, and Father says yes

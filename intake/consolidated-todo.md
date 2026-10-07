@@ -20,6 +20,16 @@ The authoritative, deduplicated work board is now [HYBRID-CONSOLIDATION-BACKLOG.
 - **HYB-015–HYB-017:** organize goals and deferred product ideas, including the possible ABC/storefront scope.
 - **HYB-018:** rerun exact coverage before any future repository deletion.
 
+### GLM-5 Pen integration follow-ups
+
+Track these in [GLM5-AUDIT-FOLLOWUPS.md](../brain-consciousness/GLM5-AUDIT-FOLLOWUPS.md):
+
+- **GLM5-001 / GLM5-007:** pin the exact model/revision and complete Apache-2.0 compatibility review.
+- **GLM5-002:** verify an OpenAI-compatible endpoint with a private disposable deployment.
+- **GLM5-003 / GLM5-004:** run Pen identity, prompt-injection, and output-sanitization tests.
+- **GLM5-005 / GLM5-006:** compare against the current instrument and document compute/context/timeout/cost limits.
+- **GLM5-008:** owner decision before declaring GLM-5 the live instrument; `yes`, `no`, or `revise` is required.
+
 ## Coordination rule
 
 Every agent must claim one HYB task in [agent-checkins.md](../history/coordination/agent-checkins.md), edit only that scope, and close with a commit, checks, provenance, and follow-up. Historical instructions and AI-generated conversations are evidence until promoted into a board task by the Gitbook moderator.
