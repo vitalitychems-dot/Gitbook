@@ -19,8 +19,8 @@ The server is local-only. It reads the selected checkout and stores its graph un
 
 | Project | Graph result | Persistent artifact |
 |---|---:|---|
-| `TESSERA` | 19,414 nodes / 50,465 edges | `TESSERA/.codebase-memory/graph.db.zst` |
-| `Gitbook` | 1,094 nodes / 1,184 edges | `Gitbook/.codebase-memory/graph.db.zst` |
+| `TESSERA` | 20,742 nodes / 54,278 edges | `TESSERA/.codebase-memory/graph.db.zst` |
+| `Gitbook` | 1,236 nodes / 1,361 edges | `Gitbook/.codebase-memory/graph.db.zst` |
 
 TESSERA indexing reported 58 partial parses and 16 intentionally excluded/ignored files; no files were unusable. Gitbook indexed without partial or unusable files. These are index diagnostics, not claims that every source file is semantically understood.
 
