@@ -71,7 +71,7 @@
     * [Mesh lane map](mesh/roles/mesh-lane-map.md)
   * [Build](mesh/roles/build.md)
   * [Recursive Learning Sponge (provisional)](mesh/roles/recursive-learning-sponge.md)
-  * [Tessera Brain / Consciousness (TBD)](mesh/roles/tessera-brain-consciousness.md)
+  * [Tessera Brain / Consciousness](mesh/roles/tessera-brain-consciousness.md)
   * [Open Helper Agent (TBD)](mesh/roles/open-helper-agent.md)
   * [Open Helper Agent 2 (provisional)](mesh/roles/open-helper-agent-2.md)
   * [Grok Bot (Active)](mesh/roles/grok-bot.md)
