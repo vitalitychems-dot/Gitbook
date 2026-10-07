@@ -35,6 +35,7 @@
 * [GLM-5 audit and follow-ups](brain-consciousness/GLM5-AUDIT-FOLLOWUPS.md)
 * [GLM-5 Pen approval record](brain-consciousness/GLM5-PEN-APPROVAL-2026-10-06.md)
 * [20-item execution board](brain-consciousness/EXECUTION-BOARD-20.md)
+* [Capability registry (AGI-14)](brain-consciousness/capability-registry.md)
 * [AGI-06 second-run protocol](brain-consciousness/AGI-06-second-run-protocol.md)
 * [Provenance-aware memory contract](brain-consciousness/provenance-memory/README.md)
 * [Roadmap audit reports](brain-consciousness/reports/README.md)

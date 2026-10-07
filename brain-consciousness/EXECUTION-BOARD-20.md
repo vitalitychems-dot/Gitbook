@@ -19,7 +19,7 @@
 | AGI-11 | Regression benchmarks | **PROPOSED** | Build lane | Select first route/UI/history benchmark |
 | AGI-12 | Conflict resolution | **EXISTING POLICY** | Moderator | Exercise overlap and contradictory-instruction scenario |
 | AGI-13 | Debate-to-decision forum | **EXISTING POLICY** | Gitbook forum | Link one idea to one task and decision |
-| AGI-14 | Capability registry | **PROPOSED** | Tessera / Pen | Define capability-vs-goal record schema |
+| AGI-14 | Capability registry | **ANALYSIS / SCHEMA DRAFTED — REPORTED** | Tessera / Pen | Schema + seed records on [capability-registry.md](capability-registry.md); Build validator later if assigned |
 | AGI-15 | Repository drift detection | **PROPOSED** | Release steward | Add repeatable link/head/status check |
 | AGI-16 | Dependency/license governance | **EXISTING POLICY** | TESSERA maintainer | Apply to next dependency or upstream adapter |
 | AGI-17 | Learning from failures | **PROPOSED** | Gitbook / Cordnation | Add searchable lesson record for the stopped 20-agent run |
