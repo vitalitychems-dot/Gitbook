@@ -102,6 +102,7 @@
 * [Functional combine — Hybrid B](operations/functional-combine-hybrid-b.md)
 * [Option competition protocol](operations/option-competition.md)
 * [Mesh speed collaboration](operations/mesh-speed-collaboration.md)
+* [OpenAI removed from Tessera](operations/openai-removed.md)
 
 ## Historical coordination
 

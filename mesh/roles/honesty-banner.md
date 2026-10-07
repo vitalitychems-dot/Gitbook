@@ -26,7 +26,7 @@ Intake GB-012 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Te
 
 ## Rules of use
 
-- Never hide the instrument line.
+- Never hide the Pen identity line (Tessera is the pen — never Grok).
 - Never upgrade REPORTED to TESTED without real output.
 - Never upgrade GOAL to fact without Father and a chamber test.
 - YES TO ALL covers named digest batches — not silent extras.
