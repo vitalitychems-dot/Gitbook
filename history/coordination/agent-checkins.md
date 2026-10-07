@@ -24,3 +24,20 @@ None. HYB-012 was the only active claim. It is closed in the completed table and
 ## HYB-012 — preserved claim text
 
 Decision-time STATUS inside the blocks below remains IN REVIEW. Current status is DONE (`50876d40`).
+
+## HYB-020 / repository routing — completion record (2026-10-07)
+
+```text
+TASK: HYB-020
+AGENT: Manus consolidation coordinator
+SCOPE: Gitbook merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md; mesh/CODEBASE-MEMORY-MCP.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md; SUMMARY.md; local CBM graph artifacts in TESSERA and Gitbook
+START: 2026-10-07T22:49:00Z
+BASE: Gitbook cfaba85; TESSERA 8ca8fb2
+STATUS: DONE
+BLOCKER: none
+CHECKS: codebase-memory-mcp 0.11.0 installed; TESSERA indexed with 19,414 nodes and 50,465 edges (58 partial parses, 16 intentional exclusions, 0 unusable); Gitbook indexed with 1,094 nodes and 1,184 edges (0 partial, 0 unusable); account repository list routed without opening protected 1T contents; no source repository deleted.
+CHANGED: Gitbook routing record, Codebase Memory bridge contract, backlog HYB-020 row, SUMMARY navigation, local .codebase-memory artifacts for both destinations
+FOLLOW-UP: HYB-014 for a reviewed historical-merge refresh/check command; HYB-008/HYB-013 for selective feature recovery; owner digest approval applies only to this scoped publication
+```
+
+The routing pass accounts for current account repositories without claiming that every historical byte belongs in TESSERA. Unrelated `Run-Z-app` repositories are recorded as outside Tessera scope; `1T` remains protected and uninspected; archives and generated/runtime data remain at their sources. Agents must use the routing record before opening a new recovery task.

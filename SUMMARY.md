@@ -15,6 +15,7 @@
 * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
+* [All-repository routing and consolidation record](merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md)
 * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)
 * [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
 * [HYB-007 Z-app functional comparison](merge/hyb-007-z-app.md)
@@ -45,6 +46,7 @@
 
 * [Shared world-model contract](state/README.md)
 * [Graft agent workflow and publishing](mesh/GRAFT-AGENT-PUBLISHING.md)
+* [Codebase Memory MCP bridge](mesh/CODEBASE-MEMORY-MCP.md)
 
 ## Mesh
 

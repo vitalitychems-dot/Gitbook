@@ -26,3 +26,9 @@ The earlier audit inventory contained 20 repositories; the current account check
 - Empty or near-empty placeholders: `TESSERA`, `Tessera-main`, `tessera-replit`.
 
 The exact commit IDs, file counts, byte counts, and root files are in [`repo-audit.tsv`](repo-audit.tsv). Exact content groups are in [`exact-duplicates.tsv`](exact-duplicates.tsv). These are audit evidence, not an instruction to delete anything.
+
+## Account-level routing refresh — 2026-10-07
+
+The current account check also lists `Run-Z-app` and `Run-Z-app2`. They are unrelated application-family repositories, not historical Tessera sources, so their code is not copied into TESSERA. They are acknowledged in [ALL-REPOSITORIES-ROUTING-2026-10-07.md](ALL-REPOSITORIES-ROUTING-2026-10-07.md) and require a separate product decision before any reuse.
+
+The same record explicitly preserves the prior boundary for protected `1T`, raw archive parts, generated output, runtime state, and unreviewed alternate applications. “All repositories accounted for” means every source has a documented destination or retention route; it does not authorize a wholesale byte union or deletion.
