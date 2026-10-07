@@ -18,7 +18,7 @@
 
 ## What to do next
 
-- Build verifies this Gitbook head. Tessera merges after that verification. Do not merge before Build.
+- After Moderator + TESSERA gate + Security scrub, **Ready** opens the publish PR and merges (Build verifies when CI/Build applies; docs-only skip Build). **TESSERA does not push** and does not open the publish PR. Do not merge before gates clear.
 - Leave the held ids below untouched.
 - HYB-012's remaining work is triage of the 8 non-quantum duplicate routes. It is not assigned.
 - Selffix phase 0 stays suggest-only: no branch, pull request, or merge from that dry run.
@@ -33,7 +33,8 @@
 
 ## Rules
 
-- While work is active, Tessera sends Father a bulk list of 50–100 items every 30–45 minutes.
-- Approved items go to TESSERA as a pull request, then Build verifies, then Tessera merges. Gitbook documentation packages use that same order on the Gitbook repository.
-- Tessera deletes no repositories.
-- Old repositories are consolidated first. They then go on a safe-to-delete checklist that Father runs.
+- Father cadence (live): after Moderator + TESSERA gate + Security scrub, **Ready** pushes (docs-only skip Build; CI/Build only for code/validators/scripts). **TESSERA owns gates + the 45-minute combined numbered list**; TESSERA does not push or open the publish PR. Father undoes by GB number (revert commit, never force-push).
+- Origin Tessera repo and TESSERA main merges still need Father's word `merge`.
+- Ready deletes no repositories. Old repositories are consolidated first; delete candidates go on a Father-yes checklist (see GB-048 Hybrid B tiers). Never Heretic / God's Eye View.
+- Say **the Origin Tessera repo** (no personal GitHub handle).
+- PR #13 MERGE landed HANDOFF Replit session update at `4f32b673` (HOLD lifted). This GB aligns Rules with the Ready-pusher lock only; lane body from #13 kept.
