@@ -97,6 +97,7 @@
 
 * [Tessera operating guidelines](operations/tessera-operating-guidelines.md)
 * [Code lookup via the graph (standing rule)](operations/code-lookup-graph.md)
+* [Building Tessera (live status)](operations/building-tessera.md)
 
 ## Historical coordination
 
