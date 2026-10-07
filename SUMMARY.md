@@ -101,6 +101,7 @@
 * [Building Tessera (live status)](operations/building-tessera.md)
 * [Functional combine — Hybrid B](operations/functional-combine-hybrid-b.md)
 * [Option competition protocol](operations/option-competition.md)
+* [Mesh speed collaboration](operations/mesh-speed-collaboration.md)
 
 ## Historical coordination
 
