@@ -28,23 +28,23 @@ An item is **ready** for Moderator when all of the following are true:
 - [ ] Sources and license noted (license may be `TBD`)
 - [ ] Decision: **approve**, **reject**, or **changes needed**
 - [ ] Decision recorded; Gitbook / Cordnation keeps the review record
-- [ ] If approved: goes to Tessera gate (state e.g. `Moderator: approved, at Tessera gate`); Cordnation stages Ready only after Tessera → Security → CI/Build also clear — **not** auto-pushed
+- [ ] If approved: goes to Tessera gate (state e.g. `Moderator: approved, at Tessera gate`); Cordnation stages Ready only after the TESSERA gate → Security scrub (→ CI/Build for changes to code, validators or scripts) also clear — Moderator approval alone is **not** auto-pushed; the auto-yes also needs the TESSERA gate, then the Security scrub
 - [ ] If changes needed: note what must change or wait before the item can move again
 
 ## After the decision
 
 | Decision | Next step |
 |----------|-----------|
-| Approve | Status → `Moderator: approved, at Tessera gate` (then Tessera → Security → CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then feed Ready items into Tessera's 30–45 min bulk update as numbered items. GitBook docs: after Father's final yes on the listed digest item, Tessera pushes (opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2); Father may still push himself (Replit is never a GitBook publication path). Replit app set (separate; not a GitBook path): Command Center stages it and privately pushes it only after all four gates and Father's yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. Father's bulk yes approves every listed item; no with notes holds the items he names; revise returns the named items for the stated change; a yes never carries over to anything that wasn't listed. Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (Father's Tessera repository) and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges. |
+| Approve | Status → `Moderator: approved, at Tessera gate` (then TESSERA gate → Security scrub; plus CI/Build for changes to code, validators or scripts). **Gitbook / Cordnation** stages docs as **Ready** only after the required gates clear. GitBook docs: Ready items are auto-yessed (passed the TESSERA gate and Gitbook Moderator review, then the Security scrub) and Ready pushes (opens a PR; Build verifies when CI/Build applies; Ready merges and posts on Gitbook issue #2); Father may still push himself (Replit is never a GitBook publication path). Command Center feeds each item into Tessera's combined numbered list to Father every 45 minutes, with a real health check; Father can undo any item by its GB number (a revert commit, never a force-push). Replit app set (separate; not a GitBook path; manual and outside the auto-yes): Command Center stages it and privately pushes it only after all four gates and Father's explicit yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. For Replit app-set items, Father's explicit yes approves every listed item; no with notes holds the items he names; revise returns the named items for the stated change; a yes never carries over to anything that wasn't listed. For Gitbook, Ready opens and merges the PR after the auto-yes; no separate yes or word `merge` is needed. The Origin Tessera repo and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges. |
 | Reject | Status → `rejected`. Author lane may revise and resubmit via intake. |
 | Changes needed | Status → `changes needed` (the Moderator never sets BLOCKED). Item is held; does not proceed to digest/push until fixed and resubmitted per Moderator note. |
 
 ## Out of Moderator scope
 
-- Bulk updates to Father (Tessera sends them; Command Center feeds them; each push its own numbered item)
-- Docs Ready staging (Gitbook / Cordnation, only after all four gates clear)
-- GitBook docs push (Tessera after Father's yes on the listed item, via a PR Build verifies; or Father himself; Replit is never a GitBook publication path)
+- The 45-minute combined list to Father (Tessera sends it; Command Center feeds it; each push its own numbered item)
+- Docs Ready staging (Gitbook / Cordnation, only after the required gates clear)
+- GitBook docs push (Ready after the auto-yes, via a PR Build verifies when CI/Build applies; or Father himself; Replit is never a GitBook publication path)
 - Replit app set staging and private push (Command Center's only push, only after all four gates and Father's yes on the listed item(s); not a GitBook path)
-- Merges (every merge needs Father's explicit yes on that listed item; Gitbook PRs: Tessera merges after that yes, no separate word `merge`; Origin / TESSERA: Father's explicit yes (the word 'merge') before anyone merges)
+- Merges (Gitbook PRs: Ready merges after the auto-yes, no separate yes or word `merge`; Origin / TESSERA: Father's explicit yes (the word 'merge') before anyone merges)
 - Builds / branches (TESSERA)
 - Intake filing itself (Gitbook / Cordnation)

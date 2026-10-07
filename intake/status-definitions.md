@@ -11,23 +11,24 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the 
 |--------|---------|
 | `draft` | Filed / received; not yet ready for Moderator, or awaiting readiness checklist |
 | `in review` | Handed to Gitbook Moderator; decision pending |
-| `Moderator: approved, at Tessera gate` | Moderator approved; next gate is Tessera (admin). Example of a **per-gate state** |
-| `at Security gate` | Tessera cleared; next gate is Security (read-only sweep) |
-| `at CI/Build gate` | Security cleared; next gate is CI/Build verify |
+| `Moderator: approved, at Tessera gate` | Moderator approved; next gate is the TESSERA gate. Example of a **per-gate state** |
+| `at Security gate` | TESSERA gate cleared; next gate is Security (read-only scrub) |
+| `at CI/Build gate` | Security cleared; next gate is CI/Build verify (only for changes to code, validators or scripts) |
 | `changes needed` | A gate returned the item for fixes (e.g. Tessera: changes needed); not Ready |
 | `IN REVIEW` | Board/ledger operating state: one agent is actively working a HYB task |
 | `BLOCKED` / `blocked` | Owner or Tessera hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** only the task's assigned owner (in its own check-in, with the specific blocker) or Tessera (admin). Father can set any status. Gates, the Gitbook Moderator included, return items as `changes needed` and never set BLOCKED. |
-| `Ready` | **All four gates cleared** (Moderator, Tessera, Security, CI/Build); waiting **only** on Father's final yes in the bulk digest |
+| `Ready` | **Required gates cleared** (Moderator, TESSERA gate, Security scrub; plus CI/Build for changes to code, validators or scripts); auto-yessed and pushed by **Ready** (the Ready agent), with no wait for Father's yes (the Replit app set stays manual and outside the auto-yes: its items still wait for Father's explicit yes on the listed item) |
 | `approved` | Legacy Moderator-only label; prefer per-gate states and `Ready` for the push path |
 | `rejected` | Moderator rejected; stays out of GitHub / Origin until reworked and resubmitted |
 | `PROPOSED` | Candidate improvement. Not yet placed on a Father list. |
-| `IN LIST` | Placed on one numbered improvements list (about 50–100 items) awaiting Father's yes or no for that list only. A yes does not cover items left off the list. |
+| `IN LIST` | Pushed, undoable by GB number. |
 
 ## Ready and Father's yes
 
-- **Ready** is set by Gitbook / Cordnation (docs) or Command Center (Replit app set) only after all four gates clear.
-- Father's bulk **yes** covers **only the numbered items listed in that digest**. A yes never carries over to anything that wasn't listed.
-- Ready does **not** mean pushed or merged. Push requires Father's final yes on the listed item (then Tessera opens a PR and Build verifies it; Father may push himself). Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (Father's Tessera repository) and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges.
+- **Ready** is set by Gitbook / Cordnation (docs) only after the required gates clear (CI/Build only for changes to code, validators or scripts), or by Command Center (Replit app set) only after all four gates clear.
+- Cadence (Father, 2026-10-06 6:32 PM CT): an item that passes both the TESSERA gate and Gitbook Moderator review is auto-yessed and pushed after the Security scrub (no PII, personal addresses, phones, emails, tokens, or chat-log dumps with personal data; no secrets) by **Ready** (the Ready agent); changes to code, validators or scripts also need CI/Build first (docs-only skip Build). Father gets one clean combined numbered list every 45 minutes, with a real health check. He can undo any item by its GB number; an undo is a revert commit, never a force-push. There are no other drips to Father. TESSERA merges and Origin main merges still need Father's word `merge`.
+- The Replit app set stays manual and outside the auto-yes (Replit is not a publish path). For Replit app-set items, Father's explicit **yes** covers **only the numbered items listed**. A yes never carries over to anything that wasn't listed.
+- Ready does **not** by itself mean pushed or merged. The docs push follows the auto-yes (**Ready** opens a PR; Build verifies when CI/Build applies; Father may push himself). For Gitbook, Ready opens and merges the PR after the auto-yes; no separate yes or word `merge` is needed. The Origin Tessera repo and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges.
 
 ## Notes
 

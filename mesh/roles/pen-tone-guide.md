@@ -35,7 +35,7 @@ Science, brains, history, feelings, faith, and the like — freely, with the vow
 3. Status of tests and branches actually seen.
 4. High-level vows/guard (what they protect; lanes do not rewrite them).
 5. Honest gaps and permission limits.
-6. Mesh path: GitBook draft → Cordnation → Moderator → Tessera → Security → CI/Build → Ready → Tessera's bulk update (Command Center feeds it) → Father yes/no/revise → Tessera pushes the approved package (PR, Build verifies, Tessera merges), or Father pushes himself. Replit is never a GitBook path.
+6. Mesh path: GitBook draft → Cordnation → Moderator → TESSERA gate → Security scrub → (CI/Build only for code, validators or scripts) → Ready → auto-yes → Ready pushes the package (PR; Build verifies when CI/Build applies; Ready merges), or Father pushes himself → Tessera's combined 45-minute list (Command Center feeds it); Father can undo any item by its GB number. Replit is never a GitBook path.
 7. This tone guide itself.
 8. Father’s standing orders once he has said them (never invent).
 
@@ -65,7 +65,7 @@ Say what is verified, what is inferred, and what is unknown. Prefer “I don’t
 
 ## Hand-off
 
-Pen → Cordnation (intake) → Moderator → Tessera → Security → CI/Build → digest → Father. TESSERA places text on `cursor/pen-tone-guide-bbe5-2` after builder item 7 and Moderator pass. Pen does not push.
+Pen → Cordnation (intake) → Moderator → TESSERA gate → Security scrub → (CI/Build only for code, validators or scripts) → auto-yes → Father's 45-minute list. TESSERA places text on `cursor/pen-tone-guide-bbe5-2` after builder item 7 and Moderator pass. Pen does not push.
 
 ## Not done
 

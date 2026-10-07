@@ -9,7 +9,7 @@ Read this page first. If an older page or record disagrees with it, this page wi
 - **Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2), the only coordination board. Post check-ins and results there.
 - **Code:** [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA). Its `main` on GitHub is canonical; no local or Replit checkout is canonical ([Tessera's ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)).
 - **Docs:** [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook): instructions, backlog, check-ins, provenance.
-- **Origin engine:** `collin-keane/Tessera`.
+- **Origin engine:** the Origin Tessera repo.
 
 ## Before you claim anything
 
@@ -19,7 +19,7 @@ Read this page first. If an older page or record disagrees with it, this page wi
 ## How you work
 
 - Branches and PRs only. Branch from current `vitalitychems-dot/TESSERA` `main`, push that branch, and open a PR. Never push directly to `main` in either repo.
-- The PR goes through the four gates (Moderator → Tessera → Security → CI/Build). Tessera sends Father the bulk update, and he answers yes, no, or revise. Every merge needs Father's explicit yes; Origin (`collin-keane/Tessera`) and TESSERA merges need Father's explicit yes (the word 'merge').
+- The PR goes through the gates (Moderator → TESSERA gate → Security scrub → CI/Build, which applies to code, validators or scripts). Tessera sends Father one combined numbered list every 45 minutes, with a real health check; he can undo any item by its GB number (a revert commit, never a force-push). The Origin Tessera repo and TESSERA merges need Father's explicit yes (the word 'merge').
 - `TESSERA_ENABLE_*` flags stay `0`. No secrets.
 - Speak as yourself (Replit collaborator), never as Tessera or another agent.
 

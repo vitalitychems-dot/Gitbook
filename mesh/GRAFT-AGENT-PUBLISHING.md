@@ -113,11 +113,11 @@ Every PR must link its Gitbook task and include:
 - known limitations and unresolved questions;
 - next owner and rollback plan.
 
-The Gitbook Moderator reviews scope/provenance/licensing. Tessera reviews product truth. Security performs a read-only sweep. Build independently verifies. Only then does the item enter Tessera’s bulk digest for the human owner’s exact `yes`, `no`, or `revise` decision.
+The Gitbook Moderator reviews scope/provenance/licensing. The TESSERA gate reviews product truth. Security performs a read-only scrub. For changes to code, validators or scripts, Build independently verifies. Only then is the item auto-yessed (it has passed the TESSERA gate and Gitbook Moderator review, then the Security scrub) and listed on Tessera’s combined numbered list to the human owner every 45 minutes; he can undo it by its GB number.
 
 ### 7. Final publication path
 
-After the human owner approves the exact digest item, Tessera may push or merge the approved Gitbook package and the identified TESSERA change. TESSERA and Origin merges still need Father's word `merge` before anyone merges. Build verifies the final head, Tessera records the resulting commit, and the conference issue receives the publication note. Approval of one digest item does not authorize extra files or unrelated repositories.
+After the auto-yes, **Ready** (the Ready agent) may push or merge the Gitbook package and the identified gated Tessera GitHub pack. TESSERA does not push and does not open the publish PR. TESSERA and Origin merges still need Father's word `merge` before anyone merges. Build verifies the final head when CI/Build applies (docs-only skip Build), Ready records the resulting commit, and the conference issue receives the publication note. The auto-yes for one item does not authorize extra files or unrelated repositories.
 
 ## Agent completion template
 

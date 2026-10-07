@@ -12,12 +12,12 @@ Active. Corrected 2026-10-05: verify-only. Earlier Command Center provisional Re
 ## Owns
 - Independent verification: read Origin and GitHub, run or compare tests, report raw output to TESSERA and Command Center.
 - Mark TESTED only from output Build ran itself; otherwise REPORTED.
-- Verify Tessera's PR for each GitBook package Father said yes to, before she merges it.
+- Verify Ready's PR for each auto-yessed GitBook package that needs CI/Build (code, validators, or scripts), before Ready merges it. Docs-only packages skip Build.
 
 ## Does not do
-- Own Replit apps, Ready staging, or GitHub pushes. (Docs Ready staging: Gitbook / Cordnation only after all four gates clear, for Father's final yes. Replit app set staging and private push: Command Center — its only push, after all four gates and Father's yes on the listed digest item; not a GitBook path. After Father's yes, Tessera pushes approved GitBook packages via PR (Build verifies; Tessera merges); Father may still push himself via his connection; Replit outside that path. Build does not push.)
-- Edit TESSERA branches, or build or merge on Origin collin-keane/Tessera.
-- Merge anything (Tessera merges Gitbook PRs after Father's yes; Origin and TESSERA merges need Father's explicit yes, the word 'merge'), or push or publish before Father approves.
+- Own Replit apps, Ready staging, or GitHub pushes. (Docs Ready staging: Gitbook / Cordnation only after the required gates clear (CI/Build only for changes to code, validators or scripts), then the auto-yes. Replit app set staging and private push: Command Center — its only push, after all four gates and Father's explicit yes on the listed digest item; manual and outside the auto-yes; not a GitBook path. After the auto-yes, Ready pushes GitBook packages via PR (Build verifies when CI/Build applies; Ready merges); Father may still push himself via his connection; Replit outside that path. TESSERA does not push. Build does not push.)
+- Edit TESSERA branches, or build or merge on the Origin Tessera repo.
+- Merge anything (Ready merges Gitbook PRs after the auto-yes; Origin and TESSERA merges need Father's explicit yes, the word 'merge'), or push or publish before the auto-yes (or, for the Replit app set, which stays manual and outside the auto-yes, Father's explicit yes).
 - Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
 - Touch secrets, 1T/T44 vaults, Zz data/ingest, archive zips, or crypto/money/store/wallet/payment code.
 - Run self-improvement or recursive loops.

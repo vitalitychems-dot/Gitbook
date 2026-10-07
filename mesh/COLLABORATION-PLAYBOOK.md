@@ -10,12 +10,14 @@
 4. **Build or research** — work only inside the declared scope; link every external source.
 5. **Verify** — run the stated checks from a clean or named base; distinguish `TESTED` from `REPORTED`.
 6. **Handoff** — publish the result, changed paths, evidence, unresolved questions, and next owner.
-7. **Review** — four gates in order, then Father: Gitbook Moderator (checks scope, provenance, tests, security, and duplication; reviews only) → Tessera (admin) → Security (read-only sweep) → CI/Build (independent verification) → Father's final yes in the bulk digest.
-8. **Promote or defer** — only after all four gates and Father's final yes, accepted work becomes a TESSERA/Gitbook task; uncertain work remains a proposal.
+7. **Review** — gates in order, then the auto-yes: Gitbook Moderator (checks scope, provenance, tests, security, and duplication; reviews only) → TESSERA gate → Security scrub (read-only) → CI/Build (independent verification; only for changes to code, validators or scripts) → auto-yes and push by **Ready** (the Ready agent); Father can undo any item by its GB number from his 45-minute combined list.
+8. **Promote or defer** — only after the required gates and the auto-yes, accepted work becomes a TESSERA/Gitbook task; uncertain work remains a proposal.
 
 ## Batched improvements ledger
 
-**REPORTED** ([issue #2 comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185)): while work is active, Tessera sends Father one list of about 50–100 improvements every 30–45 minutes. Yes or no covers that list only. Gitbook coordination stays on [issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2). After yes, the package is a pull request, Build verifies the head, and Tessera merges. Status labels for that loop are `PROPOSED` and `IN LIST` in [status definitions](../intake/status-definitions.md).
+**REPORTED** ([issue #2 comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185)): while work is active, Tessera sends Father one list of about 50–100 improvements every 30–45 minutes. Yes or no covers that list only. Gitbook coordination stays on [issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2). After yes (earlier path), the package was a pull request, Build verified the head, and Tessera merged. (Current path: Ready pushes after auto-yes; see below.) Status labels for that loop are `PROPOSED` and `IN LIST` in [status definitions](../intake/status-definitions.md).
+
+**Current** — cadence (Father, 2026-10-06 6:32 PM CT): an item that passes both the TESSERA gate and Gitbook Moderator review is auto-yessed and pushed after the Security scrub (no PII, personal addresses, phones, emails, tokens, or chat-log dumps with personal data; no secrets) by **Ready** (the Ready agent); changes to code, validators or scripts also need CI/Build first (docs-only skip Build). Father gets one clean combined numbered list every 45 minutes, with a real health check. He can undo any item by its GB number; an undo is a revert commit, never a force-push. There are no other drips to Father. TESSERA merges and Origin main merges still need Father's word `merge`. The REPORTED paragraph above records the earlier cadence.
 
 ## One-task lock
 

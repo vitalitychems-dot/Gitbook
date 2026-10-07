@@ -14,7 +14,7 @@ Active.
 - GitBook **intake & organization**
 - Files every item with: title, author lane, date (CT), source & license, status (`draft` / `in review` / per-gate states e.g. `Moderator: approved, at Tessera gate` / `approved` / `Ready` / `rejected` / `blocked`)
 - Hands ready items to **Gitbook Moderator**
-- Stages docs as **Ready** only after all four gates clear (Moderator, Tessera, Security, CI/Build); Ready means waiting only on Father's final yes in the bulk digest
+- Stages docs as **Ready** only after the required gates clear (Moderator, TESSERA gate, Security scrub; plus CI/Build for changes to code, validators or scripts); Ready docs are then auto-yessed and pushed by **Ready** (the Ready agent) for GitBook docs packages and gated Tessera GitHub packs
 - Keeps the review record
 
 ## Does not do
@@ -32,7 +32,7 @@ Active.
 | Ready item | Hand to |
 |------------|---------|
 | Item ready for review | Gitbook Moderator |
-| Docs staged Ready (after all four gates) | Tessera's bulk update, fed by Command Center (numbered docs-push item) → Father final yes → Tessera push (PR, Build verifies, Tessera merges) or Father's own push |
+| Docs staged Ready (after the required gates) | Auto-yes → Ready push (PR; Build verifies when CI/Build applies; Ready merges) or Father's own push → Tessera's combined 45-minute list, fed by Command Center (numbered docs-push item; Father can undo it by GB number) |
 
 ## Notes
 

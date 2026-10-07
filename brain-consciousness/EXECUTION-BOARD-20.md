@@ -24,8 +24,8 @@
 | AGI-16 | Dependency/license governance | **EXISTING POLICY** | TESSERA maintainer | Apply to next dependency or upstream adapter |
 | AGI-17 | Learning from failures | **PROPOSED** | Gitbook / Cordnation | Add searchable lesson record for the stopped 20-agent run |
 | AGI-18 | Multi-agent role evaluation | **PROPOSED** | Research lane | Define controlled scenarios and scoring |
-| AGI-19 | Human approval boundaries | **EXISTING POLICY** | Human owner / Moderator | Preserve explicit yes/no/revise and merge gates |
-| AGI-20 | Bulk digest execution | **EXISTING POLICY** | Tessera Grok bot / Command Center | Publish 30–45 minute digest with exact bases and checks |
+| AGI-19 | Human approval boundaries | **EXISTING POLICY** | Human owner / Moderator | Preserve undo by GB number on the 45-minute combined list, Father's explicit yes/no for anything Replit, and the merge-word gate (TESSERA and Origin main merges need Father's word `merge`) |
+| AGI-20 | Bulk digest execution | **EXISTING POLICY** | Tessera Grok bot / Command Center | Publish the 45-minute combined numbered list with exact bases, checks, and a real health check |
 
 ## Run interruption record
 
@@ -36,5 +36,5 @@ The approved 20-workstream orchestration run produced three report files (`AGI-0
 1. Moderator verifies the new AGI-01 and AGI-02 validators.
 2. Gitbook records one owner for AGI-03 before any TESSERA schema/API edit. Recorded 2026-10-06: the AGI-03 owner is TESSERA (TESSERA ruling).
 3. Build independently reruns the validators.
-4. Command Center includes these exact commits and checks in the next bulk digest.
-5. Father decides `yes`, `no`, or `revise`; no TESSERA code is claimed from analysis alone.
+4. Command Center includes these exact commits and checks in the next 45-minute combined list.
+5. Father can undo any listed item by its GB number; TESSERA merges still need Father's word `merge`; no TESSERA code is claimed from analysis alone.
