@@ -17,6 +17,7 @@
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
 * [All-repository routing and consolidation record](merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md)
+* [Canonical destinations and no-replica policy](merge/CANONICAL-DESTINATIONS-NO-REPLICAS-2026-10-07.md)
 * [Current exact repository coverage — 2026-10-07](merge/current-coverage-2026-10-07.tsv)
 * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)
 * [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
