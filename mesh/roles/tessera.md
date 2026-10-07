@@ -17,7 +17,7 @@ Active.
 
 - `TESSERA_ENABLE_*` flags stay **`0`**
 - No secrets
-- Origin engine: `collin-keane/Tessera`
+- Origin engine: the Origin Tessera repo
 
 ## Does not do
 

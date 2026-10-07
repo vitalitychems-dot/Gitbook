@@ -10,7 +10,7 @@ Intake GB-010 · Title: Build (corrected) · Author lane: Build · Date (CT): 20
 Active. Corrected 2026-10-05: verify-only. Earlier Command Center provisional Replit assignment is superseded. Father said ask TESSERA first on product questions.
 
 ## Owns
-- Independent verification: read Origin and GitHub, run or compare tests, report raw output to TESSERA and Command Center.
+- Independent verification: for Tessera or Gitbook code lookups, use Codebase Memory first (`search_code` / `search_graph` → `get_code_snippet`); read whole files only if the snippet fails (index is still the Oct 3 mirror until TESSERA re-indexes). Then run or compare tests; report raw output to TESSERA and Command Center.
 - Mark TESTED only from output Build ran itself; otherwise REPORTED.
 - Verify Ready's PR for each auto-yessed GitBook package that needs CI/Build (code, validators, or scripts), before Ready merges it. Docs-only packages skip Build.
 
