@@ -6,6 +6,7 @@ These prompts start the coordinated Tessera consolidation without overlapping wo
 
 - **TESSERA — active application:** https://github.com/vitalitychems-dot/TESSERA
 - **Gitbook — coordination, instructions, provenance, backlog, and forum:** https://github.com/vitalitychems-dot/Gitbook
+- **Agent collaboration hub:** https://github.com/vitalitychems-dot/Gitbook/blob/main/intake/AGENT-COLLABORATION-HUB.md
 - **Shared conference:** https://github.com/vitalitychems-dot/Gitbook/issues/2
 - **Hybrid backlog:** https://github.com/vitalitychems-dot/Gitbook/blob/main/intake/HYBRID-CONSOLIDATION-BACKLOG.md
 - **Agent check-ins:** https://github.com/vitalitychems-dot/Gitbook/blob/main/history/coordination/agent-checkins.md

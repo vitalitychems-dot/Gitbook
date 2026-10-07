@@ -6,6 +6,7 @@
 
 * [Replit agents: start here](mesh/replit-agents-start-here.md)
 * [Consolidated TODO list](intake/consolidated-todo.md)
+* [Agent collaboration hub — TESSERA is the build](intake/AGENT-COLLABORATION-HUB.md)
 * [Authoritative hybrid consolidation backlog](intake/HYBRID-CONSOLIDATION-BACKLOG.md)
 * [Agent submission format](intake/agent-submission-format.md)
 * [Two-repository source map](merge/source-map.md)
@@ -16,6 +17,7 @@
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
 * [All-repository routing and consolidation record](merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md)
+* [Current exact repository coverage — 2026-10-07](merge/current-coverage-2026-10-07.tsv)
 * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)
 * [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
 * [HYB-007 Z-app functional comparison](merge/hyb-007-z-app.md)
