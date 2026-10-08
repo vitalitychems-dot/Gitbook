@@ -13,6 +13,8 @@ Updated 2026-10-08 by Cursor. A box is not done until the check on that line has
 - [x] Compiled duplicates and three backup files were removed from the local checkouts. The source checkouts were kept.
 - [x] Father said yes to update her on GitHub. Check: this file and TESSERA pull request 51.
 - [x] Cursor copied the chamber into TESSERA preview. The store was not copied. Check: commit 95e217d on branch cursor/chamber-v5. https://github.com/vitalitychems-dot/TESSERA/pull/51
+- [x] Pull request 51 is on main as 3023269. Pull request 53 is on main as 3d09155.
+- [x] Four text pages are kept. The fourth is .agents/memory/github-repo-tree-snapshots.md. The other text pages stay unread.
 - [x] The large query database stayed out. Nothing was invented for it.
 - [x] The supply zip stayed on Drive. Its contents were not invented.
 - [x] The repository list was not fetched. The index was enough. The two home trees were listed by path only.
@@ -24,7 +26,7 @@ Updated 2026-10-08 by Cursor. A box is not done until the check on that line has
 ## Still open
 
 - [ ] Father: rotate the old keys. No agent can do this.
-- [ ] Father: merge pull request 51 if Replit should run this branch. Cursor did not merge to main.
+- [ ] Privacy pull requests 41, 44, 46, 48, 49, and 52 stay open. They are on Father's list. Cursor did not merge them.
 
 ## Closed, do not reopen
 
