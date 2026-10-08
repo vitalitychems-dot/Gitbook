@@ -1,3 +1,4 @@
+# Superseded by mesh/GITHUB-REPOS.txt. Kept so old links still open.
 0x0funky/agent-sprite-forge
 269652/artificial-consciousness-ai
 269652/artificial-consciousness-blueprint
