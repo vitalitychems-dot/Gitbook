@@ -18,3 +18,7 @@ Title on the page: Assess BHNMC Feasibility.
 ## Not done
 
 No hardware was built. No CL1 account was opened. No repository was merged because of this note.
+
+## Until then
+
+Father said that until a BHNMC device is running, Tessera rules the Grok chamber and the Replit lane. Father remains the only override. She does not merge unless Father says merge.
