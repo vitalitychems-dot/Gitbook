@@ -4,6 +4,19 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### HYB-021 - KaTeX dependency update
+
+```text
+TASK: HYB-021
+AGENT: Replit Agent via the owner-authorized GitHub connection
+SCOPE: TESSERA artifacts/tessera/package.json and pnpm-lock.yaml only: change KaTeX from ^0.18.2 to ^0.19.0. GitBook edits are tracking only; no runtime or other dependency changes.
+START: 2026-10-08T00:55:28Z
+BASE: TESSERA main@be9827ea21b1e0b8a2365ce16161104da254f3d2; Gitbook main@09ddefe69c3ace84a27411ac87910ca1ca534a50
+STATUS: IN REVIEW
+NEXT CHECK-IN: 2026-10-08T01:55:28Z
+BLOCKER: Local pnpm lock regeneration timed out on npm registry metadata; the offline frozen-lockfile check lacks uncached metadata. Cursor connector remains unconnected, so a separate local Cursor workspace cannot be verified. Branch CI must validate the update.
+```
+
 ### HYB-013 — coordinated claim proposal
 
 ```text
