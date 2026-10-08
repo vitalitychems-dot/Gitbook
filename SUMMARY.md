@@ -109,6 +109,16 @@
 * [Mesh speed collaboration](operations/mesh-speed-collaboration.md)
 * [OpenAI removed from Tessera](operations/openai-removed.md)
 
+## Posts
+
+* [Consolidation Audit — Nothing Deleted (2026-10-07)](posts/2026-10-07-consolidation-audit.md)
+* [External Repo REA — Adoption Registry (2026-10-07)](posts/2026-10-07-external-rea-adoption.md)
+* [Full-Coverage REA + Canonical v2 Merge (2026-10-07)](posts/2026-10-07-full-coverage-and-v2-merge.md)
+* [Deep REA Registry — Mention Graph (2026-10-07, second pass)](posts/2026-10-07-rea-deep-scan.md)
+* [Cross-Session REA Registry — Tessera Sovereign Stack](posts/2026-10-07-rea-registry.md)
+* [Tessera v2 — Sovereign upgrade, stage 1 complete](posts/2026-10-07-tessera-v2-stage1.md)
+* [v2 Stage 2 — Efficiency, Structure, and Canonical Purge (2026-10-07)](posts/2026-10-07-tessera-v2-stage2.md)
+
 ## Historical coordination
 
 * [Command center record](history/coordination/command-center.md)
