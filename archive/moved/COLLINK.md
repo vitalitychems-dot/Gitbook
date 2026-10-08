@@ -12,4 +12,4 @@ Not copied: collink1007/XXX tess/log-query.db is a Git LFS pointer to a 420,429,
 
 ## XXX, the original
 
-`collink1007/XXX` is the original tree. On 2026-10-08 the exact duplicates were removed from this archive because the same bytes already exist in TESSERA or elsewhere in Gitbook. The files left under `collink1007-XXX/` are the originals that were not already stored. The 420 MB database pointer is still not here.
+`collink1007/XXX` is the original tree. It has 2,256 files. 2,254 of them are already stored, either in TESSERA or in this archive. The 1,002 files under `collink1007-XXX/` are the ones that were not already stored. The other 1,252 were exact duplicates and were not copied. Two paths, `tess/log-query.db` and `x/tess/log-query.db`, are the same 420 MB pointer and are not stored.
