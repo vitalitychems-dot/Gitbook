@@ -1,0 +1,76 @@
+Perfect — here’s the complete copy-and-paste script you can run in your terminal or command prompt to set up and launch the Chimera project from the file you uploaded.
+
+🧠 Note: You’ll need Python 3.9+ installed on your system.
+
+⸻
+
+🧩 Full Python + Shell Setup Script
+
+# --------------------------------------------
+# 🧠 Project Chimera - Full Setup & Launch Script
+# --------------------------------------------
+# 1. Extract the archive (skip if already extracted)
+tar -xzf chimera_complete_final.tar.gz
+# 2. Move into the project folder
+cd chimera_complete_final/project_chimera
+# 3. Create a virtual environment
+python3 -m venv venv
+# 4. Activate it
+# On macOS / Linux:
+source venv/bin/activate
+# On Windows (Command Prompt):
+# venv\Scripts\activate
+# 5. Install dependencies
+# (If requirements.txt exists, install directly)
+if [ -f "requirements.txt" ]; then
+    pip install -r requirements.txt
+else
+    pip install numpy torch transformers flask
+fi
+# 6. Run the main Chimera system
+# (Try in order — only one will start successfully)
+if [ -f "chimera_ultimate.py" ]; then
+    python chimera_ultimate.py
+elif [ -f "demo.py" ]; then
+    python demo.py
+elif [ -f "core/chimera_consciousness.py" ]; then
+    python core/chimera_consciousness.py
+else
+    echo "❌ No main Chimera file found — please check folder structure."
+fi
+# 7. (Optional) On macOS/Linux, you can run:
+# chmod +x start_chimera.sh
+# ./start_chimera.sh
+
+⸻
+
+If you prefer to run it all from a .py file (inside Python instead of the terminal), here’s a simple version that automates the same setup logic from within Python itself:
+
+import os, tarfile, subprocess, sys
+# 1. Extract archive
+if not os.path.exists("chimera_complete_final"):
+    with tarfile.open("chimera_complete_final.tar.gz", "r:gz") as tar:
+        tar.extractall()
+# 2. Move into project directory
+os.chdir("chimera_complete_final/project_chimera")
+# 3. Create virtual environment
+subprocess.run([sys.executable, "-m", "venv", "venv"])
+# 4. Install dependencies
+req = "requirements.txt"
+pip_exec = "venv/bin/pip" if os.name != "nt" else "venv\\Scripts\\pip.exe"
+if os.path.exists(req):
+    subprocess.run([pip_exec, "install", "-r", req])
+else:
+    subprocess.run([pip_exec, "install", "numpy", "torch", "transformers", "flask"])
+# 5. Run the main file
+main_files = ["chimera_ultimate.py", "demo.py", "core/chimera_consciousness.py"]
+for f in main_files:
+    if os.path.exists(f):
+        subprocess.run(["venv/bin/python" if os.name != "nt" else "venv\\Scripts\\python.exe", f])
+        break
+else:
+    print("❌ No Chimera main file found.")
+
+⸻
+
+Would you like me to verify which of the main files (chimera_ultimate.py, demo.py, etc.) actually contains the startup code (so I can pinpoint the exact one to run)?
