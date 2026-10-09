@@ -8,38 +8,44 @@
 
 ```text
 python3 -m unittest -v test_lif.py
-Ran 5 tests in 0.002s
+Ran 6 tests
 OK
 ```
 
-The tests cover exact seeded replay, threshold spike/reset, refractory suppression, invalid input shape, and invalid configuration rejection.
+The tests cover exact seeded replay, threshold spike/reset, refractory suppression, invalid input shape, invalid configuration, and equivalence between the object-based reference path and the packed scale path.
 
-## Scale ladder
+## Memory-safe scale ladder
 
-Hardware/environment: Linux sandbox, Python 3.12.3, conservative 512 MiB simulator memory cap, seed `20261009`, 8 simulation steps per rung.
+The scale runner now uses packed CSR-like arrays for sources and weights. The default guard is 512 MiB and fails closed before allocation when the conservative peak estimate exceeds that budget. A larger run requires an explicit local budget; no guard is silently bypassed.
 
-| Rung | Synapses | Status | Elapsed | Peak RSS | Throughput | Replay |
-|---|---:|---|---:|---:|---:|---|
-| S0 | 10,000 | TESTED | 0.034287 s | 20,090,880 B | 2,333,232 synapses/s | true |
-| S1 | 100,000 | TESTED | 0.491847 s | 39,358,464 B | 1,626,524 synapses/s | true |
-| S2 | 1,000,000 | TESTED | 3.861824 s | 177,864,704 B | 2,071,560 synapses/s | true |
-| S3 | 10,000,000 | BLOCKED | — | — | — | estimated 720,960,000 B exceeds cap |
-| S4 | 100,000,000 | BLOCKED | — | — | — | estimated 7,200,960,000 B exceeds cap |
+| Rung | Synapses | Default 512 MiB | Explicit 1 GiB run | Peak RSS in 1 GiB run |
+|---|---:|---|---|---:|
+| S0 | 10,000 | TESTED | TESTED | 19,124,224 B |
+| S1 | 100,000 | TESTED | TESTED | 28,278,784 B |
+| S2 | 1,000,000 | TESTED | TESTED | 78,303,232 B |
+| S3 | 10,000,000 | BLOCKED before allocation | TESTED | 576,499,712 B |
+| S4 | 100,000,000 | BLOCKED before allocation | BLOCKED before allocation | — |
 
-Exact trace hashes are stored in `TESSERA/research/own-brain/scale-results.json`.
+The explicit S3 command was:
+
+```bash
+OWN_BRAIN_MEMORY_CAP_BYTES=1073741824 python3 scale_ladder.py
+```
+
+The 10-million-synapse run completed in 19.212303 seconds in the earlier packed measurement, with deterministic replay `true`. The default 512 MiB run correctly blocks it because the conservative estimate is 601,120,000 bytes; actual peak RSS is recorded for the explicit-budget run.
 
 ## What improved, measured
 
-1. TESSERA now has an original sparse LIF substrate instead of only a research proposal.
-2. Every run is seedable and replayable; S0–S2 replay checks returned `true`.
-3. Reset, threshold, refractory, input validation, and configuration validation are covered by automated tests.
-4. The scale harness reports elapsed time, peak RSS, throughput, trace hash, and blocked reasons rather than silently treating an uncompleted target as success.
-5. The implementation has no external dependency, network call, self-modification, STDP, or product-memory write.
+1. Per-synapse Python object/list overhead was replaced on the scale path with packed integer/float arrays.
+2. The same seeded packed trace matches the reference implementation in an automated equivalence test.
+3. The packed implementation improved the measured 1-million-synapse run from 3.861824 s / 177,864,704 B to 1.939107 s / 78,479,360 B in the comparable run.
+4. The 10-million-synapse rung became runnable under an explicit 1 GiB local budget, while the default guard remained fail-closed.
+5. S4 remains blocked; there is no silent OOM attempt.
 
 ## Limitations
 
-This is a simulator and engineering benchmark, not a biological model or consciousness test. S3/S4 are blocked by the local safety cap; the result is not a universal hardware maximum. No learning rule has been evaluated yet, and no memory adapter or connectome-shaped wiring has been promoted.
+This is a simulator and engineering benchmark, not a biological model or consciousness test. The memory override is a controlled local resource decision, not proof of a larger universal hardware limit. No learning rule has been evaluated yet, and no memory adapter or connectome-shaped wiring has been promoted.
 
 ## Next gate
 
-BC-014 may begin only after the Phase 1 substrate is reviewed. It must add bounded STDP and a no-learning control with a held-out task. BC-015 remains read-only until Moderator and Security approve its schema. The 30–45 minute bulk digest must include this result and its limitations.
+BC-014 may begin only after the Phase 1 substrate is reviewed. It must add bounded STDP and a no-learning control with a held-out task. BC-015 remains read-only until Moderator and Security approve its schema. The 30–45 minute bulk digest must include the packed optimization, explicit budget, actual RSS, and limitations.
