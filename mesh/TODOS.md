@@ -4,9 +4,9 @@ Updated 2026-10-09 by Cursor. A box is not done until the check on that line has
 
 ## Current bases
 
-- Gitbook main moves with this note. The previous Gitbook tip was `8ed2f39`.
-- TESSERA main is `63a9911`.
-- On TESSERA since `4ca91b3`: archive dedupe `9538b36`, graph refresh `cc4c5e7`, own-brain Phase 1 `6e6b759`, protected 1T paths removed from the TESSERA tree `571cef4`, packed sparse storage `c71b4ef`, production build `e5e5719`, three.js chunks `072acd8`, pull request 93 `c6c7704`, pull request 94 `63a9911`.
+- Gitbook main moves with this note.
+- TESSERA main is `a708206`.
+- Pull request 95 merged as `a708206`. It records the third 50 catalog cards and three source steps.
 - The 1T repository was not deleted.
 - Still open: 34, 68, 78, 80, 81, 82, 87, 89, 90, 91.
 - HYB-014 and HYB-021 are done. HYB-008 is still READY in the backlog. HYB-013 is still the active ledger claim. Cursor did not edit that claim.
@@ -14,9 +14,10 @@ Updated 2026-10-09 by Cursor. A box is not done until the check on that line has
 ## Already done
 
 - [x] Store files and the Vitalitychems.com checkout sit in vitalitychems-dot/vitality. Check: that repository contains archive/moved/collink1007-fleet-moss-monarch-rapid. This login got 404 for that repository on 2026-10-09 and did not push a store file.
-- [x] The catalog is one index of 272 lines and 270 names. Check: the chamber Map tab, or mesh/CATALOG-PASS.md. Pull request 88 landed as `b593ef0`. Pull request 93 records a second 50.
+- [x] The catalog is one index of 272 lines and 270 names. Check: the chamber Map tab, or mesh/CATALOG-PASS.md. Pull request 88 landed as `b593ef0`. Pull request 93 records a second 50. Pull request 95 records a third 50.
+- [x] The third 50 are catalog cards that were not in the first two batches. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-3.test.ts` passed, and validate on pull request 95 passed. Two names moved. The steps are grid distance, clamp and positive modulus, and heaviside. These are not a new set of weights.
 - [x] Father said yes to update her on GitHub. Pull request 51 is on main as 3023269.
-- [x] Text pages are kept. The kept count was 15 at TESSERA main `7cc1cbf`. It was not re-counted at `63a9911`.
+- [x] Text pages are kept. The kept count was 15 at TESSERA main `7cc1cbf`. It was not re-counted at `a708206`.
 - [x] Privacy pull requests 44, 49, 41, 46, 48, and 52 are on main. Pull request 52 merged as `7cc1cbf`. The cleanup script was not run.
 - [x] Desk preview pull request 45 is on main as `71fc59b`. A who, what, where, or when answer keeps its source. Learn lists the five skills she can run. These are not a new set of weights.
 - [x] The large query database stayed out. The supply zip stayed on Drive. The Zz archive was not read again. The eight tool cards were not installed.
@@ -38,7 +39,7 @@ Updated 2026-10-09 by Cursor. A box is not done until the check on that line has
 - [ ] Pull request 80 was not merged. Its identity line says the pen is Tessera.
 - [ ] Pull request 82 failed validate and conflicts with main.
 - [ ] Drafts 68, 81, 87, 89, 90, and 91 were not merged.
-- [ ] SITE-006 waits. Replit has not posted the SITE-005 deployment report.
+- [ ] SITE-006 waits. The SITE-005 draft is `mesh/SITE-005-2026-10-09.md`. Replit has not confirmed it.
 
 ## Started
 
