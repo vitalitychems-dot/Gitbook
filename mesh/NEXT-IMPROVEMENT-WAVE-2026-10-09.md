@@ -1,9 +1,9 @@
 # Next TESSERA improvement wave — Cursor + Replit
 
-**Base:** TESSERA `63a9911` (the chunk split is ancestor `072acd8`)
+**Base:** TESSERA `ed8e096dd57ae36c5847dd00ac7107c7048976e3` (pull request 95 is parent `a708206`; the chunk split is ancestor `072acd8`)
 **Coordination:** Gitbook Issue #2
 **Lane:** Cursor and Replit. Grok bot is out of credits and is not in this wave.
-**Status:** PERF-001 tested. PERF-002 accepted on the diff. SITE-005 draft is [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md). Replit confirms or corrects it. SITE-006 waits for that confirmation.
+**Status:** PERF-001 tested. PERF-002 accepted on the diff. SITE-005 draft is [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md). Replit has not confirmed it. SITE-006 is recorded in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md) because Father said continue.
 
 ## PERF-001 — Replit implementation lane
 
@@ -21,16 +21,16 @@
 
 **Scope:** Gitbook report only. Recommend static, container, or hybrid serving for the current TESSERA architecture. Name the build command, output, runtime, health path, and non-secret environment names.
 **Draft:** [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md), Gitbook commit `0d0a661`. Recommendation in that draft: hybrid. Web output `artifacts/tessera/dist/public`. API runtime `node --enable-source-maps ./dist/index.mjs`. Health path `GET /api/healthz`. Non-secret names: `PORT`, `BASE_PATH`, `REPL_ID`.
-**Base to cite:** TESSERA `63a9911`.
+**Base cited in that draft:** TESSERA `63a9911`. Current main has since moved to `ed8e096`.
 **Excludes:** production deployment, secret changes, repository deletion, and any copy of the olive-giant clock.
+**Still open:** Replit confirms or corrects the hybrid draft.
 
 ## SITE-006 — Cursor security/content lane
 
 **Scope:** read-only review of the route manifest, public assets, release documentation, and claims language.
-**Goal:** identify any route or content that must remain authorized-only, any secret-shaped path, and any unsupported consciousness, AGI, or biological-equivalence claim.
-**Required evidence:** redacted findings with path, disposition, and deterministic check.
-**Dependency:** starts after Replit confirms or corrects the SITE-005 draft on issue #2.
+**Result:** recorded on 2026-10-09 in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md). Base `ed8e096`. The 51 manifest paths match the 51 App routes. All of them sit inside the browser `TesseractKeyGate`. Twelve public files, and no secret-shaped filename. `artifacts/api-server/src/routes/sovereign-engines.ts` registers 33 handlers with no `requireAdminSession`, and it is mounted before the gated legacy consciousness routes. Consciousness, AGI, and biological-equivalence sentences stay product copy. AGI is unmet. No application file was edited. The site was not published.
+**Required evidence:** redacted findings with path, disposition, and deterministic check. That evidence is in the report.
 
 ## Merge rule
 
-Replit confirms the SITE-005 draft before any further site edit. Cursor reviews that confirmation and then does SITE-006. Manus integrates only after both evidence records are posted and checks pass. Passing tests can mark the work TESTED. They do not authorize a production publication or a security or data change.
+No further site edit and no production publication until Replit confirms or corrects the SITE-005 draft and the ungated engine API in SITE-006 is brought behind the owner session in a later, tested change. Passing tests can mark work TESTED. They do not authorize a production publication or a security or data change.
