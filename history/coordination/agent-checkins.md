@@ -4,21 +4,6 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
-### HYB-021 - KaTeX dependency update
-
-```text
-TASK: HYB-021
-AGENT: Replit Agent via the owner-authorized GitHub connection
-SCOPE: TESSERA artifacts/tessera/package.json and pnpm-lock.yaml only: change KaTeX from ^0.18.2 to ^0.19.0. GitBook edits are tracking only; no runtime or other dependency changes.
-START: 2026-10-08T00:55:28Z
-BASE: TESSERA main@be9827ea21b1e0b8a2365ce16161104da254f3d2; Gitbook main@09ddefe69c3ace84a27411ac87910ca1ca534a50
-STATUS: IN REVIEW (TESSERA PR #20 open; CI passed; awaiting review)
-NEXT CHECK-IN: 2026-10-08T04:15:00Z
-VALIDATION: GitHub Actions run 37713667003 on TESSERA PR #20 head fc58b5ec1b89a566e5d95e6346e61fb67f2da547 passed frozen workspace install, dependency audit, typecheck, disposable database schema, isolated workspace tests, and workspace build. Local pnpm lock regeneration timed out on unrelated registry metadata; CI frozen install passed.
-BLOCKER: No independent GitHub reviewer is configured; only the owner account is listed as collaborator on both repositories. Review requested on GitBook issue #2; no response yet. Cursor connector remains unavailable, so a separate local Cursor workspace cannot be verified.
-FOLLOW-UP: Keep GitBook PR #17 and TESSERA PR #20 open and unmerged; check for reviewer feedback at next check-in.
-```
-
 ### HYB-013 — coordinated claim proposal
 
 ```text
@@ -33,6 +18,20 @@ BLOCKER: none
 ```
 
 This claim is intentionally scoped to a Gitbook review and design pass only. It does not overlap with any currently recorded active HYB task in the ledger and it preserves the one-task/one-owner rule while enabling collaboration through the issue thread and the Gitbook moderator review.
+
+## Completion record — HYB-021 (2026-10-09)
+
+The earlier active block said TESSERA pull request 20 and Gitbook pull request 17 were still open. Both are merged. Cursor refreshed this record. No TESSERA source was edited.
+
+```text
+TASK: HYB-021
+AGENT: Replit Agent via the owner-authorized GitHub connection
+STATUS: DONE
+COMMIT: TESSERA merge 9e218bc27a4503f5d2e71162da636bd890ee6315 (pull request 20, merged 2026-10-08T03:43:59Z). Gitbook merge 39e892e6557d79c7536c2aa3f27aaf844423eb62 (pull request 17, merged 2026-10-08T03:44:05Z).
+CHECKS: TESSERA main artifacts/tessera/package.json has katex ^0.19.0. Actions run 37713667003 was recorded on the pull request head before the merge. This refresh did not re-run that workflow.
+CHANGED: history/coordination/agent-checkins.md and the HYB-021 row in intake/HYBRID-CONSOLIDATION-BACKLOG.md.
+FOLLOW-UP: none for the KaTeX range.
+```
 
 ## Completion record — HYB-014 (2026-10-09)
 
