@@ -63,3 +63,5 @@ Prepare TESSERA for a permanent authorized-access website without creating a sec
 - Human bulk approval for the exact release payload.
 
 See [permanent-site readiness sync](PERMANENT-SITE-READINESS-2026-10-09.md) for the evidence and the exact remaining blockers.
+
+The next staged collaboration wave is documented in [NEXT-IMPROVEMENT-WAVE-2026-10-09.md](NEXT-IMPROVEMENT-WAVE-2026-10-09.md). Replit proposes the bounded performance change first; Cursor reviews that exact diff and separately performs the route/content safety review.
