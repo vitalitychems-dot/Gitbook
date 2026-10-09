@@ -80,7 +80,7 @@ FOLLOW-UP: <one task/owner or none>
 
 ## Current consolidation state
 
-The latest exact blob-hash scan is recorded in [`current-coverage-2026-10-07.tsv`](../merge/current-coverage-2026-10-07.tsv) and [`current-coverage-2026-10-07.json`](../merge/current-coverage-2026-10-07.json). It found **no non-protected historical repository at 100% coverage**, so there is currently no safe deletion candidate. The largest uncovered groups are alternate application trees, raw archives, runtime/media/state files, and branch-specific snapshots—not automatically missing TESSERA features.
+The latest post-merge exact blob-hash scan is recorded in [`current-coverage-2026-10-07.tsv`](../merge/current-coverage-2026-10-07.tsv) and [`current-coverage-2026-10-07.json`](../merge/current-coverage-2026-10-07.json). The portable instruction layer and selected source/configuration files have been deduplicated into Gitbook/TESSERA; the move details are in the [document manifest](../merge/SOURCE-DOCUMENT-MOVE-MANIFEST-2026-10-07.json) and [source-code manifest](../merge/SOURCE-CODE-MOVE-MANIFEST-2026-10-07.json). The scan still found **no non-protected historical repository at 100% coverage**, so there is currently no safe deletion candidate. Remaining uncovered groups are alternate application trees, raw archives, runtime/media/state files, submodules, and branch-specific snapshots—not automatically missing TESSERA features.
 
 The next safe actions are selective, single-owner tasks:
 

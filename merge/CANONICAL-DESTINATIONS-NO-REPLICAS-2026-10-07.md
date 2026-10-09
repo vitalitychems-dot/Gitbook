@@ -17,14 +17,14 @@ The older duplicate/empty destinations already removed in the prior confirmed cl
 
 ## Current repository inventory
 
-The remaining source repositories are not all duplicates by content. The latest exact blob-hash report is [`current-coverage-2026-10-07.tsv`](current-coverage-2026-10-07.tsv).
+The remaining source repositories are not all duplicates by content. After the deduplicated text-document and portable source merge, the latest exact local blob-hash report is [`current-coverage-2026-10-07.tsv`](current-coverage-2026-10-07.tsv). The move manifests are [`SOURCE-DOCUMENT-MOVE-MANIFEST-2026-10-07.json`](SOURCE-DOCUMENT-MOVE-MANIFEST-2026-10-07.json) and [`SOURCE-CODE-MOVE-MANIFEST-2026-10-07.json`](SOURCE-CODE-MOVE-MANIFEST-2026-10-07.json).
 
 | Repository family | Current status | Why it is not deleted yet |
 |---|---|---|
 | `1`, `5t`, `T44`, `TESS` | Historical application snapshots | Each retains hundreds of uncovered blobs containing snapshot-specific code, media, state, or audit material. |
-| `Grok-ready` | Historical application baseline | 42 uncovered blobs remain; review is selective, not wholesale. |
-| `Zz` | Alternate application/source index | 5,928 uncovered blobs remain; it contains a separate `z-app`, imported trees, and data. |
-| `olive-giant-ever-glade` | Separate application | 2,252 uncovered blobs remain; it has its own auth, database, migration, and deployment contract. |
+| `Grok-ready` | Historical application baseline | 8 uncovered blobs remain in the post-merge scan; review is selective, not wholesale. |
+| `Zz` | Alternate application/source index | 1,203 uncovered blobs remain; it contains a separate `z-app`, imported trees, and data. |
+| `olive-giant-ever-glade` | Separate application | 219 uncovered blobs remain; it has its own auth, database, migration, and deployment contract. |
 | `tessera-complete-archives`, `tessera-grok-handoff`, `tessera-grok-handoff-complete` | Archive/handoff sources | Chunked archive parts remain uncovered and should not be duplicated into the active build. |
 | `Run-Z-app`, `Run-Z-app2` | Unrelated application family | Not Tessera source repositories; their default branches contain no tracked blobs in the coverage scan. |
 | `1T` | Protected vault | Must not be inspected, copied, indexed, published, or deleted. |
