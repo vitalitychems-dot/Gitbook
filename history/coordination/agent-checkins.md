@@ -83,3 +83,22 @@ FOLLOW-UP: BC-011 and BC-012 first; BC-017 held-out evaluation remains separate 
 ```
 
 The owner message reports that the Brain lane is writing the held-out self-improvement set. That is recorded as a reported assignment; implementation begins only after the actual lane posts its check-in using the template above.
+
+
+## HYB-022 / BC-011–BC-013–BC-019 — Phase 1 evidence (2026-10-09)
+
+```text
+IDENTITY: TESSERA build lane / local implementation record; no agent impersonation
+TASK: HYB-022; BC-011, BC-012, BC-013, BC-019
+SOURCE: original design recorded in brain-consciousness/OWN-BRAIN-PLAN.md
+TARGET: TESSERA/research/own-brain; Gitbook brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md
+SCOPE: deterministic sparse LIF core, seeded currents, reset/threshold/refractory tests, bounded scale runner; excludes STDP, product-memory writes, self-modification, APIs, and biological claims
+DELIVERABLE: Phase 1 implementation and machine-readable scale results
+ACCEPTANCE TEST: 5/5 unit tests pass; S0–S2 complete with deterministic replay; S3–S4 explicitly blocked by the 512 MiB safety cap
+OVERLAP CHECK: rebased against current TESSERA/Gitbook heads; no learning, memory-adapter, or production-runtime files changed
+STATUS: TESTED LOCALLY / PROMOTION PENDING NORMAL REVIEW
+RESULT: S0 10k, S1 100k, S2 1M tested; S3 10M and S4 100M blocked by estimated memory
+NEXT: BC-014 bounded STDP control, after lane check-in; BC-017 held-out evaluator remains separate
+```
+
+The V2 roadmap is recorded at `brain-consciousness/TESSERA-V2-ROADMAP.md`. “Launch” means a private local application run and evidence review, not a claim of consciousness or autonomous self-modification.

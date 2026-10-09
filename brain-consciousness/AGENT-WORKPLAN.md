@@ -25,18 +25,18 @@ The owner-provided own-brain plan expands the queue with the following non-overl
 
 | ID | Lane | Deliverable | Acceptance test | Status |
 |---|---|---|---|---|
-| BC-011 | Brain / computational neuroscience | Phase 1 LIF, sparse-synapse, seed, and null-control design note | Equations, units, seed semantics, tolerance, and control are explicit | READY |
-| BC-012 | TESSERA build | Original deterministic LIF core and sparse graph API | Reset, threshold, refractory, replay, and invalid-config tests pass | READY |
-| BC-013 | Build / performance | S0–S4 scale ladder runner | S0–S2 run or are explicitly blocked with resource logs | READY |
+| BC-011 | Brain / computational neuroscience | Phase 1 LIF, sparse-synapse, seed, and null-control design note | Equations, units, seed semantics, tolerance, and control are explicit | TESTED — design recorded |
+| BC-012 | TESSERA build | Original deterministic LIF core and sparse graph API | Reset, threshold, refractory, replay, and invalid-config tests pass | TESTED locally — 5/5 tests; promotion pending review |
+| BC-013 | Build / performance | S0–S4 scale ladder runner | S0–S2 run or are explicitly blocked with resource logs | TESTED locally — S0–S2 pass; S3–S4 blocked by 512 MiB cap |
 | BC-014 | Computational neuroscience | Bounded STDP plus no-learning control | Held-out task comparison is reproducible or negative result is recorded | READY |
 | BC-015 | Brain memory interface | Read-only versioned run-summary adapter | Missing provenance fields are rejected; no silent product-memory write | READY |
 | BC-016 | Connectome statistics | Random/small-world/connectome-shaped wiring comparison | Public source/license and seeded control comparison are recorded | READY |
 | BC-017 | Brain evaluation | Held-out self-improvement test set and scorer | No training leakage; deterministic score and limitations are published | REPORTED ASSIGNMENT |
 | BC-018 | Moderator / Security | Claims, privacy, dependency, and safety review | Consciousness remains goal/unknown and flags are attributable | READY |
-| BC-019 | Build / reproducibility | Machine-readable scale-ladder result records | Seed, hardware, config/input/output hashes, result, and limits are present | READY |
+| BC-019 | Build / reproducibility | Machine-readable scale-ladder result records | Seed, hardware, config/input/output hashes, result, and limits are present | TESTED locally — `scale-results.json` recorded |
 | BC-020 | Gitbook Moderator | 30–45 minute brain-lane digest template | Only gate-cleared items appear with exact evidence and owners | READY |
 
-Suggested owners are not assignments unless the check-in is posted. The owner message reports BC-017 as assigned; the lane must still check in before editing. No runtime SNN implementation has been promoted to TESSERA yet.
+Suggested owners are not assignments unless the check-in is posted. The owner message reports BC-017 as assigned; the lane must still check in before editing. Phase 1 exists in the isolated `research/own-brain` path, but no learning rule, memory adapter, or runtime SNN integration has been promoted.
 
 ## Check-in protocol
 

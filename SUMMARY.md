@@ -34,6 +34,8 @@
 * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
 * [TESSERA own-brain plan](brain-consciousness/OWN-BRAIN-PLAN.md)
 * [Own-brain lane assignments](brain-consciousness/OWN-BRAIN-LANE-ASSIGNMENTS.md)
+* [Own-brain Phase 1 tested result](brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md)
+* [TESSERA V2 build roadmap](brain-consciousness/TESSERA-V2-ROADMAP.md)
 * [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
 * [Cortical Labs readiness](intake/CORTICAL-LABS-READINESS.md)
