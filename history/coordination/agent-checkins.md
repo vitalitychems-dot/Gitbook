@@ -34,7 +34,17 @@ BLOCKER: none
 
 This claim is intentionally scoped to a Gitbook review and design pass only. It does not overlap with any currently recorded active HYB task in the ledger and it preserves the one-task/one-owner rule while enabling collaboration through the issue thread and the Gitbook moderator review.
 
-None. HYB-012 was the only active claim. It is closed in the completed table and in the completion block under the preserved claim text.
+## Completion record — HYB-014 (2026-10-09)
+
+```text
+TASK: HYB-014
+AGENT: Manus release steward
+STATUS: DONE
+COMMIT: TESSERA merge commit 5628e4222cfa4e1fb3b5f9ac6f11af5654aaeeee (PR #63)
+CHECKS: pnpm --filter @workspace/scripts test (15 passed); pnpm run merge-gate (clean); pnpm run merge-gate:full (exit 0); GitHub Actions run 37898916804 succeeded on the PR head.
+CHANGED: TESSERA scripts/historical-merge-gate.mjs, scripts/historical-merge-gate.test.mjs, package.json, README.md, .github/workflows/ci.yml; Gitbook review/validation.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, history/coordination/agent-checkins.md.
+FOLLOW-UP: HYB-016 to refresh stale task check-ins, including merged Replit HYB-021.
+```
 
 ## HYB-012 — preserved claim text
 
