@@ -12,9 +12,9 @@ AGENT: Manus release steward
 SCOPE: TESSERA scripts/historical-merge-gate.mjs and its tests, root package.json, README.md, and .github/workflows/ci.yml; Gitbook validation/backlog/check-in evidence only. No edits to pnpm-lock.yaml or the active Replit HYB-021 scope.
 START: 2026-10-09T07:17:00Z
 BASE: TESSERA main@49474360264aefbe993729db8fa0cd470e7892dd; Gitbook main@02a3a3351e41143a5bc5b178f7d5170be212dc60
-STATUS: IN REVIEW (TESSERA draft PR #63 at dbcbb3b6e99c2f04bc32e88e22ac63152dfe14a7)
-NEXT CHECK-IN: 2026-10-09T09:00:00Z
-BLOCKER: Local checks pass; await owner review and remote CI evidence. GitHub check-run data is not accessible through the current integration; pnpm-lock.yaml remains untouched.
+STATUS: IN REVIEW (TESSERA PR #63 at dbcbb3b6e99c2f04bc32e88e22ac63152dfe14a7; Actions run 37898916804 succeeded)
+NEXT CHECK-IN: 2026-10-09T10:00:00Z
+BLOCKER: Await owner review/merge; pnpm-lock.yaml remains untouched.
 ```
 
 ### HYB-021 - KaTeX dependency update
