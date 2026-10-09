@@ -2,6 +2,12 @@
 
 **Checked:** 2026-10-05, against the staged two-repository build. The earlier 2026-10-02 report remains in the source repository as historical provenance; this page records the current rerun.
 
+## 2026-10-09 private-main rerun and HYB-014 review
+
+The current private TESSERA main baseline is `49474360264aefbe993729db8fa0cd470e7892dd`. A frozen install with lifecycle scripts disabled completed on Node.js 22 / pnpm 11.25.0. The existing historical merge gate reported 0 duplicate workspace roots, 0 stale app references, 0 secret-shaped tracked paths, and passing typecheck, tests, build, and audit. API database integration tests were skipped because no dedicated local `TESSERA_TEST_DATABASE_URL` was configured.
+
+HYB-014 is implemented on private TESSERA review branch `manus/hyb-014-historical-gate-20261009`, commit `dbcbb3b6e99c2f04bc32e88e22ac63152dfe14a7`, in [draft PR #63](https://github.com/vitalitychems-dot/TESSERA/pull/63). It makes the full gate fail when any suite command fails, adds a regression test, wires the static guard into CI, and documents `pnpm run merge-gate` / `pnpm run merge-gate:full`. Local verification: scripts tests 15/15; static gate clean; full gate exit 0 with typecheck/test/build/audit all pass. `pnpm-lock.yaml` was unchanged. The audit still reports one high-severity advisory ignored only under the existing narrow GHSA-vfj7-8cjw-p6xm exception; no new ignore was added. The production build emitted existing non-blocking sourcemap/chunk-size warnings. GitHub check-run data for PR #63 is not accessible through the current integration, so remote CI remains unverified and the PR stays draft.
+
 ## Environment and dependency checks
 
 - Validation ran on Node.js 22 with pnpm 11.25.0. `pnpm install --frozen-lockfile --ignore-scripts` completed for all 9 staged workspace projects.
