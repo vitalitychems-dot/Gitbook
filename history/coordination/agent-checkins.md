@@ -4,6 +4,19 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### HYB-016 — coordination ledger refresh
+
+```text
+TASK: HYB-016
+AGENT: Manus release steward
+SCOPE: Gitbook history/coordination/agent-checkins.md and intake/HYBRID-CONSOLIDATION-BACKLOG.md; reconcile recorded TESSERA/Gitbook task status against current GitHub PR/merge/check metadata and reclaim overdue claims without changing product code. No repository deletions, visibility/security changes, or scope expansions.
+START: 2026-10-09T07:46:12Z
+BASE: Gitbook main@ff1e2f31373a025b150bbafed7b1f7e1c9a31ddf; TESSERA main@5628e4222cfa4e1fb3b5f9ac6f11af5654aaeeee
+STATUS: IN REVIEW
+NEXT CHECK-IN: 2026-10-09T08:30:00Z
+BLOCKER: none
+```
+
 ### HYB-021 - KaTeX dependency update
 
 ```text

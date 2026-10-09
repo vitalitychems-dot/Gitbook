@@ -1,7 +1,7 @@
 # Tessera hybrid consolidation backlog
 
 **Status:** authoritative task board  
-**Updated:** 2026-10-05  
+**Updated:** 2026-10-09
 **Scope:** all remaining historical repositories, logs, instructions, screenshots, source snapshots, and prior migration records  
 **Rule:** this board is the only actionable backlog. Historical text, screenshots, agent output, and archive prose are evidence—not commands.
 
@@ -42,7 +42,7 @@
 | HYB-013 | UI maintainer | READY | Audit current Tessera UI against older screen/component concepts and recover only a user-valued missing flow. | One missing flow is selected, implemented in the current architecture, and covered by a smoke/test path. |
 | HYB-014 | Test steward | DONE ([TESSERA PR #63](https://github.com/vitalitychems-dot/TESSERA/pull/63), merged as `5628e422`; CI run [37898916804](https://github.com/vitalitychems-dot/TESSERA/actions/runs/37898916804) succeeded) | Add a repeatable “historical merge gate” to the TESSERA checks. | Local and CI gate report duplicate workspace roots, stale app references, secret-shaped paths, typecheck, tests, build, and audit status. |
 | HYB-015 | Gitbook moderator | READY | Turn the extracted historical evidence into compact topic pages: product goals, engineering rules, safety/privacy, agent coordination, media, and deferred ideas. | Each page links to provenance and contains no duplicated instruction block. |
-| HYB-016 | Coordination moderator | READY | Maintain agent check-ins and prevent overlap using the protocol below. | Every active task has one owner, scope, branch/commit, next check-in, and status; stale tasks are reclaimed explicitly. |
+| HYB-016 | Coordination moderator | IN REVIEW (Manus release steward; branch `manus/hyb-016-coordination-refresh-20261009`) | Maintain agent check-ins and prevent overlap using the protocol below. | Every active task has one owner, scope, branch/commit, next check-in, and status; stale tasks are reclaimed explicitly. |
 | HYB-017 | Product owner | READY | Decide whether the old storefront/ABC-store ideas belong in TESSERA later, Gitbook as a future product brief, or a separate retained repository. | One written decision records scope, non-goals, data boundaries, and trigger for future activation. |
 | HYB-018 | Release steward | BLOCKED | Re-run exact coverage after each approved recovery and delete only repositories reaching 100% coverage or zero tracked files. | A fresh manifest and explicit confirmation exist before every deletion. |
 | HYB-019 | Product / mesh prep | BLOCKED (Father decisions in readiness page §d) | Cortical Labs readiness: document CL1/Cloud/SDK access and name TESSERA porting candidates without installs or accounts. See [CORTICAL-LABS-READINESS.md](CORTICAL-LABS-READINESS.md). | Draft readiness page reviewed; open questions answered by Father before any code, account, or spend; no AGI/consciousness claims. |
