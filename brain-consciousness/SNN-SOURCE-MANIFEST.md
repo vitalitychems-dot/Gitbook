@@ -7,6 +7,7 @@
 These projects provide complementary software models of spiking neural networks (SNNs). They do **not** reproduce Cortical Labs' CL1, which uses living biological cells and laboratory hardware. They are proposed as references for a safe, software-only Tessera research lane.
 
 See also [Cortical Labs readiness](../intake/CORTICAL-LABS-READINESS.md) (HYB-019, BLOCKED on section (d)).
+See also the [TESSERA own-brain plan](OWN-BRAIN-PLAN.md) and [lane assignments](OWN-BRAIN-LANE-ASSIGNMENTS.md). They define an original local SNN program; the listed projects remain comparison/reference sources.
 
 | Source | Official repository | License shown by upstream | Best use in Tessera research | Incorporation rule |
 |---|---|---|---|---|

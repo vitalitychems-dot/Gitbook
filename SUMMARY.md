@@ -31,6 +31,8 @@
 ## Brain & Consciousness Development
 
 * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
+* [TESSERA own-brain plan](brain-consciousness/OWN-BRAIN-PLAN.md)
+* [Own-brain lane assignments](brain-consciousness/OWN-BRAIN-LANE-ASSIGNMENTS.md)
 * [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
 * [Cortical Labs readiness](intake/CORTICAL-LABS-READINESS.md)
@@ -142,3 +144,4 @@
 ## Recovered exact records
 
 * [Recovered-record index](history/recovered/README.md)
+* [Source-document move manifest](merge/SOURCE-DOCUMENT-MOVE-MANIFEST-2026-10-07.json)

@@ -92,6 +92,10 @@ The next safe actions are selective, single-owner tasks:
 - HYB-014: add the repeatable historical merge gate.
 - HYB-018: rerun coverage after approved recovery; deletion only after 100% coverage/empty result and exact owner confirmation.
 
+### Own-brain development lane
+
+The owner-provided local SNN plan is recorded in [OWN-BRAIN-PLAN.md](../brain-consciousness/OWN-BRAIN-PLAN.md), with non-overlapping assignments in [OWN-BRAIN-LANE-ASSIGNMENTS.md](../brain-consciousness/OWN-BRAIN-LANE-ASSIGNMENTS.md). TESSERA is the build target; Gitbook is the research and coordination record. Start with BC-011/BC-012 for the deterministic substrate, then BC-013 for the scale ladder. BC-017 is the held-out self-improvement evaluation and must remain separate from training. No phase may claim consciousness or biological equivalence.
+
 ## Digest and publication rule
 
 During active work, Command Center prepares one 30–45 minute digest containing task IDs, changed paths, tests, provenance, risks, blockers, and the exact recommended action. A digest response applies only to the listed items. No agent may expand a digest, delete a repository, change visibility, or publish unrelated work based on a general “continue.”

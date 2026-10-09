@@ -21,7 +21,22 @@ See [Cortical Labs readiness](../intake/CORTICAL-LABS-READINESS.md). HYB-019 is 
 | BC-009 | Event memory and observability | TESSERA systems lane — PROPOSED (unrostered) | Event schema for spikes, rewards, state, provenance, and experiment runs | Schema validation rejects missing provenance and nondeterministic run IDs | PROPOSED |
 | BC-010 | Safety and claims review | Gitbook Moderator | Review language, data handling, dependency permissions, and claims about brain/consciousness | No unverified consciousness or biological-equivalence claim remains | PROPOSED |
 
-Suggested owners are not assignments. Items are assigned by Tessera. No approver is on record for BC-001 through BC-010.
+The owner-provided own-brain plan expands the queue with the following non-overlapping tasks. Full scopes and acceptance tests are in [Own-brain lane assignments](OWN-BRAIN-LANE-ASSIGNMENTS.md):
+
+| ID | Lane | Deliverable | Acceptance test | Status |
+|---|---|---|---|---|
+| BC-011 | Brain / computational neuroscience | Phase 1 LIF, sparse-synapse, seed, and null-control design note | Equations, units, seed semantics, tolerance, and control are explicit | READY |
+| BC-012 | TESSERA build | Original deterministic LIF core and sparse graph API | Reset, threshold, refractory, replay, and invalid-config tests pass | READY |
+| BC-013 | Build / performance | S0–S4 scale ladder runner | S0–S2 run or are explicitly blocked with resource logs | READY |
+| BC-014 | Computational neuroscience | Bounded STDP plus no-learning control | Held-out task comparison is reproducible or negative result is recorded | READY |
+| BC-015 | Brain memory interface | Read-only versioned run-summary adapter | Missing provenance fields are rejected; no silent product-memory write | READY |
+| BC-016 | Connectome statistics | Random/small-world/connectome-shaped wiring comparison | Public source/license and seeded control comparison are recorded | READY |
+| BC-017 | Brain evaluation | Held-out self-improvement test set and scorer | No training leakage; deterministic score and limitations are published | REPORTED ASSIGNMENT |
+| BC-018 | Moderator / Security | Claims, privacy, dependency, and safety review | Consciousness remains goal/unknown and flags are attributable | READY |
+| BC-019 | Build / reproducibility | Machine-readable scale-ladder result records | Seed, hardware, config/input/output hashes, result, and limits are present | READY |
+| BC-020 | Gitbook Moderator | 30–45 minute brain-lane digest template | Only gate-cleared items appear with exact evidence and owners | READY |
+
+Suggested owners are not assignments unless the check-in is posted. The owner message reports BC-017 as assigned; the lane must still check in before editing. No runtime SNN implementation has been promoted to TESSERA yet.
 
 ## Check-in protocol
 
@@ -43,11 +58,14 @@ On completion, update the same check-in with the commit, test output, provenance
 
 ## Build order
 
-1. BC-001 and BC-010 establish source, license, and claims boundaries.
-2. BC-002 and BC-009 establish the deterministic TESSERA substrate.
-3. BC-003, BC-006, BC-007, and BC-008 run isolated comparisons.
-4. BC-004 and BC-005 integrate only interfaces that pass tests.
-5. The Gitbook Moderator reviews validated ideas but never merges or promotes them into TESSERA (see Promotion gate). Rejected or deferred ideas are recorded here.
+1. BC-001, BC-010, and BC-018 establish source, license, privacy, and claims boundaries.
+2. BC-011 and BC-012 establish the deterministic own-brain substrate.
+3. BC-013 and BC-019 measure the real hardware limit from 10,000 through 100,000,000 synapses.
+4. BC-014, BC-016, and the existing BC-003/006/007/008 run isolated learning and wiring comparisons.
+5. BC-015 and BC-009 define the read-only memory/event boundary; no product-memory write is automatic.
+6. BC-017 supplies the held-out self-improvement evaluation before any loop can claim progress.
+7. BC-004 and BC-005 integrate only interfaces that pass tests.
+8. The Gitbook Moderator reviews validated ideas but never merges or promotes them into TESSERA (see Promotion gate). Rejected or deferred ideas are recorded here.
 
 ## Promotion gate
 

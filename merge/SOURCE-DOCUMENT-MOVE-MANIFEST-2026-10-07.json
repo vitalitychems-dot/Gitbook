@@ -1,0 +1,108 @@
+{
+  "policy": "text-only, UTF-8, <=2MiB, deduplicated by SHA-256; protected 1T excluded",
+  "rows": [
+    {
+      "repo": "1",
+      "candidates": 3,
+      "copied": 3,
+      "duplicate_content": 0,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 23089
+    },
+    {
+      "repo": "5t",
+      "candidates": 270,
+      "copied": 265,
+      "duplicate_content": 5,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 1527746
+    },
+    {
+      "repo": "Grok-ready",
+      "candidates": 293,
+      "copied": 26,
+      "duplicate_content": 267,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 476874
+    },
+    {
+      "repo": "Run-Z-app",
+      "candidates": 0,
+      "copied": 0,
+      "duplicate_content": 0,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 0
+    },
+    {
+      "repo": "Run-Z-app2",
+      "candidates": 0,
+      "copied": 0,
+      "duplicate_content": 0,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 0
+    },
+    {
+      "repo": "T44",
+      "candidates": 264,
+      "copied": 5,
+      "duplicate_content": 259,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 32006
+    },
+    {
+      "repo": "TESS",
+      "candidates": 261,
+      "copied": 1,
+      "duplicate_content": 260,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 177
+    },
+    {
+      "repo": "Zz",
+      "candidates": 3358,
+      "copied": 2712,
+      "duplicate_content": 646,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 28063821
+    },
+    {
+      "repo": "olive-giant-ever-glade",
+      "candidates": 2854,
+      "copied": 24,
+      "duplicate_content": 2830,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 348412
+    },
+    {
+      "repo": "tessera-complete-archives",
+      "candidates": 2,
+      "copied": 0,
+      "duplicate_content": 2,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 0
+    },
+    {
+      "repo": "tessera-grok-handoff",
+      "candidates": 2,
+      "copied": 0,
+      "duplicate_content": 2,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 0
+    },
+    {
+      "repo": "tessera-grok-handoff-complete",
+      "candidates": 8,
+      "copied": 0,
+      "duplicate_content": 8,
+      "skipped_sensitive_or_nontext_or_large": 0,
+      "bytes_copied": 0
+    }
+  ],
+  "totals": {
+    "candidates": 7315,
+    "copied": 3036,
+    "duplicate_content": 4279,
+    "skipped_sensitive_or_nontext_or_large": 0,
+    "bytes_copied": 30472125
+  }
+}

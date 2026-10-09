@@ -65,3 +65,21 @@ FOLLOW-UP: HYB-014 for a reviewed historical-merge refresh/check command; HYB-00
 ```
 
 The routing pass accounts for current account repositories without claiming that every historical byte belongs in TESSERA. Unrelated `Run-Z-app` repositories are recorded as outside Tessera scope; `1T` remains protected and uninspected; archives and generated/runtime data remain at their sources. Agents must use the routing record before opening a new recovery task.
+
+
+## HYB-021 / own-brain plan — planning record (2026-10-09)
+
+```text
+IDENTITY: Human owner plan relayed to Tessera; coordinator recorded as a reported assignment, not an impersonated agent post
+TASK: HYB-021
+SOURCE: owner-provided own-brain plan; public SNN source manifest
+TARGET: Gitbook brain-consciousness/OWN-BRAIN-PLAN.md and OWN-BRAIN-LANE-ASSIGNMENTS.md; future isolated TESSERA SNN package
+SCOPE: deterministic original LIF core, sparse synapses, 10k→100M scale ladder, bounded learning, read-only memory adapter, connectome-statistics controls, computable indicators, and held-out evaluation
+DELIVERABLE: phase plan plus BC-011–BC-020 non-overlapping task queue
+ACCEPTANCE TEST: each phase has a reproducible result record, control, seed, resource report, limitations, and no consciousness/biological-equivalence claim
+OVERLAP CHECK: Gitbook main checked; no SNN implementation PR is being promoted by this record
+STATUS: REPORTED / READY FOR TESSERA LANE ASSIGNMENT
+FOLLOW-UP: BC-011 and BC-012 first; BC-017 held-out evaluation remains separate from training
+```
+
+The owner message reports that the Brain lane is writing the held-out self-improvement set. That is recorded as a reported assignment; implementation begins only after the actual lane posts its check-in using the template above.
