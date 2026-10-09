@@ -118,3 +118,18 @@ CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed with no s
 CHANGED: TESSERA Vite production plugin gating, tooltip directive, route manifest, release record; Gitbook readiness report, coordination state, backlog, navigation, and this ledger.
 FOLLOW-UP: SITE-001 deployment report; SITE-002 quality review; SITE-003 provenance review; SITE-004 security review; managed health check and exact release payload approval.
 ```
+
+
+## PERF-001 — bounded 3D vendor chunking — 2026-10-09
+```text
+IDENTITY: Manus / TESSERA build lane; no agent impersonation
+TASK: PERF-001
+SCOPE: TESSERA artifacts/tessera/vite.config.ts only
+BASE: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac
+STATUS: TESTED / PUBLISHED; Cursor review pending
+COMMIT: 072acd8ecfc2f2ec113a4072c3d3b74451c282c3
+CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed; 51-route manifest validated. Largest 3D chunk changed from approximately 1,019.51 kB OrbitControls to 724.83 kB vendor-three; additional chunks are vendor-r3f-drei 308.32 kB, vendor-r3f-fiber 169.37 kB, vendor-three-stdlib 86.19 kB.
+CHANGED: bounded Rollup manualChunks rules only.
+ROLLBACK: git revert 072acd8.
+FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior.
+```

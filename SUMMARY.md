@@ -22,6 +22,7 @@
 * [Permanent TESSERA website coordination](mesh/PERMANENT-SITE-COORDINATION.md)
 * [Permanent-site readiness sync](mesh/PERMANENT-SITE-READINESS-2026-10-09.md)
 * [Next Cursor and Replit improvement wave](mesh/NEXT-IMPROVEMENT-WAVE-2026-10-09.md)
+* [PERF-001 measured result](mesh/PERF-001-RESULT-2026-10-09.md)
 * [Current exact repository coverage — 2026-10-07](merge/current-coverage-2026-10-07.tsv)
 * [Source-code move manifest](merge/SOURCE-CODE-MOVE-MANIFEST-2026-10-07.json)
 * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)

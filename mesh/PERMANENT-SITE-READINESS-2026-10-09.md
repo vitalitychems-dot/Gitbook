@@ -4,6 +4,8 @@
 **Gitbook base:** `fd7a3586e891aeffe942e720bce7b258b26c4705`  
 **Status:** TESTED / publication preparation continues
 
+The PERF-001 bundle optimization was subsequently published in TESSERA `072acd8`; see [its measured result](PERF-001-RESULT-2026-10-09.md). Cursor review remains pending.
+
 ## Improvements published to TESSERA
 
 1. Vite development-only Replit plugins are now restricted to `vite serve`; production builds no longer load the runtime-error overlay, cartographer, or dev banner.
@@ -17,7 +19,7 @@
 - `pnpm test`: passed; database integration tests remain intentionally skipped without a dedicated local test database.
 - `pnpm run build`: passed with no sourcemap, TypeScript, lifecycle, or build-failure diagnostics.
 - Built route manifest: present and valid with 51 routes.
-- One non-fatal performance advisory remains: the OrbitControls bundle is approximately 1,019.51 kB after minification. This is a follow-up optimization, not a failed build.
+- PERF-001 reduced the largest 3D vendor chunk from approximately 1,019.51 kB to 724.83 kB (approximately 28.9%); the remaining vendor split and route behavior require Cursor review.
 
 ## Collaboration status
 

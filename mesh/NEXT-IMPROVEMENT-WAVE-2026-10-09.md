@@ -2,13 +2,13 @@
 
 **Base:** TESSERA `e5e5719`  
 **Coordination:** Gitbook Issue #2  
-**Status:** READY FOR AGENT CHECK-IN
+**Status:** PERF-001 TESTED; PERF-002 and SITE-005–SITE-006 remain pending agent check-in
 
 ## PERF-001 — Replit implementation lane
 
 **Scope:** `artifacts/tessera/vite.config.ts` and the smallest required frontend import boundaries needed to reduce the non-fatal 1,019.51 kB OrbitControls production chunk.  
 **Goal:** produce a measurable bundle-size improvement without changing route behavior, authentication, data access, research semantics, or safety gates.  
-**Required evidence:** before/after chunk sizes, `pnpm typecheck`, `pnpm test`, `pnpm run build`, route-manifest validation, and a rollback commit.  
+**Required evidence:** before/after chunk sizes, `pnpm typecheck`, `pnpm test`, `pnpm run build`, route-manifest validation, and a rollback commit. Evidence is recorded in [PERF-001-RESULT-2026-10-09.md](PERF-001-RESULT-2026-10-09.md); TESSERA commit `072acd8`.  
 **Excludes:** database/API changes, SNN changes, secrets, protected material, autonomous loops, and broad refactors.
 
 ## PERF-002 — Cursor correctness lane
@@ -17,6 +17,8 @@
 **Goal:** verify lazy-loading does not remove routes, alter guarded pages, introduce hidden network calls, or create a production-only failure.  
 **Required evidence:** route-by-route conclusion, exact commands, risks, and accept/reject recommendation.  
 **Dependency:** review begins after Replit posts a concrete proposal; no overlapping edits.
+
+**Current handoff:** PERF-002 Cursor review is still required before this optimization is treated as fully accepted.
 
 ## SITE-005 — Replit deployment lane
 
