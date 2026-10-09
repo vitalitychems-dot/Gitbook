@@ -102,3 +102,19 @@ NEXT: BC-014 bounded STDP control, after lane check-in; BC-017 held-out evaluato
 ```
 
 The V2 roadmap is recorded at `brain-consciousness/TESSERA-V2-ROADMAP.md`. “Launch” means a private local application run and evidence review, not a claim of consciousness or autonomous self-modification.
+
+
+## HYB-023 readiness sync — 2026-10-09
+```text
+IDENTITY: Manus / TESSERA build lane; no agent impersonation
+TASK: HYB-023
+SOURCE: TESSERA permanent-site coordination brief and current application route declarations
+TARGET: TESSERA artifacts/tessera/vite.config.ts, artifacts/tessera/src/components/ui/tooltip.tsx, artifacts/tessera/public/manus-routes.json, docs/PERMANENT-SITE-RELEASE.md; Gitbook mesh readiness records
+SCOPE: Restrict Replit-only Vite plugins to serve mode, remove the unnecessary client directive, add the 51-route managed-Web manifest, and synchronize evidence. Excludes production deployment, database migrations, secrets, protected material, and merging unrelated open PRs.
+BASE: TESSERA c71b4ef; Gitbook fd7a358
+STATUS: TESTED / PUBLISHED
+COMMIT: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac; Gitbook follow-up pending publication
+CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed with no sourcemap/TypeScript/lifecycle/build-failure diagnostics; built manus-routes.json validated with 51 routes. A non-fatal 1,019.51 kB OrbitControls chunk advisory remains recorded.
+CHANGED: TESSERA Vite production plugin gating, tooltip directive, route manifest, release record; Gitbook readiness report, coordination state, backlog, navigation, and this ledger.
+FOLLOW-UP: SITE-001 deployment report; SITE-002 quality review; SITE-003 provenance review; SITE-004 security review; managed health check and exact release payload approval.
+```

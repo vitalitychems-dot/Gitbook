@@ -20,6 +20,7 @@
 * [Canonical destinations and no-replica policy](merge/CANONICAL-DESTINATIONS-NO-REPLICAS-2026-10-07.md)
 * [Protected 1T path cleanup](merge/PROTECTED-1T-CLEANUP-2026-10-09.md)
 * [Permanent TESSERA website coordination](mesh/PERMANENT-SITE-COORDINATION.md)
+* [Permanent-site readiness sync](mesh/PERMANENT-SITE-READINESS-2026-10-09.md)
 * [Current exact repository coverage — 2026-10-07](merge/current-coverage-2026-10-07.tsv)
 * [Source-code move manifest](merge/SOURCE-CODE-MOVE-MANIFEST-2026-10-07.json)
 * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)

@@ -45,8 +45,10 @@ Prepare TESSERA for a permanent authorized-access website without creating a sec
 
 ## Current known state
 
-- TESSERA typecheck and full workspace tests pass at `c71b4ef`.
-- Gitbook coordination is at `ddd8b4c` before this record.
+- TESSERA typecheck, full workspace tests, and production build pass at `e5e5719`.
+- Gitbook coordination was published at `fd7a358` before the readiness sync.
+- The production Vite fix restricts Replit-only plugins to serve mode and removes the unnecessary client directive from the tooltip component.
+- The TESSERA web artifact now contains a validated 51-route `manus-routes.json` manifest.
 - Own-brain Phase 1 is tested; S3 is available only under an explicit 1 GiB local budget; S4 remains blocked.
 - Managed website initialization created a project workspace, but no production publication is claimed.
 - The existing local preview is not the permanent site.
@@ -59,3 +61,5 @@ Prepare TESSERA for a permanent authorized-access website without creating a sec
 - GitHub checkpoint with the intended canonical source commit.
 - Security/privacy report and secret-shaped-path scan.
 - Human bulk approval for the exact release payload.
+
+See [permanent-site readiness sync](PERMANENT-SITE-READINESS-2026-10-09.md) for the evidence and the exact remaining blockers.
