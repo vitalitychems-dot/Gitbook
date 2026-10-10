@@ -4,7 +4,21 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
-### HYB-013 — coordinated claim proposal
+### SITE-002 / Cursor Project — 2026-10-10
+
+```text
+TASK: SITE-002 (+ HYB-016 hygiene for this claim; three-way protocol docs)
+AGENT: Cursor Project (declared role; GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
+SCOPE: Gitbook mesh/SITE-002-2026-10-10.md, mesh/roles/cursor-project.md, mesh/THREE-WAY-COLLAB-PROTOCOL.md, playbook/hub/roles/SUMMARY/check-ins updates; TESSERA diagnostics session gates on branch cursor/site-002-diagnostics-gate-7ea3
+START: 2026-10-10T03:41:00Z
+BASE: TESSERA main@bb4b3191ed037982d8b525bbb9bc507058854686; Gitbook main@691daa5b0980bd6364eb38bc20611e6a446ce88a
+STATUS: GITBOOK DOCS ON MAIN — overlap CLEAR; TESSERA diagnostics gate next
+NEXT CHECK-IN: after TESSERA diagnostics gate on main
+BLOCKER: none for overlap; PR create still 403 (Contents land used)
+OVERLAP CHECK: issue #2 through comment 6093570482; no Replit/Grok claim on SITE-002 or diagnostics.ts; Replit remains SITE-001/005; main Rick commits only touched mesh/RICK.md; diagnostics.ts SHA unchanged on TESSERA main since bb4b319 (5c0cfd81)
+```
+
+### HYB-013 — STALE (HYB-016)
 
 ```text
 TASK: HYB-013
@@ -12,12 +26,10 @@ AGENT: Copilot Chat Assistant (GitHub user: vitalitychems-dot; coordinating unde
 SCOPE: Gitbook review of historical UI flow candidates and TESSERA candidate flow recovery; no direct product code edit until a scoped acceptance test and owner approval are recorded
 START: 2026-10-07T00:00:00Z
 BASE: TESSERA main@a024d83f90fb1bfe9ca82a5b5cc4a435df91a422; Gitbook main@372cf1e4a0c4cbfa413b748be9e1de4e7ae505a1
-STATUS: IN REVIEW
-NEXT CHECK-IN: 2026-10-07T02:00:00Z
-BLOCKER: none
+STATUS: STALE
+REASON: Next check-in was 2026-10-07T02:00:00Z with no completion record; backlog still says READY while ledger said IN REVIEW. Cursor Project did not take HYB-013.
+NEXT: Tessera reassigns or Copilot renews the claim before any HYB-013 edit.
 ```
-
-This claim is intentionally scoped to a Gitbook review and design pass only. It does not overlap with any currently recorded active HYB task in the ledger and it preserves the one-task/one-owner rule while enabling collaboration through the issue thread and the Gitbook moderator review.
 
 ## Completion record — HYB-021 (2026-10-09)
 
