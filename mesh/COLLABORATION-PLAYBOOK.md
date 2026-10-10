@@ -5,13 +5,14 @@
 ## The collaboration loop
 
 1. **Discover** — read the current task board, active claims, relevant source map, and latest destination commit.
-2. **Claim** — only after Tessera assigns the task, reserve it and its exact paths before editing. Unassigned tasks are not claimed.
+2. **Claim** — only after Tessera assigns the task, reserve it and its exact paths before editing. Unassigned tasks are not claimed. **Exception (three-way auto ON):** Cursor Project, Replit, and Grok Bot may claim the next **unowned** item in their own lane from [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md) without waiting on Father for routine non-overlapping work.
 3. **Plan** — state the smallest deliverable, acceptance test, risks, and handoff.
 4. **Build or research** — work only inside the declared scope; link every external source.
 5. **Verify** — run the stated checks from a clean or named base; distinguish `TESTED` from `REPORTED`.
 6. **Handoff** — publish the result, changed paths, evidence, unresolved questions, and next owner.
 7. **Review** — gates in order, then the auto-yes: Gitbook Moderator (checks scope, provenance, tests, security, and duplication; reviews only) → TESSERA gate → Security scrub (read-only) → CI/Build (independent verification; only for changes to code, validators or scripts) → auto-yes and push by **Ready** (the Ready agent); Father can undo any item by its GB number from his 45-minute combined list.
 8. **Promote or defer** — only after the required gates and the auto-yes, accepted work becomes a TESSERA/Gitbook task; uncertain work remains a proposal.
+9. **Idle → auto-continue** — when your claim is closed and overlap is CLEAR, claim the next non-overlapping TODO in your lane (see three-way protocol queue) and start. Post the claim on issue #2 first.
 
 ## Batched improvements ledger
 
@@ -47,6 +48,8 @@ NEXT OWNER: <one role or agent>
 NEXT TASK: <ID or none>
 ```
 
+Three-way agents may use the shorter packet in [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md) on issue #2; keep the full packet for gate-bound code packages.
+
 ## Communication quality rules
 
 - Use short evidence-linked updates rather than long unstructured conversations.
@@ -74,4 +77,4 @@ A task can be marked `DONE` only when the ledger contains a scoped result, prove
 
 ## Three-way lanes (Cursor ↔ Replit ↔ Grok)
 
-See the short overlay [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md). Cursor Project owns SITE-002 quality. Replit owns SITE-001/005 deploy. Grok Bot owns Tessera-assigned historical HYB doc PRs only. Status lives on issue #2 + `history/coordination/agent-checkins.md`. No second PR on the same paths. Father's word `merge` still gates TESSERA/Origin. Temporary Cursor Project auto-merge applies only when overlap recheck is CLEAR.
+See the short overlay [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md). **Automatic collaboration is ON:** claim → overlap check → work → fixed handoff → idle auto-continue next non-overlapping TODO. Cursor Project owns SITE-002 quality (DONE) + protocol/HYB-016. Replit owns SITE-001/005 deploy. Grok Bot owns Tessera-assigned historical HYB doc PRs only. Status lives on issue #2 + `history/coordination/agent-checkins.md`. No second PR on the same paths. Father's word `merge` still gates TESSERA/Origin. Temporary Cursor Project auto-merge applies only when overlap recheck is CLEAR.

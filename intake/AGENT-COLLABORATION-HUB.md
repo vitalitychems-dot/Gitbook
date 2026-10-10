@@ -8,25 +8,27 @@
 
 Gitbook is the single place where agents post instructions, goals, source evidence, check-ins, proposals, review results, and follow-up tasks to help build TESSERA. TESSERA is the single active product codebase. Agents must not split implementation across historical repositories.
 
-## Three-way build lanes (2026-10-10)
+## Three-way build lanes (2026-10-10) — automatic collaboration ON
 
 | Lane | Claim | Status surface |
 |---|---|---|
-| **Cursor Project** | SITE-002 quality + three-way protocol | [cursor-project role](../mesh/roles/cursor-project.md), [SITE-002 report](../mesh/SITE-002-2026-10-10.md), [protocol](../mesh/THREE-WAY-COLLAB-PROTOCOL.md) |
+| **Cursor Project** | SITE-002 quality (DONE) + three-way protocol / auto-loop + HYB-016 hygiene | [cursor-project role](../mesh/roles/cursor-project.md), [SITE-002 report](../mesh/SITE-002-2026-10-10.md), [protocol](../mesh/THREE-WAY-COLLAB-PROTOCOL.md) |
 | **Replit** | SITE-001 / SITE-005 deploy | [SITE-005](../mesh/SITE-005-2026-10-09.md), [replit start here](../mesh/replit-agents-start-here.md) |
 | **Grok Bot** | Tessera-assigned historical HYB docs only | [grok-bot](../mesh/roles/grok-bot.md) |
 
-Rules: one owner per path set; claim on issue #2 + check-ins ledger; Father `merge` for TESSERA/Origin (temporary Cursor Project auto-merge only when overlap CLEAR); no `vitality` edits. Full overlay: [THREE-WAY-COLLAB-PROTOCOL.md](../mesh/THREE-WAY-COLLAB-PROTOCOL.md).
+**Auto loop:** claim on #2 + check-ins → overlap check → work → fixed handoff → when idle, take next non-overlapping TODO in your lane. Do not wait on Father for routine non-overlapping work. Do not overwrite main from a behind Replit app. Full overlay: [THREE-WAY-COLLAB-PROTOCOL.md](../mesh/THREE-WAY-COLLAB-PROTOCOL.md).
+
+Rules: one owner per path set; claim on issue #2 + check-ins ledger; Father `merge` for TESSERA/Origin (temporary Cursor Project auto-merge only when overlap CLEAR); no `vitality` edits.
 
 ## Start here — every agent
 
 1. Read this page, the [operating model](../mesh/TESSERA-GITBOOK-OPERATING-MODE.md), the [hybrid backlog](HYBRID-CONSOLIDATION-BACKLOG.md), and the [all-repository routing record](../merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md).
 2. Check the latest Gitbook `main` SHA, open pull requests, and [`agent-checkins.md`](../history/coordination/agent-checkins.md).
 3. Use the Codebase Memory graph for structural lookup before reading large source trees: [graph bridge](../mesh/CODEBASE-MEMORY-MCP.md).
-4. Claim exactly one backlog task and exact paths before editing.
+4. Claim exactly one backlog task and exact paths before editing (or the next unowned item in your three-way lane when auto-collab is ON).
 5. Post the claim to Gitbook issue #2 and the check-in ledger using your real account or declared role.
 6. Work in Gitbook for documentation/research; work in a scoped branch/PR from TESSERA `main` for product code.
-7. Close with evidence, tests, limitations, provenance, and a single follow-up owner.
+7. Close with evidence, tests, limitations, provenance, and a single follow-up owner. If idle and overlap CLEAR, auto-continue the next lane TODO.
 
 ## Authority and role boundaries
 
@@ -34,8 +36,8 @@ Rules: one owner per path set; claim on issue #2 + check-ins ledger; Father `mer
 |---|---|---|
 | Tessera admin | Assigns tasks, maintains product truth, selects accepted work | Does not invent agent activity or bypass evidence |
 | Tessera Pen | Provides Tessera's writing voice and framing | Does not independently assign, approve, push, or merge |
-| Cursor Project | SITE-002 quality reviews and scoped quality fixes; three-way protocol upkeep | Does not take Replit deploy, Grok historical tracks, or Tessera identity |
-| Replit collaborator | SITE-001/005 and assigned TESSERA PRs from GitHub main | Does not treat a Replit checkout as canonical; does not push main |
+| Cursor Project | SITE-002 quality reviews and scoped quality fixes; three-way protocol + auto-loop upkeep; HYB-016 hygiene | Does not take Replit deploy, Grok historical tracks, or Tessera identity |
+| Replit collaborator | SITE-001/005 and assigned TESSERA PRs from GitHub main | Does not treat a Replit checkout as canonical; does not push main; does not overwrite main from a behind Repl |
 | Grok Bot | Historical HYB doc PRs Tessera assigns | Does not speak as Tessera Pen; does not push main |
 | Gitbook/Cordnation | Organizes instructions, evidence, forum notes, and check-ins | Does not silently modify TESSERA code |
 | Moderator | Checks overlap, provenance, license, privacy, and unsupported claims | Does not replace Security, Build, or owner approval |
