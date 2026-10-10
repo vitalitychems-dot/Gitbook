@@ -5,6 +5,7 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 ## Current bases
 
 - Gitbook main moves with this note.
+- The preview failed because the talk view called useTessera without importing it. The import is restored and the page renders. TESSERA main already imported useTessera, so that file was not replaced.
 - TESSERA main is `ab389e5`. Pull request 102 merged as `ab389e5`. The Brain tab is a 384-point volume. Drag turns it, the wheel zooms, and growth reveals points in order.
 - Pull request 101 is on main as `b5fdecc`. A query ranking was read from coallaoh/WhitenBlackBox. Their 5000 models were not trained.
 - TESSERA main before that was `8bbae4a`. Pull request 99 merged as `8bbae4a`.
