@@ -17,6 +17,36 @@ REASON: Next check-in was 2026-10-07T02:00:00Z with no completion record; backlo
 NEXT: Tessera reassigns or Copilot renews the claim before any HYB-013 edit.
 ```
 
+## Sync record — Replit + Grok onto main (2026-10-10)
+
+```text
+TASK: Father sync — bring accepted Replit + Grok changes onto TESSERA/Gitbook main
+AGENT: Cursor Project worker (GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
+STATUS: DONE — no new Replit/Grok merge required; accepted work already on main
+BASES AT SYNC: Gitbook main@60475cd; TESSERA main@2c18636
+OVERLAP: CLEAR — did not edit SITE-002 diagnostics gate (blob 6b3fb5e2 kept); did not invent Replit/Grok work
+
+ALREADY ON MAIN (Replit-accepted):
+- HYB-012 TESSERA 50876d40 (PR #2)
+- HYB-021 KaTeX ^0.19.0 TESSERA 9e218bc (PR #20) + Gitbook 39e892e (PR #17)
+- SITE-005 hybrid confirm recorded mesh/SITE-005-2026-10-09.md; PR #96 engines/diagnostics consciousness gate c938ac3
+- Replit HYB-008 olive chicagoHour REJECT stays board-only (comment 6089634401); no code merge
+
+ALREADY ON MAIN (Grok historical):
+- HYB-006 merge/hyb-006-grok-ready.md; HYB-007 merge/hyb-007-z-app.md
+- Catalog pass mesh/CATALOG-PASS.md commit 70081b84 (identical blob on main and grok/catalog-pass)
+- Grok drop-vitality / desk-preview content already landed; Grok bot out of credits; Cursor kept PR #100 batch-3-kept 16ffff5
+
+SKIPPED (not accepted / not theirs / would collide):
+- replit/fix-audit-floors-20261007 restores openai — conflicts with security openai purge; not merged
+- Replit app https://replit.com/@homvitality69/1 is BEHIND GitHub (katex ^0.16.45; diagnostics.ts ungated) — do not overwrite main
+- Open PRs 80/82/87 left as previously held (weights/conflicts); PR list API 403
+- Replit Agent busy/timeout during sync — no confirmed new unpushed SHA from the Repl
+
+FOLLOW-UP: Replit still owns SITE-001 runtime evidence when free; SITE-003/004 + Father release payload still block publication.
+REPORT: store internal/replit-grok-sync-report.md
+```
+
 ## Completion record — SITE-002 / Cursor Project (2026-10-10)
 
 ```text
