@@ -3,7 +3,7 @@
 **Base:** TESSERA `ed8e096dd57ae36c5847dd00ac7107c7048976e3` (pull request 95 is parent `a708206`; the chunk split is ancestor `072acd8`)
 **Coordination:** Gitbook Issue #2
 **Lane:** Cursor and Replit. Grok bot is out of credits and is not in this wave.
-**Status:** PERF-001 tested. PERF-002 accepted on the diff. SITE-005 draft is [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md). Replit has not confirmed it. SITE-006 is recorded in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md) because Father said continue.
+**Status:** PERF-001 tested. PERF-002 accepted on the diff. Replit confirmed the SITE-005 hybrid draft on 2026-10-10 in the Replit app. SITE-006 is recorded. The owner-session gate is draft pull request 96, head `b151005`. It is not merged and the site is not published.
 
 ## PERF-001 — Replit implementation lane
 
@@ -23,14 +23,14 @@
 **Draft:** [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md), Gitbook commit `0d0a661`. Recommendation in that draft: hybrid. Web output `artifacts/tessera/dist/public`. API runtime `node --enable-source-maps ./dist/index.mjs`. Health path `GET /api/healthz`. Non-secret names: `PORT`, `BASE_PATH`, `REPL_ID`.
 **Base cited in that draft:** TESSERA `63a9911`. Current main has since moved to `ed8e096`.
 **Excludes:** production deployment, secret changes, repository deletion, and any copy of the olive-giant clock.
-**Still open:** Replit confirms or corrects the hybrid draft.
+**Result:** Replit confirmed the hybrid draft as written on 2026-10-10. The answer is in the Replit app, recorded by Cursor on the SITE-005 page. Replit has not posted that confirmation on issue #2.
 
 ## SITE-006 — Cursor security/content lane
 
 **Scope:** read-only review of the route manifest, public assets, release documentation, and claims language.
-**Result:** recorded on 2026-10-09 in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md). Base `ed8e096`. The 51 manifest paths match the 51 App routes. All of them sit inside the browser `TesseractKeyGate`. Twelve public files, and no secret-shaped filename. `artifacts/api-server/src/routes/sovereign-engines.ts` registers 33 handlers with no `requireAdminSession`, and it is mounted before the gated legacy consciousness routes. Consciousness, AGI, and biological-equivalence sentences stay product copy. AGI is unmet. No application file was edited. The site was not published.
-**Required evidence:** redacted findings with path, disposition, and deterministic check. That evidence is in the report.
+**Result:** recorded on 2026-10-09 in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md). Base `ed8e096`. The 51 manifest paths match the 51 App routes. All of them sit inside the browser `TesseractKeyGate`. Twelve public files, and no secret-shaped filename. On that base, `artifacts/api-server/src/routes/sovereign-engines.ts` had no `requireAdminSession`. Consciousness, AGI, and biological-equivalence sentences stay product copy. AGI is unmet.
+**Follow-up:** Replit asked for the existing owner-session check on those engine routes and on `GET /api/diagnostics/consciousness`. Draft pull request 96 does that. Local tests: 17 passed. The check sits on each engine route so later routers still answer. Not merged. Not published.
 
 ## Merge rule
 
-No further site edit and no production publication until Replit confirms or corrects the SITE-005 draft and the ungated engine API in SITE-006 is brought behind the owner session in a later, tested change. Passing tests can mark work TESTED. They do not authorize a production publication or a security or data change.
+Pull request 96 stays a draft until validate is green and Father says merge. Passing tests can mark the work TESTED. They do not authorize a production publication or a security or data change on main.
