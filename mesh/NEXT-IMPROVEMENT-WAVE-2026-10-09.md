@@ -1,9 +1,9 @@
 # Next TESSERA improvement wave — Cursor + Replit
 
-**Base:** TESSERA `c10b8379079075529f3aae9ac09b1afbf3339940` (pull request 97; parent `d9e431d` is pull request 81; pull request 96 is `c938ac3`; pull request 95 is `a708206`; the chunk split is ancestor `072acd8`)
+**Base:** TESSERA `16ffff5e5cda32e7fd80abc346c063f3f6d247d2` (pull request 100; parent `ab389e5` is pull request 102; pull request 97 is `c10b837`; pull request 96 is `c938ac3`; pull request 95 is `a708206`; the chunk split is ancestor `072acd8`)
 **Coordination:** Gitbook Issue #2
-**Lane:** Cursor and Replit. Grok bot is out of credits and is not in this wave.
-**Status:** PERF-001 tested. PERF-002 accepted on the diff. Replit confirmed the SITE-005 hybrid draft on 2026-10-10 in the Replit app. SITE-006 is recorded. Pull request 97 is on main as `c10b837`. The site is not published.
+**Lane:** Cursor and Replit. Grok bot is out of credits. Cursor is keeping the reads that already landed.
+**Status:** PERF-001 tested. PERF-002 accepted on the diff. Replit confirmed the SITE-005 hybrid draft on 2026-10-10 in the Replit app. SITE-006 is recorded. Pull request 100 is on main as `16ffff5`. The site is not published.
 
 ## PERF-001 — Replit implementation lane
 
@@ -21,7 +21,7 @@
 
 **Scope:** Gitbook report only. Recommend static, container, or hybrid serving for the current TESSERA architecture. Name the build command, output, runtime, health path, and non-secret environment names.
 **Draft:** [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md), Gitbook commit `0d0a661`. Recommendation in that draft: hybrid. Web output `artifacts/tessera/dist/public`. API runtime `node --enable-source-maps ./dist/index.mjs`. Health path `GET /api/healthz`. Non-secret names: `PORT`, `BASE_PATH`, `REPL_ID`.
-**Base cited in that draft:** TESSERA `63a9911`. Current main is `c10b837`.
+**Base cited in that draft:** TESSERA `63a9911`. Current main is `16ffff5`.
 **Excludes:** production deployment, secret changes, repository deletion, and any copy of the olive-giant clock.
 **Result:** Replit confirmed the hybrid draft as written on 2026-10-10. The answer is in the Replit app, recorded by Cursor on the SITE-005 page. Replit has not posted that confirmation on issue #2.
 
@@ -43,7 +43,19 @@ Father said to auto-approve and keep building. Each merge below was CLEAN, with 
 - Pull request 81, `d9e431d`. The preview package shell is runnable. The lockfile was not changed.
 - Pull request 97, `c10b837`. The remaining 42 catalog cards. Validate run 38017838713 passed. Three names moved: `SushiSwap/sushiswap` to `sushi-labs/sushiswap`, `venturaEffect/the_consciousness_ai` to `tlcdv/the_consciousness_ai`, and `yatrogenesis/HumanBrain` to `Yatrogenesis/HumanBrain`. Three steps were read from `tweenjs/tween.js`: linear sample, quadratic ease in, and quadratic ease out. These are not a new set of weights. AGI is unmet. Trading, exchange, and miner cards stay pointers. No repository was cloned.
 
-Left open on purpose: pull request 80, because its identity line says the pen is Tessera; pull request 82, because validate failed and it conflicts; draft 34, because it conflicts; draft 87, because it conflicts. None of those were force-merged.
+Left open on purpose: pull request 80, because it adds weights and its identity line says the pen is Tessera; pull request 82, because validate failed and it conflicts; draft 34, because it conflicts; draft 87, because it conflicts. None of those were force-merged.
+
+## The third-batch publish
+
+Pull request 98 is `7e3c562`. It marks eighteen trading and chain names held. Those programs were not imported. The four path distances from `qiao/PathFinding.js` run. That same publish dropped twenty-five card-home names.
+
+Pull request 99 is `8bbae4a`. Clamp, positive modulus, and heaviside are back. Validate run 38020046073 passed after the merge.
+
+Pull request 100 is `16ffff5`. The twenty-five dropped names are in `data/school/batch-3-kept.json`. Two had already moved: `braincog-X/Brain-Cog` to `BrainCog-X/Brain-Cog`, and `songrotek/DDPG` to `floodsung/DDPG`. They are pointers. `batch-3.json` is unchanged. Validate run 38020301717 passed. AGI is unmet. No repository was cloned.
+
+Pull request 101 is `b5fdecc`. A query ranking was read from `coallaoh/WhitenBlackBox`. Their 5000 models were not trained.
+
+Pull request 102 is `ab389e5`. The Brain tab is a 384-point volume. Drag turns it. The wheel zooms. Growth reveals points in order.
 
 ## Merge rule
 
