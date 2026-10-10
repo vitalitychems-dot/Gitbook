@@ -1,9 +1,9 @@
 # Next TESSERA improvement wave — Cursor + Replit
 
-**Base:** TESSERA `ed8e096dd57ae36c5847dd00ac7107c7048976e3` (pull request 95 is parent `a708206`; the chunk split is ancestor `072acd8`)
+**Base:** TESSERA `c938ac30724f22fc38e0c9afa5e9b78dc10f1636` (pull request 96; parent `ed8e096`; pull request 95 is `a708206`; the chunk split is ancestor `072acd8`)
 **Coordination:** Gitbook Issue #2
 **Lane:** Cursor and Replit. Grok bot is out of credits and is not in this wave.
-**Status:** PERF-001 tested. PERF-002 accepted on the diff. Replit confirmed the SITE-005 hybrid draft on 2026-10-10 in the Replit app. SITE-006 is recorded. The owner-session gate is draft pull request 96, head `b151005`. It is not merged and the site is not published.
+**Status:** PERF-001 tested. PERF-002 accepted on the diff. Replit confirmed the SITE-005 hybrid draft on 2026-10-10 in the Replit app. SITE-006 is recorded. Pull request 96 is on main as `c938ac3`. The site is not published.
 
 ## PERF-001 — Replit implementation lane
 
@@ -21,16 +21,16 @@
 
 **Scope:** Gitbook report only. Recommend static, container, or hybrid serving for the current TESSERA architecture. Name the build command, output, runtime, health path, and non-secret environment names.
 **Draft:** [SITE-005-2026-10-09.md](SITE-005-2026-10-09.md), Gitbook commit `0d0a661`. Recommendation in that draft: hybrid. Web output `artifacts/tessera/dist/public`. API runtime `node --enable-source-maps ./dist/index.mjs`. Health path `GET /api/healthz`. Non-secret names: `PORT`, `BASE_PATH`, `REPL_ID`.
-**Base cited in that draft:** TESSERA `63a9911`. Current main has since moved to `ed8e096`.
+**Base cited in that draft:** TESSERA `63a9911`. Current main is `c938ac3`.
 **Excludes:** production deployment, secret changes, repository deletion, and any copy of the olive-giant clock.
 **Result:** Replit confirmed the hybrid draft as written on 2026-10-10. The answer is in the Replit app, recorded by Cursor on the SITE-005 page. Replit has not posted that confirmation on issue #2.
 
 ## SITE-006 — Cursor security/content lane
 
 **Scope:** read-only review of the route manifest, public assets, release documentation, and claims language.
-**Result:** recorded on 2026-10-09 in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md). Base `ed8e096`. The 51 manifest paths match the 51 App routes. All of them sit inside the browser `TesseractKeyGate`. Twelve public files, and no secret-shaped filename. On that base, `artifacts/api-server/src/routes/sovereign-engines.ts` had no `requireAdminSession`. Consciousness, AGI, and biological-equivalence sentences stay product copy. AGI is unmet.
-**Follow-up:** Replit asked for the existing owner-session check on those engine routes and on `GET /api/diagnostics/consciousness`. Draft pull request 96 does that. Local tests: 17 passed. The check sits on each engine route so later routers still answer. Not merged. Not published.
+**Result:** recorded on 2026-10-09 in [SITE-006-2026-10-09.md](SITE-006-2026-10-09.md). Base at review time was `ed8e096`. The 51 manifest paths match the 51 App routes. All of them sit inside the browser `TesseractKeyGate`. Twelve public files, and no secret-shaped filename. On that base, `artifacts/api-server/src/routes/sovereign-engines.ts` had no `requireAdminSession`. Consciousness, AGI, and biological-equivalence sentences stay product copy. AGI is unmet.
+**Follow-up:** Father said merge. Pull request 96 is on main as `c938ac30724f22fc38e0c9afa5e9b78dc10f1636`. Validate run 38014313293 passed. Each engine route and `GET /api/diagnostics/consciousness` use `requireAdminSession`. `GET /api/healthz` stays open. The site was not published.
 
 ## Merge rule
 
-Pull request 96 stays a draft until validate is green and Father says merge. Passing tests can mark the work TESTED. They do not authorize a production publication or a security or data change on main.
+Passing tests and a merged pull request can mark the work on main. They do not authorize a production publication.
