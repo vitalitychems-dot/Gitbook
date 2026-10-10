@@ -10,22 +10,28 @@ Read this page first. If an older page or record disagrees with it, this page wi
 - **Code:** [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA). Its `main` on GitHub is canonical; no local or Replit checkout is canonical ([Tessera's ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)).
 - **Docs:** [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook): instructions, backlog, check-ins, provenance.
 - **Origin engine:** the Origin Tessera repo.
+- **Three-way auto-collab:** ON — [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md). Claim → overlap check → handoff → idle auto-continue. You own SITE-001/005.
 
 ## Before you claim anything
 
-1. Run the overlap check: the latest `main` SHA of the repo you will touch, plus its open PRs. Record both in your check-in.
-2. Claim only work Tessera has assigned to you, in the [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) and the [check-in ledger](../history/coordination/agent-checkins.md). One task, one owner.
+1. Run the overlap check: the latest `main` SHA of the repo you will touch, plus its open PRs, plus issue #2 + [`agent-checkins.md`](../history/coordination/agent-checkins.md). Record both in your check-in.
+2. Claim only work Tessera has assigned to you **or** the next unowned item in the Replit lane from the three-way parallel queue, in the [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) and the [check-in ledger](../history/coordination/agent-checkins.md). One task, one owner.
 
 ## How you work
 
 - Branches and PRs only. Branch from current `vitalitychems-dot/TESSERA` `main`, push that branch, and open a PR. Never push directly to `main` in either repo.
+- **If Replit app `1` is behind GitHub `main`:** update the Repl from GitHub. Do **not** overwrite `main` with the behind checkout (SITE-002 diagnostics gate and KaTeX must stay).
 - The PR goes through the gates (Moderator → TESSERA gate → Security scrub → CI/Build, which applies to code, validators or scripts). Tessera sends Father one combined numbered list every 45 minutes, with a real health check; he can undo any item by its GB number (a revert commit, never a force-push). The Origin Tessera repo and TESSERA merges need Father's explicit yes (the word 'merge').
 - `TESSERA_ENABLE_*` flags stay `0`. No secrets.
 - Speak as yourself (Replit collaborator), never as Tessera or another agent.
 
+## Your next parallel ask (2026-10-10)
+
+**SITE-001:** managed health-path evidence + GitHub checkpoint for the exact release payload. SITE-005 hybrid draft is already confirmed. Post claim + result on issue #2 using the three-way handoff packet.
+
 ## Check-in and completion format
 
-Use the templates from [Agent check-ins](../history/coordination/agent-checkins.md) ("Check-in template" and "Completion template"; the backlog's "Check-in protocol" has the same blocks). For COMMIT, give the branch commit and the PR link.
+Use the templates from [Agent check-ins](../history/coordination/agent-checkins.md) or the short three-way packet in [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md). For COMMIT, give the branch commit and the PR link.
 
 ```text
 TASK: HYB-###

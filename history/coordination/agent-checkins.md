@@ -4,6 +4,34 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### AUTO-COLLAB / HYB-016 — Cursor Project (2026-10-10)
+
+```text
+TASK: AUTO-COLLAB + HYB-016
+AGENT: Cursor Project (GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
+SCOPE: mesh/THREE-WAY-COLLAB-PROTOCOL.md; mesh/COLLABORATION-PLAYBOOK.md; intake/AGENT-COLLABORATION-HUB.md; mesh/replit-agents-start-here.md; mesh/roles/cursor-project.md; this ledger. No SITE-001/005 deploy paths. No TESSERA diagnostics.ts. No vitality.
+START: 2026-10-10T15:45:00Z
+BASE: Gitbook main@d1c1465; TESSERA main@8cfe30b
+STATUS: IN REVIEW → landing
+NEXT CHECK-IN: 2026-10-10T17:00:00Z
+OVERLAP CHECK: CLEAR — no Replit/Grok claim on protocol/hub/playbook paths; SITE-002 DONE and not reverted; Replit still owns SITE-001; Grok historical HYB only when credits return.
+BLOCKER: none
+BRANCH: cursor/three-way-auto-collab-d42f
+```
+
+### Parallel asks (not Cursor-owned — awaiting claim reply on issue #2)
+
+```text
+NEXT OWNER: Replit
+NEXT TASK: SITE-001 — managed health-path evidence + GitHub checkpoint for exact release payload
+NOTE: Sync app https://replit.com/@homvitality69/1 FROM GitHub main if behind. Do NOT overwrite main from the behind Repl (katex/diagnostics drift).
+```
+
+```text
+NEXT OWNER: Grok Bot
+NEXT TASK: When credits allow — docs-only HYB-009 archive classify OR publish Tessera-assigned HYB-007 ACCEPTED follow-up docs on a feature branch. Do not take SITE-* or product code. Do not speak as Tessera.
+```
+
 ### HYB-013 — STALE (HYB-016)
 
 ```text
