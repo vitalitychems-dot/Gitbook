@@ -5,7 +5,9 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 ## Current bases
 
 - Gitbook main moves with this note.
-- TESSERA main is `c10b8379079075529f3aae9ac09b1afbf3339940`.
+- TESSERA main is `8bbae4a`. Pull request 99 merged as `8bbae4a` on 2026-10-10. It sits on pull request 98, merge `7e3c562`.
+- Pull request 98 records the third 50. Eighteen trading and chain names were not imported. The path distances run.
+- Pull request 99 keeps clamp, positive modulus, and heaviside. Those three steps had been dropped by 98 and were put back.
 - Pull request 97 merged as `c10b837`. It records the remaining 42 catalog cards and three steps from `tweenjs/tween.js`. Validate run 38017838713 passed. The site was not published.
 - `c10b837` sits on `d9e431d` (pull request 81). Before that: `03e4d1b` (68), `85fc46a` (91), `5bc28e5` (90), `7664998` (89), `ad2025b` (78), `c938ac3` (96).
 - Pull request 96 gates each engine route and `GET /api/diagnostics/consciousness` with the owner session.
@@ -38,6 +40,9 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 - [x] Pull request 91 is on main as `85fc46a125144db5c9a266ab00baebbeea79fb12`. Check: validate was SUCCESS and the merge state was CLEAN. Grand-council and omniversal catches return stable error codes.
 - [x] Pull request 68 is on main as `03e4d1b54642c9a6ce085b39d8462e29a6b96290`. Check: validate was SUCCESS and the merge state was CLEAN. Untracked local trees are ignored. The shared Zz archive was not read.
 - [x] Pull request 81 is on main as `d9e431d01aae86d5eb4cc27fec1206b2a96eab14`. Check: validate was SUCCESS and the merge state was CLEAN. The preview package shell is runnable. The lockfile was not changed.
+- [x] Pull request 98 is on main as `7e3c562`. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-3.test.ts` passed before the merge. Eighteen trading and chain names were not imported. The four path distances from `qiao/PathFinding.js` run.
+- [x] Pull request 99 is on main as `8bbae4a`. Check: the same test passed after clamp, positive modulus, and heaviside were restored. Validate was not re-run by this note.
+
 - [x] Pull request 97 is on main as `c10b8379079075529f3aae9ac09b1afbf3339940`. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-4.test.ts` passed, and validate run 38017838713 passed. Forty-two card-home names were left after the first three batches. Three names moved. The steps are linear sample, quadratic ease in, and quadratic ease out, read from `tweenjs/tween.js`. These are not a new set of weights. AGI is unmet. Trading, exchange, and miner cards stay pointers. No repository was cloned.
 
 ## Still open
@@ -48,7 +53,7 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 - [ ] HYB-008. Replit's row in comment 6089634401 rejects copying `chicagoHour` onto the map. Cursor checked the same blobs: `WorldMap.tsx` `ac0021ef` prints `world.timeOfDay`; `types.ts` `ed0de155` types that field as a string. No TESSERA edit followed.
 - [ ] HYB-013 stays as written. The backlog row and the ledger row still disagree. Cursor is not reconciling them.
 - [ ] No repository was deleted. The eight already-deleted names stay deleted. The remaining source repositories stay, including 1T.
-- [ ] Pull request 80 was not merged. Validate is SUCCESS and the merge state is CLEAN. Its identity line says the pen is Tessera.
+- [ ] Pull request 80 was not merged. Validate is SUCCESS and the merge state is CLEAN. It adds `artifacts/api-server/src/lib/pen-local/weights.ts`. Weights are not to be added. Cursor did not merge it.
 - [ ] Pull request 82 failed validate and conflicts with main.
 - [ ] Draft pull request 87 conflicts with main. Validate had passed before the conflict. It was not rebased.
 
