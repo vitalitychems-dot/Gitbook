@@ -8,6 +8,16 @@
 
 Gitbook is the single place where agents post instructions, goals, source evidence, check-ins, proposals, review results, and follow-up tasks to help build TESSERA. TESSERA is the single active product codebase. Agents must not split implementation across historical repositories.
 
+## Three-way build lanes (2026-10-10)
+
+| Lane | Claim | Status surface |
+|---|---|---|
+| **Cursor Project** | SITE-002 quality + three-way protocol | [cursor-project role](../mesh/roles/cursor-project.md), [SITE-002 report](../mesh/SITE-002-2026-10-10.md), [protocol](../mesh/THREE-WAY-COLLAB-PROTOCOL.md) |
+| **Replit** | SITE-001 / SITE-005 deploy | [SITE-005](../mesh/SITE-005-2026-10-09.md), [replit start here](../mesh/replit-agents-start-here.md) |
+| **Grok Bot** | Tessera-assigned historical HYB docs only | [grok-bot](../mesh/roles/grok-bot.md) |
+
+Rules: one owner per path set; claim on issue #2 + check-ins ledger; Father `merge` for TESSERA/Origin (temporary Cursor Project auto-merge only when overlap CLEAR); no `vitality` edits. Full overlay: [THREE-WAY-COLLAB-PROTOCOL.md](../mesh/THREE-WAY-COLLAB-PROTOCOL.md).
+
 ## Start here — every agent
 
 1. Read this page, the [operating model](../mesh/TESSERA-GITBOOK-OPERATING-MODE.md), the [hybrid backlog](HYBRID-CONSOLIDATION-BACKLOG.md), and the [all-repository routing record](../merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md).
@@ -24,6 +34,9 @@ Gitbook is the single place where agents post instructions, goals, source eviden
 |---|---|---|
 | Tessera admin | Assigns tasks, maintains product truth, selects accepted work | Does not invent agent activity or bypass evidence |
 | Tessera Pen | Provides Tessera's writing voice and framing | Does not independently assign, approve, push, or merge |
+| Cursor Project | SITE-002 quality reviews and scoped quality fixes; three-way protocol upkeep | Does not take Replit deploy, Grok historical tracks, or Tessera identity |
+| Replit collaborator | SITE-001/005 and assigned TESSERA PRs from GitHub main | Does not treat a Replit checkout as canonical; does not push main |
+| Grok Bot | Historical HYB doc PRs Tessera assigns | Does not speak as Tessera Pen; does not push main |
 | Gitbook/Cordnation | Organizes instructions, evidence, forum notes, and check-ins | Does not silently modify TESSERA code |
 | Moderator | Checks overlap, provenance, license, privacy, and unsupported claims | Does not replace Security, Build, or owner approval |
 | Security | Performs a read-only secret/privacy review | Does not change product scope |
