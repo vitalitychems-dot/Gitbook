@@ -29,6 +29,6 @@ Installed after the second ten. The test passed.
 
 ## Twenty-five measured swaps
 
-One run. The percent is time saved against the slower way. The answer stayed the same. A later run will not match these figures exactly.
+The gate is 25 percent. A run under that line fails the test. The test passed twice. This is one later run. A future run will not match these figures exactly. The lowest here is first, at 36.7.
 
-find 99.6. dedupe 97.5. top 17.8. count 66.1. seen 97.8. window 65.3. join 48.9. memo 99.8. case 43.9. regex 1.3. sum 99.6. max 21.5. pair 70.8. passes 83.8. tally 99.7. clamp 79.6. prefix 32.3. blank 23.7. range 71.3. first 40.9. gap 31.8. both 71.9. tail 77.3. keys 99.7. lines 50.1.
+find 99.5. dedupe 97.3. top 80.3. count 65.4. seen 97.5. window 65.3. join 71.9. memo 99.8. case 45.2. regex 45.3. sum 99.9. max 81.1. pair 72.3. passes 84.7. tally 99.7. clamp 79.4. prefix 66.0. blank 44.1. range 75.1. first 36.7. gap 56.5. both 73.2. tail 76.8. keys 99.6. lines 49.7.
