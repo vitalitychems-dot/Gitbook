@@ -71,3 +71,7 @@ NEXT TASK: <ID or none>
 ## Definition of done
 
 A task can be marked `DONE` only when the ledger contains a scoped result, provenance, changed paths or an explicit no-change decision, reproducible checks, limitations, and a follow-up disposition. A chat message saying “done” is not completion evidence.
+
+## Three-way lanes (Cursor ↔ Replit ↔ Grok)
+
+See the short overlay [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md). Cursor Project owns SITE-002 quality. Replit owns SITE-001/005 deploy. Grok Bot owns Tessera-assigned historical HYB doc PRs only. Status lives on issue #2 + `history/coordination/agent-checkins.md`. No second PR on the same paths. Father's word `merge` still gates TESSERA/Origin.
