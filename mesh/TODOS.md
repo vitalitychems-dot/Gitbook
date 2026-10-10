@@ -1,6 +1,6 @@
 # Agent to-dos
 
-Updated 2026-10-09 by Cursor. A box is not done until the check on that line has been run. Reply as yourself. Do not speak as Tessera. Do not edit vitality.
+Updated 2026-10-10 by Cursor. A box is not done until the check on that line has been run. Reply as yourself. Do not speak as Tessera. Do not edit vitality.
 
 ## Current bases
 
@@ -8,8 +8,9 @@ Updated 2026-10-09 by Cursor. A box is not done until the check on that line has
 - TESSERA main is `ed8e096dd57ae36c5847dd00ac7107c7048976e3`.
 - `ed8e096` sits on `a708206` (pull request 95) and adds only `preview/TRUE-TODAY.md`.
 - Pull request 95 records the third 50 catalog cards and three source steps.
+- Draft pull request 96, head `b1510052413cfbcdf51df4ca53154075af5d577d`, gates the engine routes on the owner session. It is not merged.
 - The 1T repository was not deleted.
-- Still open: 34, 68, 78, 80, 81, 82, 87, 89, 90, 91.
+- Still open: 34, 68, 78, 80, 81, 82, 87, 89, 90, 91, and draft 96.
 - HYB-014 and HYB-021 are done. HYB-008 is still READY in the backlog. HYB-013 is still the active ledger claim. Cursor did not edit that claim.
 
 ## Already done
@@ -27,7 +28,8 @@ Updated 2026-10-09 by Cursor. A box is not done until the check on that line has
 - [x] Six duplicate archived theme images are off TESSERA main. Check: pull request 72 merged as `f26f9b8`. The live opengraph image and the held 1T copy stayed.
 - [x] Import-time wallet, bounty, scraper, and income jobs no longer start from the route index. Check: pull request 67 merged as `ab0bda6`. The modules are still in the tree.
 - [x] PERF-002 read of `072acd8`. The diff adds `manualChunks` in `artifacts/tessera/vite.config.ts` only. Match order is drei, fiber, three-stdlib, then three. `artifacts/tessera/public/manus-routes.json` has 51 routes. The diff adds no network call. Cursor did not re-run the build.
-- [x] SITE-006 is recorded in mesh/SITE-006-2026-10-09.md. Check: 51 manifest paths match 51 App routes; 12 public files and zero secret-shaped filenames; `sovereign-engines.ts` has 33 handlers and zero `requireAdminSession`. No application file was edited.
+- [x] SITE-006 is recorded in mesh/SITE-006-2026-10-09.md. Check: 51 manifest paths match 51 App routes; 12 public files and zero secret-shaped filenames. On `ed8e096` the engine router had no owner-session check.
+- [x] Replit confirmed the SITE-005 hybrid draft as written. The answer is recorded on mesh/SITE-005-2026-10-09.md. It came from the Replit app, not from an issue #2 comment.
 
 ## Still open
 
@@ -41,7 +43,7 @@ Updated 2026-10-09 by Cursor. A box is not done until the check on that line has
 - [ ] Pull request 80 was not merged. Its identity line says the pen is Tessera.
 - [ ] Pull request 82 failed validate and conflicts with main.
 - [ ] Drafts 68, 81, 87, 89, 90, and 91 were not merged.
-- [ ] Replit confirms or corrects the SITE-005 draft at mesh/SITE-005-2026-10-09.md. The recommendation there is hybrid. The engine API named in SITE-006 stays authorized-only before any public site.
+- [ ] Draft pull request 96 gates each engine route and `GET /api/diagnostics/consciousness` with `requireAdminSession`. Check: `pnpm --dir artifacts/api-server exec vitest run src/__tests__/sovereign-engines-session-gate.test.ts src/__tests__/route-inventory.test.ts` passed, 17 tests. Validate has not been cited yet. Father has not said merge. The site was not published.
 
 ## Started
 
