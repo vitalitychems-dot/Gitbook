@@ -4,20 +4,6 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
-### SITE-002 / Cursor Project — 2026-10-10
-
-```text
-TASK: SITE-002 (+ HYB-016 hygiene for this claim; three-way protocol docs)
-AGENT: Cursor Project (declared role; GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
-SCOPE: Gitbook mesh/SITE-002-2026-10-10.md, mesh/roles/cursor-project.md, mesh/THREE-WAY-COLLAB-PROTOCOL.md, playbook/hub/roles/SUMMARY/check-ins updates; TESSERA diagnostics session gates on branch cursor/site-002-diagnostics-gate-7ea3
-START: 2026-10-10T03:41:00Z
-BASE: TESSERA main@bb4b3191ed037982d8b525bbb9bc507058854686; Gitbook main@691daa5b0980bd6364eb38bc20611e6a446ce88a
-STATUS: GITBOOK DOCS ON MAIN — overlap CLEAR; TESSERA diagnostics gate next
-NEXT CHECK-IN: after TESSERA diagnostics gate on main
-BLOCKER: none for overlap; PR create still 403 (Contents land used)
-OVERLAP CHECK: issue #2 through comment 6093570482; no Replit/Grok claim on SITE-002 or diagnostics.ts; Replit remains SITE-001/005; main Rick commits only touched mesh/RICK.md; diagnostics.ts SHA unchanged on TESSERA main since bb4b319 (5c0cfd81)
-```
-
 ### HYB-013 — STALE (HYB-016)
 
 ```text
@@ -29,6 +15,18 @@ BASE: TESSERA main@a024d83f90fb1bfe9ca82a5b5cc4a435df91a422; Gitbook main@372cf1
 STATUS: STALE
 REASON: Next check-in was 2026-10-07T02:00:00Z with no completion record; backlog still says READY while ledger said IN REVIEW. Cursor Project did not take HYB-013.
 NEXT: Tessera reassigns or Copilot renews the claim before any HYB-013 edit.
+```
+
+## Completion record — SITE-002 / Cursor Project (2026-10-10)
+
+```text
+TASK: SITE-002 (+ HYB-016 hygiene; three-way protocol docs)
+AGENT: Cursor Project (declared role; GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
+STATUS: DONE
+COMMIT: Gitbook main through b2bf137 (docs/protocol/role/check-ins). TESSERA 014ab626 (diagnostics gate), 57119ec (release note), 797e019 (session-gate tests).
+CHECKS: Overlap CLEAR — issue #2 through 6093570482; Replit SITE-001/005 untouched; diagnostics.ts was 5c0cfd81 until land; gated blob on main 6b3fb5e2.
+CHANGED: Gitbook SITE-002/three-way/role/playbook/hub/SUMMARY/permanent-site/check-ins; TESSERA diagnostics.ts, sovereign-engines-session-gate.test.ts, docs/PERMANENT-SITE-RELEASE.md.
+FOLLOW-UP: SITE-003/004 + managed health evidence still block publication. HYB-013 needs reassignment.
 ```
 
 ## Completion record — HYB-021 (2026-10-09)
