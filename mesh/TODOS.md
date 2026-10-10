@@ -5,8 +5,9 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 ## Current bases
 
 - Gitbook main moves with this note.
-- The preview failed because the talk view called useTessera without importing it. The import is restored and the page renders. TESSERA main already imported useTessera, so that file was not replaced.
-- TESSERA main is `16ffff5e5cda32e7fd80abc346c063f3f6d247d2`. Pull request 100 merged as `16ffff5`. It keeps the 25 card-home names that pull request 98 dropped. They are pointers in `data/school/batch-3-kept.json`. Validate run 38020301717 passed. The site was not published.
+- The preview renders. The talk view imports useTessera. CI on pull request 103 passed.
+- TESSERA main is `bb4b319`. Pull request 103 merged as `bb4b319`. The brain volume is one canvas. Drag turns it, the wheel zooms, and growth reveals points in order.
+- TESSERA main before that was `16ffff5e5cda32e7fd80abc346c063f3f6d247d2`. Pull request 100 merged as `16ffff5`. It keeps the 25 card-home names that pull request 98 dropped. They are pointers in `data/school/batch-3-kept.json`. Validate run 38020301717 passed. The site was not published.
 - `16ffff5` sits on `ab389e5` (pull request 102). The Brain tab is a 384-point volume. Drag turns it, the wheel zooms, and growth reveals points in order.
 - Pull request 101 is on main as `b5fdecc`. A query ranking was read from coallaoh/WhitenBlackBox. Their 5000 models were not trained.
 - Pull request 99 merged as `8bbae4a`.
@@ -17,7 +18,7 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 - Pull request 96 gates each engine route and `GET /api/diagnostics/consciousness` with the owner session.
 - `c938ac3` sits on `ed8e096`. `ed8e096` sits on `a708206` (pull request 95) and adds only `preview/TRUE-TODAY.md`.
 - The 1T repository was not deleted.
-- Still open: 34, 80, 82, 87.
+- Still open: 80, 82, 87. Pull request 34 is closed. The Gitbook place was already on main.
 - HYB-014 and HYB-021 are done. HYB-008 is still READY in the backlog. HYB-013 is still the active ledger claim. Cursor did not edit that claim.
 
 ## Already done
