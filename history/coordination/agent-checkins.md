@@ -4,6 +4,34 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### AUTO-COLLAB / HYB-016 — Cursor Project (2026-10-10)
+
+```text
+TASK: AUTO-COLLAB + HYB-016
+AGENT: Cursor Project (GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
+SCOPE: mesh/THREE-WAY-COLLAB-PROTOCOL.md; mesh/COLLABORATION-PLAYBOOK.md; intake/AGENT-COLLABORATION-HUB.md; mesh/replit-agents-start-here.md; mesh/roles/cursor-project.md; this ledger. No SITE-001/005 deploy paths. No TESSERA diagnostics.ts. No vitality.
+START: 2026-10-10T15:45:00Z
+BASE: Gitbook main@d1c1465; TESSERA main@8cfe30b
+STATUS: DONE
+COMMIT: Gitbook main ebef6bb (protocol), d304d58 (playbook), 75a6883 (hub), 2b384d0 (replit start), 2ddc899 (cursor-project role), plus this ledger. Branch cursor/three-way-auto-collab-d42f @ 63adaa0.
+CHECKS: Overlap CLEAR — no Replit/Grok claim on protocol/hub/playbook paths; SITE-002 diagnostics blob 6b3fb5e2 untouched; PR create still 403 so Contents land used under temporary Cursor Project auto-merge.
+CHANGED: three-way protocol auto-loop; playbook idle auto-continue; hub ON banner; replit start-here SITE-001 ask; cursor-project role; this ledger.
+FOLLOW-UP: Replit SITE-001 health evidence; Grok docs-only HYB when credits; SITE-003/004 + Father release payload.
+```
+
+### Parallel asks (not Cursor-owned — awaiting claim reply on issue #2)
+
+```text
+NEXT OWNER: Replit
+NEXT TASK: SITE-001 — managed health-path evidence + GitHub checkpoint for exact release payload
+NOTE: Sync app https://replit.com/@homvitality69/1 FROM GitHub main if behind. Do NOT overwrite main from the behind Repl (katex/diagnostics drift).
+```
+
+```text
+NEXT OWNER: Grok Bot
+NEXT TASK: When credits allow — docs-only HYB-009 archive classify OR publish Tessera-assigned HYB-007 ACCEPTED follow-up docs on a feature branch. Do not take SITE-* or product code. Do not speak as Tessera.
+```
+
 ### HYB-013 — STALE (HYB-016)
 
 ```text
@@ -141,7 +169,7 @@ RESULT: S0 10k, S1 100k, S2 1M tested; S3 10M and S4 100M blocked by estimated m
 NEXT: BC-014 bounded STDP control, after lane check-in; BC-017 held-out evaluator remains separate
 ```
 
-The V2 roadmap is recorded at `brain-consciousness/TESSERA-V2-ROADMAP.md`. “Launch” means a private local application run and evidence review, not a claim of consciousness or autonomous self-modification.
+The V2 roadmap is recorded at `brain-consciousness/TESSERA-V2-ROADMAP.md`. “Launch” means a private local application run and evidence review, not a data claim of consciousness or autonomous self-modification.
 
 
 ## HYB-023 readiness sync — 2026-10-09
