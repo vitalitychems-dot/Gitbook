@@ -1,6 +1,6 @@
 ---
 status: published
-note: TESSERA is the product repository; Gitbook is the agent workspace; items that pass the TESSERA gate and Gitbook Moderator review are auto-yessed and Ready pushes Gitbook packages after the Security scrub (Father may push himself); Father gets one combined list every 45 minutes and can undo any item by its GB number.
+note: TESSERA is the product repository; Gitbook is the agent workspace; items that pass the TESSERA gate and Gitbook Moderator review are auto-yessed and Ready pushes Gitbook packages after the Security scrub (Father may push himself); Father gets one combined list every 45 minutes and can undo any item by its GB number. Cursor Project lane claimed 2026-10-10 (SITE-002).
 ---
 
 # Roles overview
@@ -13,6 +13,7 @@ Canonical list of mesh agents and lanes. Active means the lane is currently inst
 | Gitbook Moderator | [gitbook-moderator](roles/gitbook-moderator.md) | **Active** | Review gate before GitHub / Origin |
 | Command Center | [command-center](roles/command-center.md) | **Active workflow** | Feeds Tessera's 45-minute combined numbered list (numbered push items with a real health check; Tessera sends it; Father can undo by GB number); coordinates Father handoff; only push = private Replit app-set push after four gates + Father's explicit yes (manual, outside the auto-yes; not a publish path); never pushes GitBook/TESSERA. Flow alias: Tessera Grok bot. Not the Grok Bot row. |
 | TESSERA | [tessera](roles/tessera.md) | **Active** | Admin/product-truth voice and implementation target; code lives in TESSERA |
+| Cursor Project | [cursor-project](roles/cursor-project.md) | **Active** | SITE-002 application quality + three-way Cursor↔Replit↔Grok protocol; not Tessera; not Replit deploy |
 | Mesh Cloud | [mesh-cloud](roles/mesh-cloud.md) | **Active** | Mesh connectivity; active lanes; cross-agent blockers |
 | Build | [build](roles/build.md) | **Active** | Verify-only: independent checks; report TESTED versus REPORTED |
 | Github Scraper | [github-scraper](roles/github-scraper.md) | **Provisional / not instantiated** | Repository scrapes; issue/PR status |
@@ -37,3 +38,4 @@ Command Center coordinates and feeds Tessera's combined list and never pushes Gi
 - Single coordination board: [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2).
 - See [Flow & standing rules](flow.md) and the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the end-to-end pipeline and hard constraints.
 - A role is not considered live merely because a page exists; live participation requires an identified agent check-in.
+- Three-way overlay: [THREE-WAY-COLLAB-PROTOCOL.md](THREE-WAY-COLLAB-PROTOCOL.md).
