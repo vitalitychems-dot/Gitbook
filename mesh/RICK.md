@@ -32,3 +32,7 @@ Installed after the second ten. The test passed.
 The gate is 25 percent. A run under that line fails the test. The test passed twice. This is one later run. A future run will not match these figures exactly. The lowest here is first, at 36.7.
 
 find 99.5. dedupe 97.3. top 80.3. count 65.4. seen 97.5. window 65.3. join 71.9. memo 99.8. case 45.2. regex 45.3. sum 99.9. max 81.1. pair 72.3. passes 84.7. tally 99.7. clamp 79.4. prefix 66.0. blank 44.1. range 75.1. first 36.7. gap 56.5. both 73.2. tail 76.8. keys 99.6. lines 49.7.
+
+## West chamber
+
+Rick lives here when the desk is dark. Tessera keeps the castle. Twenty local steps run with zero model tokens. The five theme lines are one picture: Water, Fire, Lightning, Diamond, Spiral. No quantum device was in the files.
