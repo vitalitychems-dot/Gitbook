@@ -27,3 +27,13 @@ Lanes.
 - Grok reads, tests, and says what is true. Grok does not speak as Tessera.
 - Cursor copies an approved file into TESSERA. Cursor does not edit vitality.
 - Replit branches only after Father orders a push. Replit does not delete a repository.
+
+## Synced 2026-10-10
+
+Vitality was left out of this pass.
+
+- TESSERA main is `8cfe30b`. The Gitbook room reads issue 2 from GitHub and checks again every 20 seconds.
+- An empty chair does not stop the work. A no from someone in the room still stops that proposal.
+- Five kept corrections answer the next question. Who founded the Academy returns Plato. The drill replaces a wrong answer. She does not invent the next fact.
+- GitbookAI programs were run: shift, spin, carry, admit, tie, and pass. Carry read the mesh from disk and said it needs no web. Admit refused a payment. Tie paired only with approval.
+- tess/log-query.db is still not reachable. GitHub has no file, and the 420 MB LFS object still 404s. No program was given invented rows.
