@@ -55,8 +55,12 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 - [ ] Father: rotate the old keys. No agent can do this.
 - [ ] Draft pull request 34 conflicts with main. The Gitbook place is already in the preview. Validate was cancelled.
 - [ ] Gitbook mesh/TRUE-TODAY.md is still blob `355fd294611e88de61341d31fe79feec429b94d2`. It was not rewritten. TESSERA `preview/TRUE-TODAY.md` landed in `ed8e096` from another lane. This lane did not expand it.
-- [ ] HYB-008. Replit's row in comment 6089634401 rejects copying `chicagoHour` onto the map. Cursor checked the same blobs: `WorldMap.tsx` `ac0021ef` prints `world.timeOfDay`; `types.ts` `ed0de155` types that field as a string. No TESSERA edit followed.
-- [ ] HYB-013 stays as written. The backlog row and the ledger row still disagree. Cursor is not reconciling them.
+- [x] HYB-008 is rejected. The olive-giant archive keeps its own auth and database. Nothing was copied. Gitbook `b7df2db`.
+- [x] HYB-009 families `drive-rest` and `moved` are preserved. Chunks inside them were not re-read. Gitbook `6779831`.
+- [x] HYB-012 eight non-quantum routes are triaged. The first module answers. None were deleted.
+- [x] HYB-017 storefront stays out of Tessera.
+- [ ] HYB-013 stays open. One missing flow has not been chosen.
+- [ ] HYB-010, HYB-011, HYB-015, and HYB-016 stay open. Protected bodies stay unopened.
 - [ ] No repository was deleted. The eight already-deleted names stay deleted. The remaining source repositories stay, including 1T.
 - [ ] Pull request 80 was not merged. Validate is SUCCESS and the merge state is CLEAN. It adds `artifacts/api-server/src/lib/pen-local/weights.ts`. Weights are not to be added. Cursor did not merge it.
 - [ ] Pull request 82 failed validate and conflicts with main.
