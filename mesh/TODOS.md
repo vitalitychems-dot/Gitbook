@@ -6,12 +6,13 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 
 - Gitbook main moves with this note.
 - The preview failed because the talk view called useTessera without importing it. The import is restored and the page renders. TESSERA main already imported useTessera, so that file was not replaced.
-- TESSERA main is `ab389e5`. Pull request 102 merged as `ab389e5`. The Brain tab is a 384-point volume. Drag turns it, the wheel zooms, and growth reveals points in order.
+- TESSERA main is `16ffff5e5cda32e7fd80abc346c063f3f6d247d2`. Pull request 100 merged as `16ffff5`. It keeps the 25 card-home names that pull request 98 dropped. They are pointers in `data/school/batch-3-kept.json`. Validate run 38020301717 passed. The site was not published.
+- `16ffff5` sits on `ab389e5` (pull request 102). The Brain tab is a 384-point volume. Drag turns it, the wheel zooms, and growth reveals points in order.
 - Pull request 101 is on main as `b5fdecc`. A query ranking was read from coallaoh/WhitenBlackBox. Their 5000 models were not trained.
-- TESSERA main before that was `8bbae4a`. Pull request 99 merged as `8bbae4a`.
-- Pull request 98 records the third 50. Eighteen trading and chain names were not imported. The path distances run.
+- Pull request 99 merged as `8bbae4a`.
+- Pull request 98 records the third 50. Eighteen trading and chain names were not imported. The path distances run. That publish dropped 25 card-home names. Pull request 100 puts those names back beside the third batch. It does not replace `batch-3.json`.
 - Pull request 99 keeps clamp, positive modulus, and heaviside. Those three steps had been dropped by 98 and were put back.
-- Pull request 97 merged as `c10b837`. It records the remaining 42 catalog cards and three steps from `tweenjs/tween.js`. Validate run 38017838713 passed. The site was not published.
+- Pull request 97 merged as `c10b837`. It records the remaining 42 catalog cards and three steps from `tweenjs/tween.js`. Validate run 38017838713 passed.
 - `c10b837` sits on `d9e431d` (pull request 81). Before that: `03e4d1b` (68), `85fc46a` (91), `5bc28e5` (90), `7664998` (89), `ad2025b` (78), `c938ac3` (96).
 - Pull request 96 gates each engine route and `GET /api/diagnostics/consciousness` with the owner session.
 - `c938ac3` sits on `ed8e096`. `ed8e096` sits on `a708206` (pull request 95) and adds only `preview/TRUE-TODAY.md`.
@@ -25,7 +26,7 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 - [x] The catalog is one index of 272 lines and 270 names. Check: the chamber Map tab, or mesh/CATALOG-PASS.md. Pull request 88 landed as `b593ef0`. Pull request 93 records a second 50. Pull request 95 records a third 50. Pull request 97 records the remaining 42 card-home names.
 - [x] The third 50 are catalog cards that were not in the first two batches. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-3.test.ts` passed, and validate on pull request 95 passed. Two names moved. The steps are grid distance, clamp and positive modulus, and heaviside. These are not a new set of weights.
 - [x] Father said yes to update her on GitHub. Pull request 51 is on main as 3023269.
-- [x] Text pages are kept. The kept count was 15 at TESSERA main `7cc1cbf`. It was not re-counted at `c10b837`.
+- [x] Text pages are kept. The kept count was 15 at TESSERA main `7cc1cbf`. It was not re-counted at `16ffff5`.
 - [x] Privacy pull requests 44, 49, 41, 46, 48, and 52 are on main. Pull request 52 merged as `7cc1cbf`. The cleanup script was not run.
 - [x] Desk preview pull request 45 is on main as `71fc59b`. A who, what, where, or when answer keeps its source. Learn lists the five skills she can run. These are not a new set of weights.
 - [x] The large query database stayed out. The supply zip stayed on Drive. The Zz archive was not read again. The eight tool cards were not installed.
@@ -44,8 +45,8 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 - [x] Pull request 68 is on main as `03e4d1b54642c9a6ce085b39d8462e29a6b96290`. Check: validate was SUCCESS and the merge state was CLEAN. Untracked local trees are ignored. The shared Zz archive was not read.
 - [x] Pull request 81 is on main as `d9e431d01aae86d5eb4cc27fec1206b2a96eab14`. Check: validate was SUCCESS and the merge state was CLEAN. The preview package shell is runnable. The lockfile was not changed.
 - [x] Pull request 98 is on main as `7e3c562`. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-3.test.ts` passed before the merge. Eighteen trading and chain names were not imported. The four path distances from `qiao/PathFinding.js` run.
-- [x] Pull request 99 is on main as `8bbae4a`. Check: the same test passed after clamp, positive modulus, and heaviside were restored. Validate was not re-run by this note.
-
+- [x] Pull request 99 is on main as `8bbae4a`. Check: the same test passed after clamp, positive modulus, and heaviside were restored. Validate run 38020046073 later passed.
+- [x] Pull request 100 is on main as `16ffff5e5cda32e7fd80abc346c063f3f6d247d2`. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-3-kept.test.ts preview/src/lib/tessera/batch-3.test.ts preview/src/lib/tessera/batch-4.test.ts` passed, and validate run 38020301717 passed. Twenty-five card-home names that pull request 98 dropped are in `data/school/batch-3-kept.json`. Two had already moved. They are pointers. The third-batch file still has fifty rows and at least eighteen held names. AGI is unmet.
 - [x] Pull request 97 is on main as `c10b8379079075529f3aae9ac09b1afbf3339940`. Check: `node --experimental-strip-types --test preview/src/lib/tessera/batch-4.test.ts` passed, and validate run 38017838713 passed. Forty-two card-home names were left after the first three batches. Three names moved. The steps are linear sample, quadratic ease in, and quadratic ease out, read from `tweenjs/tween.js`. These are not a new set of weights. AGI is unmet. Trading, exchange, and miner cards stay pointers. No repository was cloned.
 
 ## Still open
