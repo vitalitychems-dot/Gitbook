@@ -5,7 +5,9 @@ Updated 2026-10-10 by Cursor. A box is not done until the check on that line has
 ## Current bases
 
 - Gitbook main moves with this note.
-- TESSERA main is `8bbae4a`. Pull request 99 merged as `8bbae4a` on 2026-10-10. It sits on pull request 98, merge `7e3c562`.
+- TESSERA main is `ab389e5`. Pull request 102 merged as `ab389e5`. The Brain tab is a 384-point volume. Drag turns it, the wheel zooms, and growth reveals points in order.
+- Pull request 101 is on main as `b5fdecc`. A query ranking was read from coallaoh/WhitenBlackBox. Their 5000 models were not trained.
+- TESSERA main before that was `8bbae4a`. Pull request 99 merged as `8bbae4a`.
 - Pull request 98 records the third 50. Eighteen trading and chain names were not imported. The path distances run.
 - Pull request 99 keeps clamp, positive modulus, and heaviside. Those three steps had been dropped by 98 and were put back.
 - Pull request 97 merged as `c10b837`. It records the remaining 42 catalog cards and three steps from `tweenjs/tween.js`. Validate run 38017838713 passed. The site was not published.
