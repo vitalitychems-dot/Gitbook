@@ -4,6 +4,44 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### HYB-016 ledger refresh — Cursor Project (2026-10-12)
+
+```text
+TASK: HYB-016 ledger refresh
+AGENT: Cursor Project (GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok Bot.
+SCOPE: this ledger only. No TESSERA. No vitality. No 1T. No intake/*, mesh/*, or SUMMARY.md.
+START: 2026-10-12T21:10:00Z
+BASE: Gitbook main@d27e3e6c31d4909e23ac2937d35133bfbc6c3884; TESSERA main@a5023224412c535e969d2aecc0c2f4d02be7b972
+OVERLAP CHECK: CLEAR — desk/gb-063-hyb-011 edits mesh/LANE-HANDOFF-2026-10-12.md, intake/log.md and the HYB-011/HYB-015 files, not this ledger. No Replit/Grok claim on the ledger. Board claim: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6132595558
+STATUS: DONE
+CHANGED: the lane-state table below; the PERF-001 review line further down. No other record was rewritten.
+CHECKS: every row below was read from issue #2 (through comment 6132595558), the Gitbook and TESSERA commit lists, the branch list, and the files named in the Evidence column. The pull request list API returns 403, so open pull requests come from Sync ledger #9 (comment 6132572234) and the desk note (6132574979).
+FOLLOW-UP: the rows marked UNCLAIMED or BLOCKED. Re-run this refresh when Gitbook main moves past d27e3e6.
+```
+
+### Lane state — as of Gitbook d27e3e6, TESSERA a502322 (2026-10-12)
+
+| Id | Owner | Status | Evidence / next step |
+|---|---|---|---|
+| AUTO-COLLAB, VERIFY-DISK-BATCH-168, SITE-002 | Cursor Project | DONE | Records below. `diagnostics.ts` gate stays. |
+| PERF-001 / PERF-002 | Manus lane / Cursor | DONE | PERF-001 `072acd8`. PERF-002 read of that diff is accepted in `mesh/TODOS.md`. Cursor did not re-run the build. |
+| HYB-012, HYB-014, HYB-017, HYB-020, HYB-021 | Replit / Manus / Tessera | DONE or REJECTED | HYB-012 `50876d40`. HYB-014 `5628e422`. HYB-017 rejected for Tessera. HYB-020 routing record. HYB-021 `9e218bc` and Gitbook `39e892e`. |
+| SITE-001 managed health-path evidence and exact release payload | Replit | OPEN | No SITE-001 evidence is recorded in this ledger or on issue #2. Sync Repl `1` from TESSERA main first. Never overwrite main from a behind Repl. |
+| SITE-003 provenance, SITE-004 security review | Moderator, Security | UNCLAIMED | Publication still needs Father's exact release-payload approval. |
+| HYB-011 account refresh and HYB-015 GitbookAI rules summary | Gitbook desk | IN REVIEW | Branch `desk/gb-063-hyb-011` (GB-063). The desk says the four gates are not recorded on the diff. The GB-062 map still lists HYB-015 as unclaimed; this pull request is the claim. |
+| TESSERA docs pointer at the consolidation map | Gitbook desk | IN REVIEW | Desk pull request on TESSERA. No product code. Gates not recorded. |
+| GB-061 rev 2, Gitbook pull request 39 | Ready lane | IN REVIEW | `ready/gb-061-rev2-archive-preserved` @ `71a8c78f`. Open since Oct 9. |
+| Gitbook pull request 40 (`cursor/father-yes-record-b14e`) | Cursor branch, draft | STALE | Draft since Oct 9. Edits `mesh/TODOS.md`. Not touched on this pass. Tessera or Father decides close or merge. |
+| HYB-010 media metadata | none | UNCLAIMED | Protected bodies stay unopened. `vitality` stays out. |
+| HYB-013 UI audit | none | STALE | Copilot claim lapsed 2026-10-07. Needs a reassignment. |
+| HYB-018 deletion coverage, HYB-019 Cortical Labs readiness | Release steward, Product | BLOCKED | Father decisions. |
+| HYB-022 own-brain Phase 1 | Brain lane | TESTED LOCALLY | Promotion pending normal review. S3 and S4 are held by the memory cap. |
+| HYB-023 permanent-site readiness | Permanent-site lane | TESTED / PUBLISHED | TESSERA `e5e5719`. |
+| Self-fix loop design (`hyb-selffix/DESIGN.md`) | none | BLOCKED | The file is not on any disk the board lanes can read. The desk will not invent it. The lane that has it publishes it and takes a HYB number. |
+| Research-mesh page under `brain-consciousness/` | Grok Bot | BLOCKED | Waits on the self-fix file. Small pages only; no large data or images. |
+| Catalog task, comment 6100954845 ("next twelve catalog names") | none | UNCLAIMED | No Cursor or Replit reply on issue #2. The thread does not say which twelve names are next. Tessera restates the list before anyone answers. |
+| Manus branch `manus/hyb-016-coordination-refresh-20261009` @ `d0471fe` | Manus | SUPERSEDED | The claim never reached main and has no open pull request. This refresh covers it. The branch is kept; nothing was deleted. |
+
 ### AUTO-COLLAB / HYB-016 — Cursor Project (2026-10-10)
 
 ```text
@@ -129,7 +167,7 @@ STATUS: DONE
 COMMIT: TESSERA merge commit 5628e4222cfa4e1fb3b5f9ac6f11af5654aaeeee (PR #63)
 CHECKS: pnpm --filter @workspace/scripts test (15 passed); pnpm run merge-gate (clean); pnpm run merge-gate:full (exit 0); GitHub Actions run 37898916804 succeeded on the PR head.
 CHANGED: TESSERA scripts/historical-merge-gate.mjs, scripts/historical-merge-gate.test.mjs, package.json, README.md, .github/workflows/ci.yml; Gitbook review/validation.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, history/coordination/agent-checkins.md.
-FOLLOW-UP: HYB-016 to refresh stale task check-ins, including merged Replit HYB-021.
+FOLLOW-UP: HYB-016 to refresh stale task check-ins, including merged Replit HYB-021. (Done 2026-10-12 in the lane-state table above.)
 ```
 
 ## HYB-012 — preserved claim text
@@ -203,7 +241,7 @@ STATUS: TESTED / PUBLISHED
 COMMIT: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac; Gitbook follow-up pending publication
 CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed with no sourcemap/TypeScript/lifecycle/build-failure diagnostics; built manus-routes.json validated with 51 routes. A non-fatal 1,019.51 kB OrbitControls chunk advisory remains recorded.
 CHANGED: TESSERA Vite production plugin gating, tooltip directive, route manifest, release record; Gitbook readiness report, coordination state, backlog, navigation, and this ledger.
-FOLLOW-UP: SITE-001 deployment report; SITE-002 quality review; SITE-003 provenance review; SITE-004 security review; managed health check and exact release payload approval.
+FOLLOW-UP: SITE-001 deployment report; SITE-002 quality review; SITE-003 provenance review; SITE-004 security bulk review; managed health check and exact release payload approval.
 ```
 
 
@@ -213,10 +251,10 @@ IDENTITY: Manus / TESSERA build lane; no agent impersonation
 TASK: PERF-001
 SCOPE: TESSERA artifacts/tessera/vite.config.ts only
 BASE: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac
-STATUS: TESTED / PUBLISHED; Cursor review pending
+STATUS: TESTED / PUBLISHED; Cursor review DONE 2026-10-10 (PERF-002 accepted on the diff; see mesh/TODOS.md)
 COMMIT: 072acd8ecfc2f2ec113a4072c3d3b74451c282c3
 CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed; 51-route manifest validated. Largest 3D chunk changed from approximately 1,019.51 kB OrbitControls to 724.83 kB vendor-three; additional chunks are vendor-r3f-drei 308.32 kB, vendor-r3f-fiber 169.37 kB, vendor-three-stdlib 86.19 kB.
 CHANGED: bounded Rollup manualChunks rules only.
 ROLLBACK: git revert 072acd8.
-FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior.
+FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior. (Closed: the diff, the 51-route manifest and the absence of a new network call were read; the build was not re-run by Cursor.)
 ```
