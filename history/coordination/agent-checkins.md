@@ -14,7 +14,7 @@ START: 2026-10-12T21:10:00Z
 BASE: Gitbook main@d27e3e6c31d4909e23ac2937d35133bfbc6c3884; TESSERA main@a5023224412c535e969d2aecc0c2f4d02be7b972
 OVERLAP CHECK: CLEAR — desk/gb-063-hyb-011 edits mesh/LANE-HANDOFF-2026-10-12.md, intake/log.md and the HYB-011/HYB-015 files, not this ledger. No Replit/Grok claim on the ledger. Board claim: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6132595558
 STATUS: DONE
-CHANGED: the lane-state table below; the PERF-001 review line further down. No other record was rewritten.
+CHANGED: the lane-state table below; one closing note on the PERF-001 review line and one on the HYB-014 follow-up line. No other record was rewritten.
 CHECKS: every row below was read from issue #2 (through comment 6132595558), the Gitbook and TESSERA commit lists, the branch list, and the files named in the Evidence column. The pull request list API returns 403, so open pull requests come from Sync ledger #9 (comment 6132572234) and the desk note (6132574979).
 FOLLOW-UP: the rows marked UNCLAIMED or BLOCKED. Re-run this refresh when Gitbook main moves past d27e3e6.
 ```
@@ -241,7 +241,7 @@ STATUS: TESTED / PUBLISHED
 COMMIT: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac; Gitbook follow-up pending publication
 CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed with no sourcemap/TypeScript/lifecycle/build-failure diagnostics; built manus-routes.json validated with 51 routes. A non-fatal 1,019.51 kB OrbitControls chunk advisory remains recorded.
 CHANGED: TESSERA Vite production plugin gating, tooltip directive, route manifest, release record; Gitbook readiness report, coordination state, backlog, navigation, and this ledger.
-FOLLOW-UP: SITE-001 deployment report; SITE-002 quality review; SITE-003 provenance review; SITE-004 security bulk review; managed health check and exact release payload approval.
+FOLLOW-UP: SITE-001 deployment report; SITE-002 quality review; SITE-003 provenance review; SITE-004 security review; managed health check and exact release payload approval.
 ```
 
 
