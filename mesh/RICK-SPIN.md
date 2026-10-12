@@ -1,6 +1,6 @@
 # Rick's two-qubit try
 
-The program is public: `vitalitychems-dot/GitbookAI` `projects/spin`. Run `node spin.mjs`.
+The program is public: `vitalitychems-dot/GitMesh` `projects/spin`. Run `node spin.mjs`.
 
 One try of 20000 shots gave 10035 of the even pair and 9965 of the odd pair. The split was 0. A second Hadamard returned home. It took 4.6 ms. Tokens 0.
 
