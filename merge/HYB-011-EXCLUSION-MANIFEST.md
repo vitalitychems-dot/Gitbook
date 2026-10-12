@@ -45,3 +45,15 @@ Other source rows in that JSON have count 0. Eight repositories named in [DELETI
 - `1T`, unopened.
 
 HYB-011 stays READY until a later pass can record a value-redacted deep-tree result without copying archives or opening `1T`.
+
+## Account check 2026-10-12
+
+The connected account `vitalitychems-dot` lists four repositories: `TESSERA`, `Gitbook`, `GitbookAI`, and `vitality`.
+
+These names from the 2026-10-05 table are not listed on that account now: `1`, `5t`, `Grok-ready`, `T44`, `TESS`, `Zz`, `olive-giant-ever-glade`, `tessera-complete-archives`, `tessera-grok-handoff`, and `tessera-grok-handoff-complete`. Their old root notes stay above. They were not opened again.
+
+`1T` was not opened. No contents call was made. It is not one of the four listed repositories. The exclusion stands by name only.
+
+`vitality` is still listed. It was not opened. It stays out of TESSERA and Gitbook.
+
+No file body, zip part, or `parts/` tree was opened in this check.
