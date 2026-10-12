@@ -17,6 +17,7 @@
 * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
 * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
 * [All-repository routing and consolidation record](merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md)
+* [Consolidation map — 2026-10-12](merge/CONSOLIDATION-MAP-2026-10-12.md)
 * [Canonical destinations and no-replica policy](merge/CANONICAL-DESTINATIONS-NO-REPLICAS-2026-10-07.md)
 * [Protected 1T path cleanup](merge/PROTECTED-1T-CLEANUP-2026-10-09.md)
 * [Permanent TESSERA website coordination](mesh/PERMANENT-SITE-COORDINATION.md)
