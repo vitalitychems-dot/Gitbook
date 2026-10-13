@@ -4,7 +4,7 @@
 usage: status.py ROOT [--now 2026-10-13T15:00-05:00] [--out ROOT/mesh/STATUS.md] [--gitmesh PATH]
 Reads: mesh/HANDOFF.md (table), mesh/queue/TASKS.json, intake/log.md, optional GitMesh checkout.
 """
-import argparse, datetime as dt, json, pathlib, re, sys
+import argparse, datetime as dt, json, os, pathlib, re, sys, tempfile
 
 class _Done(set):
     """Done states; a qualified state like 'published: merged without passing gates' counts by its prefix."""
@@ -108,14 +108,52 @@ def compact(w):
         if re.match(pat, w): return re.sub(pat, rep, w)
     return w
 
+# Stable delta key: item ID + reason code, never free text such as an age or a timestamp.
+KEYS = [(r"^(\S+) is '\w+' but (GB-\d+) is .*", r"\1>\2 done:close"),
+        (r"^(\S+): HANDOFF says .*", r"\1 log!=handoff"),
+        (r"^(\S+) claim by .*older than 6h.*", r"\1 claim>6h:requeue"),
+        (r"^(\S+) has an unreadable claimed_at.*", r"\1 bad-ts"),
+        (r"^GitMesh: (\S+) exists but is not in.*", r"\1 gitmesh:not-in-index"),
+        (r"^GitMesh: index lists (\S+) but.*", r"\1 gitmesh:missing-folder"),
+        (r"^HANDOFF.md 'As of' is \d+ day.*", r"HANDOFF stale"),
+        (r"^(.+?): missing (.+)", r"\1 miss:\2")]
+def key(w):
+    """Stable key for a warning (ID + reason code). Unknown shapes: text with numbers masked."""
+    for pat, rep in KEYS:
+        if re.match(pat, w): return re.sub(pat, rep, w)
+    return re.sub(r"\d+", "#", w)
+
 def delta(warn, prev):
-    """Only warnings not present at the agent's last wake (prev = set of warnings seen then)."""
-    return [w for w in warn if w not in prev]
+    """Only warnings whose key was not seen at the agent's last wake (prev = set of keys seen then)."""
+    return [w for w in warn if key(w) not in prev]
+
+def load_state(sp):
+    """Keys seen at the last wake, or None for a first wake (missing, unreadable or corrupt file)."""
+    try:
+        d = json.loads(pathlib.Path(sp).read_text())
+        ks = d["keys"] if isinstance(d, dict) else d
+        if not isinstance(ks, list) or not all(isinstance(k, str) for k in ks): raise ValueError("bad shape")
+        return {k if isinstance(d, dict) else key(k) for k in ks}
+    except FileNotFoundError: return None
+    except (OSError, ValueError, KeyError, TypeError) as e:
+        print(f"status.py: state file {sp} unreadable ({e.__class__.__name__}); treating as first wake", file=sys.stderr); return None
+
+def save_state(sp, warn):
+    """Atomic write: temp file in the same directory, fsync, then os.replace."""
+    sp = pathlib.Path(sp); fd, tmp = tempfile.mkstemp(dir=sp.parent or ".", prefix=sp.name + ".", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w") as f:
+            json.dump({"version": 2, "keys": sorted({key(w) for w in warn})}, f); f.flush(); os.fsync(f.fileno())
+        os.replace(tmp, sp)
+    except BaseException:
+        try: os.unlink(tmp)
+        except FileNotFoundError: pass
+        raise
 
 DEFAULT_SINCE = ".status-since.json"  # per-agent state file; gitignored (.status-since*.json)
 
 if __name__ == "__main__":
-    a = argparse.ArgumentParser(); a.add_argument("root", nargs="?", default=".", help="repo root (default: .)"); a.add_argument("--now"); a.add_argument("--out"); a.add_argument("--gitmesh"); a.add_argument("--drift-only", action="store_true"); a.add_argument("--since", nargs="?", const=DEFAULT_SINCE, metavar="STATEFILE", help="delta broadcast: JSON state file of the warnings this agent saw at its last wake; prints only new ones (or '- no change') and rewrites the file. First wake (no file) prints the full list and creates it. Default when given without a value: ./" + DEFAULT_SINCE + " (gitignored; keep one file per agent)")
+    a = argparse.ArgumentParser(); a.add_argument("root", nargs="?", default=".", help="repo root (default: .)"); a.add_argument("--now"); a.add_argument("--out"); a.add_argument("--gitmesh"); a.add_argument("--drift-only", action="store_true"); a.add_argument("--since", nargs="?", const=DEFAULT_SINCE, metavar="STATEFILE", help="delta broadcast: JSON state file of the warning keys (item ID + reason code) this agent saw at its last wake; prints only new ones (or '- no change') and rewrites the file. First wake (no file, or an unreadable/corrupt one) prints the full list and creates it. Default when given without a value: ./" + DEFAULT_SINCE + " (gitignored; keep one file per agent)")
     o = a.parse_args()
     if o.drift_only:
         extra, missing = gitmesh_drift(o.gitmesh or o.root)
@@ -123,7 +161,7 @@ if __name__ == "__main__":
     now = dt.datetime.fromisoformat(o.now) if o.now else dt.datetime.now().astimezone()
     text, warn = build(o.root, now, o.gitmesh)
     if o.since:
-        sp = pathlib.Path(o.since); prev = set(json.loads(sp.read_text())) if sp.exists() else set()
-        new = delta(warn, prev); sp.write_text(json.dumps(sorted(warn)))
+        prev = load_state(o.since)
+        new = warn if prev is None else delta(warn, prev); save_state(o.since, warn)
         print("\n".join(f"- {w}" for w in new) or "- no change"); sys.exit(0)
     p = pathlib.Path(o.out or pathlib.Path(o.root) / "mesh/STATUS.md"); p.write_text(text); print(text)
