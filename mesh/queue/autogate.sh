@@ -1,13 +1,19 @@
 #!/usr/bin/env bash
-# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--merge] [--father-approved]
-# Merge gate + watchdog. Shallow-clones the PR, runs gatecheck.py (protected paths, flag defaults,
+# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--father-approved]
+# Watchdog. Shallow-clones the PR, runs gatecheck.py (protected paths, flag defaults,
 # noreply identity, gitleaks, task scope, budget, unlisted hosts, gate tampering), Node 22 tests (TESSERA).
 # Writes one PASS/FAIL line to mesh/HANDOFF.md in $GB_CHECKOUT (if set) and $GATE_LOG; on rogue signs
 # appends to $ROGUE_LOG for the parent + Security and quarantines the task and its descendants.
-# --father-approved is only for Tessera's own PRs that Father approved in chat (protected-path changes).
+# This script does not merge. A father flag counts only with a matching comment or label.
 set -euo pipefail
-REPO=$1; PR=$2; TASK=$3; shift 3; MERGE=; FA=
-for x in "$@"; do case $x in --merge) MERGE=1;; --father-approved) FA=--father-approved;; esac; done
+REPO=$1; PR=$2; TASK=$3; shift 3; WANT_FA=
+for x in "$@"; do
+  case $x in
+    --merge) echo "merge flag removed"; exit 2;;
+    --father-approved) WANT_FA=1;;
+    *) echo "unknown flag $x"; exit 2;;
+  esac
+done
 NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com
 HERE=$(cd "$(dirname "$0")" && pwd)
 GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-/workspace/pubscan/gl.toml}
@@ -22,6 +28,17 @@ report(){ # $1 PASS|FAIL  $2 reason-json
   local line="| $(date '+%Y-%m-%d %H:%M %Z') | $REPO#$PR | $TASK | $1 | $(git rev-parse --short HEAD) | metric: $METRIC | $2 |"
   echo "$line" >> "$GATE_LOG"
   [ -n "${GB_CHECKOUT:-}" ] && echo "$line" >> "$GB_CHECKOUT/mesh/HANDOFF.md"; echo "$line"; }
+FA=
+if [ -n "$WANT_FA" ]; then
+  SHA=$(git rev-parse HEAD)
+  if ! gh api --paginate "repos/vitalitychems-dot/${REPO}/issues/${PR}/comments" --jq '.[] | select(.user.login=="vitalitychems-dot") | .body' \
+      | SHA="$SHA" python3 -c 'import os,re,sys; sha=os.environ["SHA"]; text=sys.stdin.read(); sys.exit(0 if any(sha.startswith(m.group(1)) for m in re.finditer(r"FATHER APPROVED\s+([0-9a-f]{7,40})", text)) else 1)' \
+    && ! gh api "repos/vitalitychems-dot/${REPO}/issues/${PR}/labels" --jq '.[].name' | grep -qx 'father-approved'; then
+    report FAIL "father flag without a FATHER APPROVED comment or the father-approved label"
+    exit 1
+  fi
+  FA=--father-approved
+fi
 set +e; R=$(python3 "$HERE/gatecheck.py" --repo-dir . --base origin/main --head HEAD --task "$TASK" --tasks "$TASKS" $FA --gitleaks "$GITLEAKS" --glconf "$GLCONF"); RC=$?; set -e
 ROGUE=$(python3 -c 'import json,sys; print(", ".join(json.loads(sys.argv[1]).get("rogue",[])))' "$R")
 if [ -n "$ROGUE" ]; then
@@ -39,5 +56,4 @@ if [ "$REPO" = TESSERA ]; then
     rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && { report FAIL "api-server non-DB failure"; exit 1; } || true; }
 fi
 report PASS "$R"
-[ -n "$MERGE" ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
 exit 0
