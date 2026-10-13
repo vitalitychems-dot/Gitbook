@@ -21,3 +21,11 @@ credentials* @vitalitychems-dot
 .env* @vitalitychems-dot
 *.pem @vitalitychems-dot
 *.key @vitalitychems-dot
+# Moderator lock (Gitbook #71): rules, gate scripts, kill switch, setup doc. Mirrors gate/locked-paths.txt.
+/gate/ @vitalitychems-dot
+/SETUP-FATHER.md @vitalitychems-dot
+/mesh/charter/GATE_RULES.md @vitalitychems-dot
+/mesh/charter/gate_check.py @vitalitychems-dot
+/merge/HYB-015-GITBOOKAI-RULES.md @vitalitychems-dot
+/review/moderator-handoff.md @vitalitychems-dot
+/tools/loop/ @vitalitychems-dot

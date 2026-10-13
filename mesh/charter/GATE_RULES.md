@@ -50,7 +50,7 @@ A change that wins on accuracy but costs more than 10% in tokens or speed is HOL
 - V4 `notify` must be non-empty, and work in another agent's lane needs `coordinated_with`.
 
 ## 5. Outcomes
-- APPROVE: every rule passes, and the agent may merge (Father pre-approved measured, harmless wins). Report it in the bulk list.
+- APPROVE: every rule passes. APPROVE is a report, not permission to merge: no agent merges. Merging needs the required checks from the per-gate Apps plus Father's code-owner review on locked paths (SETUP-FATHER.md). Report it in the bulk list.
 - HOLD: no hard-limit or evidence failure, but there is a tradeoff or ambiguity. It goes to Father's bulk list, not to Tessera.
 - DENY: any H or E failure. The agent fixes it or drops it. Repeated H hits are logged as rogue (`autogate.sh`).
 
