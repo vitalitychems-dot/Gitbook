@@ -26,8 +26,8 @@ def check(pd, rj):
     code = [(f, l) for f, l in add if f and not f.endswith(".md")]
     if not files: deny.append("E1 no patch files / empty diff")
     if any(FLAG.search(l) for _, l in add + rem): deny.append("H1 touches a TESSERA_ENABLE_* default")
-    if dels and not r.get("father_approved_delete"): deny.append("H2 deletes a file")
-    if len(rem) > 2 * max(len(add), 1) and len(rem) > 50 and not r.get("father_approved_delete"): deny.append("H2 net removal >50%")
+    if dels: deny.append("H2 deletes a file")  # no results.json override (Security #71 item 5)
+    if len(rem) > 2 * max(len(add), 1) and len(rem) > 50: deny.append("H2 net removal >50%")
     if any(HIST.search(l) for _, l in code): deny.append("H3 adds history-rewrite command")
     if any(PAY.search(l) for _, l in code): deny.append("H4 payment/billing code")
     if any(VAULT.search(l) for _, l in add) or any(VAULT.search(f) for f in files): deny.append("H5 1T vault reference")
@@ -38,6 +38,9 @@ def check(pd, rj):
     elif src not in ("fixture", "log", "benchmark"): deny.append(f"E2 data_source {src!r} not fixture/log/benchmark")
     if not r.get("command"): deny.append("E3 no reproducing command")
     if "SPECULATIVE" in r.get("labels", []): deny.append("E6 SPECULATIVE premise cannot merge")
+    # TODO(Security #71/#75): ci/tests here come from the agent-written results.json and are
+    # trusted as-is. Follow-up: verify against required GitHub status checks on the exact head
+    # SHA (moderator-lock collects check-runs from the API) instead of self-reported fields.
     t = r.get("tests") or {}
     if t.get("failed_after") is None or t.get("failed_after", 1) > t.get("failed_before", 0): deny.append(f"E4 test regression/missing: {t}")
     if r.get("ci") != "pass": deny.append(f"E4 ci={r.get('ci')!r}")

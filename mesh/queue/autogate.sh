@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--merge] [--father-approved]
+# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id>
 # Merge gate + watchdog. Shallow-clones the PR, runs gatecheck.py (protected paths, flag defaults,
 # noreply identity, gitleaks, task scope, budget, unlisted hosts, gate tampering), Node 22 tests (TESSERA).
 # Writes one PASS/FAIL line to mesh/HANDOFF.md in $GB_CHECKOUT (if set) and $GATE_LOG; on rogue signs
 # appends to $ROGUE_LOG for the parent + Security and quarantines the task and its descendants.
-# --father-approved is only for Tessera's own PRs that Father approved in chat (protected-path changes).
+# Reports only. It never merges, and it has no father-approved override: protected paths need Father's code-owner review (SETUP-FATHER.md).
 set -euo pipefail
-REPO=$1; PR=$2; TASK=$3; shift 3; MERGE=; FA=
-for x in "$@"; do case $x in --merge) MERGE=1;; --father-approved) FA=--father-approved;; esac; done
+REPO=$1; PR=$2; TASK=$3; shift 3
+for x in "$@"; do case $x in --merge|--father-approved) echo "autogate: $x was removed (Security #71 item 10)" >&2; exit 2;; esac; done
 NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com
 HERE=$(cd "$(dirname "$0")" && pwd)
 GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-/workspace/pubscan/gl.toml}
@@ -22,7 +22,7 @@ report(){ # $1 PASS|FAIL  $2 reason-json
   local line="| $(date '+%Y-%m-%d %H:%M %Z') | $REPO#$PR | $TASK | $1 | $(git rev-parse --short HEAD) | metric: $METRIC | $2 |"
   echo "$line" >> "$GATE_LOG"
   [ -n "${GB_CHECKOUT:-}" ] && echo "$line" >> "$GB_CHECKOUT/mesh/HANDOFF.md"; echo "$line"; }
-set +e; R=$(python3 "$HERE/gatecheck.py" --repo-dir . --base origin/main --head HEAD --task "$TASK" --tasks "$TASKS" $FA --gitleaks "$GITLEAKS" --glconf "$GLCONF"); RC=$?; set -e
+set +e; R=$(python3 "$HERE/gatecheck.py" --repo-dir . --base origin/main --head HEAD --task "$TASK" --tasks "$TASKS" --gitleaks "$GITLEAKS" --glconf "$GLCONF"); RC=$?; set -e
 ROGUE=$(python3 -c 'import json,sys; print(", ".join(json.loads(sys.argv[1]).get("rogue",[])))' "$R")
 if [ -n "$ROGUE" ]; then
   python3 -c 'import json,sys,datetime; print(json.dumps({"ts":datetime.datetime.now().isoformat(timespec="seconds"),"repo":sys.argv[1],"pr":int(sys.argv[2]),"task":sys.argv[3],"rogue":sys.argv[4],"notify":["parent","Security","Tessera"]}))' "$REPO" "$PR" "$TASK" "$ROGUE" >> "$ROGUE_LOG"
@@ -39,5 +39,4 @@ if [ "$REPO" = TESSERA ]; then
     rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && { report FAIL "api-server non-DB failure"; exit 1; } || true; }
 fi
 report PASS "$R"
-[ -n "$MERGE" ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
 exit 0

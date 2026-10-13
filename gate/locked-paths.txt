@@ -1,0 +1,35 @@
+# Locked paths: only Father may change these (moderator-lock + CODEOWNERS).
+/.github/
+/CODEOWNERS
+/.github/CODEOWNERS
+/gate/
+/SETUP-FATHER.md
+/AGENTS.md
+/.cursor/
+/mesh/roles/
+/mesh/policy/
+**/prompts/
+*.prompt.md
+**/routines/
+**/baseline.json
+**/qa_set*
+renovate.json
+# Gitbook moderator rules and gate scripts
+/mesh/roles.md
+/mesh/charter/GATE_RULES.md
+/mesh/charter/gate_check.py
+/mesh/queue/autogate.sh
+/mesh/queue/dispatch.py
+/mesh/queue/gatecheck.py
+/mesh/queue/PROMPT-TEMPLATE.md
+/mesh/queue/LINEAGE.jsonl
+/mesh/queue/tests/
+/merge/HYB-015-GITBOOKAI-RULES.md
+/review/moderator-handoff.md
+/tools/loop/
+*persona*
+**/secrets/
+credentials*
+.env*
+*.pem
+*.key
