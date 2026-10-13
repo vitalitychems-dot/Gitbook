@@ -42,7 +42,7 @@ def optimize(args):
           f"{key} naive {nv[key]:.4f} -> best layout {best['layout']} {best[key]:.4f} (swaps {nv['swaps']}->{best['swaps']})",file=sys.stderr)
 def test(args):
     here=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    tests=['test_sim.py','test_opt.py','test_noise.py','test_geom.py','test_opt2.py','test_opt3.py','qlab/selftest_twin.py','qlab/selftest_cli.py']
+    tests=['test_sim.py','test_opt.py','test_noise.py','test_geom.py','test_opt2.py','test_opt3.py','qlab/selftest_twin.py','qlab/selftest_cli.py','test_aqft.py','test_aqft_fix.py']
     if args.full: tests+=['test_aqft_avg.py']
     env=dict(os.environ,OMP_NUM_THREADS='1'); bad=0
     for t in tests:
