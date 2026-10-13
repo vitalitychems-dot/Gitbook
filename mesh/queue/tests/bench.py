@@ -11,7 +11,7 @@ for name, (f, e) in list(BAD.items()) + [("GOOD", GOOD)]:
     n = not G.check(r, "main", "pr", {"scope": SCOPE}, gitleaks=GL)["pass"]
     if name != "GOOD": old += o; new += n
     print(f"{name:22} old={'REJECT' if o else 'pass  '} new={'REJECT' if n else 'pass  '}")
-print(f"catch-rate old {old}/{len(BAD)} new {new}/{len(BAD)}")
+print(f"SYNTHETIC-ONLY (not counted as a win) catch-rate old {old}/{len(BAD)} new {new}/{len(BAD)}")
 # Parallel: old dispatch.py rules (max 6, overlap only) vs new select (cap 12, caps/quarantine), offline (no open-PR files).
 def old_select(q, mx=6):
     picked, taken = [], []
@@ -25,4 +25,4 @@ print("current queue: old", old_select(q), "new", [t["id"] for t in D.select(q)]
 # Spawn scenario: 4 root tasks each proposing 4 children (disjoint sub-scopes); old dispatch has no spawn path.
 q2 = {"tasks": [{"id": f"R{i}", "repo": "Gitbook", "scope": [f"area{i}/"], "title": "r", "acceptance": [], "status": "done"} for i in range(4)]}
 for i in range(4): D.spawn(q2, f"R{i}", [{"title": "c", "repo": "Gitbook", "scope": [f"area{i}/c{j}/"]} for j in range(4)], f"R{i}")
-print("spawn scenario (16 children): old", len(old_select(q2)), "new", len(D.select(q2)))
+print("SYNTHETIC-ONLY (not counted as a win) spawn scenario (16 children): old", len(old_select(q2)), "new", len(D.select(q2)))
