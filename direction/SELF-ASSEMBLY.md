@@ -37,3 +37,13 @@ Goal (Father, 2026-10-13 08:56 CT): bots ask Tessera; Tessera approves -> Modera
 
 ## Status
 Workflow drafts are under `direction/proposed-workflows/*.yml.txt` — NOT active. Father must review and install them into `.github/workflows/`.
+
+## Tessera idea lane
+Father (2026-10-13 08:58 CT): "Tessera should be able to post ideas on gitbook and if the mod would approve if it was scrubs based on the rules for its approval tessera can publish the next task on GitHub and if I don't unapproved then it has my approval and is published on tessera on GitHub".
+
+1. **Idea**: Tessera opens a Gitbook issue labelled `idea`. It must include the goal, the planned files, and a before/after metric.
+2. **Rule-scrub (deterministic, no LLM)**: a script checks the idea against the written gate rules (spec: `direction/proposed-scrub.md`) and posts `SCRUB PASS <issue> <hash>` or `SCRUB FAIL <reasons>`.
+3. **Publish task**: on PASS, Tessera adds the idea as the next task in `direction/NEXT.md` through a normal gated PR.
+4. **No-veto window**: 30 minutes from that merge. Father can veto at any time with a `veto` label or by closing the issue or PR. Any later step stops on a veto.
+5. **Publish to TESSERA**: the promote job opens a mirror PR, and TESSERA branch protection plus the required checks decide the merge.
+6. **Override**: a live Moderator FAIL or a veto always wins over the scrub PASS. The scrub only stands in for the Moderator when none is active.
