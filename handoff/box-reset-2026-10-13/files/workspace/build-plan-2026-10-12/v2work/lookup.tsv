@@ -1,0 +1,36 @@
+collin-keane/Tessera	tessera-metrics/tessera	Apache-2.0	A dashboard front-end for graphite.  
+collink1007/Vitalitychems	UNKNOWN
+collink1007/olive-giant-ever-glade	UNKNOWN
+nicholasgasior/2captcha-python	2captcha/2captcha-python	MIT	Python 3 package for easy integration with the API of 2captcha captcha solving service to bypass recaptcha, сloudflare turnstile, funcaptcha, geetest and solve any other captchas.
+nicholasgasior/CreepJS	abrahamjuliot/creepjs	MIT	Creepy device and browser fingerprinting
+nicholasgasior/FingerprintJS	fingerprintjs/fingerprintjs	MIT	The most advanced free and open-source browser fingerprinting library
+nicholasgasior/GoLogin	dghubble/gologin	MIT	Go login handlers for authentication providers (OAuth1, OAuth2)
+nicholasgasior/Multilogin	CaaMoe/MultiLogin	GPL-3.0	外置共存
+nicholasgasior/ad-copy-generator	lunalimadev-sketch/ad-copy-generator	NOASSERTION	High-converting ad copy for Meta, Google, TikTok, LinkedIn, and X/Twitter Ads
+nicholasgasior/affiliate-tracking	Databowl/affiliate-tracking	MIT	Databowl Affiliate Tracking Library
+nicholasgasior/age	UNKNOWN
+nicholasgasior/ai-agent-marketplace	aiagenta2z/ai-agent-marketplace	NONE	Open Source AI Agent Marketplace | AI Agent Directory for Exploration with searchable index for search engine and user discovery
+nicholasgasior/ai-freelance-platform	muhammadsaad5619-hub/ai-freelance-platform	NONE	
+nicholasgasior/ai-gig-economy	UNKNOWN
+nicholasgasior/ai-service-marketplace	rohitranmale11/AI-Service-MarketPlace	NONE	
+nicholasgasior/alpha-vantage	UNKNOWN
+nicholasgasior/anticaptchaofficial	Pugn0/anticaptchaofficial	NONE	
+nicholasgasior/antidetect	brodev3/antidetect	MIT	A console application with a simple user interface for managing and working with browser profiles with anti-detection protection.
+nicholasgasior/api-monetization	nirzaf/api-monetization	NONE	
+nicholasgasior/apify-sdk	UNKNOWN
+nicholasgasior/arbitrage-bot	andrei-zgirvaci/Arbitrage-Bot	NONE	A bot that makes profit of the best crypto Arbitrage opportunities on the market
+nicholasgasior/audio-captcha-solver	pritam123junior/audio-captcha-solver	NONE	This project implements an Audio Captcha Recognition system using Wav2Vec2 (speech-to-text) and CRNN (CNN + RNN) models. The goal is to accurately decode distorted and noisy audio captchas commonly used in web security.
+nicholasgasior/backlink-checker	rvalitov/backlink-checker	GPL-3.0	For SEO: checks a list of web pages if a backlink is present
+nicholasgasior/beautifulsoup4	wention/BeautifulSoup4	NOASSERTION	git mirror for Beautiful Soup 4.3.2
+nicholasgasior/blog-generator	zupzup/blog-generator	Apache-2.0	Mirror for https://git.sr.ht/~zupzup/blog-generator. static blog generator for my blog at https://zupzup.org/
+nicholasgasior/bond-yield-tracker	UNKNOWN
+nicholasgasior/bounty-hunter	project-hellhound-org/bounty-hunter	GPL-3.0	Hellhound is an autonomous bug bounty reconnaissance and triage assistant designed for professional security researchers and bug hunters. It automates repetitive enumeration workflows, verifies asset validity, checks for dangling DNS takeover vectors, and extracts endpoints.
+nicholasgasior/brain-js	UNKNOWN
+nicholasgasior/brightdata-sdk	UNKNOWN
+nicholasgasior/browser-fingerprinting	niespodd/browser-fingerprinting	NONE	Analysis of Bot Protection systems with available countermeasures 🚿. How to defeat anti-bot system 👻 and get around browser fingerprinting scripts 🕵️‍♂️ when scraping the web?
+nicholasgasior/capsolver-python	capsolver/capsolver-python	MIT	Python 3 package for easy integration with the API of capsolver captcha solving service to solver recaptcha, geetest and solve any other captchas. Capsolver.
+nicholasgasior/captcha-harvester	dzt/captcha-harvester	MIT	Possible plans for a collaborative harvesting method 
+nicholasgasior/case-study-builder	dupuypersonal-maker/case-study-builder	NONE	
+nicholasgasior/censys-python	censys/censys-python	Apache-2.0	An easy-to-use and lightweight API wrapper for Censys APIs.
+nicholasgasior/cf-clearance	vvanglro/cf-clearance	NONE	Purpose To make a cloudflare v2 challenge pass successfully, Can be use cf_clearance bypassed by cloudflare, However, with the cf_clearance, make sure you use the same IP and UA as when you got it.
+nicholasgasior/cf-workers	pmeenan/cf-workers	MIT	Collection of Cloudflare Workers

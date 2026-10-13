@@ -1,0 +1,6 @@
+PASS test_brain_json_has_creator_and_measured_weights
+PASS test_connectome_stats_real
+PASS test_spiking_log_exists
+PASS test_brain_png
+PASS test_blueprint_small_worldish
+passed=5 failed=0 total=5

@@ -1,0 +1,47 @@
+---
+pid: 1325525
+cwd: "/tmp/ts"
+command: "cd /tmp/ts && git ls-tree -r --name-only origin/main | grep -iE 'rick|royal|tesla' | grep -v '^archive' ; for f in lib/rick-sanchez-agent.ts lib/rick-improvement-program.ts lib/rick-proposals.ts lib/rick-autonomous-loop.ts routes/rick.ts; do echo \"=== $f\"; git show origin/main:artifacts/api-server/src/$f | wc -l; done; git grep -il -E 'royal inventor' origin/main -- ':!archive' | head"
+status: failed   
+started_at: 2026-10-12T23:57:22.965Z
+running_for_ms: 40050    
+---
+.agents/skills/next-best-practices/debug-tricks.md
+artifacts/api-server/src/lib/rick-autonomous-loop.ts
+artifacts/api-server/src/lib/rick-improvement-program.ts
+artifacts/api-server/src/lib/rick-proposals.ts
+artifacts/api-server/src/lib/rick-sanchez-agent.ts
+artifacts/api-server/src/routes/rick.ts
+artifacts/tessera/src/pages/RickPage.tsx
+artifacts/tessera/src/pages/RoyalAppointmentsPage.tsx
+artifacts/tessera/src/pages/RoyalCourtPage.tsx
+artifacts/tessera/src/pages/RoyalRolePage.tsx
+preview/src/components/tessera/rick-view.tsx
+preview/src/lib/tessera/rick-five.test.ts
+preview/src/lib/tessera/rick-five.ts
+preview/src/lib/tessera/rick-home.test.ts
+preview/src/lib/tessera/rick-home.ts
+preview/src/lib/tessera/rick-loop.test.ts
+preview/src/lib/tessera/rick-loop.ts
+preview/src/lib/tessera/rick-metrics.test.ts
+preview/src/lib/tessera/rick-metrics.ts
+preview/src/lib/tessera/rick-shift.test.ts
+preview/src/lib/tessera/rick-shift.ts
+preview/src/lib/tessera/rick-thirty.test.ts
+preview/src/lib/tessera/rick-thirty.ts
+=== lib/rick-sanchez-agent.ts
+761
+=== lib/rick-improvement-program.ts
+745
+=== lib/rick-proposals.ts
+520
+=== lib/rick-autonomous-loop.ts
+456
+=== routes/rick.ts
+1069
+
+---
+exit_code: unknown
+elapsed_ms: 40049
+ended_at: 2026-10-12T23:58:03.015Z
+---

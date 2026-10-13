@@ -1,0 +1,13 @@
+build: apply rev2 edits on b979: rc=0
+979c35e diff byte-identical to ecd9022-named rev2 diff
+sha256 1a5949a8191b4b06ca4fc918535a3e91e273048ded51bdfc40210a40805b8ee1 lines 563 files 23
+A git apply --check GB-026-rev2.979c35e.diff on clean 979c35e: rc=0
+B git apply GB-026-rev2.979c35e.diff on clean 979c35e: rc=0
+  result tree e5c867e9dcf4dc2aec303bbbbdee51ae10530db9 ; expected p26r2 tree e5c867e9dcf4dc2aec303bbbbdee51ae10530db9
+C reverse-check on result: rc=0
+E rev2 alone on clean ecd9022 (expected fail): rc=1
+D unwind GB-023 (reverse, stack order 023→025→024→022) on 979c35e: rc=0
+D unwind GB-025 (reverse, stack order 023→025→024→022) on 979c35e: rc=0
+D unwind GB-024-v3 (reverse, stack order 023→025→024→022) on 979c35e: rc=0
+D unwind GB-022-v4 (reverse, stack order 023→025→024→022) on 979c35e: rc=0
+  unwound tree a455b50e1322695a41295ddf62754bab7bd1bf62 ; ecdx (ecd9022) tree a455b50e1322695a41295ddf62754bab7bd1bf62

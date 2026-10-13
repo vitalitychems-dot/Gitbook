@@ -1,0 +1,1 @@
+{"source":"Gitbook mesh/queue/TASKS.json @ 2026-10-13, read-only mirror","schema":"mesh-queue/v1","rules":"fixture","tasks":[{"id":"Q-001","status":"queued","scope":["a/"]},{"id":"Q-001","status":"claimed","scope":[]}]}

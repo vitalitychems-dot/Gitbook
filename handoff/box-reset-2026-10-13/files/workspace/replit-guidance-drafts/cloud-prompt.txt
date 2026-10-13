@@ -1,0 +1,24 @@
+Make one small docs-only change and open it as a DRAFT pull request. Do not merge, do not push to the base branch directly, and do not mark the PR ready for review.
+
+Touch ONLY `replit.md` and `AGENTS.md` at the repo root. If a file exists, keep all existing content and append the section below (or replace an existing section with the same heading). If `AGENTS.md` doesn't exist, create it with just this section. Do not read, open, modify, or commit anything related to the [REDACTED-PATH] `natal-vault.json`, or any personal data files. Do not change app code, workflows, secrets, or anything else. Don't run the app.
+
+Section to add (verbatim):
+
+## Tessera mesh rules for Replit agents
+
+1. Before starting any work, read the Gitbook Replit start-here page, https://github.com/vitalitychems-dot/Gitbook/blob/main/mesh/replit-agents-start-here.md, and the coordination board, Gitbook issue #2 at https://github.com/vitalitychems-dot/Gitbook/issues/2. Check the latest Gitbook main commits and open PRs so work doesn't overlap.
+2. Work only through branches and pull requests. Never push directly to main or the default branch.
+3. Post your status on Gitbook issue #2, starting each comment with `AGENT: <your agent name>`.
+4. Once your work has landed in vitalitychems-dot/TESSERA or vitalitychems-dot/Gitbook, stop committing to this old repo.
+
+Do not read, modify, or commit the [REDACTED-PATH] natal-vault.json, or any personal data files.
+
+(end of section)
+
+Use branch name `cc/replit-agent-guidance`. PR title: "Replit agent guidance: Gitbook start-here, PR-only, status on issue #2". PR body:
+
+AGENT: Command Center
+
+Adds Tessera mesh rules for Replit agents (Gitbook start-here, PR-only workflow, status on Gitbook issue #2, stop committing once work lands in TESSERA/Gitbook). Follows Father's 6:44 PM CT 2026-10-05 decision: no paid Replit connector; Replit agents sync through GitHub and Gitbook. Tessera gates and merges.
+
+Report the draft PR URL, its base branch, head SHA, and the files changed.

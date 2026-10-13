@@ -1,0 +1,55 @@
+---
+pid: 390462
+cwd: "/workspace/repo-lab"
+command: "LAB=/workspace/repo-lab\nRESULTS=$LAB/INSTALL-RESULTS.tsv\n\nrun_py() {\n  local name=\"$1\"; local install_args=\"$2\"; local test_py=\"$3\"\n  local dir=\"$LAB/$name\"; local log=\"$dir/install-test.log\"\n  echo \"=== $name ===\" | tee \"$log\"\n  cd \"$dir\" || { echo -e \"$name\\tFAIL\\tmissing dir\" >> \"$RESULTS\"; return; }\n  rm -rf .venv\n  python3 -m venv .venv\n  local PIP=\"$dir/.venv/bin/pip\"; local PY=\"$dir/.venv/bin/python\"\n  \"$PIP\" install -U pip setuptools wheel -q >>\"$log\" 2>&1\n  echo \"INSTALL: pip install $install_args\" | tee -a \"$log\"\n  if timeout 280 \"$PIP\" install $install_args >>\"$log\" 2>&1; then\n    echo INSTALL_OK | tee -a \"$log\"\n    if timeout 90 \"$PY\" -c \"$test_py\" >>\"$log\" 2>&1; then\n      echo -e \"${name}\\tPASS\\tinstall+import ok\" >> \"$RESULTS\"\n      echo PASS | tee -a \"$log\"\n    else\n      echo -e \"${name}\\tFAIL\\ttest/import failed\" >> \"$RESULTS\"\n      echo TEST_FAIL | tee -a \"$log\"; tail -12 \"$log\"\n    fi\n  else\n    ec=$?\n    echo -e \"${name}\\tFAIL\\tinstall exit=$ec\" >> \"$RESULTS\"\n    echo INSTALL_FAIL_$ec | tee -a \"$log\"; tail -20 \"$log\"\n  fi\n}\n\n# mem0 — pip package name mem0ai often; try -e .\nrun_py mem0ai__mem0 '-e .' 'import mem0; print(\"mem0 ok\")' &\nrun_py brian-team__brian2 '-e .' 'import brian2; print(\"brian2\", brian2.__version__)' &\nrun_py BindsNET__bindsnet '-e .' 'import bindsnet; print(\"bindsnet ok\")' &\n\nwait\necho '=== batch C ==='\ncat \"$RESULTS\"\n"
+title: "Install mem0 brian2 bindsnet"
+status: succeeded
+started_at: 2026-10-05T22:46:42.951Z
+running_for_ms: 123984   
+---
+=== mem0ai__mem0 ===
+=== brian-team__brian2 ===
+=== BindsNET__bindsnet ===
+INSTALL: pip install -e .
+INSTALL: pip install -e .
+INSTALL: pip install -e .
+INSTALL_FAIL_1
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools_scm/_integration/version_inference.py", line 199, in apply
+          data = infer_version_with_config(
+              self.dist_name,
+          ...<2 lines>...
+              env=self.env,
+          )
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools_scm/_integration/version_inference.py", line 133, in infer_version_with_config
+          scm_version = workdir.get_scm_version()
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/vcs_versioning/_backends/_git.py", line 327, in get_scm_version
+          return _git_parse_inner(config, self, pre_parse=effective_pre_parse)
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/vcs_versioning/_backends/_git.py", line 715, in _git_parse_inner
+          tag = config.version_cls(config.fallback_version or "0.0")
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/packaging/version.py", line 452, in __init__
+          raise InvalidVersion(f"Invalid version: {version!r}")
+      packaging.version.InvalidVersion: Invalid version: 'unknown'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'file:///workspace/repo-lab/brian-team__brian2' when getting requirements to build editable
+INSTALL_FAIL_1
+INSTALL_OK
+PASS
+INSTALL_OK
+PASS
+=== batch C ===
+repo	status	reason
+Cortical-Labs__cl-sdk	PASS	install+import ok
+jeshraghian__snntorch	PASS	install+torch+import ok
+Aider-AI__aider	PASS	install+import ok
+FoundationAgents__OpenManus	PASS	install+import ok
+brian-team__brian2	FAIL	install exit=1
+mem0ai__mem0	PASS	install+import ok
+BindsNET__bindsnet	PASS	install+import ok
+
+---
+exit_code: 0
+elapsed_ms: 123984
+ended_at: 2026-10-05T22:48:46.935Z
+---

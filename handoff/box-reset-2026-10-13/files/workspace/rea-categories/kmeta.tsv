@@ -1,0 +1,64 @@
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}k-affective-computing	SenticNet/MISA	MISSING
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}k-affective-computing	py-feat/py-feat	MISSING
+k-affective-computing	declare-lab/MELD	1090	GPL-3.0	8323	Python	false	MELD: A Multimodal Multi-Party Dataset for Emotion Recognition in Conversation
+k-affective-computing	TadasBaltrusaitis/OpenFace	7783	NOASSERTION	1743945	MATLAB	false	OpenFace – a state-of-the art tool intended for facial landmark detection, head pose estimation, facial action
+k-affective-computing	audeering/opensmile	854	NOASSERTION	11007	C++	false	The Munich Open-Source Large-Scale Multimedia Feature Extractor
+k-human-behavior	google-ai-edge/mediapipe	37245	Apache-2.0	609387	C++	false	Cross-platform, customizable ML solutions for live and streaming media.
+k-affective-computing	CheyneyComputerScience/CREMA-D	562	NOASSERTION	15414	R	false	Crowd Sourced Emotional Multimodal Actors Dataset (CREMA-D)
+k-human-behavior	CMU-Perceptual-Computing-Lab/openpose	34493	NOASSERTION	86496	C++	false	OpenPose: Real-time multi-person keypoint detection library for body, face, hands, and foot estimation
+k-human-behavior	sbrugman/deep-learning-papers	3183	NONE	64787	-	true	Papers about deep learning ordered by task, date. Current state-of-the-art papers are labelled.
+k-neurology	OpenNeuroOrg/openneuro	162	MIT	97747	TypeScript	false	A free and open platform for analyzing and sharing neuroimaging data
+k-human-behavior	MIT-LCP/mimic-code	3411	MIT	21706	Jupyter Notebook	false	MIMIC Code Repository: Code shared by the research community for the MIMIC family of databases
+k-neurology	nipy/nibabel	795	NOASSERTION	24463	Python	false	Python package to access a cacophony of neuro-imaging file formats
+k-neurology	mne-tools/mne-python	3544	BSD-3-Clause	173854	Python	false	MNE: Magnetoencephalography (MEG) and Electroencephalography (EEG) in Python
+k-physiology	MIT-LCP/wfdb-python	853	MIT	170641	Jupyter Notebook	false	Native Python WFDB package
+k-neurology	AllenInstitute/AllenSDK	399	NOASSERTION	220499	Jupyter Notebook	false	code for reading and processing Allen Institute for Brain Science data
+k-neurology	bids-standard/bids-specification	370	CC-BY-4.0	22163	Python	false	Brain Imaging Data Structure (BIDS) Specification
+k-physiology	neuropsychology/NeuroKit	2395	MIT	4677919	Python	false	NeuroKit2: The Python Toolbox for Neurophysiological Signal Processing
+k-physiology	physiozoo/physiozoo	42	GPL-3.0	441900	Python	false	Platform for Heart Rate Variability analysis of human and animal data.
+k-medicine	MIT-LCP/mimic-code	3411	MIT	21706	Jupyter Notebook	false	MIMIC Code Repository: Code shared by the research community for the MIMIC family of databases
+k-physiology	PIA-Group/BioSPPy	645	NOASSERTION	2631	Python	true	Biosignal Processing in Python
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}k-medicine	ncbi/pubtator-api	MISSING
+k-medicine	monarch-initiative/mondo	326	CC-BY-4.0	14216180	Jupyter Notebook	false	Mondo Disease Ontology
+k-medicine	openmedlab/Awesome-Medical-Dataset	2174	NONE	289046	-	false	Collection of awesome medical dataset resources.
+k-medicine	synthetichealth/synthea	3383	Apache-2.0	823420	Java	false	Synthetic Patient Population Simulator
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest","status":"404"}k-sciences	openstax/cnx	MISSING
+k-medicine	kiwix/kiwix-tools	962	GPL-3.0	5058	C++	false	Command line Kiwix tools: kiwix-serve, kiwix-manage, ...
+k-sciences	wikimedia/mediawiki	5200	NOASSERTION	2669844	PHP	false	🌻 The collaborative editing software that runs Wikipedia. Mirror from https://gerrit.wikimedia.org/g/mediawiki
+k-sciences	kiwix/kiwix-js	481	GPL-3.0	73518	JavaScript	false	Fully portable and lightweight ZIM reader written entirely in Javascript. Runs both as a Browser Extension and
+k-sciences	astropy/astropy	5334	BSD-3-Clause	188124	Python	false	Astronomy and astrophysics core library
+k-sciences	rdkit/rdkit	3617	BSD-3-Clause	221706	HTML	false	The official sources for the RDKit library
+k-coding	freeCodeCamp/freeCodeCamp	456945	BSD-3-Clause	583002	TypeScript	false	freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free
+k-sciences	sympy/sympy	15003	NOASSERTION	196314	Python	false	A computer algebra system written in pure Python
+k-coding	EbookFoundation/free-programming-books	398865	CC-BY-4.0	22259	Python	false	:books: Freely available programming books
+k-coding	TheAlgorithms/Python	225205	MIT	18286	Python	false	All Algorithms implemented in Python
+k-coding	bigcode-project/the-stack-v2	147	Apache-2.0	194	Jupyter Notebook	false	Code for the curation of The Stack v2 and StarCoder2 training data
+k-coding	tldr-pages/tldr	63928	NOASSERTION	65790	Markdown	false	Collaborative cheatsheets for console commands 📚.
+k-hardware	KiCad/kicad-source-mirror	3030	GPL-3.0	4477393	C++	false	This is an active mirror of the KiCad development branch, which is hosted at GitLab (updated every time someth
+k-coding	freeCodeCamp/devdocs	39545	MPL-2.0	33479	Ruby	false	API Documentation Browser
+k-hardware	riscv/riscv-isa-manual	4848	CC-BY-4.0	63943	TeX	false	RISC-V Instruction Set Manual
+k-hardware	adafruit/Adafruit_CircuitPython_Bundle	1006	MIT	27571	Shell	false	A bundle of useful CircuitPython libraries ready to use from the filesystem.
+k-hardware	YosysHQ/yosys	4803	ISC	41526	C++	false	Yosys Open SYnthesis Suite
+k-engineering	OpenFOAM/OpenFOAM-dev	2263	NOASSERTION	158513	C++	false	OpenFOAM Foundation development repository
+k-engineering	FreeCAD/FreeCAD	34210	LGPL-2.1	2913669	C++	false	Official source code of FreeCAD, a free and opensource multiplatform 3D parametric modeler.
+k-hardware	lowRISC/opentitan	3691	Apache-2.0	227483	SystemVerilog	false	OpenTitan: Open source silicon root of trust
+k-hardware	openhwfoundation/cva6	3156	NOASSERTION	167435	Assembly	false	The CORE-V CVA6 is a highly configurable, 6-stage RISC-V core for both application and embedded applications. 
+k-engineering	openscad/openscad	10434	NOASSERTION	84279	C++	false	OpenSCAD - The Programmers Solid 3D CAD Modeller  
+k-engineering	python-control/python-control	2102	BSD-3-Clause	29699	Python	false	 The Python Control Systems Library is a Python module that implements basic operations for analysis and desig
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}k-engineering	CalculiX/CalculiX	MISSING
+k-quantum	Qiskit/qiskit	7886	Apache-2.0	179722	Python	false	Qiskit is an open-source SDK for working with quantum computers at the level of extended quantum circuits, ope
+k-quantum	PennyLaneAI/pennylane	3494	Apache-2.0	220964	Python	false	PennyLane is an open-source quantum software platform for quantum computing, quantum machine learning, and qua
+k-quantum	qutip/qutip	2082	BSD-3-Clause	65061	Python	false	QuTiP: Quantum Toolbox in Python
+k-quantum	quantumlib/Cirq	5078	Apache-2.0	49879	Python	false	Python framework for creating, editing, and running Noisy Intermediate-Scale Quantum (NISQ) circuits.
+k-geometry	CGAL/cgal	6076	NOASSERTION	737712	C++	false	The public CGAL repository, see the README below
+k-quantum	microsoft/QuantumKatas	4907	MIT	8978	Jupyter Notebook	true	Tutorials and programming exercises for learning Q# and quantum computing
+k-geometry	sympy/sympy	15003	NOASSERTION	196314	Python	false	A computer algebra system written in pure Python
+k-geometry	mikedh/trimesh	3697	MIT	31329	Python	false	Python library for loading and using triangular meshes.
+k-geometry	geogebra/geogebra	2349	NONE	2141916	Java	false	GeoGebra apps (mirror)
+k-biology	biopython/biopython	5225	NOASSERTION	75417	Python	false	Official git repository for Biopython (originally converted from CVS)
+k-geometry	isl-org/Open3D	14072	NOASSERTION	615605	C++	false	Open3D: A Modern Library for 3D Data Processing
+k-biology	google-deepmind/alphafold	14882	Apache-2.0	16832	Python	false	Open source code for AlphaFold 2.
+k-biology	aqlaboratory/openfold	3436	Apache-2.0	20038	Python	false	Trainable, memory-efficient, and GPU-friendly PyTorch reproduction of AlphaFold 2
+k-biology	scverse/scanpy	2583	BSD-3-Clause	82848	Python	false	Single-cell analysis in Python. Scales to >100M cells.
+k-biology	sokrypton/ColabFold	2954	MIT	145340	Jupyter Notebook	false	Making Protein folding accessible to all!
+k-biology	google-deepmind/alphafold	14882	Apache-2.0	16832	Python	false	Open source code for AlphaFold 2.

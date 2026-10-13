@@ -123,3 +123,44 @@ git fetch ../Gitbook/handoff/box-reset-2026-10-13/repos/tessera-loop.bundle 'ref
 - Name-filtered files (secret/key/token/.env in the path) and `/workspace/secrets`: excluded.
 - Dirty third-party clones in `rea-inventory/` (tesseract3, TESS, Zz, sentiment-analysis, signal-protocol, tensorflow-js, tink, twilio-node, vix-analysis, 1): only local edits to other people's repos. Not captured. Every rea-inventory repo is 0 commits ahead.
 - `/workspace/tess-fix.git`, full: only the unpushed part is bundled. The rest is on GitHub.
+
+## Part 3 (8:15 AM CT): full-disk push (Father 7:52 AM: "Push the entire disk to GitHub")
+
+Nothing was deleted. Final gitleaks over all additions, with every .gz/.bundle part decompressed and scanned too: **0 findings** (29 third-party sample keys inside REA scan outputs were redacted to `[REDACTED]`).
+
+- `inventory/inventory-2026-10-13.tsv.gz`: **every file** under /workspace, /home/box and /cursor/stores (365,305 files), as path, size, sha256 and status. Statuses: `PUSHED` (part 1/2/3 path), `ON-GITHUB: clone <remote>@<sha>` (tracked, clean, head verified on GitHub via the API), `BUNDLED`, `GIT-INTERNAL` (bare-repo objects; the remote plus the bundles cover them), `INSTALL` (reinstallable), `SCRATCH` (gate checkouts), `DUPLICATE of`, `RULE`/`EXCLUDED` (with the reason), `VANISHED` (deleted by another agent during the scan).
+- `files/<absolute path>`: every unique file not otherwise on GitHub (deduped by sha256), redacted. Text up to 5 MB is plain; larger or binary files are `.gz`; anything over 45 MB gzipped is split into `.gz.partNN`. New /tmp text files since 6:45 AM CT (outside repos) are included too.
+- `identities/<agent>/`: profile.json, settings.json (no token or auth keys), notes/ (agent .md attachments), and WHERE-I-LEFT-OFF.md for all 14 agents. Sources: Gitbook #67 comments, open PR lists, profiles. Transcripts are not on the box (store.db transcript_entries are empty). `identities/_workflows/` holds the skills; `_gitbook-67-*` and `_gitbook-68-*` hold the issue bodies and comments.
+- `repos/`: `tess-opt-ideas-b1-rick-round2.bundle` (5 commits not on GitHub), `gitbook-retire-gate-self-merge-5578.bundle` (Gitbook ref ba230b90, not on the remote), and `vitalitychems-dot__Grok-ready.bundle` plus `vitalitychems-dot__tessera-grok-handoff.bundle.part00/01` (both repos return 404 on GitHub; full bundles; gitleaks clean).
+
+### Restore (part 3)
+```bash
+# files: copy back to the absolute path
+cd handoff/box-reset-2026-10-13/files && find . -type f | while read f; do d="/${f#./}"; mkdir -p "$(dirname "$d")"; case "$f" in *.gz.part00) cat "${f%00}"* | gunzip > "${d%.gz.part00}";; *.gz.part*) ;; *.gz) gunzip -c "$f" > "${d%.gz}";; *) cp "$f" "$d";; esac; done
+# split bundle: cat repos/vitalitychems-dot__tessera-grok-handoff.bundle.part* > x.bundle && git clone x.bundle tessera-grok-handoff
+git clone repos/vitalitychems-dot__Grok-ready.bundle Grok-ready
+# incremental bundles: in a TESSERA or Gitbook clone, run git fetch <bundle> "refs/heads/*:refs/remotes/bundle/*"
+# inventory: zcat inventory/inventory-2026-10-13.tsv.gz | awk -F"\t" '$4 ~ /^ON-GITHUB/' lists what to re-clone
+```
+
+## MUST BE SAVED BY FATHER BEFORE WIPE (excluded by rule, not on GitHub)
+| what | files | size |
+|---|---|---|
+| GIT-INTERNAL, pre-scrub — /workspace/sec-retro/TESSERA (bare; refs main fbe1f7f3, v3-crystal, rea-registry are not on GitHub because the history was rewritten) | 301 | 5940 MB |
+| RULE: pre-scrub git history — /workspace/backups/TESSERA-pre-public-2026-10-12.git | 64 | 5940.8 MB |
+| RULE: pre-scrub git history — /workspace/sec-history/TESSERA | 22 | 5940.3 MB |
+| RULE: pre-scrub git history — /workspace/pubscan/final.git | 382 | 5938.1 MB |
+| EXCLUDED: browser profile (cookies/sessions = secrets) — /home/box/chrome-profile | 510 | 157.9 MB |
+| RULE: raw leak report — /workspace/security-gate/leakscan | 1357 | 44.6 MB |
+| RULE: secrets — /workspace/secrets/creator | 11 | 0.7 MB |
+| RULE: raw leak report — /workspace/sec-history/gl.json | 1 | 0.0 MB |
+| RULE: raw leak report — /workspace/pubscan/leaks.json | 1 | 0.0 MB |
+| RULE: secrets — /workspace/secrets/moltbook | 2 | 0.0 MB |
+| RULE: raw leak report — /workspace/pubscan/gl.log | 1 | 0.0 MB |
+| RULE: git-crypt key — /workspace/backups/TESSERA-git-crypt.key | 1 | 0.0 MB |
+| RULE: raw leak report — /workspace/cr/gl.log | 1 | 0.0 MB |
+| /workspace/backups/TESSERA-git-crypt.key (**critical**: decrypts TESSERA git-crypt files) | 1 | 148 B |
+| 1T vault | 0 found on this box | - |
+| Files with "token/key/secret" in the name, inside clones (mostly on GitHub already; see inventory `RULE: secret/token/key`) | see inventory | ~5 MB |
+
+Also not uploaded (reinstallable): ollama-install and ollama-home (about 2.2 GB each), node22, plugins and managed-skills, ~/.local, ~/.npm, ~/.cache, chrome-profile (EXCLUDED: cookies).

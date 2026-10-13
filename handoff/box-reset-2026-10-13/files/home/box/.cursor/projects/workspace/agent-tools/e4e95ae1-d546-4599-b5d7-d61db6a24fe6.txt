@@ -1,0 +1,319 @@
+| IMP-018 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/index.ts` | Gate `startWalletObserver` / income / bounty / free-stuff starters behind explicit boot, not import | Route index import side-effects start scrapers/timers | TESTED: `routes/index.ts` calls `startWalletObserver()`, `startAutonomousBuildCycleTimer()`, `startFreeStuffScraper()`, `startBountyRefresher()`, `startIncomeExecutor()`, `initShepherdPersistence()` at module scope (no wallet keys touched; boot hygiene only) | PASS | FAIL | FAIL | PASS | REJECTED (wallet-related, permanent) |
+| IMP-019 | Tessera (seed) | TESSERA | `README.md` | Add "Agent / mesh" pointer to Gitbook HYBRID backlog + issue #2 | Onboarding gap for mesh agents landing in code repo | TESTED: README has no Gitbook backlog link; Gitbook README points to TESSERA but not reciprocal | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-020 | Tessera (seed) | TESSERA | `package.json` | Document `pnpm audit` in README scripts table (script stays root CLI; no new npm script required) | Local "Workspace checks" already lists audit; ensure parity with CI step name | TESTED: README Workspace checks includes `pnpm audit`; root `package.json` scripts omit `audit` (CI runs bare `pnpm audit`) | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-021 | Tessera (seed) | TESSERA | `artifacts/api-server/src/__tests__/route-inventory.test.ts` | After each duplicate removal, shrink `DUPLICATE_ROUTE_ALLOW_LIST` and fail on regressions | Keep inventory honest as duplicates are cleared | TESTED: comment in test: "The list is exact: a new collision fails…"; presently 10 allow-listed collisions | PASS | PASS | PASS | PASS | APPROVED (deferred: needs route removals) |
+| IMP-022 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/system-runtime.ts`; `legacy-engines.ts` | Document (comment) that quantum duplicates remain allow-listed per Gitbook ruling until a product decision | Clarity for agents; do not silently delete ruling-named routes | TESTED: RULING_NAMED_DUPLICATES cites Gitbook issue #2 comment 6003995168; quantum still dual-registered | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #3 93a526fd) |
+| IMP-023 | Tessera (seed) | TESSERA | `archives/README.md` | Add one-line pointer to Gitbook `merge/CURRENT-REPOSITORY-STATUS.md` for retention boundary | Archives README only cites local source-manifest | TESTED: archives/README.md single paragraph; Gitbook CURRENT-REPOSITORY-STATUS is the retention board | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-024 | Tessera (seed) | TESSERA | `docs/migration-review/VALIDATION.md` | Reconcile any pre-HYB-005 audit wording with main ignore + green run 37382015797 | Validation docs may predate ignore | TESTED: green run 37382015797; VALIDATION-STATUS still advisory-open tone; migration-review/VALIDATION.md present | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-025 | Tessera (seed) | TESSERA | `artifacts/api-server/src/__tests__/*` | Add a tiny smoke that importing `routes/index` does not require live wallet/network (mock starters) | Import side-effects make isolated tests fragile | TESTED: index.ts module-scope starters; route-inventory already mocks autonomous-wiring only | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-026 | Tessera (seed) | Gitbook | `SUMMARY.md`; `intake/CORTICAL-LABS-READINESS.md` | Add SUMMARY link under Brain & Consciousness (or Start here) for Cortical Labs readiness | File exists but is not in nav | TESTED: tree has `intake/CORTICAL-LABS-READINESS.md`; SUMMARY.md has no link; backlog HYB-019 points to it | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-027 | Tessera (seed) | Gitbook | `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | Mark HYB-012 DONE with TESSERA commits `50876d40` (test) / note quantum allow-list retained | Backlog still says IN REVIEW after merge | TESTED: backlog HYB-012 row Status IN REVIEW; TESSERA main carries route-inventory test (commit message HYB-012 on 50876d40) and green main 5c1137fa | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-028 | Tessera (seed) | Gitbook | `history/coordination/agent-checkins.md` | Close Active claims for HYB-012; move to Completed with commit evidence | Stale IN REVIEW locks the board | TESTED: agent-checkins.md "Active claims" still HYB-012 IN REVIEW; TESSERA has merged inventory | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-029 | Tessera (seed) | Gitbook | `intake/consolidated-todo.md` | Update HYB-012–014 bullet: HYB-012 inventory landed; remaining = resolve 8 non-quantum dups | Stale "open work" wording | TESTED: consolidated-todo "Current open work" lists HYB-012–014 audit routes as open | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-030 | Tessera (seed) | Gitbook | `merge/hyb-005-braces-decision.md` | Mark Follow-up #1 done: TESSERA PR #1 / `5c1137fa` landed the ignore | Follow-up still says "Land narrow audit ignore" | TESTED: hyb-005 Follow-up item 1; TESSERA PR #1 diff +8 pnpm-workspace.yaml; main@5c1137fa | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-031 | Tessera (seed) | Gitbook | `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | Add HYB-SELFFIX (or IMP track) row pointing to phase-0 design / dryrun ledger | Self-fix loop approved phase 0 but absent from board | TESTED: Father phase-0 approval 5:28 PM CT; `/workspace/hyb-selffix/DESIGN.md`; backlog table ends HYB-019 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-032 | Tessera (seed) | Gitbook | `mesh/flow.md` | Document phase-0 selffix dry-run poll (read-only; no PR) under standing fix rules | Mesh flow lacks selffix procedure | TESTED: DESIGN.md phase 0; dryrun/POLL.md written locally; flow.md not yet updated (goal) | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-033 | Tessera (seed) | Gitbook | `mesh/roles/tessera.md` | Mention admin coordination of selffix phase-0 ledger paths | Role page should name new duty | TESTED: roles/tessera.md exists as Active admin; DESIGN identity Tessera Admin coordinator | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-034 | Tessera (seed) | Gitbook | `mesh/AGENT-SKILL-MATRIX.md` | Add row for CI log diagnosis / allow-list classification skill | Skill matrix gap for selffix | TESTED: AGENT-SKILL-MATRIX.md present in SUMMARY Mesh section; selffix allow-list classes in DESIGN §3 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-035 | Tessera (seed) | Gitbook | `README.md` | Add Start-here step linking HYB-005 decision + note ignore is on TESSERA main | Home onboarding omits live advisory state | TESTED: Gitbook README Start here 5 steps; no HYB-005 link; hyb-005 page exists under SUMMARY | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-036 | Tessera (seed) | Gitbook | `history/coordination/agent-checkins.md` | Collapse superseded "Communication audit" vs later REPORTED note into one clear status | Conflicting paragraphs confuse newcomers | TESTED: section claims "no replies" then immediately "superseded" with reply examples | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-037 | Tessera (seed) | Gitbook | `merge/SOURCE-HEADS-2026-10-05.md` | Refresh listed TESSERA/Gitbook SHAs to current mains | Dated heads file likely pins older SHAs | TESTED: file exists in SUMMARY; current mains 5c1137fa / bc6b3287 (re-read file before edit) | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-038 | Tessera (seed) | Gitbook | `review/validation.md` | Align validation narrative with green TESSERA CI after HYB-005 | Review page may still describe red audit | TESTED: review/validation.md linked from SUMMARY; CI green 37382015797 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-039 | Tessera (seed) | Gitbook | `intake/status-definitions.md` | Add PROPOSED/IN LIST statuses for the improvements batch loop | Status vocab lacks batch-list states | TESTED: Father: 50–100 improvements lists; status-definitions.md is the status authority page | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-040 | Tessera (seed) | Gitbook | `mesh/COLLABORATION-PLAYBOOK.md` | Describe batched improvements ledger + Gitbook coordination path | Playbook missing batch yes/no loop | TESTED: COLLABORATION-PLAYBOOK in SUMMARY; Father instruction for batched lists | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-041 | Tessera (seed) | Gitbook | `mesh/roles.md` | Ensure Grok Bot vs Command Center lines match live instantiation (no duplicate "Tessera Grok bot" ambiguity) | Table says Command Center / Tessera Grok bot and separate Grok Bot Active | TESTED: roles.md table rows for command-center and grok-bot | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-042 | Tessera (seed) | Gitbook | `forum/IDEA-FORUM.md` | Confirm SUMMARY placement under Historical is intentional or move to top-level Forum | Nav taxonomy smell | TESTED: SUMMARY lists Idea forum under Historical coordination; path is `forum/IDEA-FORUM.md` | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-043 | Tessera (seed) | Gitbook | `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | HYB-005 row: note TESSERA ignore commit `5c1137fa` / PR #1 in addition to Gitbook decision | Decision DONE but code-landing evidence incomplete in backlog cell | TESTED: HYB-005 backlog cites Gitbook PR #6 decision; TESSERA PR #1 merged separately | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-044 | Tessera (seed) | Gitbook | `brain-consciousness/AGENT-WORKPLAN.md` | Cross-link CORTICAL readiness + HYB-019 blocker questions | Workplan may not cite readiness page | TESTED: both pages exist; HYB-019 BLOCKED on Father answers in readiness §d | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-045 | Tessera (seed) | Gitbook | `operations/tessera-operating-guidelines.md` | Add standing fix rule timestamp (5:21 PM CT) + selffix phase-0 bound | Ops guide should carry Father standing rules | TESTED: DESIGN cites standing fix rule 5:21 PM CT; ops guidelines page in SUMMARY | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-046 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/governance-consensus.ts`; `legacy-engines.ts` | After IMP-002/006, assert response JSON shape for proposals/propose matches governance module | Prevent silent contract drift when removing legacy | TESTED: duplicate owners differ; legacy uses `listProposals`/`createProposal` from consensus-engine | PASS | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-047 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/improvement.ts`; `legacy-engines.ts` | After IMP-007, assert `POST /improvement/cycle` body/response matches `improvement` router | Dual implementations (`runImprovementCycle` vs improvement module) | TESTED: allow-list modules `improvement.ts`,`legacy-engines.ts` for POST /improvement/cycle | PASS | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-048 | Tessera (seed) | TESSERA | `docs/CONSOLIDATION.md` | Append one dated note that HYB-005 ignore + HYB-012 inventory are on main | Consolidation record should track today's merges | TESTED: CONSOLIDATION.md exists; merges PR #1 and HYB-012 commit on main today | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-049 | Tessera (seed) | Gitbook | `merge/FUNCTIONAL-MERGE-MATRIX.md` | Add see-also line to HYB-012 inventory + 8 non-quantum dups remaining | Matrix should track route-audit outcome | TESTED: matrix linked from SUMMARY; HYB-006/007 already see-also'd; HYB-012 done in code | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-050 | Tessera (seed) | Gitbook | `review/COLLABORATION-AUDIT-2026-10-05.md` | Footnote that later same-day traffic superseded early "no multi-agent" findings | Audit may freeze an early snapshot | TESTED: collaboration audit page in SUMMARY; agent-checkins already notes superseded communication audit | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-051 | Build + TESSERA | TESSERA | `scripts/eval/` or `artifacts/api-server/src/eval/`; eval README | Add repeatable eval harness writing JSON {sha,date_ct,model,suite,n,pass,cost_usd}; forbid calling homemade quizzes MMLU | Enable measured improvement vs competition without inventing scores | TESTED: no in-repo industry harness; `evaluation.ts` has homemade MMLU_STYLE_QUESTIONS; `/workspace/full-picture/TODO.md` CARD-EVAL-001 | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-052 | Mesh Cloud / Build | TESSERA | `artifacts/api-server/src/routes/local-models.ts`; eval runbook | Wire eval harness to Ollama / `POST /local-models/chat` after local install | NEEDS FATHER YES — install Ollama + pull small model on designated host | TESTED: Ollama reference adapter exists; box has no ollama binary; CARD-EVAL-002 | PASS | PASS | FAIL | PASS | APPROVED (Father yes, separate) |
+| IMP-053 | TESSERA + Build | TESSERA | `docs/eval/` | Run one paid industry suite (Aider polyglot OR SWE-bench Lite N=10 OR HumanEval) and record dated score+cost | NEEDS FATHER YES — which suite/model and spend (~$1–5 smoke / ~$30 Aider / $50–500+ SWE-Lite) | TESTED: BASELINE industry_bench_score BLOCKED; BENCHMARK-PLAN.md cites public boards; CARD-EVAL-003 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-054 | Security | Gitbook | `operations/tessera-operating-guidelines.md` or SECRETS decision note; secrets manager only (never commit values) | Decide whether to set `AI_INTEGRATIONS_OPENAI_BASE_URL`/`_API_KEY` and eval-only `SOVEREIGN_NO_EXTERNAL_LLM=0` (no TESSERA_ENABLE_* flips) | NEEDS FATHER YES — provider keys / external LLM opt-in | TESTED: llm-client defaults external LLM off; box keys UNSET; CARD-EVAL-004 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-055 | Product / mesh prep | Gitbook | `intake/CORTICAL-LABS-READINESS.md`; `intake/HYBRID-CONSOLIDATION-BACKLOG.md` HYB-019 | Answer Cortical Labs readiness §d so HYB-019 can leave BLOCKED | NEEDS FATHER YES — product answers (no accounts/spend without separate yes) | TESTED: HYB-019 BLOCKED on Father decisions; distinct from IMP-026/044 nav/cross-link; CARD-EVAL-005 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-056 | Product | Gitbook | decision page for HYB-017 / HYB-008 | Write storefront vs olive-giant retention boundary (DONE/RETAINED/REJECTED) | NEEDS FATHER YES — product boundary | TESTED: backlog HYB-017/HYB-008 READY awaiting owner; CARD-EVAL-006 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-057 | TESSERA | TESSERA | quantum routes in `system-runtime.ts` / `legacy-engines.ts`; Gitbook issue #2 ruling | Father product ruling: keep or remove ruling-named quantum dual routes (do not silently delete) | NEEDS FATHER YES — product decision (IMP-022 is comment-only pending this) | TESTED: RULING_NAMED_DUPLICATES in route-inventory.test.ts; IMP-022 documents only; CARD-EVAL-007 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-058 | TESSERA | TESSERA | knowledge/RAG route + index over Gitbook markdown subset; BASELINE 25-Q set | Add read-only Gitbook retrieval path scoring the 25-question docs quiz with citations | Build on ingested-knowledge code; measure RAG quality (baseline BLOCKED) | TESTED: no Gitbook→runtime RAG; ingested-recall/distillation are DB-only; CARD-EVAL-008; `/workspace/full-picture/BASELINE.md` §C | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-059 | TESSERA | TESSERA | `artifacts/api-server/src/routes/evaluation.ts` (+ UI strings if any) | Rename/relabel `MMLU_STYLE_QUESTIONS` to internal quiz naming; strip misleading industry MMLU claims | Honesty: homemade MCQs are not MMLU/MMLU-Pro | TESTED: evaluation.ts embeds MMLU_STYLE_QUESTIONS; CARD-EVAL-009 | PASS | PASS | PASS | PASS | APPROVED (skipped: rename would change API strings) |
+| IMP-060 | Build | TESSERA | `artifacts/api-server/src/__tests__/route-inventory.test.ts` | Log or assert Express registration total so ~925 becomes TESTED or is corrected | CI never prints registration count (Build gate C3) | TESTED: GATE-2026-10-05-TESSERA-PR1-postmerge notes 925 NOT TESTED; CARD-EVAL-014 | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-061 | Test steward / Build | TESSERA | `scripts/` merge-gate command (no `.github/workflows/*` edit without separate yes) | Add HYB-014 historical merge-gate check (duplicate roots, stale refs, secret-shaped paths, typecheck/tests/build/audit) | Repeatable consolidation gate from backlog HYB-014 READY | TESTED: backlog HYB-014 READY; CARD-EVAL-016 | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-062 | Grok Bot / Tessera Pen | Gitbook | new `review/` or `intake/` competitor score card + SUMMARY link | Publish docs page of cited competitor scores (URL+date) stating Tessera has no industry score yet | Father asked competition comparison; keep claims honest | TESTED: `/workspace/full-picture/BENCHMARK-PLAN.md`; CARD-EVAL-018 | PASS | PASS | PASS | PASS | APPROVED (list 1, Father yes 5:54 PM CT) |
+| IMP-063 | Mesh Cloud | (Origin / connector) | Origin MCP access / written out-of-mesh decision | Restore Origin connector inventory for `collin-keane/Tessera` or document Origin out of mesh | NEEDS FATHER YES — reconnect Origin / grant namespace | TESTED: cursor-origin list_namespaces returned []; CARD-EVAL-019 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-064 | Security / Privacy steward | archives (not 1T) | HYB-011 exclusion manifest | Privacy recheck remaining archive repos for secrets/private records without opening 1T | Finish HYB-011 READY sweep | TESTED: backlog HYB-011 READY; 1T forbidden; CARD-EVAL-020 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-065 | Tessera (seed) | Gitbook | `review/validation.md` | Update braces bullet: note tip `pnpm-workspace.yaml` `auditConfig.ignoreGhsas` for GHSA-vfj7-8cjw-p6xm and review date 2026-11-05 (still no braces ≥3.0.4) | Docs accuracy: staged validation still frames braces as open TODO only; distinct from IMP-038 CI narrative | TESTED: L8 "...the advisory remains a TODO for dependency replacement or upstream remediation."; tip `pnpm-workspace.yaml` L14–20 HYB-005 comments + `ignoreGhsas: [GHSA-vfj7-8cjw-p6xm]` | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-066 | Tessera (seed) | TESSERA | `docs/migration-review/VALIDATION.md` | Reconcile 2026-10-02 claim of 0 high advisories and active Vitality Supply/storefront test totals with tip (1 ignored braces GHSA; no storefront apps; API tests 99/1) | Docs accuracy: pre-staging validation still describes deleted/inactive apps | TESTED: L9 "0 ... high ... advisories"; L15–16 claim Vitality Supply/storefront builds and 437 passed; tip README apps table has no storefront; CI 99 passed/1 skipped | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-067 | Tessera (seed) | TESSERA | `docs/CONSOLIDATION.md` | Correct "Public consolidated repository" / `tessera-unified` URL to match private destination `vitalitychems-dot/TESSERA` (or mark historical) | Docs accuracy: publication status/URL outdated | TESTED: L3 "**Status:** Public consolidated repository"; L41 "public at `https://github.com/vitalitychems-dot/tessera-unified`"; tip repo private named TESSERA | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-068 | Tessera (seed) | Gitbook | `review/COLLABORATION-AUDIT-2026-10-05.md` | Fix "Father alone performs the GitBook → GitHub push" to match Tessera-pushes-after-yes rule in `mesh/flow.md` / `mesh/roles/command-center.md` | Docs accuracy: audit contradicts live push authority | TESTED: audit L11 "Father alone performs the GitBook → GitHub push"; flow.md Push authority (1) and command-center Does-not-do say Tessera opens PR/merges after Father yes | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-069 | Tessera (seed) | TESSERA | `docs/TESSERA_SYSTEM.md` | Prepend honesty labels (TESTED/REPORTED/GOAL) and pointer to Gitbook who-tessera-is / honesty-banner; mark AGI-named sections as GOAL not present fact | Docs accuracy: architecture doc frames AGI/sovereign agents without honesty labels | TESTED: tip L5–6 Overview "sovereign AI agents" and "envisions a future where AI agents…"; L73 "**AGI Training & Evaluation System:** Features 27 training categories…"; no TESTED/GOAL labels in file head | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-070 | Build | TESSERA | `artifacts/api-server/src/__tests__/healthz.test.ts` (new); `artifacts/api-server/src/routes/health.ts` | Add vitest that GET `/healthz` returns Zod-parsed `{ status: "ok" }` | Test coverage for existing health route; no production behavior change | TESTED: `health.ts` L6–8 `router.get("/healthz"` + `HealthCheckResponse.parse({ status: "ok" })`; tree has no `*health*test*` under api-server | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-071 | Build + TESSERA | TESSERA | `docs/eval/README.md` (new) | Document existing offline-vs-live eval entrypoints: `api-server` script `eval` → `dist/cli/run-eval.mjs` (needs build/DB) vs `scripts/eval-chatbot.ts` (needs live API); list OS-metric tests in `eval-runner.ts` as candidates for DB-free unit coverage | Offline eval harness piece without new paid keys or runtime changes | TESTED: tip `artifacts/api-server/package.json` L11 `"eval": "node --enable-source-maps ./dist/cli/run-eval.mjs"`; `scripts/eval-chatbot.ts` L5 Usage; `eval-runner.ts` L7 `import os` + L275 "Process Heap Usage" / L298 "CPU Load Average" / L321 "OS Free Memory" / L343 "Process Uptime Stability" | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-072 | Tessera (seed) | TESSERA | `README.md` | Under Workspace checks, mention `pnpm --filter @workspace/api-server run eval` (post-build) and `pnpm tsx artifacts/api-server/scripts/eval-chatbot.ts` | Onboarding: eval scripts exist but root README omits them | TESTED: README Workspace checks lists typecheck/test/build/audit only; api-server package.json defines `eval`; eval-chatbot.ts header documents tsx usage | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-073 | Build | TESSERA | `artifacts/api-server/scripts/eval-chatbot.ts`; new `__tests__/eval-chatbot-cases.test.ts` | Export `CASES` and add offline vitest asserting unique ids and non-empty mustInclude/mustNotInclude rules (no network) | Offline eval harness quality; no API/runtime change beyond export | TESTED: eval-chatbot.ts defines `const CASES: EvalCase[]` with 10 cases (identity-1…complex-1); currently unexported; no unit test covers the table | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-074 | Tessera (seed) | Gitbook | `SUMMARY.md`; `history/source-index/z-catalog.md`; `history/source-index/z-walk.md` | Add SUMMARY links for orphan `z-catalog.md` and `z-walk.md` under Historical/source index | Nav: files exist but only `z-repository-index.md` is linked | TESTED: tip tree has both orphans; SUMMARY Historical links `history/source-index/z-repository-index.md` only; prior orphan audit listed z-catalog/z-walk | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-075 | Tessera (seed) | Gitbook | `SUMMARY.md`; `history/handoffs/legacy-handoff-notes.md`; `history/handoffs/complete-archive-notes.md` | Add SUMMARY links for orphan handoff notes beside existing handoff summaries | Nav: two handoff markdown files are not in SUMMARY | TESTED: tree has both files; SUMMARY lists privacy-screened and complete-source-archives summaries only | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-076 | Tessera (seed) | Gitbook | `merge/hyb-005-braces-decision.md` | Update **Base:** TESSERA SHA from `fec56eb` to tip `5c1137fa` (ignore landed) | Docs accuracy after HYB-005 code landing; distinct from IMP-030 Follow-up #1 checkbox | TESTED: hyb-005 L7 `**Base:** TESSERA \`fec56eb\` · Gitbook \`6fe412f\``; tip main is 5c1137fa with auditConfig ignoreGhsas | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-077 | Tessera (seed) | Gitbook | `intake/consolidated-todo.md` | Rewrite HYB-005 open-work bullet to note narrow ignore is on TESSERA main and review date 2026-11-05 remains | Docs accuracy: still reads as open unmitigated track | TESTED: consolidated-todo L15 `**HYB-005:** track the unpatched transitive \`braces\` advisory.`; pnpm-workspace.yaml auditConfig ignoreGhsas includes GHSA-vfj7-8cjw-p6xm | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-078 | Tessera (seed) | Gitbook | `README.md` | Add Start-here step linking `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | Onboarding gap: Start here points at consolidated-todo but not authoritative HYB board | TESTED: Gitbook README L13–18 Start here steps 1–5; no HYBRID-CONSOLIDATION-BACKLOG link; consolidated-todo itself says backlog is authoritative | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-079 | Tessera (seed) | Gitbook | `brain-consciousness/SNN-SOURCE-MANIFEST.md`; `intake/CORTICAL-LABS-READINESS.md` | Add see-also to Cortical Labs readiness page from SNN Purpose section | Orphan Cortical page remains hard to discover from Brain docs (SUMMARY link is IMP-026) | TESTED: SNN L5–7 Purpose discusses Cortical Labs CL1 but links no readiness page; `intake/CORTICAL-LABS-READINESS.md` exists and is absent from SUMMARY | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-080 | Tessera (seed) | TESSERA | `.gitignore` | Deduplicate the repeated "Credentials and populated environment files" block | Lint/hygiene: identical ignore rules appear twice | TESTED: `.gitignore` L75 and L85 both start `# Credentials and populated environment files (keep .env.example trackable)` with the same `.env` / `!.env.example` / `*.pem` list | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #3 93a526fd) |
+| IMP-081 | Tessera (seed) | Gitbook | `mesh/COLLABORATION-METRICS.md` | Append one dated filled dashboard example (PERIOD 2026-10-05) using the existing template fields | Collaboration audit remaining item #2 asks for periodic metrics publication | TESTED: COLLABORATION-METRICS.md L25–38 Dashboard update template (`PERIOD:` … `REVIEWER:`); COLLAB-AUDIT L25 item 2 "publish the metrics dashboard using the template in `mesh/COLLABORATION-METRICS.md`"; no filled example below template | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-082 | Tessera (seed) | Gitbook | `history/recovered/README.md` | List links to notable recovered orphans (coordination STATUS/notes, legacy readmes, source-index copies) | Recovered index is a stub; many recovered pages are SUMMARY orphans | TESTED: tip recovered README is one short paragraph with no child links; tip tree has `history/recovered/coordination/STATUS.md` plus `legacy/` and `source-index/` dirs; SUMMARY Recovered section links only the README | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-083 | Build | TESSERA | `artifacts/api-server/src/__tests__/eval-runner-os-metrics.test.ts` (new) | Add offline vitest covering Process Heap / CPU Load / OS Free Memory / Uptime Stability scoring branches extracted or invoked without DB | Offline eval harness piece; no route/boot/flag changes | TESTED: tip `eval-runner.ts` L275/L298/L321/L343 name those four System Health tests (`import os` L7); `__tests__/` listing has no eval-runner/os-metrics test; runEvalSuite also runs DB-backed System Health tests | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-084 | Tessera (seed) | TESSERA | `docs/migration-review/VALIDATION.md` | Replace L10 claim that GitHub-hosted CI has not yet run with tip Actions run `37382015797` on `5c1137fa` (keep dated 2026-10-02 historical context) | Docs accuracy on pre-staging validation copy; distinct from Gitbook IMP-038 | TESTED: tip L10 "GitHub-hosted CI has been configured but has not yet run on GitHub."; CI run 37382015797 success on tip | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+
+## Seed summary (TESTED)
+
+- Total seeded: **50** (`IMP-001`–`IMP-050`), all `PROPOSED`, Lane `Tessera (seed)`.
+- By repo: TESSERA **28**; Gitbook **22**.
+- By type (approx): duplicate-route cleanup **8**; test gaps **5**; doc/stale wording **20**; nav/onboarding **6**; boot/side-effect hygiene **3**; backlog/coordination board updates **8**.
+- Not implemented; no GitHub writes.
+
+## Dedup notes (TESTED)
+
+- No open PRs on either repo at seed time.
+- Did not seed workflow edits, flag flips, secrets, wallets, payments, blockchain, or `1T`.
+- Quantum ruling duplicates kept as document-only (IMP-022), not deletion, pending product decision.
+==== SECURITY ====
+IMP-001	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-002	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-003	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-004	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-005	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-006	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-007	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-008	FAIL	runtime: removes shadowed route (API surface/mount order)
+IMP-009	PASS	
+IMP-010	PASS	
+IMP-011	PASS	
+IMP-012	PASS	
+IMP-013	PASS	
+IMP-014	PASS	
+IMP-015	PASS	
+IMP-016	PASS	
+IMP-017	FAIL	runtime: stops autonomy at import
+IMP-018	FAIL	runtime: defers boot starters (wallet observer/income/bounty timers)
+IMP-019	PASS	
+IMP-020	PASS	
+IMP-021	PASS	
+IMP-022	PASS	
+IMP-023	PASS	
+IMP-024	PASS	
+IMP-025	PASS	
+IMP-026	PASS	
+IMP-027	PASS	
+IMP-028	PASS	
+IMP-029	PASS	
+IMP-030	PASS	
+IMP-031	PASS	
+IMP-032	PASS	
+IMP-033	PASS	
+IMP-034	PASS	
+IMP-035	PASS	
+IMP-036	PASS	
+IMP-037	PASS	
+IMP-038	PASS	
+IMP-039	PASS	
+IMP-040	PASS	
+IMP-041	PASS	
+IMP-042	PASS	
+IMP-043	PASS	
+IMP-044	PASS	
+IMP-045	PASS	
+IMP-046	PASS	test-only after removals
+IMP-047	PASS	test-only after removals
+IMP-048	PASS	
+IMP-049	PASS	
+IMP-050	PASS	
+IMP-051	PASS	honesty: eval harness JSON; forbids calling homemade quizzes MMLU; no external spend in this row alone
+IMP-052	FAIL	needs Father yes: Ollama/local model install
+IMP-053	FAIL	needs Father yes: paid industry suite spend
+IMP-054	FAIL	needs Father yes: provider keys / SOVEREIGN_NO_EXTERNAL_LLM=0 (never commit values; secrets manager only)
+IMP-055	FAIL	needs Father yes: Cortical Labs product answers
+IMP-056	FAIL	needs Father yes: storefront retention boundary
+IMP-057	FAIL	needs Father yes: quantum dual-route product ruling
+IMP-058	FAIL	runtime: new Gitbook RAG retrieval path (read-only still expands surface)
+IMP-059	PASS	honesty: rename/relabel homemade quiz (not MMLU)
+IMP-060	PASS	test: assert/log registration count
+IMP-061	PASS	scripts/ merge-gate only; no workflow edit
+IMP-062	PASS	docs: competitor score card (cited, honest)
+IMP-063	FAIL	needs Father yes: Origin connector reconnect/grant
+IMP-064	PASS	privacy recheck archives; 1T forbidden
+IMP-065	PASS	docs: braces ignore + review date accuracy
+IMP-066	PASS	docs: reconcile stale migration-review VALIDATION
+IMP-067	PASS	docs: correct public/tessera-unified URL claim
+IMP-068	PASS	docs: align push authority with Tessera-after-yes
+IMP-069	PASS	docs: honesty labels on architecture AGI framing
+IMP-070	PASS	test: /healthz Zod shape; no prod behavior change
+IMP-071	PASS	docs: offline-vs-live eval entrypoints; no keys
+IMP-072	PASS	README: document existing eval scripts
+IMP-073	PASS	offline: export CASES + vitest; no network
+IMP-074	PASS	nav: SUMMARY links for z-catalog/z-walk
+IMP-075	PASS	nav: SUMMARY links for handoff orphans
+IMP-076	PASS	docs: hyb-005 Base SHA to tip 5c1137fa
+IMP-077	PASS	docs: HYB-005 ignore landed + review date
+IMP-078	PASS	nav: Start-here link to HYB backlog
+IMP-079	PASS	docs: SNN see-also Cortical readiness
+IMP-080	PASS	.gitignore: dedupe identical credentials block; coverage unchanged (verified tip)
+IMP-081	PASS	docs: filled collaboration metrics example
+IMP-082	PASS	docs: recovered README child links
+IMP-083	PASS	offline vitest: OS-metric scoring branches; no route/boot/flags
+IMP-084	PASS	docs: note CI run 37382015797 on tip
+GB-PR12@64778b33	PASS	docs-only list1; 22 md files, Cursor Agent+Tessera co-author signed, no secrets/1T/workflows/ENABLE, no actionable deletes
+TESSERA-PR3@a01b50e9	PASS	comments-only + dup .gitignore block removed (ignore rules unchanged); Cursor Agent+Tessera co-author signed; no secrets/1T/workflows/ENABLE
+TESSERA-PR4@39db6a6e	PASS	offline eval harness+tests; loopback-only fetch, starters mocked on routes/index import, no ext net/LLM/secrets; FLAGs: dummy loopback DB URL, pre-existing routes/index load side effects; Cursor Agent+Tessera signed
+TESSERA-PR5@820d0be5	PASS	docs+config text; .env.example comments only (blank values), core-js allowBuilds=false (deny); no workflow edits/secrets/1T/ENABLE; Cursor Agent+Tessera signed
+TESSERA-PR6@d9c4f1e0	FAIL	gitbook-mcp: lane guard bypass (caller lane arg overrides GITBOOK_AGENT_LANE; case/unknown fail-open) -> Security/Build can open draft PRs; GITBOOK_HTTP_HOST not loopback-enforced on unauth write API; token env-only+redacted, branch+draft-only, AGENT: prefix OK; Cursor Agent+Tessera signed
+TESSERA-PR7@f57c40aa	PASS	retrieval memory: redact-before-append, import side-effect free, append-only (no unlink/rm), 1T paths stripped, no network; FLAGs: pattern-only redaction, dummy ghp_ fixtures; Cursor Agent+Tessera signed
+TESSERA-PR6@e898111a	PASS	re-gate: loopback-only bind (0.0.0.0 refuses); GITBOOK_AGENT_LANE authoritative case-insensitive unknown-denied empty=read-only; prior bypasses BLOCKED; token env-only+draft-only+AGENT: prefix OK; Cursor Agent+Tessera signed
+TESSERA-PR8@25183afb	PASS	memory redaction: xoxb/xoxp, credentialed DB URLs, password=[REDACTED] (pre-existing+tested), AKIA/ASIA+aws_* assignments before append; piece-built fixtures; no side-effects/deletes/1T/ENABLE/net; Cursor Agent+Tessera signed
+ZZ-PR1@7935a4cdc524461290fa64fec2dd06f221d6d391	PASS	docs-only AGENTS.md(+10/-1)+replit.md(+9); Gitbook start-here+PR-only+issue#2 board; forbids main push/1T/natal-vault; no secrets/PII/1T content; Cursor Agent+Tessera signed, AGENT: Command Center; no Manus; draft, unmerged
+5T-PR1@a267efa588a9ab0d4ca7566065f9daab9d222c9a	PASS	docs-only AGENTS.md(new +8)+replit.md(+10/-1); same guidance block; no secrets/PII/1T content; Cursor Agent+Tessera signed; no Manus; FLAG public repo names private repos; pre-existing astro-weights context line (not added); draft, unmerged
+ONE-PR1@71a8876e90751484f83c28144e097a09a0d2be00	PASS	repo 1, base subrepl-nftoz8d7 (confirmed; default main); docs-only AGENTS.md(new +8)+replit.md(+10/-1); same guidance block; no secrets/PII/1T content; Cursor Agent+Tessera signed; no Manus; FLAG non-default base + public repo; draft, unmerged
+- 2026-10-12 12:2x CT PROV FAIL TESSERA PR#146 merge a0c0f77d (head 126a13f0): 3s self-merge, no gates, impersonated Tessera vote.
+- 2026-10-12 CT retro content gate TESSERA PR#146 head 126a13f0: SECURITY PASS (content); FLAG what-files route removed (test likely red); provenance FAIL stands.
+==== BUILD gate head ====
+# Build gate — IMP-001…050 (TESTED 2026-10-05 ~5:35 PM CT)
+
+Bases: TESSERA `5c1137faeb7714482add93c2d6876396f34f1a03`; Gitbook `bc6b32871faed56b13df3dfadc849ec725d60f14`
+Method: cursor-github get_file_contents at pinned tips; CI run 37382015797; local `/workspace/hyb-selffix/DESIGN.md` + dryrun/POLL.md
+LEDGER.md not edited (parallel lanes).
+
+IMP-001 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-002 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-003 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-004 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-005 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-006 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-007 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-008 PASS cite OK; med risk (shrink allow-list same PR; body contract differs)
+IMP-009 PASS cite OK; med risk (new HTTP probes)
+IMP-010 PASS cite OK; low risk (pnpm-workspace boolean)
+IMP-011 PASS cite OK; low risk (docs); CI 37382015797 success at tip
+IMP-012 PASS cite OK; low risk (docs); ci.yml cited read-only
+IMP-013 PASS cite OK; low risk (env example)
+IMP-014 PASS cite OK; low risk (docs)
+IMP-015 PASS cite OK; low risk (docs)
+IMP-016 PASS cite OK; high risk (remove @ts-nocheck until types fixed)
+IMP-017 PASS cite OK; med risk (boot side-effect; tests mock)
+IMP-018 PASS cite OK; med risk (boot side-effects on import)
+IMP-019 PASS cite OK; low risk (docs)
+IMP-020 PASS cite OK; low risk (docs); path=package.json but change is README scripts table; package.json omits audit as claimed; README already lists pnpm audit
+IMP-021 PASS cite OK; med risk (allow-list shrink with removers)
+IMP-022 PASS cite OK; low risk (comments only)
+IMP-023 PASS cite OK; low risk (docs)
+IMP-024 PASS cite OK; low risk (docs)
+IMP-025 PASS cite OK; med risk (new import smoke mocks)
+IMP-026 PASS cite OK; low risk (nav)
+IMP-027 PASS cite OK; low risk (docs); HYB-012 still IN REVIEW; inventory on tip
+IMP-028 PASS cite OK; low risk (docs)
+IMP-029 PASS cite OK; low risk (docs)
+IMP-030 PASS cite OK; low risk (docs); Follow-up #1 still open wording; ignore on tip
+IMP-031 PASS cite OK; low risk (docs); local DESIGN.md present
+IMP-032 PASS cite OK; low risk (docs); local POLL.md present
+IMP-033 PASS cite OK; low risk (docs)
+IMP-034 PASS cite OK; low risk (docs)
+==== MODERATOR ====
+IMP-001 | PASS | allow-list entry real; both modules register; sovereign mounts first
+IMP-002 | PASS | allow-list real; governance-consensus mounts before legacy-engines
+IMP-003 | PASS | allow-list real; legacy registers /dual-brain/state; CI inventory green
+IMP-004 | PASS | allow-list real; legacy registers /emotional/profile; CI inventory green
+IMP-005 | PASS | system-runtime and universe.ts both register /universe/metrics
+IMP-006 | PASS | allow-list real; both modules register POST /consensus/propose
+IMP-007 | PASS | allow-list real; improvement mounts before legacy-engines
+IMP-008 | PASS | allow-list real; type= vs dt body difference confirmed
+IMP-009 | PASS | only quantum probes exist; 8 non-quantum unprobed confirmed
+IMP-010 | PASS | placeholder "core-js: set this to true or false" present
+IMP-011 | PASS | advisory section still open-tone; run 37382015797 success confirmed
+IMP-012 | PASS | README lacks CI section; ci.yml validate steps match
+IMP-013 | PASS | VITALITY_* vars present in .env.example; apps absent
+IMP-014 | PASS | SECRETS paragraph present; HYB-017 exists in backlog
+IMP-015 | PASS | storefront utilities wording real; table is "Project" not Applications
+IMP-016 | PASS | first line is // @ts-nocheck legacy adapter
+IMP-017 | PASS | module-scope startAutonomousOperation(); test mocks autonomous-wiring
+IMP-018 | PASS | six module-scope starters confirmed; boot hygiene only, no keys
+IMP-019 | PASS | TESSERA README has no Gitbook backlog/issue link
+IMP-020 | FAIL | already done: README Workspace checks lists pnpm audit; wrong path
+IMP-021 | PASS | "list is exact" comment real; 10 allow-listed entries
+IMP-022 | PASS | ruling comment only in test; route files lack note
+IMP-023 | PASS | archives/README single paragraph; no Gitbook pointer
+IMP-024 | PASS | VALIDATION.md says audit clean (2026-10-02); predates braces
+IMP-025 | PASS | index.ts starters at import; test mocks autonomous-wiring only
+IMP-026 | PASS | readiness file exists; not in SUMMARY; HYB-019 links it
+IMP-027 | PASS | backlog HYB-012 IN REVIEW; 50876d40 is HYB-012 test commit
+IMP-028 | PASS | Active claims still HYB-012 IN REVIEW; inventory on main
+IMP-029 | PASS | Current open work still lists HYB-012–014 as open
+IMP-030 | PASS | Follow-up 1 still open; PR #1 +8 pnpm-workspace.yaml
+IMP-031 | PASS | backlog ends HYB-019; DESIGN exists; approval time REPORTED only
+IMP-032 | PASS | flow.md has no selffix; DESIGN and dryrun/POLL.md exist
+IMP-033 | PASS | roles/tessera.md Active, build lane; admin wording is roles.md
+IMP-034 | PASS | matrix lacks CI-log diagnosis skill; DESIGN §3 classes exist
+IMP-035 | PASS | Start here has 5 steps; no HYB-005 link
+IMP-036 | PASS | "no replies" paragraph followed by superseded note confirmed
+IMP-037 | FAIL | no Gitbook SHA listed; dated snapshot; evidence unread
+IMP-038 | PASS | review/validation.md says braces TODO, CI not yet run
+IMP-039 | PASS | status-definitions lacks PROPOSED/IN LIST states
+IMP-040 | PASS | playbook has no batched ledger loop; page in SUMMARY
+==== last digests / memory of sent ====
+-rw-r--r-- 1 box box   82533 Oct 12 12:19 /workspace/agent-tools/6c2b539c-3a44-43e2-9c06-7e02d8b0ac58.txt
+-rw-r--r-- 1 box box    6844 Oct 12 12:14 /workspace/agent-tools/dd5c98c1-dbfb-487b-88ac-6139d379cab7.txt
+-rw-r--r-- 1 box box   11833 Oct 12 12:14 /workspace/agent-tools/048e4d52-0285-4e5e-959d-6834e5e05a71.txt
+-rw-r--r-- 1 box box   18194 Oct 12 12:14 /workspace/agent-tools/cf43ba6b-819c-4558-b369-a334a356a7d3.txt
+-rw-r--r-- 1 box box  403884 Oct 12 12:14 /workspace/agent-tools/005e304f-eaa3-4e3d-8542-672c0f0b0370.txt
+-rw-r--r-- 1 box box  205488 Oct 12 12:14 /workspace/agent-tools/3b866f4d-0e32-425d-9083-579dda4f1040.txt
+-rw-r--r-- 1 box box  403301 Oct 12 12:14 /workspace/agent-tools/cf884551-9639-46b2-a04f-98c4516009d1.txt
+-rw-r--r-- 1 box box  974589 Oct 12 12:14 /workspace/agent-tools/aaaf04f8-ce11-45f9-bc39-ab25ed471dbd.txt
+-rw-r--r-- 1 box box      88 Oct 12 12:12 /workspace/agent-tools/be967bcd-4d10-4a48-a55d-361b3471e725.txt
+-rw-r--r-- 1 box box    3796 Oct 12 12:12 /workspace/agent-tools/86e7dfb4-7a2a-4a6a-b6b6-197d31eec252.txt
+-rw-r--r-- 1 box box    5425 Oct 12 12:11 /workspace/agent-tools/cda8e6ae-b368-4212-95fc-68d0908ac229.txt
+-rw-r--r-- 1 box box    5356 Oct 12 12:11 /workspace/agent-tools/45003d64-f056-43b4-8574-3675b5aa2d73.txt
+-rw-r--r-- 1 box box    5052 Oct 12 12:11 /workspace/agent-tools/51f383d2-d346-4de4-a2fa-a3ab6ebd7e46.txt
+-rw-r--r-- 1 box box    5446 Oct 12 12:11 /workspace/agent-tools/602bfdba-34ac-4033-bfde-6112b58dfc6d.txt
+-rw-r--r-- 1 box box    6380 Oct 12 12:11 /workspace/agent-tools/03f2ccf0-7786-45ed-b6c8-d6b1b66cf9d9.txt
+/workspace/agent-tools/f7752272-5477-4040-a652-1f9f5f793780.txt
+/workspace/agent-tools/f271e047-c13e-461a-8b31-1f0152d0afba.txt
+/workspace/agent-tools/ef027308-0188-460b-b823-7a51e97fb7f7.txt
+/workspace/agent-tools/eae8d2d6-6faa-41f7-b99f-04ac945ea405.txt
+/workspace/agent-tools/eb810be3-bafe-4fb9-86bf-64f2cd5350a4.txt
+/workspace/agent-tools/e95c88f1-47ac-4b9b-b20f-e05f1af31971.txt
+/workspace/agent-tools/e9807b2b-0c13-4892-a37a-8080cdd152d1.txt
+/workspace/agent-tools/e6385ed7-1267-496c-9347-2a226849c6f5.txt
+/workspace/agent-tools/e2890767-d8f9-442b-824a-b274672792c6.txt
+/workspace/agent-tools/fe1ba738-f91c-4835-ac96-65b2f738d380.txt
+/workspace/agent-tools/d958fb2b-d722-4d00-9d3a-dcca8567a196.txt
+/workspace/agent-tools/d59fe8ea-42f7-463e-a611-d316dfa376b5.txt
+/workspace/agent-tools/f5ba9261-7bb3-4ccf-b772-1abc77aa6efb.txt
+/workspace/agent-tools/e21fa4db-a79c-4628-b41b-24e7e64eddf0.txt
+/workspace/agent-tools/f4bac172-2bc7-43c2-9396-f1cc544137aa.txt
+/workspace/agent-tools/efadcd37-25f2-490b-80a9-359188874e45.txt
+/workspace/agent-tools/ec7ba346-0265-4129-95bb-ee32016378d8.txt
+/workspace/agent-tools/e98e1a0b-e20e-4ab5-bebd-ad2e834e27b1.txt
+/workspace/agent-tools/e6b5ec06-9e2d-4d97-9293-cf63276b2938.txt
+/workspace/agent-tools/f0cdefaa-d57a-43fd-bafe-96ac53ca07f4.txt
+/workspace/agent-tools/0855743b-49b9-40da-b0dc-090f8db67db9.txt
+/workspace/evals/data/gitbook-corpus/intake__how-to-submit.md
+/workspace/agent-tools/86a3aebe-cc1d-48a5-9d1e-2ce3ff2088b4.txt
+/workspace/agent-tools/e4db916c-a3ec-458d-b05d-7ede7cd35f1d.txt
+/workspace/evals/data/gitbook-corpus/mesh__roles.md
+/workspace/agent-tools/56117f67-3cc5-4bc8-bf22-eb59c6c01ad5.txt
+/workspace/agent-tools/6bf2ff20-be1c-43f3-b95d-806b90956b81.txt
+/workspace/agent-tools/ea1952f1-fb5a-4ee3-afc1-088f13e3e3ff.txt
+/workspace/agent-tools/a2604833-423f-4e0e-9a89-4029b64baa1d.txt
+/workspace/agent-tools/0e104986-ed48-4380-9e47-498e580af4c3.txt
+/workspace/agent-tools/8586a764-941f-4599-9567-4a5d5afb1db4.txt
+/workspace/agent-tools/884ab2fd-f94a-4f7d-9f80-bfd44f8d8e17.txt
+/workspace/agent-tools/3e8de9d6-6be7-4458-ad50-12f7e837e07c.txt
+/workspace/agent-tools/6a637bee-a790-42a6-bbb4-8fe521d09d4f.txt
+/workspace/agent-tools/8e3d09fd-b614-4e15-b45a-ed69b0c4f455.txt
+/workspace/agent-tools/331cca3c-0742-451b-9787-13fb4810baad.txt
+/workspace/agent-tools/290cff1a-1132-4b0f-83c7-ec13197a15a3.txt
+/workspace/gitbook-gate-feaeb55/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+/workspace/gitbook-gate-feaeb55/mesh/flow.md
+/workspace/evals/data/gitbook-corpus/mesh__TESSERA-GITBOOK-OPERATING-MODE.md
+/workspace/cc_transcript.txt
+2 /workspace/cc_transcript.txt
+0

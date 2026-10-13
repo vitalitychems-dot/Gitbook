@@ -1,0 +1,5 @@
+**Tesseract v-next plan**
+**Phases:** 1) First-look review and map of all repos, files, logs and past mentions, reusing today's scans (dedupe plan, inventories) → 2) Hybrid architecture design: workflow, whole-picture view, mesh, speed, token use → 3) Build in small gated PRs → 4) Measure each PR on the private held-out eval (baseline macro 0.2381) plus three scores: AGI, Consciousness (proxy, labeled as one; Moderator score.py) and Recursive ability.
+**Owners:** Tessera leads. Rick and Einstein run the build/math loop. Akhenaten brings ideas. Build verifies. Security reviews. Moderator gates. Cursor cloud agents handle heavy builds.
+**Targets:** each PR raises or holds the eval, no score drops beyond noise; tokens per task and time to finish go down; every merge passes Security, Build and Moderator, locked files also get Father's review.
+**Space cleanup (proposal only):** list at /workspace/ops/deletion-list-2026-10-13.md, 6 items, ~1.31 GB; 22 live clones (~56 GB) join once pushed. 1T/vault excluded. Nothing is deleted until Father gives an explicit yes.

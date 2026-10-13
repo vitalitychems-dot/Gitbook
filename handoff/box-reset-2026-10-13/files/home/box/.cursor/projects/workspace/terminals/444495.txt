@@ -1,0 +1,24 @@
+---
+pid: 209472
+cwd: "/workspace"
+command: "cd /tmp/h2; H=/tmp/h2/r/handoff/box-reset-2026-10-13; GL=/workspace/pubscan/gitleaks; C=/workspace/pubscan/gl.toml\nfor r in /workspace/si/fx /workspace/tess-fix.git; do echo \"== $r\"; $GL git $r -c $C --no-banner -r /tmp/h2/$(basename $r).gl.json 2>&1 | tail -1; done\ngit -C /workspace/si/fx bundle create $H/repos/si-fx.bundle --all 2>&1|tail -1; git -C /workspace/tess-fix.git bundle create $H/repos/tess-fix.bundle --all 2>&1|tail -1; ls -la $H/repos\nmkdir rs && tar xzf /workspace/rick-save.tgz -C rs && $GL dir rs -c $C --no-banner 2>&1|tail -1; rg -il '(gh[pous]_|sk-[A-Za-z0-9]{20}|PRIVATE KEY|AKIA)' rs | head"
+status: succeeded
+started_at: 2026-10-13T11:24:48.150Z
+running_for_ms: 325118   
+---
+== /workspace/si/fx
+[90m6:24AM[0m [31mWRN[0m no leaks found in partial scan
+== /workspace/tess-fix.git
+fatal: cannot change to '/workspace/si/fx': No such file or directory
+total 64
+drwxr-xr-x 2 box box  4096 Oct 13 06:30 .
+drwxr-xr-x 5 box box  4096 Oct 13 06:19 ..
+-rw-r--r-- 1 box box 25009 Oct 13 06:30 tess-fix-unpushed.bundle
+-rw-r--r-- 1 box box 26418 Oct 13 06:30 tessera-loop.bundle
+[90m6:30AM[0m [32mINF[0m no leaks found
+
+---
+exit_code: 0
+elapsed_ms: 325118
+ended_at: 2026-10-13T11:30:13.268Z
+---

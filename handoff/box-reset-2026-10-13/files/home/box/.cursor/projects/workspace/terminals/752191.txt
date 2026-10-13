@@ -1,0 +1,14 @@
+---
+pid: 1211856
+cwd: "/workspace/build-gate/full-f76d/artifacts/v2"
+command: "cd /workspace/build-gate/full-f76d; rg -n --hidden -g '!node_modules' -g '!pnpm-lock.yaml' 'TESSERA_ENABLE_[A-Z0-9_]+' -o --no-heading | awk -F: '{print $NF}' | sort | uniq -c"
+status: failed   
+started_at: 2026-10-12T23:41:07.326Z
+running_for_ms: 214554   
+---
+
+---
+exit_code: unknown
+elapsed_ms: 214554
+ended_at: 2026-10-12T23:44:41.880Z
+---

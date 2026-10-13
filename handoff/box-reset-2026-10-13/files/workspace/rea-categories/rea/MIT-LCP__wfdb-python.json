@@ -1,0 +1,1 @@
+{"status":"ok","statistics":{"relevant_files":0,"nested_asar_containers":0,"text_bytes_read":0,"invalid_utf8_files":0,"parsed_javascript_files":0,"visited_ast_nodes":0,"findings":0,"modules":0,"parse_failures":0},"nodes":1,"edges":0,"coverage":"complete","kinds":{"artifact":1},"repo":"MIT-LCP/wfdb-python","exit":0,"files_total":279,"js_ts_files":0,"py_files":38}

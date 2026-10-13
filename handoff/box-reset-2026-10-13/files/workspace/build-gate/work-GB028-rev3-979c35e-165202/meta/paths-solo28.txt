@@ -1,0 +1,4 @@
+SUMMARY.md
+history/coordination/agent-checkins.md
+intake/AGENT-LAUNCH-PROMPTS.md
+intake/HYBRID-CONSOLIDATION-BACKLOG.md

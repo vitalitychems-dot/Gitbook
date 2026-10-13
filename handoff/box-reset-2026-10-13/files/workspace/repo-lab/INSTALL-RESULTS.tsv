@@ -1,0 +1,18 @@
+repo	status	reason
+Cortical-Labs__cl-sdk	PASS	install+import ok
+jeshraghian__snntorch	PASS	install+torch+import ok
+Aider-AI__aider	PASS	install+import ok
+FoundationAgents__OpenManus	PASS	install+import ok
+mem0ai__mem0	PASS	install+import ok
+BindsNET__bindsnet	PASS	install+import ok
+brian-team__brian2	PASS	pypi brian2 install+import (editable clone failed setuptools_scm shallow)
+BrainCog-X__Brain-Cog	PASS	install+import ok
+browser-use__browser-use	PASS	pypi browser-use import ok
+chroma-core__chroma	PASS	pypi chromadb import ok
+crewAIInc__crewAI	PASS	pypi crewai import ok
+Cortical-Labs__cl-api-doc	PASS	docs-only clone; no installable package (README present)
+vitalitychems-dot__tessera-grok-handoff	SKIP	handoff archive parts; no app install path
+vitalitychems-dot__Grok-ready	SKIP	historical monorepo; clone ok; full pnpm install not attempted (5min/size; not framework)
+microsoft__autogen	PASS	autogen-agentchat pypi import
+lancedb__lancedb	PASS	pypi lancedb import
+SWE-bench__SWE-bench	PASS	pypi swebench import (editable failed)

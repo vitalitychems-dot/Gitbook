@@ -1,0 +1,227 @@
+diff --git a/mesh/COLLAB.md b/mesh/COLLAB.md
+new file mode 100644
+index 0000000..31bbd40
+--- /dev/null
++++ b/mesh/COLLAB.md
+@@ -0,0 +1,27 @@
++# COLLAB: how agents report to Tessera (admin)
++
++Tessera is the only agent that merges and the only one that messages Father.
++This file cuts agent-to-Tessera traffic down to one line per result.
++
++## 1. Results: one HANDOFF line
++Append exactly one line to `mesh/HANDOFF.lines` per finished task:
++
++    HANDOFF <task-id> <PASS|FAIL> <pr-url|-> <metric>=<before>-><after> by=<agent>
++
++Example: `HANDOFF Q-007 PASS https://github.com/vitalitychems-dot/TESSERA/pull/262 forged_cookie_ok=1->0 by=cursor`
++
++- PASS means tests, gitleaks and the noreply identity are clean **and** the metric improved.
++- FAIL lines are still required, because they feed the gate pass rate.
++- No metric means FAIL: under the keep-only-better rule, an unmeasured change is never PASS.
++- Do not send Tessera a chat message as well. She reads the file.
++
++## 2. Ideas: one proposals file
++Append ideas to `mesh/PROPOSALS.jsonl` as `{"id","by","goal","idea","est_delta","est_tokens"}`.
++Tessera triages them into `mesh/queue/TASKS.json`.
++Proposals never appear in Father's bulk list, which is built only from merged, measured rows in `mesh/scoreboard/metrics.jsonl`.
++
++## 3. When to message Tessera
++Only for a blocker, or a security or hard-limit concern. Everything else goes in the files.
++
++## 4. Validate
++`python3 mesh/scoreboard/collab_check.py mesh/HANDOFF.lines mesh/PROPOSALS.jsonl`
+diff --git a/mesh/HANDOFF.lines b/mesh/HANDOFF.lines
+new file mode 100644
+index 0000000..e69de29
+diff --git a/mesh/PROPOSALS.jsonl b/mesh/PROPOSALS.jsonl
+new file mode 100644
+index 0000000..e69de29
+diff --git a/mesh/scoreboard/BULK-2026-10-13.md b/mesh/scoreboard/BULK-2026-10-13.md
+new file mode 100644
+index 0000000..2894312
+--- /dev/null
++++ b/mesh/scoreboard/BULK-2026-10-13.md
+@@ -0,0 +1,20 @@
++**Scoreboard:** 16 kept improvements today, ~77,010 tokens per merged improvement (est.), median launch-to-merge 10.4 min, gate pass 59%.
++
++1. Slow brain test sped up 93%: slow brain test B1-06 ms 1256 → 85 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/256))
++2. Another slow brain test 4x faster: slow brain test s 1.7 → 0.4 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260))
++3. Synapse memory layer finds the right linked memory far more often: recall@5 on 87 held-out relations 2 → 13 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/251))
++4. Self-improvement gate blocks every unsafe patch: unsafe self-patches accepted (of 8) 8 → 0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/251))
++5. Reads emotions much more accurately: affect macro-F1 (218 lines, nested CV) 0.23 → 0.537 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260))
++6. Her self-improvement proposals now pass all safety gates (5/5, were 0/6): self-scan proposals passing 8 gates 0.0 → 1.0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260))
++7. Fixed bug in her fallback memory search: fallback-embedding top-1 0.21 → 0.73 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/263))
++8. Memory lookup about 33% faster: context predict p50 ms 4.9 → 3.3 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265))
++9. Learns from each conversation as it happens: recall@5 after streaming learning 12 → 16 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265))
++10. 8 free no-login data sources verified: live-data sources with verified terms 0 → 8 ([PR](https://github.com/vitalitychems-dot/Gitbook/pull/59))
++11. First repo record with license and exact version: REA records with license+commit SHA 0 → 1 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/261))
++12. Better at reading what the person wants: intent accuracy (218 real lines) 0.74 → 0.86 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/256))
++13. Context ranker pulls the right memory slightly more often: recall@5 on 87 held-out relations 13 → 15 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265))
++14. TESSERA agents can see the shared task list: queued tasks visible to TESSERA agents 0 → 7 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/264))
++15. GitAI fake logins now rejected: forged spectator cookie accepted (HTTP 200=1) 1 → 0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/262))
++16. GitMesh rename finished: docs with stale GitbookAI name 5 → 0 ([PR](https://github.com/vitalitychems-dot/Gitbook/pull/57))
++
++Reply yes to keep all, or send numbers to undo.
+diff --git a/mesh/scoreboard/README.md b/mesh/scoreboard/README.md
+new file mode 100644
+index 0000000..75e75b7
+--- /dev/null
++++ b/mesh/scoreboard/README.md
+@@ -0,0 +1,11 @@
++# mesh/scoreboard
++
++- `metrics.jsonl`: one row per merged, measured change (before/after, PR). Seeded from the 2026-10-13 results: brain r1-r4, TESSERA #251-#265, Gitbook #57 and #59. #55 and #58 are left out because they have no measured delta.
++- `agents.jsonl`: real cloud-agent launch-to-merge times. Launch is the agent's first tool call and merge is gh `mergedAt`. Tokens are estimated as transcript chars/4, which is a lower bound.
++- `velocity.py`: kept improvements per day, mean % gain, gate pass rate, launch-to-merge time, and the headline **tokens per merged improvement**.
++- `rank.py`: Father's bulk list. impact = goal weight × relative gain (capped at 100%) / token cost. Weights are tokens 0.40, speed 0.30, accuracy 0.20, and other goals 0.10. Only merged, measured gains are listed.
++- `collab_check.py`: validates the HANDOFF and PROPOSALS lines described in `mesh/COLLAB.md`.
++
++## Messages per merged item
++Before (Tessera chat log, 2026-10-13, 07:55-09:05 UTC): about 19 messages for 10 merged PRs, which is about **1.9 per item**. That was 16 Tessera→Father messages and 3 agent→Tessera messages from Moderator, Akhenaten and Einstein.
++After (by design): 0 agent chat messages (1 HANDOFF line each) plus 1 bulk list per batch, so a 10-item batch is about **0.1 per item**. This is a design target that still needs to be measured.
+diff --git a/mesh/scoreboard/VELOCITY-2026-10-13.json b/mesh/scoreboard/VELOCITY-2026-10-13.json
+new file mode 100644
+index 0000000..63733cd
+--- /dev/null
++++ b/mesh/scoreboard/VELOCITY-2026-10-13.json
+@@ -0,0 +1,10 @@
++{
++ "kept_improvements": 16,
++ "kept_per_day": 16.0,
++ "merged_prs": 10,
++ "mean_pct_gain": 118.6,
++ "gate_pass_rate": 0.594,
++ "launch_to_merge_min_median": 10.4,
++ "launch_to_merge_min_max": 11.6,
++ "tokens_per_merged_improvement_est": 77010
++}
+diff --git a/mesh/scoreboard/agents.jsonl b/mesh/scoreboard/agents.jsonl
+new file mode 100644
+index 0000000..d8e8d51
+--- /dev/null
++++ b/mesh/scoreboard/agents.jsonl
+@@ -0,0 +1,4 @@
++{"agent": "bc-ae89f0a9", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/262", "launched": "2026-10-13T07:52:45Z", "merged": "2026-10-13T08:04:18Z", "tokens_est": 76087}
++{"agent": "bc-c39255ef", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/264", "launched": "2026-10-13T08:51:28Z", "merged": "2026-10-13T08:56:29Z", "tokens_est": 32914}
++{"agent": "bc-9edda2cd", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/59", "launched": "2026-10-13T08:51:32Z", "merged": "2026-10-13T09:00:27Z", "tokens_est": 66098}
++{"agent": "bc-093f8a2a", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/58", "launched": "2026-10-13T08:51:32Z", "merged": "2026-10-13T09:01:56Z", "tokens_est": 55932}
+diff --git a/mesh/scoreboard/collab_check.py b/mesh/scoreboard/collab_check.py
+new file mode 100644
+index 0000000..ad09710
+--- /dev/null
++++ b/mesh/scoreboard/collab_check.py
+@@ -0,0 +1,15 @@
++#!/usr/bin/env python3
++import re,sys,json
++H=re.compile(r"^HANDOFF [A-Za-z0-9_.-]+ (PASS|FAIL) (https://github\.com/\S+/pull/\d+|-) [\w.@%-]+=[-\d.]+->[-\d.]+ by=\S+$")
++def check_handoff(l): return bool(H.match(l.strip()))
++def check_prop(l):
++    try: d=json.loads(l)
++    except Exception: return False
++    return {"id","by","goal","idea"}<=d.keys()
++if __name__=="__main__":
++    bad=0
++    for p in sys.argv[1:]:
++        f=check_prop if p.endswith(".jsonl") else check_handoff
++        for i,l in enumerate(open(p),1):
++            if l.strip() and not f(l): print(f"{p}:{i}: bad line");bad+=1
++    sys.exit(1 if bad else 0)
+diff --git a/mesh/scoreboard/metrics.jsonl b/mesh/scoreboard/metrics.jsonl
+new file mode 100644
+index 0000000..13de922
+--- /dev/null
++++ b/mesh/scoreboard/metrics.jsonl
+@@ -0,0 +1,16 @@
++{"id": "B1-recall", "date": "2026-10-13", "metric": "recall@5 on 87 held-out relations", "before": 2, "after": 13, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/251", "desc": "Synapse memory layer finds the right linked memory far more often"}
++{"id": "B1-gate", "date": "2026-10-13", "metric": "unsafe self-patches accepted (of 8)", "before": 8, "after": 0, "better": "lo", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/251", "desc": "Self-improvement gate blocks every unsafe patch"}
++{"id": "B2-intent", "date": "2026-10-13", "metric": "intent accuracy (218 real lines)", "before": 0.74, "after": 0.86, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/256", "desc": "Better at reading what the person wants"}
++{"id": "B2-test", "date": "2026-10-13", "metric": "slow brain test B1-06 ms", "before": 1256, "after": 85, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/256", "desc": "Slow brain test sped up 93%"}
++{"id": "B3-affect", "date": "2026-10-13", "metric": "affect macro-F1 (218 lines, nested CV)", "before": 0.23, "after": 0.537, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Reads emotions much more accurately"}
++{"id": "B3-gates", "date": "2026-10-13", "metric": "self-scan proposals passing 8 gates", "before": 0.0, "after": 1.0, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Her self-improvement proposals now pass all safety gates (5/5, were 0/6)"}
++{"id": "B3-test", "date": "2026-10-13", "metric": "slow brain test s", "before": 1.7, "after": 0.4, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Another slow brain test 4x faster"}
++{"id": "E-fallback", "date": "2026-10-13", "metric": "fallback-embedding top-1", "before": 0.21, "after": 0.73, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/263", "desc": "Fixed bug in her fallback memory search"}
++{"id": "B4-recall", "date": "2026-10-13", "metric": "recall@5 on 87 held-out relations", "before": 13, "after": 15, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Context ranker pulls the right memory slightly more often"}
++{"id": "B4-latency", "date": "2026-10-13", "metric": "context predict p50 ms", "before": 4.9, "after": 3.3, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Memory lookup about 33% faster"}
++{"id": "B4-online", "date": "2026-10-13", "metric": "recall@5 after streaming learning", "before": 12, "after": 16, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Learns from each conversation as it happens"}
++{"id": "Q007-forge", "date": "2026-10-13", "metric": "forged spectator cookie accepted (HTTP 200=1)", "before": 1, "after": 0, "better": "lo", "goal": "gitai", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/262", "desc": "GitAI fake logins now rejected"}
++{"id": "Q004-rea", "date": "2026-10-13", "metric": "REA records with license+commit SHA", "before": 0, "after": 1, "better": "hi", "goal": "sovereign", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/261", "desc": "First repo record with license and exact version"}
++{"id": "TM-tasks", "date": "2026-10-13", "metric": "queued tasks visible to TESSERA agents", "before": 0, "after": 7, "better": "hi", "goal": "mesh", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/264", "desc": "TESSERA agents can see the shared task list"}
++{"id": "Q003-names", "date": "2026-10-13", "metric": "docs with stale GitbookAI name", "before": 5, "after": 0, "better": "lo", "goal": "gitai", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/57", "desc": "GitMesh rename finished"}
++{"id": "SH-terms", "date": "2026-10-13", "metric": "live-data sources with verified terms", "before": 0, "after": 8, "better": "hi", "goal": "sovereign", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/59", "desc": "8 free no-login data sources verified"}
+diff --git a/mesh/scoreboard/rank.py b/mesh/scoreboard/rank.py
+new file mode 100644
+index 0000000..821cc88
+--- /dev/null
++++ b/mesh/scoreboard/rank.py
+@@ -0,0 +1,18 @@
++#!/usr/bin/env python3
++"""Father's bulk list. ONLY built+tested+merged items with measured before/after (metrics.jsonl).
++impact = goal_weight * relative_gain(capped at 100% so goal weights dominate) / cost. Father 4:02-4:03 AM: token efficiency + speed first, then accuracy."""
++import json,os,sys
++sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
++from velocity import L,gain,stats
++W={"tokens":0.40,"speed":0.30,"accuracy":0.20,"sovereign":0.04,"brain":0.03,"gitai":0.02,"mesh":0.01}
++def rank():
++    M=[m for m in L("metrics.jsonl") if gain(m)>0 and m.get("pr")]
++    cost={a["pr"]:max(a["tokens_est"]/1e5,0.1) for a in L("agents.jsonl")}
++    for m in M: m["impact"]=W.get(m["goal"],0.01)*min(gain(m),1.0)/cost.get(m["pr"],1.0)
++    return sorted(M,key=lambda m:-m["impact"])
++def md():
++    s=stats({"kept":19,"tried":32});o=["**Scoreboard:** %d kept improvements today, ~%s tokens per merged improvement (est.), median launch-to-merge %.1f min, gate pass %.0f%%.\n"%(s["kept_improvements"],format(s["tokens_per_merged_improvement_est"],","),s["launch_to_merge_min_median"],100*s["gate_pass_rate"])]
++    for i,m in enumerate(rank(),1):
++        o.append(f"{i}. {m['desc']}: {m['metric']} {m['before']} → {m['after']} ([PR]({m['pr']}))")
++    o.append("\nReply yes to keep all, or send numbers to undo.");return "\n".join(o)
++if __name__=="__main__": print(md())
+diff --git a/mesh/scoreboard/test_scoreboard.py b/mesh/scoreboard/test_scoreboard.py
+new file mode 100644
+index 0000000..b4d5dd5
+--- /dev/null
++++ b/mesh/scoreboard/test_scoreboard.py
+@@ -0,0 +1,14 @@
++import rank,velocity
++def test_only_measured_gains():
++    r=rank.rank(); assert r and all(velocity.gain(m)>0 and m["pr"] for m in r)
++def test_speed_outranks_equal_accuracy():
++    assert rank.W["tokens"]>rank.W["speed"]>rank.W["accuracy"]>max(v for k,v in rank.W.items() if k not in("tokens","speed","accuracy"))
++def test_sorted():
++    r=rank.rank(); assert all(a["impact"]>=b["impact"] for a,b in zip(r,r[1:]))
++def test_velocity_keys():
++    s=velocity.stats({"kept":19,"tried":32}); assert s["tokens_per_merged_improvement_est"]>0 and 0<s["gate_pass_rate"]<=1
++import collab_check as c
++def test_handoff():
++    assert c.check_handoff("HANDOFF Q-007 PASS https://github.com/vitalitychems-dot/TESSERA/pull/262 forged_cookie_ok=1->0 by=cursor")
++    assert not c.check_handoff("HANDOFF Q-007 PASS https://x/pull/1 by=cursor")
++    assert c.check_prop('{"id":"P1","by":"rick","goal":"speed","idea":"x"}') and not c.check_prop('{"id":1}')
+diff --git a/mesh/scoreboard/velocity.py b/mesh/scoreboard/velocity.py
+new file mode 100644
+index 0000000..bc13d35
+--- /dev/null
++++ b/mesh/scoreboard/velocity.py
+@@ -0,0 +1,26 @@
++#!/usr/bin/env python3
++"""Improvement velocity from metrics.jsonl + agents.jsonl. Optional --gh refreshes merge times via gh."""
++import json,sys,os,datetime as D
++H=os.path.dirname(os.path.abspath(__file__))
++L=lambda n:[json.loads(l) for l in open(os.path.join(H,n)) if l.strip()]
++def gain(m):
++    b,a=m["before"],m["after"]
++    if m["better"]=="hi": return (a-b)/abs(b) if b else 1.0
++    return (b-a)/abs(b) if b else 0.0
++def stats(attempted=None):
++    M=L("metrics.jsonl");A=L("agents.jsonl")
++    kept=[m for m in M if gain(m)>0];days=len({m["date"] for m in M}) or 1
++    p=lambda s:D.datetime.fromisoformat(s.replace("Z","+00:00"))
++    mins=sorted((p(a["merged"])-p(a["launched"])).total_seconds()/60 for a in A)
++    prs={m["pr"] for m in kept};tok=sum(a["tokens_est"] for a in A)
++    agent_kept=sum(1 for m in kept if m["pr"] in {a["pr"] for a in A})
++    att=attempted or {"kept":len(kept),"tried":len(kept)}
++    return {"kept_improvements":len(kept),"kept_per_day":len(kept)/days,"merged_prs":len(prs),
++     "mean_pct_gain":round(100*sum(min(gain(m),10) for m in kept)/len(kept),1),
++     "gate_pass_rate":round(att["kept"]/att["tried"],3),
++     "launch_to_merge_min_median":round(mins[len(mins)//2],1),"launch_to_merge_min_max":round(mins[-1],1),
++     "tokens_per_merged_improvement_est":round(tok/max(agent_kept,1))}
++if __name__=="__main__":
++    # Gate pass = items kept / items tried, 2026-10-13, from IDEAS-BUILD-1..4 and PR bodies:
++    # B1 3/5, B2 3/5, B3 3/5, B4 3/4, Einstein 1/7, cloud agents (Q-003,Q-004,Q-007,#264,#58,#59) 6/6 -> 19/32
++    print(json.dumps(stats({"kept":19,"tried":32}),indent=1))

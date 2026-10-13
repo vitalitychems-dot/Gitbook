@@ -1,0 +1,7 @@
+34285eff247dc1e7519e30eb769fcf3a5891a0879170ee2a75cb777901d7ca83  GB-029/GB-029-rev3.4565152.diff
+4980e6affe22985ffdb7540c57581f8239f96c9fafa4df0443fe73d6ea38b3d0  GB-029/GB-029-rev2-to-rev3.interdiff
+# SUPERSEDED by rev 3 (Tessera ruling 17:04 CT); kept, not deleted:
+dbfc0ad4a5d26a74d4169be50f8e4af921b982584d05bf6efd92b9a9d80a7c37  GB-029/GB-029-rev2.4565152.diff
+947a345a4edb4365a9d90403932ad6bc682e598d7316f6e8cde7fafc34e76180  GB-029/GB-029-rev1-to-rev2.interdiff
+# SUPERSEDED by rev 2 (Tessera ruling 17:03 CT); kept, not deleted:
+67840272e42f5f17c8da41cfd444e70ff4f02208e2bc643ecbecca24e43b67de  GB-029/GB-029.4565152.diff

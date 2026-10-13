@@ -1,0 +1,60 @@
+---
+pid: 403059
+cwd: "/workspace/evals"
+command: "RESULT_DIR=/workspace/evals/results/20261005-174126\nexport PATH=\"/workspace/ollama-install/bin:$PATH\"\nexport OLLAMA_HOST=\"127.0.0.1:11434\"\ncd /workspace/evals\npython3 -u harness/run_humaneval.py --n 15 --seed 42 --out \"$RESULT_DIR/humaneval.json\" > \"$RESULT_DIR/humaneval.log\" 2>&1\necho HUMANEVAL_EXIT=$?\ntail -40 \"$RESULT_DIR/humaneval.log\"\npython3 -c \"import json; print(json.load(open('$RESULT_DIR/humaneval.json'))['summary'])\" 2>/dev/null || true\ndate\nfree -h | head -2"
+title: "Run HumanEval first-15 subset"
+status: succeeded
+started_at: 2026-10-05T23:01:22.710Z
+running_for_ms: 89783    
+---
+HUMANEVAL_EXIT=0
+[5/15] HumanEval/4 ok=False tok/s=16.270028235278165
+[6/15] HumanEval/5 ok=False tok/s=16.522420038863093
+[7/15] HumanEval/6 ok=False tok/s=15.73585057350738
+[8/15] HumanEval/7 ok=False tok/s=17.42397429963791
+[9/15] HumanEval/8 ok=False tok/s=14.056420166216014
+[10/15] HumanEval/9 ok=False tok/s=12.769453200845398
+[11/15] HumanEval/10 ok=True tok/s=9.052191988289964
+[12/15] HumanEval/11 ok=False tok/s=11.646944991769978
+[13/15] HumanEval/12 ok=False tok/s=5.443916676537676
+[14/15] HumanEval/13 ok=True tok/s=5.418494311896892
+[15/15] HumanEval/14 ok=False tok/s=9.738623926710554
+{
+  "benchmark": "HumanEval",
+  "split": "official",
+  "n": 15,
+  "seed_note": "first N problems in official HumanEval.jsonl order (not shuffled); seed=42 unused for selection",
+  "seed": 42,
+  "item_ids": [
+    "HumanEval/0",
+    "HumanEval/1",
+    "HumanEval/2",
+    "HumanEval/3",
+    "HumanEval/4",
+    "HumanEval/5",
+    "HumanEval/6",
+    "HumanEval/7",
+    "HumanEval/8",
+    "HumanEval/9",
+    "HumanEval/10",
+    "HumanEval/11",
+    "HumanEval/12",
+    "HumanEval/13",
+    "HumanEval/14"
+  ],
+  "correct": 3,
+  "pass_at_1": 0.2,
+  "model": "qwen2.5:3b-instruct",
+  "wall_s_total": 89.63358902931213,
+  "grading": "execute HumanEval check() in sandboxed subprocess timeout=5.0s"
+}
+{'benchmark': 'HumanEval', 'split': 'official', 'n': 15, 'seed_note': 'first N problems in official HumanEval.jsonl order (not shuffled); seed=42 unused for selection', 'seed': 42, 'item_ids': ['HumanEval/0', 'HumanEval/1', 'HumanEval/2', 'HumanEval/3', 'HumanEval/4', 'HumanEval/5', 'HumanEval/6', 'HumanEval/7', 'HumanEval/8', 'HumanEval/9', 'HumanEval/10', 'HumanEval/11', 'HumanEval/12', 'HumanEval/13', 'HumanEval/14'], 'correct': 3, 'pass_at_1': 0.2, 'model': 'qwen2.5:3b-instruct', 'wall_s_total': 89.63358902931213, 'grading': 'execute HumanEval check() in sandboxed subprocess timeout=5.0s'}
+Mon Oct  5 18:02:52 CDT 2026
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi        10Gi       290Mi        97Mi       5.2Gi       5.1Gi
+
+---
+exit_code: 0
+elapsed_ms: 89783
+ended_at: 2026-10-05T23:02:52.493Z
+---

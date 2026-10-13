@@ -1,0 +1,1580 @@
+commit d0ee5a7c3d16d116330517038f473ceb96010856
+Author: Tessera <332565808+vitalitychems-dot@users.noreply.github.com>
+Date:   Tue Oct 13 04:08:46 2026 -0500
+
+    Turn qlab AQFT sweeps into pytest invariant checks (#61)
+    
+    test_aqft.py and test_aqft_fix.py passed whenever they finished. They now
+    assert unitarity, monotone ideal fidelity and gate counts, fixed-seed
+    determinism, and the aqft5.json reference, and they lock those outputs in
+    baselines/aqft.json. aqft.py itself is unchanged.
+    
+    Co-authored-by: Tessera <vitalitychems-dot@users.noreply.github.com>
+
+diff --git a/tools/qlab/baselines/__init__.py b/tools/qlab/baselines/__init__.py
+new file mode 100644
+index 0000000..c9f1c77
+--- /dev/null
++++ b/tools/qlab/baselines/__init__.py
+@@ -0,0 +1 @@
++"""Frozen numerical baselines for qlab. See measure_aqft.py."""
+diff --git a/tools/qlab/baselines/aqft.json b/tools/qlab/baselines/aqft.json
+new file mode 100644
+index 0000000..3c876a9
+--- /dev/null
++++ b/tools/qlab/baselines/aqft.json
+@@ -0,0 +1,862 @@
++{
++  "schema": "qlab-aqft-baseline/v1",
++  "produced_by": {
++    "date": "2026-10-13",
++    "command": "OMP_NUM_THREADS=1 python3 tools/qlab/baselines/measure_aqft.py",
++    "cwd": "repository root (the script locates tools/qlab itself)",
++    "script": "tools/qlab/baselines/measure_aqft.py",
++    "numpy": "1.26.4",
++    "threads": "OMP_NUM_THREADS=1",
++    "noise": {
++      "p1": 0.001,
++      "p2": 0.01,
++      "gamma": 0.001
++    },
++    "seconds": 1.1,
++    "notes": "Frozen outputs of the current aqft.py, using the seeds of the old assertion-free sweeps. ideal_seed5 follows the old test_aqft.py draw for n=3..6 (8 basis inputs, np.random.default_rng(5)). noisy_seed11 follows test_aqft_avg.py and the RESULTS.md section 7 4-input column for n=3..5 (rng 11; p1=1e-3, p2=1e-2, gamma=1e-3; fidelity of lower(aqft) against the exact QFT state). pe5_seed55 follows the old test_aqft_fix.py (rng 55, 10 phases, t=5) and adds the m=2 arm from the old sweep. aqft5 expands examples/aqft5.json with the drop rule controlled-phase angle < 2*pi/2^m. unitarity records max |U dagger U - I|, statevector norm error, inverse(aqft) round-trip error, and aqft(n,n)-qft(n) for n=2..4. These rows match RESULTS.md section 7 and 7b to the printed digits (ideal n=4 m=3 0.990485, n=5 m=3 0.959550, n=6 m=3 0.906327; noisy n=4 m=3 0.7609 vs exact 0.7578, n=5 m=3 0.7012 vs 0.6686; PE t=5 exact ideal 0.7860+/-0.1656 noisy 0.4403+/-0.0888, m=3 ideal 0.7488+/-0.1729 noisy 0.4581+/-0.1028). The original n<=10 sweep (484 s) and the n=9,10 fix rerun (part of 327 s) are not recomputed; those published rows stay in RESULTS.md."
++  },
++  "tolerances": {
++    "fidelity": 1e-12,
++    "probability": 1e-09,
++    "unitary": 1e-09
++  },
++  "ideal_seed5": {
++    "3": {
++      "inputs": [
++        5,
++        6,
++        0,
++        6,
++        3,
++        4,
++        5,
++        2
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.5533470869120791,
++          "min": 0.07322330470336307,
++          "fidelities": [
++            0.4267766952966363,
++            0.4999999999999996,
++            0.9999999999999996,
++            0.4999999999999996,
++            0.07322330470336307,
++            0.9999999999999996,
++            0.4267766952966363,
++            0.4999999999999996
++          ],
++          "gates": 4,
++          "cp": 0,
++          "twoq": 3
++        },
++        {
++          "m": 2,
++          "mean": 0.945082521472477,
++          "min": 0.8535533905932725,
++          "fidelities": [
++            0.8535533905932727,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.8535533905932725,
++            0.9999999999999996,
++            0.8535533905932727,
++            0.9999999999999996
++          ],
++          "gates": 6,
++          "cp": 2,
++          "twoq": 7
++        },
++        {
++          "m": 3,
++          "mean": 0.9999999999999992,
++          "min": 0.9999999999999984,
++          "fidelities": [
++            0.9999999999999989,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.9999999999999984,
++            0.9999999999999996,
++            0.9999999999999989,
++            0.9999999999999996
++          ],
++          "gates": 7,
++          "cp": 3,
++          "twoq": 9
++        }
++      ]
++    },
++    "4": {
++      "inputs": [
++        15,
++        0,
++        4,
++        6,
++        9,
++        6,
++        2,
++        0
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.43581795941411333,
++          "min": 0.0027868960925442453,
++          "fidelities": [
++            0.0027868960925442453,
++            0.9999999999999991,
++            0.4999999999999993,
++            0.07322330470336301,
++            0.41053347451700245,
++            0.07322330470336301,
++            0.4267766952966363,
++            0.9999999999999991
++          ],
++          "gates": 6,
++          "cp": 0,
++          "twoq": 6
++        },
++        {
++          "m": 2,
++          "mean": 0.8714780233400006,
++          "min": 0.5900970659061832,
++          "fidelities": [
++            0.5900970659061832,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.8535533905932731,
++            0.8210669490340047,
++            0.8535533905932731,
++            0.8535533905932731,
++            0.9999999999999991
++          ],
++          "gates": 9,
++          "cp": 3,
++          "twoq": 12
++        },
++        {
++          "m": 3,
++          "mean": 0.9904849415639099,
++          "min": 0.9619397662556423,
++          "fidelities": [
++            0.9619397662556423,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9619397662556423,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991
++          ],
++          "gates": 11,
++          "cp": 5,
++          "twoq": 16
++        },
++        {
++          "m": 4,
++          "mean": 0.999999999999999,
++          "min": 0.9999999999999982,
++          "fidelities": [
++            0.9999999999999982,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991,
++            0.9999999999999991
++          ],
++          "gates": 12,
++          "cp": 6,
++          "twoq": 18
++        }
++      ]
++    },
++    "5": {
++      "inputs": [
++        0,
++        1,
++        4,
++        31,
++        6,
++        20,
++        24,
++        7
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.3515571398046627,
++          "min": 2.6774713481785054e-05,
++          "fidelities": [
++            0.9999999999999996,
++            0.40658933171803613,
++            0.42677669529663603,
++            2.6774713481785054e-05,
++            0.050622325138180414,
++            0.42677669529663603,
++            0.4999999999999996,
++            0.0016652962743320921
++          ],
++          "gates": 7,
++          "cp": 0,
++          "twoq": 6
++        },
++        {
++          "m": 2,
++          "mean": 0.7269502253804239,
++          "min": 0.3526096462572963,
++          "fidelities": [
++            0.9999999999999996,
++            0.8131786634360723,
++            0.8535533905932723,
++            0.3526096462572963,
++            0.5900970659061828,
++            0.8535533905932723,
++            0.9999999999999996,
++            0.3526096462572964
++          ],
++          "gates": 11,
++          "cp": 4,
++          "twoq": 14
++        },
++        {
++          "m": 3,
++          "mean": 0.959550160229389,
++          "min": 0.8808817253813106,
++          "fidelities": [
++            0.9999999999999996,
++            0.9526980648168499,
++            0.9999999999999996,
++            0.8808817253813106,
++            0.9619397662556423,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.8808817253813108
++          ],
++          "gates": 14,
++          "cp": 7,
++          "twoq": 20
++        },
++        {
++          "m": 4,
++          "mean": 0.9963972400756047,
++          "min": 0.9903926402016129,
++          "fidelities": [
++            0.9999999999999996,
++            0.9903926402016133,
++            0.9999999999999996,
++            0.9903926402016129,
++            0.9999999999999993,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.9903926402016135
++          ],
++          "gates": 16,
++          "cp": 9,
++          "twoq": 24
++        },
++        {
++          "m": 5,
++          "mean": 0.9999999999999993,
++          "min": 0.9999999999999987,
++          "fidelities": [
++            0.9999999999999996,
++            0.9999999999999993,
++            0.9999999999999996,
++            0.9999999999999987,
++            0.9999999999999993,
++            0.9999999999999996,
++            0.9999999999999996,
++            0.9999999999999993
++          ],
++          "gates": 17,
++          "cp": 10,
++          "twoq": 26
++        }
++      ]
++    },
++    "6": {
++      "inputs": [
++        18,
++        27,
++        16,
++        62,
++        11,
++        57,
++        51,
++        54
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.09007984604905647,
++          "min": 2.677471348178512e-05,
++          "fidelities": [
++            0.16522118338754002,
++            0.0006641358608868738,
++            0.4999999999999998,
++            2.677471348178512e-05,
++            0.008275896020779057,
++            0.018751740756004897,
++            0.016450003571175684,
++            0.01124903408258373
++          ],
++          "gates": 9,
++          "cp": 0,
++          "twoq": 9
++        },
++        {
++          "m": 2,
++          "mean": 0.5868160148277757,
++          "min": 0.3526096462572961,
++          "fidelities": [
++            0.8131786634360723,
++            0.39755110939061494,
++            0.9999999999999998,
++            0.3526096462572961,
++            0.39755110939061483,
++            0.6645268731725431,
++            0.528738294717031,
++            0.5403724222580331
++          ],
++          "gates": 14,
++          "cp": 5,
++          "twoq": 19
++        },
++        {
++          "m": 3,
++          "mean": 0.9063269123397425,
++          "min": 0.8619164897040343,
++          "fidelities": [
++            0.9526980648168495,
++            0.8619164897040343,
++            0.9999999999999998,
++            0.8808817253813099,
++            0.8619164897040343,
++            0.9504043140263682,
++            0.8619164897040343,
++            0.8808817253813099
++          ],
++          "gates": 18,
++          "cp": 9,
++          "twoq": 27
++        },
++        {
++          "m": 4,
++          "mean": 0.9832993767385665,
++          "min": 0.9690696529114277,
++          "fidelities": [
++            0.9903926402016149,
++            0.9690696529114277,
++            0.9999999999999998,
++            0.9903926402016147,
++            0.9690696529114277,
++            0.9880081345694051,
++            0.9690696529114279,
++            0.9903926402016149
++          ],
++          "gates": 21,
++          "cp": 12,
++          "twoq": 33
++        },
++        {
++          "m": 5,
++          "mean": 0.9987961816680474,
++          "min": 0.9975923633360956,
++          "fidelities": [
++            0.9999999999999993,
++            0.9975923633360956,
++            0.9999999999999998,
++            0.9999999999999991,
++            0.9975923633360956,
++            0.9975923633360956,
++            0.9975923633360956,
++            0.9999999999999991
++          ],
++          "gates": 23,
++          "cp": 14,
++          "twoq": 37
++        },
++        {
++          "m": 6,
++          "mean": 0.9999999999999993,
++          "min": 0.9999999999999991,
++          "fidelities": [
++            0.9999999999999993,
++            0.9999999999999993,
++            0.9999999999999998,
++            0.9999999999999991,
++            0.9999999999999993,
++            0.9999999999999991,
++            0.9999999999999993,
++            0.9999999999999991
++          ],
++          "gates": 24,
++          "cp": 15,
++          "twoq": 39
++        }
++      ]
++    }
++  },
++  "noisy_seed11": {
++    "3": {
++      "inputs": [
++        1,
++        1,
++        6,
++        3
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.3453389348832305,
++          "std": 0.15840077692547727,
++          "fidelities": [
++            0.40975319219737094,
++            0.40975319219737094,
++            0.48557857851047204,
++            0.07627077662770791
++          ]
++        },
++        {
++          "m": 2,
++          "mean": 0.8006052480307657,
++          "std": 0.053602593029026056,
++          "fidelities": [
++            0.7719692943889792,
++            0.7719692943889792,
++            0.8933227144271814,
++            0.7651596889179232
++          ]
++        },
++        {
++          "m": 3,
++          "mean": 0.8676309589381569,
++          "std": 0.0011033072135948764,
++          "fidelities": [
++            0.8684158989439799,
++            0.8684158989439799,
++            0.867942518813619,
++            0.8657495190510488
++          ]
++        }
++      ]
++    },
++    "4": {
++      "inputs": [
++        9,
++        9,
++        11,
++        0
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.43504223345003,
++          "std": 0.3089801495349613,
++          "fidelities": [
++            0.3839630022133558,
++            0.3839630022133558,
++            0.05516985500664415,
++            0.9170730743667642
++          ]
++        },
++        {
++          "m": 2,
++          "mean": 0.6791903821517008,
++          "std": 0.1215607078151558,
++          "fidelities": [
++            0.6892978836342648,
++            0.6892978836342648,
++            0.49776537369275303,
++            0.8404003876455205
++          ]
++        },
++        {
++          "m": 3,
++          "mean": 0.7608715377743622,
++          "std": 0.01917348689780826,
++          "fidelities": [
++            0.7526401387370022,
++            0.7526401387370022,
++            0.7446134831751801,
++            0.7935923904482644
++          ]
++        },
++        {
++          "m": 4,
++          "mean": 0.7577930880358152,
++          "std": 0.008537682687841986,
++          "fidelities": [
++            0.7560119571724143,
++            0.7560119571724143,
++            0.7477657813628003,
++            0.771382656435632
++          ]
++        }
++      ]
++    },
++    "5": {
++      "inputs": [
++        15,
++        4,
++        12,
++        29
++      ],
++      "by_m": [
++        {
++          "m": 1,
++          "mean": 0.12121689660764107,
++          "std": 0.16219359543564288,
++          "fidelities": [
++            0.00010965930540608673,
++            0.39793474521465544,
++            0.0740709105935443,
++            0.012752271316958438
++          ]
++        },
++        {
++          "m": 2,
++          "mean": 0.5465602625985455,
++          "std": 0.16322727821092883,
++          "fidelities": [
++            0.2925204046959832,
++            0.6927884279613199,
++            0.6866112513197932,
++            0.5143209664170858
++          ]
++        },
++        {
++          "m": 3,
++          "mean": 0.7012276116852131,
++          "std": 0.0378494137914117,
++          "fidelities": [
++            0.6428909585301209,
++            0.7358912615175249,
++            0.7336234571252745,
++            0.6925047695679319
++          ]
++        },
++        {
++          "m": 4,
++          "mean": 0.6854094179310096,
++          "std": 0.008853406299030912,
++          "fidelities": [
++            0.6759421913553545,
++            0.6953118536567297,
++            0.6931211858577557,
++            0.6772624408541986
++          ]
++        },
++        {
++          "m": 5,
++          "mean": 0.6685777422829182,
++          "std": 0.006481628461091268,
++          "fidelities": [
++            0.6614043277514157,
++            0.6760724653467872,
++            0.6739109782868062,
++            0.6629231977466639
++          ]
++        }
++      ]
++    }
++  },
++  "pe5_seed55": {
++    "t": 5,
++    "seed": 55,
++    "nphi": 10,
++    "phis": [
++      0.8322521834549506,
++      0.8706456117163413,
++      0.21836189884262291,
++      0.23009715061195535,
++      0.49274309924545157,
++      0.7532229040143165,
++      0.7042324260133009,
++      0.9470859894336694,
++      0.06778527698056125,
++      0.4910952164069845
++    ],
++    "arms": {
++      "5": {
++        "m": 5,
++        "ideal_mean": 0.7859972413749634,
++        "ideal_std": 0.1656403186753503,
++        "noisy_mean": 0.44025846430964616,
++        "noisy_std": 0.08881015957083513,
++        "ideal": [
++          0.6271126775950179,
++          0.9377930966603825,
++          0.9994931773890885,
++          0.6351601332706673,
++          0.8348559175295391,
++          0.9655267677533566,
++          0.4640014412036002,
++          0.7265458220230308,
++          0.9094500809233053,
++          0.7600332994016463
++        ],
++        "noisy": [
++          0.35013716274190754,
++          0.519307483376071,
++          0.5390372577738036,
++          0.35119113839073973,
++          0.47773805715460993,
++          0.5402813789301326,
++          0.26803655960930284,
++          0.40959803670953937,
++          0.5095084673536406,
++          0.43774910105671455
++        ],
++        "prob_sums": [
++          0.9999999999999984,
++          0.9999999999999986,
++          0.999999999999998,
++          0.9999999999999984,
++          0.9999999999999981,
++          0.9999999999999984,
++          0.9999999999999982,
++          0.9999999999999982,
++          0.9999999999999984,
++          0.9999999999999984
++        ]
++      },
++      "3": {
++        "m": 3,
++        "ideal_mean": 0.7488291480698555,
++        "ideal_std": 0.17294318570358208,
++        "noisy_mean": 0.4580883414958885,
++        "noisy_std": 0.10275717414395201,
++        "ideal": [
++          0.580961261147038,
++          0.9377930966603825,
++          0.8819416173247301,
++          0.532016973875327,
++          0.8348559175295391,
++          0.9655267677533566,
++          0.4355533968229506,
++          0.6905427181450329,
++          0.8690664320385509,
++          0.7600332994016463
++        ],
++        "noisy": [
++          0.35511446366364846,
++          0.5644644891284327,
++          0.526824068198686,
++          0.32672362387081155,
++          0.5183177418503242,
++          0.5871350886607112,
++          0.27264511984521833,
++          0.422804988313451,
++          0.5322683373535008,
++          0.4745854940741013
++        ],
++        "prob_sums": [
++          0.9999999999999982,
++          0.9999999999999986,
++          0.9999999999999983,
++          0.9999999999999982,
++          0.9999999999999982,
++          0.9999999999999984,
++          0.9999999999999984,
++          0.9999999999999986,
++          0.9999999999999982,
++          0.9999999999999984
++        ]
++      },
++      "2": {
++        "m": 2,
++        "ideal_mean": 0.5665505602125501,
++        "ideal_std": 0.26782246141730087,
++        "noisy_mean": 0.38418365958174305,
++        "noisy_std": 0.17434557527152234,
++        "ideal": [
++          0.4279142847092808,
++          0.8095540370261031,
++          0.35572117327406366,
++          0.16929868885543314,
++          0.8348559175295391,
++          0.9655267677533566,
++          0.22974220138895274,
++          0.3913389816411333,
++          0.7215202505459921,
++          0.7600332994016463
++        ],
++        "noisy": [
++          0.2912478670088984,
++          0.5348526522600578,
++          0.24881999719458742,
++          0.12435342215437847,
++          0.5634564212788149,
++          0.6389746217891606,
++          0.16460739223409965,
++          0.2699314532978216,
++          0.4899882300009808,
++          0.515604538598631
++        ],
++        "prob_sums": [
++          0.9999999999999983,
++          0.9999999999999989,
++          0.9999999999999984,
++          0.9999999999999983,
++          0.9999999999999982,
++          0.9999999999999983,
++          0.999999999999998,
++          0.9999999999999986,
++          0.9999999999999983,
++          0.9999999999999984
++        ]
++      }
++    }
++  },
++  "aqft5": {
++    "document": {
++      "n": 5,
++      "gates": [
++        [
++          "AQFT",
++          [
++            5,
++            4
++          ]
++        ]
++      ]
++    },
++    "gates": 16,
++    "cp": 9,
++    "twoq": 24,
++    "circuit": [
++      [
++        "H",
++        [
++          4
++        ]
++      ],
++      [
++        "CP",
++        [
++          3,
++          4
++        ],
++        1.5707963267948966
++      ],
++      [
++        "CP",
++        [
++          2,
++          4
++        ],
++        0.7853981633974483
++      ],
++      [
++        "CP",
++        [
++          1,
++          4
++        ],
++        0.39269908169872414
++      ],
++      [
++        "H",
++        [
++          3
++        ]
++      ],
++      [
++        "CP",
++        [
++          2,
++          3
++        ],
++        1.5707963267948966
++      ],
++      [
++        "CP",
++        [
++          1,
++          3
++        ],
++        0.7853981633974483
++      ],
++      [
++        "CP",
++        [
++          0,
++          3
++        ],
++        0.39269908169872414
++      ],
++      [
++        "H",
++        [
++          2
++        ]
++      ],
++      [
++        "CP",
++        [
++          1,
++          2
++        ],
++        1.5707963267948966
++      ],
++      [
++        "CP",
++        [
++          0,
++          2
++        ],
++        0.7853981633974483
++      ],
++      [
++        "H",
++        [
++          1
++        ]
++      ],
++      [
++        "CP",
++        [
++          0,
++          1
++        ],
++        1.5707963267948966
++      ],
++      [
++        "H",
++        [
++          0
++        ]
++      ],
++      [
++        "SWAP",
++        [
++          0,
++          4
++        ]
++      ],
++      [
++        "SWAP",
++        [
++          1,
++          3
++        ]
++      ]
++    ],
++    "zero_fidelity": 0.9999999999999996,
++    "seed5_mean": 0.9963972400756047,
++    "seed5_min": 0.9903926402016129
++  },
++  "unitarity": {
++    "n_max": 4,
++    "max_abs_UtU_minus_I": 8.881784197001252e-16,
++    "max_norm_err": 4.440892098500626e-16,
++    "max_roundtrip_err": 7.771561172376096e-16,
++    "max_aqft_n_minus_qft": 0.0
++  }
++}
+diff --git a/tools/qlab/baselines/measure_aqft.py b/tools/qlab/baselines/measure_aqft.py
+new file mode 100644
+index 0000000..386a2e9
+--- /dev/null
++++ b/tools/qlab/baselines/measure_aqft.py
+@@ -0,0 +1,267 @@
++"""Reproduce tools/qlab/baselines/aqft.json from the current aqft.py.
++
++Run from anywhere:
++
++  OMP_NUM_THREADS=1 python3 tools/qlab/baselines/measure_aqft.py
++
++The protocol is the assertion-free sweeps this baseline replaces, cut to the
++sizes that finish in well under a minute:
++
++- ideal fidelity: seed 5, 8 basis inputs, n=3..6, m=1..n
++  (the start of the old test_aqft.py sweep)
++- noisy fidelity: seed 11, 4 basis inputs, n=3..5, m=1..n,
++  noise p1=1e-3, p2=1e-2, gamma=1e-3 on lower(aqft)
++  (the start of test_aqft_avg.py / the 4-input column in RESULTS.md §7)
++- phase estimation: seed 55, 10 phases, t=5, m in {5, 3, 2}
++  (test_aqft_fix.py, plus the m=2 arm from test_aqft.py)
++- examples/aqft5.json macro AQFT[5, 4], gate list and |0> overlap
++- unitarity / norm / inverse round-trip for n=2..4
++
++The n=7..10 noisy rows in RESULTS.md §7 and §7b are not recomputed
++(the original scripts took 484 s and 327 s).
++"""
++import json, os, sys, time
++import numpy as np
++
++ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
++if ROOT not in sys.path:
++    sys.path.insert(0, ROOT)
++
++from qsim import SV, qft, unitary
++from aqft import aqft, inverse
++from qopt2 import lower
++import qnoise2
++
++NK = dict(p1=1e-3, p2=1e-2, gamma=1e-3)
++OUT = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'aqft.json')
++AQFT5 = os.path.join(ROOT, 'examples', 'aqft5.json')
++
++
++def spec_aqft(n, m):
++    """Oracle for aqft.py: drop CP whose angle is below 2π/2^m."""
++    thr = 2 * np.pi / 2**m - 1e-15
++    return [g for g in qft(n) if not (g[0] == 'CP' and g[2] < thr)]
++
++
++def cp_count(c):
++    return sum(g[0] == 'CP' for g in c)
++
++
++def twoq_lowered(c):
++    return sum(len(g[1]) == 2 for g in lower(c))
++
++
++def serialize(c):
++    out = []
++    for g in c:
++        row = [g[0], [int(q) for q in g[1]]]
++        if len(g) > 2:
++            row.append(float(g[2]))
++        out.append(row)
++    return out
++
++
++def ideal_fidelities(n, m, xs):
++    fids = []
++    for x in xs:
++        ref = SV(n)
++        ref.v[:] = 0
++        ref.v[int(x)] = 1
++        ref.run(qft(n))
++        got = SV(n)
++        got.v[:] = 0
++        got.v[int(x)] = 1
++        got.run(aqft(n, m))
++        fids.append(float(abs(np.vdot(ref.v, got.v)) ** 2))
++    return fids
++
++
++def ideal_sweep(n0=3, n1=6, seed=5, k=8):
++    rng = np.random.default_rng(seed)
++    rows = {}
++    for n in range(n0, n1 + 1):
++        xs = [int(x) for x in rng.integers(0, 2**n, k)]
++        by_m = []
++        for m in range(1, n + 1):
++            f = ideal_fidelities(n, m, xs)
++            c = aqft(n, m)
++            by_m.append(dict(
++                m=m,
++                mean=float(np.mean(f)),
++                min=float(np.min(f)),
++                fidelities=f,
++                gates=len(c),
++                cp=int(cp_count(c)),
++                twoq=int(twoq_lowered(c)),
++            ))
++        rows[str(n)] = dict(inputs=xs, by_m=by_m)
++    return rows
++
++
++def noisy_sweep(n0=3, n1=5, seed=11, k=4):
++    rng = np.random.default_rng(seed)
++    rows = {}
++    for n in range(n0, n1 + 1):
++        xs = [int(x) for x in rng.integers(0, 2**n, k)]
++        refs = []
++        for x in xs:
++            s = SV(n)
++            s.v[:] = 0
++            s.v[x] = 1
++            refs.append(s.run(qft(n)).v.copy())
++        by_m = []
++        for m in range(1, n + 1):
++            L = lower(aqft(n, m))
++            f = [float(np.real(p.conj() @ qnoise2.run(n, L, init=x, **NK) @ p))
++                 for x, p in zip(xs, refs)]
++            by_m.append(dict(m=m, mean=float(np.mean(f)), std=float(np.std(f)), fidelities=f))
++        rows[str(n)] = dict(inputs=xs, by_m=by_m)
++    return rows
++
++
++def phase_estimation(t=5, seed=55, nphi=10, ms=(5, 3, 2)):
++    rng = np.random.default_rng(seed)
++    phis = [float(p) for p in rng.random(nphi)]
++    arms = {}
++    for m in ms:
++        ideal, noisy, sums = [], [], []
++        for phi in phis:
++            c = ([('X', [t])]
++                 + [('H', [k]) for k in range(t)]
++                 + [('CP', [k, t], 2 * np.pi * phi * 2**k) for k in range(t)]
++                 + inverse(aqft(t, m)))
++            y = int(round(phi * 2**t)) % 2**t
++            probs = SV(t + 1).run(c).probs()
++            sums.append(float(probs.sum()))
++            ideal.append(float(probs[y + 2**t]))
++            rho = qnoise2.run(t + 1, lower(c), **NK)
++            noisy.append(float(np.real(rho[y + 2**t, y + 2**t])))
++        arms[str(m)] = dict(
++            m=m,
++            ideal_mean=float(np.mean(ideal)),
++            ideal_std=float(np.std(ideal)),
++            noisy_mean=float(np.mean(noisy)),
++            noisy_std=float(np.std(noisy)),
++            ideal=ideal,
++            noisy=noisy,
++            prob_sums=sums,
++        )
++    return dict(t=t, seed=seed, nphi=nphi, phis=phis, arms=arms)
++
++
++def aqft5_record():
++    doc = json.load(open(AQFT5))
++    c = aqft(5, 4)
++    fids = ideal_fidelities(5, 4, [0])
++    return dict(
++        document=doc,
++        gates=len(c),
++        cp=int(cp_count(c)),
++        twoq=int(twoq_lowered(c)),
++        circuit=serialize(c),
++        zero_fidelity=fids[0],
++    )
++
++
++def unitarity_report(n_max=4):
++    rng = np.random.default_rng(7)
++    max_u = 0.0
++    max_norm = 0.0
++    max_round = 0.0
++    max_qft = 0.0
++    for n in range(2, n_max + 1):
++        for m in range(1, n + 1):
++            U = unitary(n, aqft(n, m))
++            max_u = max(max_u, float(np.max(np.abs(U.conj().T @ U - np.eye(2**n)))))
++            x = rng.normal(size=2**n) + 1j * rng.normal(size=2**n)
++            x /= np.linalg.norm(x)
++            s = SV(n)
++            s.v = x.copy()
++            s.run(aqft(n, m))
++            max_norm = max(max_norm, float(abs(np.linalg.norm(s.v) - 1)))
++            for x0 in (0, 1, 2**n - 1):
++                s = SV(n)
++                s.v[:] = 0
++                s.v[x0] = 1
++                s.run(aqft(n, m))
++                s.run(inverse(aqft(n, m)))
++                phase = np.angle(s.v[x0])
++                expect = np.zeros(2**n, complex)
++                expect[x0] = 1
++                max_round = max(max_round, float(np.max(np.abs(s.v * np.exp(-1j * phase) - expect))))
++        Uq = unitary(n, qft(n))
++        Ua = unitary(n, aqft(n, n))
++        max_qft = max(max_qft, float(np.max(np.abs(Uq - Ua))))
++    return dict(
++        n_max=n_max,
++        max_abs_UtU_minus_I=max_u,
++        max_norm_err=max_norm,
++        max_roundtrip_err=max_round,
++        max_aqft_n_minus_qft=max_qft,
++    )
++
++
++def build():
++    t0 = time.time()
++    ideal = ideal_sweep()
++    noisy = noisy_sweep()
++    pe = phase_estimation()
++    ref = aqft5_record()
++    uni = unitarity_report()
++    # seed-5 mean at n=5, m=4 is the aqft5 operating point on the sweep inputs
++    seed5_m4 = next(r for r in ideal['5']['by_m'] if r['m'] == 4)
++    ref['seed5_mean'] = seed5_m4['mean']
++    ref['seed5_min'] = seed5_m4['min']
++    return dict(
++        schema='qlab-aqft-baseline/v1',
++        produced_by=dict(
++            date='2026-10-13',
++            command='OMP_NUM_THREADS=1 python3 tools/qlab/baselines/measure_aqft.py',
++            cwd='repository root (the script locates tools/qlab itself)',
++            script='tools/qlab/baselines/measure_aqft.py',
++            numpy=np.__version__,
++            threads='OMP_NUM_THREADS=1',
++            noise=NK,
++            seconds=None,
++            notes=(
++                'Frozen outputs of the current aqft.py, using the seeds of the old '
++                'assertion-free sweeps. ideal_seed5 follows the old test_aqft.py draw '
++                'for n=3..6 (8 basis inputs, np.random.default_rng(5)). '
++                'noisy_seed11 follows test_aqft_avg.py and the RESULTS.md section 7 '
++                '4-input column for n=3..5 (rng 11; p1=1e-3, p2=1e-2, gamma=1e-3; '
++                'fidelity of lower(aqft) against the exact QFT state). '
++                'pe5_seed55 follows the old test_aqft_fix.py (rng 55, 10 phases, t=5) '
++                'and adds the m=2 arm from the old sweep. '
++                'aqft5 expands examples/aqft5.json with the drop rule '
++                'controlled-phase angle < 2*pi/2^m. '
++                'unitarity records max |U dagger U - I|, statevector norm error, '
++                'inverse(aqft) round-trip error, and aqft(n,n)-qft(n) for n=2..4. '
++                'These rows match RESULTS.md section 7 and 7b to the printed digits '
++                '(ideal n=4 m=3 0.990485, n=5 m=3 0.959550, n=6 m=3 0.906327; '
++                'noisy n=4 m=3 0.7609 vs exact 0.7578, n=5 m=3 0.7012 vs 0.6686; '
++                'PE t=5 exact ideal 0.7860+/-0.1656 noisy 0.4403+/-0.0888, '
++                'm=3 ideal 0.7488+/-0.1729 noisy 0.4581+/-0.1028). '
++                'The original n<=10 sweep (484 s) and the n=9,10 fix rerun (part of 327 s) '
++                'are not recomputed; those published rows stay in RESULTS.md.'
++            ),
++        ),
++        tolerances=dict(fidelity=1e-12, probability=1e-9, unitary=1e-9),
++        ideal_seed5=ideal,
++        noisy_seed11=noisy,
++        pe5_seed55=pe,
++        aqft5=ref,
++        unitarity=uni,
++    ), time.time() - t0
++
++
++def main():
++    doc, seconds = build()
++    doc['produced_by']['seconds'] = round(seconds, 3)
++    with open(OUT, 'w') as f:
++        json.dump(doc, f, indent=2, ensure_ascii=False)
++        f.write('\n')
++    print(f'wrote {OUT} in {seconds:.2f}s')
++
++
++if __name__ == '__main__':
++    main()
+diff --git a/tools/qlab/qlab/__main__.py b/tools/qlab/qlab/__main__.py
+index ef2795e..b9b3860 100644
+--- a/tools/qlab/qlab/__main__.py
++++ b/tools/qlab/qlab/__main__.py
+@@ -42,7 +42,7 @@ def optimize(args):
+           f"{key} naive {nv[key]:.4f} -> best layout {best['layout']} {best[key]:.4f} (swaps {nv['swaps']}->{best['swaps']})",file=sys.stderr)
+ def test(args):
+     here=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+-    tests=['test_sim.py','test_opt.py','test_noise.py','test_geom.py','test_opt2.py','test_opt3.py','qlab/selftest_twin.py','qlab/selftest_cli.py']
++    tests=['test_sim.py','test_opt.py','test_noise.py','test_geom.py','test_opt2.py','test_opt3.py','qlab/selftest_twin.py','qlab/selftest_cli.py','test_aqft.py','test_aqft_fix.py']
+     if args.full: tests+=['test_aqft_avg.py']
+     env=dict(os.environ,OMP_NUM_THREADS='1'); bad=0
+     for t in tests:
+diff --git a/tools/qlab/test_aqft.py b/tools/qlab/test_aqft.py
+index d5b3cab..355e53a 100644
+--- a/tools/qlab/test_aqft.py
++++ b/tools/qlab/test_aqft.py
+@@ -1,32 +1,207 @@
+-import numpy as np,json,time
+-from qsim import *; from aqft import *; from qopt2 import lower; import qnoise2
+-NK=dict(p1=1e-3,p2=1e-2,gamma=1e-3); rng=np.random.default_rng(5); out={'sweep':{},'pe':{}}
+-def cnt(c): return len(c),sum(len(g[1])==2 for g in c)
+-t0=time.time()
+-for n in range(3,11):
+-    xs=rng.integers(0,2**n,8); x0=int(xs[0]); rows=[]
+-    ex=[SV(n) for _ in xs]
+-    for s,x in zip(ex,xs): s.v[:]=0; s.v[x]=1; s.run(qft(n))
+-    for m in range(1,n+1):
+-        c=aqft(n,m); fids=[]
+-        for s,x in zip(ex,xs):
+-            a=SV(n); a.v[:]=0; a.v[x]=1; a.run(c); fids.append(abs(np.vdot(s.v,a.v))**2)
+-        L=lower(c); fn=float(np.real(ex[0].v.conj()@qnoise2.run(n,L,init=x0,**NK)@ex[0].v))
+-        rows.append(dict(m=m,ideal=float(np.mean(fids)),ideal_min=float(np.min(fids)),gates=cnt(L)[0],twoq=cnt(L)[1],noisy=fn))
+-    b=max(rows,key=lambda r:r['noisy']); out['sweep'][n]=dict(rows=rows,best_m=b['m'],log2n2=np.log2(n)+2)
+-    print(f'n={n} best m={b["m"]} (log2n+2={np.log2(n)+2:.2f}) t={time.time()-t0:.0f}s')
+-    for r in rows: print(f'   m={r["m"]:2d} idealF={r["ideal"]:.6f} (min {r["ideal_min"]:.6f}) gates={r["gates"]} 2q={r["twoq"]} noisyF={r["noisy"]:.4f}')
+-# phase estimation: t counting qubits + 1 eigen ancilla, U=P(2πφ) on |1>
+-for t in range(3,10):
+-    phis=rng.random(10); bm=out['sweep'][t]['best_m']; res={}
+-    for lab,m in (('exact',t),('best_m',bm),('m=2',2)):
+-        pi_,pn=[],[]
+-        for phi in phis:
+-            c=[('X',[t])]+[('H',[k]) for k in range(t)]+[('CP',[k,t],2*np.pi*phi*2**k) for k in range(t)]+inverse(aqft(t,m))
+-            y=int(round(phi*2**t))%2**t
+-            p=SV(t+1).run(c).probs(); pi_.append(p[y+2**t])
+-            L=lower(c); rho=qnoise2.run(t+1,L,**NK); pn.append(float(np.real(rho[y+2**t,y+2**t])))
+-        res[lab]=dict(m=m,ideal=[float(np.mean(pi_)),float(np.std(pi_))],noisy=[float(np.mean(pn)),float(np.std(pn))])
+-    out['pe'][t]=res
+-    print(f'PE t={t}: '+'; '.join(f'{k}(m={v["m"]}) P(correct) ideal {v["ideal"][0]:.4f}±{v["ideal"][1]:.4f} noisy {v["noisy"][0]:.4f}±{v["noisy"][1]:.4f}' for k,v in res.items()))
+-print('elapsed',round(time.time()-t0,1)); json.dump(out,open('aqft_results.json','w'),default=float)
++"""Pytest invariants for aqft.py (replaces the assertion-free n=3..10 sweep).
++
++The old script only printed and wrote aqft_results.json, so a crash-free run
++was a pass. These tests check normalization and unitarity, monotone ideal
++fidelity and gate counts, fixed-seed determinism, and examples/aqft5.json.
++Numbers are locked to tools/qlab/baselines/aqft.json.
++"""
++import json, os, sys
++import numpy as np
++import pytest
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++if HERE not in sys.path:
++    sys.path.insert(0, HERE)
++
++from baselines.measure_aqft import (
++    AQFT5, ideal_fidelities, ideal_sweep, serialize, spec_aqft, unitarity_report,
++)
++from qsim import SV, qft
++from qopt2 import lower
++from aqft import aqft, inverse
++
++BASELINE = os.path.join(HERE, 'baselines', 'aqft.json')
++# RESULTS.md §7, seed-5 8-input ideal sweep (printed digits). Not recomputed from a new sample.
++PUBLISHED_IDEAL_MEAN = {(4, 3): 0.990485, (5, 3): 0.959550, (6, 3): 0.906327}
++PUBLISHED_IDEAL_MIN = {(5, 1): 0.000027}
++# RESULTS.md §7 "2q best/exact" and the aqft5 lowering (n=5, m=4 → 24).
++PUBLISHED_TWOQ = {(3, 3): 9, (4, 3): 16, (4, 4): 18, (5, 3): 20, (5, 4): 24, (5, 5): 26, (6, 3): 27, (6, 6): 39}
++
++
++def load_baseline():
++    with open(BASELINE) as f:
++        return json.load(f)
++
++
++def test_normalization_and_unitarity():
++    """Every AQFT is unitary: U†U = I, states stay normalized, inverse returns |x>, and m=n is the QFT."""
++    report = unitarity_report(n_max=4)
++    tol = 1e-9
++    assert report['max_abs_UtU_minus_I'] < tol
++    assert report['max_norm_err'] < tol
++    assert report['max_roundtrip_err'] < tol
++    assert report['max_aqft_n_minus_qft'] < tol
++    base = load_baseline()['unitarity']
++    # Recorded errors are numerical noise. A broken circuit jumps by many orders.
++    assert report['max_abs_UtU_minus_I'] <= max(base['max_abs_UtU_minus_I'] * 100, 1e-12)
++    assert report['max_roundtrip_err'] <= max(base['max_roundtrip_err'] * 100, 1e-12)
++    for n in range(2, 6):
++        for m in range(1, n + 1):
++            for x0 in (0, 2**n - 1):
++                s = SV(n)
++                s.v[:] = 0
++                s.v[x0] = 1
++                probs = s.run(aqft(n, m)).probs()
++                assert abs(float(probs.sum()) - 1) < 1e-9
++                assert abs(float(np.linalg.norm(s.v)) - 1) < 1e-9
++            back = SV(n)
++            back.v[:] = 0
++            back.v[1] = 1
++            back.run(aqft(n, m)).run(inverse(aqft(n, m)))
++            phase = np.angle(back.v[1])
++            restored = back.v * np.exp(-1j * phase)
++            assert abs(float(np.linalg.norm(back.v)) - 1) < 1e-9
++            assert abs(restored[1] - 1) < 1e-9
++            assert float(np.max(np.abs(np.delete(restored, 1)))) < 1e-9
++
++
++def test_ideal_fidelity_monotonic_and_bounded():
++    """Ideal fidelity vs exact QFT lies in [0, 1], is non-decreasing in m, and is 1 at m=n.
++
++    Checked on every computational-basis input for n=2..5, and on the seed-5
++    sample whose means are the RESULTS.md §7 figures.
++    """
++    for n in range(2, 6):
++        prev = None
++        for m in range(1, n + 1):
++            f = np.array(ideal_fidelities(n, m, range(2**n)))
++            assert np.all(f >= -1e-12) and np.all(f <= 1 + 1e-12)
++            if prev is not None:
++                assert np.all(f + 1e-9 >= prev)
++            prev = f
++        assert float(prev.min()) > 1 - 1e-9
++
++    sweep = ideal_sweep()
++    base = load_baseline()['ideal_seed5']
++    for n_s, block in sweep.items():
++        assert block['inputs'] == base[n_s]['inputs']
++        prev_mean = -1.0
++        prev_f = None
++        for row, brow in zip(block['by_m'], base[n_s]['by_m']):
++            assert row['m'] == brow['m']
++            assert 0 <= row['min'] <= row['mean'] <= 1
++            assert row['mean'] + 1e-12 >= prev_mean
++            if prev_f is not None:
++                assert all(a + 1e-12 >= b for a, b in zip(row['fidelities'], prev_f))
++            prev_mean = row['mean']
++            prev_f = row['fidelities']
++            assert row['fidelities'] == pytest.approx(brow['fidelities'], abs=1e-12)
++            assert row['mean'] == pytest.approx(brow['mean'], abs=1e-12)
++            assert row['min'] == pytest.approx(brow['min'], abs=1e-12)
++        assert block['by_m'][-1]['mean'] == pytest.approx(1.0, abs=1e-9)
++        n = int(n_s)
++        for (nn, m), published in PUBLISHED_IDEAL_MEAN.items():
++            if nn == n:
++                got = next(r['mean'] for r in block['by_m'] if r['m'] == m)
++                assert round(got, 6) == published
++        for (nn, m), published in PUBLISHED_IDEAL_MIN.items():
++            if nn == n:
++                got = next(r['min'] for r in block['by_m'] if r['m'] == m)
++                assert round(got, 6) == published
++
++
++def test_gate_counts_monotone_and_bounded_by_qft():
++    """Raising m only adds controlled-phase gates. m>=n is exactly qft(n). Counts match the baseline and RESULTS.md."""
++    sweep = ideal_sweep()
++    base = load_baseline()['ideal_seed5']
++    for n in range(1, 11):
++        prev_gates = prev_cp = prev_twoq = -1
++        exact = qft(n)
++        for m in range(1, n + 1):
++            c = aqft(n, m)
++            assert c == spec_aqft(n, m)
++            assert _subsequence(c, exact)
++            assert len(c) <= len(exact)
++            assert len(c) >= prev_gates
++            assert sum(g[0] == 'CP' for g in c) >= prev_cp
++            tq = sum(len(g[1]) == 2 for g in lower(c))
++            assert tq >= prev_twoq
++            assert tq <= sum(len(g[1]) == 2 for g in lower(exact))
++            prev_gates = len(c)
++            prev_cp = sum(g[0] == 'CP' for g in c)
++            prev_twoq = tq
++        assert aqft(n, n) == exact
++        assert aqft(n, n + 2) == exact
++        if n >= 3:
++            assert sum(g[0] == 'CP' for g in aqft(n, 1)) < sum(g[0] == 'CP' for g in exact)
++    for n_s, block in sweep.items():
++        for row, brow in zip(block['by_m'], base[n_s]['by_m']):
++            assert (row['gates'], row['cp'], row['twoq']) == (brow['gates'], brow['cp'], brow['twoq'])
++            key = (int(n_s), row['m'])
++            if key in PUBLISHED_TWOQ:
++                assert row['twoq'] == PUBLISHED_TWOQ[key]
++
++
++def test_deterministic_with_fixed_seed():
++    """The same seed and the same (n, m) rebuild the same circuit and the same fidelities."""
++    first = ideal_sweep()
++    second = ideal_sweep()
++    assert first.keys() == second.keys()
++    for n_s in first:
++        assert first[n_s]['inputs'] == second[n_s]['inputs']
++        for a, b in zip(first[n_s]['by_m'], second[n_s]['by_m']):
++            assert a['fidelities'] == b['fidelities']
++            assert a['gates'] == b['gates']
++    for n in range(3, 9):
++        for m in range(1, n + 1):
++            assert serialize(aqft(n, m)) == serialize(aqft(n, m))
++            assert aqft(n, m) == spec_aqft(n, m)
++    # Statevector itself, not only the fidelity scalar.
++    for _ in range(2):
++        s = SV(5)
++        s.v[:] = 0
++        s.v[7] = 1
++        s.run(aqft(5, 3))
++        if _ == 0:
++            saved = s.v.copy()
++        else:
++            assert np.array_equal(saved, s.v)
++
++
++def test_matches_aqft5_reference():
++    """examples/aqft5.json is the macro AQFT[5, 4] and expands to the drop-rule circuit."""
++    with open(AQFT5) as f:
++        doc = json.load(f)
++    assert doc == {'n': 5, 'gates': [['AQFT', [5, 4]]]}
++    c = aqft(5, 4)
++    assert c == spec_aqft(5, 4)
++    base = load_baseline()['aqft5']
++    assert doc == base['document']
++    assert serialize(c) == base['circuit']
++    assert len(c) == base['gates'] == 16
++    assert sum(g[0] == 'CP' for g in c) == base['cp'] == 9
++    thr = 2 * np.pi / 2**4 - 1e-15
++    assert all(g[2] >= thr for g in c if g[0] == 'CP')
++    # Angles the full QFT would have used, and that m=4 must drop.
++    dropped = [g for g in qft(5) if g[0] == 'CP' and g[2] < thr]
++    assert dropped and all(g not in c for g in dropped)
++    zero = ideal_fidelities(5, 4, [0])[0]
++    assert zero == pytest.approx(base['zero_fidelity'], abs=1e-12)
++    assert zero > 1 - 1e-9
++    seed5 = next(r for r in load_baseline()['ideal_seed5']['5']['by_m'] if r['m'] == 4)
++    again = ideal_fidelities(5, 4, load_baseline()['ideal_seed5']['5']['inputs'])
++    assert float(np.mean(again)) == pytest.approx(base['seed5_mean'], abs=1e-12)
++    assert float(np.min(again)) == pytest.approx(base['seed5_min'], abs=1e-12)
++    assert float(np.mean(again)) == pytest.approx(seed5['mean'], abs=1e-12)
++
++
++def _subsequence(small, big):
++    i = 0
++    for g in big:
++        if i < len(small) and g == small[i]:
++            i += 1
++    return i == len(small)
++
++
++if __name__ == '__main__':
++    raise SystemExit(pytest.main([__file__, '-q', '--tb=short', '-p', 'no:cacheprovider']))
+diff --git a/tools/qlab/test_aqft_fix.py b/tools/qlab/test_aqft_fix.py
+index 307900e..39d17de 100644
+--- a/tools/qlab/test_aqft_fix.py
++++ b/tools/qlab/test_aqft_fix.py
+@@ -1,22 +1,135 @@
+-import numpy as np,json,time
+-from qsim import *; from aqft import *; from qopt2 import lower; import qnoise2
+-NK=dict(p1=1e-3,p2=1e-2,gamma=1e-3); out={'avg':{},'pe5':{}}; t0=time.time()
+-# PE t=5 with m=3, same seed/φ draw as test_aqft (rng 5, after sweep draws) not reproducible cheaply -> fresh 10 φ, rerun exact and m=3 on same φ
+-rng=np.random.default_rng(55); phis=rng.random(10); t=5
+-for lab,m in (('exact',5),('m=3',3)):
+-    pi_,pn=[],[]
+-    for phi in phis:
+-        c=[('X',[t])]+[('H',[k]) for k in range(t)]+[('CP',[k,t],2*np.pi*phi*2**k) for k in range(t)]+inverse(aqft(t,m))
+-        y=int(round(phi*2**t))%2**t; pi_.append(SV(t+1).run(c).probs()[y+2**t])
+-        pn.append(float(np.real(qnoise2.run(t+1,lower(c),**NK)[y+2**t,y+2**t])))
+-    out['pe5'][lab]=[np.mean(pi_),np.std(pi_),np.mean(pn),np.std(pn)]; print('PE t=5',lab,out['pe5'][lab],flush=True)
+-rng=np.random.default_rng(11)
+-for n,ms in ((9,range(2,9)),(10,range(2,8))):
+-    xs=[int(x) for x in rng.integers(0,2**n,4)]; refs=[]
+-    for x in xs: s=SV(n); s.v[:]=0; s.v[x]=1; refs.append(s.run(qft(n)).v)
+-    r=[]
+-    for m in list(ms)+[n]:
+-        L=lower(aqft(n,m)); f=[float(np.real(p.conj()@qnoise2.run(n,L,init=x,**NK)@p)) for x,p in zip(xs,refs)]
+-        r.append((m,np.mean(f),np.std(f))); print(n,m,r[-1],round(time.time()-t0),flush=True)
+-    out['avg'][n]=r
+-json.dump(out,open('aqft_fix_results.json','w'),default=float); print('elapsed',round(time.time()-t0))
++"""Pytest invariants for the AQFT cleanup rerun (old test_aqft_fix.py).
++
++The old script averaged phase-estimation success and noisy fidelity and
++exited 0 even when the numbers were nonsense. These tests check probability
++normalization, the ideal-vs-noisy ordering visible in RESULTS.md §7b, fixed
++seeds, and the frozen baseline.
++"""
++import json, os, sys
++import pytest
++
++HERE = os.path.dirname(os.path.abspath(__file__))
++if HERE not in sys.path:
++    sys.path.insert(0, HERE)
++
++from baselines.measure_aqft import noisy_sweep, phase_estimation, spec_aqft
++from aqft import aqft
++
++BASELINE = os.path.join(HERE, 'baselines', 'aqft.json')
++# RESULTS.md §7, 4-input seed-11 noisy means, printed to 4 digits.
++PUBLISHED_NOISY = {(3, 3): 0.8676, (4, 3): 0.7609, (4, 4): 0.7578, (5, 3): 0.7012, (5, 5): 0.6686}
++# RESULTS.md §7b, PE t=5, seed 55, 10 phases.
++PUBLISHED_PE = {
++    '5': dict(ideal_mean=0.7860, ideal_std=0.1656, noisy_mean=0.4403, noisy_std=0.0888),
++    '3': dict(ideal_mean=0.7488, ideal_std=0.1729, noisy_mean=0.4581, noisy_std=0.1028),
++}
++
++
++def load_baseline():
++    with open(BASELINE) as f:
++        return json.load(f)
++
++
++def test_pe_normalization_and_bounds():
++    """Phase-estimation probabilities are normalized and each P(correct) lies in [0, 1]."""
++    pe = phase_estimation()
++    base = load_baseline()['pe5_seed55']
++    assert pe['phis'] == pytest.approx(base['phis'], abs=1e-15)
++    for m, arm in pe['arms'].items():
++        assert aqft(pe['t'], int(m)) == spec_aqft(pe['t'], int(m))
++        for p, s in zip(arm['ideal'], arm['prob_sums']):
++            assert -1e-9 <= p <= 1 + 1e-9
++            assert abs(s - 1) < 1e-8
++        for p in arm['noisy']:
++            assert -1e-9 <= p <= 1 + 1e-9
++        assert arm['ideal'] == pytest.approx(base['arms'][m]['ideal'], abs=1e-12)
++        assert arm['noisy'] == pytest.approx(base['arms'][m]['noisy'], abs=1e-12)
++
++
++def test_pe_ideal_ordered_noise_bounded():
++    """On the seed-55 sample, truncating m lowers ideal P(correct) and the exact circuit is hurt more by noise.
++
++    RESULTS.md §7b: exact ideal 0.7860 > m=3 ideal 0.7488, while noisy m=3 0.4581
++    beats noisy exact 0.4403. Both noisy means stay inside (0, 1).
++    """
++    pe = phase_estimation()
++    exact, mid, low = pe['arms']['5'], pe['arms']['3'], pe['arms']['2']
++    assert exact['ideal_mean'] + 1e-12 >= mid['ideal_mean'] >= low['ideal_mean'] - 1e-12
++    assert 0 < exact['noisy_mean'] < exact['ideal_mean']
++    assert 0 < mid['noisy_mean'] < mid['ideal_mean']
++    assert 0 < low['noisy_mean'] < 1
++    # Visible in the published rerun: m=3 wins under this noise, by a small margin.
++    assert mid['noisy_mean'] > exact['noisy_mean']
++    for key, published in PUBLISHED_PE.items():
++        arm = pe['arms'][key]
++        for field, digits in published.items():
++            assert round(arm[field], 4) == digits
++    base = load_baseline()['pe5_seed55']['arms']
++    for key in ('5', '3', '2'):
++        for field in ('ideal_mean', 'ideal_std', 'noisy_mean', 'noisy_std'):
++            assert pe['arms'][key][field] == pytest.approx(base[key][field], abs=1e-12)
++
++
++def test_noisy_fidelity_bounded():
++    """Noisy fidelity stays in [0, 1]. On the published 4-input sample, m=3 beats the exact QFT for n=4 and n=5."""
++    sweep = noisy_sweep()
++    base = load_baseline()['noisy_seed11']
++    for n_s, block in sweep.items():
++        n = int(n_s)
++        assert block['inputs'] == base[n_s]['inputs']
++        assert aqft(n, n) == spec_aqft(n, n)
++        means = []
++        for row, brow in zip(block['by_m'], base[n_s]['by_m']):
++            assert all(-1e-9 <= f <= 1 + 1e-9 for f in row['fidelities'])
++            assert -1e-9 <= row['mean'] <= 1 + 1e-9
++            assert row['fidelities'] == pytest.approx(brow['fidelities'], abs=1e-12)
++            assert row['mean'] == pytest.approx(brow['mean'], abs=1e-12)
++            assert row['std'] == pytest.approx(brow['std'], abs=1e-12)
++            means.append(row['mean'])
++            published = PUBLISHED_NOISY.get((n, row['m']))
++            if published is not None:
++                assert round(row['mean'], 4) == published
++        # m=n is exact, so its ideal fidelity is 1 and noise pulls the recorded mean strictly below 1.
++        assert means[-1] < 1 - 1e-3
++        if n >= 4:
++            m3 = next(r['mean'] for r in block['by_m'] if r['m'] == 3)
++            assert m3 > means[-1]
++            assert max(means) == m3
++
++
++def test_deterministic_pe_and_noisy_avg():
++    """Repeating the fixed seeds rebuilds the same probabilities and the same noisy fidelities."""
++    a, b = phase_estimation(), phase_estimation()
++    assert a['phis'] == b['phis']
++    for m in a['arms']:
++        assert a['arms'][m]['ideal'] == b['arms'][m]['ideal']
++        assert a['arms'][m]['noisy'] == b['arms'][m]['noisy']
++        assert aqft(5, int(m)) == spec_aqft(5, int(m))
++    n1, n2 = noisy_sweep(), noisy_sweep()
++    for n_s in n1:
++        assert n1[n_s]['inputs'] == n2[n_s]['inputs']
++        for r1, r2 in zip(n1[n_s]['by_m'], n2[n_s]['by_m']):
++            assert r1['fidelities'] == r2['fidelities']
++
++
++def test_matches_fix_baseline():
++    """The cleanup-rerun aggregates stay on the frozen baseline, including the m=2 arm."""
++    pe = phase_estimation()
++    noisy = noisy_sweep()
++    base = load_baseline()
++    for m, arm in pe['arms'].items():
++        b = base['pe5_seed55']['arms'][m]
++        assert arm['ideal_mean'] == pytest.approx(b['ideal_mean'], abs=1e-12)
++        assert arm['noisy_mean'] == pytest.approx(b['noisy_mean'], abs=1e-12)
++        assert arm['ideal'] == pytest.approx(b['ideal'], abs=1e-12)
++    for n_s, block in noisy.items():
++        for row, brow in zip(block['by_m'], base['noisy_seed11'][n_s]['by_m']):
++            assert row['mean'] == pytest.approx(brow['mean'], abs=1e-12)
++            assert row['std'] == pytest.approx(brow['std'], abs=1e-12)
++    # Production note is part of the baseline contract.
++    assert 'measure_aqft.py' in base['produced_by']['command']
++    assert base['produced_by']['noise'] == {'p1': 1e-3, 'p2': 1e-2, 'gamma': 1e-3}
++
++
++if __name__ == '__main__':
++    raise SystemExit(pytest.main([__file__, '-q', '--tb=short', '-p', 'no:cacheprovider']))

@@ -1,0 +1,6 @@
+PASS test_stopping_time_1
+PASS test_stopping_time_27_is_111
+PASS test_max_up_to_10
+PASS test_max_up_to_27_includes_111
+PASS test_max_up_to_100
+SUMMARY passed=5 failed=0 total=5

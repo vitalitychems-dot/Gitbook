@@ -1,0 +1,1499 @@
+[sand-host] inference-credential renewer started (backend self-renewal is the sole inference-credential source)
+[sand-host] agent box backend: loopback (in-box); image: host's own container; auto-update: on; build: packaged
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Auth ID changed; reconciling Codebase Telemetry
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Authentication state changed; reconciled
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Privacy mode changed from 0 to 2; reconciled
+[sand-host] watching /home/box/chrome-profile/Default for session-db changes
+[sand-host] box-store sync enabled (snapshot-out only)
+[sand-host] hibernate hook unavailable (Error (EACCES)); store sync continues without the hook
+[sand-host] hibernate-hook setup failed: EACCES: permission denied, mkdir '/run/sand-box-store-flush'
+[sand-host] host extensions started in graph order: agent-cpu-saturation -> credential-fill -> memory -> messages-grants -> settings -> auth -> box-lifecycle -> box-timezone -> experiments -> browser-ua -> chrome-cookie-import -> inference -> notifications -> privacy-mode -> codebase-telemetry -> orbit -> source-map -> team-admin-policy -> telemetry -> attachments -> bot-template-share -> content-search -> forever-box -> cloud-agents -> credential-provider -> managed-setup -> mcp -> box-store-sync -> remote-agent-messaging -> secrets -> session -> transcript-publish -> trays -> turn-execution -> user-form-vault -> transcript -> agent-identity -> auto-review -> automations -> cookie-origin-approval -> feedback -> host-upgrade -> local-tool-permission -> local-exec -> resume-ownership -> server-agent-proxy -> teach-recording -> user-skills-cache -> wallpaper -> webauthn-proxy -> working-state-export
+[sand-host] host bundle release channel: latest
+[sand-host] gateway listening on http://0.0.0.0:1340 (auth required)
+[sand-host] wallpaper: painted tone b; next boundary in 11078s
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 203084ms: 206 files / 2099585B up, 208125 entries, 10375 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 3 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 167970ms: 5294 files / 1334225668B up, 202873 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 3 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 16438ms: 21 files / 11848862B up, 202888 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 202 row(s); 10 state(s) holding 196 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 17 row(s); 8 state(s) holding 193 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 3 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 27091ms: 19 files / 8387939B up, 202902 entries, 4165 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 3 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 38100ms: 47 files / 5355473B up, 198778 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 19 row(s); 6 state(s) holding 195 row(s) retained
+[sand-host] [box-store-sync] workspace ignore: pruned 4 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/50/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 30646ms: 72 files / 8364468B up, 198846 entries, 1 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 7 row(s); 5 state(s) holding 196 row(s) retained
+[sand-host] [box-store-sync] workspace ignore: pruned 4 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] upload failed workspace/si/tsr/docs/BHNMC.md: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/tsr/docs/BUILDING-TESSERA.md: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/tsr/docs/CONSOLIDATION-POINTER.md: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/tsr/docs/CONSOLIDATION.md: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/tsr/docs/GLM5-PEN-ACTIVATION.md: [unavailable] Service Unavailable
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 144124ms: 4486 files / 1320792173B up, 203326 entries, 27 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 18 row(s); 5 state(s) holding 197 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] upload failed workspace/repo-lab/jeshraghian__snntorch/.git/index: [unavailable] Service Unavailable
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 92911ms: 2952 files / 219875107B up, 169574 entries, 75 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 12576ms: 16 files / 8978823B up, 169523 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Authentication state changed; reconciled
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 52348ms: 1186 files / 27944200B up, 170703 entries, 1 failures
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/34/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 135311ms: 1254 files / 5755816870B up, 171951 entries, 1 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] server-agent-proxy: server transcript tail evicted 4 settled agent state(s) holding 117 row(s); 4 state(s) holding 518 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 119453ms: 333 files / 5984547473B up, 170117 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 5 row(s); 6 state(s) holding 784 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 14647ms: 44 files / 10745358B up, 170141 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 13351ms: 17 files / 9093769B up, 170151 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 12711ms: 3 files / 4299055B up, 170152 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 7 row(s); 6 state(s) holding 846 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 16 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 29965ms: 47 files / 658774322B up, 169424 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 17 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 7 row(s); 5 state(s) holding 859 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/54/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 365386ms: 10564 files / 11606668695B up, 179959 entries, 2 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 18 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Authentication state changed; reconciled
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 110482ms: 153 files / 9658811240B up, 180065 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 17288ms: 83 files / 10763536B up, 180119 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] cycle ok in 15808ms: 58 files / 5542744B up, 180151 entries, 0 failures
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 25 row(s); 9 state(s) holding 980 row(s) retained
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 22192ms: 57 files / 9980896B up, 180203 entries, 6 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 2 row(s); 7 state(s) holding 980 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/52/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 89603ms: 20 files / 5320940377B up, 180000 entries, 1 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 14081ms: 2 files / 4297000B up, 180000 entries, 0 failures
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 2 row(s); 6 state(s) holding 993 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 10 row(s); 5 state(s) holding 989 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] upload failed workspace/si/wt-runner/archive/from-gitbook/archive/moved/1/artifacts/tessera/src/hooks/use-chat.ts: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/wt-runner/archive/from-gitbook/archive/moved/1/lib/api-spec/package.json: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/wt-runner/archive/from-gitbook/archive/moved/1/package.json: [unavailable] Service Unavailable
+[sand-host] [box-store-sync] upload failed workspace/si/wt-runner/archive/from-gitbook/archive/moved/1/pnpm-workspace.yaml: [unavailable] Service Unavailable
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 124130ms: 4451 files / 791289198B up, 184447 entries, 4 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 10 row(s); 5 state(s) holding 1000 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand:privacy] privacy-mode lookup failed, using privacy-safe fallback backend=https://api2.cursor.sh/ error=DeadlineExceeded
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 260891ms: 9105 files / 1584813991B up, 193538 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/57/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 21227ms: 54 files / 52453351B up, 193577 entries, 1 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 18668ms: 130 files / 15539331B up, 193701 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] cycle ok in 15935ms: 10 files / 4409490B up, 193697 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Authentication state changed; reconciled
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 18638ms: 41 files / 8970271B up, 193731 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 17094ms: 7 files / 5712866B up, 193734 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 13557ms: 12 files / 4402243B up, 193740 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 16199ms: 22 files / 10100155B up, 193758 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] server-agent-proxy: server transcript tail evicted 2 settled agent state(s) holding 8 row(s); 6 state(s) holding 1154 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/49/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 18093ms: 14 files / 4891606B up, 193756 entries, 1 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] upload failed workspace/fix-agent-login/preview/src/lib/tessera/path-delta.test.ts: sand-box-store write failed for blobs/2e3e79b291689e1adc61b2d1548c6fc733774f8891cc95bbde12d920ea6986aa: 500
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 358 row(s); 5 state(s) holding 818 row(s) retained
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 114907ms: 606 files / 5942753827B up, 194089 entries, 1 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] insufficient disk space for workspace/repos/Gitbook/objects/pack/pack-56aec2918067d853cc014dea10da1509a5afbda8.pack snapshot copy (5339276765B needed x2); deferring to a later cycle
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] cycle ok in 62593ms: 1276 files / 47111273B up, 186435 entries, 3252 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] insufficient disk space for workspace/repos/Gitbook/objects/pack/pack-56aec2918067d853cc014dea10da1509a5afbda8.pack snapshot copy (5339276765B needed x2); deferring to a later cycle
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 26946ms: 46 files / 5602664B up, 185267 entries, 4449 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] server-agent-proxy: server transcript index sync for 8590f667-ffc6-4358-86f4-b33aca909a3e failed (attempt 1): ConnectError
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [box-store-sync] cycle ok in 120088ms: 80 files / 5350476712B up, 185328 entries, 342 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 29 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 50854ms: 1543 files / 89372666B up, 186780 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 3 row(s); 10 state(s) holding 1207 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 29 dirs, excluded 0 files (0B)
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] upload failed workspace/si/wt-314/.agents/skills/remotion-best-practices/rules/ffmpeg.md: sand-box-store write failed for blobs/b67ff4e3ce01c48241ef92fa165398d427e9f676ae8e17d1ed19d5584bff5002: 500
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] upload failed workspace/si/wt-314/archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/school/train.jsonl: [unavailable] Service Unavailable
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] server-agent-proxy: server transcript tail evicted 1 settled agent state(s) holding 10 row(s); 9 state(s) holding 1234 row(s) retained
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] pack maintenance round failed: EACCES: permission denied, open '/proc/self/fd/54/sand-box-store-pack'
+[sand-host] [box-store-sync] cycle ok in 150837ms: 4471 files / 792481770B up, 191241 entries, 3 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] info: [CodebaseTelemetryController] Authentication state changed; reconciled
+[sand-host] [box-store-sync] workspace ignore: pruned 30 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 55654ms: 150 files / 3253727220B up, 186925 entries, 10448 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 30 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 16518ms: 59 files / 4455428B up, 186883 entries, 88 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 22271ms: 131 files / 294768876B up, 186960 entries, 0 failures
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 15852ms: 1 files / 732B up, 186836 entries, 156 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] server-agent-proxy: server transcript tail evicted 5 settled agent state(s) holding 308 row(s); 4 state(s) holding 974 row(s) retained
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END
+[sand-host] [box-store-sync] workspace ignore: pruned 28 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] home ignore: pruned 7 dirs, excluded 0 files (0B)
+[sand-host] [box-store-sync] cycle ok in 14436ms: 3 files / 4927149B up, 185783 entries, 0 failures
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_START
+[sand-host] [codebase-telemetry] debug: snapshot trigger dropped (telemetry inactive): AGENT_REQUEST_END

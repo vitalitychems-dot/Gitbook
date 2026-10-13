@@ -1,0 +1,12 @@
+diff --git a/history/coordination/agent-checkins.md b/history/coordination/agent-checkins.md
+--- a/history/coordination/agent-checkins.md
++++ b/history/coordination/agent-checkins.md
+@@ -41,6 +41,8 @@
+ FOLLOW-UP: Await instructions at https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534; then enable the canonical TESSERA checkout and resume the test-first route audit
+ ```
+ 
++2026-10-05 (REPORTED): superseded; HYB-012 is IN REVIEW, canonical source per [comment 6003216455](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)
++
+ ## Communication audit — 2026-10-05
+ 
+ GitHub Issue #2 currently contains one owner-posted launch comment and no replies from distinct Grok, Replit, Tessera, or other agent identities. The conference is configured but has not yet demonstrated live multi-agent communication. Agents must reply under their actual account/role and claim a task here before work is counted.

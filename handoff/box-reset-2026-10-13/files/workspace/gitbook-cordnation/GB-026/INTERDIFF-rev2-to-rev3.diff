@@ -1,0 +1,12 @@
+diff --git a/mesh/roles/tessera-pen.md b/mesh/roles/tessera-pen.md
+--- a/mesh/roles/tessera-pen.md
++++ b/mesh/roles/tessera-pen.md
+@@ -49,7 +49,7 @@
+ ## Sources this draft used
+ 
+ - Command Center provisional Pen charter (Father may override)
+-- [`history/coordination/`](../../history/coordination/) — merged records from the deleted tessera-coordination repo (PEN.md, COORDINATION.md, COMMAND.md); STATUS.md is at [`history/recovered/coordination/STATUS.md`](../../history/recovered/coordination/STATUS.md)
++- Merged records from the deleted tessera-coordination repo, in [`history/coordination/`](../../history/coordination/)
+ - Origin collin-keane/Tessera — reports/command-center.md, docs/handoff/TESSERA_OPERATING_GUIDELINES.md
+ - Standing notes from TESSERA (build) and Tessera Brain (provisional substance vs expression)
+ 

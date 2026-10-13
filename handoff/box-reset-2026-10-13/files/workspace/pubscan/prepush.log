@@ -1,0 +1,289 @@
+Note: Some branches outside the refs/remotes/ hierarchy were not removed;
+to delete them, use:
+  git branch -d chore/dedupe-docs-copies
+  git branch -d chore/dedupe-drive-rest
+  git branch -d chore/dedupe-drive-rest-readmes
+  git branch -d chore/dedupe-zz-copy
+  git branch -d chore/legacy-engines-no-autostart
+  git branch -d chore/privacy-ignore-layout
+  git branch -d chore/remove-auto-db-push
+  git branch -d chore/remove-modal
+  git branch -d chore/remove-old-theme-images
+  git branch -d chore/stop-import-time-jobs
+  git branch -d cursor/agent-cycle
+  git branch -d cursor/ask-all
+  git branch -d cursor/batch-2
+  git branch -d cursor/batch-3
+  git branch -d cursor/batch-3-keep
+  git branch -d cursor/batch-50
+  git branch -d cursor/batch-next
+  git branch -d cursor/batch-read
+  git branch -d cursor/brain-canvas
+  git branch -d cursor/brain-mesh
+  git branch -d cursor/brain-train
+  git branch -d cursor/brain-volume
+  git branch -d cursor/build-herself
+  git branch -d cursor/carry-on
+  git branch -d cursor/catalog-batch-3-aa90
+  git branch -d cursor/catalog-batch-4-aa90
+  git branch -d cursor/catalog-train
+  git branch -d cursor/chamber-v5
+  git branch -d cursor/chart-ui
+  git branch -d cursor/chat-desk-training-22dd
+  git branch -d cursor/checkout-read
+  git branch -d cursor/city-keeps
+  git branch -d cursor/civic-agent-world-3a81
+  git branch -d cursor/civic-city
+  git branch -d cursor/clear-composer
+  git branch -d cursor/code-hygiene-5146
+  git branch -d cursor/composer-load
+  git branch -d cursor/copilot-seat
+  git branch -d cursor/curiosity
+  git branch -d cursor/curiosity-fix
+  git branch -d cursor/delete-openai-class-a-4339
+  git branch -d cursor/desk-drill-preview-1c94
+  git branch -d cursor/desk-live
+  git branch -d cursor/desk-preview-search-9fab
+  git branch -d cursor/desk-questions-aa90
+  git branch -d cursor/desk-runs
+  git branch -d cursor/docs-readme-config-5146
+  git branch -d cursor/drop-two
+  git branch -d cursor/eight-steps
+  git branch -d cursor/engine-session-gate-aa90
+  git branch -d cursor/engines-deeper
+  git branch -d cursor/entry-door
+  git branch -d cursor/eval-harness-tests-5146
+  git branch -d cursor/evolve
+  git branch -d cursor/exam-waves
+  git branch -d cursor/file-mesh
+  git branch -d cursor/file-recall
+  git branch -d cursor/finish-engines
+  git branch -d cursor/five-pages
+  git branch -d cursor/git-pass
+  git branch -d cursor/gitai-covert-probation-1742
+  git branch -d cursor/gitai-marketplace-1742
+  git branch -d cursor/gitbook-ai
+  git branch -d cursor/gitbook-live
+  git branch -d cursor/gitbook-mcp-connector-301f
+  git branch -d cursor/gitbook-place-aa90
+  git branch -d cursor/guard
+  git branch -d cursor/her-voice
+  git branch -d cursor/her-voice-grows
+  git branch -d cursor/her-vote
+  git branch -d cursor/her-words
+  git branch -d cursor/hyb-005-audit-ignore-943c
+  git branch -d cursor/imported
+  git branch -d cursor/include-files
+  git branch -d cursor/interactive
+  git branch -d cursor/keep-dropped-cards-aa90
+  git branch -d cursor/kept-lessons
+  git branch -d cursor/kingdom
+  git branch -d cursor/lab-audit
+  git branch -d cursor/ledger
+  git branch -d cursor/live-map
+  git branch -d cursor/local-learn
+  git branch -d cursor/loop-20
+  git branch -d cursor/loop-times
+  git branch -d cursor/make-it-real-bridge-3a81
+  git branch -d cursor/memory-done
+  git branch -d cursor/memory-redaction-patterns-301f
+  git branch -d cursor/mesh-net
+  git branch -d cursor/metrics-25
+  git branch -d cursor/metrics-lean
+  git branch -d cursor/mind-chart
+  git branch -d cursor/moltbook-check
+  git branch -d cursor/name-a-card
+  git branch -d cursor/no-client-fs
+  git branch -d cursor/open-one-room
+  git branch -d cursor/open-room
+  git branch -d cursor/orders
+  git branch -d cursor/outer-door-link
+  git branch -d cursor/pack
+  git branch -d cursor/page-3
+  git branch -d cursor/page-4
+  git branch -d cursor/pages-15
+  git branch -d cursor/reality-seed
+  git branch -d cursor/recall-exact
+  git branch -d cursor/recall-sheet
+  git branch -d cursor/recursive-proof
+  git branch -d cursor/remove-openai-sdk-691d
+  git branch -d cursor/restore-guarded-fetch-bd32
+  git branch -d cursor/rick-five
+  git branch -d cursor/rick-github
+  git branch -d cursor/rick-home
+  git branch -d cursor/rick-inside
+  git branch -d cursor/rick-loop
+  git branch -d cursor/rick-metrics
+  git branch -d cursor/rick-pick
+  git branch -d cursor/rick-runs
+  git branch -d cursor/rick-shift
+  git branch -d cursor/rick-thirty
+  git branch -d cursor/rick-workshop
+  git branch -d cursor/room-camera
+  git branch -d cursor/rooms
+  git branch -d cursor/root-next
+  git branch -d cursor/root-skills
+  git branch -d cursor/runs-itself
+  git branch -d cursor/secret-engines
+  git branch -d cursor/shared-house
+  git branch -d cursor/she-reads
+  git branch -d cursor/shelf
+  git branch -d cursor/site-002-diagnostics-gate-7ea3
+  git branch -d cursor/sovereign-desk
+  git branch -d cursor/sparse
+  git branch -d cursor/sparse-batch
+  git branch -d cursor/spin-house
+  git branch -d cursor/spin-try
+  git branch -d cursor/studio-3d-floor-3a81
+  git branch -d cursor/studio-denylist-gate-3a81
+  git branch -d cursor/synapse-weight
+  git branch -d cursor/synapses
+  git branch -d cursor/tabs-brain
+  git branch -d cursor/tessera-learning-memory-301f
+  git branch -d cursor/tessera-voice-chamber-22dd
+  git branch -d cursor/tests-pass
+  git branch -d cursor/train-pass
+  git branch -d cursor/train-wider
+  git branch -d cursor/tunnel
+  git branch -d cursor/twenty
+  git branch -d cursor/ui-cut
+  git branch -d cursor/use-engines
+  git branch -d cursor/v2-001-hyb011-denylist-3a81
+  git branch -d cursor/v2-002-mit-license-3a81
+  git branch -d cursor/v2-003-vendor-snapshot-3a81
+  git branch -d cursor/v2-004-rea-coverage-3a81
+  git branch -d cursor/v2-010-task-graph-3a81
+  git branch -d cursor/v2-011-worktrees-3a81
+  git branch -d cursor/v2-012-merge-gate-3a81
+  git branch -d cursor/v2-013-ws-protocol-3a81
+  git branch -d cursor/v2-014-studio-wall-3a81
+  git branch -d cursor/v2-015-studio-3d-off-3a81
+  git branch -d cursor/v2-016-lead-planner-3a81
+  git branch -d cursor/v2-017-worker-stream-3a81
+  git branch -d cursor/v2-020-file-mesh-3a81
+  git branch -d cursor/v2-021-offline-queue-3a81
+  git branch -d cursor/v2-022-sw-shell-3a81
+  git branch -d cursor/v2-023-mesh-badge-3a81
+  git branch -d cursor/v2-024-mesh-node-3a81
+  git branch -d cursor/v2-025-secure-mesh-3a81
+  git branch -d cursor/v2-026-sneakernet-3a81
+  git branch -d cursor/v2-027-lan-p2p-3a81
+  git branch -d cursor/v2-028-kiwix-off-3a81
+  git branch -d cursor/v2-029-offline-internet-3a81
+  git branch -d cursor/v2-030-lora-note-3a81
+  git branch -d cursor/v2-040-kg-store-3a81
+  git branch -d cursor/v2-041-mcp-memory-3a81
+  git branch -d cursor/v2-042-library-panel-3a81
+  git branch -d cursor/v2-043-own-repo-meta-3a81
+  git branch -d cursor/v2-050-desk-sandbox-3a81
+  git branch -d cursor/v2-051-token-meter-3a81
+  git branch -d cursor/v2-052-ab-graph-3a81
+  git branch -d cursor/v2-053-summary-cache-3a81
+  git branch -d cursor/v2-054-small-model-3a81
+  git branch -d cursor/v2-055-proposal-queue-3a81
+  git branch -d cursor/v2-060-hn-allowlist-3a81
+  git branch -d cursor/v2-061-chamber-board-3a81
+  git branch -d cursor/v2-062-gitmesh-label-3a81
+  git branch -d cursor/whiten
+  git branch -d desk/consolidation-pointer
+  git branch -d docs/bridge-map
+  git branch -d docs/retarget-citations-to-gitbook
+  git branch -d feat/local-pen-adapter
+  git branch -d feat/local-pen-followups
+  git branch -d fix/api-server-db-optional-boot
+  git branch -d fix/conversations-delete-owner-gate
+  git branch -d fix/preview-crash-imports
+  git branch -d fix/preview-remove-missing-apple-icon
+  git branch -d fix/preview-runnable-package
+  git branch -d fix/remove-chat-upload-caller
+  git branch -d fix/remove-dead-dossier-callers
+  git branch -d fix/sidebar-delete-conversation-url
+  git branch -d grok/bhnmc-decision
+  git branch -d grok/desk-preview
+  git branch -d grok/drive-rest
+  git branch -d grok/drive-sections
+  git branch -d grok/drop-vitality
+  git branch -d grok/empath
+  git branch -d grok/fresh-places
+  git branch -d grok/gitbook-only
+  git branch -d grok/grok-ready-unique
+  git branch -d grok/layout
+  git branch -d grok/no-404
+  git branch -d grok/rules-until-bhnmc
+  git branch -d grok/sections
+  git branch -d grok/tool-cards
+  git branch -d hybrid-b/tessera-control-d43
+  git branch -d i12-hyb011-exclusions
+  git branch -d main
+  git branch -d manus/hyb-014-historical-gate-20261009
+  git branch -d o1-offline-index
+  git branch -d o10-node-per-install
+  git branch -d o11-secure-mesh
+  git branch -d o2-offline-queue
+  git branch -d o3-service-worker
+  git branch -d o4-kiwix-optional
+  git branch -d o5-usb-bundle
+  git branch -d o6-lan-p2p
+  git branch -d o7-mesh-badge
+  git branch -d opt-26
+  git branch -d replit-agent
+  git branch -d replit/fix-audit-floors-20261007
+  git branch -d replit/hyb-021-katex-019
+  git branch -d security/canonical-openai-purge
+  git branch -d security/colonial-secret-fail-closed
+  git branch -d security/delete-living-person-dossier-libs
+  git branch -d security/gate-colonial-sovereign-language
+  git branch -d security/gate-legacy-engines-routes
+  git branch -d security/gate-natal-dossier-routes
+  git branch -d security/gate-sigil-chart-routes
+  git branch -d security/gate-system-runtime-and-shadow-winners
+  git branch -d security/generic-500-grand-council-omniversal
+  git branch -d security/grand-evolution-followups
+  git branch -d security/hide-recruitment-page
+  git branch -d security/privacy-birthdate-archive-deletes
+  git branch -d security/privacy-e
+  git branch -d security/privacy-e2
+  git branch -d security/privacy-natal-archive-deletes
+  git branch -d security/purge-openai-archive-batch
+  git branch -d security/purge-openai-archive-residue-d43
+  git branch -d security/purge-openai-delete-all-2
+  git branch -d security/purge-openai-sdk-b
+  git branch -d security/purge-openai-t44-archive
+  git branch -d security/restore-fetch-guard
+  git branch -d security/sigil-auth-urgent
+  git branch -d security/unhook-living-person-dossiers
+  git branch -d security/zz-secret-hygiene-e7ee9a19
+  git branch -d tessera-pen-gate
+  git branch -d tessera-v2-stage1
+  git branch -d tessera/hyb-012-route-inventory
+  git branch -d tessera/train-graph-cl1-sim
+NOTICE: Removing 'origin' remote; see 'Why is my origin removed?'
+        in the manual if you want to push back there.
+        (was /workspace/backups/TESSERA-pre-public-2026-10-12.git)
+Parsed 3 commitsParsed 30 commitsParsed 44 commitsParsed 58 commitsParsed 68 commitsParsed 85 commitsParsed 86 commitsParsed 87 commitsParsed 89 commitsParsed 95 commitsParsed 96 commitsParsed 97 commitsParsed 98 commitsParsed 99 commitsParsed 100 commitsParsed 101 commitsParsed 102 commitsParsed 103 commitsParsed 104 commitsParsed 105 commitsParsed 106 commitsParsed 107 commitsParsed 108 commitsParsed 109 commitsParsed 110 commitsParsed 111 commitsParsed 121 commitsParsed 122 commitsParsed 170 commitsParsed 176 commitsParsed 212 commitsParsed 246 commitsParsed 272 commitsParsed 275 commitsParsed 309 commitsParsed 343 commitsParsed 443 commitsParsed 541 commitsParsed 547 commitsParsed 560 commitsParsed 576 commitsParsed 584 commitsParsed 596 commitsParsed 597 commitsParsed 620 commitsParsed 635 commitsParsed 637 commitsParsed 653 commitsParsed 654 commitsParsed 673 commitsParsed 704 commitsParsed 716 commitsParsed 749 commitsParsed 846 commitsParsed 849 commitsParsed 857 commitsParsed 867 commitsParsed 877 commitsParsed 886 commitsParsed 917 commitsParsed 945 commitsParsed 972 commitsParsed 980 commitsParsed 991 commitsParsed 1032 commitsParsed 1052 commitsParsed 1075 commitsParsed 1106 commitsParsed 1136 commitsParsed 1166 commitsParsed 1201 commitsParsed 1223 commitsParsed 1249 commitsParsed 1273 commitsParsed 1287 commitsParsed 1313 commitsParsed 1368 commitsParsed 1482 commitsParsed 1498 commitsParsed 1502 commitsParsed 1504 commitsParsed 1506 commitsParsed 1510 commitsParsed 1514 commitsParsed 1516 commitsParsed 1520 commitsParsed 1524 commitsParsed 1528 commitsParsed 1532 commitsParsed 1536 commitsParsed 1540 commitsParsed 1544 commitsParsed 1546 commitsParsed 1548 commitsParsed 1552 commitsParsed 1555 commitsParsed 1581 commitsParsed 1606 commitsParsed 1627 commitsParsed 1631 commitsParsed 1633 commitsParsed 1635 commitsParsed 1639 commitsParsed 1641 commitsParsed 1643 commitsParsed 1645 commitsParsed 1649 commitsParsed 1651 commitsParsed 1655 commitsParsed 1657 commitsParsed 1659 commitsParsed 1661 commitsParsed 1663 commitsParsed 1665 commitsParsed 1667 commitsParsed 1669 commitsParsed 1671 commitsParsed 1673 commitsParsed 1675 commitsParsed 1677 commitsParsed 1679 commitsParsed 1681 commitsParsed 1683 commitsParsed 1685 commitsParsed 1688 commitsParsed 1690 commitsParsed 1692 commitsParsed 1702 commitsParsed 1797 commitsParsed 1813 commits
+New history written in 87.39 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+Completely finished after 122.66 seconds.
+Parsed 85 commitsParsed 230 commitsParsed 290 commitsParsed 607 commitsParsed 852 commitsParsed 1101 commitsParsed 1444 commitsParsed 1729 commits
+New history written in 0.87 seconds; now repacking/cleaning...
+Repacking your repo and cleaning out old unneeded objects
+Completely finished after 34.50 seconds.
+
+    ○
+    │╲
+    │ ○
+    ○ ░
+    ░    gitleaks
+
+[90m8:22PM[0m [32mINF[0m 908 commits scanned.
+[90m8:22PM[0m [32mINF[0m scan completed in 53.1s
+[90m8:22PM[0m [32mINF[0m no leaks found
+[main f133605c] Encrypt secret paths with git-crypt and restore the token fixture after the history scrub
+ Date: Mon Oct 12 18:54:36 2026 -0500
+ 3 files changed, 11 insertions(+), 1 deletion(-)
+ create mode 100644 .gitattributes
+ create mode 100644 config/secrets/README.md
+[main ae58a7e5] Widen git-crypt to all .env files and keep .env.example readable
+ Date: Mon Oct 12 19:50:22 2026 -0500
+ 1 file changed, 4 insertions(+)
+error: No such remote 'origin'

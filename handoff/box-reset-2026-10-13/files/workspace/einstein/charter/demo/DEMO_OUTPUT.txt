@@ -1,0 +1,6 @@
+== approve
+APPROVE ['all rules pass']
+== synth
+DENY ['E2 SYNTHETIC-ONLY: cannot approve merge']
+== flag
+DENY ['H1 touches a TESSERA_ENABLE_* default']

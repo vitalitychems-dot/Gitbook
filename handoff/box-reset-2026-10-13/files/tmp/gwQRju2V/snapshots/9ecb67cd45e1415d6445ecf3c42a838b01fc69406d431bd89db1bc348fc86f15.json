@@ -1,0 +1,1 @@
+{"round":21,"i":25,"payload":"{\n    \"success\": false,\n    \"data\": null,\n    \"errors\": [\n        {\n            \"message\": \"This API version has been deprecated. Please visit https://restcountries.com/docs/countries/legacy-api-deprecation to migrate to our new version (v5).\"\n        }\n    ]\n}"}

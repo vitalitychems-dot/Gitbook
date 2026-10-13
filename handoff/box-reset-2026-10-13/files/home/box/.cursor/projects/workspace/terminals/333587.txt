@@ -1,0 +1,24 @@
+---
+pid: 1423105
+cwd: "/workspace"
+command: "rm -rf /tmp/idle-mode-pr && gh repo clone vitalitychems-dot/Gitbook /tmp/idle-mode-pr -- --depth 1 && cd /tmp/idle-mode-pr && git rev-parse HEAD && ls -la mesh/ 2>/dev/null || echo \"no mesh dir yet\" && test -e mesh/IDLE-MODE.md && echo \"EXISTS_ON_MAIN\" || echo \"PATH_FREE\""
+title: "Shallow clone Gitbook and check path"
+status: succeeded
+started_at: 2026-10-13T00:48:52.774Z
+running_for_ms: 70863    
+---
+Cloning into '/tmp/idle-mode-pr'...
+Updating files:   0% (12/10410)Updating files:   0% (14/10410)fatal: cannot create directory at 'archive/drive-rest/Tesseract-AI-5': No space left on device
+warning: Clone succeeded, but checkout failed.
+You can inspect what was checked out with 'git status'
+and retry with 'git restore --source=HEAD :/'
+
+failed to run git: exit status 128
+no mesh dir yet
+PATH_FREE
+
+---
+exit_code: 0
+elapsed_ms: 70863
+ended_at: 2026-10-13T00:50:03.637Z
+---

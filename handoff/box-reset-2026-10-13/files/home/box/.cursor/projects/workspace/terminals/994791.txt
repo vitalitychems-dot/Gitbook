@@ -1,0 +1,62 @@
+---
+pid: 427300
+cwd: "/workspace/learning-rate"
+command: "cat > /workspace/learning-rate/src/make_charts.py << 'PY'\n#!/usr/bin/env python3\n\"\"\"Build learning-curve and results-bar charts.\"\"\"\nfrom __future__ import annotations\nimport json\nfrom pathlib import Path\n\nRESULTS = Path(\"/workspace/learning-rate/results\")\nCHARTS = Path(\"/workspace/learning-rate/charts\")\nCHARTS.mkdir(parents=True, exist_ok=True)\n\ndef main():\n    import matplotlib\n    matplotlib.use(\"Agg\")\n    import matplotlib.pyplot as plt\n\n    # Learning curve\n    curve_path = RESULTS / \"learning_curve.json\"\n    if curve_path.exists():\n        curve = json.loads(curve_path.read_text())\n        xs, ys = [], []\n        for p in curve[\"points\"]:\n            xs.append(p[\"feedback_events\"])\n            held = p[\"heldout\"]\n            ys.append(held.get(\"accuracy\", held.get(\"heldout\", {}).get(\"accuracy\", 0)))\n        fig, ax = plt.subplots(figsize=(7, 4.5))\n        ax.plot(xs, ys, marker=\"o\", linewidth=2, color=\"#1f77b4\")\n        ax.set_xlabel(\"Feedback events (reflexion lessons from wrong train answers)\")\n        ax.set_ylabel(\"Held-out accuracy\")\n        ax.set_title(\"Learning curve: held-out accuracy vs feedback (seed=42)\")\n        ax.set_ylim(0, 1.05)\n        ax.grid(True, alpha=0.3)\n        for x, y in zip(xs, ys):\n            ax.annotate(f\"{y:.2f}\", (x, y), textcoords=\"offset points\", xytext=(0, 8), ha=\"center\", fontsize=9)\n        fig.tight_layout()\n        fig.savefig(CHARTS / \"learning_curve.png\", dpi=120)\n        plt.close(fig)\n        print(\"wrote learning_curve.png\")\n\n    # Method comparison bar\n    table_path = RESULTS / \"table.json\"\n    # Also gather from individual result files if table incomplete\n    summaries = []\n    if table_path.exists():\n        summaries = json.loads(table_path.read_text())\n    else:\n        for p in sorted(RESULTS.glob(\"*.json\")):\n            if p.name in (\"meta.json\", \"chunk_stats.json\", \"dense_index.json\", \"learning_curve.json\",\n                          \"consolidation.json\", \"selfstudy_lessons.json\"):\n                continue\n            try:\n                d = json.loads(p.read_text())\n                if \"summary\" in d and \"accuracy\" in d[\"summary\"]:\n                    summaries.append(d[\"summary\"])\n            except Exception:\n                pass\n\n    if summaries:\n        # dedupe by method keep last\n        by_m = {}\n        for s in summaries:\n            by_m[s[\"method\"]] = s\n        summaries = list(by_m.values())\n        summaries.sort(key=lambda s: -s[\"accuracy\"])\n        names = [s[\"method\"] for s in summaries]\n        accs = [s[\"accuracy\"] for s in summaries]\n        fig, ax = plt.subplots(figsize=(10, 5))\n        bars = ax.barh(names[::-1], accs[::-1], color=\"#2ca02c\")\n        ax.set_xlabel(\"Accuracy (all questions)\")\n        ax.set_title(\"Method accuracy comparison (qwen2.5:3b-instruct, seed=42)\")\n        ax.set_xlim(0, 1.05)\n        ax.axvline(0.72, color=\"gray\", linestyle=\"--\", alpha=0.5, label=\"prior BM25 baseline 0.72 (n=25)\")\n        for bar, a in zip(bars, accs[::-1]):\n            ax.text(a + 0.01, bar.get_y() + bar.get_height()/2, f\"{a:.2f}\", va=\"center\", fontsize=8)\n        ax.legend(loc=\"lower right\", fontsize=8)\n        fig.tight_layout()\n        fig.savefig(CHARTS / \"method_accuracy.png\", dpi=120)\n        plt.close(fig)\n        print(\"wrote method_accuracy.png\")\n\n    # Split accuracy for best methods\n    fig, ax = plt.subplots(figsize=(9, 5))\n    methods_of_interest = []\n    for s in summaries:\n        if s.get(\"by_split\"):\n            methods_of_interest.append(s)\n    if methods_of_interest:\n        import numpy as np\n        labels = [s[\"method\"] for s in methods_of_interest]\n        seen_a = [s[\"by_split\"].get(\"seen\", {}).get(\"accuracy\", 0) for s in methods_of_interest]\n        hold_a = [s[\"by_split\"].get(\"heldout\", {}).get(\"accuracy\", 0) for s in methods_of_interest]\n        x = np.arange(len(labels))\n        w = 0.35\n        ax.bar(x - w/2, seen_a, w, label=\"seen (n=25)\", color=\"#1f77b4\")\n        ax.bar(x + w/2, hold_a, w, label=\"held-out (n=20)\", color=\"#ff7f0e\")\n        ax.set_xticks(x)\n        ax.set_xticklabels(labels, rotation=30, ha=\"right\", fontsize=8)\n        ax.set_ylim(0, 1.05)\n        ax.set_ylabel(\"Accuracy\")\n        ax.set_title(\"Seen vs held-out accuracy by method\")\n        ax.legend()\n        ax.grid(True, axis=\"y\", alpha=0.3)\n        fig.tight_layout()\n        fig.savefig(CHARTS / \"seen_vs_heldout.png\", dpi=120)\n        plt.close(fig)\n        print(\"wrote seen_vs_heldout.png\")\n\nif __name__ == \"__main__\":\n    main()\nPY\necho chart script ready\n# Wait and poll retrieval\nfor i in 1 2 3 4 5 6 7 8 9 10; do\n  if ! ps -p 424764 >/dev/null 2>&1; then echo \"retrieval finished\"; break; fi\n  n=$(grep -c 'ok=' /workspace/learning-rate/results/retrieval.log 2>/dev/null || echo 0)\n  meth=$(grep 'METHOD' /workspace/learning-rate/results/retrieval.log | tail -1)\n  echo \"$(date +%H:%M:%S) answers=$n last=$meth\"\n  sleep 60\ndone\ntail -30 /workspace/learning-rate/results/retrieval.log\nls /workspace/learning-rate/results/*.json 2>/dev/null | head -20\nps -p 424764 >/dev/null 2>&1 && echo STILL_RUNNING || echo DONE_OR_EXITED\ndate"
+title: "Write chart script; poll retrieval for ~10 min"
+status: succeeded
+started_at: 2026-10-05T23:25:18.144Z
+running_for_ms: 600725   
+---
+chart script ready
+18:25:18 answers=15 last=[bm25_baseline] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+18:26:18 answers=29 last=[bm25_baseline] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+18:27:18 answers=48 last========= METHOD bm25_heading_overlap ========
+18:28:18 answers=70 last=[bm25_heading_overlap] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+18:29:18 answers=90 last========= METHOD multiquery_rrf ========
+18:30:18 answers=96 last========= METHOD multiquery_rrf ========
+18:31:18 answers=102 last=[multiquery_rrf] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+18:32:18 answers=107 last=[multiquery_rrf] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+18:33:18 answers=113 last=[multiquery_rrf] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+18:34:18 answers=119 last=[multiquery_rrf] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+[multiquery_rrf] O05 ok=True ans='No'
+[multiquery_rrf] O06 ok=True ans='The pen is currently xAI/Grok.'
+[multiquery_rrf] O07 ok=True ans='Real output or a named unit/preview check was seen. Link or name the c'
+[multiquery_rrf] O08 ok=True ans='REPORTED means stated by a lane or doc; not yet proven by a test in th'
+[multiquery_rrf] O09 ok=False ans='HYB-005 decides to merge the decision record of GB-018.'
+[multiquery_rrf] O10 ok=True ans='GHSA-vfj7-8cjw-p6xm'
+[multiquery_rrf] O11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registr'
+[multiquery_rrf] O12 ok=False ans='1'
+[multiquery_rrf] O13 ok=True ans='system-runtime.ts wins GET /quantum/state.'
+[multiquery_rrf] O14 ok=True ans='No, agents should not flip TESSERA_ENABLE_*.'
+[multiquery_rrf] O15 ok=True ans='No, never inspect or copy protected `1T` vault content.'
+[multiquery_rrf] O16 ok=True ans='Gitbook Moderator → Tessera (admin) → Security (read-only sweep) → CI/'
+[multiquery_rrf] O17 ok=True ans='Tessera merges.'
+[multiquery_rrf] O18 ok=True ans='No, Command Center does not push Gitbook.'
+[multiquery_rrf] O19 ok=False ans='Published on 2026-10-05.'
+[multiquery_rrf] O20 ok=True ans='HYB-019 is BLOCKED due to Father decisions in the readiness page.'
+[multiquery_rrf] O21 ok=True ans='No'
+[multiquery_rrf] O22 ok=True ans='GOAL'
+[multiquery_rrf] O23 ok=True ans='The instrument line for the honesty banner is "The pen is currently xA'
+[multiquery_rrf] O24 ok=True ans='SOVEREIGN_NO_EXTERNAL_LLM default behavior is not specified in the pro'
+[multiquery_rrf] O25 ok=False ans='audit job 111894232164'
+[multiquery_rrf] H01 ok=True ans='Ready'
+[multiquery_rrf] H02 ok=True ans="Only the task's assigned owner or Tessera (admin) can set the BLOCKED "
+[multiquery_rrf] H03 ok=True ans='braces@3.0.3'
+[multiquery_rrf] H04 ok=True ans='The braces ignore should be removed as soon as braces ≥ 3.0.4 ships up'
+[multiquery_rrf] H05 ok=True ans='30–45 minutes'
+[multiquery_rrf] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+[multiquery_rrf] H07 ok=False ans='No'
+[multiquery_rrf] H08 ok=True ans='The GOAL label on the honesty banner means the intended purpose or out'
+[multiquery_rrf] H09 ok=True ans='SOVEREIGN_ORIGIN_7F3A9C'
+/workspace/learning-rate/results/bm25_baseline.json
+/workspace/learning-rate/results/bm25_heading_overlap.json
+/workspace/learning-rate/results/chunk_stats.json
+/workspace/learning-rate/results/dense_index.json
+STILL_RUNNING
+Mon Oct  5 18:35:18 CDT 2026
+
+---
+exit_code: 0
+elapsed_ms: 600725
+ended_at: 2026-10-05T23:35:18.869Z
+---

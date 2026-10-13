@@ -1,0 +1,25 @@
+=== Prior FAIL bypass re-sim (must BLOCK) ===
+env=security, arg=tessera: BLOCKED (lane "tessera" cannot override GITBOOK_AGENT_LANE security)
+env=security, arg=Security: BLOCKED (Security is read-only and cannot open draft pull requests)
+env=build, arg=nonexistent: BLOCKED (lane "nonexistent" cannot override GITBOOK_AGENT_LANE build)
+=== Additional cases ===
+env=security, arg=none: BLOCKED (Security is read-only and cannot open draft pull requests)
+env=build, arg=none: BLOCKED (Build is read-only and cannot open draft pull requests)
+env=Security (case), arg=none: BLOCKED (Security is read-only and cannot open draft pull requests)
+env=empty, arg=tessera: BLOCKED (GITBOOK_AGENT_LANE is not set)
+env=empty, arg=none: BLOCKED (GITBOOK_AGENT_LANE is not set)
+env=unknown, arg=none: BLOCKED (GITBOOK_AGENT_LANE "not-a-lane" is not a lane in agents)
+env=tessera, arg=none: ALLOWED
+env=tessera, arg=tessera: ALLOWED
+env=tessera, arg=TESSERA (case match): ALLOWED
+
+=== Loopback host check ===
+host="0.0.0.0": REFUSE
+host="1.2.3.4": REFUSE
+host="*": REFUSE
+host="": REFUSE
+host="127.0.0.1": OK
+host="localhost": OK
+host="::1": OK
+host="LOCALHOST": OK
+host=" 127.0.0.1 ": OK

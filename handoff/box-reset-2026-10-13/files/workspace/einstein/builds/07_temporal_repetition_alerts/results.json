@@ -1,0 +1,71 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "07 2-of-3 rounds + hysteresis vs single snapshot",
+      "metric": "false opens/day",
+      "n_seeds": 30,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 69.16666666666667,
+        "lo": 66.46666666666667,
+        "hi": 71.93333333333334
+      },
+      "candidate": {
+        "mean": 26.033333333333335,
+        "lo": 24.733333333333334,
+        "hi": 27.33416666666666
+      },
+      "improvement": {
+        "mean": 43.13333333333333,
+        "lo": 41.06666666666667,
+        "hi": 45.266666666666666
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "07 missed incidents (of 6)",
+      "metric": "missed incidents/day",
+      "n_seeds": 30,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 0.13333333333333333,
+        "lo": 0.0,
+        "hi": 0.4
+      },
+      "candidate": {
+        "mean": 0.23333333333333334,
+        "lo": 0.06666666666666667,
+        "hi": 0.43333333333333335
+      },
+      "improvement": {
+        "mean": -0.1,
+        "lo": -0.26666666666666666,
+        "hi": 0.06666666666666667
+      },
+      "verdict": "DROP"
+    },
+    {
+      "name": "07 detection delay",
+      "metric": "ticks (30 s) to open",
+      "n_seeds": 30,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 0.29444444444444445,
+        "lo": 0.027777777777777776,
+        "hi": 0.7501388888888881
+      },
+      "candidate": {
+        "mean": 1.742777777777778,
+        "lo": 1.1633194444444444,
+        "hi": 2.480583333333333
+      },
+      "improvement": {
+        "mean": -1.4483333333333335,
+        "lo": -2.1216805555555553,
+        "hi": -0.9599722222222224
+      },
+      "verdict": "DROP"
+    }
+  ]
+}

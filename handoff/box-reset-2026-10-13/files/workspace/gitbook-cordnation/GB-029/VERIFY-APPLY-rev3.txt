@@ -1,0 +1,7 @@
+main re-confirmed 45651521a137c4448673d6abfaa77e1567230f83 (read-only list_commits, 17:04 CT); local intake/log.md blob dec5f592cc44fdec37dd654d5eccaf25d93fb0eb = 4565152 blob dec5f592cc44fdec37dd654d5eccaf25d93fb0eb
+A git apply --check GB-029 rev 3 on clean 4565152: rc=0
+B forward git apply: rc=0
+  result tree eae26eda08c47a0031bfc4863db824488699c38f; drafted p29r3 tree eae26eda08c47a0031bfc4863db824488699c38f
+C reverse --check on applied tree: rc=0
+D reverse apply: rc=0; tree after reverse af90e745d5409104f4dbdddfa2ed4b57a956e375 = 4565152-subset tree af90e745d5409104f4dbdddfa2ed4b57a956e375
+E interdiff --check on rev 2 result: rc=0

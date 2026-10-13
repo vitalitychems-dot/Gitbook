@@ -1,0 +1,12 @@
+k-affective-computing	declare-lab/MELD CheyneyComputerScience/CREMA-D audeering/opensmile TadasBaltrusaitis/OpenFace SenticNet/MISA py-feat/py-feat
+k-human-behavior	CMU-Perceptual-Computing-Lab/openpose google-ai-edge/mediapipe sbrugman/deep-learning-papers MIT-LCP/mimic-code
+k-neurology	OpenNeuroOrg/openneuro nipy/nibabel mne-tools/mne-python BIDS-Standard/bids-specification AllenInstitute/AllenSDK
+k-physiology	MIT-LCP/wfdb-python neuropsychology/NeuroKit physiozoo/physiozoo PIA-Group/BioSPPy
+k-medicine	MIT-LCP/mimic-code ncbi/pubtator-api openmedlab/Awesome-Medical-Dataset synthetichealth/synthea monarch-initiative/mondo kiwix/kiwix-tools
+k-sciences	openstax/cnx wikimedia/mediawiki kiwix/kiwix-js astropy/astropy rdkit/rdkit sympy/sympy
+k-coding	freeCodeCamp/freeCodeCamp EbookFoundation/free-programming-books TheAlgorithms/Python bigcode-project/the-stack-v2 tldr-pages/tldr freeCodeCamp/devdocs
+k-hardware	KiCad/kicad-source-mirror YosysHQ/yosys riscv/riscv-isa-manual adafruit/Adafruit_CircuitPython_Bundle openhwgroup/cva6 lowRISC/opentitan
+k-engineering	FreeCAD/FreeCAD OpenFOAM/OpenFOAM-dev CalculiX/CalculiX openscad/openscad python-control/python-control
+k-quantum	Qiskit/qiskit quantumlib/Cirq PennyLaneAI/pennylane qutip/qutip microsoft/QuantumKatas
+k-geometry	CGAL/cgal sympy/sympy geogebra/geogebra mikedh/trimesh isl-org/Open3D
+k-biology	biopython/biopython google-deepmind/alphafold aqlaboratory/openfold scverse/scanpy deepmind/alphafold sokrypton/ColabFold

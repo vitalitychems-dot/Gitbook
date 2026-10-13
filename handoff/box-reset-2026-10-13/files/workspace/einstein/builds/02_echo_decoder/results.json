@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "02 echo-cluster decoder vs current phi/2-3",
+      "metric": "decision accuracy",
+      "n_seeds": 30,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.7843833333333333,
+        "lo": 0.7675304166666667,
+        "hi": 0.8018729166666667
+      },
+      "candidate": {
+        "mean": 0.8756666666666667,
+        "lo": 0.86236625,
+        "hi": 0.8889499999999997
+      },
+      "improvement": {
+        "mean": 0.09128333333333334,
+        "lo": 0.07473166666666668,
+        "hi": 0.10863583333333332
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "02 echo-cluster decoder vs independent LLR (build 01)",
+      "metric": "decision accuracy",
+      "n_seeds": 30,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.8657166666666665,
+        "lo": 0.8502333333333333,
+        "hi": 0.8809
+      },
+      "candidate": {
+        "mean": 0.8756666666666667,
+        "lo": 0.86236625,
+        "hi": 0.8889499999999997
+      },
+      "improvement": {
+        "mean": 0.009950000000000011,
+        "lo": -0.005634583333333334,
+        "hi": 0.02543416666666668
+      },
+      "verdict": "DROP"
+    }
+  ]
+}

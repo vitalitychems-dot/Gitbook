@@ -1,0 +1,157 @@
+{
+  "schema": "tessera-rea-registry/v1",
+  "coverage": {
+    "before": 0,
+    "after": 0.8,
+    "numerator": 4,
+    "denominator": 5,
+    "package_dependencies": 3,
+    "brain_modules": 2,
+    "unknown": [
+      {
+        "kind": "dependency",
+        "name": "left-pad",
+        "version": ">=1",
+        "package_json": "artifacts/api-server/package.json"
+      }
+    ]
+  },
+  "records": [
+    {
+      "name": "human_hcp",
+      "kind": "dataset",
+      "version": "0.0.0",
+      "license": "unknown",
+      "license_source": "",
+      "call_sites": [
+        "artifacts/v2/src/brain/connectomes/human_hcp.json"
+      ],
+      "path": "artifacts/v2/src/brain/connectomes/human_hcp.json",
+      "declared_in": []
+    },
+    {
+      "name": "wikipedia",
+      "kind": "dataset",
+      "version": "0.0.0",
+      "license": "unknown",
+      "license_source": "",
+      "call_sites": [
+        "artifacts/v2/src/live/sources.mjs"
+      ],
+      "path": "artifacts/v2/src/live/sources.mjs",
+      "declared_in": []
+    },
+    {
+      "name": "express",
+      "kind": "dependency",
+      "version": "5.2.1",
+      "license": "MIT",
+      "license_source": "npm:https://registry.npmjs.org/express/5.2.1#license",
+      "call_sites": [
+        "artifacts/api-server/src/app.ts"
+      ],
+      "path": "artifacts/api-server/package.json",
+      "declared_in": [
+        "artifacts/api-server/package.json#dependencies"
+      ]
+    },
+    {
+      "name": "left-pad",
+      "kind": "dependency",
+      "version": ">=1",
+      "license": "unknown",
+      "license_source": "",
+      "call_sites": [],
+      "path": "artifacts/api-server/package.json",
+      "declared_in": [
+        "artifacts/api-server/package.json#dependencies"
+      ]
+    },
+    {
+      "name": "three",
+      "kind": "dependency",
+      "version": "0.169.0",
+      "license": "MIT",
+      "license_source": "npm:https://registry.npmjs.org/three/0.169.0#license",
+      "call_sites": [],
+      "path": "artifacts/v2/package.json",
+      "declared_in": [
+        "artifacts/v2/package.json#dependencies"
+      ]
+    },
+    {
+      "name": "artifacts/v2/src/brain/templates.mjs",
+      "kind": "file-loader",
+      "version": "0.0.0",
+      "license": "MIT",
+      "license_source": "package.json:artifacts/v2/package.json#license",
+      "call_sites": [],
+      "path": "artifacts/v2/src/brain/templates.mjs",
+      "declared_in": []
+    },
+    {
+      "name": "gpt2",
+      "kind": "model",
+      "version": "0.0.0",
+      "license": "unknown",
+      "license_source": "",
+      "call_sites": [
+        "artifacts/v2/src/brain/templates.mjs"
+      ],
+      "path": "artifacts/v2/src/brain/connectomes/gpt2.json",
+      "declared_in": []
+    },
+    {
+      "name": "artifacts/api-server/src/app.ts",
+      "kind": "module",
+      "version": "0.0.0",
+      "license": "MIT",
+      "license_source": "package.json:package.json#license",
+      "call_sites": [],
+      "path": "artifacts/api-server/src/app.ts",
+      "declared_in": []
+    },
+    {
+      "name": "artifacts/api-server/src/lib/tool-registry.ts",
+      "kind": "module",
+      "version": "0.0.0",
+      "license": "MIT",
+      "license_source": "package.json:package.json#license",
+      "call_sites": [],
+      "path": "artifacts/api-server/src/lib/tool-registry.ts",
+      "declared_in": []
+    },
+    {
+      "name": "artifacts/v2/src/brain/affect.mjs",
+      "kind": "module",
+      "version": "0.0.0",
+      "license": "MIT",
+      "license_source": "package.json:artifacts/v2/package.json#license",
+      "call_sites": [],
+      "path": "artifacts/v2/src/brain/affect.mjs",
+      "declared_in": []
+    },
+    {
+      "name": "artifacts/v2/src/live/sources.mjs",
+      "kind": "module",
+      "version": "0.0.0",
+      "license": "MIT",
+      "license_source": "package.json:artifacts/v2/package.json#license",
+      "call_sites": [],
+      "path": "artifacts/v2/src/live/sources.mjs",
+      "declared_in": []
+    },
+    {
+      "name": "calculator",
+      "kind": "tool",
+      "version": "0.0.0",
+      "license": "MIT",
+      "license_source": "package.json:package.json#license",
+      "call_sites": [
+        "artifacts/api-server/src/lib/tool-registry.ts"
+      ],
+      "path": "artifacts/api-server/src/lib/tool-registry.ts",
+      "declared_in": []
+    }
+  ]
+}

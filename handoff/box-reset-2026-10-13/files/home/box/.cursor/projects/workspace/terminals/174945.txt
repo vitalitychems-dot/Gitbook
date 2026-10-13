@@ -1,0 +1,24 @@
+---
+pid: 1156471
+cwd: "/workspace/pubscan"
+command: "cd /workspace/pubscan; B=/workspace/backups/TESSERA-pre-public-2026-10-12.git; umask 077; mkdir -p priv; ./gitleaks git $B --report-format json --report-path priv/raw.json --log-opts=\"--all\" >/dev/null 2>&1; jq -r '.[].Secret' priv/raw.json | sort -u | wc -l\ngit -C $B grep -nE 'birth|born|19[5-9][0-9]-[01][0-9]-' main -- 'archive/from-gitbook/archive/moved/Grok-ready/artifacts/api-server/src/lib/father-natal.ts' | cut -c1-160 | head -5\nfor f in docs/v2/v2-memory.jsonl data/school/corrections.jsonl data/school/read-one.jsonl data/school/voice.jsonl; do echo \"$f $(git -C $B show main:$f | wc -c) emails:$(git -C $B show main:$f | rg -c '[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[a-z]{2,}')\"; done"
+status: succeeded
+started_at: 2026-10-12T23:31:22.473Z
+running_for_ms: 47591    
+---
+42
+main:archive/from-gitbook/archive/moved/Grok-ready/artifacts/api-server/src/lib/father-natal.ts:20:  birth: z.object({
+main:archive/from-gitbook/archive/moved/Grok-ready/artifacts/api-server/src/lib/father-natal.ts:85:  parts.push(`birth:${c.birth.date}T${c.birth.time}@${c.birth
+main:archive/from-gitbook/archive/moved/Grok-ready/artifacts/api-server/src/lib/father-natal.ts:108:    `Born ${c.birth.date} at ${c.birth.time} (${c.birth.time
+main:archive/from-gitbook/archive/moved/Grok-ready/artifacts/api-server/src/lib/father-natal.ts:109:    `Location: ${c.birth.location}`,
+main:archive/from-gitbook/archive/moved/Grok-ready/artifacts/api-server/src/lib/father-natal.ts:110:    `House system: ${c.birth.houseSystem}`,
+docs/v2/v2-memory.jsonl 81013 emails:
+data/school/corrections.jsonl 587 emails:
+data/school/read-one.jsonl 2812 emails:
+data/school/voice.jsonl 94 emails:
+
+---
+exit_code: 0
+elapsed_ms: 47591
+ended_at: 2026-10-12T23:32:10.064Z
+---

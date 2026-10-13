@@ -1,0 +1,1 @@
+- Push GitBook → GitHub (after Father's yes on the listed docs item, Tessera pushes it via PR, Build verifies, Tessera merges; Father may still push himself; Replit is outside that path and is never a GitBook publication path)

@@ -1,0 +1,17 @@
+---
+pid: 1576181
+cwd: "/workspace"
+command: "df -h /workspace /tmp | tail -2; cd /tmp && rm -rf pr55 && mkdir pr55 && cd pr55 && git init -q && git remote add o https://github.com/vitalitychems-dot/Gitbook.git && git fetch -q --depth=1 o pull/55/head 2>&1 | tail -2; git rev-parse FETCH_HEAD"
+title: "Shallow fetch PR head"
+status: failed   
+started_at: 2026-10-13T06:59:05.115Z
+running_for_ms: 41851    
+---
+overlay         126G  115G  4.8G  97% /
+overlay         126G  115G  4.8G  97% /
+
+---
+exit_code: unknown
+elapsed_ms: 41851
+ended_at: 2026-10-13T06:59:46.966Z
+---

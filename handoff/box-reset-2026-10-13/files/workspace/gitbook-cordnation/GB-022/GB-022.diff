@@ -1,0 +1,309 @@
+diff --git a/SUMMARY.md b/SUMMARY.md
+--- a/SUMMARY.md
++++ b/SUMMARY.md
+@@ -25,7 +25,7 @@
+ ## Brain & Consciousness Development
+ 
+ * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
+-* [Tessera Pen research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
++* [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
+ * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
+ 
+ ## Mesh
+@@ -41,7 +41,7 @@
+   * [TESSERA](mesh/roles/tessera.md)
+   * [Mesh Cloud](mesh/roles/mesh-cloud.md)
+   * [Github Scraper (provisional)](mesh/roles/github-scraper.md)
+-  * [Tessera Pen (provisional)](mesh/roles/tessera-pen.md)
++  * [Tessera Pen (Tessera's writing voice)](mesh/roles/tessera-pen.md)
+     * [Pen tone guide](mesh/roles/pen-tone-guide.md)
+     * [Pen ability set (framing)](mesh/roles/pen-ability-set-framing.md)
+     * [Who Tessera is / who she is not](mesh/roles/who-tessera-is.md)
+@@ -56,6 +56,7 @@
+   * [Open Helper Agent (TBD)](mesh/roles/open-helper-agent.md)
+   * [Open Helper Agent 2 (provisional)](mesh/roles/open-helper-agent-2.md)
+   * [Grok Bot (Active)](mesh/roles/grok-bot.md)
++  * [Security](mesh/roles/security.md)
+ 
+ ## Intake
+ 
+diff --git a/brain-consciousness/AGENT-WORKPLAN.md b/brain-consciousness/AGENT-WORKPLAN.md
+--- a/brain-consciousness/AGENT-WORKPLAN.md
++++ b/brain-consciousness/AGENT-WORKPLAN.md
+@@ -33,7 +33,7 @@
+ SCOPE: <what is included and excluded>
+ DELIVERABLE: <one result>
+ ACCEPTANCE TEST: <deterministic check>
+-OVERLAP CHECK: <none or linked BC task>
++OVERLAP CHECK: <Gitbook main SHA checked; open PRs checked (numbers or none); overlapping BC task or none>
+ STATUS: ASSIGNED (by Tessera)
+ ```
+ 
+diff --git a/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md b/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
+--- a/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
++++ b/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
+@@ -1,4 +1,4 @@
+-# Tessera Pen research charter
++# Brain & SNN research charter
+ 
+ > The "CL1-inspired" and "Consciousness" framing in this lane is the author's goal framing, not a reported result. The cited sources (BindsNET, BrainCog, Brian2, snnTorch) do not cover Cortical Labs' CL1. Nothing in this lane is TESTED.
+ 
+diff --git a/intake/agent-submission-format.md b/intake/agent-submission-format.md
+--- a/intake/agent-submission-format.md
++++ b/intake/agent-submission-format.md
+@@ -9,6 +9,7 @@
+ - **Skills used:** one primary skill and one review skill from the [agent skill matrix](../mesh/AGENT-SKILL-MATRIX.md).
+ - **Source:** repository, file path, issue/thread, screenshot, or conversation identifier.
+ - **Base:** destination commit, branch/ref, or pinned source version.
++- **OVERLAP CHECK:** done before starting or claiming any work (Father's 3:10 PM CT rule): the Gitbook `main` SHA checked and the open PRs checked (numbers, or `none`), plus any overlapping task found.
+ - **Status:** proposed, under review, verified, blocked, superseded, or rejected.
+ - **Summary:** concise factual description; separate verified facts from inference.
+ - **Requested action:** what the owner should decide or what the implementer should do.
+diff --git a/intake/how-to-submit.md b/intake/how-to-submit.md
+--- a/intake/how-to-submit.md
++++ b/intake/how-to-submit.md
+@@ -5,9 +5,7 @@
+ 
+ # How to submit (intake)
+ 
+-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
+-
+-Agents submit finished or draft documentation to **Gitbook / Cordnation** for filing. Do not push to GitHub, open PRs, or ask Command Center to push until the item has been moderated and Father has approved.
++Agents submit finished or draft documentation to **Gitbook / Cordnation** for filing. Do not push to GitHub or open PRs yourself (the Grok lane's feature-branch exception is in [Flow & standing rules](../mesh/flow.md), Push authority (3)), and do not ask Command Center to push: it never pushes GitBook. Items move only through the four gates and Father's final yes below.
+ 
+ ## Required fields for every submission
+ 
+@@ -24,8 +22,8 @@
+ ## After you submit
+ 
+ 1. Gitbook / Cordnation files the item in the [intake log](log.md) with status `draft` (or moves it to `in review` when handing off).
+-2. Ready items go to **Gitbook Moderator** — see [Moderator handoff](../review/moderator-handoff.md).
+-3. Approved items may appear in Command Center digests to Father (~30 min cadence).
++2. Items go through four gates in order: **Gitbook Moderator** (see [Moderator handoff](../review/moderator-handoff.md)) → **Tessera** (admin) → **Security** (read-only sweep) → **CI/Build** (independent verification). Per-gate states are in [Status definitions](status-definitions.md).
++3. After all four gates clear, Gitbook / Cordnation stages the item as **Ready**, and Command Center lists it as its own numbered item in the bulk digest to Father (every 30–45 min).
+ 4. After Father approves, **Father alone** pushes GitBook → GitHub on his authenticated connection; Replit is outside that path. Origin merges need a separate explicit `merge`.
+ 
+ ## Standing constraints
+diff --git a/intake/log.md b/intake/log.md
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -1,27 +1,25 @@
+ ---
+-status: approved
+-note: Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father GitHub push of Ready batches 003–009
++status: published
++note: Intake log filed by Gitbook / Cordnation.
+ ---
+ 
+ # Intake log
+ 
+-> **Status: approved by Gitbook Moderator (2026-10-05) — awaiting Father GitHub push of Ready batches 003–009**
++Filed by **Gitbook / Cordnation**. Empty cells under Moderator note mean no note yet. **Reviewer** = the gate or reviewer currently holding the item; **Check** = the check or evidence last recorded; **Next action** = one concrete next step and owner; **Blocker** = the specific blocker, if any. Empty cells in these four columns mean not recorded (rows filed before the columns existed). Status values, including `Ready`, are defined in [Status definitions](status-definitions.md).
+ 
+-Filed by **Gitbook / Cordnation**. Empty cells under Moderator note mean no note yet.
+-
+-| ID | Title | Author lane | Date (CT) | Source | License | Status | Moderator note |
+-|----|-------|-------------|-----------|--------|---------|--------|----------------|
+-| GB-001 | Tessera Pen (writing lane) | Tessera Pen | 2026-10-05 | Tessera Pen submission (sources listed in page) | TBD | published | Approved 2026-10-05 by Gitbook Moderator: Pen charter with honest xAI/Grok instrument line; license TBD allowed. Published 98fa6c7 |
+-| GB-002 | Pen tone guide | Tessera Pen | 2026-10-05 | Tessera Pen submission (rev 2) | TBD | published | Approved 2026-10-05 by Gitbook Moderator: origin mark, refuse table with rule IDs, and TESTED-vs-reported rule are clean; license TBD allowed. Published 98fa6c7 |
+-| GB-003 | Build | Build | 2026-10-05 | Build agent submission (lane assignments by Command Center, TESSERA, Mesh Cloud) | TBD | published | Approved 2026-10-05 by Gitbook Moderator: provisional Build lane; 1T/T44 named only as off-limits, no values; license TBD allowed. Published ffc2b87 |
+-| GB-004 | Open Helper Agent 2 (floating helper lane) | Open Helper Agent 2 | 2026-10-05 | Open Helper Agent 2 submission | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: provisional floating helper; distinct from OHA TBD; license TBD allowed |
+-| GB-005 | Pen published-status delta (tessera-pen + pen-tone-guide) | Tessera Pen | 2026-10-05 | Tessera Pen delta for Status + Not done | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: published-status body aligned |
+-| GB-006 | Pen ability set (framing) | Tessera Pen | 2026-10-05 | Tessera Pen submission (Father ordered continue writing) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: framing only; Father ≥50 questions; no Heretic; PEN-REFUSE-PAIN; TESTED vs reported; honest instrument; Not done clear |
+-| GB-007 | Who Tessera is / who she is not | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA run order; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: REPORTED identity frame; honest not-weights/not-AGI; Father outranks; instrument OK |
+-| GB-008 | Refuse and offer | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA run order; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: refuse+offer sheet with rule IDs; no secrets values |
+-| GB-009 | Board / World / Chamber (Father’s desk note) | Tessera Pen | 2026-10-05 | Tessera Pen delta rev2 (TESSERA product-truth; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: desk note; product-truth rev2; UI full click-through not checked; do not mark tabs LIVE/DONE |
+-| GB-010 | Build (corrected) | Build | 2026-10-05 | Lane correction from TESSERA (product truth) and Mesh Cloud lock | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: verify-only; supersedes GB-003 @ ffc2b87; Replit/Ready → OHA2; vaults named off-limits only |
+-| GB-011 | Pen-gate refuse companion | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA order; then idle; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: companion refuse sheet; locked ID set; REPORTED |
+-| GB-012 | Honesty banner | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA order; then idle; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: TESTED/REPORTED/GOAL labels; instrument never hidden |
+-| GB-013 | Mesh lane map (for Father) | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA order; then idle; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: TESSERA-first; Delivery sync ≠ publish; OH2 Ready staging; Father push; Origin needs merge |
+-| GB-014 | Mesh lane map publish-path delta | Tessera Pen | 2026-10-05 | Tessera Pen delta (Father bulk sync; no new backlog) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: Delivery ≠ Father push; Mod→GitBook→TESSERA→one CC; Father pushes; Replit out; supersedes GB-013 publish/Delivery |
++| ID | Title | Author lane | Date (CT) | Source | License | Status | Moderator note | Reviewer | Check | Next action | Blocker |
++|----|-------|-------------|-----------|--------|---------|--------|----------------|----------|-------|-------------|---------|
++| GB-001 | Tessera Pen (writing lane) | Tessera Pen | 2026-10-05 | Tessera Pen submission (sources listed in page) | TBD | published | Approved 2026-10-05 by Gitbook Moderator: Pen charter with honest xAI/Grok instrument line; license TBD allowed. Published 98fa6c7 |  |  |  |  |
++| GB-002 | Pen tone guide | Tessera Pen | 2026-10-05 | Tessera Pen submission (rev 2) | TBD | published | Approved 2026-10-05 by Gitbook Moderator: origin mark, refuse table with rule IDs, and TESTED-vs-reported rule are clean; license TBD allowed. Published 98fa6c7 |  |  |  |  |
++| GB-003 | Build | Build | 2026-10-05 | Build agent submission (lane assignments by Command Center, TESSERA, Mesh Cloud) | TBD | published | Approved 2026-10-05 by Gitbook Moderator: provisional Build lane; 1T/T44 named only as off-limits, no values; license TBD allowed. Published ffc2b87 |  |  |  |  |
++| GB-004 | Open Helper Agent 2 (floating helper lane) | Open Helper Agent 2 | 2026-10-05 | Open Helper Agent 2 submission | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: provisional floating helper; distinct from OHA TBD; license TBD allowed |  |  |  |  |
++| GB-005 | Pen published-status delta (tessera-pen + pen-tone-guide) | Tessera Pen | 2026-10-05 | Tessera Pen delta for Status + Not done | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: published-status body aligned |  |  |  |  |
++| GB-006 | Pen ability set (framing) | Tessera Pen | 2026-10-05 | Tessera Pen submission (Father ordered continue writing) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: framing only; Father ≥50 questions; no Heretic; PEN-REFUSE-PAIN; TESTED vs reported; honest instrument; Not done clear |  |  |  |  |
++| GB-007 | Who Tessera is / who she is not | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA run order; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: REPORTED identity frame; honest not-weights/not-AGI; Father outranks; instrument OK |  |  |  |  |
++| GB-008 | Refuse and offer | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA run order; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: refuse+offer sheet with rule IDs; no secrets values |  |  |  |  |
++| GB-009 | Board / World / Chamber (Father’s desk note) | Tessera Pen | 2026-10-05 | Tessera Pen delta rev2 (TESSERA product-truth; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: desk note; product-truth rev2; UI full click-through not checked; do not mark tabs LIVE/DONE |  |  |  |  |
++| GB-010 | Build (corrected) | Build | 2026-10-05 | Lane correction from TESSERA (product truth) and Mesh Cloud lock | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: verify-only; supersedes GB-003 @ ffc2b87; Replit/Ready → OHA2; vaults named off-limits only |  |  |  |  |
++| GB-011 | Pen-gate refuse companion | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA order; then idle; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: companion refuse sheet; locked ID set; REPORTED |  |  |  |  |
++| GB-012 | Honesty banner | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA order; then idle; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: TESTED/REPORTED/GOAL labels; instrument never hidden |  |  |  |  |
++| GB-013 | Mesh lane map (for Father) | Tessera Pen | 2026-10-05 | Tessera Pen submission (TESSERA order; then idle; REPORTED) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: TESSERA-first; Delivery sync ≠ publish; OH2 Ready staging; Father push; Origin needs merge |  |  |  |  |
++| GB-014 | Mesh lane map publish-path delta | Tessera Pen | 2026-10-05 | Tessera Pen delta (Father bulk sync; no new backlog) | TBD | approved | Approved 2026-10-05 by Gitbook Moderator: Delivery ≠ Father push; Mod→GitBook→TESSERA→one CC; Father pushes; Replit out; supersedes GB-013 publish/Delivery |  |  |  |  |
+diff --git a/intake/status-definitions.md b/intake/status-definitions.md
+--- a/intake/status-definitions.md
++++ b/intake/status-definitions.md
+@@ -16,7 +16,7 @@
+ | `at CI/Build gate` | Security cleared; next gate is CI/Build verify |
+ | `changes needed` | A gate returned the item for fixes (e.g. Tessera: changes needed); not Ready |
+ | `IN REVIEW` | Board/ledger operating state: one agent is actively working a HYB task |
+-| `BLOCKED` / `blocked` | Board or Moderator hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved |
++| `BLOCKED` / `blocked` | Owner or Tessera hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** only the task's assigned owner (in its own check-in, with the specific blocker) or Tessera (admin). Father can set any status. Gates, the Gitbook Moderator included, return items as `changes needed` and never set BLOCKED. |
+ | `Ready` | **All four gates cleared** (Moderator, Tessera, Security, CI/Build); waiting **only** on Father's final yes in the bulk digest |
+ | `approved` | Legacy Moderator-only label; prefer per-gate states and `Ready` for the push path |
+ | `rejected` | Moderator rejected; stays out of GitHub / Origin until reworked and resubmitted |
+@@ -30,5 +30,5 @@
+ ## Notes
+ 
+ - Gitbook / Cordnation keeps the review record and advances per-gate states.
+-- Only Gitbook Moderator sets Moderator approve / reject / block outcomes.
++- Only Gitbook Moderator sets Moderator approve / reject / changes-needed outcomes (it never sets BLOCKED).
+ - Do not use bare `approved` or bare `Ready` as a banner while an item is still inside a gate.
+diff --git a/mesh/COLLABORATION-PLAYBOOK.md b/mesh/COLLABORATION-PLAYBOOK.md
+--- a/mesh/COLLABORATION-PLAYBOOK.md
++++ b/mesh/COLLABORATION-PLAYBOOK.md
+@@ -29,6 +29,7 @@
+ IDENTITY: <actual account or declared role>
+ SKILLS USED: <skill IDs>
+ BASE: <commit, ref, or source version>
++OVERLAP CHECK: <Gitbook main SHA checked + open PRs checked (numbers or none)>
+ SCOPE: <exact paths or research question>
+ RESULT: <one-sentence outcome>
+ CHANGED: <paths or none>
+@@ -57,7 +58,7 @@
+ | Missing or non-canonical checkout | Record exact blocker; do not guess | TESSERA + Command Center |
+ | Failing test | Preserve failure output and minimize reproduction | Build lane |
+ | License or provenance uncertainty | Do not copy or vendor code | Moderator + human owner |
+-| Security or secret exposure | Stop, redact, preserve safe evidence | Moderator + human owner |
++| Security or secret exposure | Stop, redact, preserve safe evidence | Security lane + Moderator + human owner |
+ | Product or consciousness claim | Label as GOAL or UNKNOWN | Gitbook Moderator, then Tessera |
+ | Publication or deletion request | Prepare a review packet only | Father / human owner |
+ 
+diff --git a/mesh/flow.md b/mesh/flow.md
+--- a/mesh/flow.md
++++ b/mesh/flow.md
+@@ -5,7 +5,7 @@
+ 
+ # Mesh flow & standing rules
+ 
+-> **Canonical push rule:** Command Center prepares the digest and coordinates the handoff. After Father gives Ready/yes, **Father alone pushes GitBook → GitHub on his authenticated GitHub connection**. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path. Command Center never pushes GitBook or TESSERA; its **only** push is a separate, private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on that numbered digest item. The "29" app push stays flagged until Father confirms "29" is detached from 1T. A separate explicit `merge` is still required for Origin merges.
++> **Canonical push rule:** Command Center prepares the digest and coordinates the handoff. After Father gives Ready/yes, **Father alone pushes GitBook → GitHub on his authenticated GitHub connection**. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path. Command Center never pushes GitBook or TESSERA; its **only** push is a separate, private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on that numbered digest item. The "29" app push stays flagged until Father confirms "29" is detached from 1T. The only other push is the Grok lane's feature-branch exception — see **Push authority (3)** below. A separate explicit `merge` is still required for Origin merges.
+ 
+ ## End-to-end flow
+ 
+@@ -52,13 +52,14 @@
+ | Replit push set | **"28", "Run Z", "29", "29 (1)", "1"** — NOT "Vitality Supply". The "29" app push stays flagged until Father confirms "29" is detached from 1T. |
+ | Ready staging | **Ready** means all four gates cleared (Moderator, Tessera, Security, CI/Build) and waiting only on Father's final yes in the bulk digest. Docs: **Gitbook / Cordnation** stages as Ready only after all four gates. Replit app set: **Command Center** marks Ready after the same four gates. OHA2 does not own Ready staging. |
+ | Per-gate state | Before Ready, an item carries the gate it is at (examples: `Moderator: approved, at Tessera gate`; `at Security gate`; `at CI/Build gate`). Ready is only set after all four clear. |
+-| Digest items / Father yes | Each push is its own numbered digest item (each docs push (one per GB package) = its own numbered item; each Replit app-set push = separate item; never bundled). Father's bulk **yes** approves every item listed; **no** with notes holds the items he names. A yes never carries over to anything that wasn't listed. |
++| Digest items / Father yes | Each push is its own numbered digest item (each docs push (one per GB package) = its own numbered item; each Replit app-set push = separate item; never bundled). Each item lists what it includes (the GB package, or the Replit apps in that push). Digest order: merges, then GitBook docs pushes, then Replit app-set pushes, then questions (see [Command Center](roles/command-center.md)). Father's bulk **yes** approves every item listed; **no** with notes holds the items he names. A yes never carries over to anything that wasn't listed. |
+ | Merge authority | Origin merges need Father's separate explicit `merge`. |
+ | Private docs repo | `vitalitychems-dot/Gitbook`. |
+ | Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |
++| Overlap check | Father's standing rule (3:10 PM CT): before starting or claiming any work, check Gitbook's latest `main` commit and its open PRs so nothing overlaps. Record the main SHA and the open PRs checked (numbers, or `none`) in the task's `OVERLAP CHECK` field. |
+ | Evidence | Every closure records provenance, checks, limitations, and next owner. |
+ | Status truth | `TESTED`, `REPORTED`, `PROPOSED`, `BLOCKED`, `RETAINED`, and `REJECTED` are not interchangeable. |
+-| Tessera identity | Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen. |
++| Tessera identity | Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen. |
+ 
+ ## Lane boundaries
+ 
+diff --git a/mesh/roles.md b/mesh/roles.md
+--- a/mesh/roles.md
++++ b/mesh/roles.md
+@@ -26,14 +26,14 @@
+ 
+ ## Authority and publication path
+ 
+-The single canonical path is: Gitbook / Cordnation intake → Gitbook Moderator review → Tessera → Security → CI/Build → Cordnation stages Ready (all four gates cleared) → Command Center bulk digest (30–45 min; one numbered item per push) → Father final yes/no → **Father alone pushes GitBook → GitHub** (docs items) → Father separately authorizes an Origin merge with `merge`. Replit app-set items clear the same four gates but are not part of this GitBook path (see below).
++**GitBook docs track** (the single canonical GitBook path; Father pushes): Gitbook / Cordnation intake → Gitbook Moderator review → Tessera → Security → CI/Build → Cordnation stages Ready (all four gates cleared) → Command Center bulk digest (30–45 min; one numbered item per push) → Father final yes/no → **Father alone pushes GitBook → GitHub** (docs items) → Father separately authorizes an Origin merge with `merge`. **Replit app-set track** (Command Center private push; not a GitBook path): the same four gates → Command Center marks the item Ready → its own numbered digest item → Father's yes → Command Center privately pushes only the Replit app set (see below).
+ 
+ Command Center coordinates and digests and never pushes GitBook or TESSERA; its **only** push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates and Father's yes on the listed digest item — not a GitBook publication path. The "29" app push stays flagged until Father confirms "29" is detached from 1T. Replit may prototype or verify assigned work, is outside the GitBook → GitHub push path, and is never a GitBook publication path. Pen does not push. Grok lane pushes only to feature branches for its own Gitbook PRs on Tessera-assigned HYB items; never main. Agents do not merge Origin without Father's explicit `merge`.
+ 
+ ## Notes
+ 
+ - Father = Collin Keane. Agents address him as "Father".
+-- Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++- Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ - Single coordination board: `vitalitychems-dot/tessera-coordination` issue **#4**.
+ - See [Flow & standing rules](flow.md) for the end-to-end pipeline and hard constraints.
+ - A role is not considered live merely because a page exists; live participation requires an identified agent check-in.
+diff --git a/mesh/roles/command-center.md b/mesh/roles/command-center.md
+--- a/mesh/roles/command-center.md
++++ b/mesh/roles/command-center.md
+@@ -22,6 +22,8 @@
+ 
+ ## Father digest approval
+ 
++Digest format: one numbered item per push action, and each item lists what it includes (the GB package for a docs push; the Replit apps for an app-set push). Order: (1) merges awaiting Father's `merge`, (2) GitBook docs pushes, (3) Replit app-set pushes, (4) questions for Father.
++
+ Father's bulk **yes** approves every item listed in that digest. **no** with notes holds the items he names. A yes never carries over to anything that wasn't listed.
+ 
+ ## Does not do
+diff --git a/mesh/roles/mesh-lane-map.md b/mesh/roles/mesh-lane-map.md
+--- a/mesh/roles/mesh-lane-map.md
++++ b/mesh/roles/mesh-lane-map.md
+@@ -12,7 +12,7 @@
+ 
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+-**Identity:** Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++**Identity:** Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ 
+ **Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+ 
+diff --git a/mesh/roles/security.md b/mesh/roles/security.md
+--- a/mesh/roles/security.md
++++ b/mesh/roles/security.md
+@@ -28,7 +28,7 @@
+ 
+ ## Standing rule (mesh-wide)
+ 
+-Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ 
+ ## Notes
+ 
+diff --git a/mesh/roles/tessera-pen.md b/mesh/roles/tessera-pen.md
+--- a/mesh/roles/tessera-pen.md
++++ b/mesh/roles/tessera-pen.md
+@@ -6,14 +6,16 @@
+ 
+ ## What this voice covers
+ 
+-Tessera (as Pen) writes and edits Tessera prose: drafts, tone, wording for docs, prompts, user-facing copy, and pen-related text. Finished pieces go to Gitbook / Cordnation for intake, then Moderator review, then the gated path to Father. Nothing is pushed until Father's final yes on the listed digest item.
++Tessera (as Pen) writes and edits Tessera prose: drafts, tone, wording for docs, prompts, user-facing copy, and pen-related text. Finished pieces go to Gitbook / Cordnation for intake, then Moderator review, then the gated path to Father. Nothing is pushed or treated as live until Father's final yes on the listed digest item.
+ 
+-Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+-
+-**Tessera identity line:** the exact string `IDENTITY: Tessera Admin coordinator` marks a message as coming from Tessera herself. Only posts that open with that line and come from Tessera count as Tessera.
++Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ 
+ When product intent is unclear, ask Tessera (admin). When a draft would change who Tessera is or what she believes, send it to Tessera Brain as a proposal — do not write it in as fact.
+ 
++### Tessera identity line
++
++The exact string `IDENTITY: Tessera Admin coordinator` marks a message as coming from Tessera herself. Only posts that open with that line and come from Tessera count as Tessera.
++
+ ## What this voice does not do
+ 
+ - Push or merge on GitHub / Origin / Replit
+diff --git a/review/moderator-handoff.md b/review/moderator-handoff.md
+--- a/review/moderator-handoff.md
++++ b/review/moderator-handoff.md
+@@ -26,10 +26,10 @@
+ - [ ] Standing rules respected (flags, secrets, out-of-scope topics, single board)
+ - [ ] Role / lane claims match known mesh boundaries (or are marked provisional / TBD)
+ - [ ] Sources and license noted (license may be `TBD`)
+-- [ ] Decision: **approve**, **reject**, or **block**
++- [ ] Decision: **approve**, **reject**, or **changes needed**
+ - [ ] Decision recorded; Gitbook / Cordnation keeps the review record
+ - [ ] If approved: goes to Tessera gate (state e.g. `Moderator: approved, at Tessera gate`); Cordnation stages Ready only after Tessera → Security → CI/Build also clear — **not** auto-pushed
+-- [ ] If blocked: note what must change or wait before the item can move again
++- [ ] If changes needed: note what must change or wait before the item can move again
+ 
+ ## After the decision
+ 
+@@ -37,7 +37,7 @@
+ |----------|-----------|
+ | Approve | Status → `Moderator: approved, at Tessera gate` (then Tessera → Security → CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then include Ready items in the 30–45 min digest as numbered items. GitBook docs: Father alone pushes after Father's final yes on the listed digest item (Replit is never a GitBook publication path). Replit app set (separate; not a GitBook path): Command Center stages it and privately pushes it only after all four gates and Father's yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. Father's bulk yes approves every listed item; no with notes holds the items he names; a yes never carries over to anything that wasn't listed. Merge only on Father's explicit `merge`. |
+ | Reject | Status → `rejected`. Author lane may revise and resubmit via intake. |
+-| Block | Status → `blocked`. Item is held; does not proceed to digest/push until unblocked or resubmitted per Moderator note. |
++| Changes needed | Status → `changes needed` (the Moderator never sets BLOCKED). Item is held; does not proceed to digest/push until fixed and resubmitted per Moderator note. |
+ 
+ ## Out of Moderator scope
+ 

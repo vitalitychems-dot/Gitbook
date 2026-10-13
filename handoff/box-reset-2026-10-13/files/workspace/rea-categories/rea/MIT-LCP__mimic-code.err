@@ -1,0 +1,85 @@
+{"rea_progress":{"phase":"analyze_javascript_application","completed":0,"total":1,"message":"Inventorying and parsing application artifacts","sequence":1}}
+{"rea_progress":{"phase":"read_javascript_artifacts","completed":0,"total":1,"message":"Reading inventoried JavaScript application sources","sequence":2}}
+{"rea_progress":{"phase":"parse_javascript_sources","completed":0,"total":1,"message":"Parsing and projecting 72 application source files","sequence":3}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/ADMISSIONS.schema.json (1/72)","sequence":4}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/CALLOUT.schema.json (2/72)","sequence":5}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/CAREGIVERS.schema.json (3/72)","sequence":6}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/CHARTEVENTS.schema.json (4/72)","sequence":7}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/CPTEVENTS.schema.json (5/72)","sequence":8}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/DATETIMEEVENTS.schema.json (6/72)","sequence":9}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/DIAGNOSES_ICD.schema.json (7/72)","sequence":10}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/DRGCODES.schema.json (8/72)","sequence":11}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/D_CPT.schema.json (9/72)","sequence":12}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/D_ICD_DIAGNOSES.schema.json (10/72)","sequence":13}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/D_ICD_PROCEDURES.schema.json (11/72)","sequence":14}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/D_ITEMS.schema.json (12/72)","sequence":15}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/D_LABITEMS.schema.json (13/72)","sequence":16}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/ICUSTAYS.schema.json (14/72)","sequence":17}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/INPUTEVENTS_CV.schema.json (15/72)","sequence":18}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/INPUTEVENTS_MV.schema.json (16/72)","sequence":19}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/LABEVENTS.schema.json (17/72)","sequence":20}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/MICROBIOLOGYEVENTS.schema.json (18/72)","sequence":21}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/NOTEEVENTS.schema.json (19/72)","sequence":22}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/OUTPUTEVENTS.schema.json (20/72)","sequence":23}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/PATIENTS.schema.json (21/72)","sequence":24}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/PRESCRIPTIONS.schema.json (22/72)","sequence":25}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/PROCEDUREEVENTS_MV.schema.json (23/72)","sequence":26}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/PROCEDURES_ICD.schema.json (24/72)","sequence":27}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/SERVICES.schema.json (25/72)","sequence":28}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/buildmimic/bigquery/schemas/TRANSFERS.schema.json (26/72)","sequence":29}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/concepts/diagnosis/ccs_multi_dx.json (27/72)","sequence":30}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/notebooks/aline/aline_propensity_score.html (28/72)","sequence":31}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/notebooks/rmd_consort_diag/plot_consort_diagram.html (29/72)","sequence":32}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iii/tutorials/dplyr-frontend/intro.html (30/72)","sequence":33}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-ed/buildmimic/bigquery/schemas/ed/diagnosis.json (31/72)","sequence":34}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-ed/buildmimic/bigquery/schemas/ed/edstays.json (32/72)","sequence":35}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-ed/buildmimic/bigquery/schemas/ed/medrecon.json (33/72)","sequence":36}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-ed/buildmimic/bigquery/schemas/ed/pyxis.json (34/72)","sequence":37}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-ed/buildmimic/bigquery/schemas/ed/triage.json (35/72)","sequence":38}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-ed/buildmimic/bigquery/schemas/ed/vitalsign.json (36/72)","sequence":39}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-note/buildmimic/bigquery/schemas/discharge.json (37/72)","sequence":40}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-note/buildmimic/bigquery/schemas/discharge_detail.json (38/72)","sequence":41}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-note/buildmimic/bigquery/schemas/radiology.json (39/72)","sequence":42}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv-note/buildmimic/bigquery/schemas/radiology_detail.json (40/72)","sequence":43}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/demo_subject_id_schema.json (41/72)","sequence":44}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/admissions.json (42/72)","sequence":45}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/d_hcpcs.json (43/72)","sequence":46}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/d_icd_diagnoses.json (44/72)","sequence":47}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/d_icd_procedures.json (45/72)","sequence":48}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/d_labitems.json (46/72)","sequence":49}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/diagnoses_icd.json (47/72)","sequence":50}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/drgcodes.json (48/72)","sequence":51}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/emar.json (49/72)","sequence":52}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/emar_detail.json (50/72)","sequence":53}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/hcpcsevents.json (51/72)","sequence":54}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/labevents.json (52/72)","sequence":55}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/microbiologyevents.json (53/72)","sequence":56}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/omr.json (54/72)","sequence":57}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/patients.json (55/72)","sequence":58}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/pharmacy.json (56/72)","sequence":59}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/poe.json (57/72)","sequence":60}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/poe_detail.json (58/72)","sequence":61}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/prescriptions.json (59/72)","sequence":62}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/procedures_icd.json (60/72)","sequence":63}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/provider.json (61/72)","sequence":64}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/services.json (62/72)","sequence":65}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/hosp/transfers.json (63/72)","sequence":66}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/caregiver.json (64/72)","sequence":67}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/chartevents.json (65/72)","sequence":68}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/d_items.json (66/72)","sequence":69}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/datetimeevents.json (67/72)","sequence":70}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/icustays.json (68/72)","sequence":71}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/ingredientevents.json (69/72)","sequence":72}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/inputevents.json (70/72)","sequence":73}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/outputevents.json (71/72)","sequence":74}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting mimic-iv/buildmimic/bigquery/schemas/icu/procedureevents.json (72/72)","sequence":75}}
+{"rea_progress":{"phase":"build_javascript_application_graph","completed":0,"total":1,"message":"Constructing application and Electron boundary relationships","sequence":76}}
+{"rea_progress":{"phase":"seal_javascript_application_graph","completed":0,"total":1,"message":"Sealing the validated application graph","sequence":77}}
+{"rea_progress":{"phase":"build_javascript_semantic_graph","completed":0,"total":1,"message":"Binding and validating static semantic relationships","sequence":78}}
+{"rea_progress":{"phase":"seal_javascript_semantic_graph","completed":0,"total":1,"message":"Validating and sealing the semantic graph","sequence":79}}
+{"rea_progress":{"phase":"validate_javascript_application_result","completed":0,"total":1,"message":"Validating result metadata and cross-graph bindings","sequence":80}}
+{"rea_progress":{"phase":"create_javascript_application_evidence","completed":0,"total":1,"message":"Creating and hashing application analysis Evidence","sequence":81}}
+{"rea_progress":{"phase":"seal_javascript_application_result","completed":0,"total":1,"message":"Sealing the complete application analysis result","sequence":82}}
+{"rea_progress":{"phase":"validate_javascript_application_evidence","completed":0,"total":1,"message":"Validating the immutable application Evidence JSON","sequence":83}}
+{"rea_progress":{"phase":"hash_javascript_application_evidence","completed":0,"total":1,"message":"Hashing the complete application analysis Evidence","sequence":84}}
+{"rea_progress":{"phase":"analyze_javascript_application","completed":1,"total":1,"message":"Application graph and Electron boundaries reconstructed","terminal":true,"sequence":85}}

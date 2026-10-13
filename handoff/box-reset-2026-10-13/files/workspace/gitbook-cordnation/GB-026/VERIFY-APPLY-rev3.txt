@@ -1,0 +1,12 @@
+GB-026 rev 3 — apply verification (16:35 CT, 2026-10-05). Base: 979c35e0be9a27ab143c7dcfc714d979b11e10a0 (main; 0 open PRs at 16:35 CT).
+File: GB-026/GB-026-rev3.979c35e.diff  sha256 7fe2d5f273ac9826b10eb6bec1358986bb608433a681e1cb98da7a25ed1f7730  (563 lines, 23 files, +60/−87)
+Tree used: clean 979c35e subset (tag b979: 38 ecd9022 files + 21 PR #8 blobs, tree 814dd7a1), cleaned with checkout -f / clean -fd / reset --hard.
+diff rev2-file vs rev3-file: rc=1 (1 = differs); changed diff-file lines: 2
+interdiff numstat: 1	1	mesh/roles/tessera-pen.md
+A git apply --check rev3 on clean 979c35e: rc=0
+B git apply rev3 on clean 979c35e: rc=0
+  result tree 3b939545106d65be8fd9760f884f2293937bb8bd ; p26r3 tree 3b939545106d65be8fd9760f884f2293937bb8bd
+C rev3 alone on clean ecd9022 (informational, expected fail): rc=1
+Interpretation: rev 3 applies cleanly to 979c35e (rc=0/rc=0) and reproduces the reviewed rev 3 tree exactly. Rev 3 alone does not apply to ecd9022 (rc=1, expected: it depends on PR #8's content).
+Rev 2 → rev 3 proof: git diff --numstat p26r2_979 p26r3 = "1 1 mesh/roles/tessera-pen.md"; diff of the two diff files differs only at diff line 505 (the single + line). See apply-rev3/diff-of-diffs.txt and INTERDIFF-rev2-to-rev3.diff.
+Outputs: apply-rev3/{check.out,apply.out,solo_ecd.out,diff-of-diffs.txt,interdiff-numstat.txt,log.txt}

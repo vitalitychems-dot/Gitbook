@@ -1,0 +1,20 @@
+---
+pid: 67850
+cwd: "/workspace/einstein/builds/04_signed_hash_embed"
+command: "cd /workspace/einstein/builds && mkdir -p 05_qubo_diverse_retrieval && cd 05_qubo_diverse_retrieval && cat > run.py <<'EOF'\n\"\"\"Diverse top-k as a QUBO solved by simulated annealing (the classical analogue of quantum annealing).\nTarget: hybrid-retrieval.ts hybridRetrieve returns the top 5 by score; memory holds near-duplicates, so\nthe 5 slots can be spent on copies of one fact. Candidate: from the top 20 pick k=5 minimising\nE(x) = -sum rel_i x_i + lam * sum_{i<j} sim_ij x_i x_j + P (sum x - k)^2 by Metropolis annealing.\nData: real TESSERA docs paragraphs; each query mixes key terms from 3 paragraphs (3 subtopics);\n0-4 near-duplicates (15% token dropout) of each paragraph are planted. Relevance = BM25 (same formula).\nMetric: subtopics covered in the 5 results (0..3, higher better). Also reported: greedy MMR.\"\"\"\nimport sys; sys.path.insert(0, \"..\")\nfrom common import *\nK, POOL, LAM = 5, 20, 0.6\ndef corpus(r):\n    P = paragraphs(); docs, src = [], []\n    for i, p in enumerate(P):\n        t = tok3(p); docs.append(t); src.append(i)\n        for _ in range(r.integers(0, 5)):\n            docs.append([w for w in t if r.random() > .15]); src.append(i)\n    return docs, np.array(src)\ndef jacc(a, b):\n    A, B = set(a), set(b); return len(A & B) / max(1, len(A | B))\ndef anneal(rel, S, k, r, steps=3000):\n    n = len(rel); x = np.zeros(n, int); x[:k] = 1; Pn = 2.0\n    E = lambda x: -rel @ x + LAM * (x @ S @ x) / 2 + Pn * (x.sum() - k) ** 2\n    e = E(x); best, be = x.copy(), e\n    for s in range(steps):\n        T = 1.0 * (0.002 / 1.0) ** (s / steps)\n        i, j = r.choice(np.flatnonzero(x)), r.choice(np.flatnonzero(1 - x))   # swap move keeps sum=k\n        y = x.copy(); y[i], y[j] = 0, 1; ey = E(y)\n        if ey < e or r.random() < np.exp((e - ey) / T): x, e = y, ey\n        if e < be: best, be = x.copy(), e\n    return np.flatnonzero(best)\ndef mmr(rel, S, k):\n    sel = [int(np.argmax(rel))]\n    while len(sel) < k:\n        sc = [rel[i] - LAM * max(S[i, j] for j in sel) if i not in sel else -1e9 for i in range(len(rel))]\n        sel.append(int(np.argmax(sc)))\n    return sel\ndef run(method):\n    def f(seed):\n        r = vtk.rng(seed); docs, src = corpus(r); P = paragraphs(); cov = []\n        for _ in range(25):\n            topics = r.choice(len(P), 3, replace=False)\n            q = \" \".join(w for t in topics for w in r.choice(tok3(P[t]), 4, replace=False))\n            s = bm25(q, docs); pool = np.argsort(-s)[:POOL]\n            if method == \"top\": pick = pool[:K]\n            else:\n                rel = s[pool] / max(s[pool].max(), 1e-9)\n                S = np.array([[jacc(docs[a], docs[b]) if a != b else 0 for b in pool] for a in pool])\n                pick = pool[anneal(rel, S, K, r) if method == \"qubo\" else mmr(rel, S, K)]\n            cov.append(len(set(src[pick]) & set(topics)))\n        return float(np.mean(cov))\n    return f\nif __name__ == \"__main__\":\n    report([vtk.bench(\"05 QUBO-anneal diverse top-5 vs current top-5\", run(\"top\"), run(\"qubo\"), 12, True, \"subtopics covered /3\"),\n            vtk.bench(\"05 QUBO-anneal vs greedy MMR (non-quantum control)\", run(\"mmr\"), run(\"qubo\"), 12, True, \"subtopics covered /3\")], \"results.json\")\nEOF\ntime python3 run.py"
+status: succeeded
+started_at: 2026-10-13T08:32:40.195Z
+running_for_ms: 59103    
+---
+05 QUBO-anneal diverse top-5 vs current top-5: subtopics covered /3 baseline 2.047 [1.98,2.107] -> candidate 2.62 [2.54,2.69]; gain 0.5733 [0.5,0.65] (n=12) => KEEP
+05 QUBO-anneal vs greedy MMR (non-quantum control): subtopics covered /3 baseline 2.6 [2.533,2.667] -> candidate 2.62 [2.54,2.69]; gain 0.02 [-0.07667,0.1167] (n=12) => DROP
+
+real	0m59.061s
+user	0m59.462s
+sys	0m0.043s
+
+---
+exit_code: 0
+elapsed_ms: 59103
+ended_at: 2026-10-13T08:33:39.298Z
+---

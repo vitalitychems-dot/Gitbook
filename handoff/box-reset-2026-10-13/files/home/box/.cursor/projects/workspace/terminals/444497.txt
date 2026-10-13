@@ -1,0 +1,19 @@
+---
+pid: 233570
+cwd: "/tmp/h2"
+command: "kill 149534; pkill -P 149534; sleep 1; cd /workspace; W=/tmp/h2/r/handoff/box-reset-2026-10-13/work; ls $W/patches; du -sh $W/rick $W/build-plan-2026-10-12 $W/rea-inventory 2>/dev/null\npython3 - <<'EOF'\nimport os,hashlib,re,shutil,subprocess\nW='/tmp/h2/r/handoff/box-reset-2026-10-13/work'\nseen=set()\nfor dp,dn,fn in os.walk(W):\n  for f in fn: seen.add(hashlib.sha256(open(os.path.join(dp,f),'rb').read()).hexdigest())\next=('.md','.txt','.json','.jsonl','.csv','.py','.sh','.js','.ts','.yml','.yaml','.toml','.html','.log')\nbad=re.compile(r'(secret|vault|\\.env|key|token|leaks|gl\\.json)',re.I)\nn=0;out=[]\nsrcs=[(d,True) for d in ('rick','build-plan-2026-10-12','rea-inventory')]\nfor d,_ in srcs:\n  for dp,dn,fn in os.walk(d):\n    if '.git' in dn and dp!=d: dn[:]=[]; continue\n    dn[:]=[x for x in dn if x not in('.git','node_modules','dist','build','.venv','__pycache__')]\n    for f in fn:\n      p=os.path.join(dp,f)\n      if not p.endswith(ext) or bad.search(p) or os.path.getsize(p)>5_000_000: continue\n      h=hashlib.sha256(open(p,'rb').read()).hexdigest()\n      if h in seen: continue\n      seen.add(h); os.makedirs(os.path.join(W,dp),exist_ok=True); shutil.copy(p,os.path.join(W,p)); out.append(os.path.join(W,p))\nfor p in ['pubscan/GITHUB-SUPPORT-PURGE-REQUEST.md']+[os.path.join('pubscan',x) for x in os.listdir('pubscan') if x.endswith(('.sh','.txt'))]:\n  os.makedirs(W+'/pubscan',exist_ok=True); shutil.copy(p,W+'/'+p); out.append(W+'/'+p)\nfor i in range(0,len(out),200): subprocess.run(['python3','/tmp/h2/red.py']+out[i:i+200])\nprint('added',len(out))\nEOF\ndu -sh $W/rick $W/build-plan-2026-10-12 $W/rea-inventory $W/pubscan"
+status: failed   
+started_at: 2026-10-13T11:35:39.916Z
+running_for_ms: 710056   
+---
+amber-flame-tiger-sand_on_781f30a9.patch
+sec-retro-gbfix-r_on_243ddd4b.patch
+15M	/tmp/h2/r/handoff/box-reset-2026-10-13/work/rick
+2.2M	/tmp/h2/r/handoff/box-reset-2026-10-13/work/build-plan-2026-10-12
+92K	/tmp/h2/r/handoff/box-reset-2026-10-13/work/rea-inventory
+
+---
+exit_code: unknown
+elapsed_ms: 710055
+ended_at: 2026-10-13T11:47:29.971Z
+---

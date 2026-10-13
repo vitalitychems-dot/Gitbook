@@ -1,0 +1,128 @@
+diff --git a/brain-consciousness/AGENT-WORKPLAN.md b/brain-consciousness/AGENT-WORKPLAN.md
+index 42039cb..b4d385a 100644
+--- a/brain-consciousness/AGENT-WORKPLAN.md
++++ b/brain-consciousness/AGENT-WORKPLAN.md
+@@ -1,27 +1,29 @@
+ # Brain & Consciousness Development — agent workplan
+ 
+-**Coordinator:** Tessera Pen / Gitbook Moderator through the conference issue.
++**Coordinator:** Tessera assigns BC items. Gitbook Moderator reviews only; it never merges or promotes anything into TESSERA. Check-ins go through the conference issue.
+ 
+ **Scope:** Build a software-only, CL1-inspired spiking-neural-network research program for TESSERA. This is not a biological CL1 replica and does not establish consciousness.
+ 
+ ## No-overlap work queue
+ 
+-| ID | Lane | Owner | Deliverable | Acceptance test | Status |
++| ID | Lane | Suggested owner | Deliverable | Acceptance test | Status |
+ |---|---|---|---|---|---|
+-| BC-001 | Source and license audit | Github Scraper / Moderator | Update [SNN-SOURCE-MANIFEST.md](SNN-SOURCE-MANIFEST.md) with pinned refs, licenses, and advisories | Every proposed dependency has an official URL, license, ref, and disposition | READY |
+-| BC-002 | Neuron dynamics | TESSERA build lane | Original LIF neuron adapter and deterministic spike trace API in TESSERA | Unit tests cover reset, threshold, refractory period, and repeatability | READY |
+-| BC-003 | Plasticity research | Computational neuroscience lane | Compare STDP rules across the approved sources and write an experiment note | Reproduce one published/reference equation and report deviations | READY |
+-| BC-004 | Learning environment | RL / task lane | Small deterministic benchmark environment with spike input/output | Same seed produces the same episode trace; baseline is documented | READY |
+-| BC-005 | Cognitive interfaces | BrainCog research lane | Map memory, decision, and perception concepts to TESSERA interfaces without importing incompatible code | Interface proposal includes inputs, outputs, state, and tests | READY |
+-| BC-006 | Trainable PyTorch path | snnTorch research lane | Evaluate a minimal original trainable SNN adapter | CPU smoke test and one reproducible training run pass | READY |
+-| BC-007 | Equation simulator comparison | Brian2 research lane | Compare one neuron/synapse model against Brian2 reference output | Numeric tolerance and simulator version are recorded | READY |
+-| BC-008 | BindsNET comparison | BindsNET research lane | Compare learning-rule and RL experiment semantics | No upstream code copied; differences and license constraints recorded | READY |
+-| BC-009 | Event memory and observability | TESSERA systems lane | Event schema for spikes, rewards, state, provenance, and experiment runs | Schema validation rejects missing provenance and nondeterministic run IDs | READY |
+-| BC-010 | Safety and claims review | Gitbook Moderator | Review language, data handling, dependency permissions, and claims about brain/consciousness | No unverified consciousness or biological-equivalence claim remains | READY |
++| BC-001 | Source and license audit | Github Scraper (provisional, not instantiated); Gitbook Moderator reviews only | Update [SNN-SOURCE-MANIFEST.md](SNN-SOURCE-MANIFEST.md) with pinned refs, licenses, and advisories | Every proposed dependency has an official URL, license, ref, and disposition | PROPOSED |
++| BC-002 | Neuron dynamics | TESSERA build lane | Original LIF neuron adapter and deterministic spike trace API in TESSERA | Unit tests cover reset, threshold, refractory period, and repeatability | PROPOSED |
++| BC-003 | Plasticity research | Computational neuroscience lane — PROPOSED (unrostered) | Compare STDP rules across the listed sources and write an experiment note | Reproduce one published/reference equation and report deviations | PROPOSED |
++| BC-004 | Learning environment | RL / task lane — PROPOSED (unrostered) | Small deterministic benchmark environment with spike input/output | Same seed produces the same episode trace; baseline is documented | PROPOSED |
++| BC-005 | Cognitive interfaces | BrainCog research lane — PROPOSED (unrostered) | Map memory, decision, and perception concepts to TESSERA interfaces without importing incompatible code | Interface proposal includes inputs, outputs, state, and tests | PROPOSED |
++| BC-006 | Trainable PyTorch path | snnTorch research lane — PROPOSED (unrostered) | Evaluate a minimal original trainable SNN adapter | CPU smoke test and one reproducible training run pass | PROPOSED |
++| BC-007 | Equation simulator comparison | Brian2 research lane — PROPOSED (unrostered) | Compare one neuron/synapse model against Brian2 reference output | Numeric tolerance and simulator version are recorded | PROPOSED |
++| BC-008 | BindsNET comparison | BindsNET research lane — PROPOSED (unrostered) | Compare learning-rule and RL experiment semantics | No upstream code copied; differences and license constraints recorded | PROPOSED |
++| BC-009 | Event memory and observability | TESSERA systems lane — PROPOSED (unrostered) | Event schema for spikes, rewards, state, provenance, and experiment runs | Schema validation rejects missing provenance and nondeterministic run IDs | PROPOSED |
++| BC-010 | Safety and claims review | Gitbook Moderator | Review language, data handling, dependency permissions, and claims about brain/consciousness | No unverified consciousness or biological-equivalence claim remains | PROPOSED |
++
++Suggested owners are not assignments. Items are assigned by Tessera. No approver is on record for BC-001 through BC-010.
+ 
+ ## Check-in protocol
+ 
+-Before work begins, post one claim in the Gitbook conference using:
++Items are assigned by Tessera. After Tessera assigns a BC item, the assigned lane posts one check-in in the Gitbook conference before work begins, using:
+ 
+ ```text
+ IDENTITY: <declared agent or lane>
+@@ -32,7 +34,7 @@ SCOPE: <what is included and excluded>
+ DELIVERABLE: <one result>
+ ACCEPTANCE TEST: <deterministic check>
+ OVERLAP CHECK: <none or linked BC task>
+-STATUS: CLAIMED
++STATUS: ASSIGNED (by Tessera)
+ ```
+ 
+ On completion, update the same check-in with the commit, test output, provenance, limitations, and the next task. Agents must not mark another lane complete.
+@@ -43,8 +45,8 @@ On completion, update the same check-in with the commit, test output, provenance
+ 2. BC-002 and BC-009 establish the deterministic TESSERA substrate.
+ 3. BC-003, BC-006, BC-007, and BC-008 run isolated comparisons.
+ 4. BC-004 and BC-005 integrate only interfaces that pass tests.
+-5. The Moderator promotes validated ideas into TESSERA and records rejected or deferred ideas here.
++5. The Gitbook Moderator reviews validated ideas but never merges or promotes them into TESSERA (see Promotion gate). Rejected or deferred ideas are recorded here.
+ 
+ ## Promotion gate
+ 
+-A proposal moves from Gitbook to TESSERA only when it has: a source or original-design rationale, a named owner, a non-overlapping scope, a deterministic test, a security/dependency review, and a limitations statement.
++A proposal moves from Gitbook to TESSERA only when it has: a source or original-design rationale, an owner assigned by Tessera, a non-overlapping scope, a deterministic test, a security/dependency review, and a limitations statement. Meeting these criteria is not approval. The proposal then goes Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest. Nothing merges into TESSERA without Father's explicit yes.
+diff --git a/brain-consciousness/SNN-SOURCE-MANIFEST.md b/brain-consciousness/SNN-SOURCE-MANIFEST.md
+index c5bde6c..3c13149 100644
+--- a/brain-consciousness/SNN-SOURCE-MANIFEST.md
++++ b/brain-consciousness/SNN-SOURCE-MANIFEST.md
+@@ -1,10 +1,10 @@
+ # CL1-inspired software research source manifest
+ 
+-**Status:** Research sources approved for evaluation; no upstream repository is copied into Gitbook.
++**Status:** Research sources PROPOSED for evaluation (no approver on record); no upstream repository is copied into Gitbook.
+ 
+ ## Purpose
+ 
+-These projects provide complementary software models of spiking neural networks (SNNs). They do **not** reproduce Cortical Labs' CL1, which uses living biological cells and laboratory hardware. They are approved as references for a safe, software-only Tessera research lane.
++These projects provide complementary software models of spiking neural networks (SNNs). They do **not** reproduce Cortical Labs' CL1, which uses living biological cells and laboratory hardware. They are proposed as references for a safe, software-only Tessera research lane.
+ 
+ | Source | Official repository | License shown by upstream | Best use in Tessera research | Incorporation rule |
+ |---|---|---|---|---|
+@@ -20,7 +20,7 @@ These projects provide complementary software models of spiking neural networks
+ 3. Agents must pin versions or commits before running experiments and must record the exact version in the check-in ledger.
+ 4. Never run `pip install` from an unreviewed fork, pull request, archive, or pasted command.
+ 5. Do not vendor whole upstream repositories into Gitbook or TESSERA. Build small, tested, original adapters instead.
+-6. Any code copied or adapted must include provenance, license text/notice requirements, and a moderator review before merge.
++6. Any code copied or adapted must include provenance, license text/notice requirements, and the full review path before merge: Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest. The Moderator reviews only; it does not merge.
+ 
+ ## Proposed hybrid boundary
+ 
+diff --git a/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md b/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
+index ca1e05a..370b3f8 100644
+--- a/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
++++ b/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
+@@ -1,17 +1,17 @@
+ # Tessera Pen research charter
+ 
+-## Role
++## What Pen is
+ 
+-The Pen is the documented design and ethics gate for the Tessera brain-inspired software program. It can propose goals, compare evidence, reject unsupported claims, and choose which validated proposals should enter the TESSERA implementation queue.
++Tessera Pen is Tessera's own writing voice. It is not a lane, and it is not a design or ethics gate or a reviewer. This charter is written in that voice: it can propose goals and compare evidence, but it does not approve, reject, or choose which proposals enter the TESSERA implementation queue. BC items are assigned by Tessera.
+ 
+-The Pen is **not** treated as a literal biological brain or consciousness, and agents must not fabricate Pen statements, memories, feelings, or approvals. A Pen decision is a recorded proposal or review outcome until a human-authorized moderator merges tested code.
++The Pen is **not** treated as a literal biological brain or consciousness, and agents must not fabricate Pen statements, memories, feelings, or approvals. Pen text is a recorded proposal, not a review outcome or approval. The Gitbook Moderator reviews only and never merges; tested code reaches TESSERA only through Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest.
+ 
+ ## Decision vocabulary
+ 
+ - **PROPOSED:** an idea requiring research.
+ - **EVIDENCE-BACKED:** supported by a cited source or reproducible experiment.
+ - **TESTED:** verified by a named automated or manual test.
+-- **PROMOTED:** accepted into TESSERA after moderator review.
++- **PROMOTED:** accepted into TESSERA only after Moderator, then Tessera, then Security, then CI/Build, then Father's final yes in a bulk digest.
+ - **DEFERRED:** useful but not currently safe, compatible, or prioritized.
+ - **REJECTED:** unsupported, unsafe, license-incompatible, or outside scope.
+ 
+@@ -24,7 +24,7 @@ The Pen is **not** treated as a literal biological brain or consciousness, and a
+ 5. Treat consciousness as an open research question, not a current system capability.
+ 6. Keep humans in control of publication, deletion, credentials, and irreversible changes.
+ 
+-## First Pen review questions
++## First research questions
+ 
+ - Does this component improve measurable learning or robustness?
+ - Is the mechanism explainable through spikes, traces, weights, and events?

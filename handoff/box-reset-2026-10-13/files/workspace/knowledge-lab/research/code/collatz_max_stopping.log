@@ -1,0 +1,7 @@
+Collatz maximum stopping time
+limit=1000000
+max_stopping_time=524
+argmax_start=837799
+cache_size=2168611
+total_seconds=1.3337
+NOTE: finite search is not a proof of the Collatz conjecture.

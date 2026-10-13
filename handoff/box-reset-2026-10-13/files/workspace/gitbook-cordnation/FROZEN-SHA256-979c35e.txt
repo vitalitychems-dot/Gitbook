@@ -1,0 +1,16 @@
+# Base 979c35e0be9a27ab143c7dcfc714d979b11e10a0 (main; PR #8 merged GB-022 v4, GB-024 v3, GB-025, GB-023 on ecd9022; all 21 PR #8 blobs verified byte-identical to ecd9022 + the four frozen diffs).
+# GB-026 rev 2 (Tessera rulings 16:22 + 16:29 CT). DRAFT, prepared for the four gates; NOT Ready. Verified with git apply --check / apply on clean 979c35e (rc=0 / rc=0), 2026-10-05 16:31 CT. See GB-026/VERIFY-APPLY-979c35e.txt.
+# Byte-identical to GB-026/GB-026-rev2.ecd9022.diff (same sha; that file is the pre-merge name, kept). Rev 1 GB-026/GB-026.ecd9022.diff (6b730f73) is SUPERSEDED.
+1a5949a8191b4b06ca4fc918535a3e91e273048ded51bdfc40210a40805b8ee1  GB-026/GB-026-rev2.979c35e.diff
+# GB-026 rev 3 (Tessera ruling: tessera-pen.md:52 points at the history/coordination/ folder only). DRAFT, prepared for the four gates; NOT Ready. Verified git apply --check / apply on clean 979c35e (rc=0 / rc=0), 16:35 CT. See GB-026/VERIFY-APPLY-rev3.txt.
+# Rev 2 (1a5949a8, above) is SUPERSEDED by rev 3; kept unmodified. Rev 3 differs from rev 2 by one line (mesh/roles/tessera-pen.md:52).
+7fe2d5f273ac9826b10eb6bec1358986bb608433a681e1cb98da7a25ed1f7730  GB-026/GB-026-rev3.979c35e.diff
+# GB-027 (Tessera 16:34 CT ruling + leftovers + command-center.md restore). DRAFT, prepared for the four gates; NOT Ready. Stacks on GB-026 rev 3: git apply --check / apply on 979c35e + rev 3 rc=0 / rc=0; alone on 979c35e rc=1 (expected). 16:35 CT. See GB-027/VERIFY-APPLY.txt.
+8fc780410bef373aebf06f9c4ac6ba52a1f24e0569d4851d29d2b6d55a803121  GB-027/GB-027.979c35e.diff
+# GB-028 (Tessera task 16:41 CT + scope 16:42 CT: HYB-012 UNBLOCKED, Replit start-here page, board-reference sweep, issue #2 REPORTED note, HYB-012 base SHAs). DRAFT, prepared for the four gates; NOT Ready. Stacks after GB-027: on 979c35e + rev 3 + GB-027 --check/apply rc=0/0; alone on 979c35e rc=0/0. 16:43 CT. See GB-028/VERIFY-APPLY.txt.
+5689294fe725b845dac0e40712f09c2dc7234ba146f84f70ef292fb08a559b6b  GB-028/GB-028.979c35e.diff
+# GB-028 rev 2 (Tessera rulings 16:44 CT: HYB-012 state = defined IN REVIEW + "unblocked" note; start-here page front matter dropped; launch-prompt hunks kept). DRAFT, prepared for the four gates; NOT Ready. Rev 1 (5689294f, above) is SUPERSEDED and kept unmodified. Stack from clean 979c35e (rev 3 → GB-027 → GB-028 rev 2): rc=0 at every step; alone on 979c35e rc=0/0. 16:44 CT. See GB-028/VERIFY-APPLY-rev2.txt.
+7149403b6ef0e743274e19ffe163037471419d450581fc00ca6e572588ab8386  GB-028/GB-028-rev2.979c35e.diff
+# GB-028 rev 3 (Tessera 16:47 CT: one dated REPORTED line under the HYB-012 'blocker evidence' block; nothing else). DRAFT, prepared for the four gates; NOT Ready. Rev 2 (7149403b, above) is SUPERSEDED and kept unmodified. Stack from clean 979c35e (rev 3 → GB-027 → GB-028 rev 3): rc=0 at every step; alone on 979c35e rc=0/0. 16:47 CT. See GB-028/VERIFY-APPLY-rev3.txt.
+102ff79c700790c6c9167e187aff5ea41066fb01fbb5b4c0efce4459026aa122  GB-028/GB-028-rev3.979c35e.diff
+# NOTE: main moved to 45651521a137c4448673d6abfaa77e1567230f83 (PR #9 ebe003fe: GB-026 rev 3 + GB-027; PR #10: GB-028 rev 3; both landed byte-identical to the frozen diffs above). New packages are recorded in FROZEN-SHA256-4565152.txt.

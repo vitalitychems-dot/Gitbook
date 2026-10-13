@@ -1,0 +1,42 @@
+=== microsoft__autogen ===
+Collecting autogen-agentchat
+  Downloading autogen_agentchat-0.7.5-py3-none-any.whl.metadata (2.5 kB)
+Collecting autogen-ext
+  Downloading autogen_ext-0.7.5-py3-none-any.whl.metadata (7.3 kB)
+Collecting autogen-core==0.7.5 (from autogen-agentchat)
+  Downloading autogen_core-0.7.5-py3-none-any.whl.metadata (2.3 kB)
+Collecting jsonref~=1.1.0 (from autogen-core==0.7.5->autogen-agentchat)
+  Using cached jsonref-1.1.0-py3-none-any.whl.metadata (2.7 kB)
+Collecting opentelemetry-api>=1.34.1 (from autogen-core==0.7.5->autogen-agentchat)
+  Using cached opentelemetry_api-1.45.0-py3-none-any.whl.metadata (1.4 kB)
+Collecting pillow>=11.0.0 (from autogen-core==0.7.5->autogen-agentchat)
+  Using cached pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting protobuf~=5.29.3 (from autogen-core==0.7.5->autogen-agentchat)
+  Downloading protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl.metadata (592 bytes)
+Collecting pydantic<3.0.0,>=2.10.0 (from autogen-core==0.7.5->autogen-agentchat)
+  Using cached pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+Collecting typing-extensions>=4.0.0 (from autogen-core==0.7.5->autogen-agentchat)
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting annotated-types>=0.6.0 (from pydantic<3.0.0,>=2.10.0->autogen-core==0.7.5->autogen-agentchat)
+  Using cached annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.5 (from pydantic<3.0.0,>=2.10.0->autogen-core==0.7.5->autogen-agentchat)
+  Using cached pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic<3.0.0,>=2.10.0->autogen-core==0.7.5->autogen-agentchat)
+  Using cached typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Downloading autogen_agentchat-0.7.5-py3-none-any.whl (119 kB)
+Downloading autogen_core-0.7.5-py3-none-any.whl (101 kB)
+Using cached jsonref-1.1.0-py3-none-any.whl (9.4 kB)
+Downloading protobuf-5.29.6-cp38-abi3-manylinux2014_x86_64.whl (320 kB)
+Using cached pydantic-2.13.5-py3-none-any.whl (472 kB)
+Using cached pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+Downloading autogen_ext-0.7.5-py3-none-any.whl (331 kB)
+Using cached annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Using cached opentelemetry_api-1.45.0-py3-none-any.whl (60 kB)
+Using cached pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Installing collected packages: typing-extensions, protobuf, pillow, jsonref, annotated-types, typing-inspection, pydantic-core, opentelemetry-api, pydantic, autogen-core, autogen-ext, autogen-agentchat
+
+
+Successfully installed annotated-types-0.8.0 autogen-agentchat-0.7.5 autogen-core-0.7.5 autogen-ext-0.7.5 jsonref-1.1.0 opentelemetry-api-1.45.0 pillow-12.3.0 protobuf-5.29.6 pydantic-2.13.5 pydantic-core-2.46.5 typing-extensions-4.16.0 typing-inspection-0.4.4
+autogen_agentchat ok

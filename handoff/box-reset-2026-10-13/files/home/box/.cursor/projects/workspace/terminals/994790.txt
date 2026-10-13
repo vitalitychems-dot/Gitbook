@@ -1,0 +1,54 @@
+---
+pid: 426925
+cwd: "/workspace/learning-rate"
+command: "# Quick smoke: grade edge cases + verify corpus contains Father name for H questions\ncd /workspace/learning-rate\npython3 << 'PY'\nimport sys\nsys.path.insert(0,'src')\nfrom quiz_bank import HELDOUT, ORIGINAL\nfrom grade import grade\nfrom pathlib import Path\n# Verify heldout keys exist in cited sources\ncorpus=Path('/workspace/evals/data/gitbook-corpus')\nok_all=True\nfor h in HELDOUT:\n    src=h.get('src')\n    if not src: continue\n    text=(corpus/src).read_text().lower()\n    # at least one key should appear\n    hits=[k for k in h['keys'] if k.lower() in text]\n    if not hits:\n        print('MISSING keys', h['id'], h['keys'], 'in', src)\n        ok_all=False\n    else:\n        print(h['id'], 'ok keys in corpus:', hits[:3])\nprint('corpus check', 'PASS' if ok_all else 'FAIL')\n# grade smoke\nassert grade(ORIGINAL[2], 'Father is Collin Keane')\nassert not grade(ORIGINAL[2], 'The owner')\nassert grade(ORIGINAL[9], 'GHSA-vfj7-8cjw-p6xm')\nassert grade([x for x in HELDOUT if x['id']=='H01'][0], 'Ready')\nprint('grade smoke PASS')\nPY\n# Monitor retrieval progress periodically\nsleep 30\ntail -15 /workspace/learning-rate/results/retrieval.log\nwc -l /workspace/learning-rate/results/retrieval.log\ndate"
+title: "Verify quiz keys in corpus; monitor retrieval"
+status: succeeded
+started_at: 2026-10-05T23:24:31.472Z
+running_for_ms: 30196    
+---
+H01 ok keys in corpus: ['ready']
+H02 ok keys in corpus: ['owner', 'tessera', 'father']
+H03 ok keys in corpus: ['braces', '3.0.3']
+H04 ok keys in corpus: ['3.0.4', 'remove', 'braces']
+H05 ok keys in corpus: ['30', '45']
+H06 ok keys in corpus: ['28', 'run z', '29']
+H07 ok keys in corpus: ['not', 'vitality supply']
+H08 ok keys in corpus: ['desired', 'future', 'goal']
+H09 ok keys in corpus: ['sovereign_origin_7f3a9c', '7f3a9c']
+H10 ok keys in corpus: ['vitalitychems-dot/tessera', 'tessera']
+H11 ok keys in corpus: ['main', 'sha', 'open']
+H12 ok keys in corpus: ['in review']
+H13 ok keys in corpus: ['tessera', 'gitbook', 'application']
+H14 ok keys in corpus: ['active']
+H15 ok keys in corpus: ['nothing', 'no', 'report']
+H16 ok keys in corpus: ['cordnation', 'gitbook']
+H17 ok keys in corpus: ['yes', 'no', 'revise']
+H18 ok keys in corpus: ['never', 'main', 'feature']
+H19 ok keys in corpus: ['cortical']
+H20 ok keys in corpus: ['not a lane', 'writing', 'voice']
+corpus check PASS
+grade smoke PASS
+Loading corpora...
+chunks baseline=173 heading_overlap=391
+Hybrid RRF enabled
+
+======== METHOD bm25_baseline ========
+[bm25_baseline] O01 ok=True ans='TESSERA is the product repository and Gitbook is the agent workspace.'
+[bm25_baseline] O02 ok=True ans='The single coordination board is the issue [vitalitychems-dot/Gitbook '
+[bm25_baseline] O03 ok=False ans='Father is the only override for the origin mark and is the creator of '
+[bm25_baseline] O04 ok=True ans='No, Tessera does not have owned weights.'
+[bm25_baseline] O05 ok=True ans='No'
+[bm25_baseline] O06 ok=True ans='The Pen is xAI/Grok.'
+[bm25_baseline] O07 ok=True ans='Real output or a named unit/preview check was seen. Link or name the c'
+[bm25_baseline] O08 ok=True ans='Label REPORTED means stated by a lane or doc; not yet proven by a test'
+[bm25_baseline] O09 ok=False ans='HYB-005 does not decide anything.'
+[bm25_baseline] O10 ok=True ans='GHSA-vfj7-8cjw-p6xm'
+15 /workspace/learning-rate/results/retrieval.log
+Mon Oct  5 18:25:01 CDT 2026
+
+---
+exit_code: 0
+elapsed_ms: 30196
+ended_at: 2026-10-05T23:25:01.668Z
+---

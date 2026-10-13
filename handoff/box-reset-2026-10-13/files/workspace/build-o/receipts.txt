@@ -1,0 +1,10 @@
+o1-offline-index e9fc673 :: # tests 2 # pass 2 # fail 0 
+o2-offline-queue c04cd95 :: # tests 2 # pass 2 # fail 0 
+o3-service-worker 3aa9c8b :: # tests 1 # pass 1 # fail 0 
+o4-kiwix-optional 083a3a0 :: # tests 3 # pass 3 # fail 0 
+o5-usb-bundle 5d4b705 :: # tests 1 # pass 1 # fail 0 
+o6-lan-p2p 931755b :: # tests 1 # pass 1 # fail 0 
+o7-mesh-badge bd181c4 :: # tests 1 # pass 1 # fail 0 
+i12-hyb011-exclusions b8c05a8 :: # tests 1 # pass 1 # fail 0 
+o10-node-per-install c1c5cfe :: # tests 5 # pass 5 # fail 0 
+o10-node-per-install 665009b :: # tests 10 # pass 10 # fail 0 

@@ -1,0 +1,14 @@
+importers:
+  artifacts/v2:
+    dependencies:
+      three:
+        specifier: 0.169.0
+        version: 0.169.0
+  artifacts/api-server:
+    dependencies:
+      express:
+        specifier: ^5.2.1
+        version: 5.2.1
+packages:
+  three@0.169.0:
+  express@5.2.1:

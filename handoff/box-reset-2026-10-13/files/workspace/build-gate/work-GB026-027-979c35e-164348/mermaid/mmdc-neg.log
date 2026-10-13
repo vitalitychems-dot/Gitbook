@@ -1,0 +1,19 @@
+Generating single mermaid chart
+
+Error: Parse error on line 3:
+...D  A[open --> B  I{Origin: "merge"?} -
+---------------------^
+Expecting 'SQE', 'DOUBLECIRCLEEND', 'PE', '-)', 'STADIUMEND', 'SUBROUTINEEND', 'PIPE', 'CYLINDEREND', 'DIAMOND_STOP', 'TAGEND', 'TRAPEND', 'INVTRAPEND', 'UNICODE_TEXT', 'TEXT', 'TAGSTART', got 'DIAMOND_START'
+Parser.parseError (https://mermaid-cli-intercept.invalid/workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/mermaid/dist/chunks/mermaid.esm/chunk-T3ODRKFR.mjs:1561:21)
+Parser.parse (https://mermaid-cli-intercept.invalid/workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/mermaid/dist/chunks/mermaid.esm/chunk-T3ODRKFR.mjs:1633:16)
+    at #evaluate (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/cdp/ExecutionContext.js:402:19)
+    at async ExecutionContext.evaluate (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/cdp/ExecutionContext.js:288:16)
+    at async IsolatedWorld.evaluate (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/cdp/IsolatedWorld.js:104:16)
+    at async CdpJSHandle.evaluate (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/api/JSHandle.js:154:20)
+    at async CdpElementHandle.evaluate (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/api/ElementHandle.js:344:20)
+    at async CdpElementHandle.$eval (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/api/ElementHandle.js:498:24)
+    at async CdpFrame.$eval (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/api/Frame.js:469:20)
+    at async CdpPage.$eval (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/puppeteer-core/lib/puppeteer/api/Page.js:462:20)
+    at async renderMermaid (file:///workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/@mermaid-js/mermaid-cli/src/index.js:689:22)
+    at fromText (https://mermaid-cli-intercept.invalid/workspace/build-gate/work-GB026-027-979c35e-164348/mermaid/node_modules/mermaid/dist/mermaid.esm.mjs:1337:17)
+

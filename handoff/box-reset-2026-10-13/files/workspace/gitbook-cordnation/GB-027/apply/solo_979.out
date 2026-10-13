@@ -1,0 +1,28 @@
+error: patch failed: intake/how-to-submit.md:23
+error: intake/how-to-submit.md: patch does not apply
+error: patch failed: intake/status-definitions.md:25
+error: intake/status-definitions.md: patch does not apply
+error: patch failed: mesh/TESSERA-GITBOOK-OPERATING-MODE.md:21
+error: mesh/TESSERA-GITBOOK-OPERATING-MODE.md: patch does not apply
+error: patch failed: mesh/flow.md:1
+error: mesh/flow.md: patch does not apply
+error: patch failed: mesh/roles.md:26
+error: mesh/roles.md: patch does not apply
+error: patch failed: mesh/roles/build.md:17
+error: mesh/roles/build.md: patch does not apply
+error: patch failed: mesh/roles/command-center.md:1
+error: mesh/roles/command-center.md: patch does not apply
+error: patch failed: mesh/roles/gitbook-cordnation.md:32
+error: mesh/roles/gitbook-cordnation.md: patch does not apply
+error: patch failed: mesh/roles/gitbook-moderator.md:22
+error: mesh/roles/gitbook-moderator.md: patch does not apply
+error: patch failed: mesh/roles/grok-bot.md:19
+error: mesh/roles/grok-bot.md: patch does not apply
+error: patch failed: mesh/roles/mesh-lane-map.md:24
+error: mesh/roles/mesh-lane-map.md: patch does not apply
+error: patch failed: mesh/roles/pen-tone-guide.md:1
+error: mesh/roles/pen-tone-guide.md: patch does not apply
+error: patch failed: mesh/roles/who-tessera-is.md:27
+error: mesh/roles/who-tessera-is.md: patch does not apply
+error: patch failed: review/moderator-handoff.md:35
+error: review/moderator-handoff.md: patch does not apply

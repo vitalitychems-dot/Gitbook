@@ -1,0 +1,20 @@
+Checking patch intake/how-to-submit.md...
+error: while searching for:
+error: patch failed: intake/how-to-submit.md:23
+error: intake/how-to-submit.md: patch does not apply
+Checking patch intake/status-definitions.md...
+error: while searching for:
+error: patch failed: intake/status-definitions.md:25
+error: intake/status-definitions.md: patch does not apply
+Checking patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md...
+error: while searching for:
+error: patch failed: mesh/TESSERA-GITBOOK-OPERATING-MODE.md:21
+error: mesh/TESSERA-GITBOOK-OPERATING-MODE.md: patch does not apply
+Checking patch mesh/flow.md...
+error: while searching for:
+error: patch failed: mesh/flow.md:1
+error: mesh/flow.md: patch does not apply
+Checking patch mesh/roles.md...
+error: while searching for:
+error: patch failed: mesh/roles.md:26
+error: mesh/roles.md: patch does not apply

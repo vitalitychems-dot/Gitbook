@@ -1,0 +1,20 @@
+---
+pid: 384315
+cwd: "/workspace/evals"
+command: "# Write tip source-map and command-center into corpus (content from MCP)\npython3 <<'PY'\nfrom pathlib import Path\ncorp = Path('/workspace/evals/data/gitbook-corpus')\n# source-map tip\n(corp/'merge__source-map.md').write_text('''# Two-repository source map\n\n## Target layout\n\n| Destination | Role | Canonical input |\n|---|---|---|\n| `vitalitychems-dot/TESSERA` | Active code, tests, reviewed app workspace, provenance and validation records | `tessera-unified` |\n| `vitalitychems-dot/Gitbook` | Agent instructions, intake, coordination, review records, screenshots/transcripts, TODOs, and merge evidence | `Gitbook` plus selected readable records from coordination and handoff repositories |\n\n## Disposition rules\n\n- **Canonical application code:** use `tessera-unified` as the reviewed code base.\n- **Documentation:** use `Gitbook` as the single documentation home.\n- **Secrets and private data:** never copy.\n- Historical sources include `1T` (protected vault — do not inspect/copy).\n''')\n# Also add a small facts sheet derived only from tip Gitbook docs (not BASELINE answers dump)\n# Include inventory-derived facts that live in mesh docs - already in corpus.\nprint('tip source-map written')\nprint('corpus', len(list(corp.glob('*.md'))))\nPY\n# Check GSM8K progress\nsleep 30\nRESULT_DIR=/workspace/evals/results/20261005-174126\ntail -5 \"$RESULT_DIR/gsm8k.log\"\nps -p 384233 -o etime= 2>/dev/null || echo done\nfree -h | head -2"
+title: "Save tip source-map; check GSM8K progress"
+status: succeeded
+started_at: 2026-10-05T22:43:13.758Z
+running_for_ms: 30220    
+---
+tip source-map written
+corpus 42
+      00:34
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi        11Gi       257Mi        97Mi       4.8Gi       4.6Gi
+
+---
+exit_code: 0
+elapsed_ms: 30220
+ended_at: 2026-10-05T22:43:43.978Z
+---

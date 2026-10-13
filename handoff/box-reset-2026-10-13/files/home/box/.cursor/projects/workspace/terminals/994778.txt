@@ -1,0 +1,44 @@
+---
+pid: 383298
+cwd: "/workspace/repo-lab"
+command: "LAB=/workspace/repo-lab\nRESULTS=$LAB/INSTALL-RESULTS.tsv\necho -e \"repo\\tstatus\\treason\" > \"$RESULTS\"\n\nrun_py() {\n  local name=\"$1\"\n  local install_args=\"$2\"   # e.g. '-e .' or '-r requirements.txt'\n  local test_py=\"$3\"        # python -c code\n  local dir=\"$LAB/$name\"\n  local log=\"$dir/install-test.log\"\n  echo \"=== $name ===\" | tee \"$log\"\n  cd \"$dir\" || { echo -e \"$name\\tFAIL\\tmissing dir\" >> \"$RESULTS\"; return; }\n  rm -rf .venv\n  python3 -m venv .venv\n  local PIP=\"$dir/.venv/bin/pip\"\n  local PY=\"$dir/.venv/bin/python\"\n  \"$PIP\" install -U pip setuptools wheel -q >>\"$log\" 2>&1\n  echo \"INSTALL: pip install $install_args\" | tee -a \"$log\"\n  if timeout 280 \"$PIP\" install $install_args >>\"$log\" 2>&1; then\n    echo \"INSTALL_OK\" | tee -a \"$log\"\n    echo \"TEST: $test_py\" | tee -a \"$log\"\n    if timeout 90 \"$PY\" -c \"$test_py\" >>\"$log\" 2>&1; then\n      echo -e \"${name}\\tPASS\\tinstall+import ok\" >> \"$RESULTS\"\n      echo PASS | tee -a \"$log\"\n    else\n      echo -e \"${name}\\tFAIL\\ttest/import failed\" >> \"$RESULTS\"\n      echo TEST_FAIL | tee -a \"$log\"; tail -15 \"$log\"\n    fi\n  else\n    ec=$?\n    echo -e \"${name}\\tFAIL\\tinstall exit=$ec\" >> \"$RESULTS\"\n    echo INSTALL_FAIL_$ec | tee -a \"$log\"; tail -25 \"$log\"\n  fi\n}\n\n# Sequential-ish parallel pairs to avoid thrashing\nrun_py Cortical-Labs__cl-sdk '-e .' 'import cl; print(\"cl ok\", getattr(cl,\"__version__\",\"?\"))' &\nPID1=$!\nrun_py jeshraghian__snntorch '-e .' 'import snntorch; print(\"snntorch\", snntorch.__version__)' &\nPID2=$!\nwait $PID1 $PID2\necho '--- after pair1 ---'\ncat \"$RESULTS\"\n"
+title: "Retry installs with venv pip explicit paths"
+status: succeeded
+started_at: 2026-10-05T22:42:27.090Z
+running_for_ms: 39554    
+---
+=== jeshraghian__snntorch ===
+=== Cortical-Labs__cl-sdk ===
+INSTALL: pip install -e .
+INSTALL: pip install -e .
+INSTALL_OK
+TEST: import snntorch; print("snntorch", snntorch.__version__)
+TEST_FAIL
+TEST: import snntorch; print("snntorch", snntorch.__version__)
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+    import snntorch; print("snntorch", snntorch.__version__)
+    ^^^^^^^^^^^^^^^
+  File "/workspace/repo-lab/jeshraghian__snntorch/snntorch/__init__.py", line 2, in <module>
+    from ._neurons import *
+  File "/workspace/repo-lab/jeshraghian__snntorch/snntorch/_neurons/__init__.py", line 29, in <module>
+    from .neurons import SpikingNeuron
+  File "/workspace/repo-lab/jeshraghian__snntorch/snntorch/_neurons/neurons.py", line 3, in <module>
+    from snntorch.surrogate import atan
+  File "/workspace/repo-lab/jeshraghian__snntorch/snntorch/surrogate.py", line 1, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+TEST_FAIL
+INSTALL_OK
+TEST: import cl; print("cl ok", getattr(cl,"__version__","?"))
+PASS
+--- after pair1 ---
+repo	status	reason
+jeshraghian__snntorch	FAIL	test/import failed
+Cortical-Labs__cl-sdk	PASS	install+import ok
+
+---
+exit_code: 0
+elapsed_ms: 39553
+ended_at: 2026-10-05T22:43:06.643Z
+---

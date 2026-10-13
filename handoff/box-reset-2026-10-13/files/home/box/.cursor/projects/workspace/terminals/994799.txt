@@ -1,0 +1,36 @@
+---
+pid: 794226
+cwd: "/workspace/learning-rate"
+command: "export PATH=\"/workspace/ollama-install/bin:$PATH\"\nexport OLLAMA_MODELS=\"/workspace/ollama-home/models\"\n# Warm model with long keep_alive\ncurl -s http://127.0.0.1:11434/api/generate -d '{\"model\":\"qwen2.5:3b-instruct\",\"prompt\":\"ping\",\"stream\":false,\"keep_alive\":\"120m\",\"options\":{\"num_predict\":3}}' | python3 -c \"import sys,json;d=json.load(sys.stdin);print('warm',repr(d.get('response')), 'err',d.get('error'))\"\n# Wait for remaining to finish\nfor i in $(seq 1 30); do\n  if ! ps -p 617778 >/dev/null 2>&1; then echo FINISHED; break; fi\n  echo \"$(date +%H:%M:%S) $(tail -1 /workspace/learning-rate/results/remaining.log | cut -c1-110)\"\n  sleep 15\ndone\nps -p 617778 >/dev/null || echo DEAD\ngrep -E 'ALL_REMAINING|Traceback' /workspace/learning-rate/results/remaining.log | tail -5\ntest -f /workspace/learning-rate/results/table.json && echo HAS_TABLE\ndate"
+title: "Warm Ollama; wait for job finish"
+status: succeeded
+started_at: 2026-10-06T00:02:47.238Z
+running_for_ms: 258798   
+---
+warm 'Pong!' err None
+19:03:05 [bm25_llm_rerank_heldout] H18 ok=False ans='No'
+19:03:20 [bm25_llm_rerank_heldout] H19 ok=False ans="HYB-019's topic is Product / mesh prep."
+19:03:35 [bm25_llm_rerank_heldout] H19 ok=False ans="HYB-019's topic is Product / mesh prep."
+19:03:50 [bm25_llm_rerank_heldout] H20 ok=True ans='No, Tessera Pen is not a separate lane or gate.'
+19:04:05 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:04:20 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:04:35 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:04:50 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:05:05 [bm25_heading_heldout_ref] H02 ok=True ans="Only the task's assigned owner or Tessera (admin) can set the BLOC
+19:05:20 [bm25_heading_heldout_ref] H03 ok=True ans='braces@3.0.3'
+19:05:35 [bm25_heading_heldout_ref] H04 ok=True ans='The narrow audit ignore for GHSA-vfj7-8cjw-p6xm only should be rem
+19:05:50 [bm25_heading_heldout_ref] H04 ok=True ans='The narrow audit ignore for GHSA-vfj7-8cjw-p6xm only should be rem
+19:06:05 [bm25_heading_heldout_ref] H05 ok=True ans='30–45 minutes'
+19:06:20 [bm25_heading_heldout_ref] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+19:06:35 [bm25_heading_heldout_ref] H07 ok=False ans='No'
+19:06:50 [bm25_heading_heldout_ref] H07 ok=False ans='No'
+FINISHED
+DEAD
+HAS_TABLE
+Mon Oct  5 19:07:06 CDT 2026
+
+---
+exit_code: 0
+elapsed_ms: 258798
+ended_at: 2026-10-06T00:07:06.036Z
+---

@@ -1,0 +1,11 @@
+diff --git a/brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md b/brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md
+--- a/brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md
++++ b/brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md
+@@ -52,6 +52,7 @@ An agent may claim one roadmap item only after Tessera assigns it, and only when
+ ROADMAP ITEM: <number>
+ TASK ID: <HYB/BC/other ID>
+ ASSIGNED BY: Tessera <link to the assignment>
++OVERLAP CHECK: <Gitbook main SHA checked + open PRs checked (numbers or none)>
+ IDENTITY: <actual account or declared role>
+ BASE: <Gitbook and/or TESSERA commit>
+ SCOPE: <exact paths and exclusions>

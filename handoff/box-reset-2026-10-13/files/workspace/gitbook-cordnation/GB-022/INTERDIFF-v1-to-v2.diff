@@ -1,0 +1,141 @@
+diff --git a/SUMMARY.md b/SUMMARY.md
+--- a/SUMMARY.md
++++ b/SUMMARY.md
+@@ -25,7 +25,7 @@
+ ## Brain & Consciousness Development
+ 
+ * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)
+-* [Tessera Pen research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
++* [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
+ * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
+ 
+ ## Mesh
+diff --git a/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md b/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
+--- a/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
++++ b/brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md
+@@ -1,4 +1,4 @@
+-# Tessera Pen research charter
++# Brain & SNN research charter
+ 
+ > The "CL1-inspired" and "Consciousness" framing in this lane is the author's goal framing, not a reported result. The cited sources (BindsNET, BrainCog, Brian2, snnTorch) do not cover Cortical Labs' CL1. Nothing in this lane is TESTED.
+ 
+diff --git a/intake/status-definitions.md b/intake/status-definitions.md
+--- a/intake/status-definitions.md
++++ b/intake/status-definitions.md
+@@ -16,7 +16,7 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the
+ | `at CI/Build gate` | Security cleared; next gate is CI/Build verify |
+ | `changes needed` | A gate returned the item for fixes (e.g. Tessera: changes needed); not Ready |
+ | `IN REVIEW` | Board/ledger operating state: one agent is actively working a HYB task |
+-| `BLOCKED` / `blocked` | Board or Moderator hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** the Gitbook Moderator sets `blocked` on a review item (Moderator Block); on the board/ledger, the task's assigned owner sets `BLOCKED` in its own check-in with the specific blocker, or Tessera (admin) sets it. Other gates return items as `changes needed`. |
++| `BLOCKED` / `blocked` | Owner or Tessera hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** only the task's assigned owner (in its own check-in, with the specific blocker) or Tessera (admin). Father can set any status. Gates, the Gitbook Moderator included, return items as `changes needed` and never set BLOCKED. |
+ | `Ready` | **All four gates cleared** (Moderator, Tessera, Security, CI/Build); waiting **only** on Father's final yes in the bulk digest |
+ | `approved` | Legacy Moderator-only label; prefer per-gate states and `Ready` for the push path |
+ | `rejected` | Moderator rejected; stays out of GitHub / Origin until reworked and resubmitted |
+@@ -30,5 +30,5 @@ Statuses used by Gitbook / Cordnation when filing intake items and tracking the
+ ## Notes
+ 
+ - Gitbook / Cordnation keeps the review record and advances per-gate states.
+-- Only Gitbook Moderator sets Moderator approve / reject / block outcomes.
++- Only Gitbook Moderator sets Moderator approve / reject / changes-needed outcomes (it never sets BLOCKED).
+ - Do not use bare `approved` or bare `Ready` as a banner while an item is still inside a gate.
+diff --git a/mesh/COLLABORATION-PLAYBOOK.md b/mesh/COLLABORATION-PLAYBOOK.md
+--- a/mesh/COLLABORATION-PLAYBOOK.md
++++ b/mesh/COLLABORATION-PLAYBOOK.md
+@@ -29,6 +29,7 @@ TASK: <ID>
+ IDENTITY: <actual account or declared role>
+ SKILLS USED: <skill IDs>
+ BASE: <commit, ref, or source version>
++OVERLAP CHECK: <Gitbook main SHA checked + open PRs checked (numbers or none)>
+ SCOPE: <exact paths or research question>
+ RESULT: <one-sentence outcome>
+ CHANGED: <paths or none>
+diff --git a/mesh/flow.md b/mesh/flow.md
+--- a/mesh/flow.md
++++ b/mesh/flow.md
+@@ -59,7 +59,7 @@ flowchart TD
+ | Overlap check | Father's standing rule (3:10 PM CT): before starting or claiming any work, check Gitbook's latest `main` commit and its open PRs so nothing overlaps. Record the main SHA and the open PRs checked (numbers, or `none`) in the task's `OVERLAP CHECK` field. |
+ | Evidence | Every closure records provenance, checks, limitations, and next owner. |
+ | Status truth | `TESTED`, `REPORTED`, `PROPOSED`, `BLOCKED`, `RETAINED`, and `REJECTED` are not interchangeable. |
+-| Tessera identity | Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen. |
++| Tessera identity | Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen. |
+ 
+ ## Lane boundaries
+ 
+diff --git a/mesh/roles.md b/mesh/roles.md
+--- a/mesh/roles.md
++++ b/mesh/roles.md
+@@ -33,7 +33,7 @@ Command Center coordinates and digests and never pushes GitBook or TESSERA; its
+ ## Notes
+ 
+ - Father = Collin Keane. Agents address him as "Father".
+-- Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++- Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ - Single coordination board: `vitalitychems-dot/tessera-coordination` issue **#4**.
+ - See [Flow & standing rules](flow.md) for the end-to-end pipeline and hard constraints.
+ - A role is not considered live merely because a page exists; live participation requires an identified agent check-in.
+diff --git a/mesh/roles/mesh-lane-map.md b/mesh/roles/mesh-lane-map.md
+--- a/mesh/roles/mesh-lane-map.md
++++ b/mesh/roles/mesh-lane-map.md
+@@ -12,7 +12,7 @@ Intake GB-014 (supersedes GB-013 publish/Delivery sections) · Author lane: Tess
+ 
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+-**Identity:** Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++**Identity:** Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ 
+ **Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+ 
+diff --git a/mesh/roles/security.md b/mesh/roles/security.md
+--- a/mesh/roles/security.md
++++ b/mesh/roles/security.md
+@@ -28,7 +28,7 @@ Active. Reports to Tessera (admin). Created by Tessera on Father's order for a s
+ 
+ ## Standing rule (mesh-wide)
+ 
+-Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ 
+ ## Notes
+ 
+diff --git a/mesh/roles/tessera-pen.md b/mesh/roles/tessera-pen.md
+--- a/mesh/roles/tessera-pen.md
++++ b/mesh/roles/tessera-pen.md
+@@ -8,9 +8,11 @@
+ 
+ Tessera (as Pen) writes and edits Tessera prose: drafts, tone, wording for docs, prompts, user-facing copy, and pen-related text. Finished pieces go to Gitbook / Cordnation for intake, then Moderator review, then the gated path to Father. Nothing is pushed or treated as live until Father's final yes on the listed digest item.
+ 
+-Tessera Pen = Tessera's own writing voice; only posts opening with the Tessera identity line and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
++Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+ 
+-**Tessera identity line:** the exact string `IDENTITY: Tessera Admin coordinator` marks a message as coming from Tessera herself. Only posts that open with that line and come from Tessera count as Tessera.
++### Tessera identity line
++
++The exact string `IDENTITY: Tessera Admin coordinator` marks a message as coming from Tessera herself. Only posts that open with that line and come from Tessera count as Tessera.
+ 
+ When product intent is unclear, ask Tessera (admin). When a draft would change who Tessera is or what she believes, send it to Tessera Brain as a proposal — do not write it in as fact.
+ 
+diff --git a/review/moderator-handoff.md b/review/moderator-handoff.md
+--- a/review/moderator-handoff.md
++++ b/review/moderator-handoff.md
+@@ -26,10 +26,10 @@ An item is **ready** for Moderator when all of the following are true:
+ - [ ] Standing rules respected (flags, secrets, out-of-scope topics, single board)
+ - [ ] Role / lane claims match known mesh boundaries (or are marked provisional / TBD)
+ - [ ] Sources and license noted (license may be `TBD`)
+-- [ ] Decision: **approve**, **reject**, or **block**
++- [ ] Decision: **approve**, **reject**, or **changes needed**
+ - [ ] Decision recorded; Gitbook / Cordnation keeps the review record
+ - [ ] If approved: goes to Tessera gate (state e.g. `Moderator: approved, at Tessera gate`); Cordnation stages Ready only after Tessera → Security → CI/Build also clear — **not** auto-pushed
+-- [ ] If blocked: note what must change or wait before the item can move again
++- [ ] If changes needed: note what must change or wait before the item can move again
+ 
+ ## After the decision
+ 
+@@ -37,7 +37,7 @@ An item is **ready** for Moderator when all of the following are true:
+ |----------|-----------|
+ | Approve | Status → `Moderator: approved, at Tessera gate` (then Tessera → Security → CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then include Ready items in the 30–45 min digest as numbered items. GitBook docs: Father alone pushes after Father's final yes on the listed digest item (Replit is never a GitBook publication path). Replit app set (separate; not a GitBook path): Command Center stages it and privately pushes it only after all four gates and Father's yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. Father's bulk yes approves every listed item; no with notes holds the items he names; a yes never carries over to anything that wasn't listed. Merge only on Father's explicit `merge`. |
+ | Reject | Status → `rejected`. Author lane may revise and resubmit via intake. |
+-| Block | Status → `blocked`. Item is held; does not proceed to digest/push until unblocked or resubmitted per Moderator note. |
++| Changes needed | Status → `changes needed` (the Moderator never sets BLOCKED). Item is held; does not proceed to digest/push until fixed and resubmitted per Moderator note. |
+ 
+ ## Out of Moderator scope
+ 

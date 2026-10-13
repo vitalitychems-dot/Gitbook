@@ -1,0 +1,25 @@
+---
+pid: 74780
+cwd: "/tmp/gb"
+command: "cd /tmp/gb; git add -A && git commit -qm \"autogate: close gate bypass (Security retro #56/#62)\" && git push -q origin autogate-close-bypass 2>&1 | tail -2; gh pr create -R vitalitychems-dot/Gitbook -B main -H autogate-close-bypass -t \"autogate: close gate bypass (Security retro #56/#62)\" -b \"Applies Security's /workspace/security-gate/autogate-fix.patch (made on 243ddd4) cleanly onto main efcca74.\n\n- \\`--merge\\` removed: now exits 2 with an error. The script never merges.\n- \\`--father-approved\\` is honoured only if the PR has label \\`father-approved\\` last added by vitalitychems-dot, or a vitalitychems-dot comment \\`FATHER APPROVED <head-sha>\\`. Fails closed on any API error.\n- Caveat: shared account, so this is a speed bump, not separation of duties. Not tested against the live GitHub API.\n\nTests: mesh/queue/tests/test_spawn.py 12/12 before, 12/12 after. bash -n OK. \\`autogate.sh Gitbook 1 X --merge\\` → exit 2 (before: proceeded to fetch).\n\nApproved by Father ('Fix all' 4:46 AM CT). DO NOT MERGE until Security PASS <head-sha> + Moderator PASS; merge freeze is on.\" 2>&1 | tail -1; git rev-parse HEAD"
+title: "Commit, push, open PR item 1"
+status: failed   
+started_at: 2026-10-13T11:01:57.467Z
+running_for_ms: 96606    
+---
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/5t/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/T44/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/.gitignore': Too many levels of symbolic links
+fatal: unable to read 641da1460ff2caa50ea0d5d0b3c99d91b2ab5942
+fatal: the remote end hung up unexpectedly
+pull request create failed: GraphQL: Head sha can't be blank, Base sha can't be blank, No commits between main and autogate-close-bypass, Head ref must be a branch (createPullRequest)
+fatal: Unable to read current working directory: No such file or directory
+
+---
+exit_code: 128
+elapsed_ms: 96606
+ended_at: 2026-10-13T11:03:34.073Z
+---

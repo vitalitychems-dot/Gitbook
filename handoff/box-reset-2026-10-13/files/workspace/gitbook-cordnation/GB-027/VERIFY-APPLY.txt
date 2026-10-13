@@ -1,0 +1,15 @@
+GB-027 — apply verification (16:35 CT, 2026-10-05). Main 979c35e0be9a27ab143c7dcfc714d979b11e10a0, 0 open PRs (checked 16:35 CT).
+File: GB-027/GB-027.979c35e.diff  sha256 8fc780410bef373aebf06f9c4ac6ba52a1f24e0569d4851d29d2b6d55a803121  (488 lines, 22 files, +54/−61 by git diff --shortstat)
+Stack: 979c35e + GB-026 rev 3 (7fe2d5f2…) + GB-027.
+Local tree: the 979c35e subset (b979) plus seven unchanged 979c35e files that GB-027 touches but the earlier subset lacked (six mesh/roles pages + the empty history/coordination/command-center.md). Each one's git blob was checked against the 979c35e tree (all MATCH; copies in base-979c35e/). Diff "b979b → b979b+rev3" = rev 3 exactly (23 files, +60/−87).
+10:\ No newline at end of file
+b979b vs p26r3b numstat (should equal rev3 only):
+ 23 files changed, 60 insertions(+), 87 deletions(-)
+A git apply --check GB-027 on 979c35e + GB-026 rev3: rc=0
+B git apply GB-027 on 979c35e + GB-026 rev3: rc=0
+  result tree 40055667b47b5664bc94b748f8581ec3e89d3e35 ; p27 tree 40055667b47b5664bc94b748f8581ec3e89d3e35
+  restored command-center.md: blob 9916da0b186760f5fa09d5da672347485ec6a785 bytes 262 sha256 4fd167637095d521066cad7afdeaeca8676a836cc483c3d9add92fddc59f9202
+C git apply -R --check on result: rc=0
+D GB-027 alone on clean 979c35e (no rev3): rc=1
+Line 10 of the diff is the "\ No newline at end of file" marker for the restored command-center.md; the applied file is byte-exact (blob 9916da0b…, 262 bytes, sha256 4fd16763…).
+Interpretation: GB-027 applies cleanly on 979c35e + GB-026 rev 3 (rc=0/rc=0) and reproduces the drafted tree 40055667 exactly; reverse check rc=0. GB-027 alone on 979c35e (no rev 3) fails, rc=1, in 14 files (apply/solo_979.out). That is expected: GB-027 edits lines rev 3 creates. GB-027 must land after GB-026 rev 3.

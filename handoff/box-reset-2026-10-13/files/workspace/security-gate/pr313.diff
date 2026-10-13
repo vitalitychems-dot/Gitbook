@@ -1,0 +1,74 @@
+diff --git a/artifacts/v2/src/live/shepherd.mjs b/artifacts/v2/src/live/shepherd.mjs
+index 80457ed8..d32829f2 100644
+--- a/artifacts/v2/src/live/shepherd.mjs
++++ b/artifacts/v2/src/live/shepherd.mjs
+@@ -6,9 +6,9 @@
+  * manifest that offline nodes delta-sync (USB/LAN/GitMesh) and verify with the pinned key.
+  */
+ import { createHash, generateKeyPairSync, sign, verify, createPublicKey } from "node:crypto";
+-import { mkdirSync, writeFileSync, readFileSync, existsSync, readdirSync } from "node:fs";
++import { mkdirSync, writeFileSync, readFileSync, existsSync, readdirSync, statSync, copyFileSync } from "node:fs";
+ import { join } from "node:path";
+-import { createBucket, politeFetch, deltaSync } from "../opt/relay.mjs";
++import { createBucket, politeFetch } from "../opt/relay.mjs";
+ import { SOURCES, UA, parseSse } from "./sources.mjs";
+ 
+ const sha = (s) => createHash("sha256").update(s).digest("hex");
+@@ -103,13 +103,24 @@ export function verifyManifest(m, pubPem) {
+   return verify(null, Buffer.from(sha(body)), createPublicKey(pubPem), Buffer.from(m.sig, "base64"));
+ }
+ 
+-/** Offline sync: copy only snapshots the node doesn't have (delta by hash). */
++/**
++ * Offline sync: copy only snapshots the node doesn't have (delta by content address).
++ * Snapshot filenames are their sha256, so a node file with the same name and byte size is
++ * already present; only missing/size-mismatched files are read and copied. Integrity is
++ * still enforced end-to-end by verifySnapshot (hash + signature) on the node.
++ */
+ export function syncTo(gatewayDir, nodeDir) {
+-  mkdirSync(join(nodeDir, "snapshots"), { recursive: true });
+-  const have = Object.fromEntries(readdirSync(join(nodeDir, "snapshots")).map((f) => [f, sha(readFileSync(join(nodeDir, "snapshots", f), "utf8"))]));
+-  const local = Object.fromEntries(readdirSync(join(gatewayDir, "snapshots")).map((f) => [f, readFileSync(join(gatewayDir, "snapshots", f), "utf8")]));
+-  const send = deltaSync(local, have);
+-  for (const [f, v] of Object.entries(send)) writeFileSync(join(nodeDir, "snapshots", f), v);
+-  for (const f of ["manifest.json", "shepherd.pub.pem"]) if (existsSync(join(gatewayDir, f))) writeFileSync(join(nodeDir, f), readFileSync(join(gatewayDir, f)));
+-  return Object.keys(send).length;
++  const gwSnaps = join(gatewayDir, "snapshots"), nodeSnaps = join(nodeDir, "snapshots");
++  mkdirSync(nodeSnaps, { recursive: true });
++  const have = new Map();
++  for (const f of readdirSync(nodeSnaps)) have.set(f, statSync(join(nodeSnaps, f)).size);
++  let sent = 0;
++  for (const f of readdirSync(gwSnaps)) {
++    const src = join(gwSnaps, f);
++    if (have.get(f) === statSync(src).size) continue;
++    copyFileSync(src, join(nodeSnaps, f));
++    sent++;
++  }
++  for (const f of ["manifest.json", "shepherd.pub.pem"]) if (existsSync(join(gatewayDir, f))) copyFileSync(join(gatewayDir, f), join(nodeDir, f));
++  return sent;
+ }
+diff --git a/artifacts/v2/test/v2-030-live-data.test.mjs b/artifacts/v2/test/v2-030-live-data.test.mjs
+index 1f12e86b..d9625aa7 100644
+--- a/artifacts/v2/test/v2-030-live-data.test.mjs
++++ b/artifacts/v2/test/v2-030-live-data.test.mjs
+@@ -103,3 +103,20 @@ test("token bucket spaces requests to the source's pace", async () => {
+   for (let i = 0; i < 3; i++) { await sh.runOnce(); t += 1; }
+   assert.ok(sleeps.filter((s) => s >= 3000).length >= 2, JSON.stringify(sleeps));
+ });
++
++test("syncTo: content-addressed delta skips present files and repairs truncated ones", async () => {
++  const { writeFileSync: w, statSync: st } = await import("node:fs");
++  let t = Date.parse("2026-10-13T00:00:00Z");
++  const gw = tmp(), node = tmp();
++  const sh = createShepherd({ transport: fixtureTransport(), cacheDir: gw, keys: newKeys(), now: () => t, sleep: async () => {} });
++  await sh.runOnce();
++  const n1 = syncTo(gw, node);
++  assert.ok(n1 > 0);
++  assert.equal(syncTo(gw, node), 0);
++  const f = readdirSync(join(node, "snapshots"))[0];
++  w(join(node, "snapshots", f), "x");
++  assert.equal(syncTo(gw, node), 1, "size-mismatched file is re-sent");
++  assert.equal(st(join(node, "snapshots", f)).size, st(join(gw, "snapshots", f)).size);
++  t += 86400e3; await sh.runOnce();
++  assert.equal(syncTo(gw, node), n1, "only the new round is sent");
++});

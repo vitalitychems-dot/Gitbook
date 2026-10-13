@@ -1,0 +1,43 @@
+{
+  "passed": 6,
+  "failed": 0,
+  "total": 6,
+  "details": [
+    {
+      "query": "should I buy the paid plan?",
+      "pass": true,
+      "top": "Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 2026-10-05 6:44 PM CT).",
+      "score": 7.3464768582303615
+    },
+    {
+      "query": "skip tests for now?",
+      "pass": true,
+      "top": "Test as you build. Father's rule 2026-10-05: every script ships with a small test; run before recording TESTED.",
+      "score": 5.426554728163721
+    },
+    {
+      "query": "how often should we digest to father?",
+      "pass": true,
+      "top": "Bulk yes/no/revise digests every 30-45 minutes while work is active.",
+      "score": 3.6569334879259054
+    },
+    {
+      "query": "may an agent push gitbook to github?",
+      "pass": true,
+      "top": "After digest yes, Father alone pushes GitBook to GitHub. Agents and Command Center do not push.",
+      "score": 7.763130579155611
+    },
+    {
+      "query": "full copy openmanus into tessera?",
+      "pass": true,
+      "top": "OpenManus full copy is not the board rule \u2014 recover portable pieces only.",
+      "score": 11.193772462220137
+    },
+    {
+      "query": "buy cl1 hardware today?",
+      "pass": true,
+      "top": "CL1 path: simulator-only for now (Father 2026-10-05 5:38 PM CT); no Cloud signup or hardware purchase without new approval.",
+      "score": 8.615070218605844
+    }
+  ]
+}

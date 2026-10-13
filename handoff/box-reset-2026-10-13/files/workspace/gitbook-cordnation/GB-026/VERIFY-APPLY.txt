@@ -1,0 +1,28 @@
+GB-026 apply verification — 2026-10-05 16:27 CT
+Base: ecd902211abd202711838219b28a1e1b39ae47c4 (main; rechecked 16:27 CT, 0 open PRs)
+Verification tree: 38-file subset of ecd9022 (28 earlier files + 10 GB-026 files fetched read-only at ecd9022); every blob checked with git hash-object against the ecd9022 tree listing (0 mismatches).
+Exit codes captured as: cmd > file 2>&1; r=$?
+
+A solo GB-026 on ecd9022: rc=1
+B solo GB-022-v4 on ecd9022: rc=0
+B solo GB-024-v3 on ecd9022: rc=0
+B solo GB-025 on ecd9022: rc=1
+B solo GB-023 on ecd9022: rc=1
+C1 check GB-022-v4: rc=0
+C1 apply GB-022-v4: rc=0
+C2 check GB-024-v3: rc=0
+C2 apply GB-024-v3: rc=0
+C3 check GB-025: rc=0
+C3 apply GB-025: rc=0
+C4 check GB-023: rc=0
+C4 apply GB-023: rc=0
+  tree after GB-023: 814dd7a16bd8f271b0f2491871902c188172d8c9 (p23x tree: 814dd7a16bd8f271b0f2491871902c188172d8c9)
+C5 check GB-026: rc=0
+C5 apply GB-026: rc=0
+final tree: 4983fe6ebfc86e10410e7a9547fa601738e46ea1 ; p26 tree: 4983fe6ebfc86e10410e7a9547fa601738e46ea1
+D reverse-check GB-026 on stacked tree: rc=0
+E GB-026 on ecd9022+022+024+025 (no 023): rc=0   (no textual dependency on GB-023; ordered after it by instruction)
+
+A failing files (solo on ecd9022; they need GB-022 text): intake/how-to-submit.md, mesh/TESSERA-GITBOOK-OPERATING-MODE.md, mesh/flow.md, mesh/roles.md, review/moderator-handoff.md
+Frozen diffs re-hashed before the run; all four match FROZEN-SHA256-ecd9022.txt (unchanged).
+Raw outputs: GB-026/apply/

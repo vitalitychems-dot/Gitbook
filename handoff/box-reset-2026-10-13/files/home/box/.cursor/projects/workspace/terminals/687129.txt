@@ -1,0 +1,39 @@
+---
+pid: 1460171
+cwd: "/workspace/pubscan/tree"
+command: "cd /workspace/pubscan/final.git && R=ae58a7e5; git rev-parse main; git log --oneline -3 $R; git for-each-ref --format='%(refname)' | sed -E 's#^(refs/[^/]+).*#\\1#' | sort | uniq -c\ngit fsck --full >/tmp/fsck.txt 2>&1; echo fsck=$? $(wc -l </tmp/fsck.txt)\ngit log --all --format='%ae%n%ce' | sort | uniq -c\n{ git log --all --format=%B; } | grep -oE '[A-Za-z0-9_+/=.-]{8,}' | sort -u | while read t; do printf %s \"$t\" | sha256sum | cut -c1-12; done | grep -cE '^(8517a2325160|69f433c5bff5)$'\ngit rev-list --all --objects | cut -d' ' -f2- | grep -iE '(^|/)(1T|natal|\\.local-data)|Zz ingest|(^|/)\\.replit$' | sort -u | head\ngrep -oE '^[^#]*' /workspace/build-plan-2026-10-12/SEC-TESSERA-HISTORY-SCRUB.md | grep -oE '`[^`]+/[^`]*`' | tr -d '`' | sort -u > /tmp/scrub.txt; wc -l </tmp/scrub.txt\ngit rev-list --all --objects | cut -d' ' -f2- | sort -u > /tmp/paths.txt; grep -Fxf /tmp/scrub.txt /tmp/paths.txt | head\necho diffcmp; diff <(cd ../tree && git diff 0f5eab28 4f354393) <(git diff ${R}~2 $R) >/dev/null && echo diff-identical || (cd ../tree; git diff --stat 0f5eab28 4f354393 | tail -1; cd ../final.git; git diff --stat ${R}~2 $R | tail -1)\ngit log --oneline 0f5eab28..1e7453f7 2>&1 | wc -l"
+title: "final.git gate part 1"
+status: succeeded
+started_at: 2026-10-13T01:28:55.468Z
+running_for_ms: 51317    
+---
+ae58a7e51e81cf5c67b563186e609f45457b5ded
+ae58a7e5 Widen git-crypt to all .env files and keep .env.example readable
+f133605c Encrypt secret paths with git-crypt and restore the token fixture after the history scrub
+1e7453f7 Gate server-layer Rick per Gitbook RICK.md (R1/R2): loop flag, non-Rick approver + testRef, no self-dispatch/spawn, testPlan, no forecasts or fake feed (#250)
+    257 refs/heads
+fsck=0 0
+     21 206951365+cursor[bot]@users.noreply.github.com
+   3438 332565808+vitalitychems-dot@users.noreply.github.com
+      3 manus@users.noreply.github.com
+0
+.replit
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/natal-chart-engine.ts
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/natal-sigil.ts
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/routes/natal-chart.ts
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/components/NatalChartSection.tsx
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/lib/db/src/schema/natal-chart.ts
+artifacts/api-server/src/lib/natal-chart-engine.ts
+artifacts/api-server/src/lib/natal-sigil.ts
+artifacts/api-server/src/routes/natal-chart.ts
+artifacts/tessera/src/components/NatalChartSection.tsx
+2
+diffcmp
+diff-identical
+8
+
+---
+exit_code: 0
+elapsed_ms: 51317
+ended_at: 2026-10-13T01:29:46.785Z
+---

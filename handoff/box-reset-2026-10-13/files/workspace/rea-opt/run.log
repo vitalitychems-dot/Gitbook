@@ -1,0 +1,11 @@
+stanfordnlp__dspy exit=0 size=4086638 files=735 head=099982b
+microsoft__agent-lightning exit=0 size=1134358 files=225 head=69f5a40
+huggingface__smolagents exit=0 size=10054 files=185 head=96f33fa
+apache__airflow exit=0 size=94994632 files=14822 head=7f0d50c
+PrefectHQ__prefect exit=0 size=102790580 files=5446 head=302beb3
+temporalio__temporal exit=0 size=336958 files=3979 head=71f4847
+openai__tiktoken exit=0 size=10033 files=30 head=4e71bbe
+zilliztech__GPTCache exit=0 size=34979 files=335 head=a74ac65
+a2aproject__A2A exit=0 size=510534 files=142 head=7c861a5
+langchain-ai__langgraph exit=0 size=915779 files=688 head=afbe7e4
+ALLDONE

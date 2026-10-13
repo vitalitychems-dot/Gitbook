@@ -1,0 +1,158 @@
+diff --git a/artifacts/v2/src/brain/affect-model.mjs b/artifacts/v2/src/brain/affect-model.mjs
+new file mode 100644
+index 00000000..4387cae3
+--- /dev/null
++++ b/artifacts/v2/src/brain/affect-model.mjs
+@@ -0,0 +1,43 @@
++/**
++ * IDEAS-B3-02 learned affect reader. Features: word unigrams with negation scope ("not_x"),
++ * intensity (caps, !, intensifiers), punctuation/emoji, status cues, and the lexicon label.
++ * Models: multinomial naive Bayes and L2 multinomial logistic regression (plain SGD), local only.
++ */
++import { classify } from "./affect.mjs";
++const NEG = new Set(["not", "no", "never", "don't", "dont", "isn't", "wasn't", "can't", "cannot", "won't", "nothing", "without"]);
++const INTENS = new Set(["very", "really", "still", "again", "all", "every", "fully", "major"]);
++export function features(text) {
++  const raw = String(text); const t = raw.toLowerCase().replace(/<[a-z]+>/g, " ");
++  const words = t.match(/[a-z][a-z'-]*|\d+/g) ?? []; const f = [];
++  let neg = 0;
++  for (const w of words) { if (NEG.has(w)) { neg = 3; f.push("NEG"); continue; } f.push(neg > 0 ? `not_${w}` : w); if (neg > 0) neg--; if (INTENS.has(w)) f.push("INTENS"); if (/^\d+$/.test(w)) f.push("NUM"); }
++  if (/!/.test(raw)) f.push("BANG"); if (/\?/.test(raw)) f.push("Q"); if (/\b[A-Z]{3,}\b/.test(raw)) f.push("CAPS");
++  if (/[\u{1F300}-\u{1FAFF}\u2600-\u27BF]/u.test(raw)) f.push("EMOJI");
++  if (/\b(\d+)\s+(pass|passed)\b|exit 0|\bsuccess|\bclean(ly)?\b|\bmerged\b|\bmatch(es)?\b/i.test(raw)) f.push("CUE_OK");
++  if (/\bfail|error|degraded|outage|blocked|not set|gone|refus|rejected|cannot|unmerged\b/i.test(raw)) f.push("CUE_BAD");
++  if (/\b(stop|deadline|asap|now|immediately|faster|speed)\b/i.test(raw)) f.push("CUE_URG");
++  f.push(`LEX_${classify(raw).affect}`);
++  return f;
++}
++export function trainNB(data, labels, { alpha = 1 } = {}) {
++  const cnt = new Map(labels.map((l) => [l, new Map()])); const tot = new Map(labels.map((l) => [l, 0])); const pri = new Map(labels.map((l) => [l, 0])); const V = new Set();
++  for (const x of data) { pri.set(x.y, pri.get(x.y) + 1); for (const f of features(x.text)) { V.add(f); cnt.get(x.y).set(f, (cnt.get(x.y).get(f) ?? 0) + 1); tot.set(x.y, tot.get(x.y) + 1); } }
++  return (text) => { const fs = features(text); return labels.map((l) => [l, Math.log((pri.get(l) + 1) / (data.length + labels.length)) + fs.reduce((s, f) => s + Math.log(((cnt.get(l).get(f) ?? 0) + alpha) / (tot.get(l) + alpha * V.size)), 0)]).sort((a, b) => b[1] - a[1])[0][0]; };
++}
++export function trainLR(data, labels, { epochs = 30, lr = 0.3, l2 = 1e-3, balance = true, seed = 3 } = {}) {
++  const W = new Map(labels.map((l) => [l, new Map()])); const B = new Map(labels.map((l) => [l, 0]));
++  const freq = new Map(labels.map((l) => [l, data.filter((x) => x.y === l).length || 1])); const cw = (l) => (balance ? data.length / (labels.length * freq.get(l)) : 1);
++  const X = data.map((x) => ({ f: features(x.text), y: x.y })); let s = seed >>> 0; const rnd = () => ((s = (s * 1664525 + 1013904223) >>> 0) / 2 ** 32);
++  const probs = (fs) => { const z = labels.map((l) => B.get(l) + fs.reduce((a, f) => a + (W.get(l).get(f) ?? 0), 0)); const m = Math.max(...z); const e = z.map((v) => Math.exp(v - m)); const S = e.reduce((a, b) => a + b, 0); return e.map((v) => v / S); };
++  for (let ep = 0; ep < epochs; ep++) {
++    const order = X.map((_, i) => i).sort(() => rnd() - 0.5); const eta = lr / (1 + ep * 0.1);
++    for (const i of order) { const { f, y } = X[i]; const p = probs(f); labels.forEach((l, k) => { const g = ((l === y ? 1 : 0) - p[k]) * cw(y); B.set(l, B.get(l) + eta * g); const w = W.get(l); for (const ft of f) w.set(ft, (w.get(ft) ?? 0) * (1 - eta * l2) + eta * g); }); }
++  }
++  return (text) => { const p = probs(features(text)); return labels[p.indexOf(Math.max(...p))]; };
++}
++/** Default reader: balanced LR trained on the 218 labelled mesh-log lines (lazy, local). */
++let reader = null;
++export async function readAffect(text) {
++  if (!reader) { const { MESHLOG } = await import("./meshlog-labels.mjs"); const d = MESHLOG.map((x) => ({ text: x.text, y: x.affect })); reader = trainLR(d, [...new Set(d.map((x) => x.y))]); }
++  return reader(text);
++}
+diff --git a/artifacts/v2/src/brain/bench3.mjs b/artifacts/v2/src/brain/bench3.mjs
+new file mode 100644
+index 00000000..04e7b7f0
+--- /dev/null
++++ b/artifacts/v2/src/brain/bench3.mjs
+@@ -0,0 +1,20 @@
++// IDEAS-B3 bench: affect reader, nested 5x5 CV on the 218 mesh-log lines (every line scored once
++// as held-out; model picked on inner folds by macro-F1, a criterion fixed in advance).
++import { MESHLOG } from "./meshlog-labels.mjs";
++import { classify } from "./affect.mjs";
++import { trainNB, trainLR } from "./affect-model.mjs";
++import { macroF1 } from "./bench2.mjs";
++export const AFFECT_MODELS = { nb: (d, L) => trainNB(d, L), lr: (d, L) => trainLR(d, L), lrUnbal: (d, L) => trainLR(d, L, { balance: false }) };
++export function benchAffectModel() {
++  const all = MESHLOG.map((x) => ({ text: x.text, y: x.affect })); const L = [...new Set(all.map((x) => x.y))];
++  const ev = (fn, te) => { const g = te.map((x) => x.y), p = te.map((x) => fn(x.text)); return [macroF1(g, p), p.filter((y, i) => y === g[i]).length / g.length]; };
++  const rows = [];
++  for (let o = 0; o < 5; o++) {
++    const te = all.filter((_, i) => i % 5 === o), tr = all.filter((_, i) => i % 5 !== o);
++    const pick = Object.entries(AFFECT_MODELS).map(([k, m]) => { let F = 0; for (let f = 0; f < 5; f++) F += ev(m(tr.filter((_, i) => i % 5 !== f), L), tr.filter((_, i) => i % 5 === f))[0] / 5; return [k, F]; }).sort((a, b) => b[1] - a[1])[0][0];
++    rows.push({ pick, before: ev((t) => classify(t).affect, te), after: ev(AFFECT_MODELS[pick](tr, L), te) });
++  }
++  const avg = (k, j) => Math.round((rows.reduce((s, r) => s + r[k][j], 0) / rows.length) * 1000) / 1000;
++  return { n: all.length, picks: rows.map((r) => r.pick), before: { f1: avg("before", 0), acc: avg("before", 1) }, after: { f1: avg("after", 0), acc: avg("after", 1) } };
++}
++if (import.meta.url === `file://${process.argv[1]}`) console.log(JSON.stringify(benchAffectModel()));
+diff --git a/artifacts/v2/src/brain/learn.mjs b/artifacts/v2/src/brain/learn.mjs
+index 46bc81d1..5883e3dc 100644
+--- a/artifacts/v2/src/brain/learn.mjs
++++ b/artifacts/v2/src/brain/learn.mjs
+@@ -37,7 +37,8 @@ export function simulate(pick, { topics, difficulty, maxSteps = 2000, seed = 7 }
+ /* ---- B2: outcome learning for the recognizer (error-driven, replayed, spaced) ---- */
+ import { classify } from "./affect.mjs";
+ const tok = (s) => String(s).toLowerCase().replace(/<[a-z]+>/g, " ").match(/[a-z][a-z'-]+/g) ?? [];
+-const feats = (s, dim) => { const t = tok(s); const f = [...t, `lex:${classify(s)[dim]}`]; for (let i = 0; i + 1 < t.length; i++) f.push(`${t[i]}_${t[i + 1]}`); return f; };
++const lexCache = new Map(); const lex = (s) => { let c = lexCache.get(s); if (!c) { c = classify(s); if (lexCache.size > 50000) lexCache.clear(); lexCache.set(s, c); } return c; };
++const feats = (s, dim) => { const t = tok(s); const f = [...t, `lex:${lex(s)[dim]}`]; for (let i = 0; i + 1 < t.length; i++) f.push(`${t[i]}_${t[i + 1]}`); return f; };
+ /** Averaged multiclass perceptron on top of the lexicon output. Prior = lexicon label. */
+ export function createRecognizer(dim, labels) {
+   const W = new Map(); const U = new Map(); let c = 1;
+diff --git a/artifacts/v2/src/brain/selfscan.mjs b/artifacts/v2/src/brain/selfscan.mjs
+index f34dc3ed..6fd9a2e1 100644
+--- a/artifacts/v2/src/brain/selfscan.mjs
++++ b/artifacts/v2/src/brain/selfscan.mjs
+@@ -35,3 +35,33 @@ export function summarize(props) {
+   const why = {}; for (const p of props) for (const f of p.verdict.failed) why[f] = (why[f] ?? 0) + 1;
+   return { proposals: props.length, passed: props.filter((p) => p.verdict.ok).length, failedBy: why };
+ }
++
++/* ---- B3-03: attach a test ref, run it, route to the Build lane (never Tessera) ---- */
++import { readdirSync, readFileSync as readF } from "node:fs";
++import { execFileSync } from "node:child_process";
++import { join as joinP } from "node:path";
++export const APPROVER_LANE = "build";
++/** Find the test file that declares a test with this exact title. */
++export function locateTest(title, testDir) {
++  const esc = title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
++  for (const f of readdirSync(testDir).filter((x) => x.endsWith(".test.mjs")).sort()) {
++    if (new RegExp(`test\\(\\s*["'\`]${esc}["'\`]`).test(readF(joinP(testDir, f), "utf8"))) return `test/${f}`;
++  }
++  return null;
++}
++/** Run one test file in a child node process (read-only: no network flags, no writes by us). */
++export function runTestFile(ref, cwd, node = process.execPath) {
++  try { const out = execFileSync(node, ["--test", "--test-reporter=tap", ref], { cwd, encoding: "utf8", timeout: 120000, stdio: ["ignore", "pipe", "pipe"] });
++    return { passed: Number(out.match(/^# pass (\d+)/m)?.[1] ?? 0), failed: Number(out.match(/^# fail (\d+)/m)?.[1] ?? 0) };
++  } catch (e) { const out = String(e.stdout ?? ""); return { passed: Number(out.match(/^# pass (\d+)/m)?.[1] ?? 0), failed: Number(out.match(/^# fail (\d+)/m)?.[1] ?? 1) }; }
++}
++/** Full loop: scan -> proposals with testRef + fresh test result + Build approver -> gate. */
++export function proposeAndVerify(log, { root, run = runTestFile } = {}) {
++  const P = propose(scanTestLog(log), { approver: APPROVER_LANE }).map((p) => {
++    const name = p.title.replace(/^(slow \(\d+ ms\)|failing): /, "");
++    const testRef = locateTest(name, joinP(root, "test")); const testResult = testRef ? run(testRef, root) : null;
++    const q = { ...p, testRef: testRef ?? undefined, testResult, hasChange: Boolean(p.diff) };
++    return { ...q, verdict: gate(q) };
++  });
++  return { items: P, ...summarize(P), withChange: P.filter((p) => p.hasChange).length, passedWithChange: P.filter((p) => p.hasChange && p.verdict.ok).length };
++}
+diff --git a/artifacts/v2/test/v2-077-brain-r3.test.mjs b/artifacts/v2/test/v2-077-brain-r3.test.mjs
+new file mode 100644
+index 00000000..9af88929
+--- /dev/null
++++ b/artifacts/v2/test/v2-077-brain-r3.test.mjs
+@@ -0,0 +1,25 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { features } from "../src/brain/affect-model.mjs";
++import { benchAffectModel } from "../src/brain/bench3.mjs";
++import { locateTest, proposeAndVerify, APPROVER_LANE } from "../src/brain/selfscan.mjs";
++import { enabled, FLAG } from "../src/brain/selfpatch.mjs";
++import { fileURLToPath } from "node:url";
++import { dirname, join } from "node:path";
++const ROOT = join(dirname(fileURLToPath(import.meta.url)), "..");
++test("B3-02 affect reader: negation, intensity and cue features", () => {
++  const f = features("This is NOT working again!!");
++  assert.ok(f.includes("NEG") && f.includes("not_working") && f.includes("INTENS") && f.includes("BANG") && f.includes("CAPS"));
++});
++test("B3-02 learned affect beats the lexicon on nested held-out folds (F1 and accuracy)", () => {
++  const b = benchAffectModel(); assert.equal(b.n, 218);
++  assert.ok(b.after.f1 > b.before.f1 && b.after.acc > b.before.acc, JSON.stringify(b));
++});
++test("B3-03 proposals get a located test ref, a fresh run, and the Build approver; flag stays off", () => {
++  assert.equal(locateTest("B3-02 affect reader: negation, intensity and cue features", join(ROOT, "test")), "test/v2-077-brain-r3.test.mjs");
++  const log = "✔ B3-02 affect reader: negation, intensity and cue features (1500.0ms)\n";
++  const r = proposeAndVerify(log, { root: ROOT, run: () => ({ passed: 2, failed: 0 }) });
++  assert.equal(r.items.length, 1); assert.equal(r.items[0].approver, APPROVER_LANE); assert.equal(r.items[0].testRef, "test/v2-077-brain-r3.test.mjs");
++  assert.equal(r.passed, 1); assert.equal(r.withChange, 0);
++  assert.equal(enabled({}), false); assert.equal(FLAG, "TESSERA_BRAIN_SELFPATCH");
++});

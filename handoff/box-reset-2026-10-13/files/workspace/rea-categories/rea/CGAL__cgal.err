@@ -1,0 +1,106 @@
+{"rea_progress":{"phase":"analyze_javascript_application","completed":0,"total":1,"message":"Inventorying and parsing application artifacts","sequence":1}}
+{"rea_progress":{"phase":"read_javascript_artifacts","completed":0,"total":1,"message":"Reading inventoried JavaScript application sources","sequence":2}}
+{"rea_progress":{"phase":"parse_javascript_sources","completed":0,"total":1,"message":"Parsing and projecting 93 application source files","sequence":3}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .devcontainer/doxygen-cgal/devcontainer.json (1/93)","sequence":4}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .markdownlint.json (2/93)","sequence":5}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting AABB_tree/demo/AABB_tree/resources/about.html (3/93)","sequence":6}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Alpha_shapes_3/demo/Alpha_shapes_3/about_Alpha_shapes_3.html (4/93)","sequence":7}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Alpha_wrap_2/demo/Alpha_wrap_2/about_Alpha_wrap_2.html (5/93)","sequence":8}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Alpha_wrap_2/demo/Alpha_wrap_2/about_CGAL.html (6/93)","sequence":9}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Arrangement_on_surface_2/demo/Arrangement_on_surface_2/help/about.html (7/93)","sequence":10}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Arrangement_on_surface_2/demo/Arrangement_on_surface_2/help/index.html (8/93)","sequence":11}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Arrangement_on_surface_2/demo/Arrangement_on_surface_2/resources/about.html (9/93)","sequence":12}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting BGL/test/BGL/data/2016206_MHT_surface.ts (10/93)","sequence":13}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting BGL/test/BGL/data/invalid_cut.ts (11/93)","sequence":14}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting BGL/test/BGL/data/invalid_header.ts (12/93)","sequence":15}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Data/data/geometry_on_sphere/ne_110m_admin_0_countries.json (13/93)","sequence":16}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/CGAL_mathjax.js (14/93)","sequence":17}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/footer.html (15/93)","sequence":18}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/hacks.js (16/93)","sequence":19}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/header.html (17/93)","sequence":20}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/header_package.html (18/93)","sequence":21}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/jquery.js (19/93)","sequence":22}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/menu_version.js (20/93)","sequence":23}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.14.0/test.html (21/93)","sequence":24}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.9.6/CGAL_mathjax.js (22/93)","sequence":25}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.9.6/footer.html (23/93)","sequence":26}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.9.6/hacks.js (24/93)","sequence":27}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.9.6/header.html (25/93)","sequence":28}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.9.6/header_package.html (26/93)","sequence":29}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Documentation/doc/resources/1.9.6/menu_version.js (27/93)","sequence":30}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Alpha_shapes_2/about_Alpha_shapes_2.html (28/93)","sequence":31}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Apollonius_graph_2/about_Apollonius_graph_2.html (29/93)","sequence":32}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Bounding_volumes/about_Bounding_volumes.html (30/93)","sequence":33}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Circular_kernel_2/about_Circular_kernel_2.html (31/93)","sequence":34}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Generator/about_Generator_2.html (32/93)","sequence":35}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/L1_Voronoi_diagram_2/about_L1_voronoi_diagram_2.html (33/93)","sequence":36}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Largest_empty_rect_2/about_Largest_empty_rectangle_2.html (34/93)","sequence":37}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Periodic_2_triangulation_2/about_Periodic_2_triangulation_2.html (35/93)","sequence":38}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Polygon/about_Polygon_2.html (36/93)","sequence":39}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Segment_Delaunay_graph_2/about_Segment_voronoi_2.html (37/93)","sequence":40}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Segment_Delaunay_graph_Linf_2/about_Segment_voronoi_2.html (38/93)","sequence":41}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Snap_rounding_2/about_Snap_rounding_2.html (39/93)","sequence":42}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Spatial_searching_2/about_Spatial_searching_2.html (40/93)","sequence":43}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Stream_lines_2/about_Stream_lines_2.html (41/93)","sequence":44}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Triangulation_2/about_Constrained_Delaunay_triangulation_2.html (42/93)","sequence":45}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Triangulation_2/about_Delaunay_triangulation_2.html (43/93)","sequence":46}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/Triangulation_2/about_Regular_triangulation_2.html (44/93)","sequence":47}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting GraphicsView/demo/resources/about_CGAL.html (45/93)","sequence":48}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Hyperbolic_triangulation_2/demo/Hyperbolic_triangulation_2/resources/about_CGAL.html (46/93)","sequence":49}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Hyperbolic_triangulation_2/demo/Hyperbolic_triangulation_2/resources/about_Hyperbolic_Delaunay_triangulation_2.html (47/93)","sequence":50}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Installation/doc_html/Manual/index.html (48/93)","sequence":51}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Installation/doc_html/Manual/packages.html (49/93)","sequence":52}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Installation/doc_html/index.html (50/93)","sequence":53}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/lib.js (51/93)","sequence":54}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/bad/catch_and_retrow_cpp_exception.js (52/93)","sequence":55}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/bad/include_missing_file.js (53/93)","sequence":56}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/bad/syntax_error.js (54/93)","sequence":57}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/bad/throw_error.js (55/93)","sequence":58}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/bad/uncaught_cpp_exception.js (56/93)","sequence":59}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/bad/uncaught_cpp_exception_in_an_include.js (57/93)","sequence":60}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/good/catch_missing_file.js (58/93)","sequence":61}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/good/caught_cpp_exception_in_an_include.js (59/93)","sequence":62}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/good/cpp_exception.js (60/93)","sequence":63}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/good/cpp_exception_from_a_function.js (61/93)","sequence":64}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/javascript/tests/good/cpp_exception_in_an_include.js (62/93)","sequence":65}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/resources/about.html (63/93)","sequence":66}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/testing/data/sphere.ts (64/93)","sequence":67}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Lab/demo/Lab/testing/test_demo.js (65/93)","sequence":68}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Linear_cell_complex/demo/Linear_cell_complex/about_Linear_cell_complex_3.html (66/93)","sequence":69}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/public_release/announcement/.markdownlint.json (67/93)","sequence":70}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/Summary_Script.js (68/93)","sequence":71}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/diff_testsuites.html (69/93)","sequence":72}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/diff_testsuites.js (70/93)","sequence":73}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/difflib.js (71/93)","sequence":74}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/fill_empty_lines.js (72/93)","sequence":75}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/print_diff.js (73/93)","sequence":76}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/test.html (74/93)","sequence":77}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Maintenance/test_handling/testsuite_comparison/worker.js (75/93)","sequence":78}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_3_triangulation_3/documentation/index.html (76/93)","sequence":79}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_3_triangulation_3/documentation/introduction.html (77/93)","sequence":80}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_3_triangulation_3/documentation/menu.html (78/93)","sequence":81}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_3_triangulation_3/resources/about.html (79/93)","sequence":82}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_3_triangulation_3/resources/about_CGAL.html (80/93)","sequence":83}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_Lloyd_3/about_CGAL.html (81/93)","sequence":84}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_Lloyd_3/about_Periodic_Lloyd_3.html (82/93)","sequence":85}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_Lloyd_3/documentation/index.html (83/93)","sequence":86}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_Lloyd_3/documentation/introduction.html (84/93)","sequence":87}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_3_triangulation_3/demo/Periodic_Lloyd_3/documentation/menu.html (85/93)","sequence":88}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_4_hyperbolic_triangulation_2/demo/Periodic_4_hyperbolic_triangulation_2/icons/about_CGAL.html (86/93)","sequence":89}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Periodic_4_hyperbolic_triangulation_2/demo/Periodic_4_hyperbolic_triangulation_2/icons/about_P4HD_Triangulation_2.html (87/93)","sequence":90}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Polyline_simplification_2/demo/Polyline_simplification_2/about_Polyline_simplification_2.html (88/93)","sequence":91}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Principal_component_analysis/demo/Principal_component_analysis/resources/about.html (89/93)","sequence":92}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Stream_support/test/Stream_support/data/2016206_MHT_surface.ts (90/93)","sequence":93}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Triangulation_3/demo/Triangulation_3/documentation/about.html (91/93)","sequence":94}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Triangulation_3/demo/Triangulation_3/documentation/about_CGAL.html (92/93)","sequence":95}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting Triangulation_3/demo/Triangulation_3/icons/about_CGAL.html (93/93)","sequence":96}}
+{"rea_progress":{"phase":"build_javascript_application_graph","completed":0,"total":1,"message":"Constructing application and Electron boundary relationships","sequence":97}}
+{"rea_progress":{"phase":"seal_javascript_application_graph","completed":0,"total":1,"message":"Sealing the validated application graph","sequence":98}}
+{"rea_progress":{"phase":"build_javascript_semantic_graph","completed":0,"total":1,"message":"Binding and validating static semantic relationships","sequence":99}}
+{"rea_progress":{"phase":"seal_javascript_semantic_graph","completed":0,"total":1,"message":"Validating and sealing the semantic graph","sequence":100}}
+{"rea_progress":{"phase":"validate_javascript_application_result","completed":0,"total":1,"message":"Validating result metadata and cross-graph bindings","sequence":101}}
+{"rea_progress":{"phase":"create_javascript_application_evidence","completed":0,"total":1,"message":"Creating and hashing application analysis Evidence","sequence":102}}
+{"rea_progress":{"phase":"seal_javascript_application_result","completed":0,"total":1,"message":"Sealing the complete application analysis result","sequence":103}}
+{"rea_progress":{"phase":"validate_javascript_application_evidence","completed":0,"total":1,"message":"Validating the immutable application Evidence JSON","sequence":104}}
+{"rea_progress":{"phase":"hash_javascript_application_evidence","completed":0,"total":1,"message":"Hashing the complete application analysis Evidence","sequence":105}}
+{"rea_progress":{"phase":"analyze_javascript_application","completed":1,"total":1,"message":"Application graph and Electron boundaries reconstructed","terminal":true,"sequence":106}}

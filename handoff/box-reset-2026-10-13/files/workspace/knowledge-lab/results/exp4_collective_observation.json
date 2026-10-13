@@ -1,0 +1,54 @@
+{
+  "experiment": "collective_observation",
+  "claim_label": "TESTED",
+  "preregistration": {
+    "hypothesis": "null \u2014 observation does not change RNG stream given identical seed+algorithm",
+    "seed": 20261005,
+    "n_draws": 10000,
+    "n_agents": 5,
+    "primary_outcome": "max absolute difference between observed and unobserved sequences",
+    "success_criterion_for_null": "max_abs_diff == 0.0 (bit-identical)",
+    "misconception_addressed": "Software agents 'observing' numbers is not quantum measurement and does not collapse a physical wavefunction or alter spacetime. Closest testable claim: does inspecting values change subsequent pseudorandom draws under fixed seed?",
+    "date_local": "2026-10-05 CT"
+  },
+  "result": {
+    "unobserved_mean": 0.5035608875403496,
+    "observed_mean": 0.5035608875403496,
+    "unobserved_std": 0.28707326561216984,
+    "observed_std": 0.28707326561216984,
+    "mean_difference": 0.0,
+    "max_abs_diff": 0.0,
+    "sequences_identical": true
+  },
+  "control_different_seed_max_abs_diff": 0.9990454634787245,
+  "control_note": "Different seed produces large differences (sanity check).",
+  "conclusion": "Null confirmed: agent observation did not change the RNG sequence. Father's idea that collective agent observation alters physical/random outcomes is a misconception here. Real science: quantum measurement affects quantum systems under specific physical conditions; reading a classical PRNG does not. Closest useful practice: preregister analyses and use fixed seeds for reproducibility.",
+  "wall_s": 0.1373246580005798,
+  "observation_log_sample": [
+    {
+      "i": 0,
+      "v": 0.33926779131508034,
+      "last_digest": "661a553d0346647f67dd32ddfd28411db57c6bd6b1a621eadbd694bfffd2f46e"
+    },
+    {
+      "i": 1,
+      "v": 0.4029432356259347,
+      "last_digest": "a2a2dedbb6fd2affaad7c5c5b22e954602a6d17903ed7b99201783a61a190e71"
+    },
+    {
+      "i": 2,
+      "v": 0.18700550628725865,
+      "last_digest": "7ef78f9a87983bc1442f58c2934aae60b41ffd9191123e907a42dca2db1a77c7"
+    },
+    {
+      "i": 3,
+      "v": 0.44817417274143323,
+      "last_digest": "25742f6f848c254fc07b3d03dc211b0a576d8f68006311ccc0e31afce5dd7312"
+    },
+    {
+      "i": 4,
+      "v": 0.6279410841603507,
+      "last_digest": "149278b5eb015961a8f5a9206864ce2d6514521c201079435a343c2b2af695fd"
+    }
+  ]
+}

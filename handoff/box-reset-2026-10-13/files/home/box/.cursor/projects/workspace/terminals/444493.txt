@@ -1,0 +1,27 @@
+---
+pid: 146678
+cwd: "/workspace"
+command: "timeout 30 python3 << 'PY'\nimport os, json, time\n# remaining duplicate waste not hardlinked among existing files from scan\nNOW=time.time()\nwaste_same_ino=0\nwaste_diff_ino=0\nwaste_recent=0\ngroups_diff=0\nfor line in open('/workspace/dedupe/all-groups.jsonl'):\n    g=json.loads(line)\n    by_ino={}\n    recent=0\n    for p in g['paths']:\n        if not os.path.isfile(p):\n            continue\n        st=os.stat(p)\n        if NOW-st.st_mtime < 30*60:\n            recent += 1\n            continue\n        key=(st.st_dev, st.st_ino)\n        by_ino.setdefault(key, []).append(p)\n    if not by_ino:\n        if recent>=2:\n            waste_recent += g['size']*(recent-1)\n        continue\n    # if multiple inodes, still wasting\n    if len(by_ino)>1:\n        groups_diff += 1\n        # waste = size * (num_inodes - 1) approximately for identical content\n        waste_diff_ino += g['size']*(len(by_ino)-1)\n    else:\n        # one inode, n links - no waste\n        pass\nprint('groups still multi-inode (aged):', groups_diff)\nprint('waste_diff_ino_gb', round(waste_diff_ino/1024**3,3))\nprint('waste_recent_only_gb', round(waste_recent/1024**3,3))\nprint('df:'); os.system('df -h /')\nprint('full-f76d exists', os.path.exists('/workspace/build-gate/full-f76d'))\nprint('tessera clone', os.path.exists('/workspace/build-gate/tessera'))\nos.system('du -sh /workspace/build-gate/tessera 2>/dev/null')\nPY\ntimeout 10 cp -f /workspace/dedupe/df-after-step2.txt /workspace/dedupe/df-after-step2.txt.bak 2>/dev/null; timeout 10 df -h / | tee /workspace/dedupe/df-after.txt; timeout 10 date '+%Y-%m-%d %H:%M:%S %Z'"
+title: "Measure remaining waste; final df"
+status: succeeded
+started_at: 2026-10-13T11:19:25.778Z
+running_for_ms: 682      
+---
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G   68G   58G  55% /
+1.3G	/workspace/build-gate/tessera
+groups still multi-inode (aged): 2
+waste_diff_ino_gb 0.0
+waste_recent_only_gb 3.651
+df:
+full-f76d exists False
+tessera clone True
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G   68G   58G  55% /
+2026-10-13 06:19:26 CDT
+
+---
+exit_code: 0
+elapsed_ms: 682
+ended_at: 2026-10-13T11:19:26.460Z
+---

@@ -1,0 +1,71 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "03 SPRT early stop: calls per decision",
+      "metric": "LLM calls/decision",
+      "n_seeds": 20,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 24.0,
+        "lo": 24.0,
+        "hi": 24.0
+      },
+      "candidate": {
+        "mean": 11.779575,
+        "lo": 10.924476874999998,
+        "hi": 12.623111875
+      },
+      "improvement": {
+        "mean": 12.220425,
+        "lo": 11.376888125,
+        "hi": 13.075523125000002
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "03 SPRT accuracy vs current full poll phi/2-3",
+      "metric": "decision accuracy",
+      "n_seeds": 20,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.794825,
+        "lo": 0.775825,
+        "hi": 0.8136512500000002
+      },
+      "candidate": {
+        "mean": 0.9801500000000001,
+        "lo": 0.976099375,
+        "hi": 0.9836750000000001
+      },
+      "improvement": {
+        "mean": 0.18532500000000002,
+        "lo": 0.168748125,
+        "hi": 0.201275625
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "03 SPRT accuracy vs full-poll LLR (build 01)",
+      "metric": "decision accuracy",
+      "n_seeds": 20,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.9838999999999999,
+        "lo": 0.9795987499999999,
+        "hi": 0.9877006249999999
+      },
+      "candidate": {
+        "mean": 0.9801500000000001,
+        "lo": 0.976099375,
+        "hi": 0.9836750000000001
+      },
+      "improvement": {
+        "mean": -0.0037500000000000033,
+        "lo": -0.005300000000000004,
+        "hi": -0.002449375
+      },
+      "verdict": "DROP"
+    }
+  ]
+}

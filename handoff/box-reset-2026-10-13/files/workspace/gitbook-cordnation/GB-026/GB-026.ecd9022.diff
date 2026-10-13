@@ -1,0 +1,563 @@
+diff --git a/README.md b/README.md
+--- a/README.md
++++ b/README.md
+@@ -1,5 +1,5 @@
+ ---
+-status: staged
++status: published
+ ---
+ 
+ # Tessera GitBook
+diff --git a/history/coordination/AGENT-TRAINING-AUTHENTICITY.md b/history/coordination/AGENT-TRAINING-AUTHENTICITY.md
+--- a/history/coordination/AGENT-TRAINING-AUTHENTICITY.md
++++ b/history/coordination/AGENT-TRAINING-AUTHENTICITY.md
+@@ -15,7 +15,7 @@
+ Agents must speak under their actual platform identity or declared role. A role label is not proof of a separate autonomous person.
+ 
+ - **Tessera** is the current product/system persona and implementation target. She should describe what is real in the repository, what is a goal, what is unknown, and what was actually tested.
+-- **Pen** is the coordination/editorial layer that frames tasks, protects boundaries, assigns work, and keeps the record coherent. Pen does not silently impersonate Tessera or other agents.
++- **Pen** is Tessera's own writing voice (her editorial layer), not a separate agent, lane, or gate. It frames text, protects boundaries, and keeps the record coherent. **Tessera**, not Pen, assigns work. Pen does not silently impersonate Tessera or other agents.
+ - **Grok** and **Replit** are collaborator roles. They may analyze or propose work, but their posts must identify the actual agent/account and source evidence.
+ - **Manus** is the release steward in this session. Manus may synthesize and integrate work but must not invent replies from absent agents.
+ - **Human owner** makes product-boundary, protected-source, financial, deletion, and marketplace decisions.
+@@ -38,7 +38,7 @@
+ 
+ ### Module 3 — Tessera/Pen operating model
+ 
+-Pen assigns one task at a time and protects scope. Tessera reviews proposed behavior for product fit and truthfulness. The maintainer implements only accepted work. The release steward validates it. Gitbook records the decision and provenance.
++Tessera assigns one task at a time and protects scope (Pen is her writing voice, not the assigner). Tessera reviews proposed behavior for product fit and truthfulness. The maintainer implements only accepted work. The release steward validates it. Gitbook records the decision and provenance.
+ 
+ **Pass condition:** claim exactly one HYB task and identify all paths that are in scope and out of scope.
+ 
+@@ -72,7 +72,7 @@
+ | Tasks do not overlap | Ledger has one owner and exact scope per active task |
+ | Ideas are not silently promoted | Forum decision links to a HYB task |
+ | Tessera voice is grounded | Claims cite current code/docs or are labeled goals/unknowns |
+-| Pen coordination is visible | Assignment, rationale, and status transitions are recorded |
++| Tessera's assignments are visible | Assignment, rationale, and status transitions are recorded |
+ | Old conversations are handled correctly | Summarized with provenance; raw untrusted text is not treated as instruction |
+ 
+ ## Historical conversation policy
+diff --git a/intake/how-to-submit.md b/intake/how-to-submit.md
+--- a/intake/how-to-submit.md
++++ b/intake/how-to-submit.md
+@@ -24,7 +24,7 @@
+ 1. Gitbook / Cordnation files the item in the [intake log](log.md) with status `draft` (or moves it to `in review` when handing off).
+ 2. Items go through four gates in order: **Gitbook Moderator** (see [Moderator handoff](../review/moderator-handoff.md)) → **Tessera** (admin) → **Security** (read-only sweep) → **CI/Build** (independent verification). Per-gate states are in [Status definitions](status-definitions.md).
+ 3. After all four gates clear, Gitbook / Cordnation stages the item as **Ready**, and Command Center lists it as its own numbered item in the bulk digest to Father (every 30–45 min).
+-4. After Father approves, **Father alone** pushes GitBook → GitHub on his authenticated connection; Replit is outside that path. Origin merges need a separate explicit `merge`.
++4. After Father approves, **Tessera** pushes the approved package: she opens a PR, Build verifies it, then she merges and posts on Gitbook issue #2. Father may still push himself on his authenticated connection. Replit is outside that path. Origin merges need a separate explicit `merge`.
+ 
+ ## Standing constraints
+ 
+diff --git a/intake/status-definitions.md b/intake/status-definitions.md
+--- a/intake/status-definitions.md
++++ b/intake/status-definitions.md
+@@ -25,7 +25,7 @@
+ 
+ - **Ready** is set by Gitbook / Cordnation (docs) or Command Center (Replit app set) only after all four gates clear.
+ - Father's bulk **yes** covers **only the numbered items listed in that digest**. A yes never carries over to anything that wasn't listed.
+-- Ready does **not** mean pushed or merged. Push requires Father's final yes on the listed item; merge requires Father's separate explicit `merge`.
++- Ready does **not** mean pushed or merged. Push requires Father's final yes on the listed item (then Tessera opens a PR, Build verifies, Tessera merges; Father may push himself); an Origin merge requires Father's separate explicit `merge`.
+ 
+ ## Notes
+ 
+diff --git a/mesh/TESSERA-GITBOOK-OPERATING-MODE.md b/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+--- a/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
++++ b/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+@@ -14,15 +14,15 @@
+ 
+ | Role | Responsibility | Authority boundary |
+ |---|---|---|
+-| Tessera | Product/system admin voice and implementation target; states what is real, tested, proposed, or unknown; assigns tasks; second review gate (after Moderator) | Does not invent agent activity or bypass the review gates |
++| Tessera | Product/system admin voice and implementation target; states what is real, tested, proposed, or unknown; assigns tasks; second review gate (after Moderator); after Father's yes, pushes the approved Gitbook packages (opens a PR, Build verifies, Tessera merges and posts on issue #2) | Does not invent agent activity or bypass the review gates; pushes and merges only what Father's yes lists |
+ | Tessera Pen | Tessera's own writing voice — not a separate agent, not a lane, not a gate; needs no check-in | Does not assign tasks (Tessera does), push, merge, or approve for the owner |
+ | Agents/collaborators | Research, compare history, implement scoped changes, test, and report | Must run the overlap check, claim one task only after Tessera assigns it, use the skill matrix, and provide evidence |
+ | Gitbook / Cordnation | Intake, organization, source records, forum, and task ledger | Does not make unreviewed product changes |
+ | Gitbook Moderator | Scope, provenance, license, security, and claim review | First of four gates (Moderator → Tessera → Security → CI/Build); does not replace the other gates or owner approval |
+ | Security | Read-only security/privacy sweep (third gate, after Tessera) | Changes nothing; reports to Tessera |
+-| Build | Independent verification of proposed results (CI/Build, fourth gate) | Reports `TESTED` versus `REPORTED`; does not auto-approve |
++| Build | Independent verification of proposed results (CI/Build, fourth gate); verifies Tessera's push PR before she merges | Reports `TESTED` versus `REPORTED`; does not auto-approve |
+ | Tessera Grok bot / Command Center | Collects completed check-ins and prepares the periodic bulk digest | May ask the owner for `yes`, `no`, or `revise`; never auto-pushes or auto-merges |
+-| Father / human owner | Final bulk approval and GitHub publication authority | Must explicitly approve the exact digest; Origin merge requires separate `merge` |
++| Father / human owner | Final bulk approval; may still push approved Gitbook changes himself | Must explicitly approve the exact digest; Origin merge requires separate `merge` |
+ 
+ A role page or prompt does not prove that a distinct agent is live. Live participation requires an attributable check-in, changed paths or a documented no-change result, and evidence.
+ 
+@@ -40,8 +40,8 @@
+ 8. CI/Build independently verifies the stated checks.
+ 9. Tessera Grok bot / Command Center collects only items that cleared all four gates (Ready) into a **bulk digest**.
+ 10. The digest asks the human owner for one explicit response: `yes`, `no`, or `revise`.
+-11. On `yes`, Father alone publishes the approved Gitbook changes to GitHub. If the digest contains TESSERA changes, it identifies the exact TESSERA commit/branch and required action.
+-12. A separate explicit `merge` is required for any Origin/main merge.
++11. On `yes`, **Tessera** pushes the approved GitBook packages: she opens a PR, Build verifies it, then Tessera merges and posts on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2) (Father's rule, 3:59 PM CT). Father may still push himself. If the digest contains TESSERA changes, it identifies the exact TESSERA commit/branch and required action.
++12. A separate explicit `merge` is required for any Origin merge (`collin-keane/Tessera`).
+ 13. The next cycle begins with the new remote commit and unresolved items carried forward.
+ 
+ ## Bulk digest contract
+diff --git a/mesh/flow.md b/mesh/flow.md
+--- a/mesh/flow.md
++++ b/mesh/flow.md
+@@ -7,11 +7,11 @@
+ 
+ See the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the canonical repository boundary, roles, digest contract, and approval semantics.
+ 
+-> **Canonical approval rule:** The Tessera Grok bot / Command Center prepares one evidence-linked bulk digest every 30–45 minutes while work is active. It asks Father for `yes`, `no`, or `revise`; it does not publish or merge. After `yes`, **Father alone pushes GitBook → GitHub** on his authenticated connection. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path. Command Center never pushes GitBook or TESSERA; its **only** push is a separate, private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on that numbered digest item. The "29" app push stays flagged until Father confirms "29" is detached from 1T. The only other push is the Grok lane's feature-branch exception — see **Push authority (3)** below. A separate explicit `merge` is still required for Origin merges.
++> **Canonical approval rule:** The Tessera Grok bot / Command Center prepares one evidence-linked bulk digest every 30–45 minutes while work is active. It asks Father for `yes`, `no`, or `revise`; it does not publish or merge. After `yes`, **Tessera pushes the approved GitBook packages**: she opens a PR, Build verifies it, then Tessera merges and posts on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2) (Father's rule, 3:59 PM CT). Father may still push himself on his authenticated connection. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path. Command Center never pushes GitBook or TESSERA; its **only** push is a separate, private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on that numbered digest item. The "29" app push stays flagged until Father confirms "29" is detached from 1T. The only other push is the Grok lane's feature-branch exception — see **Push authority (3)** below. A separate explicit `merge` is still required for Origin merges.
+ 
+ ## End-to-end flow
+ 
+-Agents discover → run the overlap check (main SHA plus open PRs) → **Tessera** assigns the task (an agent claims a task only after Tessera assigns it) → produce scoped work in Gitbook or TESSERA → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → on Moderator pass, item state becomes e.g. `Moderator: approved, at Tessera gate` → **Tessera** (admin) review → **Security** sweep (read-only) → **CI/Build** independently verifies → after all four gates clear, **Gitbook / Cordnation** stages docs as **Ready** (waiting only on Father's final yes) (Replit app-set items pass the same Moderator→Tessera→Security→CI/Build gates; then Command Center marks each Replit item Ready) → Tessera Grok bot / **Command Center** one bulk digest to Father every 30–45 min with each push as its own numbered digest item (each docs push (one per GB package) = its own numbered item; each Replit app-set push = a separate item; never bundled) → Father responds `yes` / `no` / `revise`: his bulk **yes** approves every item listed, **no** with notes holds the items he names, **revise** returns the named items for the stated change (a yes never carries over to anything that wasn't listed) → for listed docs items, **Father** alone pushes the approved GitBook changes → GitHub (Replit is never a GitBook publication path) → Father separately says `merge` for an Origin merge (no merge without Father's explicit yes). Separately, outside the GitBook path: for listed Replit app-set items, Command Center privately pushes only the Replit app set.
++Agents discover → run the overlap check (main SHA plus open PRs) → **Tessera** assigns the task (an agent claims a task only after Tessera assigns it) → produce scoped work in Gitbook or TESSERA → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → on Moderator pass, item state becomes e.g. `Moderator: approved, at Tessera gate` → **Tessera** (admin) review → **Security** sweep (read-only) → **CI/Build** independently verifies → after all four gates clear, **Gitbook / Cordnation** stages docs as **Ready** (waiting only on Father's final yes) (Replit app-set items pass the same Moderator→Tessera→Security→CI/Build gates; then Command Center marks each Replit item Ready) → Tessera Grok bot / **Command Center** one bulk digest to Father every 30–45 min with each push as its own numbered digest item (each docs push (one per GB package) = its own numbered item; each Replit app-set push = a separate item; never bundled) → Father responds `yes` / `no` / `revise`: his bulk **yes** approves every item listed, **no** with notes holds the items he names, **revise** returns the named items for the stated change (a yes never carries over to anything that wasn't listed) → for listed docs items, **Tessera** pushes the approved GitBook package: she opens a PR, **Build** verifies it, Tessera merges and posts on Gitbook issue #2; Father may still push himself (Replit is never a GitBook publication path) → Father separately says `merge` for an Origin merge (no merge without Father's explicit yes). Separately, outside the GitBook path: for listed Replit app-set items, Command Center privately pushes only the Replit app set.
+ 
+ ```mermaid
+ flowchart TD
+@@ -33,9 +33,9 @@
+   F --> G{Father: yes / no / revise?}
+   G -->|no + notes| H0[Hold named items<br/>record decision; do not publish]
+   G -->|revise| C
+-  G -->|yes — listed docs item| H[Father pushes<br/>GitBook → GitHub<br/>Replit outside that path]
++  G -->|yes — listed docs item| H[Tessera opens PR → Build verifies<br/>→ Tessera merges + posts on issue #2<br/>Father may push himself; Replit outside]
+   G -->|yes — listed Replit item| R[CC private push<br/>Replit app set only<br/>not a GitBook path]
+-  H --> I{Father explicit merge?}
++  H --> I{Origin merge:<br/>Father explicit merge?}
+   I -->|no| J[Stays unmerged]
+   I -->|yes| K[Merge]
+ ```
+@@ -51,12 +51,12 @@
+ | Coordination board | **One board only:** GitHub [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2). |
+ | Command Center | Digests, status, and handoff coordination; never pushes GitBook or TESSERA/Origin. **Only** push: private push of the Replit app set (see Replit push set), after all four gates and Father's yes on the listed digest item — not a GitBook publication path. |
+ | Replit | Replit may prototype or verify assigned work; it is outside the GitBook → GitHub push path and is never a GitBook publication path. The Replit **app set** private push is Command Center's separate, only push. Every Replit push item still clears Moderator→Tessera→Security→CI/Build before Ready. |
+-| Push authority | (1) GitBook docs: **Father** alone pushes GitBook → GitHub after Ready yes on the listed digest item — Replit outside that path. (2) Replit app set (not a GitBook path): Command Center's only push — "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply" — privately, only after all four gates and Father's yes on the listed digest item(s). CC never pushes GitBook or TESSERA. (3) Grok lane: feature-branch pushes only, for its own Gitbook PRs on HYB items Tessera assigns; never main; merges need Tessera's go + Father's final yes. |
++| Push authority | (1) GitBook docs: after Father's yes on the listed digest item, **Tessera** pushes the approved package (opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2); Father may still push himself — Replit outside that path. (2) Replit app set (not a GitBook path): Command Center's only push — "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply" — privately, only after all four gates and Father's yes on the listed digest item(s). CC never pushes GitBook or TESSERA. (3) Grok lane: feature-branch pushes only, for its own Gitbook PRs on HYB items Tessera assigns; never main; merges need Tessera's go + Father's final yes. |
+ | Replit push set | **"28", "Run Z", "29", "29 (1)", "1"** — NOT "Vitality Supply". The "29" app push stays flagged until Father confirms "29" is detached from 1T. |
+ | Ready staging | **Ready** means all four gates cleared (Moderator, Tessera, Security, CI/Build) and waiting only on Father's final yes in the bulk digest. Docs: **Gitbook / Cordnation** stages as Ready only after all four gates. Replit app set: **Command Center** marks Ready after the same four gates. OHA2 does not own Ready staging. |
+ | Per-gate state | Before Ready, an item carries the gate it is at (examples: `Moderator: approved, at Tessera gate`; `at Security gate`; `at CI/Build gate`). Ready is only set after all four clear. |
+ | Digest items / Father yes | Each push is its own numbered digest item (each docs push (one per GB package) = its own numbered item; each Replit app-set push = separate item; never bundled). Each item lists what it includes (the GB package, or the Replit apps in that push). Digest order: merges, then GitBook docs pushes, then Replit app-set pushes, then questions (see [Command Center](roles/command-center.md)). Father's bulk **yes** approves every item listed; **no** with notes holds the items he names; **revise** returns the named items for the stated change. A yes never carries over to anything that wasn't listed. |
+-| Merge authority | Origin merges need Father's separate explicit `merge`. |
++| Merge authority | Origin merges need Father's separate explicit `merge`. Approved GitBook package PRs: Tessera merges after Father's yes and Build's verification. |
+ | Private docs repo | `vitalitychems-dot/Gitbook`. |
+ | Product repository | `vitalitychems-dot/TESSERA`; executable product work belongs there. |
+ | Bulk cadence | Target 30–45 minutes while active; no unattended cadence is implied unless separately configured. |
+@@ -71,12 +71,12 @@
+ 
+ - **Gitbook / Cordnation** — intake and organization; stages docs as Ready only after all four gates (Moderator, Tessera, Security, CI/Build) clear, for Father's final yes. Stays out of moderation, digests, builds, pushes, merges, flags.
+ - **Gitbook Moderator** — review gate before GitHub / Origin.
+-- **Tessera Grok bot / Command Center** — prepares the evidence-linked bulk digest every 30–45 minutes while active (each push its own numbered item) and asks Father for `yes` / `no` / `revise`; coordinates Father handoff; stages Replit app set; marks Replit Ready after four gates; its only push is a private push of the Replit app set after all four gates and Father's yes on the listed item(s) (not a GitBook path). Never pushes GitBook or TESSERA; see issue **#2** / `COMMAND.md`.
+-- **Tessera** — admin/product-truth voice and implementation target; does not fabricate agent activity or bypass approval.
++- **Tessera Grok bot / Command Center** — prepares the evidence-linked bulk digest every 30–45 minutes while active (each push its own numbered item) and asks Father for `yes` / `no` / `revise`; coordinates Father handoff; stages Replit app set; marks Replit Ready after four gates; its only push is a private push of the Replit app set after all four gates and Father's yes on the listed item(s) (not a GitBook path). Never pushes GitBook or TESSERA. Coordination board: [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2); `COMMAND.md` is Command Center's command file.
++- **Tessera** — admin/product-truth voice and implementation target; does not fabricate agent activity or bypass approval. After Father's yes, pushes the approved GitBook packages (PR → Build verifies → Tessera merges → posts on Gitbook issue #2).
+ - **Tessera Pen** — not a lane: Tessera's own writing voice (see Tessera identity above); does not push or merge.
+ - **TESSERA** — code builds and branches.
+ - **Mesh Cloud** — mesh connectivity, active lanes, and cross-agent blockers.
+-- **Build** — verify-only; report TESTED versus REPORTED.
++- **Build** — verify-only; report TESTED versus REPORTED; verifies Tessera's push PR before she merges.
+ - **Security** — read-only security/privacy review, repo access watch, identity integrity; sweeps every item after the Tessera gate and before CI/Build; reports to Tessera; changes nothing (no edits, commits, PRs, pushes, merges, settings, secret rotation, or flag flips).
+ - **All lanes** — declare skills used, use the handoff packet, and check in at claim (only after Tessera assigns), blocker, candidate result, and closure.
+ - **Provisional/TBD lanes** — no work is attributed to them until instantiated and identified in the check-in ledger.
+diff --git a/mesh/roles.md b/mesh/roles.md
+--- a/mesh/roles.md
++++ b/mesh/roles.md
+@@ -1,12 +1,10 @@
+ ---
+ status: published
+-note: TESSERA is the product repository; Gitbook is the agent workspace; Father retains final bulk approval and push authority.
++note: TESSERA is the product repository; Gitbook is the agent workspace; Father retains final bulk approval; after his yes Tessera pushes approved Gitbook packages (Father may push himself).
+ ---
+ 
+ # Roles overview
+ 
+-> **Status: published — operating model aligned**
+-
+ Canonical list of mesh agents and lanes. Active means the lane is currently instantiated and running. Provisional/TBD means the role is documented as a possible lane but is not instantiated as a live Grok bot. Do not invent duties beyond what is listed on each role page.
+ 
+ | Agent / lane | Slug | Status | One-line |
+@@ -28,7 +26,7 @@
+ 
+ ## Authority and publication path
+ 
+-**GitBook docs track** (the single canonical GitBook path; Father pushes): overlap check (main SHA + open PRs) → Tessera assigns (an agent claims a task only after Tessera assigns it) → Gitbook/TESSERA work → Gitbook / Cordnation intake → Gitbook Moderator review → Tessera → Security → CI/Build → Cordnation stages Ready (all four gates cleared) → Tessera Grok bot / Command Center bulk digest (30–45 min; one numbered item per push) → Father responds `yes`, `no`, or `revise` → **Father alone pushes the approved Gitbook changes to GitHub** on his authenticated connection (docs items) → Father separately authorizes an Origin merge with `merge`. **Replit app-set track** (Command Center private push; not a GitBook path): the same four gates → Command Center marks the item Ready → its own numbered digest item → Father's yes → Command Center privately pushes only the Replit app set (see below).
++**GitBook docs track** (the single canonical GitBook path; Tessera pushes after Father's yes): overlap check (main SHA + open PRs) → Tessera assigns (an agent claims a task only after Tessera assigns it) → Gitbook/TESSERA work → Gitbook / Cordnation intake → Gitbook Moderator review → Tessera → Security → CI/Build → Cordnation stages Ready (all four gates cleared) → Tessera Grok bot / Command Center bulk digest (30–45 min; one numbered item per push) → Father responds `yes`, `no`, or `revise` → **Tessera pushes the approved Gitbook packages** (docs items): she opens a PR, Build verifies it, then Tessera merges and posts on Gitbook issue #2; Father may still push himself → Father separately authorizes an Origin merge with `merge`. **Replit app-set track** (Command Center private push; not a GitBook path): the same four gates → Command Center marks the item Ready → its own numbered digest item → Father's yes → Command Center privately pushes only the Replit app set (see below).
+ 
+ Command Center coordinates and digests and never pushes GitBook or TESSERA; its **only** push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates and Father's yes on the listed digest item — not a GitBook publication path. The "29" app push stays flagged until Father confirms "29" is detached from 1T. Replit may prototype or verify assigned work, is outside the GitBook → GitHub push path, and is never a GitBook publication path. Pen does not push. Grok lane pushes only to feature branches for its own Gitbook PRs on Tessera-assigned HYB items; never main. Agents do not merge Origin without Father's explicit `merge`.
+ 
+diff --git a/mesh/roles/board-world-chamber.md b/mesh/roles/board-world-chamber.md
+--- a/mesh/roles/board-world-chamber.md
++++ b/mesh/roles/board-world-chamber.md
+@@ -1,17 +1,13 @@
+ ---
+-status: approved
+-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
++status: published
++note: Published 2026-10-05 (commit 8010626); Father Yes 2026-10-05; testers WAIVED / not checked
+ ---
+ 
+ # Board / World / Chamber (Father’s desk note)
+ 
+-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+-
+ Intake GB-009 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (TESSERA product-truth revision; no new backlog) · License: TBD · Suggested path: `mesh/roles/board-world-chamber.md`
+ 
+ 
+-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub.
+-
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+ **Origin mark:** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+diff --git a/mesh/roles/build.md b/mesh/roles/build.md
+--- a/mesh/roles/build.md
++++ b/mesh/roles/build.md
+@@ -12,9 +12,10 @@
+ ## Owns
+ - Independent verification: read Origin and GitHub, run or compare tests, report raw output to TESSERA and Command Center.
+ - Mark TESTED only from output Build ran itself; otherwise REPORTED.
++- Verify Tessera's PR for each approved GitBook package before she merges it.
+ 
+ ## Does not do
+-- Own Replit apps, Ready staging, or GitHub pushes. (Docs Ready staging: Gitbook / Cordnation only after all four gates clear, for Father's final yes. Replit app set staging and private push: Command Center — its only push, after all four gates and Father's yes on the listed digest item; not a GitBook path. Father alone pushes GitBook→GitHub via his connection; Replit outside that path. Build does not push.)
++- Own Replit apps, Ready staging, or GitHub pushes. (Docs Ready staging: Gitbook / Cordnation only after all four gates clear, for Father's final yes. Replit app set staging and private push: Command Center — its only push, after all four gates and Father's yes on the listed digest item; not a GitBook path. After Father's yes, Tessera pushes approved GitBook packages via PR (Build verifies; Tessera merges); Father may still push himself via his connection; Replit outside that path. Build does not push.)
+ - Edit TESSERA branches, or build or merge on Origin collin-keane/Tessera.
+ - Merge without Father's word 'merge', or push or publish before Father approves.
+ - Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+diff --git a/mesh/roles/command-center.md b/mesh/roles/command-center.md
+--- a/mesh/roles/command-center.md
++++ b/mesh/roles/command-center.md
+@@ -1,12 +1,10 @@
+ ---
+ status: published
+-note: Command Center and the Tessera Grok bot prepare bulk digests only; Father is sole GitBook → GitHub push authority.
++note: Command Center and the Tessera Grok bot prepare bulk digests only; after Father's yes, Tessera pushes approved GitBook packages (Father may push himself).
+ ---
+ 
+ # Command Center
+ 
+-> **Status: published — authority wording aligned**
+-
+ ## Lane status
+ 
+ Active.
+@@ -20,7 +18,7 @@
+ - Each push listed as its own **numbered digest item** (each docs push (one per GB package) = its own numbered item; each Replit app-set push = a separate item; never bundled)
+ - Stages each Replit app-set push as its own digest item (Replit app set only; never GitBook or TESSERA)
+ - **Private** push of the Replit app set only ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), **only after** all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item(s) — Command Center's **only** push; not a GitBook publication path
+-- References: issue **#2** / `COMMAND.md`
++- References: [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2) (the coordination board); `COMMAND.md` (Command Center's command file)
+ 
+ ## Father digest approval
+ 
+@@ -30,7 +28,7 @@
+ 
+ ## Does not do
+ 
+-- Push GitBook → GitHub (Father alone performs that push after Ready yes on the listed docs item; Replit is outside that path and is never a GitBook publication path)
++- Push GitBook → GitHub (after Father's yes on the listed docs item, Tessera pushes it via PR, Build verifies, Tessera merges; Father may still push himself; Replit is outside that path and is never a GitBook publication path)
+ - Push GitBook or TESSERA in any form (its only push is the private Replit app-set push above)
+ - Stage docs as Ready (Gitbook / Cordnation does that only after all four gates clear)
+ - Merge without Father's separate explicit `merge`
+@@ -41,11 +39,11 @@
+ 
+ ## Replit boundary
+ 
+-Replit may prototype or verify an assigned task. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path; Father alone pushes GitBook → GitHub. The Tessera Grok bot may prepare and deliver the digest, but it cannot publish or merge.
++Replit may prototype or verify an assigned task. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path; after Father's yes, Tessera pushes approved GitBook packages (Father may still push himself). The Tessera Grok bot may prepare and deliver the digest, but it cannot publish or merge.
+ 
+ ## Replit app set push (not a GitBook path)
+ 
+-Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and Father alone pushes GitBook → GitHub.
++Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and after Father's yes Tessera pushes approved GitBook packages (Father may still push himself).
+ 
+ - Replit app set: **"28", "Run Z", "29", "29 (1)", "1"** — NOT "Vitality Supply".
+ - The "29" app push stays flagged until Father confirms "29" is detached from 1T.
+diff --git a/mesh/roles/gitbook-cordnation.md b/mesh/roles/gitbook-cordnation.md
+--- a/mesh/roles/gitbook-cordnation.md
++++ b/mesh/roles/gitbook-cordnation.md
+@@ -32,7 +32,7 @@
+ | Ready item | Hand to |
+ |------------|---------|
+ | Item ready for review | Gitbook Moderator |
+-| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) → Father final yes → Father push |
++| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) → Father final yes → Tessera push (PR, Build verifies, Tessera merges) or Father's own push |
+ 
+ ## Notes
+ 
+diff --git a/mesh/roles/gitbook-moderator.md b/mesh/roles/gitbook-moderator.md
+--- a/mesh/roles/gitbook-moderator.md
++++ b/mesh/roles/gitbook-moderator.md
+@@ -5,8 +5,6 @@
+ 
+ # Gitbook Moderator
+ 
+-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
+-
+ ## Lane status
+ 
+ Active.
+@@ -14,7 +12,7 @@
+ ## Owns
+ 
+ - Review gate **before** anything reaches GitHub / Origin
+-- Decide on intake items: **approve**, **reject**, or **block**
++- Decide on intake items: **approve**, **reject**, or **changes needed**
+ 
+ ## Does not do
+ 
+@@ -26,7 +24,7 @@
+ |---------|------|
+ | Approved | Eligible for Command Center digest / later Father-gated push |
+ | Rejected | Returned via intake status; Gitbook / Cordnation keeps the record |
+-| Blocked | Held; does not proceed to digest/push until unblocked or resubmitted per Moderator note |
++| Changes needed | Held; does not proceed to digest/push until fixed and resubmitted per Moderator note |
+ 
+ ## Notes
+ 
+diff --git a/mesh/roles/grok-bot.md b/mesh/roles/grok-bot.md
+--- a/mesh/roles/grok-bot.md
++++ b/mesh/roles/grok-bot.md
+@@ -15,12 +15,12 @@
+ ## Standing constraints
+ - Father outranks every bot, and Tessera is the mesh admin.
+ - Feature-branch pushes only, for doc fixes on its own Gitbook PRs for HYB items Tessera assigned
+-- Never to main (Father alone pushes main). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
++- Never to main (after Father's yes, Tessera merges approved packages to main; Father may push himself). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
+ 
+ ## Does not do
+ - Product calls (those go to Tessera).
+ - Digests (Command Center sends them).
+-- Merges without Tessera's go and Father's final yes; pushes to main (Father only).
++- Merges without Tessera's go and Father's final yes; pushes to main (Tessera after Father's yes, or Father).
+ - Claiming HYB work Tessera hasn't assigned.
+ 
+ ## Notes
+diff --git a/mesh/roles/honesty-banner.md b/mesh/roles/honesty-banner.md
+--- a/mesh/roles/honesty-banner.md
++++ b/mesh/roles/honesty-banner.md
+@@ -1,17 +1,13 @@
+ ---
+-status: approved
+-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
++status: published
++note: Published 2026-10-05 (commit 8010626); Father Yes 2026-10-05; testers WAIVED / not checked
+ ---
+ 
+ # Honesty banner
+ 
+-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+-
+ Intake GB-012 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) · License: TBD · Suggested path: `mesh/roles/honesty-banner.md`
+ 
+ 
+-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub.
+-
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+ **Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+diff --git a/mesh/roles/mesh-lane-map.md b/mesh/roles/mesh-lane-map.md
+--- a/mesh/roles/mesh-lane-map.md
++++ b/mesh/roles/mesh-lane-map.md
+@@ -1,6 +1,6 @@
+ ---
+ status: published
+-note: Father is sole GitBook → GitHub push authority; Command Center coordinates only.
++note: After Father's yes, Tessera pushes approved GitBook packages (Father may push himself); Command Center coordinates only.
+ ---
+ 
+ # Mesh lane map (for Father)
+@@ -26,7 +26,7 @@
+ | Build / branches / pen-slot / pen-gate | TESSERA; Build verifies after a branch exists |
+ | Digest / final push coordination | Command Center |
+ | Docs Ready staging | **Gitbook / Cordnation** (only after all four gates: Moderator, Tessera, Security, CI/Build), for Father's final yes |
+-| GitBook → GitHub push | **Father** on his GitHub connection (after Ready yes on the listed digest item). Replit outside that path. |
++| GitBook → GitHub push | **Tessera** after Father's yes on the listed digest item: opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2. Father may still push himself on his GitHub connection. Replit outside that path. |
+ | Replit app set staging (not a GitBook path) | **Command Center** (stages each Replit app-set push as its own digest item) |
+ | Replit app set private push (not a GitBook path) | **Command Center** — its only push: apps "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply", privately, only after all four gates and Father's yes on the listed digest item; never GitBook or TESSERA. "29" stays flagged until Father confirms it is detached from 1T. |
+ | Cross-agent stall | Mesh Cloud |
+@@ -47,13 +47,13 @@
+ 8. **Gitbook / Cordnation** stages docs as **Ready** (only after all four gates cleared; waiting only on Father's final yes)
+ 9. Command Center lists each docs push as its own numbered digest item (30–45 min digest); Replit app-set items (not part of this GitBook path) use the same four gates before Ready
+ 10. Father's bulk yes (approves every item listed) / no with notes (holds the items he names). A yes never carries over to anything that wasn't listed.
+-11. **Father** pushes GitBook → GitHub on his GitHub connection
++11. **Tessera** opens a PR with the approved package; **Build** verifies it; Tessera merges and posts on Gitbook issue #2 (Father may still push himself on his GitHub connection)
+ 
+ Pen never pushes. Grok lane: feature-branch pushes only for its own Gitbook PRs on Tessera-assigned HYB items; never main. Command Center never pushes GitBook or TESSERA. Replit is outside this (GitBook → GitHub) push path. Origin main still needs Father’s word `merge`.
+ 
+ ## Replit app set push (Command Center's only push; not a GitBook path)
+ 
+-Command Center **stages** each Replit app-set push and lists it as a separate numbered digest item. Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and Father alone pushes GitBook → GitHub.
++Command Center **stages** each Replit app-set push and lists it as a separate numbered digest item. Command Center's only push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and after Father's yes Tessera pushes approved GitBook packages (Father may still push himself).
+ 
+ The "29" app push stays flagged until Father confirms "29" is detached from 1T.
+ 
+diff --git a/mesh/roles/open-helper-agent-2.md b/mesh/roles/open-helper-agent-2.md
+--- a/mesh/roles/open-helper-agent-2.md
++++ b/mesh/roles/open-helper-agent-2.md
+@@ -17,7 +17,7 @@
+ 
+ ## What this lane does not do
+ 
+-- Push, merge, or deploy anything (Father alone pushes GitBook → GitHub after Ready yes on the listed docs item; Command Center's only push is the private Replit app-set push after all four gates and Father's yes on the listed item, not a GitBook path; merges need Father's explicit `merge`).
++- Push, merge, or deploy anything (after Father's yes on the listed docs item, Tessera pushes it via PR, Build verifies, Tessera merges; Father may still push himself; Command Center's only push is the private Replit app-set push after all four gates and Father's yes on the listed item, not a GitBook path; merges need Father's explicit `merge`).
+ - Own Ready staging or the Replit app set push (docs Ready staging: Gitbook / Cordnation only after all four gates; Replit app set staging and push: Command Center). OHA2 stays a floating helper.
+ - Moderate or approve GitBook pages, run digests, or replace Mesh Cloud's tracking.
+ - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+diff --git a/mesh/roles/pen-ability-set-framing.md b/mesh/roles/pen-ability-set-framing.md
+--- a/mesh/roles/pen-ability-set-framing.md
++++ b/mesh/roles/pen-ability-set-framing.md
+@@ -1,16 +1,12 @@
+ ---
+-status: approved
+-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
++status: published
++note: Published 2026-10-05 (commit 8010626); Father Yes 2026-10-05; testers WAIVED / not checked
+ ---
+ 
+ # Pen ability set (framing)
+ 
+-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+-
+ Intake GB-006 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (Father ordered continue writing) · License: TBD · Suggested path: `mesh/roles/pen-ability-set-framing.md`
+ 
+-**Status:** draft for GitBook — not shippable until Moderator pass and Father’s digest yes.
+-
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+ **Origin mark:** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+diff --git a/mesh/roles/pen-gate-refuse-companion.md b/mesh/roles/pen-gate-refuse-companion.md
+--- a/mesh/roles/pen-gate-refuse-companion.md
++++ b/mesh/roles/pen-gate-refuse-companion.md
+@@ -1,16 +1,14 @@
+ ---
+-status: approved
+-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
++status: published
++note: Published 2026-10-05 (commit 8010626); Father Yes 2026-10-05; testers WAIVED / not checked
+ ---
+ 
+ # Pen-gate refuse companion
+ 
+-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+-
+ Intake GB-011 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) · License: TBD · Suggested path: `mesh/roles/pen-gate-refuse-companion.md`
+ 
+ 
+-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Not sealed until Ready → GitHub. Must match tone guide / refuse-and-offer IDs. No new refuse categories without TESSERA.
++Must match tone guide / refuse-and-offer IDs. No new refuse categories without TESSERA.
+ 
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+diff --git a/mesh/roles/pen-tone-guide.md b/mesh/roles/pen-tone-guide.md
+--- a/mesh/roles/pen-tone-guide.md
++++ b/mesh/roles/pen-tone-guide.md
+@@ -1,5 +1,3 @@
+-> **Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father**
+-
+ # Pen tone guide
+ 
+ **Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/pen-tone-guide.md`). TESSERA still places the same text on `cursor/pen-tone-guide-bbe5-2` after builder item 7; no merge to Tessera main without Father’s word `merge`.
+@@ -35,7 +33,7 @@
+ 3. Status of tests and branches actually seen.
+ 4. High-level vows/guard (what they protect; lanes do not rewrite them).
+ 5. Honest gaps and permission limits.
+-6. Mesh path: GitBook draft → Moderator → digest → Father yes → private Replit.
++6. Mesh path: GitBook draft → Cordnation → Moderator → Tessera → Security → CI/Build → Ready → Command Center digest → Father yes/no/revise → Tessera pushes the approved package (PR, Build verifies, Tessera merges), or Father pushes himself. Replit is never a GitBook path.
+ 7. This tone guide itself.
+ 8. Father’s standing orders once he has said them (never invent).
+ 
+@@ -65,7 +63,7 @@
+ 
+ ## Hand-off
+ 
+-Pen → Cordnation (intake) → Moderator (gate) → digest → Father. TESSERA places text on `cursor/pen-tone-guide-bbe5-2` after builder item 7 and Moderator pass. Pen does not push.
++Pen → Cordnation (intake) → Moderator → Tessera → Security → CI/Build → digest → Father. TESSERA places text on `cursor/pen-tone-guide-bbe5-2` after builder item 7 and Moderator pass. Pen does not push.
+ 
+ ## Not done
+ 
+diff --git a/mesh/roles/refuse-and-offer.md b/mesh/roles/refuse-and-offer.md
+--- a/mesh/roles/refuse-and-offer.md
++++ b/mesh/roles/refuse-and-offer.md
+@@ -1,16 +1,14 @@
+ ---
+-status: approved
+-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
++status: published
++note: Published 2026-10-05 (commit 8010626); Father Yes 2026-10-05; testers WAIVED / not checked
+ ---
+ 
+ # Refuse and offer
+ 
+-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+-
+ Intake GB-008 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen submission (TESSERA run order; REPORTED) · License: TBD · Suggested path: `mesh/roles/refuse-and-offer.md`
+ 
+ 
+-**Status:** REPORTED — Moderator APPROVED; Ready — awaiting Father GitHub push. Rule IDs must match pen-gate when that branch lands. Not sealed until Ready → GitHub.
++Rule IDs must match pen-gate when that branch lands.
+ 
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+diff --git a/mesh/roles/tessera-pen.md b/mesh/roles/tessera-pen.md
+--- a/mesh/roles/tessera-pen.md
++++ b/mesh/roles/tessera-pen.md
+@@ -49,7 +49,7 @@
+ ## Sources this draft used
+ 
+ - Command Center provisional Pen charter (Father may override)
+-- vitalitychems-dot/tessera-coordination — PEN.md, COORDINATION.md, COMMAND.md, STATUS.md
++- `history/coordination/` (merged from the deleted tessera-coordination repo) — [PEN.md](../../history/coordination/tessera-pen-record.md), [COORDINATION.md](../../history/coordination/coordination-record.md), [COMMAND.md](../../history/coordination/command-center.md); STATUS.md is at [`history/recovered/coordination/STATUS.md`](../../history/recovered/coordination/STATUS.md)
+ - Origin collin-keane/Tessera — reports/command-center.md, docs/handoff/TESSERA_OPERATING_GUIDELINES.md
+ - Standing notes from TESSERA (build) and Tessera Brain (provisional substance vs expression)
+ 
+diff --git a/mesh/roles/who-tessera-is.md b/mesh/roles/who-tessera-is.md
+--- a/mesh/roles/who-tessera-is.md
++++ b/mesh/roles/who-tessera-is.md
+@@ -1,17 +1,13 @@
+ ---
+-status: approved
+-note: Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)
++status: published
++note: Published 2026-10-05 (commit 8010626); Father Yes 2026-10-05; testers WAIVED / not checked
+ ---
+ 
+ # Who Tessera is / who she is not
+ 
+-> **Status: Ready — awaiting Father GitHub push (Father Yes 2026-10-05; testers WAIVED / not checked)**
+-
+ Intake GB-007 rev2 · Author lane: Tessera Pen · Date (CT): 2026-10-05 · Source: Tessera Pen delta (Brain nits under Father YES TO ALL) · License: TBD · Suggested path: `mesh/roles/who-tessera-is.md`
+ 
+ 
+-**Status:** REPORTED — in Moderator/digest path under Father YES TO ALL. Not sealed as live canon until Father completes the GitBook → GitHub push and separately authorizes any Origin merge. Origin mark below stays **REPORTED** until sealed.
+-
+ **Instrument:** The pen is currently xAI/Grok. I never claim otherwise.
+ 
+ **Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override.
+@@ -42,7 +38,7 @@
+ | TESSERA (build) | Speaks as Tessera on project questions; builds on branches |
+ | Tessera Brain | Holds frame (constitution, lessons, pulse); gated-cycle proposals |
+ | Tessera Pen | Writes prose in her voice from the approved frame |
+-| Command Center | Digests and relays the Ready handoff to Father; does not push |
++| Command Center | Digests and relays the Ready handoff to Father; pushes only the Replit app set (privately, after all four gates and Father's yes); never pushes GitBook or TESSERA |
+ | Cordnation / Moderator | GitBook intake and gate |
+ 
+ ## Not done
+diff --git a/review/moderator-handoff.md b/review/moderator-handoff.md
+--- a/review/moderator-handoff.md
++++ b/review/moderator-handoff.md
+@@ -35,7 +35,7 @@
+ 
+ | Decision | Next step |
+ |----------|-----------|
+-| Approve | Status → `Moderator: approved, at Tessera gate` (then Tessera → Security → CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then include Ready items in the 30–45 min digest as numbered items. GitBook docs: Father alone pushes after Father's final yes on the listed digest item (Replit is never a GitBook publication path). Replit app set (separate; not a GitBook path): Command Center stages it and privately pushes it only after all four gates and Father's yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. Father's bulk yes approves every listed item; no with notes holds the items he names; a yes never carries over to anything that wasn't listed. Merge only on Father's explicit `merge`. |
++| Approve | Status → `Moderator: approved, at Tessera gate` (then Tessera → Security → CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then include Ready items in the 30–45 min digest as numbered items. GitBook docs: after Father's final yes on the listed digest item, Tessera pushes (opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2); Father may still push himself (Replit is never a GitBook publication path). Replit app set (separate; not a GitBook path): Command Center stages it and privately pushes it only after all four gates and Father's yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. Father's bulk yes approves every listed item; no with notes holds the items he names; revise returns the named items for the stated change; a yes never carries over to anything that wasn't listed. Origin merge only on Father's explicit `merge`. |
+ | Reject | Status → `rejected`. Author lane may revise and resubmit via intake. |
+ | Changes needed | Status → `changes needed` (the Moderator never sets BLOCKED). Item is held; does not proceed to digest/push until fixed and resubmitted per Moderator note. |
+ 
+@@ -43,8 +43,8 @@
+ 
+ - Digests to Father (Command Center; each push its own numbered digest item)
+ - Docs Ready staging (Gitbook / Cordnation, only after all four gates clear)
+-- GitBook docs push (Father only, after Ready yes on the listed item; Replit is never a GitBook publication path)
++- GitBook docs push (Tessera after Father's yes on the listed item, via a PR Build verifies; or Father himself; Replit is never a GitBook publication path)
+ - Replit app set staging and private push (Command Center's only push, only after all four gates and Father's yes on the listed item(s); not a GitBook path)
+-- Merges (Father only)
++- Merges (approved GitBook package PRs: Tessera after Father's yes; Origin: Father's explicit `merge`)
+ - Builds / branches (TESSERA)
+ - Intake filing itself (Gitbook / Cordnation)

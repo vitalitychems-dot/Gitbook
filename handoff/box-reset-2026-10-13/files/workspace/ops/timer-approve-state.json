@@ -1,0 +1,45 @@
+{
+  "last_run": "2026-10-13T12:41Z",
+  "merged": {},
+  "requeued": {
+    "TESSERA#298": "fdb2cb61fe",
+    "TESSERA#296": "8918b656ee"
+  },
+  "skipped_hardlimit": {
+    "TESSERA#309": "b04b0e2915",
+    "TESSERA#308": "80c85e0c1e",
+    "TESSERA#307": "68d6180875",
+    "TESSERA#306": "d491e20b51",
+    "TESSERA#304": "4e33ceb141",
+    "TESSERA#297": "70e7da2392",
+    "Gitbook#87": "a1d2d74e51",
+    "Gitbook#86": "48f7532299",
+    "Gitbook#84": "05656906ab",
+    "Gitbook#78": "639358dea6",
+    "Gitbook#76": "ba230b909b"
+  },
+  "too_fresh": {
+    "TESSERA#310": "b4e22673ae",
+    "TESSERA#303": "ad34f70945",
+    "Gitbook#79": "83af942e4c"
+  },
+  "drafts": [
+    "Gitbook#40",
+    "Gitbook#66",
+    "Gitbook#73",
+    "Gitbook#74",
+    "Gitbook#81",
+    "Gitbook#85",
+    "TESSERA#267",
+    "TESSERA#295",
+    "TESSERA#305"
+  ],
+  "missing_gates": {
+    "TESSERA#301": "73a7f43612",
+    "TESSERA#269": "5552a42fad",
+    "Gitbook#83": "67b9f860bc",
+    "Gitbook#82": "53364f7385",
+    "Gitbook#80": "ea0e431882",
+    "Gitbook#39": "71a8c78f11"
+  }
+}

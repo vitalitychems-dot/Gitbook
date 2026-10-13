@@ -1,0 +1,82 @@
+---
+pid: 407248
+cwd: "/workspace/evals"
+command: "RESULT_DIR=/workspace/evals/results/20261005-174126\nexport PATH=\"/workspace/ollama-install/bin:$PATH\"\nexport OLLAMA_HOST=\"127.0.0.1:11434\"\ncd /workspace/evals\n# Add a tip-SHA provenance note listing corpus sources\npython3 <<'PY'\nfrom pathlib import Path\nnote = Path('/workspace/evals/data/gitbook-corpus/_CORPUS_NOTE.md')\nnote.write_text('''# Corpus provenance\n\nGitbook markdown chunks for BM25 retrieval.\n- Tip SHA target: bc6b32871faed56b13df3dfadc849ec725d60f14 (read-only via cursor-github get_file_contents for selected tip files; local worktrees also copied when content-unique).\n- Local worktrees used: gitbook-gate-feaeb558, gitbook-gate-1e3bb50, gitbook-gate-e73fb185, build-gate after-rev3.\n- BASELINE.md answer key is NOT included in this corpus.\n''')\nprint('note written, corpus', len(list(Path('/workspace/evals/data/gitbook-corpus').glob('*.md'))))\nPY\npython3 -u harness/run_gitbook_quiz.py --mode both --out \"$RESULT_DIR/gitbook_quiz.json\" > \"$RESULT_DIR/gitbook_quiz.log\" 2>&1\necho QUIZ_EXIT=$?\ntail -60 \"$RESULT_DIR/gitbook_quiz.log\"\npython3 -c \"import json; d=json.load(open('$RESULT_DIR/gitbook_quiz.json'));\nfor m,v in d['modes'].items(): print(m, v['summary'])\"\ndate\nfree -h | head -2"
+title: "Run Gitbook quiz alone and with BM25 RAG"
+status: succeeded
+started_at: 2026-10-05T23:03:00.230Z
+running_for_ms: 126133   
+---
+note written, corpus 43
+QUIZ_EXIT=0
+[rag] Q1 ok=True ans='TESSERA is the product repository and Gitbook is the agent workspace.'
+[rag] Q2 ok=True ans='The single coordination board is the issue [vitalitychems-dot/Gitbook issue #2]('
+[rag] Q3 ok=False ans='Father is the only override for the origin mark and the only one who can overrid'
+[rag] Q4 ok=True ans='No, Tessera does not have owned weights.'
+[rag] Q5 ok=True ans='No'
+[rag] Q6 ok=True ans='The Pen is xAI/Grok.'
+[rag] Q7 ok=True ans='Label TESTED means Real output or a named unit/preview check was seen. Link or n'
+[rag] Q8 ok=True ans='Label REPORTED means stated by a lane or doc; not yet proven by a test in this c'
+[rag] Q9 ok=False ans='HYB-005 decides intake items: approve, reject, or changes needed.'
+[rag] Q10 ok=True ans='GHSA-vfj7-8cjw-p6xm'
+[rag] Q11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registrations in '
+[rag] Q12 ok=True ans='2'
+[rag] Q13 ok=True ans='system-runtime'
+[rag] Q14 ok=True ans='No, stay **`0`**.'
+[rag] Q15 ok=True ans='No, agents may not open [REDACTED-PATH]'
+[rag] Q16 ok=True ans='Gitbook Moderator → Tessera → Security → CI/Build'
+[rag] Q17 ok=True ans='Father merges the approved package.'
+[rag] Q18 ok=False ans='No'
+[rag] Q19 ok=True ans='The Recursive Learning Sponge lane status is Provisional and it does not do anyt'
+[rag] Q20 ok=False ans='The blocker for HYB-012 is a partial snapshot of the local Replit worktree and i'
+[rag] Q21 ok=True ans='OpenManus full copy into TESSERA is not allowed without an AGPL compatibility re'
+[rag] Q22 ok=True ans='No'
+[rag] Q23 ok=True ans='The pen is currently xAI/Grok.'
+[rag] Q24 ok=True ans='SOVEREIGN_NO_EXTERNAL_LLM default behavior is not specified in the provided exce'
+[rag] Q25 ok=False ans='CI job name: audit job 111894232164'
+{
+  "mode": "rag",
+  "n": 25,
+  "correct": 20,
+  "accuracy": 0.8,
+  "wall_s": 102.39169502258301,
+  "model": "qwen2.5:3b-instruct",
+  "item_ids": [
+    "gitbook_q1",
+    "gitbook_q2",
+    "gitbook_q3",
+    "gitbook_q4",
+    "gitbook_q5",
+    "gitbook_q6",
+    "gitbook_q7",
+    "gitbook_q8",
+    "gitbook_q9",
+    "gitbook_q10",
+    "gitbook_q11",
+    "gitbook_q12",
+    "gitbook_q13",
+    "gitbook_q14",
+    "gitbook_q15",
+    "gitbook_q16",
+    "gitbook_q17",
+    "gitbook_q18",
+    "gitbook_q19",
+    "gitbook_q20",
+    "gitbook_q21",
+    "gitbook_q22",
+    "gitbook_q23",
+    "gitbook_q24",
+    "gitbook_q25"
+  ]
+}
+alone {'mode': 'alone', 'n': 25, 'correct': 12, 'accuracy': 0.48, 'wall_s': 23.551320552825928, 'model': 'qwen2.5:3b-instruct', 'item_ids': ['gitbook_q1', 'gitbook_q2', 'gitbook_q3', 'gitbook_q4', 'gitbook_q5', 'gitbook_q6', 'gitbook_q7', 'gitbook_q8', 'gitbook_q9', 'gitbook_q10', 'gitbook_q11', 'gitbook_q12', 'gitbook_q13', 'gitbook_q14', 'gitbook_q15', 'gitbook_q16', 'gitbook_q17', 'gitbook_q18', 'gitbook_q19', 'gitbook_q20', 'gitbook_q21', 'gitbook_q22', 'gitbook_q23', 'gitbook_q24', 'gitbook_q25']}
+rag {'mode': 'rag', 'n': 25, 'correct': 20, 'accuracy': 0.8, 'wall_s': 102.39169502258301, 'model': 'qwen2.5:3b-instruct', 'item_ids': ['gitbook_q1', 'gitbook_q2', 'gitbook_q3', 'gitbook_q4', 'gitbook_q5', 'gitbook_q6', 'gitbook_q7', 'gitbook_q8', 'gitbook_q9', 'gitbook_q10', 'gitbook_q11', 'gitbook_q12', 'gitbook_q13', 'gitbook_q14', 'gitbook_q15', 'gitbook_q16', 'gitbook_q17', 'gitbook_q18', 'gitbook_q19', 'gitbook_q20', 'gitbook_q21', 'gitbook_q22', 'gitbook_q23', 'gitbook_q24', 'gitbook_q25']}
+Mon Oct  5 18:05:06 CDT 2026
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi        11Gi       333Mi        97Mi       4.6Gi       4.5Gi
+
+---
+exit_code: 0
+elapsed_ms: 126133
+ended_at: 2026-10-05T23:05:06.363Z
+---

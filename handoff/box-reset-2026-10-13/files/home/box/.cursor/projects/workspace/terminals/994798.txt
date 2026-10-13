@@ -1,0 +1,47 @@
+---
+pid: 727242
+cwd: "/workspace/learning-rate"
+command: "for i in $(seq 1 25); do\n  if ! ps -p 617778 >/dev/null 2>&1; then echo FINISHED; break; fi\n  echo \"$(date +%H:%M:%S) $(tail -1 /workspace/learning-rate/results/remaining.log | cut -c1-100)\"\n  sleep 20\ndone\nps -p 617778 >/dev/null || echo DEAD\ntail -5 /workspace/learning-rate/results/remaining.log\ntest -f /workspace/learning-rate/results/table.json && echo HAS_TABLE || echo NO_TABLE\ngrep ALL_REMAINING /workspace/learning-rate/results/remaining.log || true\ndate"
+title: "Wait for remaining job completion"
+status: succeeded
+started_at: 2026-10-05T23:58:08.497Z
+running_for_ms: 501235   
+---
+18:58:08 [bm25_llm_rerank_heldout] H10 ok=True ans='TESSERA'
+18:58:28 [bm25_llm_rerank_heldout] H11 ok=True ans="Agents must check the Gitbook's latest `main` commit and 
+18:58:48 [bm25_llm_rerank_heldout] H11 ok=True ans="Agents must check the Gitbook's latest `main` commit and 
+18:59:08 [bm25_llm_rerank_heldout] H12 ok=True ans='IN REVIEW'
+18:59:28 [bm25_llm_rerank_heldout] H12 ok=True ans='IN REVIEW'
+18:59:48 [bm25_llm_rerank_heldout] H13 ok=True ans="HYB-001's single deliverable is to keep `TESSERA` as the 
+19:00:08 [bm25_llm_rerank_heldout] H14 ok=False ans="Security's lane is not listed in the roles overview."
+19:00:28 [bm25_llm_rerank_heldout] H14 ok=False ans="Security's lane is not listed in the roles overview."
+19:00:48 [bm25_llm_rerank_heldout] H15 ok=True ans='No, Security does not change code when sweeping.'
+19:01:08 [bm25_llm_rerank_heldout] H15 ok=True ans='No, Security does not change code when sweeping.'
+19:01:29 [bm25_llm_rerank_heldout] H16 ok=True ans='Gitbook / Cordnation stages docs as Ready after all four 
+19:01:49 [bm25_llm_rerank_heldout] H16 ok=True ans='Gitbook / Cordnation stages docs as Ready after all four 
+19:02:09 [bm25_llm_rerank_heldout] H17 ok=False ans='The three Father responses that change publication state
+19:02:29 [bm25_llm_rerank_heldout] H17 ok=False ans='The three Father responses that change publication state
+19:02:49 [bm25_llm_rerank_heldout] H18 ok=False ans='No'
+19:03:09 [bm25_llm_rerank_heldout] H18 ok=False ans='No'
+19:03:29 [bm25_llm_rerank_heldout] H19 ok=False ans="HYB-019's topic is Product / mesh prep."
+19:03:49 [bm25_llm_rerank_heldout] H20 ok=True ans='No, Tessera Pen is not a separate lane or gate.'
+19:04:09 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:04:29 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:04:49 [bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+19:05:09 [bm25_heading_heldout_ref] H02 ok=True ans="Only the task's assigned owner or Tessera (admin) can se
+19:05:29 [bm25_heading_heldout_ref] H03 ok=True ans='braces@3.0.3'
+19:05:49 [bm25_heading_heldout_ref] H04 ok=True ans='The narrow audit ignore for GHSA-vfj7-8cjw-p6xm only sho
+19:06:09 [bm25_heading_heldout_ref] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+[bm25_heading_heldout_ref] H03 ok=True ans='braces@3.0.3'
+[bm25_heading_heldout_ref] H04 ok=True ans='The narrow audit ignore for GHSA-vfj7-8cjw-p6xm only should be removed'
+[bm25_heading_heldout_ref] H05 ok=True ans='30–45 minutes'
+[bm25_heading_heldout_ref] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+[bm25_heading_heldout_ref] H07 ok=False ans='No'
+NO_TABLE
+Mon Oct  5 19:06:29 CDT 2026
+
+---
+exit_code: 0
+elapsed_ms: 501235
+ended_at: 2026-10-06T00:06:29.732Z
+---

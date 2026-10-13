@@ -1,0 +1,219 @@
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}consciousness-cognitive-arch	Sudo-AI/AGIEval	MISSING
+consciousness-cognitive-arch	opencog/atomspace	1004	NOASSERTION	174080	C++	false	The OpenCog (hyper-)graph database and graph rewriting system
+consciousness-cognitive-arch	ccnlab/leabra	1	NONE	465389	TeX	false	Papers / documentation on Leabra, DeepLeabra, etc 
+consciousness-cognitive-arch	opencog/opencog	2482	NOASSERTION	186126	Scheme	false	A framework for integrated Artificial Intelligence & Artificial General Intelligence (AGI)
+consciousness-cognitive-arch	nengo/nengo	952	NOASSERTION	115996	Python	false	A Python library for creating and simulating large-scale brain models
+consciousness-cognitive-arch	SoarGroup/Soar	447	NOASSERTION	246941	C++	false	Soar, a general cognitive architecture for systems that exhibit intelligent behavior.
+consciousness-cognitive-arch	brainpy/BrainPy	716	GPL-3.0	116218	Python	false	Brain Dynamics Programming in Python
+consciousness-cognitive-arch	CogComp/cogcomp-nlp	479	NOASSERTION	89668	Java	false	CogComp's Natural Language Processing Libraries and Demos: Modules include lemmatizer, ner, pos, prep-srl, qua
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}consciousness-cognitive-arch	ACT-R/ACT-R	MISSING
+consciousness-cognitive-arch	cmekik/pyClarion	68	MIT	1635	Python	false	Experimental Python implementation of the Clarion cognitive architecture
+{"message":"Not Found","documentation_url":"https://docs.github.com/rest/repos/repos#get-a-repository","status":"404"}consciousness-cognitive-arch	humanbrainproject/nest	MISSING
+consciousness-cognitive-arch	daveshap/ACE_Framework	1502	MIT	32219	Python	true	ACE (Autonomous Cognitive Entities) - 100% local and open source autonomous agents
+agi-frameworks	yoheinakajima/babyagi	22356	NONE	2297	Python	false	
+agi-frameworks	reworkd/AgentGPT	36281	GPL-3.0	91869	TypeScript	true	🤖 Assemble, configure, and deploy autonomous AI Agents in your browser.
+agi-frameworks	Significant-Gravitas/AutoGPT	187539	NOASSERTION	554936	Python	false	AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our mission is to provide the too
+agi-frameworks	openinterpreter/openinterpreter	68564	Apache-2.0	291997	Rust	false	A coding agent for open models like Kimi K3 and GLM 5.3
+agi-frameworks	TransformerOptimus/SuperAGI	17703	MIT	63451	Python	false	<⚡️> SuperAGI - A dev-first open source autonomous AI agent framework. Enabling developers to build, manage & 
+agi-frameworks	openai/swarm	22049	MIT	537	Python	false	Educational framework exploring ergonomic, lightweight multi-agent orchestration. Managed by OpenAI Solution t
+agi-frameworks	assafelovic/gpt-researcher	30049	Apache-2.0	53730	Python	false	An autonomous agent that conducts deep research on any data using any LLM providers
+agi-frameworks	microsoft/JARVIS	25428	MIT	41674	Python	false	JARVIS, a system to connect LLMs with ML community. Paper: https://arxiv.org/pdf/2303.17580.pdf
+agi-frameworks	camel-ai/camel	17874	Apache-2.0	506288	Python	false	🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai
+agi-frameworks	OpenHands/OpenHands	90747	MIT	473693	TypeScript	false	🙌 OpenHands: AI-Driven Development
+memory-recall	mem0ai/mem0	67059	Apache-2.0	65719	Python	false	The Memory Layer for AI Agents - Drop-in memory infrastructure for AI agents and apps. Context that persists. 
+memory-recall	letta-ai/letta	25117	Apache-2.0	293597	-	false	Platform for stateful agents: AI with advanced memory that can learn and self-improve over time.
+memory-recall	getzep/graphiti	31683	Apache-2.0	16350	Python	false	Build Real-Time Knowledge Graphs for AI Agents
+memory-recall	topoteretes/cognee	32107	Apache-2.0	267867	Python	false	Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory with 
+memory-recall	getzep/zep	4956	Apache-2.0	61464	Python	false	Zep   Examples, Integrations, & More
+memory-recall	MemoriLabs/Memori	17145	NOASSERTION	31448	Python	false	Memori is agent-native memory infrastructure. A LLM-agnostic layer that turns agent execution and conversation
+memory-recall	kingjulio8238/Memary	2660	MIT	12304	Jupyter Notebook	false	The Open Source Memory Layer For Autonomous Agents
+memory-recall	modelcontextprotocol/servers	91183	NOASSERTION	31887	JavaScript	false	Model Context Protocol Servers
+memory-recall	BAI-LAB/MemoryOS	1597	Apache-2.0	30015	Python	false	[EMNLP 2025 Oral] MemoryOS is designed to provide a memory operating system for personalized AI agents.
+memory-recall	langchain-ai/langmem	1700	MIT	4496	Python	false	
+memory-recall	supermemoryai/supermemory	31199	MIT	215366	TypeScript	false	Memory and context engine + app that is extremely fast, scalable, and can be run fully locally. The Memory API
+brain-scans-connectomics	nipy/nibabel	795	NOASSERTION	24463	Python	false	Python package to access a cacophony of neuro-imaging file formats
+brain-scans-connectomics	nipy/nipype	835	NOASSERTION	81044	Python	false	Workflows and interfaces for neuroimaging packages
+brain-scans-connectomics	nilearn/nilearn	1443	BSD-3-Clause	141394	Python	false	Machine learning for NeuroImaging in Python
+brain-scans-connectomics	MRtrix3/mrtrix3	354	MPL-2.0	58484	C++	false	MRtrix3 provides a set of tools to perform various advanced diffusion MRI analyses, including constrained sphe
+brain-scans-connectomics	dipy/dipy	849	NOASSERTION	80164	Python	false	DIPY is the paragon 3D/4D+ medical imaging library in Python. Contains generic methods for spatial normalizati
+brain-scans-connectomics	freesurfer/freesurfer	881	NOASSERTION	1070815	C++	false	Neuroimaging analysis and visualization suite
+brain-scans-connectomics	mne-tools/mne-python	3544	BSD-3-Clause	173854	Python	false	MNE: Magnetoencephalography (MEG) and Electroencephalography (EEG) in Python
+brain-scans-connectomics	ANTsX/ANTs	1506	Apache-2.0	268774	C++	false	Advanced Normalization Tools (ANTs)  
+brain-scans-connectomics	seung-lab/cloud-volume	176	BSD-3-Clause	69539	Python	false	Read and write Neuroglancer datasets programmatically.
+brain-synapse-simulation	brian-team/brian2	1244	NOASSERTION	38654	Python	false	Brian is a free, open source simulator for spiking neural networks. 
+brain-scans-connectomics	navis-org/navis	137	GPL-3.0	1882869	Python	false	Python library for analysis of neuroanatomical data.
+brain-scans-connectomics	google/neuroglancer	1561	Apache-2.0	16308	TypeScript	false	WebGL-based viewer for volumetric data
+brain-synapse-simulation	nest/nest-simulator	672	GPL-2.0	218170	C++	false	The NEST simulator
+brain-synapse-simulation	neuronsimulator/nrn	557	NOASSERTION	175176	C++	false	NEURON Simulator
+brain-synapse-simulation	nengo/nengo	952	NOASSERTION	115996	Python	false	A Python library for creating and simulating large-scale brain models
+brain-synapse-simulation	fangwei123456/spikingjelly	2159	Apache-2.0	55410	Python	false	SpikingJelly is an open-source deep learning framework for Spiking Neural Network (SNN) based on PyTorch.
+brain-synapse-simulation	norse/norse	825	LGPL-3.0	115242	Python	false	Deep learning with spiking neural networks (SNNs) in PyTorch.
+brain-synapse-simulation	lava-nc/lava	741	NOASSERTION	33073	Jupyter Notebook	true	A Software Framework for Neuromorphic Computing
+brain-synapse-simulation	jeshraghian/snntorch	2069	MIT	58992	Python	false	Deep and online learning with spiking neural networks in Python
+brain-synapse-simulation	open-neuromorphic/open-neuromorphic	330	GPL-2.0	7212	-	false	A list of neuromorphic software projects
+brain-synapse-simulation	brainpy/BrainPy	716	GPL-3.0	116218	Python	false	Brain Dynamics Programming in Python
+reasoning-thinking	princeton-nlp/tree-of-thought-llm	6077	MIT	2225	Python	false	[NeurIPS 2023] Tree of Thoughts: Deliberate Problem Solving with Large Language Models
+reasoning-thinking	deepseek-ai/DeepSeek-R1	91898	MIT	1571	-	false	
+brain-synapse-simulation	BindsNET/bindsnet	1706	AGPL-3.0	68194	Python	false	Simulation of spiking neural networks (SNNs) using PyTorch.
+reasoning-thinking	spcl/graph-of-thoughts	2843	NOASSERTION	15026	Python	false	Official Implementation of "Graph of Thoughts: Solving Elaborate Problems with Large Language Models"
+reasoning-thinking	Jiayi-Pan/TinyZero	13251	Apache-2.0	2372	Python	false	Minimal reproduction of DeepSeek R1-Zero
+reasoning-thinking	hkust-nlp/simpleRL-reason	3876	MIT	13407	Python	false	Simple RL training for reasoning
+reasoning-thinking	huggingface/open-r1	26479	Apache-2.0	6865	Python	false	Fully open reproduction of DeepSeek-R1
+reasoning-thinking	SakanaAI/AI-Scientist	14706	NOASSERTION	116533	Jupyter Notebook	false	The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery 🧑‍🔬
+reasoning-thinking	stanfordnlp/dspy	38602	MIT	187964	Python	false	DSPy: The framework for programming—not prompting—language models
+reasoning-thinking	verl-project/verl	23838	Apache-2.0	31300	Python	false	verl/HybridFlow: A Flexible and Efficient RL Post-Training Framework 
+reasoning-thinking	openai/simple-evals	4661	MIT	110	Python	false	
+agent-skills	anthropics/skills	180728	NONE	5731	Python	false	Public repository for Agent Skills
+agent-skills	obra/superpowers	298187	MIT	7658	Shell	false	An agentic skills framework & software development methodology that works.
+agent-skills	addyosmani/agent-skills	105612	MIT	1721	JavaScript	false	Production-grade engineering skills for AI coding agents.
+agent-skills	agentskills/agentskills	26078	Apache-2.0	782	Python	false	Specification and documentation for Agent Skills
+agent-skills	VoltAgent/awesome-agent-skills	35589	MIT	934	-	false	A curated collection of 1000+ agent skills from official dev teams and the community, compatible with Claude C
+agent-skills	K-Dense-AI/scientific-agent-skills	48560	MIT	474003	Python	false	Turn any AI agent into an AI Scientist. The #1 Agent Skills library for science, used by 250,000+ scientists w
+agent-skills	vercel-labs/skills	34024	MIT	1694	TypeScript	false	The open agent skills tool - npx skills
+agent-skills	google/skills	21217	Apache-2.0	4567	Python	false	Agent Skills for Google products and technologies
+llms-open-inference	vllm-project/vllm	93663	Apache-2.0	316533	Python	false	A high-throughput and memory-efficient inference and serving engine for LLMs
+agent-skills	NVIDIA/SkillSpector	20061	Apache-2.0	9523	Python	false	Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injec
+llms-open-inference	sgl-project/sglang	37044	Apache-2.0	417816	Python	false	SGLang is a high-performance serving framework for large language models and multimodal models.
+llms-open-inference	huggingface/text-generation-inference	10880	Apache-2.0	14170	Python	true	Large Language Model Text Generation Inference
+llms-open-inference	meta-llama/llama-models	7708	NOASSERTION	4491	Python	false	Utilities intended for use with Llama models.
+llms-open-inference	QwenLM/Qwen3	27666	NONE	7000	Python	false	Qwen3 is the large language model series developed by Qwen team, Alibaba Cloud.
+llms-open-inference	mistralai/mistral-inference	10822	Apache-2.0	569	Jupyter Notebook	true	Official inference library for Mistral models
+llms-open-inference	huggingface/transformers	167600	Apache-2.0	530890	Python	false	🤗 Transformers: the model-definition framework for state-of-the-art machine learning models in text, vision, a
+llms-open-inference	deepseek-ai/DeepSeek-V3	104494	MIT	1768	Python	false	
+llms-open-inference	NVIDIA/TensorRT-LLM	14802	NOASSERTION	2126577	Python	false	TensorRT LLM provides users with an easy-to-use Python API to define Large Language Models (LLMs) and supports
+machine-learning	pytorch/pytorch	104736	NOASSERTION	1651944	Python	false	Tensors and Dynamic neural networks in Python with strong GPU acceleration
+llms-open-inference	deepspeedai/DeepSpeed	43223	Apache-2.0	250874	Python	false	DeepSpeed is a deep learning optimization library that makes distributed training and inference easy, efficien
+machine-learning	scikit-learn/scikit-learn	67568	BSD-3-Clause	187909	Python	false	scikit-learn: machine learning in Python
+machine-learning	jax-ml/jax	36408	Apache-2.0	194003	Python	false	Composable transformations of Python+NumPy programs: differentiate, vectorize, JIT to GPU/TPU, and more
+machine-learning	tensorflow/tensorflow	200901	Apache-2.0	1400599	C++	false	An Open Source Machine Learning Framework for Everyone
+machine-learning	dmlc/xgboost	28854	Apache-2.0	38941	C++	false	Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT or GBM) Library,  for Python, R, Java, Scala,
+machine-learning	keras-team/keras	64366	Apache-2.0	57534	Python	false	Deep Learning for humans
+machine-learning	karpathy/micrograd	17872	MIT	241	Jupyter Notebook	false	A tiny scalar-valued autograd engine and a neural net library on top of it with PyTorch-like API
+machine-learning	tinygrad/tinygrad	33746	MIT	129272	Python	false	You like pytorch? You like micrograd? You love tinygrad! ❤️ 
+machine-learning	lightgbm-org/LightGBM	18864	MIT	25754	C++	false	A fast, distributed, high performance gradient boosting (GBT, GBDT, GBRT, GBM or MART) framework based on deci
+machine-learning	ml-explore/mlx	28737	MIT	71183	C++	false	MLX: An array framework for Apple silicon
+machine-learning	tensorflow/tfjs	19148	Apache-2.0	174320	TypeScript	false	A WebGL accelerated JavaScript library for training and deploying ML models.
+token-saving-compression	microsoft/LLMLingua	6746	MIT	4059	Python	false	[EMNLP'23, ACL'24] To speed up LLMs' inference and enhance LLM's perceive of key information, compress the pro
+token-saving-compression	gptscript-ai/gptscript	3280	Apache-2.0	5304	Go	true	Build AI assistants that interact with your systems
+token-saving-compression	yamadashy/repomix	28810	MIT	30296	TypeScript	false	📦 Repomix is a powerful tool that packs your entire repository into a single, AI-friendly file. Perfect for wh
+token-saving-compression	liyucheng09/Selective_Context	425	NONE	2308	Python	false	Compress your input to ChatGPT or other LLMs, to let them process 2x more content and save 40% memory and GPU 
+token-saving-compression	GreyDGL/PentestGPT	15922	MIT	37035	Python	false	Automated Penetration Testing Agentic Framework Powered by Large Language Models
+token-saving-compression	Mooler0410/LLMsPracticalGuide	10204	NONE	26494	-	false	A curated list of practical guide resources of LLMs (LLMs Tree, Examples, Papers)
+token-saving-compression	ggml-org/llama.cpp	130957	MIT	456327	C++	false	LLM inference in C/C++
+token-saving-compression	mit-han-lab/streaming-llm	7268	MIT	40138	Python	false	[ICLR 2024] Efficient Streaming Language Models with Attention Sinks
+token-saving-compression	FasterDecoding/Medusa	2776	Apache-2.0	4996	Jupyter Notebook	false	Medusa: Simple Framework for Accelerating LLM Generation with Multiple Decoding Heads
+token-saving-compression	SafeAILab/EAGLE	2550	NOASSERTION	72176	Python	false	Official Implementation of EAGLE-1 (ICML'24), EAGLE-2 (EMNLP'24), and EAGLE-3 (NeurIPS'25).
+token-saving-compression	Zefan-Cai/KVCache-Factory	1384	MIT	191449	Python	false	Unified KV Cache Compression Methods for Auto-Regressive Models
+token-saving-compression	microsoft/promptbase	5773	MIT	1315	Python	false	All things prompt engineering
+anti-hallucination-grounding	guardrails-ai/guardrails	7511	Apache-2.0	45029	Python	false	Adding guardrails to large language models.
+anti-hallucination-grounding	potsawee/selfcheckgpt	635	MIT	1253	Python	false	SelfCheckGPT: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models
+anti-hallucination-grounding	confident-ai/deepeval	18773	Apache-2.0	210284	Python	false	The LLM Evaluation Framework
+anti-hallucination-grounding	vibrantlabsai/ragas	16002	Apache-2.0	47555	Python	false	Supercharge Your LLM Application Evaluations 🚀
+anti-hallucination-grounding	vectara/hallucination-leaderboard	3318	Apache-2.0	508898	Python	false	Leaderboard Comparing LLM Performance at Producing Hallucinations when Summarizing Short Documents
+anti-hallucination-grounding	KRLabsOrg/LettuceDetect	615	MIT	9338	Python	false	Span-level grounding verification for RAG, code, and tool-grounded AI outputs.
+anti-hallucination-grounding	NVIDIA-NeMo/Guardrails	7283	NOASSERTION	153283	Python	false	NeMo Guardrails is an open-source toolkit for easily adding programmable guardrails to LLM-based conversationa
+anti-hallucination-grounding	Arize-ai/phoenix	11811	NOASSERTION	551045	Python	false	AI Observability & Evaluation
+anti-hallucination-grounding	amazon-science/RefChecker	434	Apache-2.0	2883	Python	true	RefChecker provides automatic checking pipeline and benchmark dataset for detecting fine-grained hallucination
+anti-hallucination-grounding	stanford-oval/WikiChat	1621	Apache-2.0	28794	Python	false	WikiChat is an improved RAG. It stops the hallucination of large language models by retrieving data from a cor
+recursive-self-improvement	SakanaAI/AI-Scientist	14706	NOASSERTION	116533	Jupyter Notebook	false	The AI Scientist: Towards Fully Automated Open-Ended Scientific Discovery 🧑‍🔬
+recursive-self-improvement	google-deepmind/alphaevolve_results	302	Apache-2.0	3986	Jupyter Notebook	false	
+recursive-self-improvement	MineDojo/Voyager	7257	MIT	5270	JavaScript	false	An Open-Ended Embodied Agent with Large Language Models
+recursive-self-improvement	jennyzzt/dgm	2412	Apache-2.0	8954	Python	false	Darwin Gödel Machine: Open-Ended Evolution of Self-Improving Agents
+recursive-self-improvement	noahshinn/reflexion	3306	MIT	9105	Python	false	[NeurIPS 2023] Reflexion: Language Agents with Verbal Reinforcement Learning
+anti-hallucination-grounding	truera/trulens	3598	MIT	271392	Python	false	Evaluation and Tracking for LLM Experiments and AI Agents
+recursive-self-improvement	algorithmicsuperintelligence/openevolve	7532	Apache-2.0	7356	Python	false	Open-source implementation of AlphaEvolve
+recursive-self-improvement	SakanaAI/ShinkaEvolve	1444	Apache-2.0	10787	Python	false	ShinkaEvolve: Towards Open-Ended and Sample-Efficient Program Evolution 🧬
+recursive-self-improvement	metauto-ai/GPTSwarm	1054	MIT	19710	Python	false	🐝  The First Self-Improving agents with RL / Prompting Optimization
+recursive-self-improvement	stanfordnlp/dspy	38602	MIT	187964	Python	false	DSPy: The framework for programming—not prompting—language models
+recursive-self-improvement	zou-group/textgrad	3759	MIT	10442	Python	false	TextGrad: Automatic ''Differentiation'' via Text -- using large language models to backpropagate textual gradi
+multi-agent-orchestration	crewAIInc/crewAI	59618	MIT	299367	Python	false	Framework for orchestrating role-playing, autonomous AI agents. By fostering collaborative intelligence, CrewA
+multi-agent-orchestration	microsoft/autogen	61379	CC-BY-4.0	148692	Python	false	A programming framework for agentic AI
+recursive-self-improvement	FoundationAgents/MetaGPT	70824	MIT	184037	Python	false	🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming
+multi-agent-orchestration	langchain-ai/langgraph	43151	MIT	528888	Python	false	Build resilient agents.
+multi-agent-orchestration	OpenBMB/ChatDev	34499	Apache-2.0	381817	Python	false	ChatDev 2.0: Dev All through LLM-powered Multi-Agent Collaboration
+multi-agent-orchestration	camel-ai/camel	17874	Apache-2.0	506288	Python	false	🐫 CAMEL: The first and the best multi-agent framework. Finding the Scaling Law of Agents. https://www.camel-ai
+multi-agent-orchestration	kyegomez/swarms	7249	Apache-2.0	189736	Python	false	The Enterprise-Grade Multi-Agent Orchestration Framework. Website: https://swarms.ai
+multi-agent-orchestration	openai/openai-agents-python	29989	MIT	79101	Python	false	A lightweight, powerful framework for multi-agent workflows
+multi-agent-orchestration	FoundationAgents/MetaGPT	70824	MIT	184037	Python	false	🌟 The Multi-Agent Framework: First AI Software Company, Towards Natural Language Programming
+multi-agent-orchestration	agno-agi/agno	42687	Apache-2.0	325946	Python	false	Build, run, and manage agent platforms.
+multi-agent-orchestration	VRSEN/agency-swarm	4598	MIT	41699	Python	false	Reliable Multi-Agent Orchestration Framework
+knowledge-graphs	neo4j/neo4j	17307	GPL-3.0	712797	Java	false	Graphs for Everyone
+knowledge-graphs	microsoft/graphrag	36301	MIT	208799	Python	false	A modular graph-based Retrieval-Augmented Generation (RAG) system
+knowledge-graphs	HKUDS/LightRAG	40090	MIT	117464	Python	false	[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation
+knowledge-graphs	OSU-NLP-Group/HippoRAG	4057	MIT	87692	Python	false	[NeurIPS'24] HippoRAG is a novel RAG framework inspired by human long-term memory that enables LLMs to continu
+knowledge-graphs	getzep/graphiti	31683	Apache-2.0	16350	Python	false	Build Real-Time Knowledge Graphs for AI Agents
+knowledge-graphs	memgraph/memgraph	4611	NOASSERTION	137912	C++	false	High-performance open-source in-memory graph database for GraphRAG, AI memory, agentic AI, and real-time graph
+knowledge-graphs	topoteretes/cognee	32107	Apache-2.0	267867	Python	false	Cognee is the open-source AI memory platform for agents. Give your AI agents persistent long-term memory with 
+knowledge-graphs	neo4j-labs/llm-graph-builder	5281	Apache-2.0	57196	Jupyter Notebook	false	Neo4j graph construction from unstructured data using LLMs
+knowledge-graphs	kuzudb/kuzu	4021	MIT	317136	C++	true	Embedded property graph database built for speed. Vector search and full-text search built in. Implements Cyph
+knowledge-graphs	FalkorDB/FalkorDB	9357	NOASSERTION	146044	Rust	false	A super fast Graph Database uses GraphBLAS under the hood for its sparse adjacency matrix graph representation
+knowledge-graphs	reconurge/flowsint	9670	Apache-2.0	65326	TypeScript	false	A modern platform for visual, flexible, and extensible graph-based investigations. For cybersecurity analysts 
+evals	EleutherAI/lm-evaluation-harness	14197	MIT	35969	Python	false	A framework for few-shot evaluation of language models.
+evals	openai/evals	19592	NOASSERTION	6684	Python	false	Evals is a framework for evaluating LLMs and LLM systems, and an open-source registry of benchmarks.
+evals	confident-ai/deepeval	18773	Apache-2.0	210284	Python	false	The LLM Evaluation Framework
+evals	promptfoo/promptfoo	25944	MIT	789945	TypeScript	false	Test your prompts, agents, and RAGs. Red teaming/pentesting/vulnerability scanning for AI. Compare performance
+evals	UKGovernmentBEIS/inspect_ai	2990	MIT	457446	Python	false	Inspect: A framework for large language model evaluations
+evals	vibrantlabsai/ragas	16002	Apache-2.0	47555	Python	false	Supercharge Your LLM Application Evaluations 🚀
+evals	stanford-crfm/helm	2939	Apache-2.0	130251	Python	false	Holistic Evaluation of Language Models (HELM) is an open source Python framework created by the Center for Res
+evals	langfuse/langfuse	35713	NOASSERTION	243687	TypeScript	false	🪢 Open source agent evals & observability: Trace, evaluate, and improve LLM applications with one open platfor
+evals	comet-ml/opik	22534	Apache-2.0	820840	Python	false	Debug, evaluate, and monitor your LLM applications, RAG systems, and agentic workflows with comprehensive trac
+evals	Arize-ai/phoenix	11811	NOASSERTION	551045	Python	false	AI Observability & Evaluation
+sandboxed-code-exec	e2b-dev/E2B	14301	Apache-2.0	130278	Python	false	Open-source, secure environment with real-world tools for enterprise-grade agents.
+sandboxed-code-exec	firecracker-microvm/firecracker	37322	Apache-2.0	42883	Rust	false	Secure and fast microVMs for serverless computing.
+sandboxed-code-exec	google/gvisor	19655	Apache-2.0	1396361	Go	false	Application Kernel for Containers
+sandboxed-code-exec	daytonaio/daytona	71559	NONE	159744	-	true	Daytona is a Secure and Elastic Infrastructure for Running AI-Generated Code
+sandboxed-code-exec	openinterpreter/openinterpreter	68564	Apache-2.0	291997	Rust	false	A coding agent for open models like Kimi K3 and GLM 5.3
+sandboxed-code-exec	containers/bubblewrap	9021	NOASSERTION	976	C	false	Low-level unprivileged sandboxing tool used by Flatpak and similar projects
+sandboxed-code-exec	bytedance/SandboxFusion	1072	Apache-2.0	12106	Python	false	
+sandboxed-code-exec	judge0/judge0	4468	GPL-3.0	15175	HTML	false	Robust, fast, scalable, and sandboxed open-source online code execution system for humans and AI.
+sandboxed-code-exec	superradcompany/microsandbox	8666	Apache-2.0	896399	Rust	false	🧱 easy, fast, programmable and local-first microVM runtime and library
+sandboxed-code-exec	openai/codex	128835	Apache-2.0	677999	Rust	false	Lightweight coding agent that runs in your terminal
+local-offline-inference	ollama/ollama	182900	MIT	95624	Go	false	Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.
+local-offline-inference	ggml-org/llama.cpp	130957	MIT	456327	C++	false	LLM inference in C/C++
+local-offline-inference	mudler/LocalAI	49495	MIT	135661	Go	false	LocalAI is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No 
+local-offline-inference	ggml-org/whisper.cpp	54325	MIT	47104	C++	false	Port of OpenAI's Whisper model in C/C++
+local-offline-inference	open-webui/open-webui	154944	NOASSERTION	476043	Python	false	User-friendly AI Interface (Supports Ollama, OpenAI API, ...)
+local-offline-inference	janhq/jan	44918	NOASSERTION	1574968	Rust	false	Jan is an open source alternative to ChatGPT that runs 100% offline on your computer.
+local-offline-inference	ml-explore/mlx-lm	7276	MIT	2902	Python	false	Run LLMs with MLX
+local-offline-inference	nomic-ai/gpt4all	77368	MIT	44678	C++	false	GPT4All: Run Local LLMs on Any Device. Open-source and available for commercial use.
+local-offline-inference	mozilla-ai/llamafile	26229	NOASSERTION	28181	C++	false	Distribute and run LLMs with a single file.
+local-offline-inference	lmstudio-ai/lms	5347	MIT	831	TypeScript	false	LM Studio CLI
+local-offline-inference	exo-explore/exo	47846	Apache-2.0	40983	Python	false	Run frontier AI locally.
+rag	infiniflow/ragflow	92075	Apache-2.0	177761	Go	false	RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with 
+rag	run-llama/llama_index	52468	MIT	497856	Python	false	LlamaIndex is the document processing platform for AI
+rag	HKUDS/LightRAG	40090	MIT	117464	Python	false	[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation
+rag	langchain-ai/langchain	147708	MIT	609219	Python	false	The agent engineering platform.
+rag	deepset-ai/haystack	26727	Apache-2.0	385595	Python	false	Open-source AI orchestration framework for building context-engineered, production-ready LLM applications. Des
+rag	Mintplex-Labs/anything-llm	66986	MIT	94091	JavaScript	false	Stop renting your intelligence. Own it with AnythingLLM. Everything you need for a powerful local-first agent 
+rag	microsoft/graphrag	36301	MIT	208799	Python	false	A modular graph-based Retrieval-Augmented Generation (RAG) system
+rag	SciPhi-AI/R2R	8017	MIT	65362	Python	false	SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generation (RAG) with a RESTful API.
+rag	qdrant/qdrant	35051	Apache-2.0	72242	Rust	false	Qdrant - High-performance, massive-scale Vector Database and Vector Search Engine for the next generation of A
+rag	chroma-core/chroma	29488	Apache-2.0	876124	Rust	false	Search infrastructure for AI
+world-simulation	joonspk-research/generative_agents	22212	Apache-2.0	48341	-	false	Generative Agents: Interactive Simulacra of Human Behavior
+world-simulation	OpenBMB/AgentVerse	5156	Apache-2.0	249275	JavaScript	false	🤖 AgentVerse 🪐 is designed to facilitate the deployment of multiple LLM-based agents in various applications, 
+world-simulation	a16z-infra/ai-town	10626	MIT	18822	TypeScript	false	A MIT-licensed, deployable starter kit for building and customizing your own version of AI town - a virtual to
+world-simulation	Farama-Foundation/Gymnasium	12658	MIT	454412	Python	false	A standard API for single-agent reinforcement learning environments, with popular reference environments and r
+world-simulation	google-deepmind/concordia	1774	Apache-2.0	60305	Python	false	A library for generative social simulation
+world-simulation	MineDojo/MineDojo	2269	MIT	27292	Java	false	Building Open-Ended Embodied Agents with Internet-Scale Knowledge
+world-simulation	google-deepmind/mujoco	15632	Apache-2.0	146935	C++	false	Multi-Joint dynamics with Contact. A general purpose physics simulator.
+world-simulation	isaac-sim/IsaacLab	8327	BSD-3-Clause	133524	Python	false	Unified framework for robot learning with multi-physics/renderer support
+world-simulation	Genesis-Embodied-AI/genesis-world	30046	Apache-2.0	138561	Python	false	Simulation platform for general-purpose robotics & embodied AI learning.
+world-simulation	microsoft/TinyTroupe	7590	MIT	106452	Jupyter Notebook	false	LLM-powered multiagent persona simulation for imagination enhancement and business insights.
+continual-learning	GMvandeVen/continual-learning	1884	MIT	3090	Jupyter Notebook	false	PyTorch implementation of various methods for continual learning (XdG, EWC, SI, LwF, FROMP, DGR, BI-R, ER, A-G
+continual-learning	ContinualAI/avalanche	2106	MIT	16227	Python	false	Avalanche: an End-to-End Library for Continual Learning based on PyTorch.
+continual-learning	aimagelab/mammoth	843	MIT	12008	Python	false	An Extendible (General) Continual Learning Framework based on Pytorch - official codebase of Dark Experience f
+continual-learning	LAMDA-CL/LAMDA-PILOT	607	MIT	7443	Python	false	🎉 PILOT: A Pre-trained Model-Based Continual Learning Toolbox
+continual-learning	google-research/l2p	478	Apache-2.0	406	Python	true	Learning to Prompt (L2P) for Continual Learning @ CVPR22 and DualPrompt: Complementary Prompting for Rehearsal
+continual-learning	Continvvm/continuum	450	MIT	3432	Python	false	A clean and simple data loading library for Continual Learning
+continual-learning	ContinualAI/continual-learning-baselines	356	MIT	244	Python	false	Continual learning baselines and strategies from popular papers, using Avalanche. We include EWC, SI, GEM, AGE
+continual-learning	GT-RIPL/Continual-Learning-Benchmark	531	MIT	481	Python	false	Evaluate three types of task shifting with popular continual learning algorithms.
+tool-use-mcp	modelcontextprotocol/servers	91183	NOASSERTION	31887	JavaScript	false	Model Context Protocol Servers
+continual-learning	awslabs/Renate	299	Apache-2.0	6915	Python	true	Library for automatic retraining and continual learning
+tool-use-mcp	modelcontextprotocol/python-sdk	24552	MIT	17095	Python	false	The official Python SDK for Model Context Protocol servers and clients
+tool-use-mcp	modelcontextprotocol/typescript-sdk	13561	NOASSERTION	20225	TypeScript	false	The official TypeScript SDK for Model Context Protocol servers and clients
+tool-use-mcp	microsoft/playwright-mcp	38067	Apache-2.0	2123	TypeScript	false	Playwright MCP server
+tool-use-mcp	github/github-mcp-server	33558	MIT	57730	Go	false	GitHub's official MCP Server
+tool-use-mcp	punkpeye/awesome-mcp-servers	96234	MIT	434813	-	false	A collection of MCP servers.
+tool-use-mcp	executeautomation/mcp-playwright	5664	MIT	29283	TypeScript	false	Playwright Model Context Protocol Server - Tool to automate Browsers and APIs in Claude Desktop, Cline, Cursor
+tool-use-mcp	upstash/context7	62947	MIT	38480	TypeScript	false	Context7 Platform -- Up-to-date code documentation for LLMs and AI code editors
+tool-use-mcp	mobile-next/mobile-mcp	9054	Apache-2.0	3983	TypeScript	false	Model Context Protocol Server for Mobile Automation and Scraping (iOS, Android, Emulators, Simulators and Real

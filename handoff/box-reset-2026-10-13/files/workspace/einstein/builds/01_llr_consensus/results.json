@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "01 LLR consensus vs phi/2-3 (current)",
+      "metric": "decision accuracy",
+      "n_seeds": 30,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.7924,
+        "lo": 0.7765329166666667,
+        "hi": 0.8075691666666668
+      },
+      "candidate": {
+        "mean": 0.9815666666666668,
+        "lo": 0.9772,
+        "hi": 0.9855670833333333
+      },
+      "improvement": {
+        "mean": 0.18916666666666668,
+        "lo": 0.17693333333333333,
+        "hi": 0.20156791666666668
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "01 LLR consensus vs phi weights at 1/2 (stronger baseline)",
+      "metric": "decision accuracy",
+      "n_seeds": 30,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.9649166666666668,
+        "lo": 0.9585991666666667,
+        "hi": 0.9705504166666666
+      },
+      "candidate": {
+        "mean": 0.9815666666666668,
+        "lo": 0.9772,
+        "hi": 0.9855670833333333
+      },
+      "improvement": {
+        "mean": 0.01665000000000002,
+        "lo": 0.01381666666666668,
+        "hi": 0.019750416666666694
+      },
+      "verdict": "KEEP"
+    }
+  ]
+}

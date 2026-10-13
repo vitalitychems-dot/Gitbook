@@ -1,0 +1,20 @@
+---
+pid: 134101
+cwd: "/workspace"
+command: "timeout 30 python3 << 'PY'\nimport json, os, time\nNOW=time.time()\nages=[]\nn2=0\nfor i,line in enumerate(open('/workspace/dedupe/all-groups.jsonl')):\n    g=json.loads(line)\n    for p in g['paths']:\n        if os.path.isfile(p):\n            ages.append((NOW-os.stat(p).st_mtime)/60)\n    paths=[p for p in g['paths'] if os.path.isfile(p) and (NOW-os.stat(p).st_mtime)>=30*60]\n    if len(paths)>=2: n2+=1\n    if i>500: break\nages.sort()\nprint('sample ages min/med/max', ages[0] if ages else None, ages[len(ages)//2] if ages else None, ages[-1] if ages else None)\nprint('groups(first500) with >=2 aged>=30m', n2)\nprint('now', time.strftime('%H:%M:%S'))\n# check /tmp/gb\nimport subprocess\nst=os.stat('/tmp/gb') if os.path.isdir('/tmp/gb') else None\nif st:\n    print('/tmp/gb age_min', (NOW-st.st_mtime)/60)\n    # newest under /tmp/gb\n    newest=0\n    for root,dirs,files in os.walk('/tmp/gb'):\n        for f in files[:]:\n            try:\n                m=os.stat(os.path.join(root,f)).st_mtime\n                if m>newest: newest=m\n            except: pass\n        # limit walk\n        if newest and (NOW-newest)<15*60:\n            break\n    print('/tmp/gb newest file age_min', (NOW-newest)/60 if newest else 'none')\nPY\ntimeout 10 df -h /"
+title: "Recheck file ages and disk"
+status: succeeded
+started_at: 2026-10-13T11:14:01.553Z
+running_for_ms: 106      
+---
+sample ages min/med/max 20.000654908021293 24.430988244215648 27.34598824183146
+groups(first500) with >=2 aged>=30m 0
+now 06:14:01
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G   75G   51G  60% /
+
+---
+exit_code: 0
+elapsed_ms: 106
+ended_at: 2026-10-13T11:14:01.659Z
+---

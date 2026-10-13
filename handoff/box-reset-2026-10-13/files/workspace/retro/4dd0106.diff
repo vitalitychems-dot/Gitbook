@@ -1,0 +1,583 @@
+commit 4dd0106ad3ae6e643b6aec5ce1e3688cb7fb48fe
+Author: Tessera <332565808+vitalitychems-dot@users.noreply.github.com>
+Date:   Tue Oct 13 04:00:27 2026 -0500
+
+    Add offline keyless SHEPHERD allowlist and terms gate. (#59)
+    
+    Record publisher-stated license, terms URL, and rate limit for the eight public source kinds, and reject records that omit those fields or require auth. No fetch, scrape, or bundle signing.
+    
+    Co-authored-by: Tessera <vitalitychems-dot@users.noreply.github.com>
+
+diff --git a/tools/shepherd/README.md b/tools/shepherd/README.md
+new file mode 100644
+index 0000000..0bc7d3c
+--- /dev/null
++++ b/tools/shepherd/README.md
+@@ -0,0 +1,12 @@
++# shepherd — offline keyless allowlist
++
++SHEPHERD-RELAY stays design-only. This directory is the offline gate: a fixed allowlist of public sources and a checker that refuses a source with no license, no terms URL, no published rate limit, or any required credential.
++
++It does not fetch, scrape, or raise a published cap. Bundle signing and encryption are out of scope.
++
++```
++python3 tools/shepherd/check_terms.py
++python3 tools/shepherd/test_check_terms.py
++```
++
++Rate-limit numbers in `sources.json` are copied from the cited publisher page. Where that page publishes no number, the record says so and the checker rejects an added number.
+diff --git a/tools/shepherd/check_terms.py b/tools/shepherd/check_terms.py
+new file mode 100644
+index 0000000..9d1350f
+--- /dev/null
++++ b/tools/shepherd/check_terms.py
+@@ -0,0 +1,245 @@
++#!/usr/bin/env python3
++"""Offline terms gate for the SHEPHERD-RELAY allowlist.
++
++Rejects a source that lacks a license, a terms URL, or a published rate
++limit, or that requires authentication. This module does not open a
++network connection, does not scrape, and does not raise a published cap.
++Bundle signing and encryption are out of scope.
++"""
++
++from __future__ import annotations
++
++import argparse
++import json
++import sys
++from pathlib import Path
++
++SCHEMA = "shepherd-allowlist/v1"
++ALLOWED_KINDS = (
++    "rss-atom",
++    "wikimedia-dumps",
++    "arxiv-oai-pmh",
++    "medlineplus-xml",
++    "pmc-oa",
++    "noaa",
++    "osm-diffs",
++    "github-public-releases",
++)
++PLACEHOLDER_LICENSES = {"", "unknown", "tbd", "n/a", "na", "none", "null", "todo"}
++EVASION_KEYS = {
++    "evade_rate_limit",
++    "bypass_rate_limit",
++    "circumvent_rate_limit",
++    "ignore_rate_limit",
++    "extra_machines",
++    "multi_ip",
++    "scrape",
++    "html_scrape",
++}
++AUTH_FLAG_KEYS = {
++    "api_key_required",
++    "token_required",
++    "account_required",
++    "oauth_required",
++    "requires_auth",
++}
++SECRET_KEYS = {"api_key", "token", "password", "client_secret", "access_token"}
++
++
++def default_allowlist_path() -> Path:
++    return Path(__file__).with_name("sources.json")
++
++
++def load_document(path: Path) -> dict:
++    with path.open(encoding="utf-8") as handle:
++        document = json.load(handle)
++    if not isinstance(document, dict):
++        raise ValueError("allowlist must be a JSON object")
++    return document
++
++
++def check_document(document: dict) -> list[dict]:
++    """Return one result per source. A document with no sources fails once."""
++    if document.get("schema") != SCHEMA:
++        return [_result(None, [f"schema must be {SCHEMA}"])]
++    sources = document.get("sources")
++    if not isinstance(sources, list) or not sources:
++        return [_result(None, ["sources must be a non-empty list"])]
++    results = []
++    seen_ids = set()
++    seen_kinds = set()
++    for source in sources:
++        if not isinstance(source, dict):
++            results.append(_result(None, ["source must be an object"]))
++            continue
++        source_id = source.get("id")
++        reasons = check_source(source)
++        if isinstance(source_id, str) and source_id in seen_ids:
++            reasons.append(f"duplicate id {source_id}")
++        if isinstance(source_id, str) and source_id:
++            seen_ids.add(source_id)
++        kind = source.get("kind")
++        if isinstance(kind, str) and kind in seen_kinds:
++            reasons.append(f"duplicate kind {kind}")
++        if isinstance(kind, str) and kind:
++            seen_kinds.add(kind)
++        results.append(_result(source_id if isinstance(source_id, str) else None, reasons))
++    return results
++
++
++def check_source(source: dict) -> list[str]:
++    reasons = []
++    if not isinstance(source, dict):
++        return ["source must be an object"]
++
++    source_id = source.get("id")
++    if not isinstance(source_id, str) or not source_id.strip():
++        reasons.append("missing id")
++
++    kind = source.get("kind")
++    if kind not in ALLOWED_KINDS:
++        reasons.append("kind is not on the keyless allowlist")
++
++    license_name = source.get("license")
++    if not isinstance(license_name, str) or license_name.strip().lower() in PLACEHOLDER_LICENSES:
++        reasons.append("missing license")
++
++    if not _is_http_url(source.get("terms_url")):
++        reasons.append("missing terms URL")
++
++    reasons.extend(_rate_limit_reasons(source.get("rate_limit")))
++    reasons.extend(_auth_reasons(source))
++    reasons.extend(_evasion_reasons(source))
++    if _url_has_userinfo(source.get("endpoint")):
++        reasons.append("endpoint contains credentials")
++    return reasons
++
++
++def _rate_limit_reasons(rate_limit) -> list[str]:
++    if not isinstance(rate_limit, dict):
++        return ["missing rate limit"]
++    reasons = []
++    published = rate_limit.get("published")
++    if not isinstance(published, str) or not published.strip():
++        reasons.append("missing rate limit")
++    if not _is_http_url(rate_limit.get("citation")):
++        reasons.append("missing rate-limit citation")
++
++    has_requests = "max_requests" in rate_limit
++    has_window = "per_seconds" in rate_limit
++    if has_requests or has_window:
++        requests = rate_limit.get("max_requests")
++        window = rate_limit.get("per_seconds")
++        if not _positive_number(requests) or not _positive_number(window):
++            reasons.append("rate limit numbers must be positive")
++        elif isinstance(requests, bool) or isinstance(window, bool):
++            reasons.append("rate limit numbers must be positive")
++    if rate_limit.get("numeric_request_rate_published") is False and has_requests:
++        reasons.append("numeric rate was set where the publisher published none")
++
++    for key in ("concurrency", "max_connections_per_ip", "retry_interval_seconds"):
++        if key in rate_limit and not _positive_int(rate_limit.get(key)):
++            reasons.append(f"{key} must be a positive integer")
++    if "retry_interval_seconds" in rate_limit and not _is_http_url(rate_limit.get("retry_citation")):
++        reasons.append("missing retry-limit citation")
++    return reasons
++
++
++def _auth_reasons(source: dict) -> list[str]:
++    reasons = []
++    if source.get("auth_required") is not False:
++        reasons.append("requires auth")
++    access = source.get("access")
++    if access is not None and access != "unauthenticated":
++        reasons.append("requires auth")
++    for key in AUTH_FLAG_KEYS:
++        if source.get(key) is True:
++            reasons.append("requires auth")
++    for key in SECRET_KEYS:
++        value = source.get(key)
++        if value not in (None, "", False):
++            reasons.append("requires auth")
++    quota = source.get("rate_limit")
++    if isinstance(quota, dict) and quota.get("quota") == "authenticated":
++        reasons.append("requires auth")
++    return reasons
++
++
++def _evasion_reasons(source: dict) -> list[str]:
++    reasons = []
++    blobs = [source]
++    rate_limit = source.get("rate_limit")
++    if isinstance(rate_limit, dict):
++        blobs.append(rate_limit)
++    for blob in blobs:
++        for key in EVASION_KEYS:
++            if blob.get(key) is True:
++                reasons.append("rate-limit evasion is refused")
++    return reasons
++
++
++def _result(source_id: str | None, reasons: list[str]) -> dict:
++    unique = list(dict.fromkeys(reasons))
++    return {"id": source_id, "ok": not unique, "reasons": unique}
++
++
++def _is_http_url(value) -> bool:
++    if not isinstance(value, str):
++        return False
++    text = value.strip()
++    lowered = text.lower()
++    if not (lowered.startswith("https://") or lowered.startswith("http://")):
++        return False
++    if any(char.isspace() for char in text):
++        return False
++    return not _url_has_userinfo(text)
++
++
++def _url_has_userinfo(value) -> bool:
++    if not isinstance(value, str) or "://" not in value:
++        return False
++    host = value.split("://", 1)[1].split("/", 1)[0]
++    return "@" in host
++
++
++def _positive_number(value) -> bool:
++    return isinstance(value, (int, float)) and not isinstance(value, bool) and value > 0
++
++
++def _positive_int(value) -> bool:
++    return isinstance(value, int) and not isinstance(value, bool) and value > 0
++
++
++def summarize(results: list[dict]) -> dict:
++    accepted = [item["id"] for item in results if item["ok"]]
++    rejected = [item for item in results if not item["ok"]]
++    return {
++        "accepted": len(accepted),
++        "rejected": len(rejected),
++        "accepted_ids": accepted,
++        "rejected_ids": [item["id"] for item in rejected],
++    }
++
++
++def main(argv: list[str] | None = None) -> int:
++    parser = argparse.ArgumentParser(description="Check a SHEPHERD allowlist offline.")
++    parser.add_argument("path", nargs="?", type=Path, default=default_allowlist_path())
++    parser.add_argument("--report", action="store_true", help="Print accepted and rejected counts.")
++    args = parser.parse_args(argv)
++    document = load_document(args.path)
++    results = check_document(document)
++    summary = summarize(results)
++    if args.report:
++        print(json.dumps(summary, indent=2))
++    else:
++        for item in results:
++            if item["ok"]:
++                print(f"PASS {item['id']}")
++            else:
++                print(f"FAIL {item['id']}: {'; '.join(item['reasons'])}")
++        print(f"accepted {summary['accepted']} rejected {summary['rejected']}")
++    return 0 if summary["rejected"] == 0 else 1
++
++
++if __name__ == "__main__":
++    sys.exit(main())
+diff --git a/tools/shepherd/sources.json b/tools/shepherd/sources.json
+new file mode 100644
+index 0000000..758c4ae
+--- /dev/null
++++ b/tools/shepherd/sources.json
+@@ -0,0 +1,162 @@
++{
++  "schema": "shepherd-allowlist/v1",
++  "scope": "Offline keyless SHEPHERD-RELAY allowlist. Records publisher-stated license, terms URL, and rate limit only. Does not fetch, scrape, sign, or encrypt.",
++  "sources": [
++    {
++      "id": "arxiv-rss-atom",
++      "kind": "rss-atom",
++      "name": "arXiv RSS 2.0 and Atom feeds",
++      "endpoint": "https://rss.arxiv.org/rss/",
++      "atom_endpoint": "https://rss.arxiv.org/atom/",
++      "license": "CC0-1.0",
++      "license_scope": "Descriptive metadata only. E-print files stay under the submitter's license.",
++      "license_url": "https://info.arxiv.org/help/api/tou.html",
++      "terms_url": "https://info.arxiv.org/help/api/tou.html",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "rate_limit": {
++        "max_requests": 1,
++        "per_seconds": 3,
++        "concurrency": 1,
++        "published": "When using the legacy APIs (including OAI-PMH, RSS, and the arXiv API), make no more than one request every three seconds, and limit requests to a single connection at a time.",
++        "citation": "https://info.arxiv.org/help/api/tou.html",
++        "scope_note": "The limit applies to all machines under your control as a whole."
++      }
++    },
++    {
++      "id": "wikimedia-dumps",
++      "kind": "wikimedia-dumps",
++      "name": "Wikimedia content dumps",
++      "endpoint": "https://dumps.wikimedia.org/",
++      "license": "CC-BY-SA-4.0 AND GFDL",
++      "license_scope": "Original textual content, as stated on the dumps legal page. Some text is CC-only. Images and fair-use media are not covered by that default.",
++      "license_url": "https://dumps.wikimedia.org/legal.html",
++      "terms_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "user_agent_policy_url": "https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy",
++      "excluded": "Wikimedia Enterprise HTML dumps need an account and are not on this list.",
++      "rate_limit": {
++        "numeric_request_rate_published": false,
++        "max_connections_per_ip": 3,
++        "published": "Downloads are also rate limited and capped at 3 connections per-IP. Clients that do not respect the user-agent policy or who try to evade these limits may be blocked.",
++        "citation": "https://dumps.wikimedia.org/"
++      }
++    },
++    {
++      "id": "arxiv-oai-pmh",
++      "kind": "arxiv-oai-pmh",
++      "name": "arXiv OAI-PMH",
++      "endpoint": "https://export.arxiv.org/oai2",
++      "license": "CC0-1.0",
++      "license_scope": "Descriptive metadata only. E-print files stay under the submitter's license.",
++      "license_url": "https://info.arxiv.org/help/api/tou.html",
++      "terms_url": "https://info.arxiv.org/help/api/tou.html",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "rate_limit": {
++        "max_requests": 1,
++        "per_seconds": 3,
++        "concurrency": 1,
++        "published": "When using the legacy APIs (including OAI-PMH, RSS, and the arXiv API), make no more than one request every three seconds, and limit requests to a single connection at a time.",
++        "citation": "https://info.arxiv.org/help/api/tou.html",
++        "scope_note": "The limit applies to all machines under your control as a whole."
++      }
++    },
++    {
++      "id": "medlineplus-xml",
++      "kind": "medlineplus-xml",
++      "name": "MedlinePlus XML files",
++      "endpoint": "https://medlineplus.gov/xml.html",
++      "license": "mixed",
++      "license_scope": "Some MedlinePlus content is in the public domain. Other content is copyrighted and licensed specifically for use on MedlinePlus. Attribute use to MedlinePlus.gov.",
++      "license_url": "https://medlineplus.gov/about/using/usingcontent/",
++      "terms_url": "https://medlineplus.gov/about/using/usingcontent/",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "excluded": "MedlinePlus RSS feeds are personal-use only and are not on this list.",
++      "rate_limit": {
++        "numeric_request_rate_published": false,
++        "published": "MedlinePlus produces XML data sets that you are welcome to download and use. The XML files page does not publish a numeric request cap.",
++        "citation": "https://medlineplus.gov/xml.html"
++      }
++    },
++    {
++      "id": "pmc-oa",
++      "kind": "pmc-oa",
++      "name": "PMC Open Access via OAI-PMH set pmc-open",
++      "endpoint": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/",
++      "oai_set": "pmc-open",
++      "license": "per-article",
++      "license_scope": "License terms vary. Full text is limited to items whose license or usage rights allow reuse. set=pmc-open is the collection for which full text may be retrieved.",
++      "license_url": "https://pmc.ncbi.nlm.nih.gov/tools/oai/",
++      "terms_url": "https://pmc.ncbi.nlm.nih.gov/tools/oai/",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "rate_limit": {
++        "max_requests": 3,
++        "per_seconds": 1,
++        "concurrency": 1,
++        "published": "Requests are limited to 3 requests per second (rps); rates higher than that will receive an error message. Please make sure that your system does not make concurrent requests, even at off-peak times.",
++        "citation": "https://pmc.ncbi.nlm.nih.gov/tools/oai/"
++      }
++    },
++    {
++      "id": "noaa-nws-api",
++      "kind": "noaa",
++      "name": "National Weather Service API",
++      "endpoint": "https://api.weather.gov/",
++      "license": "public-domain",
++      "license_scope": "NWS web information is in the public domain unless specifically noted otherwise. Third-party material on NWS pages is not public domain.",
++      "license_url": "https://www.weather.gov/disclaimer",
++      "terms_url": "https://www.weather.gov/disclaimer",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "excluded": "NOAA token APIs, including Climate Data Online, require a token and are not on this list.",
++      "rate_limit": {
++        "numeric_request_rate_published": false,
++        "retry_interval_seconds": 60,
++        "published": "The rate limit is not public information, but allows a generous amount for typical use. If a Web Service isn't available users should limit the number of retries to 1 minute intervals.",
++        "citation": "https://www.weather.gov/documentation/services-web-api",
++        "retry_citation": "https://www.weather.gov/disclaimer"
++      }
++    },
++    {
++      "id": "osm-planet-diffs",
++      "kind": "osm-diffs",
++      "name": "OpenStreetMap planet replication diffs",
++      "endpoint": "https://planet.openstreetmap.org/replication/",
++      "license": "ODbL-1.0",
++      "license_scope": "OpenStreetMap data, including the live replication diffs. Attribute OpenStreetMap contributors and keep share-alike on a derivative database.",
++      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
++      "terms_url": "https://www.openstreetmap.org/copyright",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "excluded": "The editing API is not a bulk-read source. Overpass has its own policy and is not on this list.",
++      "rate_limit": {
++        "numeric_request_rate_published": false,
++        "published": "Large or frequent data users must use the download service planet.osm, which offers the entire planet of vector data, as well as diffs for syncing on a minutely basis. That policy page does not publish a numeric requests-per-second cap for the replication diffs.",
++        "citation": "https://operations.osmfoundation.org/policies/api/"
++      }
++    },
++    {
++      "id": "github-public-releases",
++      "kind": "github-public-releases",
++      "name": "GitHub public release assets",
++      "endpoint": "https://api.github.com/repos/{owner}/{repo}/releases",
++      "license": "per-repository",
++      "license_scope": "Each public repository's own published license. GitHub does not grant one license for every release asset.",
++      "license_url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
++      "terms_url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
++      "auth_required": false,
++      "access": "unauthenticated",
++      "rate_limit": {
++        "max_requests": 60,
++        "per_seconds": 3600,
++        "published": "The primary rate limit for unauthenticated requests is 60 requests per hour.",
++        "citation": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
++        "scope_note": "Unauthenticated requests for public data, counted per originating IP address."
++      }
++    }
++  ]
++}
+diff --git a/tools/shepherd/test_check_terms.py b/tools/shepherd/test_check_terms.py
+new file mode 100644
+index 0000000..d07b79d
+--- /dev/null
++++ b/tools/shepherd/test_check_terms.py
+@@ -0,0 +1,130 @@
++#!/usr/bin/env python3
++"""Offline tests for the SHEPHERD terms gate. No network."""
++
++import ast
++import copy
++import json
++import socket
++import unittest
++from pathlib import Path
++
++import check_terms
++
++ROOT = Path(__file__).resolve().parent
++ALLOWLIST = ROOT / "sources.json"
++NETWORK_CALLS = []
++
++
++def _block_network(*_args, **_kwargs):
++    NETWORK_CALLS.append("connect")
++    raise AssertionError("check_terms must not open a socket")
++
++
++class CheckTermsTests(unittest.TestCase):
++    @classmethod
++    def setUpClass(cls):
++        cls.document = json.loads(ALLOWLIST.read_text(encoding="utf-8"))
++
++    def test_shipped_allowlist_passes(self):
++        results = check_terms.check_document(self.document)
++        self.assertTrue(all(item["ok"] for item in results), results)
++        self.assertEqual(
++            [item["id"] for item in results],
++            [source["id"] for source in self.document["sources"]],
++        )
++
++    def test_one_source_per_allowed_kind(self):
++        kinds = [source["kind"] for source in self.document["sources"]]
++        self.assertEqual(sorted(kinds), sorted(check_terms.ALLOWED_KINDS))
++
++    def test_missing_license_terms_or_rate_limit_is_rejected(self):
++        for field, reason in (
++            ("license", "missing license"),
++            ("terms_url", "missing terms URL"),
++            ("rate_limit", "missing rate limit"),
++        ):
++            source = copy.deepcopy(self.document["sources"][0])
++            source.pop(field)
++            reasons = check_terms.check_source(source)
++            self.assertIn(reason, reasons)
++
++    def test_blank_and_placeholder_license_is_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        source["license"] = "TBD"
++        self.assertIn("missing license", check_terms.check_source(source))
++        source["license"] = "  "
++        self.assertIn("missing license", check_terms.check_source(source))
++
++    def test_auth_required_is_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        source["auth_required"] = True
++        self.assertIn("requires auth", check_terms.check_source(source))
++
++    def test_token_api_and_account_sources_are_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        for flag in ("api_key_required", "token_required", "account_required", "oauth_required"):
++            flagged = copy.deepcopy(source)
++            flagged[flag] = True
++            self.assertIn("requires auth", check_terms.check_source(flagged), flag)
++        source["api_key"] = "example"
++        self.assertIn("requires auth", check_terms.check_source(source))
++        source.pop("api_key")
++        source["access"] = "authenticated"
++        self.assertIn("requires auth", check_terms.check_source(source))
++
++    def test_omitted_auth_flag_is_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        source.pop("auth_required")
++        self.assertIn("requires auth", check_terms.check_source(source))
++
++    def test_rate_limit_evasion_is_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        source["rate_limit"]["extra_machines"] = True
++        self.assertIn("rate-limit evasion is refused", check_terms.check_source(source))
++        source = copy.deepcopy(self.document["sources"][0])
++        source["scrape"] = True
++        self.assertIn("rate-limit evasion is refused", check_terms.check_source(source))
++
++    def test_invented_numeric_cap_is_rejected(self):
++        source = copy.deepcopy(next(item for item in self.document["sources"] if item["id"] == "osm-planet-diffs"))
++        source["rate_limit"]["max_requests"] = 100
++        source["rate_limit"]["per_seconds"] = 1
++        reasons = check_terms.check_source(source)
++        self.assertIn("numeric rate was set where the publisher published none", reasons)
++
++    def test_credentials_in_endpoint_are_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        source["endpoint"] = "https://[REDACTED]@export.arxiv.org/oai2"
++        self.assertIn("endpoint contains credentials", check_terms.check_source(source))
++
++    def test_unknown_kind_is_rejected(self):
++        source = copy.deepcopy(self.document["sources"][0])
++        source["kind"] = "html-scrape"
++        self.assertIn("kind is not on the keyless allowlist", check_terms.check_source(source))
++
++    def test_module_does_not_import_a_client(self):
++        tree = ast.parse(Path(check_terms.__file__).read_text(encoding="utf-8"))
++        imported = set()
++        for node in ast.walk(tree):
++            if isinstance(node, ast.Import):
++                imported.update(alias.name.split(".")[0] for alias in node.names)
++            elif isinstance(node, ast.ImportFrom) and node.module:
++                imported.add(node.module.split(".")[0])
++        self.assertTrue(imported.isdisjoint({"urllib", "requests", "http", "socket", "ftplib"}))
++
++    def test_check_does_not_touch_the_network(self):
++        NETWORK_CALLS.clear()
++        original = socket.socket.connect
++        socket.socket.connect = _block_network
++        try:
++            check_terms.check_document(self.document)
++            rejected = copy.deepcopy(self.document["sources"][0])
++            rejected["auth_required"] = True
++            check_terms.check_source(rejected)
++        finally:
++            socket.socket.connect = original
++        self.assertEqual(NETWORK_CALLS, [])
++
++
++if __name__ == "__main__":
++    unittest.main()

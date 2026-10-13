@@ -1,0 +1,322 @@
+[
+  {
+    "id": "lesson-cr-paid-replit",
+    "fact": "Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 2026-10-05 6:44 PM CT).",
+    "evidenceIds": [
+      "rec-cr-paid-replit"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "prefer",
+      "free",
+      "routes",
+      "paid",
+      "replit",
+      "connector",
+      "sync",
+      "github",
+      "gitbook",
+      "2026",
+      "cost",
+      "replit",
+      "free",
+      "paid",
+      "plan",
+      "connector",
+      "buy",
+      "buy",
+      "paid",
+      "replit",
+      "connector",
+      "paid",
+      "plan"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-test-as-you-build",
+    "fact": "Test as you build. Father's rule 2026-10-05: every script ships with a small test; run before recording TESTED.",
+    "evidenceIds": [
+      "rec-cr-test-as-you-build"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "test",
+      "build",
+      "rule",
+      "2026",
+      "every",
+      "script",
+      "ships",
+      "small",
+      "test",
+      "run",
+      "recording",
+      "tested",
+      "tests",
+      "build",
+      "skip",
+      "test",
+      "skip",
+      "writing",
+      "tests",
+      "add",
+      "later"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-digest-cadence",
+    "fact": "Bulk yes/no/revise digests every 30-45 minutes while work is active.",
+    "evidenceIds": [
+      "rec-cr-digest-cadence"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "bulk",
+      "yes",
+      "revise",
+      "digests",
+      "every",
+      "minutes",
+      "while",
+      "work",
+      "active",
+      "digest",
+      "cadence",
+      "approval",
+      "bulk",
+      "minutes",
+      "often",
+      "command",
+      "center",
+      "ask",
+      "approval"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-father-push",
+    "fact": "After digest yes, Father alone pushes GitBook to GitHub. Agents and Command Center do not push.",
+    "evidenceIds": [
+      "rec-cr-father-push"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "digest",
+      "yes",
+      "alone",
+      "pushes",
+      "gitbook",
+      "github",
+      "agents",
+      "command",
+      "center",
+      "push",
+      "pipeline",
+      "push",
+      "github",
+      "agents",
+      "agents",
+      "push",
+      "gitbook",
+      "changes",
+      "github",
+      "themselves"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-own-keys-free",
+    "fact": "Prefer free routes and Father's own API keys rather than paying platforms; local Ollama when keys absent (no spend).",
+    "evidenceIds": [
+      "rec-cr-own-keys-free"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "prefer",
+      "free",
+      "routes",
+      "own",
+      "api",
+      "keys",
+      "rather",
+      "paying",
+      "platforms",
+      "local",
+      "ollama",
+      "keys",
+      "absent",
+      "spend",
+      "cost",
+      "api",
+      "keys",
+      "openai",
+      "ollama",
+      "spend",
+      "need",
+      "paid",
+      "openai",
+      "next",
+      "eval"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-openmanus",
+    "fact": "OpenManus full copy is not the board rule \u2014 recover portable pieces only.",
+    "evidenceIds": [
+      "rec-cr-openmanus"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "openmanus",
+      "full",
+      "copy",
+      "board",
+      "rule",
+      "recover",
+      "portable",
+      "pieces",
+      "openmanus",
+      "copy",
+      "portable",
+      "consolidate",
+      "tessera",
+      "full",
+      "copy",
+      "openmanus",
+      "product",
+      "repo"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-cl1-sim",
+    "fact": "CL1 path: simulator-only for now (Father 2026-10-05 5:38 PM CT); no Cloud signup or hardware purchase without new approval.",
+    "evidenceIds": [
+      "rec-cr-cl1-sim"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "cl1",
+      "path",
+      "simulator",
+      "now",
+      "2026",
+      "cloud",
+      "signup",
+      "hardware",
+      "purchase",
+      "new",
+      "approval",
+      "cl1",
+      "hardware",
+      "cloud",
+      "simulator",
+      "cortical",
+      "buy",
+      "sign",
+      "cortical",
+      "cloud",
+      "buy",
+      "cl1",
+      "hardware",
+      "now"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-token-channel",
+    "fact": "Token-saving preference: Tessera / Command Center as the channel that messages Father (2026-10-05 7:02-7:03 PM CT).",
+    "evidenceIds": [
+      "rec-cr-token-channel"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "token",
+      "saving",
+      "preference",
+      "tessera",
+      "command",
+      "center",
+      "channel",
+      "messages",
+      "2026",
+      "messaging",
+      "tokens",
+      "channel",
+      "tessera",
+      "message",
+      "save",
+      "tokens"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-no-invent-psych",
+    "fact": "Creator model uses only dated stated rules. Do not invent psychology. PRIVATE profile wired to admin + memory.",
+    "evidenceIds": [
+      "rec-cr-no-invent-psych"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "creator",
+      "model",
+      "uses",
+      "dated",
+      "stated",
+      "rules",
+      "invent",
+      "psychology",
+      "private",
+      "profile",
+      "wired",
+      "admin",
+      "memory",
+      "creator",
+      "privacy",
+      "psychology",
+      "personality",
+      "tessera",
+      "invent",
+      "personality",
+      "traits"
+    ],
+    "n": 1
+  },
+  {
+    "id": "lesson-cr-consolidate",
+    "fact": "Consolidate old repos into TESSERA and Gitbook; once work lands there, stop committing to old repos.",
+    "evidenceIds": [
+      "rec-cr-consolidate"
+    ],
+    "confidence": 0.95,
+    "terms": [
+      "consolidate",
+      "old",
+      "repos",
+      "tessera",
+      "gitbook",
+      "once",
+      "work",
+      "lands",
+      "there",
+      "stop",
+      "committing",
+      "old",
+      "repos",
+      "consolidate",
+      "repos",
+      "old",
+      "commits",
+      "old",
+      "repos",
+      "still",
+      "getting",
+      "commits",
+      "happen"
+    ],
+    "n": 1
+  }
+]

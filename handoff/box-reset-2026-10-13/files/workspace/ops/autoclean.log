@@ -1,0 +1,55 @@
+2026-10-13T06:06:35-05:00 === start free=10G use=93% dry=1
+2026-10-13T06:06:35-05:00 AGGRESSIVE
+2026-10-13T06:06:35-05:00 caches pruned (npm/pnpm/pip)
+16 duplicate files (in 16 sets), occupying 1022 MB
+2026-10-13T06:06:38-05:00 dedup dirs=154 reclaimed=0G
+2026-10-13T06:06:38-05:00 === end free=10G use=93% gained=0G
+2026-10-13T06:06:46-05:00 === start free=10G use=93% dry=0
+2026-10-13T06:06:46-05:00 AGGRESSIVE
+2026-10-13T06:06:47-05:00 caches pruned (npm/pnpm/pip)
+2026-10-13T06:06:50-05:00 dedup dirs=154 reclaimed=0G
+2026-10-13T06:06:50-05:00 === end free=10G use=93% gained=0G
+2026-10-13T06:08:34-05:00 === start free=11G use=92% dry=0
+2026-10-13T06:08:34-05:00 AGGRESSIVE
+2026-10-13T06:08:35-05:00 caches pruned (npm/pnpm/pip)
+Totally, 14 GiB can be reduced.
+Making 108640 links.
+2026-10-13T06:09:36-05:00 dedup dirs=154 reclaimed=15G
+2026-10-13T06:09:55-05:00 === start free=26G use=80% dry=1
+2026-10-13T06:09:55-05:00 caches pruned (npm/pnpm/pip)
+Compared:                 168 files
+Saved:                    11.74 KiB
+Duration:                 0.037249 seconds
+2026-10-13T06:09:56-05:00 git-objects dedup dirs=173 reclaimed=0M
+No duplicates found.
+2026-10-13T06:09:56-05:00 archive dedup dirs=1 reclaimed=0M
+2026-10-13T06:09:56-05:00 === end free=26G use=80% gained=0G
+2026-10-13T06:11:13-05:00 === start free=49G use=61% dry=1
+2026-10-13T06:11:14-05:00 caches pruned (npm/pnpm/pip)
+Compared:                 168 files
+Saved:                    11.74 KiB
+Duration:                 0.034935 seconds
+2026-10-13T06:11:14-05:00 git-objects dedup dirs=169 reclaimed=0M
+No duplicates found.
+2026-10-13T06:11:14-05:00 archive dedup dirs=1 reclaimed=0M
+2026-10-13T06:11:15-05:00 === end free=49G use=61% gained=0G
+2026-10-13T06:30:01-05:00 === start free=45G use=65% dry=0
+2026-10-13T06:30:03-05:00 caches pruned (npm/pnpm/pip)
+2026-10-13T06:30:05-05:00 git-objects dedup dirs=147 reclaimed=-26M
+2026-10-13T06:30:05-05:00 archive dedup dirs=1 reclaimed=-3M
+2026-10-13T06:30:05-05:00 === end free=44G use=66% gained=-1G
+2026-10-13T07:00:02-05:00 === start free=32G use=75% dry=0
+2026-10-13T07:00:03-05:00 caches pruned (npm/pnpm/pip)
+2026-10-13T07:00:04-05:00 git-objects dedup dirs=146 reclaimed=0M
+2026-10-13T07:00:04-05:00 archive dedup dirs=1 reclaimed=0M
+2026-10-13T07:00:04-05:00 === end free=32G use=75% gained=0G
+2026-10-13T07:30:01-05:00 === start free=23G use=83% dry=0
+2026-10-13T07:30:02-05:00 caches pruned (npm/pnpm/pip)
+2026-10-13T07:30:04-05:00 git-objects dedup dirs=202 reclaimed=0M
+2026-10-13T07:30:04-05:00 archive dedup dirs=1 reclaimed=0M
+2026-10-13T07:30:04-05:00 === end free=23G use=83% gained=0G
+2026-10-13T08:00:01-05:00 === start free=28G use=78% dry=0
+2026-10-13T08:00:04-05:00 caches pruned (npm/pnpm/pip)
+2026-10-13T08:00:07-05:00 git-objects dedup dirs=1132 reclaimed=9M
+2026-10-13T08:00:07-05:00 archive dedup dirs=1 reclaimed=0M
+2026-10-13T08:00:07-05:00 === end free=28G use=78% gained=0G

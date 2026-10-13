@@ -1,0 +1,20 @@
+{
+ "VL_refs": [
+  "sha:ce184f3b",
+  "msg:example-1"
+ ],
+ "CB": {
+  "CB1": true,
+  "CB2": true,
+  "CB3": true,
+  "CB4": false,
+  "CB5": true,
+  "CB6": false
+ },
+ "NC": {
+  "NC1": false,
+  "NC2": false,
+  "NC3": true,
+  "NC4": true
+ }
+}

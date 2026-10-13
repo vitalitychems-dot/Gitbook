@@ -1,0 +1,107 @@
+INFO Tracing config check {"hasTraceEndpoint":false,"hasTraceAuthToken":false,"ghostMode":true,"willInitTracing":false}
+INFO Tracing NOT initialized {"reason":"no trace endpoint provided"}
+INFO Workload cgroup placement resolved {"placement":"direct"}
+INFO Discovered exec-daemon workspaces {"workspacePath":"/workspace","usesReposRoot":false,"workspacePaths":["/workspace"]}
+INFO Starting exec-daemon {"logLevel":"info","workspacePath":"/workspace","projectDir":"/home/box/.cursor/projects/workspace","browserEnabled":false,"cursorSelfControlEnabled":false,"mcpConfigSummary":{"hasMcpConfig":false,"serverNames":[],"stdioServerCount":0,"httpServerCount":0},"cloudRulesEnabled":false,"computerUseEnabled":true,"secretRedactionEnabled":true,"recordScreenEnabled":false,"orbitOperationReportingEnabled":true}
+INFO Resolved exec-daemon workspaces {"workspacePath":"/workspace","workspacePaths":["/workspace"]}
+ERROR Failed to create logs directory /opt/cursor/logs/ - debug subagent logging may not work Error: [object Object]
+    at FilteredLoggerBackend.log (/exec-daemon/index.js:8:1037875)
+    at log (/exec-daemon/index.js:8:2048763)
+    at Object.error (/exec-daemon/index.js:8:2049032)
+    at ensureDirWithDataDirPolicy (/exec-daemon/index.js:8:1310852)
+    at setupDaemon (/exec-daemon/index.js:8:1317494)
+    at async /exec-daemon/index.js:8:1033338
+    at async runStartupStep (/exec-daemon/index.js:8:1032455)
+    at async runServer (/exec-daemon/index.js:8:1033272)
+    at async Command.<anonymous> (/exec-daemon/index.js:8:1030073)
+    at async Command.parseAsync (/exec-daemon/index.js:8:1804636)
+INFO CursorPluginsAgentSkillsService load completed {"durationMs":16,"ruleCount":0,"skillCount":0}
+INFO AgentSkillsCursorRulesService load completed {"durationMs":22,"ruleCount":0,"skillCount":0,"servedFromCache":false}
+INFO LocalCursorRulesService load completed {"durationMs":26,"ruleCount":0}
+INFO computer_use_startup_config {"computerUseEnabled":true,"lazyComputerUseInit":false,"computerUseApiWidth":1280,"computerUseApiHeight":800,"recordScreenEnabled":false,"resolvedDisplay":":5","displayEnv":":5","hasXdpyinfo":true,"xdpyinfoPath":"/usr/bin/xdpyinfo"}
+INFO Waiting for X11 display to become available {"display":":5","xdpyinfoPath":"/usr/bin/xdpyinfo"}
+INFO X11 display is ready {"display":":5","waitDurationMs":24}
+INFO Computer use enabled - X11ComputerUseExecutor created {"display":":5"}
+INFO computer_use_init_result {"outcome":"ready","durationMs":29,"display":":5"}
+INFO loading resource provider {"computerUseEnabled":true,"computerUseRunning":true,"desktopLeaseEnforce":false}
+INFO webp_codec.startup {"registered":true}
+INFO resource provider loaded {"hooksConfig":{"errors":[],"configDirs":{}}}
+INFO Exec-daemon loaded hook executor {"hasUserHooks":false,"hasProjectHooks":false}
+INFO Exec-daemon loaded resources {"resourceCount":34}
+INFO Artifacts: setting up artifact upload manager {"artifactsRootPath":"/opt/cursor/artifacts","rootKind":"local"}
+INFO Artifacts: initializing fresh artifact upload state {"stateFilePath":"/opt/cursor/artifacts/.cursor/exec-daemon-artifacts.json"}
+ERROR Artifacts: Failed to persist state {"stateFilePath":"/opt/cursor/artifacts/.cursor/exec-daemon-artifacts.json"} Error: EACCES: permission denied, mkdir '/opt/cursor'
+    at async Object.mkdir (node:internal/fs/promises:857:10)
+    at async ArtifactUploadManager.ensureArtifactDirectory (/exec-daemon/index.js:8:962804)
+    at async ArtifactUploadManager.persistState (/exec-daemon/index.js:8:973112)
+    at async ArtifactUploadManager.initialize (/exec-daemon/index.js:8:971915)
+    at async ArtifactUploadManagerProvider.getOrCreate (/exec-daemon/index.js:8:975379)
+    at async ArtifactUploadManagerProvider.classifyAndGet (/exec-daemon/index.js:8:974820)
+    at async ArtifactUploadManagerProvider.get (/exec-daemon/index.js:8:974291)
+    at async ArtifactUploadManagerProvider.initialize (/exec-daemon/index.js:8:975544)
+    at async startServer (/exec-daemon/index.js:8:1136529)
+    at async /exec-daemon/index.js:8:1035709 {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'mkdir',
+  path: '/opt/cursor'
+}
+INFO ExecDaemon server listening {"port":14005}
+INFO PtyHost WebSocket server listening {"port":13605}
+INFO Canvas diagnostics provider ready
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_0199cwHyrnXD2qmdP8aTu7Xy","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":4,"classifierCommandCount":0,"commandLength":71}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_0199cwHyrnXD2qmdP8aTu7Xy","requestedPolicyType":"insecure_none"}
+INFO Background shell: approval gate reached {"toolCallId":"call-f2d4e733-ab23-4096-b834-da28cf4fa284-21\nfc_53730a53-84d9-9fb7-b53d-b0db609fc7a6_4","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":6,"classifierCommandCount":0,"commandLength":287}
+INFO Background shell: skipped local approval {"toolCallId":"call-f2d4e733-ab23-4096-b834-da28cf4fa284-21\nfc_53730a53-84d9-9fb7-b53d-b0db609fc7a6_4","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01T17zaS5Q8v8enw7dNLcpuC","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":2,"classifierCommandCount":0,"commandLength":610}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01T17zaS5Q8v8enw7dNLcpuC","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-5f799096-f3d5-480c-83bb-05e40399594a-27\nfc_bd9acc6b-c169-9fbc-95da-d4c563e4b52a_1","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":7,"classifierCommandCount":0,"commandLength":311}
+INFO Shell stream: skipped local approval {"toolCallId":"call-5f799096-f3d5-480c-83bb-05e40399594a-27\nfc_bd9acc6b-c169-9fbc-95da-d4c563e4b52a_1","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-3b21c6d1-f7a8-4a51-9853-087f67b02772-31\nfc_4f3fad37-fca3-9013-84a9-5c0764ae90d1_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":6,"classifierCommandCount":0,"commandLength":3370}
+INFO Shell stream: skipped local approval {"toolCallId":"call-3b21c6d1-f7a8-4a51-9853-087f67b02772-31\nfc_4f3fad37-fca3-9013-84a9-5c0764ae90d1_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-8dc2d073-7de5-40fe-8d8f-bf54ef6b30bb-1\nfc_360a26cd-cb32-93f5-bbb2-b5252898be8d_1","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":7,"classifierCommandCount":0,"commandLength":153}
+INFO Shell stream: skipped local approval {"toolCallId":"call-8dc2d073-7de5-40fe-8d8f-bf54ef6b30bb-1\nfc_360a26cd-cb32-93f5-bbb2-b5252898be8d_1","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-52bdabea-165d-43f7-abd6-1fcb47c76df2-12\nfc_9fabf950-772d-9178-b095-4148a48cfbe8_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":1,"classifierCommandCount":0,"commandLength":2531}
+INFO Shell stream: skipped local approval {"toolCallId":"call-52bdabea-165d-43f7-abd6-1fcb47c76df2-12\nfc_9fabf950-772d-9178-b095-4148a48cfbe8_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-72b63e52-5530-4d43-a903-26fb396a2ff5-17\nfc_e1f12c4c-866a-9863-beeb-25124272842c_4","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":2,"classifierCommandCount":0,"commandLength":183}
+INFO Shell stream: skipped local approval {"toolCallId":"call-72b63e52-5530-4d43-a903-26fb396a2ff5-17\nfc_e1f12c4c-866a-9863-beeb-25124272842c_4","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-24472aed-e1e3-4a66-a59d-d7d8d6c42af9-22\nfc_001b8284-515a-9d2e-ba1b-a16e19ea4f7d_4","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":5,"classifierCommandCount":0,"commandLength":586}
+INFO Shell stream: skipped local approval {"toolCallId":"call-24472aed-e1e3-4a66-a59d-d7d8d6c42af9-22\nfc_001b8284-515a-9d2e-ba1b-a16e19ea4f7d_4","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-4f8f5bdd-0eac-4078-92de-529291eeae59-23\nfc_a6bba83d-ce30-9835-a49b-f19c7e191041_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":5,"classifierCommandCount":0,"commandLength":3651}
+INFO Shell stream: skipped local approval {"toolCallId":"call-4f8f5bdd-0eac-4078-92de-529291eeae59-23\nfc_a6bba83d-ce30-9835-a49b-f19c7e191041_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-b5dc2d9f-620e-45fe-b753-ace0c72ea7d9-0\nfc_95476bf1-a218-9a5f-af28-aea473bfa100_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":16,"classifierCommandCount":0,"commandLength":565}
+INFO Shell stream: skipped local approval {"toolCallId":"call-b5dc2d9f-620e-45fe-b753-ace0c72ea7d9-0\nfc_95476bf1-a218-9a5f-af28-aea473bfa100_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-6ed4f9d7-9c3a-4abd-a223-10b080b874a4-9\nfc_073262bd-b120-93cf-8bd1-8b5c0ff8e14c_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":1,"classifierCommandCount":0,"commandLength":1133}
+INFO Shell stream: skipped local approval {"toolCallId":"call-6ed4f9d7-9c3a-4abd-a223-10b080b874a4-9\nfc_073262bd-b120-93cf-8bd1-8b5c0ff8e14c_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-6ed4f9d7-9c3a-4abd-a223-10b080b874a4-10\nfc_073262bd-b120-93cf-8bd1-8b5c0ff8e14c_1","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":1,"classifierCommandCount":0,"commandLength":457}
+INFO Shell stream: skipped local approval {"toolCallId":"call-6ed4f9d7-9c3a-4abd-a223-10b080b874a4-10\nfc_073262bd-b120-93cf-8bd1-8b5c0ff8e14c_1","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-118c1fd8-0c3f-4ab3-8a08-baf413b74566-11\nfc_46c32cdc-46d6-9012-a011-139090a69387_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":1,"classifierCommandCount":0,"commandLength":1056}
+INFO Shell stream: skipped local approval {"toolCallId":"call-118c1fd8-0c3f-4ab3-8a08-baf413b74566-11\nfc_46c32cdc-46d6-9012-a011-139090a69387_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-970e61cf-3ed1-4f56-bae3-ab1852fe3794-19\nfc_5dcc61da-ab64-9a7e-a3ab-d6c2d51d9c3c_4","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":1,"classifierCommandCount":0,"commandLength":777}
+INFO Shell stream: skipped local approval {"toolCallId":"call-970e61cf-3ed1-4f56-bae3-ab1852fe3794-19\nfc_5dcc61da-ab64-9a7e-a3ab-d6c2d51d9c3c_4","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"call-3859889f-8e28-454b-84b1-de7431d6b31d-34\nfc_ea1c32fa-9bba-910b-b908-4f3f59733057_0","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":4,"classifierCommandCount":0,"commandLength":4999}
+INFO Shell stream: skipped local approval {"toolCallId":"call-3859889f-8e28-454b-84b1-de7431d6b31d-34\nfc_ea1c32fa-9bba-910b-b908-4f3f59733057_0","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_016RcD9DePWM6DLQM59gMVXN","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":3,"classifierCommandCount":0,"commandLength":1221}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_016RcD9DePWM6DLQM59gMVXN","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_019ahvMn9Lz6bcA1aedTzg2u","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":6,"classifierCommandCount":0,"commandLength":572}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_019ahvMn9Lz6bcA1aedTzg2u","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_014ts5qXPQcGZjADUnPH4i2q","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":2,"classifierCommandCount":0,"commandLength":312}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_014ts5qXPQcGZjADUnPH4i2q","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_019ariZttBTV3XWePwR9YSx7","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":2,"classifierCommandCount":0,"commandLength":423}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_019ariZttBTV3XWePwR9YSx7","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01TvJA98x5ujqCCmtQjYi3TX","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":23,"classifierCommandCount":0,"commandLength":4421}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01TvJA98x5ujqCCmtQjYi3TX","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01DAmtxWtyozQ5WjrikncfeK","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":2,"classifierCommandCount":0,"commandLength":594}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01DAmtxWtyozQ5WjrikncfeK","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_013cwtd4eHzEJ1HLdU91ckti","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":5,"classifierCommandCount":0,"commandLength":2627}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_013cwtd4eHzEJ1HLdU91ckti","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_015yS9u6RLJfchzeAtvEv8ZF","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":26,"classifierCommandCount":0,"commandLength":1802}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_015yS9u6RLJfchzeAtvEv8ZF","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_019Nyt5iNZNJjPbZmwWjeTdm","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":6,"classifierCommandCount":0,"commandLength":1285}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_019Nyt5iNZNJjPbZmwWjeTdm","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01AsatvEX93xZzHGS7wcYDuC","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":5,"classifierCommandCount":0,"commandLength":596}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01AsatvEX93xZzHGS7wcYDuC","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01XL8Cf9fe8BZGGx8ip7dbqN","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":23,"classifierCommandCount":0,"commandLength":3068}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01XL8Cf9fe8BZGGx8ip7dbqN","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01Pik8x6PCfWU3hKk8hJuVAq","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":7,"classifierCommandCount":0,"commandLength":1675}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01Pik8x6PCfWU3hKk8hJuVAq","requestedPolicyType":"insecure_none"}

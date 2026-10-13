@@ -1,0 +1,19 @@
+-- diffs --
+/workspace/gitbook-cordnation/GB-025/GB-025.ecd9022.diff:7: - Do not change `TESSERA_ENABLE_*` (stay `0`)
+/workspace/gitbook-cordnation/GB-025/GB-025.ecd9022.diff:66: - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+/workspace/gitbook-cordnation/GB-025/GB-025.ecd9022.diff:78: 5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`
+-- enabled (=1/=true) in diffs? --
+none
+-- stack tree --
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/mesh/flow.md:47:| `TESSERA_ENABLE_*` flags | Stay **`0`**. Do not flip them. |
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/intake/how-to-submit.md:34:- Do not change `TESSERA_ENABLE_*` (stay `0`)
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/review/moderator-handoff.md:18:5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/mesh/roles/open-helper-agent-2.md:23:- Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/mesh/roles/grok-bot.md:18:- Never to main (Father alone pushes main). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/mesh/roles/gitbook-cordnation.md:27:- Flag changes (`TESSERA_ENABLE_*` stay `0`)
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/mesh/roles/security.md:20:- Flag flips (`TESSERA_ENABLE_*` stay `0`)
+/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/stack/mesh/roles/build.md:20:- Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+-- enabled in stack? --
+none
+-- solo022 --
+none

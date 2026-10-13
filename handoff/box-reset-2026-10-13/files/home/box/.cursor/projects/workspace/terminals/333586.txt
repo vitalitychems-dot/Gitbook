@@ -1,0 +1,14 @@
+---
+pid: 1233596
+cwd: "/workspace/rea-batch"
+command: "cd /workspace/rea-batch; while IFS=$'\\t' read -u3 n r; do\nf=$(git -C $n ls-files | grep -viE '(^|/)(1T|[^/]*vault[^/]*)/' | wc -l)\nloc=$(cd $n; git ls-files -z | grep -zviE '(^|/)(1T|[^/]*vault[^/]*)/' | grep -zE '\\.(js|ts|tsx|jsx|mjs|py|rb|c|cc|cpp|h|hpp|go|java|cs|lua)$' | xargs -0 cat 2>/dev/null | wc -l)\nrisk=$(cd $n; rg -l -i -g '!**/1T/**' -g '!**/*vault*/**' '(stripe|wallet|mnemonic|private_key\\s*[:=])' 2>/dev/null | wc -l)\nriskp=$(cd $n; rg -l -g '!**/1T/**' -g '!**/*vault*/**' '(BEGIN (RSA|EC|OPENSSH) PRIVATE KEY|AKIA[0-9A-Z]{16}|sk_live_)' 2>/dev/null | head -3 | tr '\\n' ' ')\nrea=$( [ -f /tmp/rea/$n.json ] && python3 -c \"import json;s=json.load(open('/tmp/rea/$n.json'))['normalized_result']['statistics'];print(f\\\"REA jsfiles={s['parsed_javascript_files']} findings={s['findings']} parsefail={s['parse_failures']}\\\")\" )\necho -e \"$n\\t$r\\t$f\\t$loc\\t$risk\\t$riskp\\t$rea\"; done 3< /tmp/map.tsv > /tmp/metrics.tsv; cat /tmp/metrics.tsv"
+status: failed   
+started_at: 2026-10-12T23:45:08.531Z
+running_for_ms: 708801   
+---
+
+---
+exit_code: unknown
+elapsed_ms: 708800
+ended_at: 2026-10-12T23:56:57.331Z
+---

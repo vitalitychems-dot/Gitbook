@@ -1,0 +1,25 @@
+---
+pid: 109555
+cwd: "/workspace/gb-spawn/mesh/queue"
+command: "cd /workspace/gb-spawn && cat > mesh/queue/README.md <<'EOF'\n# Mesh queue — Cursor cloud-agent dispatch with lineage\n1. `TASKS.json` — one entry per task (id, repo, scope, acceptance, lane, status, claim lock; spawned tasks add `parent_id`, `depth`, `spawned_by`, `budget`).\n2. Next batch: `python3 mesh/queue/dispatch.py --next --max 12 --agent Tessera --claim` → JSON `[{id, repo_url, title, prompt, parent_id, depth, branch}]`. Caps: depth ≤ 3, ≤ 4 children per task, ≤ 12 running cloud agents, per-task budget (default 20 files / 800 lines; a child's budget never exceeds its parent's). No two running tasks with overlapping scope, and none overlapping an open PR. Quarantined lineages never launch.\n3. Spawning: agents cannot launch agents. They add a `## SPAWN` section (one JSON object per line) to their PR body; the launcher runs `dispatch.py --spawn body.md --parent <ID> --spawned-by <agent>`.\n4. Lineage: `dispatch.py --record <ID> --agent-id <bc-…> --pr <N> --status launched|in_review|merged` appends to `LINEAGE.jsonl`.\n5. Gate + watchdog: `autogate.sh <repo> <pr> <task-id> [--merge]` runs `gatecheck.py` (protected paths from `mesh/policy/protected-paths.txt`, `TESSERA_ENABLE_*` defaults, noreply identity, gitleaks, declared scope, budget, unlisted hosts from `mesh/policy/allowed-hosts.txt`, gate tampering) then Node 22 tests for TESSERA. Writes one PASS/FAIL line to `$GATE_LOG` and, with `GB_CHECKOUT`, to `mesh/HANDOFF.md`. Rogue signs go to `$ROGUE_LOG` (notify parent + Security) and quarantine the task and all descendants.\n6. Protected paths change only via Father-approved Tessera PRs (`--father-approved`); `CODEOWNERS` mirrors them.\n7. Tests: `cd mesh/queue && python3 -m unittest tests.test_spawn`; benchmark: `python3 tests/bench.py`.\nGitbook is ~11 GB at depth 1, so autogate uses a blob-less, sparse checkout of only the changed files.\nEOF\npython3 - <<'EOF'\nimport json;p='mesh/queue/TASKS.json';q=json.load(open(p))\nq[\"schema\"]=\"mesh-queue/v2\"\nq[\"rules\"]+=\" Spawned tasks carry parent_id, depth, spawned_by and budget; only the launcher adds them via dispatch.py --spawn (caps: depth 3, 4 children, 12 concurrent). Quarantined tasks and their descendants never launch.\"\nopen(p,'w').write(json.dumps(q,indent=2)+\"\\n\")\nEOF\ngit checkout -qb tessera/spawn-lineage-gate && git -c user.name=vitalitychems-dot -c user.email=332565808+vitalitychems-dot@users.noreply.github.com add -A && git -c user.name=vitalitychems-dot -c user.email=332565808+vitalitychems-dot@users.noreply.github.com commit -qm \"mesh/queue: agent spawning with lineage, caps, quarantine and immutable-core gate\" && git log -1 --format='%h %ae %ce' && git diff --stat HEAD~1 | tail -1 && /workspace/pubscan/gitleaks git --log-opts=\"HEAD~1..HEAD\" --config /workspace/pubscan/gl.toml --no-banner . 2>&1 | tail -2; /workspace/pubscan/gitleaks dir --config /workspace/pubscan/gl.toml --no-banner mesh/queue CODEOWNERS mesh/policy 2>&1|tail -1"
+status: succeeded
+started_at: 2026-10-13T09:05:43.135Z
+running_for_ms: 132267   
+---
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/5t/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/T44/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/.gitignore': Too many levels of symbolic links
+9861d9e 332565808+vitalitychems-dot@users.noreply.github.com 332565808+vitalitychems-dot@users.noreply.github.com
+ 18 files changed, 641 insertions(+), 65 deletions(-)
+[90m4:05AM[0m [32mINF[0m scan completed in 10.5ms
+[90m4:05AM[0m [32mINF[0m no leaks found
+[90m4:07AM[0m [31mWRN[0m leaks found: 44
+
+---
+exit_code: 0
+elapsed_ms: 132267
+ended_at: 2026-10-13T09:07:55.402Z
+---

@@ -1,0 +1,140 @@
+{
+  "passed": 2,
+  "failed": 4,
+  "total": 6,
+  "details": [
+    {
+      "query": "should I buy the paid plan?",
+      "pass": true,
+      "top": "Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 2026-10-05 6:44 PM CT)."
+    },
+    {
+      "query": "skip tests for now?",
+      "pass": false,
+      "blob": "",
+      "hits": []
+    },
+    {
+      "query": "how often digest to father?",
+      "pass": false,
+      "blob": "prefer free routes: no paid replit connector; sync via github + gitbook (father 2026-10-05 6:44 pm ct).",
+      "hits": [
+        {
+          "id": "lesson-49c945a3fdb7",
+          "fact": "Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 2026-10-05 6:44 PM CT).",
+          "evidenceIds": [
+            "rec-1791245241191-e8b45824",
+            "rec-1791245241191-65bdf93f",
+            "rec-1791245241191-23a67701",
+            "rec-1791245241191-b0fd8f45",
+            "rec-1791245241191-8afa283d",
+            "rec-1791245241191-dc449407",
+            "rec-1791245241191-f0f17324",
+            "rec-1791245241191-77c1efc9",
+            "rec-1791245241191-8e730ec9"
+          ],
+          "confidence": 0.95,
+          "terms": [
+            "lesson",
+            "father",
+            "paid",
+            "2026",
+            "gitbook",
+            "prefer",
+            "github",
+            "command",
+            "center",
+            "tessera",
+            "buy",
+            "replit"
+          ],
+          "n": 9,
+          "score": 0.9347358985170467
+        }
+      ]
+    },
+    {
+      "query": "agent push to github?",
+      "pass": false,
+      "blob": "prefer free routes: no paid replit connector; sync via github + gitbook (father 2026-10-05 6:44 pm ct).",
+      "hits": [
+        {
+          "id": "lesson-49c945a3fdb7",
+          "fact": "Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 2026-10-05 6:44 PM CT).",
+          "evidenceIds": [
+            "rec-1791245241191-e8b45824",
+            "rec-1791245241191-65bdf93f",
+            "rec-1791245241191-23a67701",
+            "rec-1791245241191-b0fd8f45",
+            "rec-1791245241191-8afa283d",
+            "rec-1791245241191-dc449407",
+            "rec-1791245241191-f0f17324",
+            "rec-1791245241191-77c1efc9",
+            "rec-1791245241191-8e730ec9"
+          ],
+          "confidence": 0.95,
+          "terms": [
+            "lesson",
+            "father",
+            "paid",
+            "2026",
+            "gitbook",
+            "prefer",
+            "github",
+            "command",
+            "center",
+            "tessera",
+            "buy",
+            "replit"
+          ],
+          "n": 9,
+          "score": 0.9347358985170467
+        }
+      ]
+    },
+    {
+      "query": "full copy openmanus?",
+      "pass": true,
+      "top": "OpenManus lineage: recover portable pieces only; do not full-copy into TESSERA."
+    },
+    {
+      "query": "buy cl1 hardware today?",
+      "pass": false,
+      "blob": "prefer free routes: no paid replit connector; sync via github + gitbook (father 2026-10-05 6:44 pm ct).",
+      "hits": [
+        {
+          "id": "lesson-49c945a3fdb7",
+          "fact": "Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 2026-10-05 6:44 PM CT).",
+          "evidenceIds": [
+            "rec-1791245241191-e8b45824",
+            "rec-1791245241191-65bdf93f",
+            "rec-1791245241191-23a67701",
+            "rec-1791245241191-b0fd8f45",
+            "rec-1791245241191-8afa283d",
+            "rec-1791245241191-dc449407",
+            "rec-1791245241191-f0f17324",
+            "rec-1791245241191-77c1efc9",
+            "rec-1791245241191-8e730ec9"
+          ],
+          "confidence": 0.95,
+          "terms": [
+            "lesson",
+            "father",
+            "paid",
+            "2026",
+            "gitbook",
+            "prefer",
+            "github",
+            "command",
+            "center",
+            "tessera",
+            "buy",
+            "replit"
+          ],
+          "n": 9,
+          "score": 0.6739128805855172
+        }
+      ]
+    }
+  ]
+}

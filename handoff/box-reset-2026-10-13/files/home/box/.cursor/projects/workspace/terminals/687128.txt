@@ -1,0 +1,21 @@
+---
+pid: 1217825
+cwd: "/workspace/sec-history/TESSERA"
+command: "cd /workspace/sec-history/TESSERA && for f in artifacts/api-server/.local-data/natal-vault.json archive/from-gitbook/archive/moved/1T archive/from-gitbook/archive/moved/T44/artifacts/api-server/.local-data/natal-vault.json archive/from-gitbook/archive/moved/collink1007-XXX/tess/.replit archive/from-gitbook/archive/moved/Zz/.replit .replit; do echo \"$f | first $(git log --all --diff-filter=A --format=%h -- $f|tail -1) | last $(git log --all -1 --format=%h -- $f) | $(git cat-file -e HEAD:$f 2>/dev/null && echo HEAD || echo gone)\"; done\necho ---PAT; git grep -lE 'AKIA[0-9A-Z]{16}|xox[bp]-|sk-or-v1-[0-9a-f]{20}|xai-[A-Za-z0-9]{30}|AIza[0-9A-Za-z_-]{35}|gh[pousr]_[A-Za-z0-9]{36}|BEGIN [A-Z ]*PRIVATE KEY|postgres(ql)?://[^:@/ ]+:[^@ ]{6,}@' $(git rev-list --all) -- ':!archive/from-gitbook/archive/moved/1T' 2>/dev/null | sed 's/^[0-9a-f]*://' | sort | uniq -c | sort -rn | head -30\necho ---REPLITKEYS; git log --all -p -- '*.replit' | grep -E '^\\+[A-Z_]*(KEY|SECRET|TOKEN|PRIVATE|MNEMONIC|SEED)[A-Z_]* *= *\"[^\"]{12,}\"' | sed -E 's/=.*/=<redacted>/' | sort | uniq -c | head -40\necho; git branch --contains a502322 | grep -c .; git merge-base --is-ancestor a502322 main && echo onmain; gh api repos/vitalitychems-dot/TESSERA/commits/a502322/pulls --jq '.[]|\"\\(.number) \\(.head.ref) \\(.user.login) \\(.merged_at)\"'; git log --all -5 --format='%h %an|%cn|%G?|%s' --author=Tessera --committer=Tessera"
+status: failed   
+started_at: 2026-10-12T23:42:02.256Z
+running_for_ms: 316031   
+---
+artifacts/api-server/.local-data/natal-vault.json | first 4ba3fe04 | last 3f16ae15 | gone
+archive/from-gitbook/archive/moved/1T | first c535df98 | last 571cef4b | gone
+archive/from-gitbook/archive/moved/T44/artifacts/api-server/.local-data/natal-vault.json | first c535df98 | last c535df98 | HEAD
+archive/from-gitbook/archive/moved/collink1007-XXX/tess/.replit | first c535df98 | last b84e4abc | HEAD
+archive/from-gitbook/archive/moved/Zz/.replit | first c535df98 | last 7c8d4d3b | gone
+.replit | first 4d68d2b3 | last 8b11b1fa | HEAD
+---PAT
+
+---
+exit_code: unknown
+elapsed_ms: 316030
+ended_at: 2026-10-12T23:47:18.286Z
+---

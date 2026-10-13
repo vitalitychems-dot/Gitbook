@@ -1,0 +1,18 @@
+---
+pid: 1445753
+cwd: "/workspace/rea-batch"
+command: "cd /workspace/pubscan/tree && git fetch -q /workspace/pubscan/work.git main:refs/remotes/new/main && git checkout -q -B rebased refs/remotes/new/main && git -c user.name=vitalitychems-dot -c user.email=332565808+vitalitychems-dot@users.noreply.github.com cherry-pick 43d3d319 fdce23ea >/dev/null && git log --format='%h %ae %ce %s' -3 && git rev-parse HEAD"
+status: succeeded
+started_at: 2026-10-13T01:13:05.534Z
+running_for_ms: 64423    
+---
+4f354393 332565808+vitalitychems-dot@users.noreply.github.com 332565808+vitalitychems-dot@users.noreply.github.com Widen git-crypt to all .env files and keep .env.example readable
+fa9a92d8 332565808+vitalitychems-dot@users.noreply.github.com 332565808+vitalitychems-dot@users.noreply.github.com Encrypt secret paths with git-crypt and restore the token fixture after the history scrub
+0f5eab28 332565808+vitalitychems-dot@users.noreply.github.com 332565808+vitalitychems-dot@users.noreply.github.com Add a make-it-real bridge from voted world objects to real code
+4f354393ad7f0197540ad6d25999f857691b467d
+
+---
+exit_code: 0
+elapsed_ms: 64423
+ended_at: 2026-10-13T01:14:09.957Z
+---

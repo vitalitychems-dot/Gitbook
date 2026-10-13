@@ -1,0 +1,244 @@
+diff --git a/mesh/queue/README.md b/mesh/queue/README.md
+new file mode 100644
+index 00000000..95be45ea
+--- /dev/null
++++ b/mesh/queue/README.md
+@@ -0,0 +1,15 @@
++# Task queue mirror
++
++Cloud agents on TESSERA cannot read the private Gitbook repository. `TASKS.mirror.json` is a read-only copy of Gitbook `mesh/queue/TASKS.json`. The `source` field records which snapshot was copied.
++
++**Claims still happen in Gitbook.** To claim a task, set `status` to `claimed`, plus `claimed_by`, `claimed_at`, and `claim_lock=<agent>:<gitbook_main_sha>`, in one commit to Gitbook `main` via a pull request. Editing this mirror does not claim a task. A claim older than 6 hours with no pull request is stale and may be re-queued. One task per cloud agent, one branch per task. Two tasks must not touch the same scope at once.
++
++Check the mirror before using it:
++
++```sh
++node scripts/check-task-mirror.mjs
++```
++
++The checker requires unique task ids, a `status` of `queued`, `claimed`, `blocked`, or `done`, and a `scope` array of non-empty strings on every task. It exits non-zero when the file is missing, not valid JSON, or fails those checks.
++
++Refresh the mirror by copying Gitbook `mesh/queue/TASKS.json` and keeping the `source` header. Do not add or claim tasks in this file.
+diff --git a/mesh/queue/TASKS.mirror.json b/mesh/queue/TASKS.mirror.json
+new file mode 100644
+index 00000000..689d6933
+--- /dev/null
++++ b/mesh/queue/TASKS.mirror.json
+@@ -0,0 +1,14 @@
++{
++  "source": "Gitbook mesh/queue/TASKS.json @ 2026-10-13, read-only mirror",
++  "schema": "mesh-queue/v1",
++  "rules": "Claim by setting status=claimed, claimed_by, claimed_at and claim_lock=<agent>:<gitbook_main_sha> in ONE commit to main via PR. A claim older than 6h with no PR is stale and may be re-queued. One task per cloud agent, one branch per task. Never two tasks touching the same scope at once (dispatch.py enforces).",
++  "tasks": [
++    {"id":"Q-001","repo":"Gitbook","scope":["review/","merge/","intake/log.md"],"title":"Rebase Gitbook PR #45 (desk/gb-063-hyb-011) onto main","acceptance":["git rebase origin/main succeeds with no conflict markers","mesh/queue/autogate.sh Gitbook <pr> passes"],"lane":"Build","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
++    {"id":"Q-002","repo":"Gitbook","scope":["intake/log.md","mesh/HANDOFF.md"],"title":"Land GB-067 + GB-068 (Build PASS 2026-10-13, see GATE-2026-10-13-GB-067-068.md)","acceptance":["intake/log.md rows all 12 columns, no duplicate IDs","mesh/HANDOFF.md 6-column table, all relative links resolve","autogate passes"],"lane":"Build","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null,"depends_on":[]},
++    {"id":"Q-003","repo":"Gitbook","scope":["history/coordination/agent-checkins.md","merge/CONSOLIDATION-MAP-2026-10-12.md","merge/hyb-008-olive.md","mesh/TRUE-TODAY.md","review/wave-6.md"],"title":"Rename leftover GitbookAI references to GitMesh (5 files as of 8138ea2f; keep historical quotes intact)","acceptance":["git grep -i gitbookai only hits quoted history lines, listed in PR body","autogate passes"],"lane":"Moderator","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
++    {"id":"Q-004","repo":"TESSERA","scope":["artifacts/v2/src/brain/rea/"],"title":"Retry generative_agents REA ingest (shallow, license kept)","acceptance":["REA record has license + commit SHA","v2 tests pass on Node 22"],"lane":"Tessera","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
++    {"id":"Q-005","repo":"TESSERA","scope":["artifacts/v2/src/brain/embed/"],"title":"Embedding recall for brain memory graph (blocked until a small embedding model can be fetched)","acceptance":["recall@k on held-out set beats current 14.9% baseline","v2 tests pass"],"lane":"Tessera","status":"blocked","blocked_reason":"model download failed on box 2026-10-13","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
++    {"id":"Q-006","repo":"TESSERA","scope":["artifacts/v2/src/brain/affect/","artifacts/v2/test/"],"title":"Improve emotion recognition (stuck at 72% on 50 unseen; low on 218-line mesh set)","acceptance":["emotion accuracy on held-out 50 > 72%","no regression on intent (86%)","v2 tests pass"],"lane":"Pharaoh","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
++    {"id":"Q-007","repo":"TESSERA","scope":["artifacts/gitai/src/server.mjs","artifacts/gitai/src/api.mjs"],"title":"Sign the GitAI spectator session cookie (cookie is currently the plain handle)","acceptance":["forged cookie gets 401","GitAI + v2 tests pass"],"lane":"Security","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null}
++  ]
++}
+diff --git a/scripts/check-task-mirror.mjs b/scripts/check-task-mirror.mjs
+new file mode 100644
+index 00000000..4364e322
+--- /dev/null
++++ b/scripts/check-task-mirror.mjs
+@@ -0,0 +1,100 @@
++/**
++ * Validate the read-only Gitbook task-queue mirror.
++ *
++ * Checks mesh/queue/TASKS.mirror.json: task ids are unique, each status is
++ * queued, claimed, blocked, or done, and each scope is an array of strings.
++ * Claims still happen in Gitbook. This script does not claim tasks.
++ *
++ * Usage: node scripts/check-task-mirror.mjs [path]
++ */
++import { readFileSync } from "node:fs";
++import { dirname, join } from "node:path";
++import { fileURLToPath, pathToFileURL } from "node:url";
++
++const STATUSES = new Set(["queued", "claimed", "blocked", "done"]);
++
++export const defaultMirrorPath = join(
++  dirname(fileURLToPath(import.meta.url)),
++  "../mesh/queue/TASKS.mirror.json",
++);
++
++export function validateTaskMirror(doc) {
++  const errors = [];
++  if (doc === null || typeof doc !== "object" || Array.isArray(doc)) {
++    return { ok: false, errors: ["mirror must be a JSON object"] };
++  }
++  if (doc.schema !== "mesh-queue/v1") {
++    errors.push('schema must be "mesh-queue/v1"');
++  }
++  if (typeof doc.source !== "string" || !/^Gitbook mesh\/queue\/TASKS\.json @ .+?, read-only mirror$/.test(doc.source)) {
++    errors.push(
++      'source must be "Gitbook mesh/queue/TASKS.json @ <date>, read-only mirror"',
++    );
++  }
++  if (!Array.isArray(doc.tasks)) {
++    errors.push("tasks must be an array");
++    return { ok: false, errors };
++  }
++
++  const seen = new Set();
++  doc.tasks.forEach((task, index) => {
++    const where = `tasks[${index}]`;
++    if (task === null || typeof task !== "object" || Array.isArray(task)) {
++      errors.push(`${where} must be an object`);
++      return;
++    }
++    if (typeof task.id !== "string" || task.id.trim() === "") {
++      errors.push(`${where}.id must be a non-empty string`);
++    } else if (seen.has(task.id)) {
++      errors.push(`${where}.id ${JSON.stringify(task.id)} is duplicated`);
++    } else {
++      seen.add(task.id);
++    }
++    if (!STATUSES.has(task.status)) {
++      errors.push(
++        `${where}.status must be one of queued, claimed, blocked, done`,
++      );
++    }
++    if (!Array.isArray(task.scope)) {
++      errors.push(`${where}.scope must be an array`);
++    } else if (task.scope.some((item) => typeof item !== "string" || item.trim() === "")) {
++      errors.push(`${where}.scope must be an array of non-empty strings`);
++    }
++  });
++
++  return { ok: errors.length === 0, errors };
++}
++
++export function checkMirrorFile(path = defaultMirrorPath) {
++  let text;
++  try {
++    text = readFileSync(path, "utf8");
++  } catch (error) {
++    return { ok: false, errors: [`cannot read ${path}: ${error.message}`] };
++  }
++  let doc;
++  try {
++    doc = JSON.parse(text);
++  } catch (error) {
++    return { ok: false, errors: [`invalid JSON in ${path}: ${error.message}`] };
++  }
++  return validateTaskMirror(doc);
++}
++
++function invokedDirectly() {
++  const entry = process.argv[1];
++  return entry !== undefined && import.meta.url === pathToFileURL(entry).href;
++}
++
++if (invokedDirectly()) {
++  const target = process.argv[2] ?? defaultMirrorPath;
++  const result = checkMirrorFile(target);
++  if (!result.ok) {
++    for (const error of result.errors) {
++      console.error(error);
++    }
++    process.exit(1);
++  }
++  const doc = JSON.parse(readFileSync(target, "utf8"));
++  console.log(`ok tasks=${doc.tasks.length}`);
++}
+diff --git a/scripts/check-task-mirror.test.mjs b/scripts/check-task-mirror.test.mjs
+new file mode 100644
+index 00000000..47ac1a89
+--- /dev/null
++++ b/scripts/check-task-mirror.test.mjs
+@@ -0,0 +1,78 @@
++import assert from "node:assert/strict";
++import { spawnSync } from "node:child_process";
++import { mkdtempSync, writeFileSync } from "node:fs";
++import { tmpdir } from "node:os";
++import { join } from "node:path";
++import { test } from "node:test";
++import { fileURLToPath } from "node:url";
++import {
++  checkMirrorFile,
++  defaultMirrorPath,
++  validateTaskMirror,
++} from "./check-task-mirror.mjs";
++
++const scriptPath = fileURLToPath(new URL("./check-task-mirror.mjs", import.meta.url));
++
++function sample(tasks) {
++  return {
++    source: "Gitbook mesh/queue/TASKS.json @ 2026-10-13, read-only mirror",
++    schema: "mesh-queue/v1",
++    rules: "fixture",
++    tasks,
++  };
++}
++
++test("the committed mirror has unique ids, allowed statuses, and scope arrays", () => {
++  const result = checkMirrorFile(defaultMirrorPath);
++  assert.deepEqual(result, { ok: true, errors: [] });
++});
++
++test("duplicate ids, unknown status, and a non-array scope fail", () => {
++  const duplicate = validateTaskMirror(
++    sample([
++      { id: "Q-001", status: "queued", scope: ["a/"] },
++      { id: "Q-001", status: "done", scope: ["b/"] },
++    ]),
++  );
++  assert.equal(duplicate.ok, false);
++  assert.match(duplicate.errors.join("\n"), /duplicated/);
++
++  const status = validateTaskMirror(
++    sample([{ id: "Q-002", status: "open", scope: ["a/"] }]),
++  );
++  assert.equal(status.ok, false);
++  assert.match(status.errors.join("\n"), /status must be one of/);
++
++  const scope = validateTaskMirror(
++    sample([{ id: "Q-003", status: "blocked", scope: "artifacts/v2/" }]),
++  );
++  assert.equal(scope.ok, false);
++  assert.match(scope.errors.join("\n"), /scope must be an array/);
++});
++
++test("cli exits 0 for the committed mirror and non-zero for a bad file", () => {
++  const good = spawnSync(process.execPath, [scriptPath], { encoding: "utf8" });
++  assert.equal(good.status, 0, good.stderr);
++  assert.match(good.stdout, /^ok tasks=\d+\n$/);
++
++  const dir = mkdtempSync(join(tmpdir(), "task-mirror-"));
++  const badPath = join(dir, "TASKS.mirror.json");
++  writeFileSync(
++    badPath,
++    JSON.stringify(
++      sample([
++        { id: "Q-001", status: "queued", scope: ["a/"] },
++        { id: "Q-001", status: "claimed", scope: [] },
++      ]),
++    ),
++  );
++  const bad = spawnSync(process.execPath, [scriptPath, badPath], { encoding: "utf8" });
++  assert.notEqual(bad.status, 0);
++  assert.match(bad.stderr, /duplicated/);
++
++  const missing = spawnSync(process.execPath, [scriptPath, join(dir, "missing.json")], {
++    encoding: "utf8",
++  });
++  assert.notEqual(missing.status, 0);
++  assert.match(missing.stderr, /cannot read/);
++});
+diff --git a/scripts/package.json b/scripts/package.json
+index 02caf467..70ff7077 100644
+--- a/scripts/package.json
++++ b/scripts/package.json
+@@ -5,7 +5,7 @@
+   "type": "module",
+   "scripts": {
+     "hello": "tsx ./src/hello.ts",
+-    "test": "node --test ./suite-policy.test.mjs ./historical-merge-gate.test.mjs ./eval/write-result.test.mjs",
++    "test": "node --test ./suite-policy.test.mjs ./historical-merge-gate.test.mjs ./eval/write-result.test.mjs ./check-task-mirror.test.mjs",
+     "typecheck": "tsc -p tsconfig.json --noEmit"
+   },
+   "devDependencies": {

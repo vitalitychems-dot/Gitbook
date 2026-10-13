@@ -1,0 +1,23 @@
+---
+pid: 143341
+cwd: "/workspace"
+command: "timeout 45 python3 << 'PY'\nimport json, os, time\nNOW=time.time()\nprint('now', time.strftime('%H:%M:%S'))\nages=[]\nn2=0\nwasted=0\nfor line in open('/workspace/dedupe/all-groups.jsonl'):\n    g=json.loads(line)\n    paths=[]\n    for p in g['paths']:\n        if not os.path.isfile(p):\n            continue\n        st=os.stat(p)\n        ages.append((NOW-st.st_mtime)/60)\n        if NOW-st.st_mtime >= 30*60:\n            paths.append(p)\n    if len(paths)>=2:\n        n2+=1\n        wasted += g['size']*(len(paths)-1)\nages.sort()\nprint('ages min/med/max', round(ages[0],1) if ages else None, round(ages[len(ages)//2],1) if ages else None, round(ages[-1],1) if ages else None)\nprint('groups >=2 aged>=30m', n2, 'est_wasted_gb', round(wasted/1024**3,2))\nprint('/tmp/gb exists', os.path.isdir('/tmp/gb'))\nprint('/tmp/gb70', os.path.isdir('/tmp/gb70'), '/tmp/tchk', os.path.isdir('/tmp/tchk'))\nif os.path.isdir('/tmp/gb'):\n    # newest mtime\n    newest=os.stat('/tmp/gb').st_mtime\n    count=0\n    for root,dirs,files in os.walk('/tmp/gb'):\n        for f in files:\n            try:\n                m=os.path.getmtime(os.path.join(root,f))\n                if m>newest: newest=m\n            except: pass\n            count+=1\n            if count>5000: break\n        if count>5000: break\n    print('/tmp/gb newest_age_min', round((NOW-newest)/60,1), 'files_seen', count)\nPY\ntimeout 10 df -h /; timeout 10 du -sh /tmp/gb 2>&1 | head -3"
+title: "Confirm ages ready; check temps"
+status: succeeded
+started_at: 2026-10-13T11:18:23.048Z
+running_for_ms: 1400     
+---
+now 06:18:23
+ages min/med/max 0.2 30.8 32.0
+groups >=2 aged>=30m 6210 est_wasted_gb 1.95
+/tmp/gb exists False
+/tmp/gb70 False /tmp/tchk False
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G   68G   58G  55% /
+du: cannot access '/tmp/gb': No such file or directory
+
+---
+exit_code: 0
+elapsed_ms: 1400
+ended_at: 2026-10-13T11:18:24.448Z
+---

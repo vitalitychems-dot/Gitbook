@@ -1,0 +1,10 @@
+1	prefix-legend (#4)	tokens BUILD-LOG	1675	1336	-20.2%	PASS
+2	key-hoist	tokens 200 memory rows (minified)	11956	10171	-14.9%	PASS
+3	resonate-chain (#11) [dedupe>ws>prefix]	tokens BUILD-LOG vs packContext	1624	1286	-20.8%	PASS
+4	coincide 3-of-3	wrong actions /1000 (checks 90% accurate, seed 7)	44	0	-100.0%	PASS
+5	phase stagger K=4	max starts in one tick (12 workers)	12	3	-75.0%	PASS
+6	valve append-only	rewrites accepted of 10	10	0	-100.0%	PASS
+7	bifilar pairing	leaked opens undetected (5 injected)	5	0	-100.0%	PASS
+8	earth-return ref	bytes over 7-hop handoff chain	46879	6879	-85.3%	PASS
+9	tuned-clip (q="relation", 10 matches)	matching lines kept, 40-line cap (higher better)	1	10	900.0%	PASS
+10	resonate-batch (best B=16)	median ms, token-count memory file (B=1 vs best)	0.089	0.015	-83.1%	PASS

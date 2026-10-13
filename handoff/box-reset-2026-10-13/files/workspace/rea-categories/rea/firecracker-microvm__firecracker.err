@@ -1,0 +1,68 @@
+{"rea_progress":{"phase":"analyze_javascript_application","completed":0,"total":1,"message":"Inventorying and parsing application artifacts","sequence":1}}
+{"rea_progress":{"phase":"read_javascript_artifacts","completed":0,"total":1,"message":"Reading inventoried JavaScript application sources","sequence":2}}
+{"rea_progress":{"phase":"parse_javascript_sources","completed":0,"total":1,"message":"Parsing and projecting 55 application source files","sequence":3}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting docs/cpu_templates/schema.json (1/55)","sequence":4}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting resources/seccomp/aarch64-unknown-linux-musl.json (2/55)","sequence":5}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting resources/seccomp/unimplemented.json (3/55)","sequence":6}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting resources/seccomp/x86_64-unknown-linux-musl.json (4/55)","sequence":7}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_AMD_GENOA_5.10host.json (5/55)","sequence":8}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_AMD_GENOA_6.18host.json (6/55)","sequence":9}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_AMD_GENOA_6.1host.json (7/55)","sequence":10}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_AMD_MILAN_5.10host.json (8/55)","sequence":11}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_AMD_MILAN_6.18host.json (9/55)","sequence":12}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_AMD_MILAN_6.1host.json (10/55)","sequence":13}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_N1_5.10host.json (11/55)","sequence":14}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_N1_6.18host.json (12/55)","sequence":15}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_N1_6.1host.json (13/55)","sequence":16}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V1_5.10host.json (14/55)","sequence":17}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V1_6.18host.json (15/55)","sequence":18}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V1_6.1host.json (16/55)","sequence":19}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V2_5.10host.json (17/55)","sequence":20}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V2_6.18host.json (18/55)","sequence":21}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V2_6.1host.json (19/55)","sequence":22}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V3_5.10host.json (20/55)","sequence":23}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V3_6.18host.json (21/55)","sequence":24}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_ARM_NEOVERSE_V3_6.1host.json (22/55)","sequence":25}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_CASCADELAKE_5.10host.json (23/55)","sequence":26}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_CASCADELAKE_6.18host.json (24/55)","sequence":27}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_CASCADELAKE_6.1host.json (25/55)","sequence":28}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_GRANITE_RAPIDS_5.10host.json (26/55)","sequence":29}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_GRANITE_RAPIDS_6.18host.json (27/55)","sequence":30}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_GRANITE_RAPIDS_6.1host.json (28/55)","sequence":31}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_ICELAKE_5.10host.json (29/55)","sequence":32}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_ICELAKE_6.18host.json (30/55)","sequence":33}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_ICELAKE_6.1host.json (31/55)","sequence":34}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_SAPPHIRE_RAPIDS_5.10host.json (32/55)","sequence":35}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_SAPPHIRE_RAPIDS_6.18host.json (33/55)","sequence":36}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/cpu_template_helper/fingerprint_INTEL_SAPPHIRE_RAPIDS_6.1host.json (34/55)","sequence":37}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/AARCH64_WITH_SVE_AND_PAC.json (35/55)","sequence":38}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/C3.json (36/55)","sequence":39}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/GNR_TO_T2_5.10.json (37/55)","sequence":40}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/GNR_TO_T2_6.1.json (38/55)","sequence":41}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/SPR_TO_T2_5.10.json (39/55)","sequence":42}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/SPR_TO_T2_6.1.json (40/55)","sequence":43}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/T2.json (41/55)","sequence":44}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/T2A.json (42/55)","sequence":45}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/T2CL.json (43/55)","sequence":46}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/T2S.json (44/55)","sequence":47}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/custom_cpu_templates/V1N1.json (45/55)","sequence":48}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/metadata.json (46/55)","sequence":49}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/metadata_invalid.json (47/55)","sequence":50}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config.json (48/55)","sequence":51}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_cpu_template_C3.json (49/55)","sequence":52}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_missing_mem_size_mib.json (50/55)","sequence":53}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_missing_vcpu_count.json (51/55)","sequence":54}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_network.json (52/55)","sequence":55}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_smt_true.json (53/55)","sequence":56}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_with_mmdsv1.json (54/55)","sequence":57}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/framework/vm_config_with_mmdsv2.json (55/55)","sequence":58}}
+{"rea_progress":{"phase":"build_javascript_application_graph","completed":0,"total":1,"message":"Constructing application and Electron boundary relationships","sequence":59}}
+{"rea_progress":{"phase":"seal_javascript_application_graph","completed":0,"total":1,"message":"Sealing the validated application graph","sequence":60}}
+{"rea_progress":{"phase":"build_javascript_semantic_graph","completed":0,"total":1,"message":"Binding and validating static semantic relationships","sequence":61}}
+{"rea_progress":{"phase":"seal_javascript_semantic_graph","completed":0,"total":1,"message":"Validating and sealing the semantic graph","sequence":62}}
+{"rea_progress":{"phase":"validate_javascript_application_result","completed":0,"total":1,"message":"Validating result metadata and cross-graph bindings","sequence":63}}
+{"rea_progress":{"phase":"create_javascript_application_evidence","completed":0,"total":1,"message":"Creating and hashing application analysis Evidence","sequence":64}}
+{"rea_progress":{"phase":"seal_javascript_application_result","completed":0,"total":1,"message":"Sealing the complete application analysis result","sequence":65}}
+{"rea_progress":{"phase":"validate_javascript_application_evidence","completed":0,"total":1,"message":"Validating the immutable application Evidence JSON","sequence":66}}
+{"rea_progress":{"phase":"hash_javascript_application_evidence","completed":0,"total":1,"message":"Hashing the complete application analysis Evidence","sequence":67}}
+{"rea_progress":{"phase":"analyze_javascript_application","completed":1,"total":1,"message":"Application graph and Electron boundaries reconstructed","terminal":true,"sequence":68}}

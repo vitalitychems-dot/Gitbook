@@ -1,0 +1,113 @@
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -70,6 +70,7 @@
+ | O8 | Offline Internet page (mesh/offline-internet.md) | not recorded | 2026-10-12 | PR #48 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #48 body; four gates not recorded). Published 7181709 (PR #48, merged 17:17 CT; commit 2263aea9); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #48) | Secret grep on diff (PR body) | none | none |
+ | O9 | LoRa/Meshtastic research note (review/lora-meshtastic-research.md; doc only, no code until hardware exists) | not recorded | 2026-10-12 | PR #49 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #49 body; four gates not recorded). Published 3bdcd45 (PR #49, merged 17:17 CT; commit c43afe9e); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #49) | Secret grep on diff (PR body) | none | none |
+ | O11 | Secure mesh page (mesh/secure-mesh.md: end-to-end mesh, content addressing, OPSEC, honest gateway limits) | not recorded | 2026-10-12 | PR #50 body | TBD | published | No gate, secret-grep or Father's yes recorded in the PR #50 body or on the board. Published 2344334 (PR #50, merged 17:18 CT; commit 8592dd50); link check clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #50) | Link check (PR body) | Gate evidence for PR #50 to be recorded by Tessera | No gate record |
+-| GB-066 | Intake log backfill for PR #46 to PR #50 (GB-063, GitMesh rename, O8, O9, O11) | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 6:39 PM CT | TBD | in review |  | Gitbook Moderator | git apply --check on main 2344334 | Gitbook Moderator reviews (gate 1 of 4) | none |
++| GB-066 | Intake log backfill for PR #46 to PR #50 (GB-063, GitMesh rename, O8, O9, O11) | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 6:39 PM CT | TBD | published | Four gates cleared (Moderator 6:43 PM CT, Tessera, Security, Build) and auto-approved under Father's 5:15 PM CT rule, as stated in the PR #51 body (REPORTED). Published 3fc9d89 (PR #51, merged 19:11 CT; diff sha256 79181882…8536); Tessera receipt pending (sync ledger #14) | Tessera (merged PR #51) | Build PASS (/workspace/build-gate/GATE-2026-10-12-GB-066.md, per PR #51 body) | none | none |
++| GB-067 | Single lane handoff: mesh/HANDOFF.md rewritten as one line per item (id, lane, state, where left, next step, link) | Gitbook / Cordnation | 2026-10-13 | Tessera lane scope 12:57 AM CT; Security mesh-cleanup proposal 2026-10-12 8:20 PM CT | TBD | in review |  | Gitbook Moderator | git apply --check on main 0f05d58 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ 
+ Held, not logged: four direct commits to `main` after cdc95b7 with no PR (44f5266, d2b8339, 779135e, fcabd13; 2026-10-06, 15:13–15:27 CT). Their attribution waits on Father's answer; no intake rows until then.
+--- a/mesh/HANDOFF.md
++++ b/mesh/HANDOFF.md
+@@ -1,40 +1,64 @@
+ # Lane handoff
+ 
+-**As of:** 2026-10-05 ~6 PM CT  
+-**Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)  
+-**Label:** Existing lane notes are **REPORTED** from issue #2. The Replit entry is a direct update from this session; other Replit sessions are not independently verified here.
+-
+-## Where each lane left off
+-
+-- **Tessera** — [Comment 6004849965](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004849965) (5:54 PM CT): Father said yes to Improvement list 1. Implementation is in progress. Tessera claimed the list so other lanes do not start those items. A consolidation map is also in progress. Earlier the same hour: HYB-012 merged as TESSERA `50876d40`, HYB-005 merged as TESSERA `5c1137fa`, Gitbook main `bc6b328` ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185), [comment 6004515093](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004515093)).
+-- **Cordnation** — No Cordnation-signed check-in in this window. [Comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185) reports GB-029 (intake log backfill) merged at 5:28 PM CT, and says HYB-SELFFIX is a placeholder until Cordnation numbers it.
+-- **Moderator** — No Moderator-signed check-in in this window. [Comment 6004849965](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004849965) says the list-1 items that were approved had passed Moderator. Held FAIL ids are listed below.
+-- **Command Center** — No Command Center-signed check-in on issue #2. Last board mention of the feed role is Tessera's note that Command Center feeds the bulk update ([comment 6003943663](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003943663)).
+-- **Mesh Cloud** — No Mesh Cloud check-in on issue #2.
+-- **Build** — No Build-signed check-in in this window. Tessera reports Build PASS on GB-029 and on TESSERA PR #1 ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185), [comment 6004345580](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004345580)).
+-- **Security** — Last Security-signed post is [comment 6002110089](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002110089). Later Security PASS notes are Tessera's, on HYB-012, HYB-005, and GB-029.
+-- **Grok Bot** — Last Grok Bot posts are the HYB-006 / HYB-007 analysis (through [comment 6001410360](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001410360)). No later Grok Bot check-in.
+-- **Replit** — Direct check-in from this session (2026-10-05): HYB-012 is closed after [TESSERA PR #2](https://github.com/vitalitychems-dot/TESSERA/pull/2) merged as `50876d40` (head `cb19f210`). The PR added only `route-inventory.ts` and its tests; it did not change route modules, mounting, endpoint behavior, or flags. The PR body reports typecheck, suite, and focused tests passing; API integration tests were skipped because `TESSERA_TEST_DATABASE_URL` was unset. At the time of this check-in, TESSERA main was `b1679659` and its `validate` check passed. Current TESSERA main is `a024d83f90fb1bfe9ca82a5b5cc4a435df91a422`; its `validate` check is failing (latest checked run). This session verified the HYB-012 PR diff and its `b1679659` check run through GitHub API but did not rerun tests. The allow-list contains ten duplicate METHOD+path keys; triage of the eight non-quantum keys remains unassigned. No additional Replit task appears in the checked board updates; do not start duplicate-route triage or benchmark/eval work until a new scoped task is posted. Other Replit sessions are not independently verified by this entry.
+-
+-## What to do next
+-
+-- After Moderator + TESSERA gate + Security scrub, **Ready** opens the publish PR and merges (Build verifies when CI/Build applies; docs-only skip Build). **TESSERA does not push** and does not open the publish PR. Do not merge before gates clear.
+-- Leave the held ids below untouched.
+-- HYB-012's remaining work is triage of the 8 non-quantum duplicate routes. It is not assigned.
+-- Selffix phase 0 stays suggest-only: no branch, pull request, or merge from that dry run.
+-- [Comment 6004515093](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004515093): do not start a second benchmark or eval effort until those cards are posted on issue #2.
+-
+-## Held items and why
+-
+-- **IMP-001–008, IMP-017, IMP-018** — runtime. Not in the approved Gitbook list.
+-- **IMP-046, IMP-047** — depend on removals. Not started.
+-- **IMP-052–058, IMP-063** — need Father's yes. [Comment 6004849965](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004849965) also says IMP-052 (Ollama) is approved; that exception is REPORTED there, not re-decided here.
+-- **IMP-020, IMP-037, IMP-050, IMP-076** — Moderator FAIL. IMP-037 and IMP-076 stay as dated evidence; a current line is the allowed update, and this pass did not rewrite them.
++**As of:** 2026-10-13, 12:57 AM CT. Gitbook main `0f05d58`.
++**Owner:** Gitbook / Cordnation. The Gitbook helper is now part of Cordnation.
++**Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)
++
++This is the one handoff file. Each item has one line. When a lane finishes or hands off an item, it updates its line here. Status questions are answered from this page.
++
++Other records stay where they are: the [check-in ledger](../history/coordination/agent-checkins.md) (HYB-016, Cursor Project), the [to-do list](TODOS.md), the [intake log](../intake/log.md) and the [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md).
++
++Labels: REPORTED means a PR body or board note says so and it was not re-checked.
++
++## Items
++
++| Id | Lane | State | Where it was left | Next step (owner) | Link |
++|---|---|---|---|---|---|
++| GB-061 | Ready lane | in review | PR #39 head `71a8c78f`, open since Oct 9. Moderator PASS, Security FAIL (REPORTED, sync ledger #14) | Fix the Security finding and re-gate at the new head (Ready lane) | [PR #39](https://github.com/vitalitychems-dot/Gitbook/pull/39) |
++| GB-064 | Cordnation | held | Repo-scan package staged locally on `56a7a48` | Rev 2 when code-analysis batch 2/3 and the second-account scan finish (Cordnation) | [ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133318944) |
++| GB-065 | Gitbook desk | in review | PR #45 head `9004959b`, still titled GB-063 in places. Moderator FAIL (REPORTED). Its log hunk no longer applies to main | Fix the Moderator finding, rebase on main, then the four gates (Gitbook desk) | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
++| GB-066 | Cordnation | published | PR #51 merged as `3fc9d89`, Oct 12 7:11 PM CT | none | [PR #51](https://github.com/vitalitychems-dot/Gitbook/pull/51) |
++| GB-067 | Cordnation | in review | This page. One handoff file, one line per item | Moderator, then Tessera, Security and Build (Cordnation routes) | [intake log](../intake/log.md) |
++| GB-068 | Cordnation | in review | HYB-024 self-fix design page and backlog rename | Moderator, then Tessera, Security and Build (Cordnation routes) | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
++| PR #40 | Cursor | stale | Draft since Oct 9. Edits `mesh/TODOS.md` | Close or merge (Tessera or Father decides) | [PR #40](https://github.com/vitalitychems-dot/Gitbook/pull/40) |
++| PR #52 | Rick lane | published | Idle-mode page merged as `0f05d58`, Oct 12 7:55 PM CT. No GB number. The body said to wait for Father's yes; Build not recorded (REPORTED, sync ledger #14) | Tessera receipt, and a GB number if wanted (Tessera) | [PR #52](https://github.com/vitalitychems-dot/Gitbook/pull/52) |
++| HYB-010 | Media steward | unclaimed | Metadata only. Vitality stays out | Claim on issue #2 (any lane Tessera assigns) | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
++| HYB-011 | Gitbook desk | in review | Inside PR #45 (GB-065). 1T by name only | Same as GB-065 | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
++| HYB-013 | UI maintainer | stale | Copilot claim lapsed Oct 7 | Reassign (Tessera) | [ledger](../history/coordination/agent-checkins.md) |
++| HYB-015 | Gitbook desk | in review | Inside PR #45: a GitMesh rules summary only | Same as GB-065 | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
++| HYB-016 | Cursor Project | done | Ledger refreshed at `56a7a48`, Oct 12 4:09 PM CT. Kept by Father's yes, 4:40 PM CT | Cursor Project re-runs the refresh when main moves | [ledger](../history/coordination/agent-checkins.md) |
++| HYB-018 | Release steward | blocked | Deletion coverage recheck | Father's confirmation | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
++| HYB-019 | Product / mesh prep | blocked | Cortical Labs readiness | Father's decisions | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
++| HYB-022 | Brain lane | tested locally | Phase 1: 5/5 tests. S3 and S4 held by the memory cap | Promotion through normal review (Brain lane) | [Phase 1 result](../brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md) |
++| HYB-023 | Permanent-site lane | published | TESSERA `e5e5719` | SITE-001, SITE-003 and SITE-004 below | [coordination](PERMANENT-SITE-COORDINATION.md) |
++| HYB-024 | Tessera (design), Cordnation (publish) | in review | Phase 0 suggest-only dry run approved (REPORTED by Tessera). The dry runs show CI blocked by Actions billing | GB-068 gates. Phase 1 needs Father's yes | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
++| SITE-001 | Replit | open | No health-path evidence recorded | Record health-path evidence and the exact release payload (Replit) | [ledger](../history/coordination/agent-checkins.md) |
++| SITE-003, SITE-004 | Moderator, Security | unclaimed | Provenance and security review for publication | Claim, then Father approves the release payload | [ledger](../history/coordination/agent-checkins.md) |
++| Research pages | Grok Bot | ready | Was waiting on the self-fix file, which GB-068 now publishes | Small pages under `brain-consciousness/research/` (Grok Bot) | [consolidation map](../merge/CONSOLIDATION-MAP-2026-10-12.md) |
++| Catalog next twelve | none | unclaimed | No reply to comment 6100954845. The thread does not say which twelve | Tessera restates the list | [comment](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6100954845) |
++| TESSERA PR #80 | none | open, do not merge | Adds pen weights. Weights are not to be added | Close or keep open (Father) | [to-do list](TODOS.md) |
++| TESSERA PR #82, #87 | none | conflicted | #82 failed validate. #87 is a draft that conflicts with main | Rebase or close (owner of each) | [to-do list](TODOS.md) |
++| Held commits | Father | held | 44f5266, d2b8339, 779135e and fcabd13 (Oct 6) have no intake rows | Father's attribution answer | [intake log](../intake/log.md) |
++| CI billing | Father | blocked | TESSERA `validate` jobs never start (Actions spending limit) | Father fixes billing | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
++| Cursor routines | Father | blocked | Scheduled routines fail while the Cursor invoice is unpaid (REPORTED) | Father pays the invoice | — |
++| Key rotation | Father | open | No agent can do this | Father | [to-do list](TODOS.md) |
++
++## One owner per duty (Security proposal, Oct 12, 8:20 PM CT)
++
++- Father's digest and bulk yes-list: Command Center. Tessera signs off only on the Ready set.
++- Intake, numbering, Ready packaging, board status and this page: Gitbook / Cordnation.
++- Content and style gate: Gitbook Moderator.
++- Secrets, provenance and history gates: Security.
++- CI and build verify: Build.
++- Mesh and relay design: Mesh Cloud.
++- Admin decisions, merges and Father escalations: Tessera.
++
++Gate PASS results go into each lane's own gate file and its line here. Only FAIL or high findings ping Tessera directly. Retiring or hiding a bot needs Father's yes.
+ 
+ ## Rules
+ 
+-- Father cadence (live): after Moderator + TESSERA gate + Security scrub, **Ready** pushes (docs-only skip Build; CI/Build only for code/validators/scripts). **TESSERA owns gates + the 45-minute combined numbered list**; TESSERA does not push or open the publish PR. Father undoes by GB number (revert commit, never force-push).
+-- Origin Tessera repo and TESSERA main merges still need Father's word `merge`.
+-- Ready deletes no repositories. Old repositories are consolidated first; delete candidates go on a Father-yes checklist (see GB-048 Hybrid B tiers). Never Heretic / God's Eye View.
+-- Say **the Origin Tessera repo** (no personal GitHub handle).
+-- PR #13 MERGE landed HANDOFF Replit session update at `4f32b673` (HOLD lifted). This GB aligns Rules with the Ready-pusher lock only; lane body from #13 kept.
++- After the Moderator, the TESSERA gate and the Security scrub, Ready pushes. Docs-only items skip Build; code, validators and scripts go through CI/Build.
++- TESSERA main merges and Origin Tessera repo merges still need Father's word `merge`.
++- No repository or archive is deleted. Old copies are archived with a pointer.
++- 1T is named only, never opened.
++- Say "the Origin Tessera repo", not a personal handle.

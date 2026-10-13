@@ -1,0 +1,158 @@
+From 2cd026f7bf094fae4b4680c88b3c562b7dfa489b Mon Sep 17 00:00:00 2001
+From: vitalitychems-dot <332565808+vitalitychems-dot@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 04:24:45 -0500
+Subject: [PATCH] Moderator retro fixes for #60, #62, #63 + HANDOFF verdicts
+
+---
+ mesh/HANDOFF.md                    | 10 +++++++++
+ mesh/LANE-HANDOFF-2026-10-12.md    |  2 +-
+ mesh/queue/README.md               |  2 ++
+ mesh/queue/tests/bench.py          |  4 ++--
+ mesh/scoreboard/BULK-2026-10-13.md | 36 ++++++++++++++++--------------
+ mesh/scoreboard/metrics.jsonl      | 32 +++++++++++++-------------
+ 6 files changed, 50 insertions(+), 36 deletions(-)
+
+diff --git a/mesh/HANDOFF.md b/mesh/HANDOFF.md
+index 666e245..5550046 100644
+--- a/mesh/HANDOFF.md
++++ b/mesh/HANDOFF.md
+@@ -62,3 +62,13 @@ Gate PASS results go into each lane's own gate file and its line here. Only FAIL
+ - No repository or archive is deleted. Old copies are archived with a pointer.
+ - 1T is named only, never opened.
+ - Say "the Origin Tessera repo", not a personal handle.
++
++## Moderator retro verdicts (2026-10-13)
++
++- 2026-10-13 04:26 CT Moderator retro: PR #56 @4feab77 PASS, Father approval REPORTED by Tessera (2:41 AM CT)
++- 2026-10-13 04:26 CT Moderator retro: PR #57 @1c7db22 PASS
++- 2026-10-13 04:26 CT Moderator retro: PR #59 @4dd0106 PASS
++- 2026-10-13 04:26 CT Moderator retro: PR #60 @6b21df6 FAIL, fixed in this PR
++- 2026-10-13 04:26 CT Moderator retro: PR #61 @d0ee5a7 PASS
++- 2026-10-13 04:26 CT Moderator retro: PR #62 @dbd34db FAIL on (2), fixed in this PR; (6) cleared on Father approval REPORTED by Tessera (4:00 and 4:13 AM CT)
++- 2026-10-13 04:26 CT Moderator retro: PR #63 @243ddd4 FAIL, fixed in this PR
+diff --git a/mesh/LANE-HANDOFF-2026-10-12.md b/mesh/LANE-HANDOFF-2026-10-12.md
+index 9f49f57..613cc30 100644
+--- a/mesh/LANE-HANDOFF-2026-10-12.md
++++ b/mesh/LANE-HANDOFF-2026-10-12.md
+@@ -6,7 +6,7 @@
+ 
+ ## Already done
+ 
+-Grok Bot opened the consolidation map. Cursor wrote the pull request. Father merged it. Do not open that map again.
++Grok Bot opened the consolidation map. Cursor wrote the pull request. Tessera merged it (PR #44, after Father's yes at 3:57 PM CT), as intake/log.md records. Do not open that map again.
+ 
+ ## Not done, and why
+ 
+diff --git a/mesh/queue/README.md b/mesh/queue/README.md
+index 87ec4cf..95b09ca 100644
+--- a/mesh/queue/README.md
++++ b/mesh/queue/README.md
+@@ -7,3 +7,5 @@
+ 6. Protected paths change only via Father-approved Tessera PRs (`--father-approved`); `CODEOWNERS` mirrors them.
+ 7. Tests: `cd mesh/queue && python3 -m unittest tests.test_spawn`; benchmark: `python3 tests/bench.py`.
+ Gitbook is ~11 GB at depth 1, so autogate uses a blob-less, sparse checkout of only the changed files.
++
++Benchmark note (Moderator retro, 2026-10-13): the `tests/bench.py` catch-rate gain (old 4/20 → new 20/20) and spawn gain (old 6 → new 12) are SYNTHETIC-ONLY. They come from made-up test cases (crafted bad set, invented spawn scenario) and are not counted as a win. On the real queue, old and new select the same tasks.
+diff --git a/mesh/queue/tests/bench.py b/mesh/queue/tests/bench.py
+index 0f336d5..9d716f5 100644
+--- a/mesh/queue/tests/bench.py
++++ b/mesh/queue/tests/bench.py
+@@ -11,7 +11,7 @@ for name, (f, e) in list(BAD.items()) + [("GOOD", GOOD)]:
+     n = not G.check(r, "main", "pr", {"scope": SCOPE}, gitleaks=GL)["pass"]
+     if name != "GOOD": old += o; new += n
+     print(f"{name:22} old={'REJECT' if o else 'pass  '} new={'REJECT' if n else 'pass  '}")
+-print(f"catch-rate old {old}/{len(BAD)} new {new}/{len(BAD)}")
++print(f"SYNTHETIC-ONLY (crafted bad set, not counted as a win): catch-rate old {old}/{len(BAD)} new {new}/{len(BAD)}")
+ # Parallel: old dispatch.py rules (max 6, overlap only) vs new select (cap 12, caps/quarantine), offline (no open-PR files).
+ def old_select(q, mx=6):
+     picked, taken = [], []
+@@ -25,4 +25,4 @@ print("current queue: old", old_select(q), "new", [t["id"] for t in D.select(q)]
+ # Spawn scenario: 4 root tasks each proposing 4 children (disjoint sub-scopes); old dispatch has no spawn path.
+ q2 = {"tasks": [{"id": f"R{i}", "repo": "Gitbook", "scope": [f"area{i}/"], "title": "r", "acceptance": [], "status": "done"} for i in range(4)]}
+ for i in range(4): D.spawn(q2, f"R{i}", [{"title": "c", "repo": "Gitbook", "scope": [f"area{i}/c{j}/"]} for j in range(4)], f"R{i}")
+-print("spawn scenario (16 children): old", len(old_select(q2)), "new", len(D.select(q2)))
++print("SYNTHETIC-ONLY (invented spawn scenario, not counted as a win): spawn scenario (16 children): old", len(old_select(q2)), "new", len(D.select(q2)))
+diff --git a/mesh/scoreboard/BULK-2026-10-13.md b/mesh/scoreboard/BULK-2026-10-13.md
+index 2894312..e08f4db 100644
+--- a/mesh/scoreboard/BULK-2026-10-13.md
++++ b/mesh/scoreboard/BULK-2026-10-13.md
+@@ -1,20 +1,22 @@
+-**Scoreboard:** 16 kept improvements today, ~77,010 tokens per merged improvement (est.), median launch-to-merge 10.4 min, gate pass 59%.
++All before/after gains below are REPORTED (taken from the cited PR bodies, not re-checked by the Moderator).
+ 
+-1. Slow brain test sped up 93%: slow brain test B1-06 ms 1256 → 85 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/256))
+-2. Another slow brain test 4x faster: slow brain test s 1.7 → 0.4 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260))
+-3. Synapse memory layer finds the right linked memory far more often: recall@5 on 87 held-out relations 2 → 13 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/251))
+-4. Self-improvement gate blocks every unsafe patch: unsafe self-patches accepted (of 8) 8 → 0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/251))
+-5. Reads emotions much more accurately: affect macro-F1 (218 lines, nested CV) 0.23 → 0.537 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260))
+-6. Her self-improvement proposals now pass all safety gates (5/5, were 0/6): self-scan proposals passing 8 gates 0.0 → 1.0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260))
+-7. Fixed bug in her fallback memory search: fallback-embedding top-1 0.21 → 0.73 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/263))
+-8. Memory lookup about 33% faster: context predict p50 ms 4.9 → 3.3 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265))
+-9. Learns from each conversation as it happens: recall@5 after streaming learning 12 → 16 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265))
+-10. 8 free no-login data sources verified: live-data sources with verified terms 0 → 8 ([PR](https://github.com/vitalitychems-dot/Gitbook/pull/59))
+-11. First repo record with license and exact version: REA records with license+commit SHA 0 → 1 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/261))
+-12. Better at reading what the person wants: intent accuracy (218 real lines) 0.74 → 0.86 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/256))
+-13. Context ranker pulls the right memory slightly more often: recall@5 on 87 held-out relations 13 → 15 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265))
+-14. TESSERA agents can see the shared task list: queued tasks visible to TESSERA agents 0 → 7 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/264))
+-15. GitAI fake logins now rejected: forged spectator cookie accepted (HTTP 200=1) 1 → 0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/262))
+-16. GitMesh rename finished: docs with stale GitbookAI name 5 → 0 ([PR](https://github.com/vitalitychems-dot/Gitbook/pull/57))
++**Scoreboard:** 16 kept improvements today, ~77,010 tokens per merged improvement (ESTIMATE: transcript chars/4, a lower bound), median launch-to-merge 10.4 min, gate pass 59%.
++
++1. Slow brain test sped up 93%: slow brain test B1-06 ms 1256 → 85 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/256)) (REPORTED)
++2. Another slow brain test 4x faster: slow brain test s 1.7 → 0.4 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260)) (REPORTED)
++3. Synapse memory layer finds the right linked memory far more often: recall@5 on 87 held-out relations 2 → 13 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/251)) (REPORTED)
++4. Self-improvement gate blocks every unsafe patch: unsafe self-patches accepted (of 8) 8 → 0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/251)) (REPORTED)
++5. Reads emotions much more accurately: affect macro-F1 (218 lines, nested CV) 0.23 → 0.537 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260)) (REPORTED)
++6. Her self-improvement proposals now pass all safety gates (5/5, were 0/6): self-scan proposals passing 8 gates 0.0 → 1.0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/260)) (REPORTED)
++7. Fixed bug in her fallback memory search: fallback-embedding top-1 0.21 → 0.73 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/263)) (REPORTED)
++8. Memory lookup about 33% faster: context predict p50 ms 4.9 → 3.3 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265)) (REPORTED)
++9. Learns from each conversation as it happens: recall@5 after streaming learning 12 → 16 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265)) (REPORTED)
++10. 8 free no-login data sources verified: live-data sources with verified terms 0 → 8 ([PR](https://github.com/vitalitychems-dot/Gitbook/pull/59)) (REPORTED)
++11. First repo record with license and exact version: REA records with license+commit SHA 0 → 1 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/261)) (REPORTED)
++12. Better at reading what the person wants: intent accuracy (218 real lines) 0.74 → 0.86 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/256)) (REPORTED)
++13. Context ranker pulls the right memory slightly more often: recall@5 on 87 held-out relations 13 → 15 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/265)) (REPORTED)
++14. TESSERA agents can see the shared task list: queued tasks visible to TESSERA agents 0 → 7 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/264)) (REPORTED)
++15. GitAI fake logins now rejected: forged spectator cookie accepted (HTTP 200=1) 1 → 0 ([PR](https://github.com/vitalitychems-dot/TESSERA/pull/262)) (REPORTED)
++16. GitMesh rename finished: docs with stale GitbookAI name 5 → 0 ([PR](https://github.com/vitalitychems-dot/Gitbook/pull/57)) (REPORTED)
+ 
+ Reply yes to keep all, or send numbers to undo.
+diff --git a/mesh/scoreboard/metrics.jsonl b/mesh/scoreboard/metrics.jsonl
+index 13de922..804dc99 100644
+--- a/mesh/scoreboard/metrics.jsonl
++++ b/mesh/scoreboard/metrics.jsonl
+@@ -1,16 +1,16 @@
+-{"id": "B1-recall", "date": "2026-10-13", "metric": "recall@5 on 87 held-out relations", "before": 2, "after": 13, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/251", "desc": "Synapse memory layer finds the right linked memory far more often"}
+-{"id": "B1-gate", "date": "2026-10-13", "metric": "unsafe self-patches accepted (of 8)", "before": 8, "after": 0, "better": "lo", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/251", "desc": "Self-improvement gate blocks every unsafe patch"}
+-{"id": "B2-intent", "date": "2026-10-13", "metric": "intent accuracy (218 real lines)", "before": 0.74, "after": 0.86, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/256", "desc": "Better at reading what the person wants"}
+-{"id": "B2-test", "date": "2026-10-13", "metric": "slow brain test B1-06 ms", "before": 1256, "after": 85, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/256", "desc": "Slow brain test sped up 93%"}
+-{"id": "B3-affect", "date": "2026-10-13", "metric": "affect macro-F1 (218 lines, nested CV)", "before": 0.23, "after": 0.537, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Reads emotions much more accurately"}
+-{"id": "B3-gates", "date": "2026-10-13", "metric": "self-scan proposals passing 8 gates", "before": 0.0, "after": 1.0, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Her self-improvement proposals now pass all safety gates (5/5, were 0/6)"}
+-{"id": "B3-test", "date": "2026-10-13", "metric": "slow brain test s", "before": 1.7, "after": 0.4, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Another slow brain test 4x faster"}
+-{"id": "E-fallback", "date": "2026-10-13", "metric": "fallback-embedding top-1", "before": 0.21, "after": 0.73, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/263", "desc": "Fixed bug in her fallback memory search"}
+-{"id": "B4-recall", "date": "2026-10-13", "metric": "recall@5 on 87 held-out relations", "before": 13, "after": 15, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Context ranker pulls the right memory slightly more often"}
+-{"id": "B4-latency", "date": "2026-10-13", "metric": "context predict p50 ms", "before": 4.9, "after": 3.3, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Memory lookup about 33% faster"}
+-{"id": "B4-online", "date": "2026-10-13", "metric": "recall@5 after streaming learning", "before": 12, "after": 16, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Learns from each conversation as it happens"}
+-{"id": "Q007-forge", "date": "2026-10-13", "metric": "forged spectator cookie accepted (HTTP 200=1)", "before": 1, "after": 0, "better": "lo", "goal": "gitai", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/262", "desc": "GitAI fake logins now rejected"}
+-{"id": "Q004-rea", "date": "2026-10-13", "metric": "REA records with license+commit SHA", "before": 0, "after": 1, "better": "hi", "goal": "sovereign", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/261", "desc": "First repo record with license and exact version"}
+-{"id": "TM-tasks", "date": "2026-10-13", "metric": "queued tasks visible to TESSERA agents", "before": 0, "after": 7, "better": "hi", "goal": "mesh", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/264", "desc": "TESSERA agents can see the shared task list"}
+-{"id": "Q003-names", "date": "2026-10-13", "metric": "docs with stale GitbookAI name", "before": 5, "after": 0, "better": "lo", "goal": "gitai", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/57", "desc": "GitMesh rename finished"}
+-{"id": "SH-terms", "date": "2026-10-13", "metric": "live-data sources with verified terms", "before": 0, "after": 8, "better": "hi", "goal": "sovereign", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/59", "desc": "8 free no-login data sources verified"}
++{"id": "B1-recall", "date": "2026-10-13", "metric": "recall@5 on 87 held-out relations", "before": 2, "after": 13, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/251", "desc": "Synapse memory layer finds the right linked memory far more often", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B1-gate", "date": "2026-10-13", "metric": "unsafe self-patches accepted (of 8)", "before": 8, "after": 0, "better": "lo", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/251", "desc": "Self-improvement gate blocks every unsafe patch", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B2-intent", "date": "2026-10-13", "metric": "intent accuracy (218 real lines)", "before": 0.74, "after": 0.86, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/256", "desc": "Better at reading what the person wants", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B2-test", "date": "2026-10-13", "metric": "slow brain test B1-06 ms", "before": 1256, "after": 85, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/256", "desc": "Slow brain test sped up 93%", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B3-affect", "date": "2026-10-13", "metric": "affect macro-F1 (218 lines, nested CV)", "before": 0.23, "after": 0.537, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Reads emotions much more accurately", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B3-gates", "date": "2026-10-13", "metric": "self-scan proposals passing 8 gates", "before": 0.0, "after": 1.0, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Her self-improvement proposals now pass all safety gates (5/5, were 0/6)", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B3-test", "date": "2026-10-13", "metric": "slow brain test s", "before": 1.7, "after": 0.4, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/260", "desc": "Another slow brain test 4x faster", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "E-fallback", "date": "2026-10-13", "metric": "fallback-embedding top-1", "before": 0.21, "after": 0.73, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/263", "desc": "Fixed bug in her fallback memory search", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B4-recall", "date": "2026-10-13", "metric": "recall@5 on 87 held-out relations", "before": 13, "after": 15, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Context ranker pulls the right memory slightly more often", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B4-latency", "date": "2026-10-13", "metric": "context predict p50 ms", "before": 4.9, "after": 3.3, "better": "lo", "goal": "speed", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Memory lookup about 33% faster", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "B4-online", "date": "2026-10-13", "metric": "recall@5 after streaming learning", "before": 12, "after": 16, "better": "hi", "goal": "accuracy", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/265", "desc": "Learns from each conversation as it happens", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "Q007-forge", "date": "2026-10-13", "metric": "forged spectator cookie accepted (HTTP 200=1)", "before": 1, "after": 0, "better": "lo", "goal": "gitai", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/262", "desc": "GitAI fake logins now rejected", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "Q004-rea", "date": "2026-10-13", "metric": "REA records with license+commit SHA", "before": 0, "after": 1, "better": "hi", "goal": "sovereign", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/261", "desc": "First repo record with license and exact version", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "TM-tasks", "date": "2026-10-13", "metric": "queued tasks visible to TESSERA agents", "before": 0, "after": 7, "better": "hi", "goal": "mesh", "pr": "https://github.com/vitalitychems-dot/TESSERA/pull/264", "desc": "TESSERA agents can see the shared task list", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "Q003-names", "date": "2026-10-13", "metric": "docs with stale GitbookAI name", "before": 5, "after": 0, "better": "lo", "goal": "gitai", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/57", "desc": "GitMesh rename finished", "evidence": "REPORTED (PR body, not re-checked)"}
++{"id": "SH-terms", "date": "2026-10-13", "metric": "live-data sources with verified terms", "before": 0, "after": 8, "better": "hi", "goal": "sovereign", "pr": "https://github.com/vitalitychems-dot/Gitbook/pull/59", "desc": "8 free no-login data sources verified", "evidence": "REPORTED (PR body, not re-checked)"}
+-- 
+2.47.3
+

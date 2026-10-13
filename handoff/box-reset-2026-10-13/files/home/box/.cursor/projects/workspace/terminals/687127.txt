@@ -1,0 +1,14 @@
+---
+pid: 1235611
+cwd: "/workspace/gitmesh/repo"
+command: "cd /workspace/gitmesh/repo && rg -n -i -P '(token|secret|key)\\s*[:=]\\s*\"[^\"]{12,}' $(git ls-tree -r --name-only pr39 archive/preserved | sed 's/^/:/' | head -0) 2>/dev/null; for f in $(git ls-tree -r --name-only pr39 archive/preserved); do git show pr39:$f | rg -n -i -P '(token|secret|key)\\s*[:=]\\s*\"[^\"]{12,}|natal|birth|vault|\\b1T\\b' | sed -E 's/([\"=:]\\s*\"[^\"]{0,3})[^\"]*\"/\\1…\"/g' | cut -c1-140 | sed \"s|^|$f:|\"; done | head -70; git show 8592dd50 | rg -n -i 'vault|natal|1T|@' "
+status: failed   
+started_at: 2026-10-12T23:45:36.855Z
+running_for_ms: 34775    
+---
+
+---
+exit_code: unknown
+elapsed_ms: 34774
+ended_at: 2026-10-12T23:46:11.629Z
+---

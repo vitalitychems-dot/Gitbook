@@ -1,0 +1,1 @@
+{"status":"ok","statistics":{"relevant_files":2,"nested_asar_containers":0,"text_bytes_read":40837801,"invalid_utf8_files":0,"parsed_javascript_files":0,"visited_ast_nodes":0,"findings":0,"modules":0,"parse_failures":0},"nodes":3,"edges":2,"coverage":"complete","kinds":{"artifact":3},"repo":"neuropsychology/NeuroKit","exit":0,"files_total":635,"js_ts_files":0,"py_files":356}

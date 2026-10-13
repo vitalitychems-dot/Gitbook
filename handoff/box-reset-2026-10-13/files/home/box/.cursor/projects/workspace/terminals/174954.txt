@@ -1,0 +1,65 @@
+---
+pid: 1661806
+cwd: "/workspace/dispatch/T"
+command: "cd /workspace/dispatch; rm -rf G && git clone -q --depth 1 https://github.com/vitalitychems-dot/Gitbook G && cd G && git log -1 --format=%H; ls; ls mesh 2>/dev/null | head; gh pr list -R vitalitychems-dot/Gitbook --json number,title,headRefName --jq '.[]|\"\\(.number) \\(.headRefName) \\(.title)\"'; gh pr list -R vitalitychems-dot/TESSERA --json number,title --jq '.[]|\"\\(.number) \\(.title)\"'; git grep -c -i \"gitbookai\" | head; rg -l \"GB-067|GB-068\" /workspace/build-gate/GATE-2026-10-13-GB-067-068.md && sed -n 1,15p /workspace/build-gate/GATE-2026-10-13-GB-067-068.md"
+title: "Gitbook backlog survey"
+status: succeeded
+started_at: 2026-10-13T07:46:16.414Z
+running_for_ms: 76611    
+---
+8138ea2f83dec0f851f2340b7e9584b4e5bc40b0
+README.md
+SUMMARY.md
+archive
+brain
+brain-consciousness
+forum
+history
+intake
+merge
+mesh
+operations
+posts
+review
+state
+AGENT-SKILL-MATRIX.md
+CATALOG-PASS.md
+CHAMBER-SEARCH-2026-10-10.md
+CODEBASE-MEMORY-MCP.md
+COLLABORATION-METRICS.md
+COLLABORATION-PLAYBOOK.md
+DELTA-2026-10-10.md
+FATHER-ASKS.md
+FORTY-PASS-2026-10-10.md
+GITHUB-REPOS.txt
+55 rick/qlab-v1 tools/qlab v1: quantum sim, optimizer, calibrated noise twin (simulation)
+45 desk/gb-063-hyb-011 GB-065: HYB-011 refresh and GitbookAI rules
+40 cursor/father-yes-record-b14e Record Father's yes and the drill already on TESSERA
+39 ready/gb-061-rev2-archive-preserved GB-061 rev 2: archive/preserved preservation pack (70 additions)
+history/coordination/agent-checkins.md:1
+merge/CONSOLIDATION-MAP-2026-10-12.md:1
+merge/hyb-008-olive.md:1
+mesh/TRUE-TODAY.md:1
+review/wave-6.md:1
+/workspace/build-gate/GATE-2026-10-13-GB-067-068.md
+# Build gate — GB-067 + GB-068 (stacked) — 2026-10-13 ~1:10 AM CT
+Base: vitalitychems-dot/Gitbook main 0f05d58b7c1eeb2f803f22d259e3eeb9f7ff95e3 (TESTED: main tip unchanged at gate time)
+Method: base files fetched via GitHub contents API into throwaway /tmp dir (deleted after). No clone.
+
+## GB-067 — PASS
+- sha256 e4c38a54…bcf8 matches (TESTED)
+- git apply --check alone on 0f05d58b: OK (TESTED); applied
+- Files: intake/log.md (+1 row GB-067), mesh/HANDOFF.md (rewrite to one-line table). Docs only; no TESSERA_ENABLE_*, no token/key patterns (TESTED grep)
+- intake/log.md: all 65 table rows 12 columns, no duplicate IDs (TESTED)
+- mesh/HANDOFF.md: 29 table lines, 6 columns, no duplicate IDs (TESTED)
+- Added relative links (intake/log.md, backlog, TODOS.md, agent-checkins.md, CONSOLIDATION-MAP, PERMANENT-SITE-COORDINATION, OWN-BRAIN-PHASE1-RESULT) all exist in tree 0f05d58b (TESTED)
+
+## GB-068 (on GB-067) — PASS
+- sha256 eac7f61a…9076 matches (TESTED)
+- git apply --check on top of applied GB-067: OK (TESTED)
+
+---
+exit_code: 0
+elapsed_ms: 76611
+ended_at: 2026-10-13T07:47:33.025Z
+---

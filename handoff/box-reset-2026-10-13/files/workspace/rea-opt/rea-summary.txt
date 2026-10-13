@@ -1,0 +1,10 @@
+PrefectHQ__prefect ok 5450 5910 partial [('unknown', 3241), ('javascript-asset', 1677), ('javascript-module', 449), ('artifact', 62)] js=1678
+a2aproject__A2A ok 18 17 complete [('artifact', 13), ('javascript-module', 3), ('javascript-asset', 2)] js=2
+apache__airflow ok 5899 6938 partial [('unknown', 2587), ('javascript-module', 1476), ('javascript-asset', 1341), ('artifact', 463)] js=1365
+huggingface__smolagents ok 1 0 complete [('artifact', 1)] js=0
+langchain-ai__langgraph ok 97 109 partial [('javascript-module', 51), ('artifact', 28), ('javascript-asset', 10), ('package', 4)] js=8
+microsoft__agent-lightning ok 11 10 complete [('artifact', 5), ('javascript-asset', 3), ('javascript-module', 3)] js=3
+openai__tiktoken ok 1 0 complete [('artifact', 1)] js=0
+stanfordnlp__dspy ok 39 40 complete [('artifact', 23), ('javascript-module', 9), ('javascript-asset', 5), ('electron-renderer', 1)] js=5
+temporalio__temporal ok 94 120 partial [('artifact', 91), ('unknown', 3)] js=0
+zilliztech__GPTCache ok 10 9 complete [('artifact', 10)] js=0

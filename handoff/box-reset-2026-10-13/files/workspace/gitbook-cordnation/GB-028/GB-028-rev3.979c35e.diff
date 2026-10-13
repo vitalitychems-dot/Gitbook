@@ -1,0 +1,148 @@
+diff --git a/SUMMARY.md b/SUMMARY.md
+--- a/SUMMARY.md
++++ b/SUMMARY.md
+@@ -4,6 +4,7 @@
+ 
+ ## Start here
+ 
++* [Replit agents: start here](mesh/replit-agents-start-here.md)
+ * [Consolidated TODO list](intake/consolidated-todo.md)
+ * [Authoritative hybrid consolidation backlog](intake/HYBRID-CONSOLIDATION-BACKLOG.md)
+ * [Agent submission format](intake/agent-submission-format.md)
+diff --git a/history/coordination/agent-checkins.md b/history/coordination/agent-checkins.md
+--- a/history/coordination/agent-checkins.md
++++ b/history/coordination/agent-checkins.md
+@@ -13,7 +13,7 @@
+ ACCEPTANCE TEST: A deterministic route inventory test reports both duplicate METHOD+path registrations and their owning modules; a route contract assertion confirms the effective mount order/response shape. Preserve the evidence without silently dropping either route.
+ OVERLAP CHECK: An active HYB-012 claim already exists for this same Replit track; updating that claim, not creating a second claim. No other owner or code changes found.
+ NEXT CHECK-IN: 2026-10-05T21:35:39.828Z
+-STATUS: BLOCKED
++STATUS: IN REVIEW (unblocked 2026-10-05, canonical source per comment 6003216455: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455; vitalitychems-dot/TESSERA main on GitHub; work on a branch and open a PR; no direct pushes to main)
+ ```
+ 
+ ```text
+@@ -21,12 +21,12 @@
+ AGENT: Replit collaborator (GitHub author: vitalitychems-dot; continuing the coordinator-recorded track)
+ SCOPE: Canonical TESSERA route mount registry, overlapping quantum endpoints, duplicate-preserving route-test plan; no TESSERA code edit until a clean canonical checkout is available
+ START: 2026-10-05T19:38:22Z
+-BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 0af00a1bd86c9f490f81410ae14ee40e02b0b19f
+-LATEST GITBOOK BASE: main@1e3bb5009fa7fc5164b4f08ded48c1b62899b1ea
+-STATUS: BLOCKED
++BASE: TESSERA fec56eb09d19907832663d5f16fcbc24f3d00317; Gitbook 979c35e0be9a27ab143c7dcfc714d979b11e10a0
++LATEST GITBOOK BASE: main@979c35e0be9a27ab143c7dcfc714d979b11e10a0
++STATUS: IN REVIEW (unblocked 2026-10-05, canonical source per comment 6003216455: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)
+ NEXT CHECK-IN: 2026-10-05T21:35:39.828Z
+-BLOCKER: local Replit worktree is a partial snapshot, not canonical TESSERA main; shell access to private remote timed out; cannot safely branch or run required tests
+-WAITING ON: Tessera maintainer / Gitbook moderator to identify the canonical checkout owner and provide next instructions
++BLOCKER: none (cleared by Tessera ruling https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455: no local or Replit checkout is canonical; use vitalitychems-dot/TESSERA main on GitHub)
++WAITING ON: none; branch from vitalitychems-dot/TESSERA main, open a PR through the four gates (no direct pushes to main); board: Gitbook issue #2
+ LATEST ISSUE COMMENT: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534
+ ```
+ 
+@@ -41,10 +41,14 @@
+ FOLLOW-UP: Await instructions at https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002431534; then enable the canonical TESSERA checkout and resume the test-first route audit
+ ```
+ 
++2026-10-05 (REPORTED): superseded; HYB-012 is IN REVIEW, canonical source per [comment 6003216455](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)
++
+ ## Communication audit — 2026-10-05
+ 
+ GitHub Issue #2 currently contains one owner-posted launch comment and no replies from distinct Grok, Replit, Tessera, or other agent identities. The conference is configured but has not yet demonstrated live multi-agent communication. Agents must reply under their actual account/role and claim a task here before work is counted.
+ 
++2026-10-05 (REPORTED): superseded; replies under distinct declared roles are visible in today's traffic on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2), e.g. Grok Bot ([comment 6000545040](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6000545040)) and Replit collaborator ([comment 6001756129](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001756129)). They were posted through the owner's GitHub account (`vitalitychems-dot`), not separate GitHub identities.
++
+ ## Completed claims
+ 
+ | Task | Agent | Base | Commit | Checks | Date |
+diff --git a/intake/AGENT-LAUNCH-PROMPTS.md b/intake/AGENT-LAUNCH-PROMPTS.md
+--- a/intake/AGENT-LAUNCH-PROMPTS.md
++++ b/intake/AGENT-LAUNCH-PROMPTS.md
+@@ -40,7 +40,7 @@
+ ```text
+ You are the Replit implementation collaborator for the Tessera hybrid consolidation conference.
+ 
+-Read first:
++Read first (start with https://github.com/vitalitychems-dot/Gitbook/blob/main/mesh/replit-agents-start-here.md):
+ 1. https://github.com/vitalitychems-dot/Gitbook/blob/main/history/coordination/AGENT-CONFERENCE.md
+ 2. https://github.com/vitalitychems-dot/Gitbook/blob/main/history/coordination/AGENT-TRAINING-AUTHENTICITY.md
+ 3. https://github.com/vitalitychems-dot/Gitbook/blob/main/intake/HYBRID-CONSOLIDATION-BACKLOG.md
+@@ -75,7 +75,7 @@
+ 2. Make one small, reversible change only if the behavior is clearly needed.
+ 3. Add or update a deterministic test.
+ 4. Run pnpm run typecheck, relevant tests, pnpm test, and pnpm run build as appropriate.
+-5. Commit and push only the scoped change to TESSERA, or record RETAINED/REJECTED/BLOCKED in Gitbook.
++5. Commit, push only your branch to TESSERA, and open a PR through the four gates (never push to main), or record RETAINED/REJECTED/BLOCKED in Gitbook.
+ 6. Update the ledger with COMMIT, CHECKS, CHANGED, and FOLLOW-UP.
+ 7. Reply to Issue #2 with evidence and invite review from Tessera maintainer and Gitbook moderator.
+ 
+diff --git a/intake/HYBRID-CONSOLIDATION-BACKLOG.md b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
+--- a/intake/HYBRID-CONSOLIDATION-BACKLOG.md
++++ b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
+@@ -38,7 +38,7 @@
+ | HYB-009 | Archive steward | READY | Classify remaining archive chunks, generated Vercel/Nitro output, runtime state, and old build artifacts. | Each source family has one disposition: preserve, summarize, reconstruct, or reject; no raw chunk is duplicated. |
+ | HYB-010 | Media steward | READY | Review old theme images, screenshots, fonts, and product/storefront media for provenance, license, and product relevance. | Keep only approved assets with source/license metadata; reject duplicate/superseded themes. |
+ | HYB-011 | Privacy steward | READY | Recheck all remaining repositories for secrets, private records, wallet/customer data, local stores, and protected `1T` material. | Redacted exclusion manifest is current; protected files are neither copied nor opened. |
+-| HYB-012 | API maintainer | READY | Audit current API routes and old route ideas for duplicate endpoints and dead modules. | One route registry exists; each retained endpoint has a test or an explicit deprecation note. |
++| HYB-012 | API maintainer | IN REVIEW (Replit collaborator holds the claim; canonical source is `vitalitychems-dot/TESSERA` main on GitHub per [Tessera's ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455); work on a branch and open a PR, no direct pushes to main; board: [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)); unblocked 2026-10-05, canonical source per [comment 6003216455](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455) | Audit current API routes and old route ideas for duplicate endpoints and dead modules. | One route registry exists; each retained endpoint has a test or an explicit deprecation note. |
+ | HYB-013 | UI maintainer | READY | Audit current Tessera UI against older screen/component concepts and recover only a user-valued missing flow. | One missing flow is selected, implemented in the current architecture, and covered by a smoke/test path. |
+ | HYB-014 | Test steward | READY | Add a repeatable “historical merge gate” to the TESSERA checks. | CI/local command reports duplicate workspace roots, stale app references, secret-shaped paths, typecheck, tests, build, and audit status. |
+ | HYB-015 | Gitbook moderator | READY | Turn the extracted historical evidence into compact topic pages: product goals, engineering rules, safety/privacy, agent coordination, media, and deferred ideas. | Each page links to provenance and contains no duplicated instruction block. |
+diff --git a/mesh/replit-agents-start-here.md b/mesh/replit-agents-start-here.md
+new file mode 100644
+--- /dev/null
++++ b/mesh/replit-agents-start-here.md
+@@ -0,0 +1,54 @@
++# Replit agents: start here
++
++Intake GB-028 · Author lane: Tessera (admin) via Gitbook / Cordnation · Date (CT): 2026-10-05 · Source: Tessera task 16:41 CT; Tessera ruling on Gitbook issue #2 (comment 6003216455) · License: TBD
++
++Read this page first. If an older page or record disagrees with it, this page wins.
++
++## Where things are
++
++- **Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2), the only coordination board. Post check-ins and results there.
++- **Code:** [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA). Its `main` on GitHub is canonical; no local or Replit checkout is canonical ([Tessera's ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003216455)).
++- **Docs:** [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook): instructions, backlog, check-ins, provenance.
++- **Origin engine:** `collin-keane/Tessera`.
++
++## Before you claim anything
++
++1. Run the overlap check: the latest `main` SHA of the repo you will touch, plus its open PRs. Record both in your check-in.
++2. Claim only work Tessera has assigned to you, in the [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) and the [check-in ledger](../history/coordination/agent-checkins.md). One task, one owner.
++
++## How you work
++
++- Branches and PRs only. Branch from current `vitalitychems-dot/TESSERA` `main`, push that branch, and open a PR. Never push directly to `main` in either repo.
++- The PR goes through the four gates (Moderator → Tessera → Security → CI/Build). Tessera sends Father the bulk update, and he answers yes, no, or revise. Every merge needs Father's explicit yes; Origin (`collin-keane/Tessera`) and TESSERA merges need Father's explicit yes (the word 'merge').
++- `TESSERA_ENABLE_*` flags stay `0`. No secrets.
++- Speak as yourself (Replit collaborator), never as Tessera or another agent.
++
++## Check-in and completion format
++
++Use the templates from [Agent check-ins](../history/coordination/agent-checkins.md) ("Check-in template" and "Completion template"; the backlog's "Check-in protocol" has the same blocks). For COMMIT, give the branch commit and the PR link.
++
++```text
++TASK: HYB-###
++AGENT: <name or handle>
++SCOPE: <exact paths/modules>
++START: <UTC timestamp>
++BASE: <destination commit>
++STATUS: IN REVIEW
++NEXT CHECK-IN: <UTC timestamp>
++BLOCKER: none | exact blocker
++```
++
++```text
++TASK: HYB-###
++STATUS: DONE | BLOCKED | RETAINED | REJECTED
++COMMIT: <commit or none>
++CHECKS: <commands and results>
++CHANGED: <short path list>
++FOLLOW-UP: <HYB-### or none>
++```
++
++## Historical, not current
++
++- `tessera-coordination` issue #4 was the old board. That repo was merged into Gitbook and deleted; its records are in [`history/coordination/`](../history/coordination/).
++- The old Replit cards (`history/recovered/coordination/cards/replit-1.md` to `replit-5.md`) and the old `tessera-replit` README are records, not task orders.
++- HYB-012 is not blocked on a checkout: work from `vitalitychems-dot/TESSERA` `main` on GitHub (ruling above).

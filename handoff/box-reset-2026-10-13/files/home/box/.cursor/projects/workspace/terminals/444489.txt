@@ -1,0 +1,43 @@
+---
+pid: 117286
+cwd: "/workspace"
+command: "timeout 60 python3 << 'PY'\nimport json, os, time\nNOW=time.time()\nline=open('/workspace/dedupe/all-groups.jsonl').readline()\ng=json.loads(line)\nprint('size', g['size'], 'count', g['count'], 'paths', len(g['paths']))\nexist=mtime_ok=forbidden=missing=0\nages=[]\nfor p in g['paths']:\n    if not os.path.isfile(p):\n        missing+=1\n        print('MISSING', p[:100])\n        continue\n    exist+=1\n    st=os.stat(p)\n    age_min=(NOW-st.st_mtime)/60\n    ages.append(age_min)\n    print(f'OK age_min={age_min:.1f} ino={st.st_ino} {p[:120]}')\nprint('exist', exist, 'missing', missing, 'ages', ages[:5])\n\n# sample 20 groups: count existing paths\nfrom collections import Counter\nc=Counter()\nexist_counts=[]\ntotal_wasted_alive=0\nfor i,line in enumerate(open('/workspace/dedupe/all-groups.jsonl')):\n    g=json.loads(line)\n    n=sum(1 for p in g['paths'] if os.path.isfile(p))\n    exist_counts.append(n)\n    if n>=2:\n        total_wasted_alive += g['size']*(n-1)\n    if i<5 or (n>=2 and i<30):\n        pass\nprint('groups with >=2 existing:', sum(1 for n in exist_counts if n>=2))\nprint('groups with 1 existing:', sum(1 for n in exist_counts if n==1))\nprint('groups with 0 existing:', sum(1 for n in exist_counts if n==0))\nprint('est wasted GB still alive:', round(total_wasted_alive/1024**3, 2))\n# age of existing for first group with >=2\nfor line in open('/workspace/dedupe/all-groups.jsonl'):\n    g=json.loads(line)\n    paths=[p for p in g['paths'] if os.path.isfile(p)]\n    if len(paths)<2: continue\n    print('example group size', g['size'], 'n', len(paths))\n    for p in paths[:4]:\n        st=os.stat(p)\n        print(' ', (NOW-st.st_mtime)/60, 'min', p[:140])\n    break\nPY"
+title: "Diagnose why all groups filtered"
+status: succeeded
+started_at: 2026-10-13T11:09:12.430Z
+running_for_ms: 2006     
+---
+size 93635859 count 17 paths 17
+MISSING /workspace/build-gate/full-f76d/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-san
+OK age_min=15.1 ino=500086 /workspace/einstein/r4/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.1 ino=500084 /workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e
+OK age_min=15.2 ino=500079 /workspace/gitmesh/repo/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.2 ino=4555137 /workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.2 ino=4555138 /workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/tesseract_consolidated.zip
+OK age_min=15.2 ino=4784513 /workspace/rea-batch/b3-collink1007_amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.2 ino=4784514 /workspace/rea-batch/b3-collink1007_amber-flame-tiger-sand/artifacts/drive/tesseract_consolidated.zip
+OK age_min=15.2 ino=5046678 /workspace/rea-batch/b3-collink1007_z/artifacts/drive/1e3Vip.zip
+OK age_min=15.2 ino=5046679 /workspace/rea-batch/b3-collink1007_z/artifacts/drive/tesseract_consolidated.zip
+OK age_min=15.2 ino=500077 /workspace/rea-batch/tessera-v2/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e
+OK age_min=15.2 ino=500076 /workspace/rea-batch/v2-rea/Gitbook-novault/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+MISSING /workspace/rick/src/Gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.
+OK age_min=15.1 ino=500083 /workspace/tb3/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.1 ino=500080 /workspace/tess-opt/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.1 ino=500085 /workspace/tv3/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+OK age_min=15.1 ino=500081 /workspace/tw/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+exist 15 missing 2 ages [15.122451945145924, 15.12911861340205, 15.150385280450186, 15.182985277970632, 15.17451861302058]
+groups with >=2 existing: 13973
+groups with 1 existing: 4308
+groups with 0 existing: 1301
+est wasted GB still alive: 13.78
+example group size 93635859 n 15
+  15.122451945145924 min /workspace/einstein/r4/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+  15.12911861340205 min /workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+  15.150385280450186 min /workspace/gitmesh/repo/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+  15.182985277970632 min /workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+
+---
+exit_code: 0
+elapsed_ms: 2006
+ended_at: 2026-10-13T11:09:14.436Z
+---

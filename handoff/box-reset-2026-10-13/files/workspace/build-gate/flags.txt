@@ -1,0 +1,9 @@
+./artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts:194:    const hadBypass = Object.prototype.hasOwnProperty.call(process.env, "TESSERA_ENABLE_COLONIAL_FALLBACK");
+./artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts:195:    const previousBypass = process.env.TESSERA_ENABLE_COLONIAL_FALLBACK;
+./artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts:197:      process.env.TESSERA_ENABLE_COLONIAL_FALLBACK = "1";
+./artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts:209:      if (hadBypass) process.env.TESSERA_ENABLE_COLONIAL_FALLBACK = previousBypass;
+./artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts:210:      else delete process.env.TESSERA_ENABLE_COLONIAL_FALLBACK;
+./artifacts/v2/test/v2-015-floor.test.mjs:7:  const previous = process.env.TESSERA_ENABLE_STUDIO_3D;
+./artifacts/v2/test/v2-015-floor.test.mjs:8:  process.env.TESSERA_ENABLE_STUDIO_3D = "0";
+./artifacts/v2/test/v2-015-floor.test.mjs:23:    if (previous === undefined) delete process.env.TESSERA_ENABLE_STUDIO_3D;
+./artifacts/v2/test/v2-015-floor.test.mjs:24:    else process.env.TESSERA_ENABLE_STUDIO_3D = previous;

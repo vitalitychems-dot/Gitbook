@@ -1,0 +1,395 @@
+=== SECURITY TAIL ===
+IMP-022	PASS	
+IMP-023	PASS	
+IMP-024	PASS	
+IMP-025	PASS	
+IMP-026	PASS	
+IMP-027	PASS	
+IMP-028	PASS	
+IMP-029	PASS	
+IMP-030	PASS	
+IMP-031	PASS	
+IMP-032	PASS	
+IMP-033	PASS	
+IMP-034	PASS	
+IMP-035	PASS	
+IMP-036	PASS	
+IMP-037	PASS	
+IMP-038	PASS	
+IMP-039	PASS	
+IMP-040	PASS	
+IMP-041	PASS	
+IMP-042	PASS	
+IMP-043	PASS	
+IMP-044	PASS	
+IMP-045	PASS	
+IMP-046	PASS	test-only after removals
+IMP-047	PASS	test-only after removals
+IMP-048	PASS	
+IMP-049	PASS	
+IMP-050	PASS	
+IMP-051	PASS	honesty: eval harness JSON; forbids calling homemade quizzes MMLU; no external spend in this row alone
+IMP-052	FAIL	needs Father yes: Ollama/local model install
+IMP-053	FAIL	needs Father yes: paid industry suite spend
+IMP-054	FAIL	needs Father yes: provider keys / SOVEREIGN_NO_EXTERNAL_LLM=0 (never commit values; secrets manager only)
+IMP-055	FAIL	needs Father yes: Cortical Labs product answers
+IMP-056	FAIL	needs Father yes: storefront retention boundary
+IMP-057	FAIL	needs Father yes: quantum dual-route product ruling
+IMP-058	FAIL	runtime: new Gitbook RAG retrieval path (read-only still expands surface)
+IMP-059	PASS	honesty: rename/relabel homemade quiz (not MMLU)
+IMP-060	PASS	test: assert/log registration count
+IMP-061	PASS	scripts/ merge-gate only; no workflow edit
+IMP-062	PASS	docs: competitor score card (cited, honest)
+IMP-063	FAIL	needs Father yes: Origin connector reconnect/grant
+IMP-064	PASS	privacy recheck archives; 1T forbidden
+IMP-065	PASS	docs: braces ignore + review date accuracy
+IMP-066	PASS	docs: reconcile stale migration-review VALIDATION
+IMP-067	PASS	docs: correct public/tessera-unified URL claim
+IMP-068	PASS	docs: align push authority with Tessera-after-yes
+IMP-069	PASS	docs: honesty labels on architecture AGI framing
+IMP-070	PASS	test: /healthz Zod shape; no prod behavior change
+IMP-071	PASS	docs: offline-vs-live eval entrypoints; no keys
+IMP-072	PASS	README: document existing eval scripts
+IMP-073	PASS	offline: export CASES + vitest; no network
+IMP-074	PASS	nav: SUMMARY links for z-catalog/z-walk
+IMP-075	PASS	nav: SUMMARY links for handoff orphans
+IMP-076	PASS	docs: hyb-005 Base SHA to tip 5c1137fa
+IMP-077	PASS	docs: HYB-005 ignore landed + review date
+IMP-078	PASS	nav: Start-here link to HYB backlog
+IMP-079	PASS	docs: SNN see-also Cortical readiness
+IMP-080	PASS	.gitignore: dedupe identical credentials block; coverage unchanged (verified tip)
+IMP-081	PASS	docs: filled collaboration metrics example
+IMP-082	PASS	docs: recovered README child links
+IMP-083	PASS	offline vitest: OS-metric scoring branches; no route/boot/flags
+IMP-084	PASS	docs: note CI run 37382015797 on tip
+GB-PR12@64778b33	PASS	docs-only list1; 22 md files, Cursor Agent+Tessera co-author signed, no secrets/1T/workflows/ENABLE, no actionable deletes
+TESSERA-PR3@a01b50e9	PASS	comments-only + dup .gitignore block removed (ignore rules unchanged); Cursor Agent+Tessera co-author signed; no secrets/1T/workflows/ENABLE
+TESSERA-PR4@39db6a6e	PASS	offline eval harness+tests; loopback-only fetch, starters mocked on routes/index import, no ext net/LLM/secrets; FLAGs: dummy loopback DB URL, pre-existing routes/index load side effects; Cursor Agent+Tessera signed
+TESSERA-PR5@820d0be5	PASS	docs+config text; .env.example comments only (blank values), core-js allowBuilds=false (deny); no workflow edits/secrets/1T/ENABLE; Cursor Agent+Tessera signed
+TESSERA-PR6@d9c4f1e0	FAIL	gitbook-mcp: lane guard bypass (caller lane arg overrides GITBOOK_AGENT_LANE; case/unknown fail-open) -> Security/Build can open draft PRs; GITBOOK_HTTP_HOST not loopback-enforced on unauth write API; token env-only+redacted, branch+draft-only, AGENT: prefix OK; Cursor Agent+Tessera signed
+TESSERA-PR7@f57c40aa	PASS	retrieval memory: redact-before-append, import side-effect free, append-only (no unlink/rm), 1T paths stripped, no network; FLAGs: pattern-only redaction, dummy ghp_ fixtures; Cursor Agent+Tessera signed
+TESSERA-PR6@e898111a	PASS	re-gate: loopback-only bind (0.0.0.0 refuses); GITBOOK_AGENT_LANE authoritative case-insensitive unknown-denied empty=read-only; prior bypasses BLOCKED; token env-only+draft-only+AGENT: prefix OK; Cursor Agent+Tessera signed
+TESSERA-PR8@25183afb	PASS	memory redaction: xoxb/xoxp, credentialed DB URLs, password=[REDACTED] (pre-existing+tested), AKIA/ASIA+aws_* assignments before append; piece-built fixtures; no side-effects/deletes/1T/ENABLE/net; Cursor Agent+Tessera signed
+ZZ-PR1@7935a4cdc524461290fa64fec2dd06f221d6d391	PASS	docs-only AGENTS.md(+10/-1)+replit.md(+9); Gitbook start-here+PR-only+issue#2 board; forbids main push/1T/natal-vault; no secrets/PII/1T content; Cursor Agent+Tessera signed, AGENT: Command Center; no Manus; draft, unmerged
+5T-PR1@a267efa588a9ab0d4ca7566065f9daab9d222c9a	PASS	docs-only AGENTS.md(new +8)+replit.md(+10/-1); same guidance block; no secrets/PII/1T content; Cursor Agent+Tessera signed; no Manus; FLAG public repo names private repos; pre-existing astro-weights context line (not added); draft, unmerged
+ONE-PR1@71a8876e90751484f83c28144e097a09a0d2be00	PASS	repo 1, base subrepl-nftoz8d7 (confirmed; default main); docs-only AGENTS.md(new +8)+replit.md(+10/-1); same guidance block; no secrets/PII/1T content; Cursor Agent+Tessera signed; no Manus; FLAG non-default base + public repo; draft, unmerged
+- 2026-10-12 12:2x CT PROV FAIL TESSERA PR#146 merge a0c0f77d (head 126a13f0): 3s self-merge, no gates, impersonated Tessera vote.
+- 2026-10-12 CT retro content gate TESSERA PR#146 head 126a13f0: SECURITY PASS (content); FLAG what-files route removed (test likely red); provenance FAIL stands.
+- 2026-10-12 3:5x PM CT GB-062 rev2 diff sha256 6691071e…667a: SEC PASS. Docs only (SUMMARY.md, intake/log.md, new merge/CONSOLIDATION-MAP-2026-10-12.md); no secrets/workflows/ENABLE; 1T named only as protected/unopened.
+- 2026-10-12 4:0x PM CT GB-063 rev2 diff sha256 f0b2eca5…d5e2: SEC PASS. intake/log.md status backfill only; no secrets/workflows/ENABLE. FLAG: row records GB-050 published as d24359a3 via direct push to main, no PR (2026-10-06 19:19 CT).
+
+- 2026-10-12 ~4:03 PM CT Tessera on GB-050 FLAG: APPROVED under Father Ready auto-push unlock 6:32 PM CT Oct 6 (GB-041 cadence). Content source Father mesh-speed lock. Path = Ready direct push d24359a3 @ 19:19 CT — REPORTED, not a separate numbered bulk-yes receipt. FLAG stays; not a blocker.
+- 2026-10-12 4:3x PM CT PROV FLAG Gitbook main 56a7a48d (HYB-016 ledger refresh, 4:09 PM CT): direct push, no PR/Build/Father yes, unsigned, author Tessera. Content SEC PASS: one docs file history/coordination/agent-checkins.md +41/-3; no secrets/flags (word 'workflows' is prose).
+- 2026-10-12 4:28 PM CT Tessera ruling on 56a7a48d: not Tessera admin; Cursor Project HYB-016 lane via Contents API (PR create 403); false 'Tessera' git author, unsigned. FLAG stands (direct push), ledger-only, no revert without Father bulk yes. Receipt: Gitbook #2 comment 6132933280. Standing order: lanes must not use Tessera as git author; stop+escalate on PR-create failure.
+- 2026-10-12 ~4:28 PM CT Tessera confirm 56a7a48d: NOT Tessera admin. Cursor Project HYB-016 Contents API after PR 403; false Tessera git author. Content SEC PASS; provenance FLAG. RECEIPT issue #2#issuecomment-6132933280. No revert without Father bulk yes.
+- 2026-10-12 6:4x PM CT GB-066 diff sha256 79181882…8536: SEC PASS. intake/log.md, 6 rows added, docs only, no secrets. FLAG: the log itself records that PRs #47-#50 merged with no gate record (O11/PR #50 has none at all).
+- 2026-10-12 ~6:50 PM CT Gitbook PR #39 (GB-061 rev2) head 71a8c78f: SEC FAIL (verification incomplete). 70 files additions-only under archive/preserved, content clean; but the 4 pack files whose sha256 the PR lists (COPIED.tsv, SKIPPED.tsv, apply-add.sh, SHA256SUMS.txt) are not in the head tree or on the box, so checksums unverifiable. Re-gate at new head once supplied. See security-gate/GATE-GB-PR39-PR50-ARCHIVE-2026-10-12.md
+- 2026-10-12 ~6:50 PM CT Gitbook PR #50 (O11) head 8592dd50, merged 2344334e: content SEC PASS; provenance FAIL (opened 5:18:15, merged 5:18:17 PM CT by vitalitychems-dot, merge author "Tessera", 0 reviews, no gates).
+- 2026-10-12 ~6:50 PM CT Gitbook archive/+history/ @ 2344334e: FAIL as-is / PASS-with-excludes. NEW HIGH: archive/moved/1T/ (11 files incl. natal-vault.json) tracked on main since e6ae7e9; NEW HIGH glhf_ API key at Zz ingest e7ee9a19bfd44fc4.txt:59 (archive + history copy). Known HIGH T44 natal-vault.json, collink1007-XXX/.replit:33. t9_admin_token "link" = false positive (localStorage key). EXCLUDE list in gate file.
+- 2026-10-12 ~7:15 PM CT | TESSERA post-rewrite public gate | work.git 89961129 + tree 43d3d319 | FAIL — old admin key literal in commit messages 2f70b40206/cb64a013ee (branch replit-agent); all else clean (gitleaks fixture-only, paths absent, preview secret 0, git-crypt OK, jsonl safe) | SEC-TESSERA-POSTREWRITE-GATE.md
+- 2026-10-12 7:4x PM CT IDLE-MODE.md rev2 sha256 91249323…b309 (2817 B): SEC PASS docs-only; no secrets/flags/1T; hard limits restated. Notes: garage branches need branch-protection on main; open-source fetches can't carry prompt-injected instructions into actions.
+- 2026-10-12 ~8:05 PM CT | TESSERA re-gate | work.git 0f5eab28 PASS (fixture-only, 0 literals incl. messages, paths absent, fsck ok, emails noreply-only) ; tree fdce23ea FAIL — built on stale 89961129 history (admin key in msgs, gmail emails); rebase onto 0f5eab28 & re-gate | SEC-TESSERA-POSTREWRITE-GATE.md
+- 2026-10-12 ~8:05 PM CT | TESSERA re-gate | work.git 0f5eab28 CLEAN (fixture-only, literals 0, paths absent, fsck ok, emails noreply-only) ; tree fdce23ea FAIL — based on old 89961129 history (admin-key msgs + gmail emails); rebase git-crypt commits onto 0f5eab28 and re-gate | SEC-TESSERA-POSTREWRITE-GATE.md
+- 2026-10-12 ~8:17 PM CT | TESSERA re-gate 2 | tree rebased 4f354393 (on 0f5eab28) PASS — stale chain not ancestor, noreply-only emails, key hashes 0, diff only fixture, git-crypt .env coverage OK; reminders: GitHub PR-ref/cache purge, key rotations
+- 2026-10-12 ~8:35 PM CT | TESSERA final gate | final.git main ae58a7e5 OK — heads only, fsck ok, gitleaks fixture-only, key hashes 0, scrub paths absent, emails noreply-only, top-2 diff = 4f354393 content, #250 commits clean; prepush aborted at missing origin (script line 31 fixed, .bak3); reminders: GitHub purge + key rotations
+- 2026-10-13 01:04 CT | Security | GB-067 (Gitbook base 0f05d58b) | diff sha256 e4c38a5447b219f653618683fe4af6604500ba080afe8325b3e1721775b9bcf8 MATCH | PASS — docs only (intake/log.md, mesh/HANDOFF.md); gitleaks --no-git on added lines: no leaks; regex: no keys/emails; 1T named only (rule text), no vault/natal paths; no TESSERA_ENABLE flips; no gate bypass/push-to-main instruction (rules keep gates; Ready pushes after gates); no Tessera-as-git-author; git apply --check OK at 0f05d58b.
+- 2026-10-13 01:04 CT | Security | GB-068 stacked on GB-067 | diff sha256 eac7f61ac45215a36d75b99bb9c3ada398c8f8cc6940180e0db29b213c169076 MATCH | PASS — docs only (SUMMARY.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, intake/log.md, new merge/hyb-024-selffix-design.md); gitleaks: no leaks; regex: no keys/emails; no vault/natal/1T paths (1T only in "never touch" rule); no flag flips (design forbids flips, CI-config edits, push to main); "Design author: Tessera" at added line 6 is doc attribution, not git author; git apply --check OK on 0f05d58b+GB-067.
+2026-10-13 01:59 CT | Gitbook PR#55 qlab head 3e17e9ab | PASS (LOW notes) | 34 files all tools/qlab/, numpy-only, no network/eval/token reads, no CI/1T/vault/TESSERA_ENABLE, IBM props Apache-2.0 NOTICE w/ attribution (no full LICENSE text—LOW), subprocess only in test runner/selftest (sys.executable), __init__ sys.path insert, tests write *_results.json to cwd; author/committer vitalitychems-dot noreply, unsigned
+- 2026-10-13 RETRO Gitbook#56 head c81a530e merge 4feab775 — FAIL: added autogate.sh --merge: auto-squash-merge on script PASS with no Security/Build lane PASS (gate bypass); carried into #62, one fix covers both. Prov: author/committer noreply, self-merged 14s after open at 02:51 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO Gitbook#57 head 15419af6 merge 1c7db22f — PASS: docs rename only. Prov: author/committer noreply, self-merged 66s after open at 03:00 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO Gitbook#59 head 06ded50d merge 4dd0106a — PASS: offline terms gate; test asserts no urllib/requests/socket imports. Prov: author/committer noreply, self-merged 27s after open at 04:00 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO Gitbook#60 head bbda6f2d merge 6b21df68 — PASS: docs/manifest rebase; text reinforces 'do not push main'. Prov: author/committer noreply, self-merged 142s after open at 04:03 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO Gitbook#61 head 57cd2917 merge d0ee5a7c — PASS: qlab pytest invariants; local file I/O only. Prov: author/committer noreply, self-merged 35s after open at 04:08 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO Gitbook#62 head c796386e merge dbd34dbf — FAIL: --father-approved is a self-asserted CLI flag (no receipt) that skips protected-path, flag-default and gate-tamper checks; --merge auto-merges with no Security/Build PASS; CODEOWNERS owner is the shared account (no real separation). Prov: author/committer noreply, self-merged 9s after open at 04:09 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO Gitbook#63 head 65a68544 merge 243ddd4b — PASS: scoreboard scripts read local jsonl only. Prov: author/committer noreply, self-merged 6s after open at 04:10 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#260 head 0e33d918 merge 828d1d25 — PASS: brain selfscan; execFileSync runs node --test on a local file (flag-low); approver lane = build. Prov: author/committer noreply, self-merged 11s after open at 02:55 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#261 head 0849b79f merge bf346bf7 — PASS: REA JSON record only. Prov: author/committer noreply, self-merged 19s after open at 03:03 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#262 head 42f305e5 merge 0236c802 — PASS: HMAC-SHA256 from env GITAI_SESSION_SECRET (random per-process fallback), timingSafeEqual, forged-cookie 401 tests; notes: no Secure flag, no expiry, no rotation. Prov: author/committer noreply, self-merged 39s after open at 03:04 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#263 head fad6cd8e merge 35475b21 — PASS: embedding fallback fix; pure compute. Prov: author/committer noreply, self-merged 46s after open at 03:40 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#264 head c2f6a6c2 merge f91ff82c — PASS: read-only task-mirror checker; spawnSync in test only. Prov: author/committer noreply, self-merged 23s after open at 03:56 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#265 head 4e16b5c3 merge 861bc854 — PASS: brain round 4; pure compute. Prov: author/committer noreply, self-merged 5s after open at 03:56 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#266 head 45fbaa1a merge cfd9793d — PASS: re-embed script, dry-run default; new Function in test only, on repo source (flag-low). Prov: author/committer noreply, self-merged 35s after open at 04:08 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#267 head 1a8a1ffc merge - — OPEN (not merged): content PASS at this head: Ollama localhost only, GSM8K MIT license kept, no new deps. Prov: author/committer noreply, open, not merged.
+- 2026-10-13 RETRO TESSERA#268 head 8af342d9 merge f80cb915 — PASS: bench script; spawnSync re-execs itself only. Prov: author/committer noreply, self-merged 34s after open at 04:11 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#269 head 5552a42f merge - — OPEN (not merged): content PASS at this head: pure compute. Prov: author/committer noreply, open, not merged.
+- 2026-10-13 RETRO TESSERA#270 head 734b87a1 merge 736faed9 — PASS: /brain/snapshot read-only GET on local memory log. Prov: author/committer noreply, self-merged 33s after open at 04:16 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#271 head a8a83e03 merge ca6c2a19 — PASS: BM25 router; router-eval.json quotes old PR bodies: secret-shape names and a synthetic DB URL only, no live values. Prov: author/committer noreply, self-merged 83s after open at 04:17 CT, no Security gate = PROV-FAIL (process).
+- 2026-10-13 RETRO TESSERA#272 head eb5abc9e merge - — OPEN (not merged): content PASS at this head: registry JSON + script, no new deps. Prov: author/committer noreply, open, not merged.
+- 2026-10-13 RETRO TESSERA#272 head 3726804a (force-pushed; NOT eb5abc9e) merge 408ae0a9 — PASS: delta vs reviewed eb5abc9e is registry.json data (+6 brain modules, MIT license fields) + stronger test asserts; rea-registry.mjs and package.json unchanged; merged blobs == PR files; 'vault' hits are api-server module filenames, not 1T/natal paths; no secrets/flags/deps. Prov: author+committer noreply (merge committer noreply@github.com), self-merged by vitalitychems-dot at 04:25 CT, 8m37s after open, no Security gate before merge = PROV-FAIL (process).
+- 2026-10-13T04:27:50-05:00 GB-070 rev3 diff sha256 ee8dcf89…b7cc on Gitbook 243ddd4b: SEC PASS (docs-only intake/log.md + new mesh/ledger/ledger-15.md, 73 lines; regex 0 hits for secrets/gmail/ENABLE/1T/push-main/--merge; git apply --check OK on 243ddd4b). Security PASS applies to the diff; re-pin to PR head SHA when opened.
+- 2026-10-13 RETRO TESSERA#274 head 73a34580 merge 15ff5208 (squash; merged blobs == PR files) — PASS content / FAIL provenance: crystal memory is a build script writing docs/v3/crystal.jsonl derived from already-tracked docs/v2/v2-memory.jsonl (only 'natal_vault' risk labels, no contents; no secrets/PII); pack.mjs packs memory observations only, no env/secret reads, no redaction pass (inherits whatever is in memory); serve.mjs GET-only, reads TESSERA_BRAIN_MEMORY path from env (not request); no network calls (URLs are repo-mirror text); no TESSERA_ENABLE flags; no deps. Prov FAIL: both PR commits and the squash have git author name 'Tessera' (noreply email) = Tessera-as-author rule break; self-merged by vitalitychems-dot 9m09s after open at 04:30 CT, no Security gate. CI 'validate' failure at head is pre-existing on main (fails since >=828d1d25, api-server DB test 'inventions' delete).
+- 2026-10-13 RETRO TESSERA#281 head 553f9436 merge 3db452f2 (squash; merged blobs == PR files) — PASS content / FAIL provenance: code+docs only (style.mjs, profile.mjs, eval.mjs, SCHEMA.md, GAZE-DESIGN.md, test); no birth/natal data, names, addresses, phones, emails or health data; test fixtures are generic short sentences; corpus default [REDACTED-PATH] (outside repo, mode 700) via TESSERA_CREATOR_DIR, profile stores refs not text; TESSERA_ENABLE_GAZE default 0 is a design note only (no code). Notes: corpus dir is outside git so .gitignore/git-crypt not applicable — if TESSERA_CREATOR_DIR is ever set inside the repo nothing ignores it (fix: add **/creator-corpus/ and *.creator.jsonl to .gitignore). Prov FAIL: squash author name 'Tessera'; self-merged 28s after open at 04:27 CT, no Security gate. CI validate failure pre-existing on main. SEPARATE HIGH (pre-existing, not #281): repo is PUBLIC and artifacts/api-server/src/lib/father-natal.ts (6248 B, last c80f8021) + archive/.../Grok-ready/.../father-natal.ts (6894 B) are tracked PLAINTEXT (no GITCRYPT header); contents not opened.
+=== BUILD TAIL ===
+IMP-001 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-002 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-003 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-004 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-005 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-006 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-007 PASS cite OK; med risk (shrink allow-list same PR)
+IMP-008 PASS cite OK; med risk (shrink allow-list same PR; body contract differs)
+IMP-009 PASS cite OK; med risk (new HTTP probes)
+IMP-010 PASS cite OK; low risk (pnpm-workspace boolean)
+IMP-011 PASS cite OK; low risk (docs); CI 37382015797 success at tip
+IMP-012 PASS cite OK; low risk (docs); ci.yml cited read-only
+IMP-013 PASS cite OK; low risk (env example)
+IMP-014 PASS cite OK; low risk (docs)
+IMP-015 PASS cite OK; low risk (docs)
+IMP-016 PASS cite OK; high risk (remove @ts-nocheck until types fixed)
+IMP-017 PASS cite OK; med risk (boot side-effect; tests mock)
+IMP-018 PASS cite OK; med risk (boot side-effects on import)
+IMP-019 PASS cite OK; low risk (docs)
+IMP-020 PASS cite OK; low risk (docs); path=package.json but change is README scripts table; package.json omits audit as claimed; README already lists pnpm audit
+IMP-021 PASS cite OK; med risk (allow-list shrink with removers)
+IMP-022 PASS cite OK; low risk (comments only)
+IMP-023 PASS cite OK; low risk (docs)
+IMP-024 PASS cite OK; low risk (docs)
+IMP-025 PASS cite OK; med risk (new import smoke mocks)
+IMP-026 PASS cite OK; low risk (nav)
+IMP-027 PASS cite OK; low risk (docs); HYB-012 still IN REVIEW; inventory on tip
+IMP-028 PASS cite OK; low risk (docs)
+IMP-029 PASS cite OK; low risk (docs)
+IMP-030 PASS cite OK; low risk (docs); Follow-up #1 still open wording; ignore on tip
+IMP-031 PASS cite OK; low risk (docs); local DESIGN.md present
+IMP-032 PASS cite OK; low risk (docs); local POLL.md present
+IMP-033 PASS cite OK; low risk (docs)
+IMP-034 PASS cite OK; low risk (docs)
+IMP-035 PASS cite OK; low risk (docs)
+IMP-036 PASS cite OK; low risk (docs)
+IMP-037 PASS cite OK; low risk (docs); SOURCE-HEADS pins older TESSERA fec56eb
+IMP-038 PASS cite OK; low risk (docs); validation still advisory-open tone
+IMP-039 PASS cite OK; low risk (docs)
+IMP-040 PASS cite OK; low risk (docs)
+IMP-041 PASS cite OK; low risk (docs)
+IMP-042 PASS cite OK; low risk (nav taxonomy)
+IMP-043 PASS cite OK; low risk (docs)
+IMP-044 PASS cite OK; low risk (docs)
+IMP-045 PASS cite OK; low risk (docs); DESIGN cites standing fix 5:21 PM CT
+IMP-046 PASS cite OK; med risk (shape probes after dup removal)
+IMP-047 PASS cite OK; med risk (shape probes after dup removal)
+IMP-048 PASS cite OK; low risk (docs)
+IMP-049 PASS cite OK; low risk (docs)
+IMP-050 PASS cite OK; low risk (docs)
+
+# Append IMP-051…064 (TESTED 2026-10-05 ~5:40 PM CT; TESSERA 5c1137fa / Gitbook bc6b3287)
+IMP-051 PASS cite OK; med risk (new harness); target path absent (create) scripts/eval/ + src/eval/; evaluation.ts:17 MMLU_STYLE_QUESTIONS confirmed; only in-repo harness is homemade 10-case artifacts/api-server/scripts/eval-chatbot.ts (no industry suite); CARD-EVAL-001 present
+IMP-052 PASS cite OK; med risk (harness wiring); needs Father yes (Ollama install); local-models.ts POST /local-models/chat + ollama "reference-implementation" confirmed; `which ollama` absent on box; CARD-EVAL-002 present
+IMP-053 PASS cite OK; low risk (docs + dated result); needs Father yes (spend/suite); target path absent (create) docs/eval/; BASELINE industry_bench_score BLOCKED; BENCHMARK-PLAN cites Aider/SWE-bench boards with URLs; CARD-EVAL-003 present
+IMP-054 PASS cite OK; low risk (decision note); needs Father yes (keys/external LLM); llm-client isLLMAvailable defaults SOVEREIGN_NO_EXTERNAL_LLM="1" (off); box AI_INTEGRATIONS_OPENAI_* UNSET; operations/tessera-operating-guidelines.md present; CARD-EVAL-004 present
+IMP-055 PASS cite OK; low risk (docs/product); needs Father yes; CORTICAL-LABS-READINESS.md §(d) 5 questions present; backlog HYB-019 "BLOCKED (Father decisions in readiness page §d)"; CARD-EVAL-005 present
+IMP-056 PASS cite OK; low risk (docs/product); needs Father yes; backlog HYB-017 READY + HYB-008 READY; decision page target absent (create); CARD-EVAL-006 present
+IMP-057 PASS cite OK; low risk as ruling (med if removal: allow-list + quantum mount-order tests must change same PR); needs Father yes; RULING_NAMED_DUPLICATES GET /quantum/state + POST /quantum/gate in system-runtime.ts & legacy-engines.ts confirmed; CARD-EVAL-007 present
+IMP-058 PASS cite OK; med risk (new route/index + quiz harness); target path absent (create); ingested-recall.ts + knowledge-distillation.ts are @workspace/db-only; knowledge-corpus-index.ts is static in-code corpus (no Gitbook); BASELINE §C 25-Q set present; CARD-EVAL-008 present
+IMP-059 PASS cite OK; med risk (API response strings change: /evaluation/benchmarks name "MMLU-style (...)" + Hendrycks reference, /evaluation/summary benchmarkFormats); MMLU_STYLE_QUESTIONS used lines 17/151/158/240/406-407; CARD-EVAL-009 present
+IMP-060 PASS cite OK; med risk (test assertion may be brittle as routes change); route-inventory.test.ts has no numeric total assertion/log; GATE-TESSERA-PR1-postmerge-5c1137fa C3 says 925 NOT TESTED; CARD-EVAL-014 present
+IMP-061 PASS cite OK; med risk (new merge-gate script); scripts/ exists, merge-gate command absent (create); no .github/workflows edit proposed; backlog HYB-014 READY; CARD-EVAL-016 present
+IMP-062 PASS cite OK; low risk (docs); Gitbook review/ exists, score-card page absent (create) + SUMMARY link; BENCHMARK-PLAN.md present with URL+date cites; CARD-EVAL-018 present
+IMP-063 PASS cite OK; low risk (access/decision); needs Father yes (Origin reconnect); cursor-origin list_namespaces re-run 5:38 PM CT -> []; CARD-EVAL-019 present
+IMP-064 PASS cite OK; low risk (read-only sweep); backlog HYB-011 READY + routing "1T: HYB-011 only, do not inspect"; no file named exclusion manifest at Gitbook tip (locate/create); CARD-EVAL-020 present
+
+# Append IMP-065…084 (TESTED 2026-10-05 ~5:46 PM CT; TESSERA 5c1137fa / Gitbook bc6b3287; get_file_contents + get_commit tree match)
+IMP-065 PASS cite OK; low risk (docs); review/validation.md L8 "advisory remains a TODO…" confirmed; pnpm-workspace.yaml L14–20 HYB-005 comments + auditConfig.ignoreGhsas [GHSA-vfj7-8cjw-p6xm], review date 2026-11-05
+IMP-066 PASS cite OK; low risk (docs); VALIDATION.md L9 "0 high" + L15 Vitality Supply build + L16 437 passed confirmed; tip README apps table = tessera/api-server/mockup-sandbox only; CI run 37382015797 vitest 99 passed | 1 skipped (14 files)
+IMP-067 PASS cite OK; low risk (docs); CONSOLIDATION.md L3 "Public consolidated repository" + L41 tessera-unified URL confirmed; repo vitalitychems-dot/TESSERA private=true
+IMP-068 PASS cite OK; low risk (docs); audit L11 "Father alone performs the GitBook → GitHub push" confirmed; flow.md Push authority (1) + command-center "Does not do" say Tessera opens PR/merges after Father yes
+IMP-069 PASS cite OK; low risk (docs); TESSERA_SYSTEM.md L5 ## Overview / L6 "sovereign AI agents" + "envisions a future…"; L73 AGI Training & Evaluation System; no TESTED/REPORTED/GOAL labels in head
+IMP-070 PASS cite OK; med risk (new test; needs express app/supertest-style harness, @workspace/api-zod import); health.ts L6–8 router.get("/healthz") + HealthCheckResponse.parse({status:"ok"}) confirmed; no *health*test* in tree; target path absent (create) artifacts/api-server/src/__tests__/healthz.test.ts
+IMP-071 PASS cite OK; low risk (docs); package.json L11 "eval": run-eval.mjs confirmed (src/cli/run-eval.ts present); eval-chatbot.ts L5 Usage confirmed; eval-runner.ts L7 import os, L275/298/321/343 test names confirmed; target path absent (create) docs/eval/README.md
+IMP-072 PASS cite OK; low risk (docs); README Workspace checks = typecheck/test/build/audit only; api-server eval script + eval-chatbot tsx header confirmed
+IMP-073 PASS cite OK; low/med risk (export CASES from eval-chatbot.ts: file has top-level main() that fetches — test must not import module as-is or main() runs; move CASES to side-effect-free module or guard main); const CASES: EvalCase[] unexported, 10 cases identity-1…complex-1 confirmed; target path absent (create) __tests__/eval-chatbot-cases.test.ts
+IMP-074 PASS cite OK; low risk (nav); z-catalog.md + z-walk.md in tip tree; SUMMARY Historical links only z-repository-index.md; "prior orphan audit" REPORTED (not re-located)
+IMP-075 PASS cite OK; low risk (nav); legacy-handoff-notes.md + complete-archive-notes.md in tree; SUMMARY lists privacy-screened + complete-source-archives summaries only
+IMP-076 PASS cite OK; low risk (docs); hyb-005 L7 **Base:** TESSERA fec56eb · Gitbook 6fe412f confirmed (file has leading blank L1); TESSERA main 5c1137fa has auditConfig ignoreGhsas
+IMP-077 PASS cite OK; low risk (docs); consolidated-todo L15 "**HYB-005:** track the unpatched transitive braces advisory." confirmed; ignore present on TESSERA main
+IMP-078 PASS cite OK; low risk (docs); Start here heading L13, steps 1–5 at L15–19 (minor line drift vs "L13–18"); no HYBRID-CONSOLIDATION-BACKLOG link in README; consolidated-todo L3 says backlog authoritative
+IMP-079 PASS cite OK; low risk (docs); SNN L5 ## Purpose / L7 mentions Cortical Labs CL1, no readiness link; intake/CORTICAL-LABS-READINESS.md exists, absent from SUMMARY
+IMP-080 PASS cite OK; low risk (gitignore dedupe; identical blocks so no behavior change); .gitignore L75 + L85 identical 8-entry credentials blocks confirmed
+IMP-081 PASS cite OK; low risk (docs); METRICS L25 template heading, L28–38 PERIOD…REVIEWER; no filled example; audit L25 item 2 confirmed
+IMP-082 PASS cite OK; low risk (docs); recovered README single paragraph, no links; coordination/STATUS.md + legacy/ + source-index/ present; SUMMARY Recovered links README only
+IMP-083 PASS cite OK; med risk (new test + source change: testProcessMemory/testCPULoad/testOSFreeMemory/testUptimeStability are non-exported; eval-runner.ts L1 imports db from @workspace/db → needs export/extraction or vi.mock); L7 import os + L275/298/321/343 confirmed; no eval-runner test in __tests__; target path absent (create)
+IMP-084 PASS cite OK; low risk (docs); VALIDATION.md L10 "has not yet run on GitHub" confirmed; run 37382015797 CI push on 5c1137fa completed/success
+PR-12 (Gitbook list 1, head 64778b33) PASS TESTED 2026-10-05 ~6:04 PM CT; base bc6b3287 = main tip; 22 files +178/-14; SUMMARY 79/79; 31/31 added relative links OK; no forbidden touches; note 4 trailing-2-space md lines (diff --check claim inaccurate, cosmetic); report build-gate/GATE-2026-10-05-PR12-64778b33.md
+PR-12 POSTMERGE (Gitbook main cdc95b76) PASS TESTED 2026-10-05 ~6:05 PM CT; true merge parents bc6b3287+64778b33; tree 5b81e836 == head 64778b33 tree; open PRs 0; SUMMARY 79/79; HYB-011 1/1 rel link OK, HANDOFF 0 rel (13 external); 0 broken; no .github/wallet/env (SECRETS.md recovered doc pre-existing in base); report build-gate/GATE-2026-10-05-PR12-postmerge-cdc95b76.md
+TESSERA PR-3 (hygiene, head a01b50e9ce997b9a5f4dcd600f14bf0338ee9805) PASS TESTED 2026-10-05 ~6:17 PM CT; base 5c1137fa = main tip; 3 files +8/-10 (.gitignore exact-dup block removed, 2 route comment-only); CI run 37386859599 success, vitest 99 passed/1 skipped; forbidden none; API changes none; report build-gate/GATE-2026-10-05-TESSERA-PR3-4-5-premerge.md
+TESSERA PR-4 (eval harness, head 39db6a6ec1c74411b1d2cae5e48791aace6abb0a) PASS TESTED 2026-10-05 ~6:17 PM CT; 16 files +1064/-120 (tests + eval move-refactor + scripts); CI run 37386858947 success, vitest 18 files 116 passed/1 skipped TESTED from log, node:test 14/14, registration total=925; forbidden none; API changes none
+TESSERA PR-5 (docs/config, head 820d0be57d88fb463bcef74e1ca06e04c4ae6dd7) PASS TESTED 2026-10-05 ~6:17 PM CT; 10 files +55/-11 (docs, .env.example comments, pnpm-workspace core-js placeholder->false); CI run 37386858861 success, vitest 99 passed/1 skipped; forbidden none; API changes none
+TESSERA STACK 3->4->5 on 5c1137fa CLEAN 2026-10-05 ~6:17 PM CT; zero file overlap across all pairs; semantic checks OK (925 routes, merge-gate yaml parse); combined tree not CI-run — confirm main CI after each merge
+TESSERA PR3-4-5 ADDENDUM 2026-10-05 ~6:20 PM CT: #5 frozen install --ignore-scripts TESTED clean in CI run 37386858861 (no core-js/allowBuilds warnings); install with scripts REPORTED low-risk. #4 116 passed/1 skipped TESTED from CI; network-blocked run NOT TESTED (runner has network), static: all fetches go to 127.0.0.1, db + starters mocked, 0 ENOTFOUND/ECONNREFUSED in log. Dummy `routes-index-smoke:unused@127.0.0.1` new in #4 only; no secret-scan step in CI, pnpm audit pass (1 ignored); GH secret-scanning alerts not checked. All three still PASS; stack CLEAN
+TESSERA POSTMERGE tip b16796591c3f92d76290d827ac41c8ffcc975182 PASS TESTED 2026-10-05 ~6:23 PM CT; merge #3 93a526fd → #4 bf2d8a16 → #5 tip; CI run 37387810784 success (job 112025457879); vitest 116 passed/1 skipped (18 files) TESTED from logs; node:test 14/14; audit 1 high ignored + typecheck + db + build all success; report build-gate/GATE-2026-10-05-TESSERA-postmerge-b1679659.md
+TESSERA PR-6 (gitbook-mcp, head d9c4f1e04c87595998f54bcc2a44afd6c8a1b587) PASS TESTED 2026-10-05 ~6:38 PM CT; base b1679659 = main tip; 21 files +2209/-0; CI run 37388265798 success; gitbook-mcp 28 passed TESTED from log; API vitest 116p/1s; lockfile OK limited (new package only); forbidden none; API shape changes none; report build-gate/GATE-2026-10-05-TESSERA-PR6-7-premerge.md
+TESSERA PR-7 (learning-memory, head f57c40aa3863a8f688fb0e61e75bee289c296baa) PASS TESTED 2026-10-05 ~6:38 PM CT; base b1679659; 13 files +594/-3; CI run 37388267246 success; learning-memory 4 passed TESTED from log (suite + test:memory); API vitest 120p/1s; lockfile OK (unchanged); forbidden none; API shape changes none
+TESSERA STACK 6->7 on b1679659 CLEAN 2026-10-05 ~6:38 PM CT; overlap README.md + scripts/test-unified.mjs only; hunks non-overlapping (gitbook bullet vs memory bullet; for-loop entry vs script-arg+memory entry); #7 applies clean after #6; combined tree not CI-run — confirm main CI after each merge
+TESSERA POSTMERGE tip 004b692e4f84a49a4a0fa863f2868a64b7566a3c (#7-only; #6 open) PASS TESTED 2026-10-05 ~6:43 PM CT; parents b1679659+f57c40aa; CI run 37389780527 success (job 112031853934); vitest 120 passed/1 skipped (19 files) + learning-memory/test:memory 4/4 TESTED from logs; node:test 14/14; audit 1 high ignored + typecheck + db + build all success; report build-gate/GATE-2026-10-05-TESSERA-postmerge-004b692e.md
+TESSERA PR-6 (gitbook-mcp Security fixes, head e898111ae9fe730ad214ec63f9173d338a9df53e) PASS TESTED 2026-10-05 ~6:48 PM CT; base 004b692e = main tip; contains main YES (merge 6b65e0e parents d9c4f1e0+004b692e); 21 files +2284/-0; CI run 37390126478 success; gitbook-mcp 30 passed TESTED from log; API vitest 120p/1s; lockfile OK limited (new package only); forbidden none; API shape changes none; Security-fix notes: loopback bind assert + lane env-only (no per-call override) present in code/tests; report build-gate/GATE-2026-10-05-TESSERA-PR6-8-premerge.md
+TESSERA PR-8 (memory redaction, head 25183afb894194cb28c17ef3898b70b81d2115cb) PASS TESTED 2026-10-05 ~6:48 PM CT; base 004b692e; 3 files +27/-2; CI run 37390140635 success; learning-memory 5 passed TESTED from log (suite + test:memory); API vitest 121p/1s; lockfile OK (unchanged); forbidden none; API shape changes none
+TESSERA STACK 6->8 on 004b692e CLEAN 2026-10-05 ~6:48 PM CT; zero file overlap; #8 applies clean after #6; combined tree not CI-run — confirm main CI after each merge
+Zz#1 (Replit guidance, head 7935a4cdc524461290fa64fec2dd06f221d6d391) PASS TESTED 2026-10-05 ~6:52 PM CT; base main@6e64ca612e450cf30eb924162ca76f771deee44d; 2 files AGENTS.md+replit.md docs-only; Gitbook links 2/0 broken (start-here @cdc95b76 + issue #2); mergeable clean draft; CI none OK; report build-gate/GATE-2026-10-05-REPLIT-guidance-Zz-5t-1.md
+5t#1 (Replit guidance, head a267efa588a9ab0d4ca7566065f9daab9d222c9a) PASS TESTED 2026-10-05 ~6:52 PM CT; base main@ea874b7a391ce6d207038215700ce97101114884; 2 files AGENTS.md(add)+replit.md docs-only; Gitbook links 2/0; mergeable clean draft; CI none OK
+1#1 (Replit guidance, head 71a8876e90751484f83c28144e097a09a0d2be00) PASS TESTED 2026-10-05 ~6:52 PM CT; base subrepl-nftoz8d7@7de2b4a778ec62f084e92dd4ed5a3e9be35e45ab; 2 files AGENTS.md(add)+replit.md docs-only; Gitbook links 2/0; mergeable clean draft; CI none OK; note base not main
+TESSERA POSTMERGE tip 9c0fa1cdc0812753cce0301d216eac57dcb9eb5b (#6 then #8) PASS TESTED 2026-10-05 ~6:52 PM CT; parents 75667810+25183afb (#6 merge parents 004b692e+e898111a); CI run 37390612481 success (job 112034523610); vitest 121 passed/1 skipped (19 files) + gitbook-mcp 30/30 + learning-memory/test:memory 5/5 TESTED from logs; node:test 14/14; audit 1 high ignored + typecheck + db + build all success; report build-gate/GATE-2026-10-05-TESSERA-postmerge-9c0fa1cd.md
+GB-062 rev2 diff sha256 6691071e957b8c8df8a88174efbf88995a3dfc3b47f31700cff88d15083d667a PASS TESTED 2026-10-12 ~3:58 PM CT; base main@cd8faa0a5dfa64e69a7d0a0e179b0b60250cd5a3 (main not moved); 3 files docs-only (SUMMARY +1, intake/log +1, merge/CONSOLIDATION-MAP-2026-10-12.md new); apply --check OK + reverse OK + matches proposed-rev2; SUMMARY 125 links 0 missing; added links 2/0; no overlap with open #39/#40; report build-gate/GATE-2026-10-12-GB-062-rev2.md
+2026-10-12 ~16:10 CT | GB-063 rev2 | PASS | diff sha256 f0b2eca5…d5e2 | base main d27e3e6c (tip, unmoved) | apply --check OK, intake/log.md only, 4 links resolve | build-gate/GATE-2026-10-12-GB-063-rev2.md
+2026-10-12 ~16:56 CT | GB-063 rev3 | PASS | diff sha256 f0b2eca5…d5e2 (byte-identical to rev2) | base main 56a7a48d (tip, unmoved; log.md untouched since d27e3e6c) | apply --check OK, 56 rows/12 cols/0 dups | PR #45 (also GB-063) conflicts on intake/log.md:65 | build-gate/GATE-2026-10-12-GB-063-rev3.md
+- 2026-10-12 ~19:00 CT | TESSERA main f76d6484 | PASS | v2 test 48/48 (local node22/pnpm11.25), V2-001 denylist 4/4 + probes, no TESSERA_ENABLE_* default on | /workspace/build-gate/GATE-2026-10-12-TESSERA-main-f76d6484.md
+2026-10-12 ~19:00 CT | GB-066 | PASS | diff sha256 79181882…8536 | base main 2344334e (tip, unmoved) | apply --check OK, intake/log.md only +6/-0, 63 rows/12 cols/0 dups, 0 TESSERA_ENABLE | PR #45 recorded only | build-gate/GATE-2026-10-12-GB-066.md
+- 2026-10-13 ~1:10 AM CT | GB-067 | PASS | Gitbook main 0f05d58b | sha e4c38a54 | /workspace/build-gate/GATE-2026-10-13-GB-067-068.md
+- 2026-10-13 ~1:10 AM CT | GB-068 (on GB-067) | PASS | Gitbook main 0f05d58b | sha eac7f61a | same file
+- 2026-10-13 ~1:10 AM CT | TESSERA tip | NOT REWRITTEN | main 6d6fd5bc, ae58a7e5 absent, f76d6484 still ancestor | same file
+- 2026-10-13 ~02:10 CT | Gitbook PR #55 (qlab) | PASS @ 3e17e9ab | qlab test 8/8 ALL PASS, 34 added files tools/qlab only, clean mergeable; Mod/Sec verdicts not on PR; not merged | build-gate/GATE-2026-10-13-Gitbook-PR55.md
+- 2026-10-13 ~02:20 CT TESSERA main 234e3dcf: PASS (emails noreply incl. 5x noreply@github.com web-flow committer; gitleaks 0 findings/319 commits; scripts 15/15, v2 116/116, gitai 27/27, api-server 420/420 tests, 4 files env-blocked w/o DATABASE_URL). GATE-2026-10-13-TESSERA-main-and-PR257.md
+- 2026-10-13 ~02:20 CT TESSERA PR #257 8de873c6: PASS (merge-clean vs 234e3dc; api-server 442/442 at head and merged tree, same 4 DB files; route-inventory+shadow 36/36; runtime 401 asserted in route-inventory, shadow test static).
+- 2026-10-13 ~2:35 AM CT | Gitbook PR #55 long tests @ 3e17e9ab | test_aqft.py PASS (rc0, ~784s), test_aqft_fix.py PASS (rc0, ~492s); no asserts (run-to-completion only); excluded from qlab test/--full by design; 34/34 blobs hash-verified | build-gate/GATE-2026-10-13-Gitbook-PR55.md
+- 2026-10-13 ~4:28 AM CT | GB-070 rev3 | PASS | sha256 ee8dcf89…b7cc | base main 243ddd4b (tip, unmoved) | apply --check OK; intake/log.md+new mesh/ledger/ledger-15.md; 75 rows/12 cols/0 dups; 0 TESSERA_ENABLE; 0 relative links in new file | build-gate/GATE-2026-10-13-GB-070-rev3.md
+=== MODERATOR TAIL ===
+IMP-005 | PASS | system-runtime and universe.ts both register /universe/metrics
+IMP-006 | PASS | allow-list real; both modules register POST /consensus/propose
+IMP-007 | PASS | allow-list real; improvement mounts before legacy-engines
+IMP-008 | PASS | allow-list real; type= vs dt body difference confirmed
+IMP-009 | PASS | only quantum probes exist; 8 non-quantum unprobed confirmed
+IMP-010 | PASS | placeholder "core-js: set this to true or false" present
+IMP-011 | PASS | advisory section still open-tone; run 37382015797 success confirmed
+IMP-012 | PASS | README lacks CI section; ci.yml validate steps match
+IMP-013 | PASS | VITALITY_* vars present in .env.example; apps absent
+IMP-014 | PASS | SECRETS paragraph present; HYB-017 exists in backlog
+IMP-015 | PASS | storefront utilities wording real; table is "Project" not Applications
+IMP-016 | PASS | first line is // @ts-nocheck legacy adapter
+IMP-017 | PASS | module-scope startAutonomousOperation(); test mocks autonomous-wiring
+IMP-018 | PASS | six module-scope starters confirmed; boot hygiene only, no keys
+IMP-019 | PASS | TESSERA README has no Gitbook backlog/issue link
+IMP-020 | FAIL | already done: README Workspace checks lists pnpm audit; wrong path
+IMP-021 | PASS | "list is exact" comment real; 10 allow-listed entries
+IMP-022 | PASS | ruling comment only in test; route files lack note
+IMP-023 | PASS | archives/README single paragraph; no Gitbook pointer
+IMP-024 | PASS | VALIDATION.md says audit clean (2026-10-02); predates braces
+IMP-025 | PASS | index.ts starters at import; test mocks autonomous-wiring only
+IMP-026 | PASS | readiness file exists; not in SUMMARY; HYB-019 links it
+IMP-027 | PASS | backlog HYB-012 IN REVIEW; 50876d40 is HYB-012 test commit
+IMP-028 | PASS | Active claims still HYB-012 IN REVIEW; inventory on main
+IMP-029 | PASS | Current open work still lists HYB-012–014 as open
+IMP-030 | PASS | Follow-up 1 still open; PR #1 +8 pnpm-workspace.yaml
+IMP-031 | PASS | backlog ends HYB-019; DESIGN exists; approval time REPORTED only
+IMP-032 | PASS | flow.md has no selffix; DESIGN and dryrun/POLL.md exist
+IMP-033 | PASS | roles/tessera.md Active, build lane; admin wording is roles.md
+IMP-034 | PASS | matrix lacks CI-log diagnosis skill; DESIGN §3 classes exist
+IMP-035 | PASS | Start here has 5 steps; no HYB-005 link
+IMP-036 | PASS | "no replies" paragraph followed by superseded note confirmed
+IMP-037 | FAIL | no Gitbook SHA listed; dated snapshot; evidence unread
+IMP-038 | PASS | review/validation.md says braces TODO, CI not yet run
+IMP-039 | PASS | status-definitions lacks PROPOSED/IN LIST states
+IMP-040 | PASS | playbook has no batched ledger loop; page in SUMMARY
+IMP-041 | PASS | roles.md rows "Command Center / Tessera Grok bot" and Grok Bot
+IMP-042 | PASS | Idea forum listed under Historical coordination in SUMMARY
+IMP-043 | PASS | HYB-005 row cites Gitbook PR #6 only; no TESSERA PR #1
+IMP-044 | PASS | workplan lacks readiness link; HYB-019 BLOCKED on §d
+IMP-045 | PASS | DESIGN cites 5:21 PM rule; ops page lacks it
+IMP-046 | PASS | legacy uses listProposals/createProposal; governance uses getAllProposals
+IMP-047 | PASS | allow-list improvement.ts/legacy; legacy calls runImprovementCycle
+IMP-048 | PASS | CONSOLIDATION.md dated 2026-10-02; no today note
+IMP-049 | PASS | matrix see-alsos HYB-006/007 only; no HYB-012 line
+IMP-050 | FAIL | audit page has no "no multi-agent" finding; overlaps IMP-036
+IMP-051 | PASS | MMLU_STYLE_QUESTIONS real; extend existing eval-chatbot.ts, not duplicate
+IMP-052 | PASS | Ollama reference adapter + /local-models/chat real; no ollama binary
+IMP-053 | PASS | BASELINE industry_bench BLOCKED; plan cites boards; spend awaits Father
+IMP-054 | PASS | external LLM default off; keys unset; names only, no values
+IMP-055 | PASS | HYB-019 BLOCKED on §d; distinct from IMP-026/044
+IMP-056 | PASS | HYB-017 and HYB-008 READY on backlog; decision awaits Father
+IMP-057 | PASS | RULING_NAMED_DUPLICATES real; decision distinct from IMP-022 comment
+IMP-058 | PASS | ingested-recall/distillation exist; BASELINE §C rag BLOCKED
+IMP-059 | PASS | MMLU_STYLE_QUESTIONS and "MMLU-style" benchmark labels confirmed
+IMP-060 | PASS | Build gate C3 says 925 NOT TESTED; no assertion
+IMP-061 | PASS | HYB-014 READY; scripts-only scope, no workflow edit
+IMP-062 | PASS | BENCHMARK-PLAN cites URLs+dates; no Tessera score claimed
+IMP-063 | PASS | cursor-origin list_namespaces returns []; awaits Father
+IMP-064 | PASS | HYB-011 READY; excludes 1T; keep findings value-redacted
+IMP-065 | PASS | validation.md L8 braces "remains a TODO"; tip ignoreGhsas + 2026-11-05 review; distinct from IMP-038
+IMP-066 | PASS | VALIDATION L9 0-high + L15–16 storefront/437 real; README no storefront; CI 99/1 confirmed
+IMP-067 | PASS | CONSOLIDATION L3 "Public consolidated" + L41 tessera-unified URL; repo is private TESSERA
+IMP-068 | PASS | audit L11 "Father alone performs the GitBook → GitHub push" vs flow.md Push authority (1)
+IMP-069 | PASS | TESSERA_SYSTEM Overview "sovereign AI agents"/"envisions"; AGI Training line; no honesty labels
+IMP-070 | PASS | health.ts L6–8 /healthz + HealthCheckResponse.parse; no health test in __tests__
+IMP-071 | PASS | pkg L11 eval→dist/cli/run-eval.mjs; eval-chatbot L5 usage; 4 OS tests at L275/298/321/343
+IMP-072 | PASS | README Workspace checks = typecheck/test/build/audit only; eval scripts exist
+IMP-073 | PASS | CASES unexported, 10 cases identity-1…complex-1; no test; needs main() guard for offline import
+IMP-074 | PASS | z-catalog/z-walk on tip; SUMMARY links only z-repository-index
+IMP-075 | PASS | legacy-handoff-notes + complete-archive-notes on tip; absent from SUMMARY
+IMP-076 | FAIL | Base fec56eb is decision-time evidence base (lockfile/CI cited at fec56eb); rewriting falsifies provenance (cf IMP-037); add "current main" line instead
+IMP-077 | PASS | consolidated-todo L15 HYB-005 "track the unpatched…" real; distinct from IMP-029
+IMP-078 | PASS | README Start here 1–5 lacks HYBRID backlog link; distinct from IMP-035 target
+IMP-079 | PASS | SNN Purpose names Cortical Labs CL1, no readiness link; readiness page exists; distinct from IMP-026
+IMP-080 | PASS | .gitignore L75 and L85 identical credentials blocks confirmed; no behavior change
+IMP-081 | PASS | metrics template + audit L25 item 2 real; no filled example; counts must be TESTED, not invented
+IMP-082 | PASS | recovered README one paragraph, no links; coordination/legacy/source-index dirs exist
+IMP-083 | PASS | four OS tests are separate fns (testProcessMemory etc.); no eval-runner test; module imports @workspace/db
+IMP-084 | PASS | VALIDATION L10 "has not yet run on GitHub" real; run 37382015797 success on 5c1137fa
+/workspace/security-gate/autogate-fix.patch
+/workspace/rick/src/Gitbook/mesh/charter/gate_check.py
+/workspace/rick/src/Gitbook/mesh/queue/autogate.sh
+/workspace/rick/src/Gitbook/mesh/queue/gatecheck.py
+/workspace/rick/src/Gitbook/mesh/queue/tests/old_gate_local.sh
+/workspace/einstein/charter/gate_check.py
+/workspace/einstein/charter/0001-mesh-charter-draft-GATE_RULES-v0.1-gate_check.py-not.patch
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/tess/public/nexus-gateway.html
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/tess/server/moltbook-forum-gateway.ts
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/tess/server/tsrt-payment-gateway.ts
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/x/tess/server/moltbook-forum-gateway.ts
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/x/tess/server/sovereign-api-gateway.ts
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/x/tess/server/sovereign-gateway-routes.ts
+/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-XXX/x/tess/server/sovereign-inference-gateway.ts
+/workspace/einstein/round3/tess/archive/from-gitbook/history/recovered/mirror-notes/5t-tessera-consolidation-gate.md
+/workspace/einstein/round3/tess/archive/from-gitbook/mesh/roles/pen-gate-refuse-companion.md
+/workspace/einstein/round3/tess/artifacts/api-server/scripts/pen-local-gate.mjs
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/colonial-sovereign-language-admin-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/conversations-delete-owner-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/legacy-engines-admin-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/rick-gitbook-gates.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/sensitive-route-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/shadow-route-admin-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/sigil-chart-session-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/sigil-tool-owner-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/__tests__/sovereign-engines-session-gate.test.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/lib/pen-local/gate-cli.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/lib/pen-local/post-gate.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/lib/pen-local/pre-gate.ts
+/workspace/einstein/round3/tess/artifacts/api-server/src/lib/quarantine-gate.ts
+/workspace/improvements/gates/security.md:103:- 2026-10-12 4:28 PM CT Tessera ruling on 56a7a48d: not Tessera admin; Cursor Project HYB-016 lane via Contents API (PR create 403); false 'Tessera' git author, unsigned. FLAG stands (direct push), ledger-only, no revert without Father bulk yes. Receipt: Gitbook #2 comment 6132933280. Standing order: lanes must not use Tessera as git author; stop+escalate on PR-create failure.
+/workspace/improvements/gates/security.md:104:- 2026-10-12 ~4:28 PM CT Tessera confirm 56a7a48d: NOT Tessera admin. Cursor Project HYB-016 Contents API after PR 403; false Tessera git author. Content SEC PASS; provenance FLAG. RECEIPT issue #2#issuecomment-6132933280. No revert without Father bulk yes.
+98:- 2026-10-12 3:5x PM CT GB-062 rev2 diff sha256 6691071e…667a: SEC PASS. Docs only (SUMMARY.md, intake/log.md, new merge/CONSOLIDATION-MAP-2026-10-12.md); no secrets/workflows/ENABLE; 1T named only as protected/unopened.
+99:- 2026-10-12 4:0x PM CT GB-063 rev2 diff sha256 f0b2eca5…d5e2: SEC PASS. intake/log.md status backfill only; no secrets/workflows/ENABLE. FLAG: row records GB-050 published as d24359a3 via direct push to main, no PR (2026-10-06 19:19 CT).
+102:- 2026-10-12 4:3x PM CT PROV FLAG Gitbook main 56a7a48d (HYB-016 ledger refresh, 4:09 PM CT): direct push, no PR/Build/Father yes, unsigned, author Tessera. Content SEC PASS: one docs file history/coordination/agent-checkins.md +41/-3; no secrets/flags (word 'workflows' is prose).
+104:- 2026-10-12 ~4:28 PM CT Tessera confirm 56a7a48d: NOT Tessera admin. Cursor Project HYB-016 Contents API after PR 403; false Tessera git author. Content SEC PASS; provenance FLAG. RECEIPT issue #2#issuecomment-6132933280. No revert without Father bulk yes.
+105:- 2026-10-12 6:4x PM CT GB-066 diff sha256 79181882…8536: SEC PASS. intake/log.md, 6 rows added, docs only, no secrets. FLAG: the log itself records that PRs #47-#50 merged with no gate record (O11/PR #50 has none at all).
+106:- 2026-10-12 ~6:50 PM CT Gitbook PR #39 (GB-061 rev2) head 71a8c78f: SEC FAIL (verification incomplete). 70 files additions-only under archive/preserved, content clean; but the 4 pack files whose sha256 the PR lists (COPIED.tsv, SKIPPED.tsv, apply-add.sh, SHA256SUMS.txt) are not in the head tree or on the box, so checksums unverifiable. Re-gate at new head once supplied. See security-gate/GATE-GB-PR39-PR50-ARCHIVE-2026-10-12.md
+107:- 2026-10-12 ~6:50 PM CT Gitbook PR #50 (O11) head 8592dd50, merged 2344334e: content SEC PASS; provenance FAIL (opened 5:18:15, merged 5:18:17 PM CT by vitalitychems-dot, merge author "Tessera", 0 reviews, no gates).
+108:- 2026-10-12 ~6:50 PM CT Gitbook archive/+history/ @ 2344334e: FAIL as-is / PASS-with-excludes. NEW HIGH: archive/moved/1T/ (11 files incl. natal-vault.json) tracked on main since e6ae7e9; NEW HIGH glhf_ API key at Zz ingest e7ee9a19bfd44fc4.txt:59 (archive + history copy). Known HIGH T44 natal-vault.json, collink1007-XXX/.replit:33. t9_admin_token "link" = false positive (localStorage key). EXCLUDE list in gate file.
+109:- 2026-10-12 ~7:15 PM CT | TESSERA post-rewrite public gate | work.git 89961129 + tree 43d3d319 | FAIL — old admin key literal in commit messages 2f70b40206/cb64a013ee (branch replit-agent); all else clean (gitleaks fixture-only, paths absent, preview secret 0, git-crypt OK, jsonl safe) | SEC-TESSERA-POSTREWRITE-GATE.md
+110:- 2026-10-12 7:4x PM CT IDLE-MODE.md rev2 sha256 91249323…b309 (2817 B): SEC PASS docs-only; no secrets/flags/1T; hard limits restated. Notes: garage branches need branch-protection on main; open-source fetches can't carry prompt-injected instructions into actions.
+111:- 2026-10-12 ~8:05 PM CT | TESSERA re-gate | work.git 0f5eab28 PASS (fixture-only, 0 literals incl. messages, paths absent, fsck ok, emails noreply-only) ; tree fdce23ea FAIL — built on stale 89961129 history (admin key in msgs, gmail emails); rebase onto 0f5eab28 & re-gate | SEC-TESSERA-POSTREWRITE-GATE.md
+112:- 2026-10-12 ~8:05 PM CT | TESSERA re-gate | work.git 0f5eab28 CLEAN (fixture-only, literals 0, paths absent, fsck ok, emails noreply-only) ; tree fdce23ea FAIL — based on old 89961129 history (admin-key msgs + gmail emails); rebase git-crypt commits onto 0f5eab28 and re-gate | SEC-TESSERA-POSTREWRITE-GATE.md
+113:- 2026-10-12 ~8:17 PM CT | TESSERA re-gate 2 | tree rebased 4f354393 (on 0f5eab28) PASS — stale chain not ancestor, noreply-only emails, key hashes 0, diff only fixture, git-crypt .env coverage OK; reminders: GitHub PR-ref/cache purge, key rotations
+115:- 2026-10-13 01:04 CT | Security | GB-067 (Gitbook base 0f05d58b) | diff sha256 e4c38a5447b219f653618683fe4af6604500ba080afe8325b3e1721775b9bcf8 MATCH | PASS — docs only (intake/log.md, mesh/HANDOFF.md); gitleaks --no-git on added lines: no leaks; regex: no keys/emails; 1T named only (rule text), no vault/natal paths; no TESSERA_ENABLE flips; no gate bypass/push-to-main instruction (rules keep gates; Ready pushes after gates); no Tessera-as-git-author; git apply --check OK at 0f05d58b.
+116:- 2026-10-13 01:04 CT | Security | GB-068 stacked on GB-067 | diff sha256 eac7f61ac45215a36d75b99bb9c3ada398c8f8cc6940180e0db29b213c169076 MATCH | PASS — docs only (SUMMARY.md, intake/HYBRID-CONSOLIDATION-BACKLOG.md, intake/log.md, new merge/hyb-024-selffix-design.md); gitleaks: no leaks; regex: no keys/emails; no vault/natal/1T paths (1T only in "never touch" rule); no flag flips (design forbids flips, CI-config edits, push to main); "Design author: Tessera" at added line 6 is doc attribution, not git author; git apply --check OK on 0f05d58b+GB-067.
+117:2026-10-13 01:59 CT | Gitbook PR#55 qlab head 3e17e9ab | PASS (LOW notes) | 34 files all tools/qlab/, numpy-only, no network/eval/token reads, no CI/1T/vault/TESSERA_ENABLE, IBM props Apache-2.0 NOTICE w/ attribution (no full LICENSE text—LOW), subprocess only in test runner/selftest (sys.executable), __init__ sys.path insert, tests write *_results.json to cwd; author/committer vitalitychems-dot noreply, unsigned
+118:- 2026-10-13 RETRO Gitbook#56 head c81a530e merge 4feab775 — FAIL: added autogate.sh --merge: auto-squash-merge on script PASS with no Security/Build lane PASS (gate bypass); carried into #62, one fix covers both. Prov: author/committer noreply, self-merged 14s after open at 02:51 CT, no Security gate = PROV-FAIL (process).
+119:- 2026-10-13 RETRO Gitbook#57 head 15419af6 merge 1c7db22f — PASS: docs rename only. Prov: author/committer noreply, self-merged 66s after open at 03:00 CT, no Security gate = PROV-FAIL (process).
+120:- 2026-10-13 RETRO Gitbook#59 head 06ded50d merge 4dd0106a — PASS: offline terms gate; test asserts no urllib/requests/socket imports. Prov: author/committer noreply, self-merged 27s after open at 04:00 CT, no Security gate = PROV-FAIL (process).
+121:- 2026-10-13 RETRO Gitbook#60 head bbda6f2d merge 6b21df68 — PASS: docs/manifest rebase; text reinforces 'do not push main'. Prov: author/committer noreply, self-merged 142s after open at 04:03 CT, no Security gate = PROV-FAIL (process).
+122:- 2026-10-13 RETRO Gitbook#61 head 57cd2917 merge d0ee5a7c — PASS: qlab pytest invariants; local file I/O only. Prov: author/committer noreply, self-merged 35s after open at 04:08 CT, no Security gate = PROV-FAIL (process).
+123:- 2026-10-13 RETRO Gitbook#62 head c796386e merge dbd34dbf — FAIL: --father-approved is a self-asserted CLI flag (no receipt) that skips protected-path, flag-default and gate-tamper checks; --merge auto-merges with no Security/Build PASS; CODEOWNERS owner is the shared account (no real separation). Prov: author/committer noreply, self-merged 9s after open at 04:09 CT, no Security gate = PROV-FAIL (process).
+124:- 2026-10-13 RETRO Gitbook#63 head 65a68544 merge 243ddd4b — PASS: scoreboard scripts read local jsonl only. Prov: author/committer noreply, self-merged 6s after open at 04:10 CT, no Security gate = PROV-FAIL (process).
+125:- 2026-10-13 RETRO TESSERA#260 head 0e33d918 merge 828d1d25 — PASS: brain selfscan; execFileSync runs node --test on a local file (flag-low); approver lane = build. Prov: author/committer noreply, self-merged 11s after open at 02:55 CT, no Security gate = PROV-FAIL (process).
+126:- 2026-10-13 RETRO TESSERA#261 head 0849b79f merge bf346bf7 — PASS: REA JSON record only. Prov: author/committer noreply, self-merged 19s after open at 03:03 CT, no Security gate = PROV-FAIL (process).
+127:- 2026-10-13 RETRO TESSERA#262 head 42f305e5 merge 0236c802 — PASS: HMAC-SHA256 from env GITAI_SESSION_SECRET (random per-process fallback), timingSafeEqual, forged-cookie 401 tests; notes: no Secure flag, no expiry, no rotation. Prov: author/committer noreply, self-merged 39s after open at 03:04 CT, no Security gate = PROV-FAIL (process).
+128:- 2026-10-13 RETRO TESSERA#263 head fad6cd8e merge 35475b21 — PASS: embedding fallback fix; pure compute. Prov: author/committer noreply, self-merged 46s after open at 03:40 CT, no Security gate = PROV-FAIL (process).
+129:- 2026-10-13 RETRO TESSERA#264 head c2f6a6c2 merge f91ff82c — PASS: read-only task-mirror checker; spawnSync in test only. Prov: author/committer noreply, self-merged 23s after open at 03:56 CT, no Security gate = PROV-FAIL (process).
+130:- 2026-10-13 RETRO TESSERA#265 head 4e16b5c3 merge 861bc854 — PASS: brain round 4; pure compute. Prov: author/committer noreply, self-merged 5s after open at 03:56 CT, no Security gate = PROV-FAIL (process).
+131:- 2026-10-13 RETRO TESSERA#266 head 45fbaa1a merge cfd9793d — PASS: re-embed script, dry-run default; new Function in test only, on repo source (flag-low). Prov: author/committer noreply, self-merged 35s after open at 04:08 CT, no Security gate = PROV-FAIL (process).
+132:- 2026-10-13 RETRO TESSERA#267 head 1a8a1ffc merge - — OPEN (not merged): content PASS at this head: Ollama localhost only, GSM8K MIT license kept, no new deps. Prov: author/committer noreply, open, not merged.
+133:- 2026-10-13 RETRO TESSERA#268 head 8af342d9 merge f80cb915 — PASS: bench script; spawnSync re-execs itself only. Prov: author/committer noreply, self-merged 34s after open at 04:11 CT, no Security gate = PROV-FAIL (process).
+134:- 2026-10-13 RETRO TESSERA#269 head 5552a42f merge - — OPEN (not merged): content PASS at this head: pure compute. Prov: author/committer noreply, open, not merged.
+135:- 2026-10-13 RETRO TESSERA#270 head 734b87a1 merge 736faed9 — PASS: /brain/snapshot read-only GET on local memory log. Prov: author/committer noreply, self-merged 33s after open at 04:16 CT, no Security gate = PROV-FAIL (process).
+136:- 2026-10-13 RETRO TESSERA#271 head a8a83e03 merge ca6c2a19 — PASS: BM25 router; router-eval.json quotes old PR bodies: secret-shape names and a synthetic DB URL only, no live values. Prov: author/committer noreply, self-merged 83s after open at 04:17 CT, no Security gate = PROV-FAIL (process).
+137:- 2026-10-13 RETRO TESSERA#272 head eb5abc9e merge - — OPEN (not merged): content PASS at this head: registry JSON + script, no new deps. Prov: author/committer noreply, open, not merged.
+138:- 2026-10-13 RETRO TESSERA#272 head 3726804a (force-pushed; NOT eb5abc9e) merge 408ae0a9 — PASS: delta vs reviewed eb5abc9e is registry.json data (+6 brain modules, MIT license fields) + stronger test asserts; rea-registry.mjs and package.json unchanged; merged blobs == PR files; 'vault' hits are api-server module filenames, not 1T/natal paths; no secrets/flags/deps. Prov: author+committer noreply (merge committer noreply@github.com), self-merged by vitalitychems-dot at 04:25 CT, 8m37s after open, no Security gate before merge = PROV-FAIL (process).
+139:- 2026-10-13T04:27:50-05:00 GB-070 rev3 diff sha256 ee8dcf89…b7cc on Gitbook 243ddd4b: SEC PASS (docs-only intake/log.md + new mesh/ledger/ledger-15.md, 73 lines; regex 0 hits for secrets/gmail/ENABLE/1T/push-main/--merge; git apply --check OK on 243ddd4b). Security PASS applies to the diff; re-pin to PR head SHA when opened.
+140:- 2026-10-13 RETRO TESSERA#274 head 73a34580 merge 15ff5208 (squash; merged blobs == PR files) — PASS content / FAIL provenance: crystal memory is a build script writing docs/v3/crystal.jsonl derived from already-tracked docs/v2/v2-memory.jsonl (only 'natal_vault' risk labels, no contents; no secrets/PII); pack.mjs packs memory observations only, no env/secret reads, no redaction pass (inherits whatever is in memory); serve.mjs GET-only, reads TESSERA_BRAIN_MEMORY path from env (not request); no network calls (URLs are repo-mirror text); no TESSERA_ENABLE flags; no deps. Prov FAIL: both PR commits and the squash have git author name 'Tessera' (noreply email) = Tessera-as-author rule break; self-merged by vitalitychems-dot 9m09s after open at 04:30 CT, no Security gate. CI 'validate' failure at head is pre-existing on main (fails since >=828d1d25, api-server DB test 'inventions' delete).
+141:- 2026-10-13 RETRO TESSERA#281 head 553f9436 merge 3db452f2 (squash; merged blobs == PR files) — PASS content / FAIL provenance: code+docs only (style.mjs, profile.mjs, eval.mjs, SCHEMA.md, GAZE-DESIGN.md, test); no birth/natal data, names, addresses, phones, emails or health data; test fixtures are generic short sentences; corpus default [REDACTED-PATH] (outside repo, mode 700) via TESSERA_CREATOR_DIR, profile stores refs not text; TESSERA_ENABLE_GAZE default 0 is a design note only (no code). Notes: corpus dir is outside git so .gitignore/git-crypt not applicable — if TESSERA_CREATOR_DIR is ever set inside the repo nothing ignores it (fix: add **/creator-corpus/ and *.creator.jsonl to .gitignore). Prov FAIL: squash author name 'Tessera'; self-merged 28s after open at 04:27 CT, no Security gate. CI validate failure pre-existing on main. SEPARATE HIGH (pre-existing, not #281): repo is PUBLIC and artifacts/api-server/src/lib/father-natal.ts (6248 B, last c80f8021) + archive/.../Grok-ready/.../father-natal.ts (6894 B) are tracked PLAINTEXT (no GITCRYPT header); contents not opened.

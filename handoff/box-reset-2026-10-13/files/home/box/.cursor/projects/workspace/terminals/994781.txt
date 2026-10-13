@@ -1,0 +1,31 @@
+---
+pid: 384336
+cwd: "/workspace/repo-lab"
+command: "LAB=/workspace/repo-lab\nRESULTS=$LAB/INSTALL-RESULTS.tsv\n\n# Fix snntorch: add torch CPU then retest\n(\n  name=jeshraghian__snntorch\n  dir=$LAB/$name\n  PIP=$dir/.venv/bin/pip\n  PY=$dir/.venv/bin/python\n  log=$dir/install-test.log\n  echo '=== snntorch + torch ===' | tee -a \"$log\"\n  if timeout 280 \"$PIP\" install torch --index-url https://download.pytorch.org/whl/cpu >>\"$log\" 2>&1; then\n    if timeout 90 \"$PY\" -c 'import snntorch,torch; print(\"snntorch\", snntorch.__version__, \"torch\", torch.__version__)' >>\"$log\" 2>&1; then\n      # update results: remove old fail line and add pass\n      grep -v \"^jeshraghian__snntorch\" \"$RESULTS\" > \"$RESULTS.tmp\" && mv \"$RESULTS.tmp\" \"$RESULTS\"\n      echo -e \"jeshraghian__snntorch\\tPASS\\tinstall+torch+import ok\" >> \"$RESULTS\"\n      echo SNN_PASS\n    else\n      echo SNN_TEST_FAIL; tail -10 \"$log\"\n    fi\n  else\n    echo SNN_TORCH_FAIL; tail -20 \"$log\"\n  fi\n) &\n\nrun_py() {\n  local name=\"$1\"; local install_args=\"$2\"; local test_py=\"$3\"\n  local dir=\"$LAB/$name\"; local log=\"$dir/install-test.log\"\n  echo \"=== $name ===\" | tee \"$log\"\n  cd \"$dir\" || { echo -e \"$name\\tFAIL\\tmissing dir\" >> \"$RESULTS\"; return; }\n  rm -rf .venv\n  python3 -m venv .venv\n  local PIP=\"$dir/.venv/bin/pip\"; local PY=\"$dir/.venv/bin/python\"\n  \"$PIP\" install -U pip setuptools wheel -q >>\"$log\" 2>&1\n  echo \"INSTALL: pip install $install_args\" | tee -a \"$log\"\n  if timeout 280 \"$PIP\" install $install_args >>\"$log\" 2>&1; then\n    echo INSTALL_OK | tee -a \"$log\"\n    if timeout 90 \"$PY\" -c \"$test_py\" >>\"$log\" 2>&1; then\n      echo -e \"${name}\\tPASS\\tinstall+import ok\" >> \"$RESULTS\"\n      echo PASS | tee -a \"$log\"\n    else\n      echo -e \"${name}\\tFAIL\\ttest/import failed\" >> \"$RESULTS\"\n      echo TEST_FAIL | tee -a \"$log\"; tail -12 \"$log\"\n    fi\n  else\n    ec=$?\n    echo -e \"${name}\\tFAIL\\tinstall exit=$ec\" >> \"$RESULTS\"\n    echo INSTALL_FAIL_$ec | tee -a \"$log\"; tail -20 \"$log\"\n  fi\n}\n\n# OpenManus: requirements can be heavy; try pip install -e . or requirements\nrun_py FoundationAgents__OpenManus '-r requirements.txt' 'import sys; sys.path.insert(0,\".\"); from app import __init__; print(\"openmanus ok\")' &\nrun_py Aider-AI__aider '-e .' 'import aider; print(\"aider ok\")' &\n\nwait\necho '=== after batch B ==='\ncat \"$RESULTS\"\n"
+title: "Install torch for snntorch; OpenManus; aider"
+status: succeeded
+started_at: 2026-10-05T22:43:14.976Z
+running_for_ms: 201034   
+---
+=== snntorch + torch ===
+=== Aider-AI__aider ===
+=== FoundationAgents__OpenManus ===
+INSTALL: pip install -r requirements.txt
+INSTALL: pip install -e .
+SNN_PASS
+INSTALL_OK
+PASS
+INSTALL_OK
+PASS
+=== after batch B ===
+repo	status	reason
+Cortical-Labs__cl-sdk	PASS	install+import ok
+jeshraghian__snntorch	PASS	install+torch+import ok
+Aider-AI__aider	PASS	install+import ok
+FoundationAgents__OpenManus	PASS	install+import ok
+
+---
+exit_code: 0
+elapsed_ms: 201034
+ended_at: 2026-10-05T22:46:36.010Z
+---

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# usage: sc get|put|stats <repo> <sha> <scan-name> [file-for-put]
+D=/workspace/ops/scan-cache/db; mkdir -p $D; op=$1; k="$2@$3#$4"; f=$D/$(echo -n "$k"|sha1sum|cut -c1-40).zst
+case $op in
+ get) if [ -f $f ]; then zstd -dcq $f; echo "$(date -Is) HIT $k bytes=$(zstd -dcq $f|wc -c)" >>${D%/db}/stats.log; else echo "$(date -Is) MISS $k" >>${D%/db}/stats.log; exit 1; fi;;
+ put) zstd -q19 -f "${5:-/dev/stdin}" -o $f 2>/dev/null || zstd -q19 -c >$f; echo "$k" >>$D/index;;
+ stats) awk '/HIT/{h++;split($NF,a,"=");b+=a[2]}/MISS/{m++}END{printf "hits=%d misses=%d bytes_avoided=%d\n",h,m,b}' ${D%/db}/stats.log 2>/dev/null;;
+esac

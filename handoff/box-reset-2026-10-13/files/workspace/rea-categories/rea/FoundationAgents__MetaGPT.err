@@ -1,0 +1,110 @@
+{"rea_progress":{"phase":"analyze_javascript_application","completed":0,"total":1,"message":"Inventorying and parsing application artifacts","sequence":1}}
+{"rea_progress":{"phase":"read_javascript_artifacts","completed":0,"total":1,"message":"Reading inventoried JavaScript application sources","sequence":2}}
+{"rea_progress":{"phase":"parse_javascript_sources","completed":0,"total":1,"message":"Parsing and projecting 97 application source files","sequence":3}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .devcontainer/devcontainer.json (1/97)","sequence":4}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting config/puppeteer-config.json (2/97)","sequence":5}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting docs/.well-known/ai-plugin.json (3/97)","sequence":6}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/exp_pool/engineer_exps.json (4/97)","sequence":7}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/exp_pool/team_leader_exps.json (5/97)","sequence":8}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/rag_bm/RGB_En/answer.json (6/97)","sequence":9}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/rag_bm/dataset_info.json (7/97)","sequence":10}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/rag_bm/simplified_CRUD/answer.json (8/97)","sequence":11}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/rag_bm/simplified_RGB/answer.json (9/97)","sequence":12}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/data/search_kb/example.json (10/97)","sequence":13}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/environment/0.json (11/97)","sequence":14}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Isabella Rodriguez/bootstrap_memory/associative_memory/embeddings.json (12/97)","sequence":15}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Isabella Rodriguez/bootstrap_memory/associative_memory/kw_strength.json (13/97)","sequence":16}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Isabella Rodriguez/bootstrap_memory/associative_memory/nodes.json (14/97)","sequence":17}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Isabella Rodriguez/bootstrap_memory/scratch.json (15/97)","sequence":18}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Isabella Rodriguez/bootstrap_memory/spatial_memory.json (16/97)","sequence":19}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Klaus Mueller/bootstrap_memory/associative_memory/embeddings.json (17/97)","sequence":20}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Klaus Mueller/bootstrap_memory/associative_memory/kw_strength.json (18/97)","sequence":21}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Klaus Mueller/bootstrap_memory/associative_memory/nodes.json (19/97)","sequence":22}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Klaus Mueller/bootstrap_memory/scratch.json (20/97)","sequence":23}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Klaus Mueller/bootstrap_memory/spatial_memory.json (21/97)","sequence":24}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Maria Lopez/bootstrap_memory/associative_memory/embeddings.json (22/97)","sequence":25}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Maria Lopez/bootstrap_memory/associative_memory/kw_strength.json (23/97)","sequence":26}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Maria Lopez/bootstrap_memory/associative_memory/nodes.json (24/97)","sequence":27}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Maria Lopez/bootstrap_memory/scratch.json (25/97)","sequence":28}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/personas/Maria Lopez/bootstrap_memory/spatial_memory.json (26/97)","sequence":29}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting examples/stanford_town/storage/base_the_ville_isabella_maria_klaus/reverie/meta.json (27/97)","sequence":30}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/.prettierrc.json (28/97)","sequence":31}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/index.js (29/97)","sequence":32}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/base.js (30/97)","sequence":33}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/chests.js (31/97)","sequence":34}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/inventory.js (32/97)","sequence":35}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/onChat.js (33/97)","sequence":36}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/onError.js (34/97)","sequence":37}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/onSave.js (35/97)","sequence":38}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/status.js (36/97)","sequence":39}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/observation/voxels.js (37/97)","sequence":40}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/skillLoader.js (38/97)","sequence":41}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/lib/utils.js (39/97)","sequence":42}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/examples/collector.js (40/97)","sequence":43}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/examples/oreMiner.js (41/97)","sequence":44}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/examples/storageBot.js (42/97)","sequence":45}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/package.json (43/97)","sequence":46}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/BlockVeins.ts (44/97)","sequence":47}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/CollectBlock.ts (45/97)","sequence":48}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/Inventory.ts (46/97)","sequence":49}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/Targets.ts (47/97)","sequence":50}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/TaskQueue.ts (48/97)","sequence":51}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/TemporarySubscriber.ts (49/97)","sequence":52}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/Util.ts (50/97)","sequence":53}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/src/index.ts (51/97)","sequence":54}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/mineflayer-collectblock/tsconfig.json (52/97)","sequence":55}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/environment/minecraft/mineflayer/package.json (53/97)","sequence":56}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/ext/cr/points.json (54/97)","sequence":57}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/ext/cr/points_cn.json (55/97)","sequence":58}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/ext/sela/insights/fixed_insights.json (56/97)","sequence":59}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/ext/stanford_town/static_dirs/assets/the_ville/matrix/maze_meta_info.json (57/97)","sequence":60}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/SummarizeSkill/MakeAbstractReadable/config.json (58/97)","sequence":61}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/SummarizeSkill/Notegen/config.json (59/97)","sequence":62}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/SummarizeSkill/Summarize/config.json (60/97)","sequence":63}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/SummarizeSkill/Topics/config.json (61/97)","sequence":64}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/Acronym/config.json (62/97)","sequence":65}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/AcronymGenerator/config.json (63/97)","sequence":66}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/AcronymReverse/config.json (64/97)","sequence":67}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/Brainstorm/config.json (65/97)","sequence":68}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/EmailGen/config.json (66/97)","sequence":69}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/EmailTo/config.json (67/97)","sequence":70}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/EnglishImprover/config.json (68/97)","sequence":71}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/NovelChapter/config.json (69/97)","sequence":72}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/NovelChapterWithNotes/config.json (70/97)","sequence":73}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/NovelOutline/config.json (71/97)","sequence":74}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/Rewrite/config.json (72/97)","sequence":75}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/ShortPoem/config.json (73/97)","sequence":76}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/StoryGen/config.json (74/97)","sequence":77}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/TellMeMore/config.json (75/97)","sequence":78}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/Translate/config.json (76/97)","sequence":79}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/skills/WriterSkill/TwoSentenceSummary/config.json (77/97)","sequence":80}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting metagpt/utils/index.html (78/97)","sequence":81}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/code/js/1.js (79/97)","sequence":82}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/demo_project/code_summaries.json (80/97)","sequence":83}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/demo_project/dependencies.json (81/97)","sequence":84}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/demo_project/prd.json (82/97)","sequence":85}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/demo_project/system_design.json (83/97)","sequence":86}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/demo_project/tasks.json (84/97)","sequence":87}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/demo_project/test_game.py.json (85/97)","sequence":88}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/graph_db/networkx.class_view.json (86/97)","sequence":89}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/graph_db/networkx.sequence_view.json (87/97)","sequence":90}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/mermaid_rsp_cache.json (88/97)","sequence":91}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/openai/embedding.json (89/97)","sequence":92}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/rsp_cache.json (90/97)","sequence":93}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/search/serpapi-metagpt-4.json (91/97)","sequence":94}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/search/serpapi-metagpt-8.json (92/97)","sequence":95}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/search/serper-metagpt-6.json (93/97)","sequence":96}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/search/serper-metagpt-8.json (94/97)","sequence":97}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/search_rsp_cache.json (95/97)","sequence":98}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/ui/1b.png.html (96/97)","sequence":99}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting tests/data/ut_writer/yft_swaggerApi.json (97/97)","sequence":100}}
+{"rea_progress":{"phase":"build_javascript_application_graph","completed":0,"total":1,"message":"Constructing application and Electron boundary relationships","sequence":101}}
+{"rea_progress":{"phase":"seal_javascript_application_graph","completed":0,"total":1,"message":"Sealing the validated application graph","sequence":102}}
+{"rea_progress":{"phase":"build_javascript_semantic_graph","completed":0,"total":1,"message":"Binding and validating static semantic relationships","sequence":103}}
+{"rea_progress":{"phase":"seal_javascript_semantic_graph","completed":0,"total":1,"message":"Validating and sealing the semantic graph","sequence":104}}
+{"rea_progress":{"phase":"validate_javascript_application_result","completed":0,"total":1,"message":"Validating result metadata and cross-graph bindings","sequence":105}}
+{"rea_progress":{"phase":"create_javascript_application_evidence","completed":0,"total":1,"message":"Creating and hashing application analysis Evidence","sequence":106}}
+{"rea_progress":{"phase":"seal_javascript_application_result","completed":0,"total":1,"message":"Sealing the complete application analysis result","sequence":107}}
+{"rea_progress":{"phase":"validate_javascript_application_evidence","completed":0,"total":1,"message":"Validating the immutable application Evidence JSON","sequence":108}}
+{"rea_progress":{"phase":"hash_javascript_application_evidence","completed":0,"total":1,"message":"Hashing the complete application analysis Evidence","sequence":109}}
+{"rea_progress":{"phase":"analyze_javascript_application","completed":1,"total":1,"message":"Application graph and Electron boundaries reconstructed","terminal":true,"sequence":110}}

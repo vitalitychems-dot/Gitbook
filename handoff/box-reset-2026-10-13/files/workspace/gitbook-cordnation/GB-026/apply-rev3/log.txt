@@ -1,0 +1,6 @@
+diff rev2-file vs rev3-file: rc=1 (1 = differs); changed diff-file lines: 2
+interdiff numstat: 1	1	mesh/roles/tessera-pen.md
+A git apply --check rev3 on clean 979c35e: rc=0
+B git apply rev3 on clean 979c35e: rc=0
+  result tree 3b939545106d65be8fd9760f884f2293937bb8bd ; p26r3 tree 3b939545106d65be8fd9760f884f2293937bb8bd
+C rev3 alone on clean ecd9022 (informational, expected fail): rc=1

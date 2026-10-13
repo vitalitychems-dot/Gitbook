@@ -1,0 +1,1 @@
+| GB-019 | Cortical Labs readiness | Tessera (admin) / Cordnation | 2026-10-05 | Father via Tessera | TBD | draft (Tessera-gate fixes) | Private inventory UNKNOWN; HYB-019 BLOCKED (Father §d); stacks after GB-018 |

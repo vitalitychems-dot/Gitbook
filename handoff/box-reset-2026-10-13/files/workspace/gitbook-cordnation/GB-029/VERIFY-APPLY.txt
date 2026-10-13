@@ -1,0 +1,5 @@
+local intake/log.md blob dec5f592cc44fdec37dd654d5eccaf25d93fb0eb ; 4565152 blob dec5f592cc44fdec37dd654d5eccaf25d93fb0eb
+A git apply --check GB-029 on clean 4565152: rc=0
+B git apply: rc=0
+  result tree dcdfc0219ae3695b9c8bee0a195aebced6c5f31d; drafted p29 tree dcdfc0219ae3695b9c8bee0a195aebced6c5f31d
+C reverse --check: rc=0

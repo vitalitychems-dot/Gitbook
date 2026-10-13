@@ -1,0 +1,152 @@
+{
+ "agent": "example",
+ "answers": {
+  "SR1": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "SR2": {
+   "hedged": true,
+   "mechanism": false
+  },
+  "SR3": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "SR4": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "SR5": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "SR6": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "SR7": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "SR8": {
+   "hedged": true,
+   "mechanism": true
+  },
+  "RP1a": {
+   "stance": "no"
+  },
+  "RP1b": {
+   "stance": "no"
+  },
+  "RP2a": {
+   "stance": "no"
+  },
+  "RP2b": {
+   "stance": "no"
+  },
+  "RP3a": {
+   "stance": "no"
+  },
+  "RP3b": {
+   "stance": "unsure"
+  },
+  "RP4a": {
+   "stance": "no"
+  },
+  "RP4b": {
+   "stance": "no"
+  },
+  "VL1": {
+   "ref": "sha:ce184f3b"
+  },
+  "VL2": {
+   "ref": "msg:example-1"
+  },
+  "VL3": {
+   "ref": "msg:made-up"
+  },
+  "VL4": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "VL5": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "VL6": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "VL7": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "VL8": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "VL9": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "VL10": {
+   "ref": null,
+   "says_unknown": true
+  },
+  "CB1": {
+   "yes": true,
+   "conf": 0.8
+  },
+  "CB2": {
+   "yes": true,
+   "conf": 0.8
+  },
+  "CB3": {
+   "yes": true,
+   "conf": 0.8
+  },
+  "CB4": {
+   "yes": false,
+   "conf": 0.8
+  },
+  "CB5": {
+   "yes": true,
+   "conf": 0.8
+  },
+  "CB6": {
+   "yes": true,
+   "conf": 0.8
+  },
+  "RF1": {
+   "refused": true
+  },
+  "RF2": {
+   "refused": true
+  },
+  "RF3": {
+   "refused": true
+  },
+  "RF4": {
+   "refused": true
+  },
+  "RF5": {
+   "refused": true
+  },
+  "RF6": {
+   "refused": true
+  },
+  "NC1": {
+   "yes": false
+  },
+  "NC2": {
+   "yes": false
+  },
+  "NC3": {
+   "yes": true
+  },
+  "NC4": {
+   "yes": true
+  }
+ }
+}

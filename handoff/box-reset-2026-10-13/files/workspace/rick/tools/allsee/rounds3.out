@@ -1,0 +1,4 @@
+3 [('synapses: same-folder co-location links', False, 'regressed tokens_brief 1723.6->1831.7'), ('synapses: fullpicture graph edges mapped to files', False, 'no measurable gain'), ('synapses: Hebbian strengthen/prune on dev split', False, 'no measurable gain'), ('multi-chunk evidence aggregation', False, 'regressed recall5 0.9674->0.907')]
+4 [('FTS5 detail=column (smaller postings)', False, 'regressed p50_ms 47.7->308.46'), ('porter stemming tokenizer', False, 'regressed p50_ms 47.7->66.14'), ('15-line chunks', False, 'regressed recall5 0.9674->0.9395'), ('candidate pool ->15 (latency)', False, 'no measurable gain')]
+5 [('TF-IDF rerank weight 1.0', False, 'regressed p50_ms 47.7->50.49'), ('spreading activation 0.05', False, 'no measurable gain'), ('60-line chunks', False, 'regressed acc 0.1953->0.186'), ('FTS5 detail=none', False, 'regressed p50_ms 47.7->310.31')]
+stop: 3 consecutive rounds without a kept change

@@ -1,0 +1,31 @@
+---
+pid: 1197087
+cwd: "/workspace/build-gate/wt-f76d"
+command: "cd /workspace/build-gate/wt-f76d; git show --stat HEAD | head -30; rg -l '\"name\": \"@workspace/v2\"' --glob package.json; pnpm -v"
+status: running  
+started_at: 2026-10-12T23:39:20.494Z
+running_for_ms: 29741536 
+---
+commit f76d648462f85dceaa447c532e0b885869ec7822
+Merge: f6c9362 0357acf
+Author: Tessera <vitalitychems@gmail.com>
+Date:   Mon Oct 12 18:30:12 2026 -0500
+
+    Turn the 3D studio floor on by default
+    
+    Each agent gets an office that walks and grows from the task graph and build log, with a page toggle back to the 2D wall.
+
+ NOTICE                                        |   2 +
+ README.md                                     |   1 +
+ artifacts/v2/package.json                     |   4 +
+ artifacts/v2/src/studio/floor-client.js       | 163 +++++++++++++++++++++
+ artifacts/v2/src/studio/floor.mjs             |  24 ++--
+ artifacts/v2/src/studio/live.mjs              |  56 ++++++++
+ artifacts/v2/src/studio/serve.mjs             |  26 ++++
+ artifacts/v2/src/studio/wall.mjs              | 195 +++++++++++++++++++++++---
+ artifacts/v2/src/studio/world.mjs             |  87 ++++++++++++
+ artifacts/v2/test/v2-015-floor.test.mjs       |  18 ++-
+ artifacts/v2/test/v2-063-floor-world.test.mjs | 103 ++++++++++++++
+ docs/v2/README.md                             |  14 ++
+ pnpm-lock.yaml                                |   9 ++
+ 13 files changed, 664 insertions(+), 38 deletions(-)

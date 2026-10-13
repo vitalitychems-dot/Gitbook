@@ -1,0 +1,32 @@
+---
+pid: 88929
+cwd: "/tmp/bgs"
+command: "S=/workspace/build-gate/selfimprove/scripts; cd /tmp/bgs\npython3 $S/check_enable_defaults.py /workspace/build-gate/tessera | tail -5; echo rc=$?\nprintf 'const a = process.env.TESSERA_ENABLE_X ?? \"1\";\\nconst b = process.env.TESSERA_ENABLE_Y !== \"0\";\\nconst c = process.env.TESSERA_ENABLE_Z === \"1\";\\n' > bad.ts; printf 'TESSERA_ENABLE_W=1\\n' > s.env; python3 $S/check_enable_defaults.py --files bad.ts s.env; echo rc=$?\ncd /workspace/build-gate/tessera && bash $S/check_noreply.sh HEAD~20 HEAD; echo rc=$?\n# Gitbook: fetch tree into sparse temp via API for link check of SUMMARY\ncd /tmp/bgs && rm -rf gb && mkdir gb && cp SUMMARY.md log.md gb/ && gh api \"repos/vitalitychems-dot/Gitbook/git/trees/main?recursive=1\" --jq '.tree[]|select(.type==\"blob\")|.path' > paths.txt && (cd gb && while read p; do mkdir -p \"$(dirname \"$p\")\"; [ -e \"$p\" ] || : > \"$p\"; done < ../paths.txt) 2>/dev/null; cp log.md gb/intake/log.md; python3 $S/check_links.py --root gb SUMMARY.md intake/log.md | tail -4; echo rc=$?; python3 $S/check_tables.py gb/intake/log.md | tail -3; echo rc=$?\nprintf '| ID | A |\\n|---|---|\\n| GB-1 | x |\\n| GB-1 | y |\\n| GB-2 | a | b |\\n' > t.md; python3 $S/check_tables.py t.md; echo rc=$?; du -sh gb"
+status: succeeded
+started_at: 2026-10-13T11:07:49.542Z
+running_for_ms: 30675    
+---
+checked 1167 files, 0 default-on flag(s)
+rc=0
+default-on TESSERA_ENABLE flag: bad.ts:1: TESSERA_ENABLE_X ?? "1"
+default-on TESSERA_ENABLE flag: bad.ts:2: TESSERA_ENABLE_Y !== "0"
+default-on TESSERA_ENABLE flag: s.env:1: TESSERA_ENABLE_W=1
+checked 2 files, 3 default-on flag(s)
+rc=1
+All commits in HEAD~20..HEAD use noreply emails (20 commits).
+rc=0
+checked 2 file(s), 0 broken link(s)
+rc=0
+checked 1 file(s), 0 problem(s)
+rc=0
+t.md:4: duplicate ID GB-1 (first at line 3)
+t.md:5: row has 3 columns, header has 2
+checked 1 file(s), 2 problem(s)
+rc=1
+3.2M	gb
+
+---
+exit_code: 0
+elapsed_ms: 30675
+ended_at: 2026-10-13T11:08:20.217Z
+---

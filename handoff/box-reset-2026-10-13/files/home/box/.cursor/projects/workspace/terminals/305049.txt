@@ -1,0 +1,14 @@
+---
+pid: 80885
+cwd: "/tmp/tv"
+command: "cd /tmp/tv/artifacts/api-server/src && rg -ln \"generateEmbedding\" | head; rg -n \"embedding\" lib/vector-memory.ts 2>/dev/null | rg -i \"insert|persist|save|db\" | head -5"
+status: failed   
+started_at: 2026-10-13T08:39:22.298Z
+running_for_ms: 31494    
+---
+
+---
+exit_code: unknown
+elapsed_ms: 31494
+ended_at: 2026-10-13T08:39:53.792Z
+---

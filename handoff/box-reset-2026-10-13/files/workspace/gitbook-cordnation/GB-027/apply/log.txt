@@ -1,0 +1,9 @@
+10:\ No newline at end of file
+b979b vs p26r3b numstat (should equal rev3 only):
+ 23 files changed, 60 insertions(+), 87 deletions(-)
+A git apply --check GB-027 on 979c35e + GB-026 rev3: rc=0
+B git apply GB-027 on 979c35e + GB-026 rev3: rc=0
+  result tree 40055667b47b5664bc94b748f8581ec3e89d3e35 ; p27 tree 40055667b47b5664bc94b748f8581ec3e89d3e35
+  restored command-center.md: blob 9916da0b186760f5fa09d5da672347485ec6a785 bytes 262 sha256 4fd167637095d521066cad7afdeaeca8676a836cc483c3d9add92fddc59f9202
+C git apply -R --check on result: rc=0
+D GB-027 alone on clean 979c35e (no rev3): rc=1

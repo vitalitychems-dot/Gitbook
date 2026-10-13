@@ -1,0 +1,114 @@
+<cursor_untrusted_data_1337 source="CallDynamicTool">
+
+diff --git a/tools/einstein/cron-nonce/README.md b/tools/einstein/cron-nonce/README.md
+new file mode 100644
+index 0000000..4bb54fd
+--- /dev/null
++++ b/tools/einstein/cron-nonce/README.md
+@@ -0,0 +1,25 @@
++# Unpredictable gate cron timing + nonce-bound PASS (Gitbook #72, for Security)
++
++**Entropy:** the runner OS CSPRNG via Python `secrets` only. Nothing is derived from commit SHA, wall time or `run_id`, since all three are public or guessable.
++
++**Jitter:** an Actions cron at a fixed coarse slot (e.g. `*/30`), then `sleep $(python3 -c 'import cron_nonce as c;print(c.jitter(N, TIMEOUT_S))')`. `jitter` is uniform over `[0, min(N, timeout-60s))` and raises an error if the cap is ≤ 0, so the job can never time out from its own sleep.
++
++**Nonce:** 128-bit `secrets.token_hex(16)`. The signed message is `PASS <sha> <nonce> <ts>` (ed25519, one key per gate). The verifier:
++- checks the SHA equals the head being merged;
++- requires ts within `[now-TTL, now+60s]`;
++- rejects a nonce already seen;
++- checks the signature against pinned public keys;
++- drops seen-nonces older than TTL, so memory is bounded.
++
++**Tests** (`python3 test_cron_nonce.py`, 13 tests, 5/5 runs OK). 10k draws, N=600:
++
++| Run | chi² (20 bins, df 19; crit 43.8 @ p=.001) | lag-1 serial r (bound 0.04) | Next-bin predictor hit rate (chance 0.050) |
++|---|---|---|---|
++| 1 | 27.3 | 0.0174 | 0.0467 |
++| 2 | 12.5 | 0.0063 | 0.0452 |
++| 3 | 23.0 | -0.0014 | 0.0482 |
++| 4 | 22.7 | 0.0055 | 0.0549 |
++| 5 | 17.7 | -0.0060 | 0.0504 |
++
++- Replay, wrong-SHA, forged key, tampered nonce and stale ts are all rejected; a valid PASS is accepted.
++- **Limits:** the statistical tests detect gross bias only; the security comes from the CSPRNG itself. Key pinning and CODEOWNERS locking of the pubkey file are Tessera's #71 work; not touched here.
+diff --git a/tools/einstein/cron-nonce/cron_nonce.py b/tools/einstein/cron-nonce/cron_nonce.py
+new file mode 100644
+index 0000000..a1392fe
+--- /dev/null
++++ b/tools/einstein/cron-nonce/cron_nonce.py
+@@ -0,0 +1,32 @@
++#!/usr/bin/env python3
++"""Unpredictable gate timing + nonce-bound signed PASS (Gitbook #72 / Security).
++Entropy: OS CSPRNG only (secrets). Never derived from commit SHA, time or run_id."""
++import secrets,time
++from cryptography.hazmat.primitives.asymmetric.ed25519 import Ed25519PrivateKey,Ed25519PublicKey
++from cryptography.exceptions import InvalidSignature
++def jitter(n_max,timeout_s,margin_s=60):
++    """Uniform sleep in [0, min(n_max, timeout-margin)) seconds."""
++    cap=min(n_max,timeout_s-margin_s)
++    if cap<=0: raise ValueError("jitter cap must be below job timeout")
++    return secrets.randbelow(cap)
++def nonce(): return secrets.token_hex(16)  # 128-bit
++def pass_msg(sha,n,ts): return f"PASS {sha} {n} {ts}".encode()
++def sign(sk,sha):
++    n,ts=nonce(),int(time.time()); return pass_msg(sha,n,ts),sk.sign(pass_msg(sha,n,ts))
++class Verifier:
++    def __init__(self,pubkeys,ttl=3600): self.keys=pubkeys;self.ttl=ttl;self.seen={}
++    def check(self,msg,sig,want_sha,now=None):
++        now=int(time.time()) if now is None else now
++        for (t,n) in list(self.seen):
++            if t<now-self.ttl: del self.seen[(t,n)]  # expire old nonces
++        try: kw,sha,n,ts=msg.decode().split(" ");ts=int(ts)
++        except Exception: return "REJECT malformed"
++        if kw!="PASS" or sha!=want_sha: return "REJECT sha"
++        if len(n)!=32: return "REJECT nonce"
++        if not (now-self.ttl<=ts<=now+60): return "REJECT stale"
++        if n in self.seen.values(): return "REJECT replay"
++        for k in self.keys:
++            try: k.verify(sig,msg);break
++            except InvalidSignature: pass
++        else: return "REJECT sig"
++        self.seen[(ts,n)]=n; return "ACCEPT"
+diff --git a/tools/einstein/cron-nonce/test_cron_nonce.py b/tools/einstein/cron-nonce/test_cron_nonce.py
+new file mode 100644
+index 0000000..dc5d9ea
+--- /dev/null
++++ b/tools/einstein/cron-nonce/test_cron_nonce.py
+@@ -0,0 +1,34 @@
++import unittest,secrets,math,time,collections
++from cron_nonce import *
++N=600;K=10000
++class Rand(unittest.TestCase):
++    d=[jitter(N,1800) for _ in range(K)]
++    def test_range(self): self.assertTrue(0<=min(self.d) and max(self.d)<N)
++    def test_cap_below_timeout(self): self.assertTrue(all(jitter(10**6,300)<240 for _ in range(1000)));self.assertRaises(ValueError,jitter,10,30)
++    def test_chi2_uniform(self):  # 20 bins, df=19, p=0.001 crit 43.82
++        c=collections.Counter(x*20//N for x in self.d);e=K/20
++        self.assertLess(sum((c[i]-e)**2/e for i in range(20)),43.82)
++    def test_serial_corr(self):
++        x=self.d;m=sum(x)/K;v=sum((a-m)**2 for a in x)
++        r=sum((x[i]-m)*(x[i+1]-m) for i in range(K-1))/v;self.assertLess(abs(r),4/math.sqrt(K))
++    def test_unpredictable(self):  # predict next bin (of 20) as the bin that most often followed the previous bin; must not beat chance
++        b=[x*20//N for x in self.d];T=collections.defaultdict(collections.Counter);hit=0
++        for i in range(1,K):
++            if T[b[i-1]]: hit+=T[b[i-1]].most_common(1)[0][0]==b[i]
++            T[b[i-1]][b[i]]+=1
++        p=1/20;sd=math.sqrt(K*p*(1-p));self.assertLess(hit,K*p+4*sd)
++    def test_nonce_128bit_unique(self):
++        s={nonce() for _ in range(K)};self.assertEqual(len(s),K);self.assertTrue(all(len(n)==32 for n in s))
++class Pass(unittest.TestCase):
++    def setUp(self): self.sk=Ed25519PrivateKey.generate();self.v=Verifier([self.sk.public_key()]);self.sha="a"*40
++    def test_valid(self): m,s=sign(self.sk,self.sha);self.assertEqual(self.v.check(m,s,self.sha),"ACCEPT")
++    def test_replay(self): m,s=sign(self.sk,self.sha);self.v.check(m,s,self.sha);self.assertEqual(self.v.check(m,s,self.sha),"REJECT replay")
++    def test_wrong_sha(self): m,s=sign(self.sk,self.sha);self.assertEqual(self.v.check(m,s,"b"*40),"REJECT sha")
++    def test_forged_key(self): m,s=sign(Ed25519PrivateKey.generate(),self.sha);self.assertEqual(self.v.check(m,s,self.sha),"REJECT sig")
++    def test_tampered(self):
++        m,s=sign(self.sk,self.sha);m2=m.replace(m.split(b" ")[2],nonce().encode());self.assertEqual(self.v.check(m2,s,self.sha),"REJECT sig")
++    def test_stale(self):
++        n=nonce();ts=int(time.time())-7200;m=pass_msg(self.sha,n,ts);self.assertEqual(self.v.check(m,self.sk.sign(m),self.sha),"REJECT stale")
++    def test_ttl_expiry_frees_memory(self):
++        m,s=sign(self.sk,self.sha);self.v.check(m,s,self.sha);self.v.check(b"x",b"",self.sha,now=int(time.time())+7200);self.assertEqual(len(self.v.seen),0)
++unittest.main()
+
+
+</cursor_untrusted_data_1337>

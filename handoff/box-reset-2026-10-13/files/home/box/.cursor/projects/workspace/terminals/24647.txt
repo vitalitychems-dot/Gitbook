@@ -1,0 +1,29 @@
+---
+pid: 37549
+cwd: "/workspace"
+command: "# Confirm it's a clone of Gitbook we can recreate via API, then remove\ntest -d /workspace/rick/src/Gitbook/.git && (cd /workspace/rick/src/Gitbook && git remote -v | head -2 && git status -sb | head -5); echo '---'; du -sh /workspace/rick/src/Gitbook; rm -rf /workspace/rick/src/Gitbook && echo REMOVED; df -h /workspace | tail -1; unset RICK_GITBOOK; echo \"RICK_GITBOOK cleared\""
+title: "Remove recreatable Gitbook clone"
+status: succeeded
+started_at: 2026-10-13T10:56:08.573Z
+running_for_ms: 30229    
+---
+origin	https://github.com/vitalitychems-dot/Gitbook.git (fetch)
+origin	https://github.com/vitalitychems-dot/Gitbook.git (push)
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/5t/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/T44/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/.gitignore': Too many levels of symbolic links
+## rick/fraction-charter
+---
+11G	/workspace/rick/src/Gitbook
+REMOVED
+/dev/vdb        125G  101G   25G  81% /
+RICK_GITBOOK cleared
+
+---
+exit_code: 0
+elapsed_ms: 30228
+ended_at: 2026-10-13T10:56:38.801Z
+---

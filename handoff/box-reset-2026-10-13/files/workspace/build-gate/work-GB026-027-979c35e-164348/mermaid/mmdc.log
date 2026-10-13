@@ -1,0 +1,10 @@
+npm ERR! code ENOENT
+npm ERR! syscall lstat
+npm ERR! path /home/box/.local/lib
+npm ERR! errno -2
+npm ERR! enoent ENOENT: no such file or directory, lstat '/home/box/.local/lib'
+npm ERR! enoent This is related to npm not being able to find a file.
+npm ERR! enoent 
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/box/.npm/_logs/2026-10-05T21_45_21_480Z-debug-0.log

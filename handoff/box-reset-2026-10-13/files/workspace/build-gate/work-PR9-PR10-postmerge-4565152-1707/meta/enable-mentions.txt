@@ -1,0 +1,10 @@
+HEAD:intake/how-to-submit.md:34:- Do not change `TESSERA_ENABLE_*` (stay `0`)
+HEAD:mesh/flow.md:47:| `TESSERA_ENABLE_*` flags | Stay **`0`**. Do not flip them. |
+HEAD:mesh/replit-agents-start-here.md:23:- `TESSERA_ENABLE_*` flags stay `0`. No secrets.
+HEAD:mesh/roles/build.md:21:- Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+HEAD:mesh/roles/gitbook-cordnation.md:27:- Flag changes (`TESSERA_ENABLE_*` stay `0`)
+HEAD:mesh/roles/grok-bot.md:18:- Never to main (after Father's yes, Tessera merges approved packages to main; Father may push himself). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
+HEAD:mesh/roles/open-helper-agent-2.md:23:- Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+HEAD:mesh/roles/pen-tone-guide.md:53:Also stay clear of: merging/deploying without Father; flipping TESSERA_ENABLE_*; speaking as Tessera from another lane’s mouth; treating archives or other agents as canon without Father’s yes.
+HEAD:mesh/roles/tessera.md:18:- `TESSERA_ENABLE_*` flags stay **`0`**
+HEAD:review/moderator-handoff.md:18:5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`

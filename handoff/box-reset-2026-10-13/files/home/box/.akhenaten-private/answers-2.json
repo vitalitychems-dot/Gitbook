@@ -1,0 +1,82 @@
+{
+"1": {
+"answer": 0.7063,
+"source": "Exact product formula 1-prod((365-i)/365); Feller, Intro to Probability Theory vol.1; recomputed in verify2.py"
+},
+"2": {
+"answer": 6,
+"source": "Markov-chain result, Grinstead and Snell, Introduction to Probability, Ch.11; simulated 5.98 in verify2.py"
+},
+"3": {
+"answer": 10,
+"source": "Conway leading-number / Penney's game result (Gardner, Sci. Am. 1974); simulated 9.91 in verify2.py"
+},
+"4": {
+"answer": 1229,
+"source": "pi(10^4)=1229, OEIS A006880; recomputed in verify2.py"
+},
+"5": {
+"answer": 249,
+"source": "Legendre's formula: 200+40+8+1; recomputed in verify2.py"
+},
+"6": {
+"answer": 14833,
+"source": "OEIS A000166, a(8)=14833; recomputed"
+},
+"7": {
+"answer": 0.375,
+"source": "(3/4)*(1/2)=3/8; standard generalisation (Wikipedia: Monty Hall problem, N doors); simulated 0.376"
+},
+"8": {
+"answer": 233,
+"source": "Equals Fibonacci F(13)=233, OEIS A000045; recomputed"
+},
+"9": {
+"answer": 115,
+"source": "Direct computation, verify2.py; OEIS A001370 a(100)=115"
+},
+"10": {
+"answer": 14.7,
+"source": "Coupon collector 6*H(6)=14.7; Feller vol.1; recomputed"
+},
+"11": {
+"answer": 270,
+"source": "10!=2^8*3^4*5^2*7 -> 9*5*3*2=270; recomputed"
+},
+"12": {
+"answer": 3744,
+"source": "13*C(4,3)*12*C(4,2)=3744; Wikipedia: Poker probability"
+},
+"13": {
+"answer": 24133,
+"source": "OEIS A007504, a(100)=24133; recomputed"
+},
+"14": {
+"answer": "C",
+"source": "Gregorian calendar, Python datetime in verify2.py"
+},
+"15": {
+"answer": "A",
+"source": "e^pi=23.14 vs pi^e=22.46; computed"
+},
+"16": {
+"answer": "A",
+"source": "Trial division in verify2.py; OEIS A000040 lists 1000003"
+},
+"17": {
+"answer": 510.1,
+"source": "NASA Earth Fact Sheet (nssdc.gsfc.nasa.gov/planetary/factsheet/earthfact.html)"
+},
+"18": {
+"answer": 5.15,
+"source": "Trenberth and Smith 2005, J. Climate 18:864, mean total mass 5.148e18 kg"
+},
+"19": {
+"answer": 499.0,
+"source": "IAU 2012 AU=149,597,870,700 m exactly, c=299,792,458 m/s exactly; computed"
+},
+"20": {
+"answer": "C",
+"source": "Gary Foshee puzzle, G4G 2010; enumerated 13/27 in verify2.py"
+}
+}

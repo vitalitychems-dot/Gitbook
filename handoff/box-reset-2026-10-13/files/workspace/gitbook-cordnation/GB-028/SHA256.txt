@@ -1,0 +1,4 @@
+102ff79c700790c6c9167e187aff5ea41066fb01fbb5b4c0efce4459026aa122  GB-028/GB-028-rev3.979c35e.diff   (current, rev 3)
+# superseded:
+7149403b6ef0e743274e19ffe163037471419d450581fc00ca6e572588ab8386  GB-028/GB-028-rev2.979c35e.diff   (rev 2, kept unmodified)
+5689294fe725b845dac0e40712f09c2dc7234ba146f84f70ef292fb08a559b6b  GB-028/GB-028.979c35e.diff   (rev 1, kept unmodified)

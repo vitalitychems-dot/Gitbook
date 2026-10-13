@@ -1,0 +1,32 @@
+---
+pid: 34312
+cwd: "/workspace"
+command: "cd /workspace; ls -d gitbook*/ ; for d in gitbookai gitbook-cordnation; do (cd $d 2>/dev/null && git remote -v 2>/dev/null|head -1); done; mkdir -p /tmp/gb && cd /tmp/gb && (git clone -q --depth 1 https://github.com/vitalitychems-dot/Gitbook.git . 2>&1|tail -1); git log -1 --format='%h %ci'; git ls-files | rg -i 'quantum|surface|anneal|matching|tensor|qec|einstein|grover|mmr|diversit|sketch|minhash|cusum' | head -30"
+status: succeeded
+started_at: 2026-10-13T08:28:39.741Z
+running_for_ms: 81591    
+---
+gitbook-cordnation/
+gitbook-gate-1e3bb50/
+gitbook-gate-95993af/
+gitbook-gate-beadc44/
+gitbook-gate-e73fb185/
+gitbook-gate-fb984ad/
+gitbook-gate-feaeb55/
+gitbook-gate-feaeb558/
+gitbookai/
+bd1b475 2026-10-13 03:28:08 -0500
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.grok/skills/design-ui/references/surfaces.md
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/omniversal-quantum-lattice.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/quantum-tesseract.ts
+archive/moved/collink1007-XXX/tess/server/quantum-entropy-shield.ts
+archive/moved/collink1007-XXX/tess/server/quantum-tesseract.ts
+archive/moved/collink1007-XXX/tess/server/summit-42-quantum-coherence-rituals.ts
+archive/moved/collink1007-XXX/x/tess/server/quantum-entropy-shield.ts
+archive/moved/collink1007-XXX/x/tess/server/quantum-tesseract.ts
+
+---
+exit_code: 0
+elapsed_ms: 81591
+ended_at: 2026-10-13T08:30:01.332Z
+---

@@ -1,0 +1,15 @@
+---
+pid: 1199267
+cwd: "/workspace/pubscan/git-crypt-0.7.0"
+command: "cd /workspace/pubscan/tree 2>/dev/null && git status -sb | head -2 && rg -l 'v2-memory\\.jsonl|data/school/' --glob '!*.jsonl' | head; git ls-remote https://github.com/vitalitychems-dot/TESSERA.git refs/heads/main; git -C /workspace/backups/TESSERA-pre-public-2026-10-12.git rev-parse main"
+status: failed   
+started_at: 2026-10-12T23:39:37.289Z
+running_for_ms: 204893   
+---
+## main...origin/main
+
+---
+exit_code: unknown
+elapsed_ms: 204893
+ended_at: 2026-10-12T23:43:02.182Z
+---

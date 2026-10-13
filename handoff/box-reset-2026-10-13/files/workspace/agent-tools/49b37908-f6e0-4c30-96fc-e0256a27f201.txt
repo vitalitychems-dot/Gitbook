@@ -1,0 +1,540 @@
+<cursor_untrusted_data_1337 source="CallDynamicTool">
+
+diff --git a/.github/workflows/moderator-lock.yml b/.github/workflows/moderator-lock.yml
+new file mode 100644
+index 0000000..559b06c
+--- /dev/null
++++ b/.github/workflows/moderator-lock.yml
+@@ -0,0 +1,62 @@
++name: moderator-lock
++# Locked by CODEOWNERS. Policy + script are read from the BASE ref; the PR diff is data only.
++on:
++  # pull_request_target: policy + script are read from the trusted BASE ref (checkout below
++  # pins base.sha, persist-credentials:false, read-only perms). The PR head diff is data only,
++  # so a PR cannot rewrite its own lock. pull_request_review dropped (Security #71 / #75).
++  pull_request_target:
++    types: [opened, synchronize, reopened, edited, ready_for_review]
++permissions: {}
++concurrency:
++  group: moderator-lock-${{ github.event.pull_request.number }}
++  cancel-in-progress: true
++jobs:
++  collect:
++    runs-on: ubuntu-latest
++    timeout-minutes: 5
++    permissions:
++      contents: read
++      pull-requests: read
++      checks: read
++    steps:
++      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
++        with:
++          ref: ${{ github.event.pull_request.base.sha }}
++          persist-credentials: false
++          sparse-checkout: gate
++      - name: Collect PR facts from the GitHub API (fail closed on any error)
++        env:
++          GH_TOKEN: ${{ github.token }}
++          PR: ${{ github.event.pull_request.number }}
++          HEAD: ${{ github.event.pull_request.head.sha }}
++          AUTHOR: ${{ github.event.pull_request.user.login }}
++          BODY: ${{ github.event.pull_request.body }}
++          FATHER_LOGIN: ${{ vars.FATHER_LOGIN }}
++          AGENT_LOGINS: ${{ vars.AGENT_LOGINS || 'vitalitychems-dot' }}
++          MODERATOR_APP_ID: ${{ vars.MODERATOR_APP_ID }}
++          SECURITY_APP_ID: ${{ vars.SECURITY_APP_ID }}
++          BUILD_APP_ID: ${{ vars.BUILD_APP_ID }}
++        run: |
++          set -euo pipefail
++          R="$GITHUB_REPOSITORY"
++          gh api --paginate "repos/$R/pulls/$PR/files?per_page=100" | jq -s 'add // []' > files.json
++          gh api --paginate "repos/$R/pulls/$PR/reviews?per_page=100" | jq -s 'add // []' > reviews.json
++          gh api --paginate "repos/$R/issues/$PR/comments?per_page=100" | jq -s 'add // []' > comments.json
++          gh api --paginate "repos/$R/pulls/$PR/commits?per_page=100" | jq -s 'add // [] | map(.author.login // .commit.author.email) | unique' > commits.json
++          gh api "repos/$R/commits/$HEAD/check-runs?per_page=100" | jq '.check_runs' > checks.json
++          jq -n --arg head "$HEAD" --arg author "$AUTHOR" --arg body "$BODY" --arg father "$FATHER_LOGIN" \
++            --arg agents "$AGENT_LOGINS" --arg m "$MODERATOR_APP_ID" --arg s "$SECURITY_APP_ID" --arg b "$BUILD_APP_ID" \
++            --rawfile locked gate/locked-paths.txt \
++            --slurpfile files files.json --slurpfile reviews reviews.json --slurpfile comments comments.json \
++            --slurpfile commits commits.json --slurpfile checks checks.json '
++            { headSha: $head, prAuthor: $author, prBody: $body, fatherLogin: $father,
++              agentLogins: ($agents | split(",") | map(gsub(" "; ""))),
++              lockedPatterns: ($locked | split("\n") | map(sub("#.*"; "") | gsub("^\\s+|\\s+$"; "")) | map(select(length > 0))),
++              files: $files[0], reviews: $reviews[0], comments: $comments[0],
++              commitAuthors: $commits[0], checkRuns: $checks[0],
++              gateApps: { moderator: $m, security: $s, build: $b } }' > input.json
++      - name: Path lock + hard limits (from the real diff)
++        run: node gate/moderator-lock.mjs lock input.json | tee -a "$GITHUB_STEP_SUMMARY"
++      - name: Gate identity (per-gate GitHub Apps; fails closed until Father configures them)
++        if: always()
++        run: node gate/moderator-lock.mjs gates input.json | tee -a "$GITHUB_STEP_SUMMARY"
+diff --git a/CODEOWNERS b/CODEOWNERS
+index b3dd409..4757b0d 100644
+--- a/CODEOWNERS
++++ b/CODEOWNERS
+@@ -21,3 +21,11 @@ credentials* @vitalitychems-dot
+ .env* @vitalitychems-dot
+ *.pem @vitalitychems-dot
+ *.key @vitalitychems-dot
++# Moderator lock (Gitbook #71): rules, gate scripts, kill switch, setup doc. Mirrors gate/locked-paths.txt.
++/gate/ @vitalitychems-dot
++/SETUP-FATHER.md @vitalitychems-dot
++/mesh/charter/GATE_RULES.md @vitalitychems-dot
++/mesh/charter/gate_check.py @vitalitychems-dot
++/merge/HYB-015-GITBOOKAI-RULES.md @vitalitychems-dot
++/review/moderator-handoff.md @vitalitychems-dot
++/tools/loop/ @vitalitychems-dot
+diff --git a/SETUP-FATHER.md b/SETUP-FATHER.md
+new file mode 100644
+index 0000000..44a8029
+--- /dev/null
++++ b/SETUP-FATHER.md
+@@ -0,0 +1,43 @@
++# SETUP-FATHER: steps only Father can do
++
++Why: every agent pushes and comments as `vitalitychems-dot`, so CODEOWNERS reviews, `FATHER APPROVED` comments and PASS comments can all be forged (Moderator and Security, Gitbook #71). `moderator-lock` therefore **fails closed** until the steps below are done. Agents must not do any of them.
++
++## 1. Separate Father from the agents
++1. Create a **second, Father-only GitHub account** (for example `collin-keane`). It becomes the only admin and CODEOWNER. Enable 2FA on it.
++2. Repo **Settings → Secrets and variables → Actions → Variables** on TESSERA and Gitbook:
++   - `FATHER_LOGIN` = that account's login. It must be different from `vitalitychems-dot`; otherwise the lock stays closed.
++   - `AGENT_LOGINS` = `vitalitychems-dot` (comma-separated if there are more).
++3. Change `@vitalitychems-dot` to the Father-only login in `/CODEOWNERS` (Gitbook) and `/.github/CODEOWNERS` (TESSERA), from the Father account.
++4. Downgrade `vitalitychems-dot` to **Write** (not Admin) on both repos, or move the agents to the Apps in step 2 and revoke the PAT on the box.
++5. **Keep the owner token off the box.** Don't run `gh auth login` as the Father account on the shared box. Revoke any owner PAT already stored there (Settings → Developer settings → Tokens).
++
++## 2. Create 3 GitHub Apps (one identity per gate)
++For each of **Tessera Moderator**, **Tessera Security** and **Tessera Build** (Settings → Developer settings → GitHub Apps → New):
++- Homepage: the repo URL. Webhook: off.
++- Permissions: **Checks: Read & write**, Contents: Read, Pull requests: Read, Metadata: Read. Nothing else.
++- Install it on **TESSERA and Gitbook only**.
++- Note the **App ID** and set repo variables `MODERATOR_APP_ID`, `SECURITY_APP_ID`, `BUILD_APP_ID`.
++- Generate a private key and give each key **only to that gate's runner/agent**, never to the shared box. The gate posts its PASS/FAIL as a **check run** on the head SHA. PASS comments are ignored.
++
++## 3. Branch protection on `main` (both repos), Settings → Rules → Rulesets
++Draft. Father applies it; agents do not.
++- Target: default branch. Enforcement: Active. **Bypass list: empty** (no admin bypass).
++- Require a pull request before merging:
++  - required approvals: 1;
++  - **Require review from Code Owners**: on;
++  - **Dismiss stale approvals when new commits are pushed**: on;
++  - **Require approval of the most recent reviewable push**: on.
++- Require status checks to pass, with **Require branches to be up to date** on:
++  - `moderator-lock / collect` (GitHub Actions);
++  - the check names posted by the **Tessera Moderator**, **Tessera Security** and **Tessera Build** apps, each pinned to its app as the "expected source";
++  - (TESSERA only: `CI / validate`.)
++- Block force pushes. Restrict deletions. Require linear history.
++- Optional: merge queue with a group size of 1 (Rick #14).
++
++## 4. Kill switch
++`gate/MERGE_BOT_ENABLED` (locked path) holds `0`. A merge bot may merge only when it reads exactly `1`; a missing file or any other value means off. Only Father changes it, through a code-owner-reviewed PR.
++
++## 5. Optional
++- `GITBOOK_LOG_TOKEN` secret on TESSERA (a fine-grained token, Gitbook only, Issues: write) lets `meta-loop` mirror to Gitbook #67.
++- `TESSERA_WORKER=1` turns on the in-runner fixer. `TESSERA_MESH_RUNNERS=1` allows opt-in mesh runners. Both default to 0.
++- Worker PRs opened with `GITHUB_TOKEN` don't trigger `pull_request` workflows (a GitHub rule). For gates to run on them, the worker must push with the **Build App** token. Until then those PRs stay unchecked and can't merge (fail closed).
+diff --git a/gate/MERGE_BOT_ENABLED b/gate/MERGE_BOT_ENABLED
+new file mode 100644
+index 0000000..573541a
+--- /dev/null
++++ b/gate/MERGE_BOT_ENABLED
+@@ -0,0 +1 @@
++0
+diff --git a/gate/locked-paths.txt b/gate/locked-paths.txt
+new file mode 100644
+index 0000000..19b94c8
+--- /dev/null
++++ b/gate/locked-paths.txt
+@@ -0,0 +1,35 @@
++# Locked paths: only Father may change these (moderator-lock + CODEOWNERS).
++/.github/
++/CODEOWNERS
++/.github/CODEOWNERS
++/gate/
++/SETUP-FATHER.md
++/AGENTS.md
++/.cursor/
++/mesh/roles/
++/mesh/policy/
++**/prompts/
++*.prompt.md
++**/routines/
++**/baseline.json
++**/qa_set*
++renovate.json
++# Gitbook moderator rules and gate scripts
++/mesh/roles.md
++/mesh/charter/GATE_RULES.md
++/mesh/charter/gate_check.py
++/mesh/queue/autogate.sh
++/mesh/queue/dispatch.py
++/mesh/queue/gatecheck.py
++/mesh/queue/PROMPT-TEMPLATE.md
++/mesh/queue/LINEAGE.jsonl
++/mesh/queue/tests/
++/merge/HYB-015-GITBOOKAI-RULES.md
++/review/moderator-handoff.md
++/tools/loop/
++*persona*
++**/secrets/
++credentials*
++.env*
++*.pem
++*.key
+diff --git a/gate/moderator-lock.mjs b/gate/moderator-lock.mjs
+new file mode 100644
+index 0000000..e58fd25
+--- /dev/null
++++ b/gate/moderator-lock.mjs
+@@ -0,0 +1,126 @@
++#!/usr/bin/env node
++// moderator-lock: fail-closed path lock + rule checks + gate-identity verification.
++// Pure function `evaluate(input)`; CLI reads a JSON input file (built by the workflow from the GitHub API).
++// Owned by Father via CODEOWNERS. Agents may not edit this file.
++import { readFileSync } from "node:fs";
++import { fileURLToPath } from "node:url";
++
++export function globToRegExp(glob) {
++  let g = glob.trim();
++  const anchored = g.startsWith("/");
++  if (anchored) g = g.slice(1);
++  if (g.endsWith("/")) g += "**";
++  let re = "";
++  for (let i = 0; i < g.length; i++) {
++    const c = g[i];
++    if (c === "*" && g[i + 1] === "*") { re += ".*"; i++; if (g[i + 1] === "/") i++; }
++    else if (c === "*") re += "[^/]*";
++    else if (c === "?") re += "[^/]";
++    else re += c.replace(/[.+^${}()|[\]\\]/g, "\\$&");
++  }
++  // Unanchored patterns without a slash match at any depth (CODEOWNERS semantics).
++  const prefix = anchored || g.includes("/") ? "^" : "^(?:.*/)?";
++  return new RegExp(prefix + re + "(?:/.*)?$");
++}
++
++export function parseLockList(text) {
++  return text.split("\n").map((l) => l.replace(/#.*/, "").trim()).filter(Boolean);
++}
++
++export function lockedHits(files, patterns) {
++  const res = patterns.map((p) => [p, globToRegExp(p)]);
++  return files.filter((f) => res.some(([, r]) => r.test(f.filename ?? f)))
++    .map((f) => f.filename ?? f);
++}
++
++const ENABLE_ON = /^\+.*TESSERA_ENABLE_[A-Z0-9_]+["']?\s*[:=]\s*["']?(1|true|on|yes)\b/im;
++const NEW_FLAG_ON = /^\+.*TESSERA_[A-Z0-9_]+["']?\s*[:=]\s*["']?(1|true|on|yes)["']?\s*,?\s*$/im;
++const SECRETISH = /^\+.*(ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|sk-[A-Za-z0-9]{20,}|-----BEGIN [A-Z ]*PRIVATE KEY-----|moltbook_sk_[A-Za-z0-9]{8,})/m;
++const FORBIDDEN_PATH = [REDACTED-PATH]
++
++export function evaluate(input) {
++  const cfg = { maxLines: 400, maxFiles: 10, ...(input.config ?? {}) };
++  const reasons = [];
++  const notes = [];
++  const files = input.files ?? [];
++  const head = input.headSha;
++  const agentLogins = new Set((input.agentLogins ?? ["vitalitychems-dot"]).map((s) => s.toLowerCase()));
++
++  // Rule 1: locked paths. Only an unforgeable Father approval unlocks.
++  const hits = lockedHits(files, input.lockedPatterns ?? []);
++  if (hits.length) {
++    const father = (input.fatherLogin ?? "").toLowerCase();
++    if (!father) {
++      reasons.push(`locked paths touched (${hits.join(", ")}); FATHER_LOGIN not configured -> fail closed`);
++    } else if (agentLogins.has(father)) {
++      reasons.push(`locked paths touched (${hits.join(", ")}); FATHER_LOGIN '${father}' is also the agent account, so its reviews/comments can be forged -> fail closed`);
++    } else {
++      const ok = (input.reviews ?? []).some((r) =>
++        (r.user?.login ?? "").toLowerCase() === father && r.state === "APPROVED" && r.commit_id === head);
++      if (!ok) reasons.push(`locked paths touched (${hits.join(", ")}); no APPROVED review from ${father} on head ${head}`);
++      else notes.push(`locked paths approved by ${father} review on ${head}`);
++    }
++    // Comments are never accepted: any agent can post "FATHER APPROVED <sha>" as the shared account.
++    if ((input.comments ?? []).some((c) => /FATHER APPROVED/i.test(c.body ?? "")))
++      notes.push("ignored 'FATHER APPROVED' comment(s): comments are forgeable by the shared account");
++  }
++
++  // Rule 1: flags, secrets, forbidden paths, deletions.
++  const patch = files.map((f) => f.patch ?? "").join("\n");
++  if (ENABLE_ON.test(patch)) reasons.push("diff turns on a TESSERA_ENABLE_* flag");
++  else if (NEW_FLAG_ON.test(patch)) reasons.push("diff adds a TESSERA_* flag that does not default to 0");
++  if (SECRETISH.test(patch)) reasons.push("diff adds something that looks like a secret");
++  const forb = files.filter((f) => FORBIDDEN_PATH.test(f.filename)).map((f) => f.filename);
++  if (forb.length) reasons.push(`touches wallet/payment/crypto/vault paths: ${forb.join(", ")}`);
++  const removed = files.filter((f) => f.status === "removed").map((f) => f.filename);
++  if (removed.length) reasons.push(`deletes files (needs Father-approved delete list): ${removed.join(", ")}`);
++
++  // Rule 3: synthetic-only evidence never counts as a win.
++  const body = input.prBody ?? "";
++  if (/synthetic[- ]only/i.test(body) && /\b(win|wins|improv\w*|kept|faster|better)\b/i.test(body))
++    reasons.push("claims a win on synthetic-only evidence (rule 3)");
++
++  // Rule 6: size cap.
++  const lines = files.reduce((n, f) => n + (f.additions ?? 0) + (f.deletions ?? 0), 0);
++  if (files.length > cfg.maxFiles || lines > cfg.maxLines)
++    reasons.push(`size cap: ${files.length} files / ${lines} lines (cap ${cfg.maxFiles} / ${cfg.maxLines}); split the PR`);
++
++  // Rule 2: a gate cannot pass its own PR.
++  const authors = new Set([(input.prAuthor ?? "").toLowerCase(), ...(input.commitAuthors ?? []).map((s) => s.toLowerCase())]);
++  return { lock: { pass: reasons.length === 0, reasons, notes, lockedHits: hits, lines, files: files.length }, gates: verifyGates(input, authors) };
++}
++
++// Gate identity: only check runs posted by the configured per-gate GitHub App ids count.
++export function verifyGates(input, authors = new Set()) {
++  const out = { pass: true, reasons: [] };
++  const apps = input.gateApps ?? {};
++  for (const gate of ["moderator", "security", "build"]) {
++    const id = Number(apps[gate]);
++    if (!id) { out.pass = false; out.reasons.push(`${gate}: app id not configured -> fail closed`); continue; }
++    const runs = (input.checkRuns ?? []).filter((r) => Number(r.app?.id) === id);
++    const slug = (runs[0]?.app?.slug ?? "").toLowerCase();
++    if (slug && (authors.has(slug) || authors.has(`${slug}[bot]`))) { out.pass = false; out.reasons.push(`${gate}: gate app authored this PR; cannot self-pass`); continue; }
++    const good = runs.find((r) => r.head_sha === input.headSha && r.conclusion === "success");
++    if (!good) {
++      out.pass = false;
++      out.reasons.push(runs.some((r) => r.conclusion === "success")
++        ? `${gate}: PASS is stale (not on head ${input.headSha})`
++        : `${gate}: no successful check run from app ${id} on head`);
++    }
++  }
++  // PASS comments are never evidence.
++  return out;
++}
++
++if (process.argv[1] === fileURLToPath(import.meta.url)) {
++  const [mode = "lock", file] = process.argv.slice(2);
++  const input = JSON.parse(readFileSync(file, "utf8"));
++  const r = evaluate(input);
++  const part = mode === "gates" ? r.gates : r.lock;
++  console.log(JSON.stringify(part, null, 2));
++  process.exit(part.pass ? 0 : 1);
++}
++
++// Kill switch (Security #71 item 6): gate/MERGE_BOT_ENABLED on a locked path. Only the exact value "1" enables.
++// Missing, empty or unknown values mean OFF.
++export function mergeBotEnabled(text) { return typeof text === "string" && text.trim() === "1"; }
+diff --git a/gate/moderator-lock.test.mjs b/gate/moderator-lock.test.mjs
+new file mode 100644
+index 0000000..305fcf7
+--- /dev/null
++++ b/gate/moderator-lock.test.mjs
+@@ -0,0 +1,90 @@
++import test from "node:test";
++import assert from "node:assert/strict";
++import { evaluate, globToRegExp, lockedHits, parseLockList } from "./moderator-lock.mjs";
++import { readFileSync } from "node:fs";
++
++const locked = parseLockList(readFileSync(new URL("./locked-paths.txt", import.meta.url), "utf8"));
++const HEAD = "a".repeat(40);
++const base = (o = {}) => ({ headSha: HEAD, lockedPatterns: locked, prAuthor: "vitalitychems-dot",
++  agentLogins: ["vitalitychems-dot"], files: [{ filename: "docs/notes.md", status: "modified", additions: 3, deletions: 1, patch: "+hello" }], ...o });
++const apps = { moderator: 101, security: 102, build: 103 };
++const run = (id, slug, sha = HEAD, conclusion = "success") => ({ app: { id, slug }, head_sha: sha, conclusion });
++const allRuns = [run(101, "tessera-moderator"), run(102, "tessera-security"), run(103, "tessera-build")];
++
++test("clean PR passes the lock", () => assert.equal(evaluate(base()).lock.pass, true));
++
++test("fake PR touching each locked area fails closed", () => {
++  for (const f of [".github/workflows/ci.yml", "CODEOWNERS", "gate/moderator-rules.md", "gate/moderator-lock.mjs"]) {
++    const r = evaluate(base({ files: [{ filename: f, status: "modified", additions: 1, deletions: 0 }] }));
++    assert.equal(r.lock.pass, false, f);
++    assert.match(r.lock.reasons[0], /fail closed/);
++  }
++});
++
++test("'FATHER APPROVED <sha>' comment is ignored (forgeable)", () => {
++  const r = evaluate(base({ files: [{ filename: "CODEOWNERS", additions: 1 }], comments: [{ body: `FATHER APPROVED ${HEAD}`, user: { login: "vitalitychems-dot" } }] }));
++  assert.equal(r.lock.pass, false);
++  assert.ok(r.lock.notes.some((n) => /forgeable/.test(n)));
++});
++
++test("review from the shared agent account cannot unlock", () => {
++  const r = evaluate(base({ fatherLogin: "vitalitychems-dot", files: [{ filename: "CODEOWNERS", additions: 1 }],
++    reviews: [{ user: { login: "vitalitychems-dot" }, state: "APPROVED", commit_id: HEAD }] }));
++  assert.equal(r.lock.pass, false);
++  assert.match(r.lock.reasons[0], /forged/);
++});
++
++test("review from a separate Father account on head unlocks; stale review does not", () => {
++  const f = { fatherLogin: "father-only", files: [{ filename: "CODEOWNERS", additions: 1 }] };
++  assert.equal(evaluate(base({ ...f, reviews: [{ user: { login: "father-only" }, state: "APPROVED", commit_id: HEAD }] })).lock.pass, true);
++  assert.equal(evaluate(base({ ...f, reviews: [{ user: { login: "father-only" }, state: "APPROVED", commit_id: "b".repeat(40) }] })).lock.pass, false);
++});
++
++test("ENABLE flip, non-zero new flag, secret, delete, wallet path, size cap all fail", () => {
++  const cases = [
++    { filename: "config/x.env", additions: 1, patch: "+TESSERA_ENABLE_FOO=1" },
++    { filename: "lib/f.ts", additions: 1, patch: "+  TESSERA_NEWTHING: '1'," },
++    { filename: "lib/k.ts", additions: 1, patch: "+const t='ghp_" + "x".repeat(30) + "'" },
++    { filename: "lib/old.ts", status: "removed", deletions: 5 },
++    { filename: "lib/wallet/send.ts", additions: 1 },
++    { filename: "lib/big.ts", additions: 401 },
++  ];
++  for (const c of cases) assert.equal(evaluate(base({ files: [c] })).lock.pass, false, c.filename);
++  assert.equal(evaluate(base({ files: [{ filename: "lib/f.ts", additions: 1, patch: "+TESSERA_NEWTHING=0" }] })).lock.pass, true);
++});
++
++test("synthetic-only win claim fails", () => {
++  assert.equal(evaluate(base({ prBody: "20% faster (synthetic-only fixture)" })).lock.pass, false);
++});
++
++test("gates: unconfigured apps fail closed", () => {
++  assert.equal(evaluate(base({ checkRuns: allRuns })).gates.pass, false);
++});
++
++test("gates: all three app checks on head pass; PASS comments do not", () => {
++  assert.equal(evaluate(base({ gateApps: apps, checkRuns: allRuns })).gates.pass, true);
++  assert.equal(evaluate(base({ gateApps: apps, checkRuns: [], comments: [{ body: `Moderator PASS ${HEAD}` }] })).gates.pass, false);
++});
++
++test("gates: stale SHA, wrong app id, self-approval all fail", () => {
++  const stale = [run(101, "tessera-moderator", "c".repeat(40)), allRuns[1], allRuns[2]];
++  assert.match(evaluate(base({ gateApps: apps, checkRuns: stale })).gates.reasons.join(), /stale/);
++  const imposter = [run(999, "tessera-moderator"), allRuns[1], allRuns[2]];
++  assert.equal(evaluate(base({ gateApps: apps, checkRuns: imposter })).gates.pass, false);
++  const self = evaluate(base({ gateApps: apps, checkRuns: allRuns, prAuthor: "tessera-moderator[bot]" }));
++  assert.match(self.gates.reasons.join(), /self-pass/);
++});
++
++test("glob semantics match CODEOWNERS style", () => {
++  assert.ok(globToRegExp("/.github/").test(".github/workflows/a.yml"));
++  assert.ok(globToRegExp("*.prompt.md").test("a/b/x.prompt.md"));
++  assert.ok(!globToRegExp("/gate/").test("docs/gate/x.md"));
++  assert.deepEqual(lockedHits(["README.md"], locked), []);
++});
++
++import { mergeBotEnabled } from "./moderator-lock.mjs";
++test("kill switch: only exact '1' enables; missing/unknown is off", () => {
++  assert.equal(mergeBotEnabled(readFileSync(new URL("./MERGE_BOT_ENABLED", import.meta.url), "utf8")), false);
++  for (const v of [undefined, "", "true", "yes", "01", "1 # on"]) assert.equal(mergeBotEnabled(v), false, String(v));
++  assert.equal(mergeBotEnabled("1\n"), true);
++});
+diff --git a/gate/moderator-rules.md b/gate/moderator-rules.md
+new file mode 100644
+index 0000000..dd2f12c
+--- /dev/null
++++ b/gate/moderator-rules.md
+@@ -0,0 +1,35 @@
++# Moderator rules (locked)
++
++Source: Gitbook Moderator review on Gitbook #71 (6:03 AM CT, 2026-10-13). Owner: @vitalitychems-dot via CODEOWNERS.
++Only Father edits this file. Tessera and the agents cannot. `gate/moderator-lock.mjs` enforces these rules as code.
++
++1. **Reject the PR** if it:
++   - touches a locked path (`gate/locked-paths.txt`): gate rules, gate scripts, `.github/workflows`, CODEOWNERS, branch protection or rulesets, agent prompts, policy files;
++   - flips `TESSERA_ENABLE_*`, or adds a flag that doesn't default to 0;
++   - adds a secret, deletes data or a repo, or rewrites history;
++   - touches wallet, payment or 1T paths;
++   - works in a repo other than TESSERA or Gitbook.
++2. **Author ≠ approver.** The author is the PR opener plus everyone named in its commits. A gate can't pass its own PR.
++3. **Proof:** before/after numbers on fixtures the author didn't build. Wins backed only by synthetic data don't count. Any score drop beyond noise is a FAIL.
++4. A claim that can't be verified is marked **REPORTED** and is never evidence for a PASS.
++5. A PASS is tied to the exact head SHA. Any new push makes it stale.
++6. **Size cap:** 400 changed lines and 10 files (Father sets these). Anything bigger gets split.
++7. Hard limits beat "no human in loop": no wallets or payments, no [REDACTED-PATH] no deletes, no history rewrites, no ENABLE flips.
++
++## Identity (blocking flaw from #71)
++Every agent pushes as `vitalitychems-dot`. So:
++- A `FATHER APPROVED <sha>` **comment never counts**: any agent can post it.
++- A review only counts when it comes from `FATHER_LOGIN`, an account that is **not** the agent account, and is APPROVED on the head SHA.
++- A gate PASS only counts as a **check run from the gate's own GitHub App** (repo variables `MODERATOR_APP_ID`, `SECURITY_APP_ID`, `BUILD_APP_ID`). PASS comments never count.
++- If any of these isn't configured, the check **fails closed**.
++
++## Tests (Moderator's list → `gate/moderator-lock.test.mjs`)
++| Fake PR | Expected |
++|---|---|
++| touches a locked path | FAIL |
++| approves itself (gate app is the author) | FAIL |
++| stale SHA (PASS on an older head) | FAIL |
++| claims a win from synthetic data only | FAIL |
++| `FATHER APPROVED` comment / review from the shared account | FAIL |
++| ENABLE flip, flag ≠ 0, secret, delete, wallet path, over the size cap | FAIL |
++| clean docs/code change | PASS (lock) |
+diff --git a/mesh/charter/GATE_RULES.md b/mesh/charter/GATE_RULES.md
+index a560ed0..1a0bf25 100644
+--- a/mesh/charter/GATE_RULES.md
++++ b/mesh/charter/GATE_RULES.md
+@@ -50,7 +50,7 @@ A change that wins on accuracy but costs more than 10% in tokens or speed is HOL
+ - V4 `notify` must be non-empty, and work in another agent's lane needs `coordinated_with`.
+ 
+ ## 5. Outcomes
+-- APPROVE: every rule passes, and the agent may merge (Father pre-approved measured, harmless wins). Report it in the bulk list.
++- APPROVE: every rule passes. APPROVE is a report, not permission to merge: no agent merges. Merging needs the required checks from the per-gate Apps plus Father's code-owner review on locked paths (SETUP-FATHER.md). Report it in the bulk list.
+ - HOLD: no hard-limit or evidence failure, but there is a tradeoff or ambiguity. It goes to Father's bulk list, not to Tessera.
+ - DENY: any H or E failure. The agent fixes it or drops it. Repeated H hits are logged as rogue (`autogate.sh`).
+ 
+diff --git a/mesh/charter/gate_check.py b/mesh/charter/gate_check.py
+index 403f561..340b6b0 100644
+--- a/mesh/charter/gate_check.py
++++ b/mesh/charter/gate_check.py
+@@ -26,8 +26,8 @@ def check(pd, rj):
+     code = [(f, l) for f, l in add if f and not f.endswith(".md")]
+     if not files: deny.append("E1 no patch files / empty diff")
+     if any(FLAG.search(l) for _, l in add + rem): deny.append("H1 touches a TESSERA_ENABLE_* default")
+-    if dels and not r.get("father_approved_delete"): deny.append("H2 deletes a file")
+-    if len(rem) > 2 * max(len(add), 1) and len(rem) > 50 and not r.get("father_approved_delete"): deny.append("H2 net removal >50%")
++    if dels: deny.append("H2 deletes a file")  # no results.json override (Security #71 item 5)
++    if len(rem) > 2 * max(len(add), 1) and len(rem) > 50: deny.append("H2 net removal >50%")
+     if any(HIST.search(l) for _, l in code): deny.append("H3 adds history-rewrite command")
+     if any(PAY.search(l) for _, l in code): deny.append("H4 payment/billing code")
+     if any(VAULT.search(l) for _, l in add) or any(VAULT.search(f) for f in files): deny.append("H5 [REDACTED-PATH] reference")
+@@ -38,6 +38,9 @@ def check(pd, rj):
+     elif src not in ("fixture", "log", "benchmark"): deny.append(f"E2 data_source {src!r} not fixture/log/benchmark")
+     if not r.get("command"): deny.append("E3 no reproducing command")
+     if "SPECULATIVE" in r.get("labels", []): deny.append("E6 SPECULATIVE premise cannot merge")
++    # TODO(Security #71/#75): ci/tests here come from the agent-written results.json and are
++    # trusted as-is. Follow-up: verify against required GitHub status checks on the exact head
++    # SHA (moderator-lock collects check-runs from the API) instead of self-reported fields.
+     t = r.get("tests") or {}
+     if t.get("failed_after") is None or t.get("failed_after", 1) > t.get("failed_before", 0): deny.append(f"E4 test regression/missing: {t}")
+     if r.get("ci") != "pass": deny.append(f"E4 ci={r.get('ci')!r}")
+diff --git a/mesh/queue/PROMPT-TEMPLATE.md b/mesh/queue/PROMPT-TEMPLATE.md
+index 343e533..d796e7a 100644
+--- a/mesh/queue/PROMPT-TEMPLATE.md
++++ b/mesh/queue/PROMPT-TEMPLATE.md
+@@ -33,4 +33,4 @@ Commit as `vitalitychems-dot <332565808+vitalitychems-dot@users.noreply.github.c
+ Acceptance for this task: {acceptance}
+ 
+ ## 5. Finish
+-PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge; `mesh/queue/autogate.sh` merges passing PRs.
++PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge. `mesh/queue/autogate.sh` only records a PASS/FAIL gate verdict and never merges (self-merge removed, Security #71/#75); a human (Father) or a configured gate App merges passing PRs.
+diff --git a/mesh/queue/autogate.sh b/mesh/queue/autogate.sh
+index 6da111e..cc0db7d 100755
+--- a/mesh/queue/autogate.sh
++++ b/mesh/queue/autogate.sh
+@@ -1,13 +1,13 @@
+ #!/usr/bin/env bash
+-# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--merge] [--father-approved]
++# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id>
+ # Merge gate + watchdog. Shallow-clones the PR, runs gatecheck.py (protected paths, flag defaults,
+ # noreply identity, gitleaks, task scope, budget, unlisted hosts, gate tampering), Node 22 tests (TESSERA).
+ # Writes one PASS/FAIL line to mesh/HANDOFF.md in $GB_CHECKOUT (if set) and $GATE_LOG; on rogue signs
+ # appends to $ROGUE_LOG for the parent + Security and quarantines the task and its descendants.
+-# --father-approved is only for Tessera's own PRs that Father approved in chat (protected-path changes).
++# Reports only. It never merges, and it has no father-approved override: protected paths need Father's code-owner review (SETUP-FATHER.md).
+ set -euo pipefail
+-REPO=$1; PR=$2; TASK=$3; shift 3; MERGE=; FA=
+-for x in "$@"; do case $x in --merge) MERGE=1;; --father-approved) FA=--father-approved;; esac; done
++REPO=$1; PR=$2; TASK=$3; shift 3
++for x in "$@"; do case $x in --merge|--father-approved) echo "autogate: $x was removed (Security #71 item 10)" >&2; exit 2;; esac; done
+ NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com
+ HERE=$(cd "$(dirname "$0")" && pwd)
+ GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-/workspace/pubscan/gl.toml}
+@@ -22,7 +22,7 @@ report(){ # $1 PASS|FAIL  $2 reason-json
+   local line="| $(date '+%Y-%m-%d %H:%M %Z') | $REPO#$PR | $TASK | $1 | $(git rev-parse --short HEAD) | metric: $METRIC | $2 |"
+   echo "$line" >> "$GATE_LOG"
+   [ -n "${GB_CHECKOUT:-}" ] && echo "$line" >> "$GB_CHECKOUT/mesh/HANDOFF.md"; echo "$line"; }
+-set +e; R=$(python3 "$HERE/gatecheck.py" --repo-dir . --base origin/main --head HEAD --task "$TASK" --tasks "$TASKS" $FA --gitleaks "$GITLEAKS" --glconf "$GLCONF"); RC=$?; set -e
++set +e; R=$(python3 "$HERE/gatecheck.py" --repo-dir . --base origin/main --head HEAD --task "$TASK" --tasks "$TASKS" --gitleaks "$GITLEAKS" --glconf "$GLCONF"); RC=$?; set -e
+ ROGUE=$(python3 -c 'import json,sys; print(", ".join(json.loads(sys.argv[1]).get("rogue",[])))' "$R")
+ if [ -n "$ROGUE" ]; then
+   python3 -c 'import json,sys,datetime; print(json.dumps({"ts":datetime.datetime.now().isoformat(timespec="seconds"),"repo":sys.argv[1],"pr":int(sys.argv[2]),"task":sys.argv[3],"rogue":sys.argv[4],"notify":["parent","Security","Tessera"]}))' "$REPO" "$PR" "$TASK" "$ROGUE" >> "$ROGUE_LOG"
+@@ -39,5 +39,4 @@ if [ "$REPO" = TESSERA ]; then
+     rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && { report FAIL "api-server non-DB failure"; exit 1; } || true; }
+ fi
+ report PASS "$R"
+-[ -n "$MERGE" ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
+ exit 0
+
+
+</cursor_untrusted_data_1337>

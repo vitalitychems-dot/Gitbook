@@ -1,0 +1,164 @@
+<cursor_untrusted_data_1337 source="CallDynamicTool">
+
+diff --git a/artifacts/api-server/src/__tests__/db-optional-boot.test.ts b/artifacts/api-server/src/__tests__/db-optional-boot.test.ts
+index a98bdb3a..dffb39e8 100644
+--- a/artifacts/api-server/src/__tests__/db-optional-boot.test.ts
++++ b/artifacts/api-server/src/__tests__/db-optional-boot.test.ts
+@@ -1,4 +1,12 @@
+-import { afterAll, describe, expect, it } from "vitest";
++import { afterAll, describe, expect, it, vi } from "vitest";
++
++// This file tests the *unconfigured* boot path. The unified test runner gives the API suite a
++// real test DATABASE_URL, so clear it before @workspace/db is imported and restore it after.
++const savedDatabaseUrl = vi.hoisted(() => {
++  const value = process.env.DATABASE_URL;
++  delete process.env.DATABASE_URL;
++  return value;
++});
+ import express from "express";
+ import { createServer, type Server } from "node:http";
+ import {
+@@ -54,6 +62,7 @@ describe("optional database boot", () => {
+   const servers: Server[] = [];
+ 
+   afterAll(async () => {
++    if (savedDatabaseUrl !== undefined) process.env.DATABASE_URL = savedDatabaseUrl;
+     await Promise.all(servers.map((server) => new Promise<void>((resolve, reject) => {
+       server.close((error) => (error ? reject(error) : resolve()));
+     })));
+diff --git a/artifacts/v2/test/fixtures/pre-fix-neural-embeddings.ts.txt b/artifacts/v2/test/fixtures/pre-fix-neural-embeddings.ts.txt
+new file mode 100644
+index 00000000..6cae5e3e
+--- /dev/null
++++ b/artifacts/v2/test/fixtures/pre-fix-neural-embeddings.ts.txt
+@@ -0,0 +1,67 @@
++// Pre-fix localFallbackEmbedding block (STOPWORDS .. before generateEmbedding) from
++// artifacts/api-server/src/lib/neural-embeddings.ts @ 0236c802c1ac348ce9544d495fafc9e2cd1bd4b8,
++// the parent of 35475b212d (the commit that removed (i % 32)). Vendored so the test does not
++// depend on full git history (CI checkouts are shallow).
++const STOPWORDS = new Set([
++  "the","a","an","and","or","but","if","then","of","to","in","on","at","by","for","with","as","is","are","was","were","be","been","being","have","has","had","do","does","did","this","that","these","those","it","its","from","so","not","no","yes","i","you","he","she","we","they","them","us","our","your","their","my","me"
++]);
++
++function hashStr(s: string, seed = 2166136261): number {
++  let h = seed >>> 0;
++  for (let i = 0; i < s.length; i++) {
++    h ^= s.charCodeAt(i);
++    h = Math.imul(h, 16777619);
++  }
++  return h >>> 0;
++}
++
++function tokenize(text: string): string[] {
++  return text
++    .toLowerCase()
++    .replace(/[^a-z0-9\s]/g, " ")
++    .split(/\s+/)
++    .filter(t => t.length >= 2 && !STOPWORDS.has(t));
++}
++
++function ngrams(tokens: string[], n: number): string[] {
++  if (tokens.length < n) return [];
++  const out: string[] = [];
++  for (let i = 0; i <= tokens.length - n; i++) {
++    out.push(tokens.slice(i, i + n).join(" "));
++  }
++  return out;
++}
++
++function localFallbackEmbedding(text: string): number[] {
++  const tokens = tokenize(text);
++  if (tokens.length === 0) return new Array(EMBEDDING_DIM).fill(0);
++
++  const bag = new Map<string, number>();
++  const add = (t: string, w: number) => bag.set(t, (bag.get(t) ?? 0) + w);
++  for (const t of tokens) add(t, 1);
++  for (const g of ngrams(tokens, 2)) add(g, 0.6);
++  for (const g of ngrams(tokens, 3)) add(g, 0.35);
++
++  const simhash = new Array(EMBEDDING_DIM).fill(0);
++  let totalWeight = 0;
++  for (const [term, weight] of bag) {
++    totalWeight += weight;
++    const h1 = hashStr(term, 2166136261);
++    const h2 = hashStr(term, 40503);
++    for (let i = 0; i < EMBEDDING_DIM; i++) {
++      const bit = ((h1 >>> (i % 32)) ^ (h2 >>> ((i * 7) % 32))) & 1;
++      simhash[i] += bit ? weight : -weight;
++    }
++  }
++
++  const vec = new Array(EMBEDDING_DIM).fill(0);
++  const avgAbs = totalWeight > 0 ? totalWeight / EMBEDDING_DIM : 1;
++  for (let i = 0; i < EMBEDDING_DIM; i++) {
++    vec[i] = Math.tanh(simhash[i] / (avgAbs * 4 + 1));
++  }
++
++  const mag = Math.sqrt(vec.reduce((s, v) => s + v * v, 0));
++  if (mag > 0) for (let i = 0; i < vec.length; i++) vec[i] /= mag;
++  return vec;
++}
++
+diff --git a/artifacts/v2/test/v2-078-reembed-fallback.test.mjs b/artifacts/v2/test/v2-078-reembed-fallback.test.mjs
+index eed9b8a9..57911034 100644
+--- a/artifacts/v2/test/v2-078-reembed-fallback.test.mjs
++++ b/artifacts/v2/test/v2-078-reembed-fallback.test.mjs
+@@ -18,24 +18,39 @@ function stripTypes(source) {
+     .replace(/:\s*[A-Za-z_][A-Za-z0-9_]*/g, "");
+ }
+ 
+-// The pre-fix function, loaded from git rather than retyped. Parent of the commit
+-// that removed `(i % 32)` from neural-embeddings.ts.
+-function loadOldFallback(root) {
+-  const commit = execFileSync(
+-    "git",
+-    ["log", "-1", "--format=%H", "-S", "(i % 32)", "--", "artifacts/api-server/src/lib/neural-embeddings.ts"],
+-    { cwd: root, encoding: "utf8" },
+-  ).trim();
+-  assert.ok(commit, "git history has the pre-fix fallback");
+-  const src = execFileSync(
+-    "git",
+-    ["show", `${commit}^:artifacts/api-server/src/lib/neural-embeddings.ts`],
+-    { cwd: root, encoding: "utf8" },
+-  );
++// The pre-fix function: parent of the commit that removed `(i % 32)` from neural-embeddings.ts.
++// CI checkouts are shallow, so it comes from a vendored fixture (same block, pinned commit).
++// When full git history is present, the fixture is cross-checked against it.
++const FIXTURE = new URL("./fixtures/pre-fix-neural-embeddings.ts.txt", import.meta.url);
++function fromGitHistory(root) {
++  try {
++    const commit = execFileSync(
++      "git",
++      ["log", "-1", "--format=%H", "-S", "(i % 32)", "--", "artifacts/api-server/src/lib/neural-embeddings.ts"],
++      { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
++    ).trim();
++    if (!commit) return null;
++    return execFileSync(
++      "git",
++      ["show", `${commit}^:artifacts/api-server/src/lib/neural-embeddings.ts`],
++      { cwd: root, encoding: "utf8", stdio: ["ignore", "pipe", "ignore"] },
++    );
++  } catch {
++    return null;
++  }
++}
++function block(src) {
+   const start = src.indexOf("const STOPWORDS");
+   const end = src.indexOf("export async function generateEmbedding");
+-  assert.ok(start > 0 && end > start, "old fallback source is present");
+-  const chunk = src.slice(start, end);
++  return start >= 0 && end > start ? src.slice(start, end) : src.slice(Math.max(0, start));
++}
++function loadOldFallback(root) {
++  const fixture = readFileSync(FIXTURE, "utf8");
++  const git = fromGitHistory(root);
++  if (git) assert.equal(block(fixture).trim(), block(git).trim(), "fixture matches git history");
++  const src = fixture;
++  const chunk = block(src);
++  assert.ok(chunk.startsWith("const STOPWORDS"), "old fallback source is present");
+   assert.match(chunk, /\(i % 32\)/);
+   assert.doesNotMatch(chunk, /7919 \* block/);
+   const factory = new Function(`${stripTypes(`const EMBEDDING_DIM = 256;\n${chunk}`)}\nreturn localFallbackEmbedding;`);
+
+
+</cursor_untrusted_data_1337>

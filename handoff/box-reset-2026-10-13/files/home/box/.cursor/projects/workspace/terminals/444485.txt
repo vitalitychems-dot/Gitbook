@@ -1,0 +1,19 @@
+---
+pid: 102684
+cwd: "/workspace"
+command: "timeout 10 df -h / > /workspace/dedupe/df-before.txt 2>&1; timeout 180 rm -rf /workspace/build-gate/full-f76d; echo RM_EXIT:$?; timeout 10 du -sh /workspace/build-gate/full-f76d 2>&1; timeout 10 df -h / > /workspace/dedupe/df-after-step2.txt 2>&1; cat /workspace/dedupe/df-after-step2.txt"
+title: "Delete full-f76d; record df"
+status: succeeded
+started_at: 2026-10-13T11:08:10.001Z
+running_for_ms: 117      
+---
+RM_EXIT:0
+du: cannot access '/workspace/build-gate/full-f76d': No such file or directory
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G  116G  9.8G  93% /
+
+---
+exit_code: 0
+elapsed_ms: 117
+ended_at: 2026-10-13T11:08:10.118Z
+---

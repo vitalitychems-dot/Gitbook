@@ -1,0 +1,17 @@
+---
+pid: 1014562
+cwd: "/workspace"
+command: "node /tmp/.sand-browser/driver-ad9d910a26c35446.mjs --stdin"
+title: "Run protected browser form operation"
+status: succeeded
+started_at: 2026-10-12T21:40:33.911Z
+running_for_ms: 558      
+---
+
+__SAND_BROWSER_RESULT__{"ok":true,"summary":"Filled s2","opDurationMs":101.67539099999999,"connectMs":315.433259,"control":{"tagName":"input","type":"text","autoComplete":"username","inputMode":"","contentEditable":false,"frameUrl":"https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Flogin%2Fdevice","descriptor":"login login_field","isTopFrame":true},"viewId":"default","url":"https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Flogin%2Fdevice","title":"Sign in to GitHub · GitHub"}
+
+---
+exit_code: 0
+elapsed_ms: 557
+ended_at: 2026-10-12T21:40:34.468Z
+---

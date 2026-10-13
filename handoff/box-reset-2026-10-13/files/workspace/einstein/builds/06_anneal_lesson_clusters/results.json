@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "06 Potts-anneal lesson clustering vs distillLessons",
+      "metric": "pairwise F1",
+      "n_seeds": 15,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.42110587689612894,
+        "lo": 0.34414283106081783,
+        "hi": 0.5062661032725815
+      },
+      "candidate": {
+        "mean": 0.8135164898303221,
+        "lo": 0.7809888477230414,
+        "hi": 0.8444850147739494
+      },
+      "improvement": {
+        "mean": 0.39241061293419316,
+        "lo": 0.3071978093581906,
+        "hi": 0.47727268487331137
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "06 Potts-anneal vs single-link at same tau (non-quantum control)",
+      "metric": "pairwise F1",
+      "n_seeds": 15,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.5602766693635971,
+        "lo": 0.49508660716143055,
+        "hi": 0.623640592124824
+      },
+      "candidate": {
+        "mean": 0.8135164898303221,
+        "lo": 0.7809888477230414,
+        "hi": 0.8444850147739494
+      },
+      "improvement": {
+        "mean": 0.2532398204667251,
+        "lo": 0.1863868438972132,
+        "hi": 0.3206821489278913
+      },
+      "verdict": "KEEP"
+    }
+  ]
+}

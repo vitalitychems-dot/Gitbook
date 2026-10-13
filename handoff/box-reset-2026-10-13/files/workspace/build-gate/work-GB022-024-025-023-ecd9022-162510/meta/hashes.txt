@@ -1,0 +1,5 @@
+=== (c) sha256sum ===
+ae288a5400a422f2c8f579369c46bae1fef6b7d5be3d2ca5379f5fd24632a1d4  /workspace/gitbook-cordnation/GB-022/GB-022-v4.ecd9022.diff
+3fc1fc11e594d79ad05a2f4a71dba2581d86792b5bdc2cc3731bd3477f74e1c6  /workspace/gitbook-cordnation/GB-024/GB-024-v3.ecd9022.diff
+0a590a0cf7c07b26c2fae523c4302222bc766a60fb03dbbd2ac1a85c92e55443  /workspace/gitbook-cordnation/GB-025/GB-025.ecd9022.diff
+684227c61477395edc75a50c10925899e6513f4e2f78a14b243155b82c38106c  /workspace/gitbook-cordnation/GB-023/GB-023.ecd9022.diff

@@ -1,0 +1,65 @@
+---
+pid: 87404
+cwd: "/workspace"
+command: "timeout 20 ls -la /workspace/build-gate 2>&1 | head -40; echo '---'; timeout 20 du -sh /workspace/build-gate/full-f76d /workspace/build-gate/node_modules /tmp/gb70 /tmp/gb /tmp/tchk 2>&1; echo '---'; timeout 10 ls -la /workspace/dedupe/all-groups.jsonl 2>&1; timeout 10 df -h / 2>&1"
+title: "Inspect cleanup targets sizes"
+status: succeeded
+started_at: 2026-10-13T11:07:27.234Z
+running_for_ms: 198      
+---
+total 1012
+drwxr-xr-x 28 box box   4096 Oct 13 06:05 .
+drwxr-xr-x 70 box box   4096 Oct 13 06:06 ..
+-rw-r--r--  1 box box 145593 Oct 13 05:52 234e-tests.log
+-rw-r--r--  1 box box 149356 Oct 13 05:57 4798-tests.log
+-rw-r--r--  1 box box  12109 Oct 13 05:47 GATE-2026-10-05-FIVE-beadc44-final.md
+-rw-r--r--  1 box box   9963 Oct 13 05:47 GATE-2026-10-05-GB015-018-019-1e3bb50.md
+-rw-r--r--  1 box box   6779 Oct 13 05:47 GATE-2026-10-05-GB015-018-019-beadc44.md
+-rw-r--r--  1 box box   9912 Oct 13 05:47 GATE-2026-10-05-GB015-018-019-e73fb185.md
+-rw-r--r--  1 box box   9207 Oct 13 05:47 GATE-2026-10-05-GB015-018-019.md
+-rw-r--r--  1 box box  13843 Oct 13 05:46 GATE-2026-10-05-GB016-rev3.1-1e3bb50.md
+-rw-r--r--  1 box box   4505 Oct 13 05:47 GATE-2026-10-05-GB017-016-97e43fb.md
+-rw-r--r--  1 box box   7433 Oct 13 05:46 GATE-2026-10-05-GB017-016-f4b2c41.md
+-rw-r--r--  1 box box  12450 Oct 13 05:47 GATE-2026-10-05-GB017-021-1e3bb50.md
+-rw-r--r--  1 box box   7112 Oct 13 05:47 GATE-2026-10-05-GB018-f4b2c41.md
+-rw-r--r--  1 box box   5876 Oct 13 05:47 GATE-2026-10-05-GB020-v3.md
+-rw-r--r--  1 box box   6038 Oct 13 05:47 GATE-2026-10-05-GB022-024-025-023-ecd9022.md
+-rw-r--r--  1 box box   9861 Oct 13 05:46 GATE-2026-10-05-GB026-027-979c35e.md
+-rw-r--r--  1 box box   6330 Oct 13 05:47 GATE-2026-10-05-GB028-rev3-979c35e.md
+-rw-r--r--  1 box box   3202 Oct 13 05:46 GATE-2026-10-05-GB029-rev3-4565152.md
+-rw-r--r--  1 box box   1826 Oct 13 05:46 GATE-2026-10-05-IMP-batch1-001-050.md
+-rw-r--r--  1 box box   3817 Oct 13 05:46 GATE-2026-10-05-IMP-batch1-051-064.md
+-rw-r--r--  1 box box   3657 Oct 13 05:47 GATE-2026-10-05-IMP-batch1-065-084.md
+-rw-r--r--  1 box box   3329 Oct 13 05:46 GATE-2026-10-05-PR10-c507f0c2.md
+-rw-r--r--  1 box box   4701 Oct 13 05:46 GATE-2026-10-05-PR11-baa0daeb.md
+-rw-r--r--  1 box box   1450 Oct 13 05:47 GATE-2026-10-05-PR11-postmerge-bc6b3287.md
+-rw-r--r--  1 box box   8134 Oct 13 05:46 GATE-2026-10-05-PR12-64778b33.md
+-rw-r--r--  1 box box   2387 Oct 13 05:46 GATE-2026-10-05-PR12-postmerge-cdc95b76.md
+-rw-r--r--  1 box box   5142 Oct 13 05:47 GATE-2026-10-05-PR5-91068166.md
+-rw-r--r--  1 box box   2531 Oct 13 05:46 GATE-2026-10-05-PR5-postmerge-f4b2c41.md
+-rw-r--r--  1 box box   5423 Oct 13 05:46 GATE-2026-10-05-PR6-00259199.md
+-rw-r--r--  1 box box   2426 Oct 13 05:47 GATE-2026-10-05-PR6-postmerge-97e43fb.md
+-rw-r--r--  1 box box   7505 Oct 13 05:46 GATE-2026-10-05-PR7-6e5ccfcf.md
+-rw-r--r--  1 box box   1946 Oct 13 05:47 GATE-2026-10-05-PR7-postmerge-ecd9022.md
+-rw-r--r--  1 box box   5163 Oct 13 05:47 GATE-2026-10-05-PR8-cba4140d.md
+-rw-r--r--  1 box box   2649 Oct 13 05:46 GATE-2026-10-05-PR8-postmerge-979c35e.md
+-rw-r--r--  1 box box   5368 Oct 13 05:47 GATE-2026-10-05-PR9-PR10-postmerge-4565152.md
+-rw-r--r--  1 box box   5346 Oct 13 05:46 GATE-2026-10-05-PR9-b23d9eb.md
+-rw-r--r--  1 box box   6818 Oct 13 05:46 GATE-2026-10-05-REPLIT-guidance-Zz-5t-1.md
+-rw-r--r--  1 box box    433 Oct 13 05:47 GATE-2026-10-05-STACK-fb984ad.md
+---
+1.3G	/workspace/build-gate/full-f76d
+du: cannot access '/workspace/build-gate/node_modules': No such file or directory
+du: cannot access '/tmp/gb70': No such file or directory
+11G	/tmp/gb
+du: cannot access '/tmp/tchk': No such file or directory
+---
+-rw-r--r-- 1 box box 18487414 Oct 13 05:52 /workspace/dedupe/all-groups.jsonl
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G  117G  8.5G  94% /
+
+---
+exit_code: 0
+elapsed_ms: 198
+ended_at: 2026-10-13T11:07:27.432Z
+---

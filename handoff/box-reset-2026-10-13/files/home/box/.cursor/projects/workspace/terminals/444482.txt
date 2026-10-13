@@ -1,0 +1,52 @@
+---
+pid: 87957
+cwd: "/workspace"
+command: "timeout 15 ls /workspace/build-gate | timeout 10 rg -n 'full-|node_modules|tmp|scratch|clone' || true; timeout 15 find /workspace/build-gate -maxdepth 1 -type d ! -path /workspace/build-gate -printf '%f\\n' 2>&1 | head -40; timeout 10 stat -c '%n mtime=%y size=%s' /tmp/gb 2>&1; timeout 30 lsof +D /tmp/gb 2>&1 | head -20; echo LSOF_EXIT:$?; timeout 15 fuser -v /tmp/gb 2>&1 | head -20; echo FUSER_EXIT:$?; timeout 10 find /tmp/gb -mmin -15 2>/dev/null | head -5; echo RECENT_EXIT:$?"
+title: "List build-gate dirs; check /tmp/gb usage"
+status: succeeded
+started_at: 2026-10-13T11:07:35.726Z
+running_for_ms: 134      
+---
+67:full-f76d
+work-PR12-64778b33
+full-f76d
+work-GB026-027-979c35e-164348
+work-PR9-PR10-postmerge-4565152-1707
+work-PR9-b23d9eb-1652
+work-GB028-rev3-979c35e-165202
+work-PR10-c507f0c2-165705
+work-GB022-024-025-023-ecd9022-162510
+work-PR11-postmerge-bc6b3287
+work-fd3c2ce
+work-GB018-f4b2c41-155010
+work-PR8-cba4140d-162934
+work-TESSERA-PR2-postmerge-50876d40
+work-GB029-rev3-4565152-1712
+work-TESSERA-PR2-cb19f210
+work-TESSERA-PR1-postmerge-5c1137fa
+work-PR11-baa0daeb
+work-PR7-6e5ccfcf-160917
+work-GB017-016-97e43fb-155659
+work-PR12-postmerge-cdc95b76
+work-GB017-016-f4b2c41-1554
+work-PR6-00259199-223328
+node-v22.20.0-linux-x64
+pn
+tessera
+selfimprove
+/tmp/gb mtime=2026-10-13 06:03:36.154583482 -0500 size=4096
+timeout: failed to run command ‘lsof’: No such file or directory
+LSOF_EXIT:0
+FUSER_EXIT:0
+/tmp/gb
+/tmp/gb/.git
+/tmp/gb/.git/branches
+/tmp/gb/.git/description
+/tmp/gb/.git/hooks
+RECENT_EXIT:0
+
+---
+exit_code: 0
+elapsed_ms: 133
+ended_at: 2026-10-13T11:07:35.859Z
+---

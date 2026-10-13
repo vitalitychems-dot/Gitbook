@@ -1,0 +1,466 @@
+---
+pid: 88971
+cwd: "/workspace"
+command: "timeout 60 du -sh /workspace/build-gate/*/ 2>&1 | sort -hr | head -30; echo '---'; timeout 10 date '+%Y-%m-%d %H:%M:%S %Z'; timeout 10 stat -c '%y' /tmp/gb /tmp/gb/.git 2>&1; timeout 20 fuser -vm /tmp/gb 2>&1; echo FUSER:$?"
+title: "Size build-gate dirs; recheck /tmp/gb"
+status: succeeded
+started_at: 2026-10-13T11:07:50.238Z
+running_for_ms: 471      
+---
+1.3G	/workspace/build-gate/tessera/
+1.3G	/workspace/build-gate/full-f76d/
+185M	/workspace/build-gate/node-v22.20.0-linux-x64/
+3.8M	/workspace/build-gate/work-GB026-027-979c35e-164348/
+2.2M	/workspace/build-gate/work-PR9-b23d9eb-1652/
+2.2M	/workspace/build-gate/work-GB028-rev3-979c35e-165202/
+2.0M	/workspace/build-gate/work-GB022-024-025-023-ecd9022-162510/
+1.8M	/workspace/build-gate/work-PR9-PR10-postmerge-4565152-1707/
+1.1M	/workspace/build-gate/work-TESSERA-PR2-postmerge-50876d40/
+1.1M	/workspace/build-gate/work-PR8-cba4140d-162934/
+1.1M	/workspace/build-gate/work-GB017-016-f4b2c41-1554/
+916K	/workspace/build-gate/work-TESSERA-PR1-postmerge-5c1137fa/
+584K	/workspace/build-gate/work-GB018-f4b2c41-155010/
+572K	/workspace/build-gate/work-PR10-c507f0c2-165705/
+496K	/workspace/build-gate/work-GB017-016-97e43fb-155659/
+388K	/workspace/build-gate/work-PR7-6e5ccfcf-160917/
+356K	/workspace/build-gate/work-fd3c2ce/
+264K	/workspace/build-gate/work-PR12-64778b33/
+192K	/workspace/build-gate/work-PR11-baa0daeb/
+128K	/workspace/build-gate/work-GB029-rev3-4565152-1712/
+116K	/workspace/build-gate/work-PR6-00259199-223328/
+92K	/workspace/build-gate/work-PR11-postmerge-bc6b3287/
+72K	/workspace/build-gate/selfimprove/
+60K	/workspace/build-gate/work-PR12-postmerge-cdc95b76/
+16K	/workspace/build-gate/work-TESSERA-PR2-cb19f210/
+12K	/workspace/build-gate/pn/
+---
+2026-10-13 06:07:50 CDT
+2026-10-13 06:03:36.154583482 -0500
+2026-10-13 06:06:07.642583482 -0500
+                     USER        PID ACCESS COMMAND
+/tmp/gb:             root     kernel mount /
+                     box         194 .rce. websockify
+                     box         199 .rce. bash
+                     box         200 .rce. flock
+                     box         201 .rce. node
+                     box         217 .rce. node
+                     box         237 .rce. node
+                     box         238 .rce. node
+                     box         245 .rce. bash
+                     box         247 .rce. flock
+                     box         251 .rce. node
+                     box         269 .rce. node
+                     box         282 .rce. bash
+                     box         283 .rce. flock
+                     box         284 .rce. node
+                     box         324 .rce. node
+                     box         329 .rce. bash
+                     box         330 .rce. bash
+                     box         359 .rce. sand-egress-tun
+                     box         366 .rce. bash
+                     box         386 .rce. node
+                     box         770 .rce. npm exec @aikid
+                     box         773 .rce. npm exec mcp-re
+                     box         915 .rce. sh
+                     box         916 .rce. node
+                     box         943 .rce. sh
+                     box         944 .rce. node
+                     box        1327 .rce. bash
+                     box        1331 .rce. bash
+                     box        1332 .rce. flock
+                     box        1333 .rce. node
+                     box        1379 Frce. dbus-daemon
+                     box        2105 .rce. dconf-service
+                     box        2308 .rce. tail
+                     box        3056 .rce. bash
+                     box        3060 .rce. bash
+                     box        3061 .rce. flock
+                     box        3062 .rce. node
+                     box        3102 Frce. dbus-daemon
+                     box        3979 .rce. dconf-service
+                     box        4230 .rce. tail
+                     box        8845 .rce. bash
+                     box        8849 .rce. bash
+                     box        8850 .rce. flock
+                     box        8851 .rce. node
+                     box        8886 Frce. dbus-daemon
+                     box        8895 Frce. Xvfb
+                     box        8901 .rce. bash
+                     box        8902 .rce. flock
+                     box        8904 .rce. node
+                     box        9893 .rce. node
+                     box        9947 .rce. x11vnc
+                     box        9952 .rce. bash
+                     box        9953 .rce. flock
+                     box        9955 .rce. node
+                     box        9978 .rce. xfwm4
+                     box        9990 .rce. bash
+                     box        9991 .rce. flock
+                     box        9992 .rce. node
+                     box       10028 .rce. picom
+                     box       10034 .rce. bash
+                     box       10037 .rce. flock
+                     box       10038 .rce. node
+                     box       10129 .rce. dconf-service
+                     box       10321 .rce. plank
+                     box       10334 .rce. bash
+                     box       10336 .rce. flock
+                     box       10339 .rce. node
+                     box       10366 .rce. tail
+                     box       10542 .rce. bamfdaemon-dbus
+                     box       10545 .rce. bamfdaemon
+                     box       13445 .rce. bash
+                     box       13448 .rce. bash
+                     box       13450 .rce. flock
+                     box       13451 .rce. node
+                     box       13516 Frce. dbus-daemon
+                     box       13528 Frce. Xvfb
+                     box       13536 .rce. bash
+                     box       13537 .rce. flock
+                     box       13542 .rce. node
+                     box       14618 .rce. node
+                     box       14655 .rce. xfwm4
+                     box       14660 .rce. bash
+                     box       14661 .rce. flock
+                     box       14665 .rce. node
+                     box       14704 .rce. picom
+                     box       14713 .rce. bash
+                     box       14714 .rce. flock
+                     box       14716 .rce. node
+                     box       14784 .rce. dconf-service
+                     box       14981 .rce. plank
+                     box       14995 .rce. bash
+                     box       14997 .rce. flock
+                     box       14998 .rce. node
+                     box       15026 .rce. tail
+                     box       15159 .rce. bamfdaemon-dbus
+                     box       15160 .rce. bamfdaemon
+                     box       15500 .rce. bash
+                     box       15504 .rce. bash
+                     box       15505 .rce. flock
+                     box       15506 .rce. node
+                     box       15545 Frce. dbus-daemon
+                     box       15550 Frce. Xvfb
+                     box       15555 .rce. bash
+                     box       15556 .rce. flock
+                     box       15558 .rce. node
+                     box       16680 .rce. node
+                     box       16692 .rce. x11vnc
+                     box       16697 .rce. bash
+                     box       16698 .rce. flock
+                     box       16700 .rce. node
+                     box       16720 .rce. xfwm4
+                     box       16722 .rce. bash
+                     box       16723 .rce. flock
+                     box       16726 .rce. node
+                     box       16791 .rce. picom
+                     box       16797 .rce. bash
+                     box       16798 .rce. flock
+                     box       16807 .rce. node
+                     box       16852 .rce. dconf-service
+                     box       17107 .rce. plank
+                     box       17114 .rce. bash
+                     box       17124 .rce. flock
+                     box       17135 .rce. node
+                     box       17153 .rce. tail
+                     box       17356 .rce. bamfdaemon-dbus
+                     box       17357 .rce. bamfdaemon
+                     box       17892 .rce. bash
+                     box       17895 .rce. bash
+                     box       17897 .rce. flock
+                     box       17898 .rce. node
+                     box       17937 Frce. dbus-daemon
+                     box       17942 Frce. Xvfb
+                     box       17947 .rce. bash
+                     box       17948 .rce. flock
+                     box       17949 .rce. node
+                     box       19366 .rce. node
+                     box       19378 .rce. x11vnc
+                     box       19384 .rce. bash
+                     box       19385 .rce. flock
+                     box       19386 .rce. node
+                     box       19403 .rce. xfwm4
+                     box       19408 .rce. bash
+                     box       19409 .rce. flock
+                     box       19410 .rce. node
+                     box       19456 .rce. picom
+                     box       19465 .rce. bash
+                     box       19466 .rce. flock
+                     box       19468 .rce. node
+                     box       19523 .rce. dconf-service
+                     box       19750 .rce. plank
+                     box       19763 .rce. bash
+                     box       19766 .rce. flock
+                     box       19769 .rce. node
+                     box       19799 .rce. tail
+                     box       20034 .rce. bamfdaemon-dbus
+                     box       20035 .rce. bamfdaemon
+                     box       24988 .rce. bash
+                     box       24992 .rce. bash
+                     box       24993 .rce. flock
+                     box       24994 .rce. node
+                     box       25029 Frce. dbus-daemon
+                     box       25038 Frce. Xvfb
+                     box       25043 .rce. bash
+                     box       25044 .rce. flock
+                     box       25046 .rce. node
+                     box       26750 .rce. node
+                     box       26764 .rce. x11vnc
+                     box       26769 .rce. bash
+                     box       26770 .rce. flock
+                     box       26772 .rce. node
+                     box       26789 .rce. xfwm4
+                     box       26794 .rce. bash
+                     box       26795 .rce. flock
+                     box       26796 .rce. node
+                     box       26853 .rce. picom
+                     box       26858 .rce. bash
+                     box       26861 .rce. flock
+                     box       26869 .rce. node
+                     box       26913 .rce. dconf-service
+                     box       27153 .rce. plank
+                     box       27164 .rce. bash
+                     box       27165 .rce. flock
+                     box       27167 .rce. node
+                     box       27194 .rce. tail
+                     box       27493 .rce. bamfdaemon-dbus
+                     box       27495 .rce. bamfdaemon
+                     box       28006 .rce. bash
+                     box       28021 .rce. bash
+                     box       28022 .rce. node
+                     box       28024 .rce. bash
+                     box       28030 .rce. bash
+                     box       28031 .rce. flock
+                     box       28032 .rce. node
+                     box       28084 Frce. dbus-daemon
+                     box       28089 Frce. Xvfb
+                     box       28094 .rce. bash
+                     box       28095 .rce. flock
+                     box       28097 .rce. node
+                     box       28149 Frce. node
+                     box       28209 .rce. x11vnc
+                     box       28215 .rce. bash
+                     box       28216 .rce. flock
+                     box       28220 .rce. node
+                     box       28249 .rce. websockify
+                     box       28260 .rce. bash
+                     box       28262 .rce. flock
+                     box       28265 .rce. node
+                     box       28297 .rce. xfwm4
+                     box       28304 .rce. bash
+                     box       28307 .rce. flock
+                     box       28311 .rce. node
+                     box       28353 .rce. picom
+                     box       28369 .rce. bash
+                     box       28370 .rce. flock
+                     box       28379 .rce. node
+                     box       28492 .rce. dconf-service
+                     box       28889 .rce. plank
+                     box       28908 .rce. bash
+                     box       28911 .rce. flock
+                     box       28915 .rce. node
+                     box       28959 .rce. tail
+                     box       29383 .rce. bamfdaemon-dbus
+                     box       29386 .rce. bamfdaemon
+                     box       29982 .rce. x11vnc
+                     box       29983 .rce. bash
+                     box       29984 .rce. flock
+                     box       29985 .rce. node
+                     box       30963 .rce. bash
+                     box       30967 .rce. bash
+                     box       30968 .rce. flock
+                     box       30970 .rce. node
+                     box       31051 Frce. dbus-daemon
+                     box       31057 Frce. Xvfb
+                     box       31062 .rce. bash
+                     box       31063 .rce. flock
+                     box       31064 .rce. node
+                     box       33404 .rce. node
+                     box       33422 .rce. x11vnc
+                     box       33428 .rce. bash
+                     box       33429 .rce. flock
+                     box       33431 .rce. node
+                     box       33448 .rce. xfwm4
+                     box       33453 .rce. bash
+                     box       33454 .rce. flock
+                     box       33456 .rce. node
+                     box       33491 .rce. picom
+                     box       33499 .rce. bash
+                     box       33502 .rce. flock
+                     box       33503 .rce. node
+                     box       33549 .rce. dconf-service
+                     box       33826 .rce. plank
+                     box       33834 .rce. bash
+                     box       33835 .rce. flock
+                     box       33838 .rce. node
+                     box       33872 .rce. tail
+                     box       34423 .rce. bamfdaemon-dbus
+                     box       34424 .rce. bamfdaemon
+                     box       35487 .rce. bash
+                     box       35491 .rce. bash
+                     box       35492 .rce. flock
+                     box       35493 .rce. node
+                     box       35532 Frce. dbus-daemon
+                     box       35537 Frce. Xvfb
+                     box       35542 .rce. bash
+                     box       35543 .rce. flock
+                     box       35545 .rce. node
+                     box       38126 .rce. node
+                     box       38218 .rce. x11vnc
+                     box       38223 .rce. bash
+                     box       38224 .rce. flock
+                     box       38225 .rce. node
+                     box       38243 .rce. xfwm4
+                     box       38248 .rce. bash
+                     box       38249 .rce. flock
+                     box       38250 .rce. node
+                     box       38284 .rce. picom
+                     box       38285 .rce. bash
+                     box       38286 .rce. flock
+                     box       38291 .rce. node
+                     box       38417 .rce. dconf-service
+                     box       38718 .rce. plank
+                     box       38732 .rce. bash
+                     box       38734 .rce. flock
+                     box       38740 .rce. node
+                     box       38767 .rce. tail
+                     box       39158 .rce. bamfdaemon-dbus
+                     box       39160 .rce. bamfdaemon
+                     box       39785 .rce. bash
+                     box       39789 .rce. bash
+                     box       39790 .rce. flock
+                     box       39791 .rce. node
+                     box       39830 Frce. dbus-daemon
+                     box       39835 Frce. Xvfb
+                     box       39840 .rce. bash
+                     box       39841 .rce. flock
+                     box       39842 .rce. node
+                     box       42806 .rce. node
+                     box       42868 .rce. x11vnc
+                     box       42874 .rce. bash
+                     box       42877 .rce. flock
+                     box       42879 .rce. node
+                     box       42893 .rce. xfwm4
+                     box       42898 .rce. bash
+                     box       42899 .rce. flock
+                     box       42902 .rce. node
+                     box       42937 .rce. picom
+                     box       42941 .rce. bash
+                     box       42948 .rce. flock
+                     box       42960 .rce. node
+                     box       43009 .rce. dconf-service
+                     box       43305 .rce. plank
+                     box       43312 .rce. bash
+                     box       43313 .rce. flock
+                     box       43319 .rce. node
+                     box       43343 .rce. tail
+                     box       43834 .rce. bamfdaemon-dbus
+                     box       43835 .rce. bamfdaemon
+                     box       48939 .rce. bash
+                     box       48942 .rce. bash
+                     box       48944 .rce. flock
+                     box       48945 .rce. node
+                     box       48996 Frce. dbus-daemon
+                     box       49005 Frce. Xvfb
+                     box       49012 .rce. bash
+                     box       49013 .rce. flock
+                     box       49017 .rce. node
+                     box       50102 .rce. bash
+                     box       50106 .rce. bash
+                     box       50107 .rce. flock
+                     box       50109 .rce. node
+                     box       50204 Frce. dbus-daemon
+                     box       50219 Frce. Xvfb
+                     box       50227 .rce. bash
+                     box       50229 .rce. flock
+                     box       50230 .rce. node
+                     box       55612 .rce. node
+                     box       56160 .rce. x11vnc
+                     box       56169 .rce. bash
+                     box       56171 .rce. flock
+                     box       56176 .rce. node
+                     box       56203 .rce. xfwm4
+                     box       56204 .rce. bash
+                     box       56207 .rce. flock
+                     box       56210 .rce. node
+                     box       56265 .rce. picom
+                     box       56274 .rce. bash
+                     box       56277 .rce. flock
+                     box       56302 .rce. node
+                     box       56373 .rce. dconf-service
+                     box       56823 .rce. plank
+                     box       56844 .rce. bash
+                     box       56849 .rce. flock
+                     box       56851 .rce. node
+                     box       56912 .rce. tail
+                     box       57413 .rce. node
+                     box       57683 .rce. x11vnc
+                     box       57692 .rce. bash
+                     box       57693 .rce. flock
+                     box       57712 .rce. node
+                     box       57733 .rce. xfwm4
+                     box       57742 .rce. bash
+                     box       57743 .rce. flock
+                     box       57744 .rce. node
+                     box       57800 .rce. picom
+                     box       57808 .rce. bash
+                     box       57810 .rce. flock
+                     box       57813 .rce. node
+                     box       57860 .rce. dconf-service
+                     box       57918 .rce. bamfdaemon-dbus
+                     box       57929 .rce. bamfdaemon
+                     box       58255 .rce. plank
+                     box       58287 .rce. bash
+                     box       58291 .rce. flock
+                     box       58294 .rce. node
+                     box       58339 .rce. tail
+                     box       58870 .rce. bamfdaemon-dbus
+                     box       58873 .rce. bamfdaemon
+                     box       63736 .rce. bash
+                     box       63740 .rce. bash
+                     box       63741 .rce. flock
+                     box       63742 .rce. node
+                     box       63786 Frce. dbus-daemon
+                     box       63792 Frce. Xvfb
+                     box       63797 .rce. bash
+                     box       63798 .rce. flock
+                     box       63800 .rce. node
+                     box       67434 .rce. x11vnc
+                     box       67439 .rce. bash
+                     box       67441 .rce. flock
+                     box       67442 .rce. node
+                     box       67459 .rce. xfwm4
+                     box       67464 .rce. bash
+                     box       67465 .rce. flock
+                     box       67467 .rce. node
+                     box       67501 .rce. picom
+                     box       67514 .rce. bash
+                     box       67515 .rce. flock
+                     box       67517 .rce. node
+                     box       67563 .rce. dconf-service
+                     box       67819 .rce. plank
+                     box       67843 .rce. bash
+                     box       67844 .rce. flock
+                     box       67852 .rce. node
+                     box       67892 .rce. tail
+                     box       68323 .rce. bamfdaemon-dbus
+                     box       68326 .rce. bamfdaemon
+                     box       68915 .rce. node
+                     box       88072 .rce. bash
+                     box       88092 .rce. llama-server
+                     box       88494 .rce. bash
+                     box       88790 .rce. sleep
+                     box       88885 .rce. node
+                     box       88912 .rce. sleep
+                     box       88913 .rce. sleep
+                     box       88929 .rce. bash
+                     box       88959 .rce. gh
+                     box       88971 .rce. bash
+                     box       89042 .rce. timeout
+FUSER:0
+
+---
+exit_code: 0
+elapsed_ms: 469
+ended_at: 2026-10-13T11:07:50.707Z
+---

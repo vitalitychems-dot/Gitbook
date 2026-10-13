@@ -1,0 +1,28 @@
+---
+pid: 161895
+cwd: "/workspace/rea-inventory/Gitbook"
+command: "cd /workspace; [ -d sec-retro/TESSERA ] || git clone -q --bare https://github.com/vitalitychems-dot/TESSERA sec-retro/TESSERA 2>&1|tail -1; cd sec-retro/TESSERA && git fetch -q origin '+refs/pull/*/head:refs/pr/*' '+refs/heads/main:refs/heads/main' 2>&1|tail -1; for n in $(seq 260 272); do echo $n $(git rev-parse --short pr/$n 2>&1); done"
+title: "Fetch TESSERA PR refs"
+status: succeeded
+started_at: 2026-10-13T09:23:19.339Z
+running_for_ms: 69807    
+---
+260 0e33d918
+261 0849b79f
+262 42f305e5
+263 fad6cd8e
+264 c2f6a6c2
+265 4e16b5c3
+266 45fbaa1a
+267 1a8a1ffc
+268 8af342d9
+269 5552a42f
+270 734b87a1
+271 a8a83e03
+272 eb5abc9e
+
+---
+exit_code: 0
+elapsed_ms: 69807
+ended_at: 2026-10-13T09:24:29.146Z
+---

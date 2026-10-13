@@ -1,0 +1,215 @@
+=== BindsNET__bindsnet ===
+INSTALL: pip install -e .
+Obtaining file:///workspace/repo-lab/BindsNET__bindsnet
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Collecting ale-py<1,>=0 (from bindsnet==0.3.4)
+  Downloading ale_py-0.12.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.7 kB)
+Collecting gymnasium<2,>=1 (from gymnasium[atari]<2,>=1->bindsnet==0.3.4)
+  Downloading gymnasium-1.4.0-py3-none-any.whl.metadata (9.0 kB)
+Collecting matplotlib<4,>=3.11.2 (from bindsnet==0.3.4)
+  Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting numpy<3,>=2 (from bindsnet==0.3.4)
+  Using cached numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting opencv-python<6,>=4.14 (from bindsnet==0.3.4)
+  Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl.metadata (19 kB)
+Collecting pandas<4,>=3.0.6 (from bindsnet==0.3.4)
+  Using cached pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting scikit-image<1,>=0 (from bindsnet==0.3.4)
+  Using cached scikit_image-0.26.0-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (15 kB)
+Collecting scikit-learn<2,>=1 (from bindsnet==0.3.4)
+  Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.3 kB)
+Collecting scipy<2,>=1 (from bindsnet==0.3.4)
+  Using cached scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting tensorboardX<3,>=2.6.4 (from bindsnet==0.3.4)
+  Downloading tensorboardx-2.6.5-py3-none-any.whl.metadata (6.6 kB)
+Collecting torch<3,>=2.14 (from bindsnet==0.3.4)
+  Using cached torch-2.14.1-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (37 kB)
+Collecting torchvision<1,>=0.29 (from bindsnet==0.3.4)
+  Downloading torchvision-0.29.1-cp313-cp313-manylinux_2_28_x86_64.whl.metadata (5.7 kB)
+Collecting tqdm<5,>=4 (from bindsnet==0.3.4)
+  Using cached tqdm-4.70.1-py3-none-any.whl.metadata (57 kB)
+Collecting cloudpickle>=1.2.0 (from gymnasium<2,>=1->gymnasium[atari]<2,>=1->bindsnet==0.3.4)
+  Using cached cloudpickle-3.1.2-py3-none-any.whl.metadata (7.1 kB)
+Collecting typing-extensions>=4.12.0 (from gymnasium<2,>=1->gymnasium[atari]<2,>=1->bindsnet==0.3.4)
+  Using cached typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting farama-notifications>=0.0.1 (from gymnasium<2,>=1->gymnasium[atari]<2,>=1->bindsnet==0.3.4)
+  Using cached farama_notifications-0.0.6-py3-none-any.whl.metadata (729 bytes)
+Collecting contourpy>=1.0.1 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (130 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Requirement already satisfied: packaging>=20.0 in ./.venv/lib/python3.13/site-packages (from matplotlib<4,>=3.11.2->bindsnet==0.3.4) (26.3)
+Collecting pillow>=9 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting python-dateutil>=2.7 (from matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting networkx>=3.0 (from scikit-image<1,>=0->bindsnet==0.3.4)
+  Using cached networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting imageio!=2.35.0,>=2.33 (from scikit-image<1,>=0->bindsnet==0.3.4)
+  Using cached imageio-2.38.0-py3-none-any.whl.metadata (9.7 kB)
+Collecting tifffile>=2022.8.12 (from scikit-image<1,>=0->bindsnet==0.3.4)
+  Using cached tifffile-2026.9.20-py3-none-any.whl.metadata (34 kB)
+Collecting lazy-loader>=0.4 (from scikit-image<1,>=0->bindsnet==0.3.4)
+  Using cached lazy_loader-0.6-py3-none-any.whl.metadata (6.0 kB)
+Collecting joblib>=1.4.0 (from scikit-learn<2,>=1->bindsnet==0.3.4)
+  Using cached joblib-1.6.0-py3-none-any.whl.metadata (6.5 kB)
+Collecting narwhals>=2.0.1 (from scikit-learn<2,>=1->bindsnet==0.3.4)
+  Downloading narwhals-2.26.0-py3-none-any.whl.metadata (15 kB)
+Collecting threadpoolctl>=3.5.0 (from scikit-learn<2,>=1->bindsnet==0.3.4)
+  Using cached threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+Collecting protobuf>=3.20 (from tensorboardX<3,>=2.6.4->bindsnet==0.3.4)
+  Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl.metadata (595 bytes)
+Collecting filelock (from torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached filelock-4.0.12-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: setuptools>=77.0.3 in ./.venv/lib/python3.13/site-packages (from torch<3,>=2.14->bindsnet==0.3.4) (84.0.0)
+Collecting sympy>=1.13.3 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting jinja2 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting fsspec>=0.8.5 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Downloading fsspec-2026.9.0-py3-none-any.whl.metadata (10 kB)
+Collecting cuda-toolkit==13.0.3 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Downloading cuda_toolkit-13.0.3.0-py2.py3-none-any.whl.metadata (17 kB)
+Collecting cuda-bindings<14,>=13.0.3 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached cuda_bindings-13.4.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+Collecting nvidia-cudnn-cu13==9.24.0.43 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Downloading nvidia_cudnn_cu13-9.24.0.43-py3-none-manylinux_2_27_x86_64.whl.metadata (1.9 kB)
+Collecting nvidia-cusparselt-cu13==0.8.1 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl.metadata (12 kB)
+Collecting nvidia-nccl-cu13==2.30.7 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl.metadata (2.1 kB)
+Collecting nvidia-nvshmem-cu13==3.4.5 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (2.1 kB)
+Collecting triton~=3.8.0 (from torch<3,>=2.14->bindsnet==0.3.4)
+  Downloading triton-3.8.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (978 bytes)
+Collecting nvidia-cublas==13.1.1.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cuda-nvrtc==13.0.88.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-runtime==13.0.96.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cufft==12.0.0.61.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvjitlink<14,>=13.0.88 (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Downloading nvidia_nvjitlink-13.4.92-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cufile==1.15.1.6.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cuda-cupti==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-curand==10.4.0.35.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl.metadata (1.7 kB)
+Collecting nvidia-cusolver==12.0.4.66.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-cusparse==12.6.3.3.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (1.8 kB)
+Collecting nvidia-nvtx==13.0.85.* (from cuda-toolkit[cublas,cudart,cufft,cufile,cupti,curand,cusolver,cusparse,nvjitlink,nvrtc,nvtx]==13.0.3; platform_system == "Linux"->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl.metadata (1.8 kB)
+Collecting cuda-pathfinder>=1.4.2 (from cuda-bindings<14,>=13.0.3->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached cuda_pathfinder-1.8.3-py3-none-any.whl.metadata (1.9 kB)
+Collecting six>=1.5 (from python-dateutil>=2.7->matplotlib<4,>=3.11.2->bindsnet==0.3.4)
+  Using cached six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.13.3->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->torch<3,>=2.14->bindsnet==0.3.4)
+  Using cached markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Downloading ale_py-0.12.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (3.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.1/3.1 MB 71.9 MB/s  0:00:00
+
+Downloading gymnasium-1.4.0-py3-none-any.whl (476 kB)
+Using cached matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+Using cached numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+Downloading opencv_python-5.0.0.93-cp37-abi3-manylinux_2_28_x86_64.whl (73.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 73.8/73.8 MB 70.4 MB/s  0:00:01
+
+Using cached pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.8 MB)
+Using cached scikit_image-0.26.0-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (13.7 MB)
+Downloading scikit_learn-1.9.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (9.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.1/9.1 MB 78.7 MB/s  0:00:00
+
+Using cached scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+Downloading tensorboardx-2.6.5-py3-none-any.whl (87 kB)
+Downloading torch-2.14.1-cp313-cp313-manylinux_2_28_x86_64.whl (554.6 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 554.6/554.6 MB 60.0 MB/s  0:00:07
+
+Downloading cuda_toolkit-13.0.3.0-py2.py3-none-any.whl (2.5 kB)
+Downloading nvidia_cudnn_cu13-9.24.0.43-py3-none-manylinux_2_27_x86_64.whl (553.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 553.1/553.1 MB 88.2 MB/s  0:00:04
+
+Using cached nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_x86_64.whl (170.1 MB)
+Downloading nvidia_nccl_cu13-2.30.7-py3-none-manylinux_2_18_x86_64.whl (216.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 216.0/216.0 MB 168.5 MB/s  0:00:01
+
+Using cached nvidia_nvshmem_cu13-3.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (60.4 MB)
+Using cached cuda_bindings-13.4.3-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+Using cached nvidia_cublas-13.1.1.3-py3-none-manylinux_2_27_x86_64.whl (423.1 MB)
+Using cached nvidia_cuda_cupti-13.0.85-py3-none-manylinux_2_25_x86_64.whl (10.7 MB)
+Using cached nvidia_cuda_nvrtc-13.0.88-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (90.2 MB)
+Using cached nvidia_cuda_runtime-13.0.96-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.2 MB)
+Using cached nvidia_cufft-12.0.0.61-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (214.1 MB)
+Using cached nvidia_cufile-1.15.1.6-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.2 MB)
+Using cached nvidia_curand-10.4.0.35-py3-none-manylinux_2_27_x86_64.whl (59.5 MB)
+Using cached nvidia_cusolver-12.0.4.66-py3-none-manylinux_2_27_x86_64.whl (200.9 MB)
+Using cached nvidia_cusparse-12.6.3.3-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (145.9 MB)
+Downloading nvidia_nvjitlink-13.4.92-py3-none-manylinux2010_x86_64.manylinux_2_12_x86_64.whl (42.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 42.5/42.5 MB 104.0 MB/s  0:00:00
+
+Using cached nvidia_nvtx-13.0.85-py3-none-manylinux1_x86_64.manylinux_2_5_x86_64.whl (148 kB)
+Downloading torchvision-0.29.1-cp313-cp313-manylinux_2_28_x86_64.whl (7.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.4/7.4 MB 109.1 MB/s  0:00:00
+
+Using cached tqdm-4.70.1-py3-none-any.whl (80 kB)
+Downloading triton-3.8.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (248.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 248.0/248.0 MB 87.5 MB/s  0:00:02
+
+Using cached cloudpickle-3.1.2-py3-none-any.whl (22 kB)
+Using cached contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Using cached cuda_pathfinder-1.8.3-py3-none-any.whl (62 kB)
+Using cached cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Using cached farama_notifications-0.0.6-py3-none-any.whl (2.9 kB)
+Using cached fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+Downloading fsspec-2026.9.0-py3-none-any.whl (221 kB)
+Using cached imageio-2.38.0-py3-none-any.whl (328 kB)
+Using cached joblib-1.6.0-py3-none-any.whl (306 kB)
+Using cached kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+Using cached lazy_loader-0.6-py3-none-any.whl (8.8 kB)
+Downloading narwhals-2.26.0-py3-none-any.whl (474 kB)
+Using cached networkx-3.7-py3-none-any.whl (2.1 MB)
+Using cached pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+Downloading protobuf-7.36.2-cp310-abi3-manylinux2014_x86_64.whl (343 kB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Using cached six-1.17.0-py2.py3-none-any.whl (11 kB)
+Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Using cached threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Using cached tifffile-2026.9.20-py3-none-any.whl (275 kB)
+Using cached typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached filelock-4.0.12-py3-none-any.whl (111 kB)
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+Building wheels for collected packages: bindsnet
+  Building editable for bindsnet (pyproject.toml): started
+  Building editable for bindsnet (pyproject.toml): finished with status 'done'
+  Created wheel for bindsnet: filename=bindsnet-0.3.4-py3-none-any.whl size=18463 sha256=21fd024409d6547133f0f941e623d4b8ed75c7d9fce10243702e817b08331f9f
+  Stored in directory: /tmp/pip-ephem-wheel-cache-xtjesdr0/wheels/52/a8/1b/7bd0f92bbcb637768b98fe0b9720e52922d6cd1843ddc25a8f
+Successfully built bindsnet
+Installing collected packages: nvidia-cusparselt-cu13, mpmath, farama-notifications, cuda-toolkit, typing-extensions, triton, tqdm, threadpoolctl, sympy, six, pyparsing, protobuf, pillow, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, networkx, narwhals, MarkupSafe, lazy-loader, kiwisolver, fsspec, fonttools, filelock, cycler, cuda-pathfinder, cloudpickle, tifffile, tensorboardX, scipy, python-dateutil, opencv-python, nvidia-cusparse, nvidia-cufft, nvidia-cublas, joblib, jinja2, imageio, gymnasium, cuda-bindings, contourpy, ale-py, scikit-learn, scikit-image, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, torch, torchvision, bindsnet
+
+
+Successfully installed MarkupSafe-3.0.4 ale-py-0.12.1 bindsnet-0.3.4 cloudpickle-3.1.2 contourpy-1.4.0 cuda-bindings-13.4.3 cuda-pathfinder-1.8.3 cuda-toolkit-13.0.3.0 cycler-0.12.1 farama-notifications-0.0.6 filelock-4.0.12 fonttools-4.66.1 fsspec-2026.9.0 gymnasium-1.4.0 imageio-2.38.0 jinja2-3.1.6 joblib-1.6.0 kiwisolver-1.5.1 lazy-loader-0.6 matplotlib-3.11.2 mpmath-1.3.0 narwhals-2.26.0 networkx-3.7 numpy-2.5.3 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.24.0.43 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.4.92 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 opencv-python-5.0.0.93 pandas-3.0.6 pillow-12.3.0 protobuf-7.36.2 pyparsing-3.3.3 python-dateutil-2.9.0.post0 scikit-image-0.26.0 scikit-learn-1.9.1 scipy-1.18.1 six-1.17.0 sympy-1.14.0 tensorboardX-2.6.5 threadpoolctl-3.7.0 tifffile-2026.9.20 torch-2.14.1 torchvision-0.29.1 tqdm-4.70.1 triton-3.8.0 typing-extensions-4.16.0
+INSTALL_OK
+bindsnet ok
+PASS

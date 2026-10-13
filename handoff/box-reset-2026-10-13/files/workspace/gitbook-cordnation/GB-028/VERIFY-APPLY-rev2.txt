@@ -1,0 +1,16 @@
+GB-028 rev 2 — apply verification (16:44 CT, 2026-10-05). Base main 979c35e0be9a27ab143c7dcfc714d979b11e10a0.
+File: GB-028/GB-028-rev2.979c35e.diff  sha256 7149403b6ef0e743274e19ffe163037471419d450581fc00ca6e572588ab8386  (142 lines, 5 files incl. 1 new, +66/−9)
+Local tree: the 46-file 979c35e subset (b979c), blob-verified; cleaned before each run.
+hashes: 7fe2d5f273ac9826 (rev3, expect 7fe2d5f273ac9826) 8fc780410bef373a (027, expect 8fc780410bef373a) 5689294fe725b845 (028 rev1, expect 5689294fe725b845)
+A1 --check GB-026 rev3 on clean 979c35e: rc=0
+A2 apply GB-026 rev3: rc=0
+A3 --check GB-027: rc=0
+A4 apply GB-027: rc=0
+A5 --check GB-028 rev2 on 979c35e+rev3+027: rc=0
+A6 apply GB-028 rev2: rc=0
+  result tree aee81d2537ce51cc4de3578c54aedbfb85c4bf14; drafted p28r2 tree aee81d2537ce51cc4de3578c54aedbfb85c4bf14
+A7 reverse --check GB-028 rev2: rc=0
+B1 --check GB-028 rev2 alone on clean 979c35e: rc=0
+B2 apply GB-028 rev2 alone on clean 979c35e: rc=0
+  B2 result:  5 files changed, 66 insertions(+), 9 deletions(-)
+Interdiff rev1→rev2: INTERDIFF-rev1-to-rev2.diff (sha cc968e5d0c4ef6e4e03934f758ca022b3b1a129756d51eaf7aa5def2490f887d): 3 files, +3/−8 (agent-checkins 2 STATUS lines; backlog HYB-012 status cell; start-here page front matter −5).

@@ -1,0 +1,70 @@
+commit 1c7db22fb3c8bbda13f3213b6b19ff2818331b28
+Author: Tessera <332565808+vitalitychems-dot@users.noreply.github.com>
+Date:   Tue Oct 13 03:00:32 2026 -0500
+
+    Rename leftover GitbookAI references to GitMesh (#57)
+    
+    Current-name uses in the check-in ledger, the olive census, and wave 6 now say GitMesh. The 2026-10-12 former-name notes stay, with the old name in quotes.
+    
+    Co-authored-by: Tessera <vitalitychems-dot@users.noreply.github.com>
+
+diff --git a/history/coordination/agent-checkins.md b/history/coordination/agent-checkins.md
+index 19111a3..7312bb9 100644
+--- a/history/coordination/agent-checkins.md
++++ b/history/coordination/agent-checkins.md
+@@ -28,7 +28,7 @@ FOLLOW-UP: the rows marked UNCLAIMED or BLOCKED. Re-run this refresh when Gitboo
+ | HYB-012, HYB-014, HYB-017, HYB-020, HYB-021 | Replit / Manus / Tessera | DONE or REJECTED | HYB-012 `50876d40`. HYB-014 `5628e422`. HYB-017 rejected for Tessera. HYB-020 routing record. HYB-021 `9e218bc` and Gitbook `39e892e`. |
+ | SITE-001 managed health-path evidence and exact release payload | Replit | OPEN | No SITE-001 evidence is recorded in this ledger or on issue #2. Sync Repl `1` from TESSERA main first. Never overwrite main from a behind Repl. |
+ | SITE-003 provenance, SITE-004 security review | Moderator, Security | UNCLAIMED | Publication still needs Father's exact release-payload approval. |
+-| HYB-011 account refresh and HYB-015 GitbookAI rules summary | Gitbook desk | IN REVIEW | Branch `desk/gb-063-hyb-011` (GB-063). The desk says the four gates are not recorded on the diff. The GB-062 map still lists HYB-015 as unclaimed; this pull request is the claim. |
++| HYB-011 account refresh and HYB-015 GitMesh rules summary | Gitbook desk | IN REVIEW | Branch `desk/gb-063-hyb-011` (GB-063). The desk says the four gates are not recorded on the diff. The GB-062 map still lists HYB-015 as unclaimed; this pull request is the claim. |
+ | TESSERA docs pointer at the consolidation map | Gitbook desk | IN REVIEW | Desk pull request on TESSERA. No product code. Gates not recorded. |
+ | GB-061 rev 2, Gitbook pull request 39 | Ready lane | IN REVIEW | `ready/gb-061-rev2-archive-preserved` @ `71a8c78f`. Open since Oct 9. |
+ | Gitbook pull request 40 (`cursor/father-yes-record-b14e`) | Cursor branch, draft | STALE | Draft since Oct 9. Edits `mesh/TODOS.md`. Not touched on this pass. Tessera or Father decides close or merge. |
+diff --git a/merge/CONSOLIDATION-MAP-2026-10-12.md b/merge/CONSOLIDATION-MAP-2026-10-12.md
+index 7fdec99..408d35a 100644
+--- a/merge/CONSOLIDATION-MAP-2026-10-12.md
++++ b/merge/CONSOLIDATION-MAP-2026-10-12.md
+@@ -18,7 +18,7 @@ The connected GitHub account lists four repositories under `vitalitychems-dot`.
+ |---|---|---|---|---|---|
+ | `TESSERA` | private | Product code and tests | 2026-10-12 9:34 AM | TESSERA (destination) | Tessera gates; lanes work on their own branch |
+ | `Gitbook` | private | Coordination, instructions, research, provenance | 2026-10-12 9:34 AM | Gitbook (destination) | Cordnation intake; Moderator review |
+-| `GitMesh` (renamed from GitbookAI, 2026-10-12) | public | Public room carried by git; owner-approval gate rules and small `projects/*` programs | 2026-10-10 9:42 AM | Gitbook gets a summary page of the approval-gate rules (HYB-015). The code stays in its own public repository. | HYB-016 coordination rules: Cursor Project. HYB-015: unclaimed |
++| `GitMesh` (renamed from "GitbookAI", 2026-10-12) | public | Public room carried by git; owner-approval gate rules and small `projects/*` programs | 2026-10-10 9:42 AM | Gitbook gets a summary page of the approval-gate rules (HYB-015). The code stays in its own public repository. | HYB-016 coordination rules: Cursor Project. HYB-015: unclaimed |
+ | `vitality` | private | Vitality Supply store and product media. Its README says it is not part of Tessera. | 2026-10-11 12:02 PM | Archive-mark-done for Tessera purposes. It stays separate. | Board rule: do not edit vitality. HYB-010 media metadata: unclaimed |
+ 
+ The older sources named in the backlog (`Grok-ready`, `Zz`, `1`, `5t`, `T44`, `TESS`, `olive-giant-ever-glade` and the archive repositories) are no longer listed under this account. Their routing and verdicts stay recorded in the 2026-10-07 record and in HYB-006 to HYB-009 and HYB-017. `1T` stays protected and unopened under HYB-011.
+diff --git a/merge/hyb-008-olive.md b/merge/hyb-008-olive.md
+index 7ca35fc..a99a61b 100644
+--- a/merge/hyb-008-olive.md
++++ b/merge/hyb-008-olive.md
+@@ -6,4 +6,4 @@ The archive is at `archive/moved/olive-giant-ever-glade`. Its package is a separ
+ 
+ No file from that app was copied into TESSERA. Its auth, database, and runtime stay in the archive.
+ 
+-Checked 2026-10-10. The live account has four repositories: TESSERA, Gitbook, GitbookAI, and vitality. This app is not one of them.
++Checked 2026-10-10. The live account has four repositories: TESSERA, Gitbook, GitMesh (then "GitbookAI"), and vitality. This app is not one of them.
+diff --git a/mesh/TRUE-TODAY.md b/mesh/TRUE-TODAY.md
+index 708c72a..194b354 100644
+--- a/mesh/TRUE-TODAY.md
++++ b/mesh/TRUE-TODAY.md
+@@ -35,5 +35,5 @@ Vitality was left out of this pass.
+ - TESSERA main is `8cfe30b`. The Gitbook room reads issue 2 from GitHub and checks again every 20 seconds.
+ - An empty chair does not stop the work. A no from someone in the room still stops that proposal.
+ - Five kept corrections answer the next question. Who founded the Academy returns Plato. The drill replaces a wrong answer. She does not invent the next fact.
+-- GitMesh (then GitbookAI) programs were run: shift, spin, carry, admit, tie, and pass. Carry read the mesh from disk and said it needs no web. Admit refused a payment. Tie paired only with approval.
++- GitMesh (then "GitbookAI") programs were run: shift, spin, carry, admit, tie, and pass. Carry read the mesh from disk and said it needs no web. Admit refused a payment. Tie paired only with approval.
+ - tess/log-query.db is still not reachable. GitHub has no file, and the 420 MB LFS object still 404s. No program was given invented rows.
+diff --git a/review/wave-6.md b/review/wave-6.md
+index b3d7d5e..7d11925 100644
+--- a/review/wave-6.md
++++ b/review/wave-6.md
+@@ -2,7 +2,7 @@
+ 
+ The test passed. This page was written after that, not before.
+ 
+-- The mesh does not need the web. Its name is gitbookai. It has 7 projects.
++- The mesh does not need the web. Its name is GitMesh. It has 7 projects.
+ - One peak is not a pair. An empty count list has length 0. A missing joy is 0. A value of 2 clamps to 1.
+ - The second reward adds less than 0.1.
+ - The name talk opens council. An unknown name opens nothing. This file does not contain the other eighteen room names.

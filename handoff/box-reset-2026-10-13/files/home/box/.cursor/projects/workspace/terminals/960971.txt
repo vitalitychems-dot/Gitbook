@@ -1,0 +1,15 @@
+---
+cwd: "/tmp/gb"
+command: "cd /tmp/fx && git checkout -q lib && export PATH=/tmp/node-v22.11.0-linux-x64/bin:$PATH; S=$(date +%s); ok=0; for f in clamp median slug pct dedupe; do r=$(WORKER_TRIES=4 node /tmp/kit/loop/worker.mjs /tmp/fx issue-$f.json) && ok=$((ok+1)); echo \"T=4 $f $r\"; done; echo \"T=4 fixed=$ok/5 secs=$(( $(date +%s)-S ))\"; git diff --stat"
+title: "Measure worker best-of-4"
+status: failed   
+started_at: 2026-10-13T11:10:25.233Z
+running_for_ms: 2        
+---
+The shell's working directory no longer exists: /tmp/gb. The command did not run. Re-run it with working_directory set to an existing directory.
+
+---
+exit_code: 1
+elapsed_ms: 2
+ended_at: 2026-10-13T11:10:25.235Z
+---

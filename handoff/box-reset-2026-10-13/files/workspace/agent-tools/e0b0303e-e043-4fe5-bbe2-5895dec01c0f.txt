@@ -1,0 +1,24 @@
+<cursor_untrusted_data_1337 source="CallDynamicTool">
+
+diff --git a/.github/CODEOWNERS b/.github/CODEOWNERS
+index 72dfe5ea..ae3f83c5 100644
+--- a/.github/CODEOWNERS
++++ b/.github/CODEOWNERS
+@@ -24,3 +24,4 @@ renovate.json @vitalitychems-dot
+ **/bench/ @vitalitychems-dot
+ /artifacts/api-server/scripts/pen-local-gate.mjs @vitalitychems-dot
+ /artifacts/api-server/src/lib/pen-local/ @vitalitychems-dot
++/evals/heldout/ @vitalitychems-dot
+diff --git a/gate/locked-paths.txt b/gate/locked-paths.txt
+index ea4e9d58..601472d9 100644
+--- a/gate/locked-paths.txt
++++ b/gate/locked-paths.txt
+@@ -25,3 +25,5 @@ renovate.json
+ **/bench/
+ /artifacts/api-server/scripts/pen-local-gate.mjs
+ /artifacts/api-server/src/lib/pen-local/
++# Held-out eval runner (scoring data is private, in Gitbook)
++/evals/heldout/
+
+
+</cursor_untrusted_data_1337>

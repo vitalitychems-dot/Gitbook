@@ -1,0 +1,17 @@
+---
+pid: 215891
+cwd: "/workspace"
+command: "H=/tmp/h2/r/handoff/box-reset-2026-10-13; T=$H/transcripts/cloud-agents; mkdir -p $T /tmp/h2/ct; cp /workspace/cloud-agent-transcripts/* /tmp/h2/ct/; python3 /tmp/h2/red.py /tmp/h2/ct/*; /workspace/pubscan/gitleaks dir /tmp/h2/ct -c /workspace/pubscan/gl.toml --no-banner -r /tmp/h2/ct.json 2>&1|tail -1; python3 -c \"import json;print(sorted({x['File'].split('/')[-1]+':'+x['RuleID'] for x in json.load(open('/tmp/h2/ct.json'))}))\"; ls /tmp/h2/ct | wc -l"
+status: succeeded
+started_at: 2026-10-13T11:26:52.169Z
+running_for_ms: 131212   
+---
+[90m6:29AM[0m [32mINF[0m no leaks found
+[]
+49
+
+---
+exit_code: 0
+elapsed_ms: 131212
+ended_at: 2026-10-13T11:29:03.381Z
+---

@@ -1,0 +1,35 @@
+---
+pid: 204950
+cwd: "/workspace/einstein/r4"
+command: "cd /workspace/einstein/r4; which gh pnpm node; gh pr list --state open --limit 30 2>&1 | head -30; ls artifacts lib; rg -l \"setInterval|setTimeout\" --type ts -g '!**/node_modules/**' -g '!archive*' | head -60"
+title: "Tools, open PRs, timer sites"
+status: failed   
+started_at: 2026-10-13T09:28:56.299Z
+running_for_ms: 92694    
+---
+/usr/bin/gh
+/home/box/.local/bin/pnpm
+/usr/bin/node
+282	Einstein R3-09: reuse cachedAdjacency in brain.recall	einstein/r3-09-recall-adj-cache	OPEN	2026-10-13T09:27:06Z
+274	v3: crystal memory at /brain/snapshot?src=crystal, plus context packing	v3-crystal	OPEN	2026-10-13T09:21:48Z
+269	Ground memory-graph answers in cited observations, or abstain	cursor/grounded-memory-qa-a8c5	OPEN	2026-10-13T09:14:42Z
+267	Add a GSM8K reasoning eval runner for local Ollama	cursor/reasoning-eval-runner-cb29	DRAFT	2026-10-13T09:09:56Z
+artifacts:
+api-server
+gitai
+gitbook-mcp
+mockup-sandbox
+tessera
+v2
+
+lib:
+api-client-react
+api-spec
+api-zod
+db
+
+---
+exit_code: unknown
+elapsed_ms: 92693
+ended_at: 2026-10-13T09:30:28.992Z
+---

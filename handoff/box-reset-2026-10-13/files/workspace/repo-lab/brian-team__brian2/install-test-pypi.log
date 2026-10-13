@@ -1,0 +1,40 @@
+=== brian2 pypi ===
+Collecting brian2
+  Downloading brian2-2.10.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (6.7 kB)
+Collecting numpy>=2.0.0 (from brian2)
+  Using cached numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting cython<3.1.4,>=0.29.21 (from brian2)
+  Downloading cython-3.1.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (4.7 kB)
+Collecting sympy>=1.2 (from brian2)
+  Using cached sympy-1.14.0-py3-none-any.whl.metadata (12 kB)
+Collecting pyparsing!=3.2.4,>=3 (from brian2)
+  Using cached pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting jinja2>=2.7 (from brian2)
+  Using cached jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting setuptools>=61 (from brian2)
+  Using cached setuptools-84.0.0-py3-none-any.whl.metadata (6.6 kB)
+Collecting packaging (from brian2)
+  Using cached packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting MarkupSafe>=2.0 (from jinja2>=2.7->brian2)
+  Using cached markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting mpmath<1.4,>=1.1.0 (from sympy>=1.2->brian2)
+  Using cached mpmath-1.3.0-py3-none-any.whl.metadata (8.6 kB)
+Downloading brian2-2.10.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (2.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.4/2.4 MB 25.3 MB/s  0:00:00
+
+Downloading cython-3.1.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (3.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 3.3/3.3 MB 37.4 MB/s  0:00:00
+
+Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Using cached markupsafe-3.0.4-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+Using cached numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+Using cached pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Using cached setuptools-84.0.0-py3-none-any.whl (818 kB)
+Using cached sympy-1.14.0-py3-none-any.whl (6.3 MB)
+Using cached mpmath-1.3.0-py3-none-any.whl (536 kB)
+Using cached packaging-26.3-py3-none-any.whl (129 kB)
+Installing collected packages: mpmath, sympy, setuptools, pyparsing, packaging, numpy, MarkupSafe, cython, jinja2, brian2
+
+
+Successfully installed MarkupSafe-3.0.4 brian2-2.10.1 cython-3.1.3 jinja2-3.1.6 mpmath-1.3.0 numpy-2.5.3 packaging-26.3 pyparsing-3.3.3 setuptools-84.0.0 sympy-1.14.0
+brian2 2.10.1

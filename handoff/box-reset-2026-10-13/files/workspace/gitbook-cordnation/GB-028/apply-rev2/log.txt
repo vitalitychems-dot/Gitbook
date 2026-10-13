@@ -1,0 +1,12 @@
+hashes: 7fe2d5f273ac9826 (rev3, expect 7fe2d5f273ac9826) 8fc780410bef373a (027, expect 8fc780410bef373a) 5689294fe725b845 (028 rev1, expect 5689294fe725b845)
+A1 --check GB-026 rev3 on clean 979c35e: rc=0
+A2 apply GB-026 rev3: rc=0
+A3 --check GB-027: rc=0
+A4 apply GB-027: rc=0
+A5 --check GB-028 rev2 on 979c35e+rev3+027: rc=0
+A6 apply GB-028 rev2: rc=0
+  result tree aee81d2537ce51cc4de3578c54aedbfb85c4bf14; drafted p28r2 tree aee81d2537ce51cc4de3578c54aedbfb85c4bf14
+A7 reverse --check GB-028 rev2: rc=0
+B1 --check GB-028 rev2 alone on clean 979c35e: rc=0
+B2 apply GB-028 rev2 alone on clean 979c35e: rc=0
+  B2 result:  5 files changed, 66 insertions(+), 9 deletions(-)

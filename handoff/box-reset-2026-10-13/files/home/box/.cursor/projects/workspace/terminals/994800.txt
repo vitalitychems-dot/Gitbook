@@ -1,0 +1,30 @@
+---
+pid: 814592
+cwd: "/workspace/tessera-brain/data"
+command: "# Set up venv and install deps; inspect downloaded feather\ncd /workspace/tessera-brain\npython3 -m venv .venv\nsource .venv/bin/activate\npip install -q --upgrade pip\n# Install networkx matplotlib numpy pandas pyarrow pillow brian2 pytest; try cl-sdk\npip install -q networkx matplotlib numpy pandas pyarrow pillow pytest xlrd 2>&1 | tail -5\n# Brian2 can be heavy; try it\npip install -q brian2 2>&1 | tail -10\n# Use existing cl-sdk venv or install here\npip install -q cl-sdk 2>&1 | tail -8\npython -c \"import networkx,numpy,pandas,matplotlib,pyarrow; print('ok', networkx.__version__)\"\npython -c \"import brian2; print('brian2', brian2.__version__)\" 2>&1 || echo \"brian2 FAIL\"\npython -c \"import cl; print('cl-sdk ok', cl.is_simulator() if hasattr(cl,'is_simulator') else 'imported')\" 2>&1 || echo \"cl FAIL\"\n# Inspect feather\npython << 'PY'\nimport pandas as pd, numpy as np\nfrom pathlib import Path\np=Path('data/flywire_neuropil_pre_783.feather')\ndf=pd.read_feather(p)\nprint('shape', df.shape)\nprint('cols', list(df.columns)[:30])\nprint(df.head(3))\nprint('dtypes', df.dtypes.head(20))\nids=np.load('data/flywire_proofread_root_ids_783.npy')\nprint('root_ids', ids.shape, ids[:5])\nPY\n"
+title: "Install packages; inspect FlyWire feather"
+status: succeeded
+started_at: 2026-10-06T00:04:03.094Z
+running_for_ms: 47514    
+---
+ok 3.7
+brian2 2.10.1
+cl-sdk ok True
+shape (2781037, 3)
+cols ['pre_pt_root_id', 'neuropil', 'count']
+       pre_pt_root_id neuropil  count
+0  720575940379281722     ME_L      1
+1  720575940379283482     ME_L      1
+2  720575940379283719     LA_L      1
+dtypes pre_pt_root_id    int64
+neuropil            str
+count             int64
+dtype: object
+root_ids (139255,) [720575940621014292 720575940621939071 720575940624201033
+ 720575940608193884 720575940621618859]
+
+---
+exit_code: 0
+elapsed_ms: 47514
+ended_at: 2026-10-06T00:04:50.608Z
+---

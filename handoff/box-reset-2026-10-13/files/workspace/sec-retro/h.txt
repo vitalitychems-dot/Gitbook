@@ -1,0 +1,4 @@
+data/rea/registry.json c9c199b1
+scripts/package.json 18f89079
+scripts/rea-registry.mjs d5ad970c
+scripts/rea-registry.test.mjs 3ed94708

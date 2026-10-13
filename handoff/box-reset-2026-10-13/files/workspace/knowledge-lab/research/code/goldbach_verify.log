@@ -1,0 +1,11 @@
+Goldbach conjecture verification
+limit=1000000
+even_numbers_checked=499999
+all_verified=True
+failures=[]
+prime_count_up_to_limit=78498
+hardest_example(n, min_p, n-min_p)=(503222, 523, 502699)
+sieve_seconds=0.1045
+check_seconds=0.5554
+total_seconds=0.66
+NOTE: finite verification is not a proof.

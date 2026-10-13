@@ -1,0 +1,2373 @@
+diff --git a/.env.example b/.env.example
+index 074a2fc..f2b9ddc 100644
+--- a/.env.example
++++ b/.env.example
+@@ -62,3 +62,11 @@ VITALITY_STOREFRONT_DATABASE_URL=
+ # Dedicated local-only database for Tessera API integration tests; never use production here
+ TESSERA_TEST_DATABASE_URL=
+ TESSERA_TEST_FATHER_NATAL_CHART_JSON=
++
++# Gitbook MCP connector. Leave the token blank in git. See artifacts/gitbook-mcp/README.md.
++GITBOOK_GITHUB_TOKEN=
+[REDACTED]
++GITBOOK_GITHUB_REPO=
++GITBOOK_HTTP_HOST=
++GITBOOK_HTTP_PORT=
++GITBOOK_AGENT_LANE=
+diff --git a/README.md b/README.md
+index 07fd0e2..adc97ff 100644
+--- a/README.md
++++ b/README.md
+@@ -60,6 +60,7 @@ Mesh-agent onboarding stays in Gitbook. Start with the [hybrid consolidation bac
+ 
+ - `lib/` — shared workspace libraries.
+ - `artifacts/` — active Tessera web/API and UI-preview apps.
++- `artifacts/gitbook-mcp` — MCP and local HTTP connector for the private Gitbook docs repo. Connection steps are in that package README.
+ - `modal/` and `scripts/` — GPU tasks and suite utilities.
+ - `archives/source-variants/` and `archives/drive-export/` — reviewed historical code/text variants that are not active workspace packages by default.
+ - `docs/` — project map, secrets guidance, image-to-text transcriptions, provenance, deduplication, and validation records.
+diff --git a/artifacts/gitbook-mcp/README.md b/artifacts/gitbook-mcp/README.md
+new file mode 100644
+index 0000000..7cfbc89
+--- /dev/null
++++ b/artifacts/gitbook-mcp/README.md
+@@ -0,0 +1,128 @@
++# Gitbook MCP connector
++
++Mesh agents read and write the private docs repo `vitalitychems-dot/Gitbook` through this package. It speaks MCP on stdio and the same tools over a local HTTP/JSON API. Both paths use the GitHub REST API.
++
++The token comes from `GITBOOK_GITHUB_TOKEN`. Do not put a token in source, in this README, or in git.
++
++File changes (`write_handoff`, `propose_page_change`) always open a **draft pull request** on a `gitbook-mcp/…` branch. They do not push to `main` and they do not merge. `recent_changes` is the overlap check: latest `main` commits plus open pull requests. Run it before claiming work.
++
++`route_task` only suggests a lane. It does not assign or claim a task. Tessera assigns work.
++
++## Tools
++
++| Tool | What it does |
++| --- | --- |
++| `search_docs` | Search Gitbook markdown. Uses GitHub code search, then a bounded tree scan if code search returns 403, 422, or 503. |
++| `read_page` | Read one file from the default branch. |
++| `list_pages` | List markdown files and directories. |
++| `get_board` | Comments on Gitbook issue #2, the coordination board. |
++| `post_board_update` | Comment on issue #2. The body always starts with `AGENT: <name>`. |
++| `read_handoff` | Read `mesh/HANDOFF.md`. |
++| `write_handoff` | Append a handoff note through a draft pull request. Existing text stays in the branch copy. |
++| `propose_page_change` | Put proposed page content on a branch and open a draft pull request. `main` is not edited. |
++| `recent_changes` | Latest `main` commits and open pull requests. |
++| `route_task` | Score `agents.json` by keyword and specialty. Ties break by registry order. No match falls back to Tessera with `fallback: true`. |
++
++Security and Build are marked `fileWrites: false` in `agents.json`. If `GITBOOK_AGENT_LANE` is `security` or `build`, or the call passes that `lane`, draft pull requests are refused. Board comments stay available so a sweep can still be reported.
++
++## Environment
++
++| Variable | Default | Purpose |
++| --- | --- | --- |
++| `GITBOOK_GITHUB_TOKEN` | empty | GitHub token with access to the private Gitbook repo. Required for GitHub tools. |
++| `GITBOOK_GITHUB_API` | `https://api.github.com` | REST API base. |
++| `GITBOOK_GITHUB_OWNER` | `vitalitychems-dot` | Repository owner. |
++| `GITBOOK_GITHUB_REPO` | `Gitbook` | Repository name. |
++| `GITBOOK_DEFAULT_BRANCH` | `main` | Branch used for reads and as the pull request base. |
++| `GITBOOK_BOARD_ISSUE` | `2` | Coordination board issue. |
++| `GITBOOK_HANDOFF_PATH` | `mesh/HANDOFF.md` | Handoff page. |
++| `GITBOOK_AGENT_LANE` | empty | Lane id from `agents.json`. Set this to `security` or `build` to refuse file writes. |
++| `GITBOOK_HTTP_HOST` | `127.0.0.1` | HTTP bind address. Keep this on loopback. |
++| `GITBOOK_HTTP_PORT` | `8787` | HTTP port. |
++
++`route_task` works without a token. Every other tool returns a clear error until `GITBOOK_GITHUB_TOKEN` is set.
++
++## MCP stdio
++
++Build once, then point the agent at the compiled entry:
++
++```bash
++pnpm --filter @workspace/gitbook-mcp run build
++```
++
++```json
++{
++  "mcpServers": {
++    "gitbook": {
++      "command": "node",
++      "args": ["artifacts/gitbook-mcp/dist/mcp.js"],
++      "env": {
++        "GITBOOK_GITHUB_TOKEN": "${GITBOOK_GITHUB_TOKEN}"
++      }
++    }
++  }
++}
++```
++
++Use the path from the TESSERA repo root, or an absolute path to `dist/mcp.js`. The process speaks MCP over stdin/stdout with `Content-Length` framing. Set `GITBOOK_AGENT_LANE` in that `env` block when the process belongs to one lane.
++
++A security sweep config adds the lane and still uses the same command:
++
++```json
++{
++  "mcpServers": {
++    "gitbook": {
++      "command": "node",
++      "args": ["artifacts/gitbook-mcp/dist/mcp.js"],
++      "env": {
++        "GITBOOK_GITHUB_TOKEN": "${GITBOOK_GITHUB_TOKEN}",
++        "GITBOOK_AGENT_LANE": "security"
++      }
++    }
++  }
++}
++```
++
++## HTTP
++
++```bash
++GITBOOK_GITHUB_TOKEN="***" pnpm --filter @workspace/gitbook-mcp run start:http
++```
++
++`start:http` runs `node dist/http.js` and listens on `127.0.0.1:8787` unless the host and port variables say otherwise.
++
++| Method | Path | Body or query |
++| --- | --- | --- |
++| GET | `/health` | none |
++| GET | `/v1/tools` | none |
++| POST | `/v1/search_docs` | `{ "query": "handoff" }` |
++| POST | `/v1/read_page` | `{ "path": "mesh/HANDOFF.md" }` |
++| GET or POST | `/v1/list_pages` | `?dir=mesh` or `{ "dir": "mesh" }` |
++| GET or POST | `/v1/get_board` | none |
++| POST | `/v1/post_board_update` | `{ "agent": "Tessera", "text": "..." }` |
++| GET or POST | `/v1/read_handoff` | none |
++| POST | `/v1/write_handoff` | `{ "agent": "Tessera", "note": "..." }` |
++| POST | `/v1/propose_page_change` | `{ "path": "mesh/roles.md", "content": "...", "summary": "..." }` |
++| GET or POST | `/v1/recent_changes` | none |
++| POST | `/v1/route_task` | `{ "description": "review gate before publish" }` |
++
++Success is `{ "ok": true, "data": ... }`. Failure is `{ "ok": false, "error": "..." }` with status 400, or 503 when the token is missing.
++
++Example:
++
++```bash
++curl -s http://127.0.0.1:8787/v1/recent_changes
++curl -s http://127.0.0.1:8787/v1/route_task \
++  -H 'content-type: application/json' \
++  -d '{"description":"historical comparison of merge pages"}'
++```
++
++## Tests
++
++Tests mock `fetch`. They do not call GitHub and they do not need a token.
++
++```bash
++pnpm --filter @workspace/gitbook-mcp test
++```
++
++The root `pnpm test` command runs this package with the rest of the isolated suite.
+diff --git a/artifacts/gitbook-mcp/agents.json b/artifacts/gitbook-mcp/agents.json
+new file mode 100644
+index 0000000..cc4443d
+--- /dev/null
++++ b/artifacts/gitbook-mcp/agents.json
+@@ -0,0 +1,79 @@
++{
++  "version": 1,
++  "updated": "2026-10-05",
++  "note": "Registry used by route_task. Scoring is keyword and specialty text only. A suggestion does not claim or assign work. Tessera assigns work.",
++  "lanes": [
++    {
++      "id": "tessera",
++      "name": "Tessera",
++      "specialty": "admin and final approval",
++      "keywords": ["final approval", "assign the task", "admin", "father yes"],
++      "mode": "admin",
++      "fileWrites": true
++    },
++    {
++      "id": "gitbook-cordnation",
++      "name": "Gitbook Cordnation",
++      "specialty": "intake and organization",
++      "keywords": ["intake", "organization", "organize", "stage ready", "backlog"],
++      "mode": "intake",
++      "fileWrites": true
++    },
++    {
++      "id": "gitbook-moderator",
++      "name": "Gitbook Moderator",
++      "specialty": "review gate",
++      "keywords": ["review gate", "moderator", "before publish"],
++      "mode": "review",
++      "fileWrites": true
++    },
++    {
++      "id": "security",
++      "name": "Security",
++      "specialty": "read-only security sweeps",
++      "keywords": ["security sweep", "read-only", "secret scan", "privacy"],
++      "mode": "read-only",
++      "fileWrites": false
++    },
++    {
++      "id": "build",
++      "name": "Build",
++      "specialty": "verify-only",
++      "keywords": ["verify-only", "typecheck", "ci log", "build check"],
++      "mode": "verify-only",
++      "fileWrites": false
++    },
++    {
++      "id": "command-center",
++      "name": "Command Center",
++      "specialty": "status feed",
++      "keywords": ["status feed", "bulk update", "digest"],
++      "mode": "status",
++      "fileWrites": true
++    },
++    {
++      "id": "mesh-cloud",
++      "name": "Mesh Cloud",
++      "specialty": "connectivity",
++      "keywords": ["connectivity", "cross-agent", "mesh stall"],
++      "mode": "connectivity",
++      "fileWrites": true
++    },
++    {
++      "id": "historical-analysis-collab",
++      "name": "Historical Analysis Collab / Grok Bot",
++      "specialty": "historical comparisons and merge pages",
++      "keywords": ["historical", "merge page", "merge pages", "grok bot", "comparison"],
++      "mode": "analysis",
++      "fileWrites": true
++    },
++    {
++      "id": "gitbook-helper",
++      "name": "Gitbook helper",
++      "specialty": "ledger and receipts",
++      "keywords": ["ledger", "receipt", "receipts", "check-in log"],
++      "mode": "ledger",
++      "fileWrites": true
++    }
++  ]
++}
+diff --git a/artifacts/gitbook-mcp/package.json b/artifacts/gitbook-mcp/package.json
+new file mode 100644
+index 0000000..5907c6f
+--- /dev/null
++++ b/artifacts/gitbook-mcp/package.json
+@@ -0,0 +1,18 @@
++{
++  "name": "@workspace/gitbook-mcp",
++  "version": "0.0.0",
++  "private": true,
++  "type": "module",
++  "description": "MCP and HTTP connector so Tessera mesh agents can read and write vitalitychems-dot/Gitbook through the GitHub REST API.",
++  "scripts": {
++    "build": "tsc -p tsconfig.json",
++    "typecheck": "tsc -p tsconfig.json --noEmit",
++    "test": "vitest run",
++    "start": "node dist/mcp.js",
++    "start:http": "node dist/http.js"
++  },
++  "devDependencies": {
++    "@types/node": "catalog:",
++    "vitest": "4.1.11"
++  }
++}
+diff --git a/artifacts/gitbook-mcp/src/config.ts b/artifacts/gitbook-mcp/src/config.ts
+new file mode 100644
+index 0000000..2abe70d
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/config.ts
+@@ -0,0 +1,77 @@
++import { readFileSync } from "node:fs";
++import path from "node:path";
++import { fileURLToPath } from "node:url";
++
++const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
++
++export interface GitbookConfig {
++  token: string;
++  apiBase: string;
++  owner: string;
++  repo: string;
++  branch: string;
++  boardIssue: number;
++  handoffPath: string;
++  agentLane: string | undefined;
++  httpHost: string;
++  httpPort: number;
++  agentsFile: string;
++}
++
++function readEnv(name: string): string {
++  return (process.env[name] ?? "").trim();
++}
++
++export function agentsFilePath(): string {
++  return path.join(packageRoot, "agents.json");
++}
++
++export function loadConfig(env: NodeJS.ProcessEnv = process.env): GitbookConfig {
++  const boardRaw = (env.GITBOOK_BOARD_ISSUE ?? "2").trim() || "2";
++  const boardIssue = Number(boardRaw);
++  if (!Number.isInteger(boardIssue) || boardIssue <= 0) {
++    throw new Error("GITBOOK_BOARD_ISSUE must be a positive integer");
++  }
++  const portRaw = (env.GITBOOK_HTTP_PORT ?? "8787").trim() || "8787";
++  const httpPort = Number(portRaw);
++  if (!Number.isInteger(httpPort) || httpPort < 0 || httpPort > 65535) {
++    throw new Error("GITBOOK_HTTP_PORT must be an integer from 0 to 65535");
++  }
++  return {
++    token: (env.GITBOOK_GITHUB_TOKEN ?? "").trim(),
++    apiBase: ((env.GITBOOK_GITHUB_API ?? "https://api.github.com").trim() || "https://api.github.com").replace(/\/$/, ""),
++    owner: (env.GITBOOK_GITHUB_OWNER ?? "vitalitychems-dot").trim() || "vitalitychems-dot",
++    repo: (env.GITBOOK_GITHUB_REPO ?? "Gitbook").trim() || "Gitbook",
++    branch: (env.GITBOOK_DEFAULT_BRANCH ?? "main").trim() || "main",
++    boardIssue,
++    handoffPath: (env.GITBOOK_HANDOFF_PATH ?? "mesh/HANDOFF.md").trim() || "mesh/HANDOFF.md",
++    agentLane: (env.GITBOOK_AGENT_LANE ?? "").trim() || undefined,
++    httpHost: (env.GITBOOK_HTTP_HOST ?? "127.0.0.1").trim() || "127.0.0.1",
++    httpPort,
++    agentsFile: agentsFilePath(),
++  };
++}
++
++export function requireToken(config: GitbookConfig): string {
++  if (!config.token) {
++    throw new Error(
++      "GITBOOK_GITHUB_TOKEN is not set. Put the token in the environment, never in source control.",
++    );
++  }
++  return config.token;
++}
++
++export function packageVersion(): string {
++  try {
++    const raw = readFileSync(path.join(packageRoot, "package.json"), "utf8");
++    const parsed = JSON.parse(raw) as { version?: string };
++    return parsed.version ?? "0.0.0";
++  } catch {
++    return "0.0.0";
++  }
++}
++
++export function redactSecret(message: string, secret: string): string {
++  if (!secret) return message;
++  return message.split(secret).join("[REDACTED]");
++}
+diff --git a/artifacts/gitbook-mcp/src/github.ts b/artifacts/gitbook-mcp/src/github.ts
+new file mode 100644
+index 0000000..e428bcb
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/github.ts
+@@ -0,0 +1,67 @@
++import { redactSecret } from "./config.js";
++
++export type FetchLike = (input: string, init?: RequestInit) => Promise<Response>;
++
++export class GitHubApiError extends Error {
++  readonly status: number;
++
++  constructor(status: number, message: string) {
++    super(message);
++    this.name = "GitHubApiError";
++    this.status = status;
++  }
++}
++
++export interface GitHubClient {
++  request<T>(method: string, path: string, body?: unknown, headers?: Record<string, string>): Promise<T>;
++}
++
++export function createGitHubClient(options: {
++  token: string;
++  apiBase: string;
++  fetchImpl?: FetchLike;
++}): GitHubClient {
++  const token = [REDACTED]();
++  if (!token) {
++    throw new Error("GITBOOK_GITHUB_TOKEN is not set. Put the token in the environment, never in source control.");
++  }
++  const fetchImpl = options.fetchImpl ?? fetch;
++  const apiBase = options.apiBase.replace(/\/$/, "");
++
++  return {
++    async request<T>(method: string, requestPath: string, body?: unknown, headers?: Record<string, string>): Promise<T> {
++      const response = await fetchImpl(`${apiBase}${requestPath}`, {
++        method,
++        headers: {
++          Accept: "application/vnd.github+json",
++          Authorization: `Bearer ${token}`,
++          "User-Agent": "tessera-gitbook-mcp",
++          "X-GitHub-Api-Version": "2022-11-28",
++          ...(body === undefined ? {} : { "Content-Type": "application/json" }),
++          ...headers,
++        },
++        body: body === undefined ? undefined : JSON.stringify(body),
++      });
++      const text = await response.text();
++      let parsed: unknown = null;
++      if (text) {
++        try {
++          parsed = JSON.parse(text);
++        } catch {
++          parsed = text;
++        }
++      }
++      if (!response.ok) {
++        const detail =
++          typeof parsed === "object" && parsed !== null && "message" in parsed
++            ? String((parsed as { message: unknown }).message)
++            : text.slice(0, 300);
++        throw new GitHubApiError(
++          response.status,
++          redactSecret(`GitHub ${method} ${requestPath} failed (${response.status}): ${detail}`, token),
++        );
++      }
++      return parsed as T;
++    },
++  };
++}
+diff --git a/artifacts/gitbook-mcp/src/http-server.ts b/artifacts/gitbook-mcp/src/http-server.ts
+new file mode 100644
+index 0000000..ccf01bc
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/http-server.ts
+@@ -0,0 +1,92 @@
++import { createServer, type IncomingMessage, type ServerResponse } from "node:http";
++import { invokeTool, TOOL_DEFINITIONS, type GitbookService } from "./service.js";
++
++const MAX_BODY = 2_000_000;
++
++async function readBody(req: IncomingMessage): Promise<string> {
++  const chunks: Buffer[] = [];
++  let size = 0;
++  for await (const chunk of req) {
++    const buffer = Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk);
++    size += buffer.length;
++    if (size > MAX_BODY) throw new Error("request body exceeds 2MB");
++    chunks.push(buffer);
++  }
++  return Buffer.concat(chunks).toString("utf8");
++}
++
++function send(res: ServerResponse, status: number, payload: unknown): void {
++  const body = JSON.stringify(payload);
++  res.writeHead(status, {
++    "Content-Type": "application/json; charset=utf-8",
++    "Content-Length": Buffer.byteLength(body),
++    "Cache-Control": "no-store",
++  });
++  res.end(body);
++}
++
++const POST_TOOLS = new Set([
++  "search_docs",
++  "read_page",
++  "list_pages",
++  "get_board",
++  "post_board_update",
++  "read_handoff",
++  "write_handoff",
++  "propose_page_change",
++  "recent_changes",
++  "route_task",
++]);
++
++function argsFromQuery(url: URL, tool: string): Record<string, unknown> {
++  if (tool === "list_pages") return { dir: url.searchParams.get("dir") ?? "" };
++  if (tool === "read_page") return { path: url.searchParams.get("path") ?? "" };
++  if (tool === "search_docs") return { query: url.searchParams.get("query") ?? "" };
++  if (tool === "route_task") return { description: url.searchParams.get("description") ?? "" };
++  return {};
++}
++
++export function createHttpServer(service: GitbookService) {
++  return createServer(async (req, res) => {
++    try {
++      const url = new URL(req.url ?? "/", "http://127.0.0.1");
++      if (req.method === "GET" && url.pathname === "/health") {
++        send(res, 200, { ok: true, service: "tessera-gitbook-mcp" });
++        return;
++      }
++      if (req.method === "GET" && url.pathname === "/v1/tools") {
++        send(res, 200, { ok: true, data: TOOL_DEFINITIONS });
++        return;
++      }
++      const match = /^\/v1\/([a-z_]+)$/.exec(url.pathname);
++      if (!match || !POST_TOOLS.has(match[1] ?? "")) {
++        send(res, 404, { ok: false, error: "Unknown endpoint" });
++        return;
++      }
++      const tool = match[1] ?? "";
++      let args: Record<string, unknown> = {};
++      if (req.method === "GET") {
++        args = argsFromQuery(url, tool);
++      } else if (req.method === "POST") {
++        const raw = await readBody(req);
++        if (raw.trim()) {
++          const parsed = JSON.parse(raw) as unknown;
++          if (typeof parsed !== "object" || parsed === null || Array.isArray(parsed)) {
++            send(res, 400, { ok: false, error: "JSON body must be an object" });
++            return;
++          }
++          args = parsed as Record<string, unknown>;
++        }
++      } else {
++        send(res, 405, { ok: false, error: "Use GET or POST" });
++        return;
++      }
++      const data = await invokeTool(service, tool, args);
++      send(res, 200, { ok: true, data });
++    } catch (error) {
++      const message = error instanceof Error ? error.message : "Request failed";
++      const status = message.includes("GITBOOK_GITHUB_TOKEN") ? 503 : 400;
++      send(res, status, { ok: false, error: message });
++    }
++  });
++}
+diff --git a/artifacts/gitbook-mcp/src/http.ts b/artifacts/gitbook-mcp/src/http.ts
+new file mode 100644
+index 0000000..446ee7b
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/http.ts
+@@ -0,0 +1,22 @@
++import path from "node:path";
++import { loadConfig, requireToken } from "./config.js";
++import { createGitHubClient } from "./github.js";
++import { createHttpServer } from "./http-server.js";
++import { createHttpBoundService } from "./runtime.js";
++
++export function startHttpServer() {
++  const config = loadConfig();
++  const client = config.token
++    ? createGitHubClient({ token: [REDACTED](config), apiBase: config.apiBase })
++    : undefined;
++  const service = createHttpBoundService(config, client);
++  const server = createHttpServer(service);
++  server.listen(config.httpPort, config.httpHost, () => {
++    process.stderr.write(`gitbook http listening on http://${config.httpHost}:${config.httpPort}\n`);
++  });
++  return server;
++}
++
++if (process.argv[1]?.endsWith(`${path.sep}http.js`) || process.argv[1]?.endsWith("/http.js")) {
++  startHttpServer();
++}
+diff --git a/artifacts/gitbook-mcp/src/index.ts b/artifacts/gitbook-mcp/src/index.ts
+new file mode 100644
+index 0000000..4c299f0
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/index.ts
+@@ -0,0 +1,6 @@
++export { loadConfig, requireToken } from "./config.js";
++export { createGitHubClient, GitHubApiError } from "./github.js";
++export { createHttpServer } from "./http-server.js";
++export { encodeMessage, handleMcpMessage, takeFrames } from "./mcp-session.js";
++export { loadLanes, routeTask } from "./routing.js";
++export { TOOL_DEFINITIONS, createGitbookService, invokeTool } from "./service.js";
+diff --git a/artifacts/gitbook-mcp/src/mcp-session.ts b/artifacts/gitbook-mcp/src/mcp-session.ts
+new file mode 100644
+index 0000000..dae67f1
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/mcp-session.ts
+@@ -0,0 +1,115 @@
++import { TOOL_DEFINITIONS, invokeTool, type GitbookService } from "./service.js";
++
++export interface JsonRpcRequest {
++  jsonrpc?: string;
++  id?: string | number | null;
++  method?: string;
++  params?: unknown;
++}
++
++const SUPPORTED_PROTOCOLS = ["2024-11-05", "2025-03-26", "2025-06-18"];
++
++export function encodeMessage(payload: unknown): Buffer {
++  const json = JSON.stringify(payload);
++  const header = `Content-Length: ${Buffer.byteLength(json, "utf8")}\r\n\r\n`;
++  return Buffer.concat([Buffer.from(header, "utf8"), Buffer.from(json, "utf8")]);
++}
++
++export function takeFrames(buffer: Uint8Array): { messages: unknown[]; rest: Uint8Array } {
++  const messages: unknown[] = [];
++  let rest: Buffer = Buffer.isBuffer(buffer) ? buffer : Buffer.from(buffer.buffer, buffer.byteOffset, buffer.byteLength);
++  while (rest.length > 0) {
++    const headerEnd = rest.indexOf("\r\n\r\n");
++    if (headerEnd === -1) break;
++    const header = rest.subarray(0, headerEnd).toString("utf8");
++    const match = /Content-Length:\s*(\d+)/i.exec(header);
++    if (!match) {
++      throw new Error("MCP frame is missing Content-Length");
++    }
++    const length = Number(match[1]);
++    const start = headerEnd + 4;
++    if (rest.length < start + length) break;
++    const body = rest.subarray(start, start + length).toString("utf8");
++    messages.push(JSON.parse(body) as unknown);
++    rest = rest.subarray(start + length);
++  }
++  return { messages, rest };
++}
++
++function negotiate(params: unknown): string {
++  const requested =
++    typeof params === "object" && params !== null && "protocolVersion" in params
++      ? (params as { protocolVersion?: unknown }).protocolVersion
++      : undefined;
++  return typeof requested === "string" && SUPPORTED_PROTOCOLS.includes(requested) ? requested : "2024-11-05";
++}
++
++function errorResponse(id: string | number | null, code: number, message: string): Record<string, unknown> {
++  return { jsonrpc: "2.0", id, error: { code, message } };
++}
++
++export async function handleMcpMessage(
++  service: GitbookService,
++  message: JsonRpcRequest,
++  serverInfo: { name: string; version: string },
++): Promise<Record<string, unknown> | null> {
++  if (message.jsonrpc !== "2.0" || typeof message.method !== "string") {
++    return errorResponse(message.id ?? null, -32600, "Invalid JSON-RPC request");
++  }
++  const id = message.id ?? null;
++  const isNotification = message.id === undefined;
++  try {
++    switch (message.method) {
++      case "initialize":
++        return {
++          jsonrpc: "2.0",
++          id,
++          result: {
++            protocolVersion: negotiate(message.params),
++            capabilities: { tools: { listChanged: false } },
++            serverInfo,
++          },
++        };
++      case "notifications/initialized":
++        return null;
++      case "ping":
++        return { jsonrpc: "2.0", id, result: {} };
++      case "tools/list":
++        return { jsonrpc: "2.0", id, result: { tools: TOOL_DEFINITIONS } };
++      case "tools/call": {
++        const params = (message.params ?? {}) as { name?: unknown; arguments?: unknown };
++        if (typeof params.name !== "string") {
++          return errorResponse(id, -32602, "tools/call requires a tool name");
++        }
++        const args =
++          params.arguments === undefined
++            ? {}
++            : typeof params.arguments === "object" && params.arguments !== null && !Array.isArray(params.arguments)
++              ? (params.arguments as Record<string, unknown>)
++              : null;
++        if (!args) return errorResponse(id, -32602, "tools/call arguments must be an object");
++        try {
++          const data = await invokeTool(service, params.name, args);
++          return {
++            jsonrpc: "2.0",
++            id,
++            result: { content: [{ type: "text", text: JSON.stringify(data) }], isError: false },
++          };
++        } catch (error) {
++          const text = error instanceof Error ? error.message : "Tool failed";
++          return {
++            jsonrpc: "2.0",
++            id,
++            result: { content: [{ type: "text", text }], isError: true },
++          };
++        }
++      }
++      default:
++        if (isNotification) return null;
++        return errorResponse(id, -32601, `Method not found: ${message.method}`);
++    }
++  } catch (error) {
++    const text = error instanceof Error ? error.message : "MCP request failed";
++    return errorResponse(id, -32000, text);
++  }
++}
+diff --git a/artifacts/gitbook-mcp/src/mcp.ts b/artifacts/gitbook-mcp/src/mcp.ts
+new file mode 100644
+index 0000000..9619835
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/mcp.ts
+@@ -0,0 +1,47 @@
++import path from "node:path";
++import { loadConfig, packageVersion, requireToken } from "./config.js";
++import { createGitHubClient } from "./github.js";
++import { createHttpBoundService } from "./runtime.js";
++import { encodeMessage, handleMcpMessage, takeFrames, type JsonRpcRequest } from "./mcp-session.js";
++
++export async function runStdioServer(): Promise<void> {
++  const config = loadConfig();
++  const client = config.token
++    ? createGitHubClient({ token: [REDACTED](config), apiBase: config.apiBase })
++    : undefined;
++  const service = createHttpBoundService(config, client);
++  const serverInfo = { name: "tessera-gitbook-mcp", version: packageVersion() };
++  let pending: Uint8Array = Buffer.alloc(0);
++
++  const onData = (chunk: Buffer): void => {
++    pending = Buffer.concat([pending, chunk]);
++    let frames: { messages: unknown[]; rest: Uint8Array };
++    try {
++      frames = takeFrames(pending);
++    } catch (error) {
++      const message = error instanceof Error ? error.message : "Bad MCP frame";
++      process.stdout.write(encodeMessage({ jsonrpc: "2.0", id: null, error: { code: -32700, message } }));
++      pending = Buffer.alloc(0);
++      return;
++    }
++    pending = frames.rest;
++    for (const message of frames.messages) {
++      void handleMcpMessage(service, message as JsonRpcRequest, serverInfo).then((response) => {
++        if (response) process.stdout.write(encodeMessage(response));
++      });
++    }
++  };
++
++  process.stdin.on("data", onData);
++  await new Promise<void>((resolve) => {
++    process.stdin.on("end", () => resolve());
++  });
++}
++
++if (process.argv[1]?.endsWith(`${path.sep}mcp.js`) || process.argv[1]?.endsWith("/mcp.js")) {
++  runStdioServer().catch((error: unknown) => {
++    const message = error instanceof Error ? error.message : "gitbook mcp failed";
++    process.stderr.write(`${message}\n`);
++    process.exitCode = 1;
++  });
++}
+diff --git a/artifacts/gitbook-mcp/src/paths.ts b/artifacts/gitbook-mcp/src/paths.ts
+new file mode 100644
+index 0000000..083f2e6
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/paths.ts
+@@ -0,0 +1,51 @@
++const MARKDOWN = /\.(md|mdx)$/i;
++
++export function assertRepoPath(input: string): string {
++  const normalized = input.replace(/\\/g, "/").replace(/^\/+/, "");
++  if (!normalized || normalized.includes("\0")) {
++    throw new Error("path is required");
++  }
++  const parts = normalized.split("/");
++  if (parts.some((part) => part === "" || part === "." || part === "..")) {
++    throw new Error("path traversal is not allowed");
++  }
++  if (parts.some((part) => part === "1T" || part.startsWith("1T"))) {
++    throw new Error("refusing a path that touches the protected [REDACTED-PATH]");
++  }
++  return normalized;
++}
++
++export function assertOptionalDir(input: string | undefined): string {
++  if (input === undefined || input.trim() === "") return "";
++  return assertRepoPath(input);
++}
++
++export function isMarkdownPath(filePath: string): boolean {
++  return MARKDOWN.test(filePath);
++}
++
++export function assertAgentName(agent: string): string {
++  const name = agent.trim();
++  if (!name || /[\r\n]/.test(agent) || name.length > 80) {
++    throw new Error("agent name must be a single non-empty line of at most 80 characters");
++  }
++  return name;
++}
++
++export function slug(value: string): string {
++  const cleaned = value
++    .toLowerCase()
++    .replace(/[^a-z0-9]+/g, "-")
++    .replace(/^-+|-+$/g, "")
++    .slice(0, 40);
++  return cleaned || "update";
++}
++
++export function branchName(kind: "handoff" | "page", label: string, now: Date): string {
++  const stamp = now.toISOString().replace(/[-:]/g, "").replace(/\.\d{3}Z$/, "Z");
++  const name = `gitbook-mcp/${kind}-${stamp}-${slug(label)}`;
++  if (name === "main" || name.endsWith("/main")) {
++    throw new Error("refusing to target main");
++  }
++  return name;
++}
+diff --git a/artifacts/gitbook-mcp/src/routing.ts b/artifacts/gitbook-mcp/src/routing.ts
+new file mode 100644
+index 0000000..6d2b987
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/routing.ts
+@@ -0,0 +1,185 @@
++import { readFileSync } from "node:fs";
++import { agentsFilePath } from "./config.js";
++
++export interface Lane {
++  id: string;
++  name: string;
++  specialty: string;
++  keywords: string[];
++  mode: string;
++  fileWrites: boolean;
++}
++
++export interface RouteAlternative {
++  laneId: string;
++  lane: string;
++  score: number;
++  reasons: string[];
++}
++
++export interface RouteDecision {
++  description: string;
++  laneId: string;
++  lane: string;
++  specialty: string;
++  mode: string;
++  score: number;
++  fallback: boolean;
++  reasons: string[];
++  alternates: RouteAlternative[];
++  explanation: string;
++}
++
++interface AgentsFile {
++  lanes: Lane[];
++}
++
++const STOPWORDS = new Set([
++  "and",
++  "the",
++  "for",
++  "with",
++  "only",
++  "that",
++  "this",
++  "from",
++  "into",
++  "over",
++]);
++
++export function loadLanes(file = agentsFilePath()): Lane[] {
++  const parsed = JSON.parse(readFileSync(file, "utf8")) as AgentsFile;
++  if (!Array.isArray(parsed.lanes) || parsed.lanes.length === 0) {
++    throw new Error("agents.json is missing lanes");
++  }
++  const ids = new Set<string>();
++  for (const lane of parsed.lanes) {
++    if (!lane.id || ids.has(lane.id)) {
++      throw new Error(`agents.json has a missing or duplicate lane id: ${lane.id}`);
++    }
++    ids.add(lane.id);
++  }
++  return parsed.lanes;
++}
++
++function tokens(text: string): string[] {
++  return text.toLowerCase().match(/[a-z0-9]+/g) ?? [];
++}
++
++function containsPhrase(haystack: string, phrase: string): boolean {
++  const escaped = phrase.trim().toLowerCase().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
++  return new RegExp(`(?:^|[^a-z0-9])${escaped}(?:$|[^a-z0-9])`, "i").test(haystack);
++}
++
++function wordMatch(descriptionTokens: string[], word: string): string | null {
++  const needle = word.toLowerCase();
++  if (needle.length < 4 || STOPWORDS.has(needle)) return null;
++  for (const token of descriptionTokens) {
++    if (token === needle) return token;
++    if (needle.length >= 5 && token.length >= 5 && (token.startsWith(needle) || needle.startsWith(token))) {
++      return token;
++    }
++  }
++  return null;
++}
++
++interface ScoredLane {
++  lane: Lane;
++  index: number;
++  score: number;
++  reasons: string[];
++}
++
++function scoreLane(description: string, descriptionTokens: string[], lane: Lane, index: number): ScoredLane {
++  const reasons: string[] = [];
++  let score = 0;
++  const haystack = description.toLowerCase();
++  for (const keyword of lane.keywords) {
++    if (containsPhrase(haystack, keyword)) {
++      score += 10;
++      reasons.push(`keyword "${keyword}" matched (+10)`);
++    }
++  }
++  const specialtyWords = tokens(lane.specialty);
++  const seen = new Set<string>();
++  for (const word of specialtyWords) {
++    if (seen.has(word)) continue;
++    const matched = wordMatch(descriptionTokens, word);
++    if (!matched) continue;
++    seen.add(word);
++    score += 3;
++    reasons.push(`specialty word "${word}" matched description token "${matched}" (+3)`);
++  }
++  for (const word of tokens(lane.name)) {
++    if (word.length < 4 || STOPWORDS.has(word)) continue;
++    if (descriptionTokens.includes(word)) {
++      score += 2;
++      reasons.push(`lane name "${word}" matched (+2)`);
++    }
++  }
++  return { lane, index, score, reasons };
++}
++
++export function routeTask(description: string, lanes: Lane[]): RouteDecision {
++  const text = description.trim();
++  if (!text) {
++    throw new Error("description is required");
++  }
++  const descriptionTokens = tokens(text);
++  const scored = lanes
++    .map((lane, index) => scoreLane(text, descriptionTokens, lane, index))
++    .sort((a, b) => b.score - a.score || a.index - b.index);
++  const best = scored[0];
++  if (!best || best.score === 0) {
++    const tessera = lanes.find((lane) => lane.id === "tessera") ?? lanes[0];
++    if (!tessera) {
++      throw new Error("agents.json has no lanes");
++    }
++    const reasons = [
++      "No keyword or specialty match. Tessera assigns work; this suggestion does not claim it.",
++    ];
++    return {
++      description: text,
++      laneId: tessera.id,
++      lane: tessera.name,
++      specialty: tessera.specialty,
++      mode: tessera.mode,
++      score: 0,
++      fallback: true,
++      reasons,
++      alternates: [],
++      explanation: reasons[0] ?? "",
++    };
++  }
++  const tied = scored.filter((item) => item.score === best.score);
++  const reasons = [...best.reasons];
++  if (tied.length > 1) {
++    reasons.push(`tie at score ${best.score} broken by registry order (earlier lane wins)`);
++  }
++  const alternates = scored
++    .filter((item) => item.lane.id !== best.lane.id && item.score > 0)
++    .slice(0, 3)
++    .map((item) => ({
++      laneId: item.lane.id,
++      lane: item.lane.name,
++      score: item.score,
++      reasons: item.reasons,
++    }));
++  return {
++    description: text,
++    laneId: best.lane.id,
++    lane: best.lane.name,
++    specialty: best.lane.specialty,
++    mode: best.lane.mode,
++    score: best.score,
++    fallback: false,
++    reasons,
++    alternates,
++    explanation: `${best.lane.name}: ${reasons.join("; ")}`,
++  };
++}
++
++export function findLane(lanes: Lane[], laneId: string | undefined): Lane | undefined {
++  if (!laneId) return undefined;
++  return lanes.find((lane) => lane.id === laneId);
++}
+diff --git a/artifacts/gitbook-mcp/src/runtime.ts b/artifacts/gitbook-mcp/src/runtime.ts
+new file mode 100644
+index 0000000..7c35986
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/runtime.ts
+@@ -0,0 +1,15 @@
++import type { GitbookConfig } from "./config.js";
++import type { GitHubClient } from "./github.js";
++import { createGitbookService, type GitbookService } from "./service.js";
++
++export function createHttpBoundService(config: GitbookConfig, client: GitHubClient | undefined): GitbookService {
++  return createGitbookService({
++    client,
++    owner: config.owner,
++    repo: config.repo,
++    branch: config.branch,
++    boardIssue: config.boardIssue,
++    handoffPath: config.handoffPath,
++    agentLane: config.agentLane,
++  });
++}
+diff --git a/artifacts/gitbook-mcp/src/service.test.ts b/artifacts/gitbook-mcp/src/service.test.ts
+new file mode 100644
+index 0000000..b275449
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/service.test.ts
+@@ -0,0 +1,498 @@
++import type { Server } from "node:http";
++import { afterEach, describe, expect, it } from "vitest";
++import { createGitHubClient, type FetchLike } from "./github.js";
++import { createHttpServer } from "./http-server.js";
++import { encodeMessage, handleMcpMessage, takeFrames } from "./mcp-session.js";
++import { loadLanes } from "./routing.js";
++import { createGitbookService, type GitbookService } from "./service.js";
++
++interface MockResult {
++  status?: number;
++  body: unknown;
++}
++
++interface RecordedCall {
++  method: string;
++  url: string;
++  body: unknown;
++  authorization: string | null;
++}
++
++function encodeBase64(text: string): string {
++  return Buffer.from(text, "utf8").toString("base64");
++}
++
++function mockFetch(handler: (method: string, url: URL, body: unknown) => MockResult): {
++  fetchImpl: FetchLike;
++  calls: RecordedCall[];
++} {
++  const calls: RecordedCall[] = [];
++  const fetchImpl: FetchLike = async (input, init) => {
++    const url = new URL(input);
++    const method = (init?.method ?? "GET").toUpperCase();
++    const body = init?.body ? (JSON.parse(String(init.body)) as unknown) : undefined;
++    const authorization = new Headers(init?.headers).get("authorization");
++    calls.push({ method, url: `${url.pathname}${url.search}`, body, authorization });
++    const result = handler(method, url, body);
++    return new Response(JSON.stringify(result.body), {
++      status: result.status ?? 200,
++      headers: { "content-type": "application/json" },
++    });
++  };
++  return { fetchImpl, calls };
++}
++
++function serviceFrom(handler: (method: string, url: URL, body: unknown) => MockResult, agentLane?: string): {
++  service: GitbookService;
++  calls: RecordedCall[];
++} {
++  const mock = mockFetch(handler);
++  const client = createGitHubClient({
++    token: "[REDACTED]",
++    apiBase: "https://github.test",
++    fetchImpl: mock.fetchImpl,
++  });
++  const service = createGitbookService({
++    client,
++    owner: "vitalitychems-dot",
++    repo: "Gitbook",
++    branch: "main",
++    boardIssue: 2,
++    handoffPath: "mesh/HANDOFF.md",
++    agentLane,
++    now: () => new Date("2026-10-05T23:00:00.000Z"),
++  });
++  return { service, calls: mock.calls };
++}
++
++describe("agents registry", () => {
++  it("lists every mesh lane and its specialty", () => {
++    const lanes = loadLanes();
++    expect(lanes.map((lane) => [lane.id, lane.specialty])).toEqual([
++      ["tessera", "admin and final approval"],
++      ["gitbook-cordnation", "intake and organization"],
++      ["gitbook-moderator", "review gate"],
++      ["security", "read-only security sweeps"],
++      ["build", "verify-only"],
++      ["command-center", "status feed"],
++      ["mesh-cloud", "connectivity"],
++      ["historical-analysis-collab", "historical comparisons and merge pages"],
++      ["gitbook-helper", "ledger and receipts"],
++    ]);
++    expect(lanes.find((lane) => lane.id === "security")?.fileWrites).toBe(false);
++    expect(lanes.find((lane) => lane.id === "build")?.fileWrites).toBe(false);
++  });
++});
++
++describe("route_task", () => {
++  const { service } = serviceFrom(() => ({ body: {} }));
++
++  it.each([
++    ["approve the final package", "tessera"],
++    ["organize the intake backlog", "gitbook-cordnation"],
++    ["review gate before publish", "gitbook-moderator"],
++    ["read-only security sweep", "security"],
++    ["verify the typecheck results", "build"],
++    ["status feed for the bulk update", "command-center"],
++    ["mesh connectivity blocker", "mesh-cloud"],
++    ["historical comparison of merge pages", "historical-analysis-collab"],
++    ["update the ledger receipts", "gitbook-helper"],
++  ])("routes %s to %s", (description, laneId) => {
++    const first = service.routeTask(description);
++    const second = service.routeTask(description);
++    expect(first, first.explanation).toMatchObject({ laneId, fallback: false });
++    expect(second).toEqual(first);
++    expect(first.reasons.length).toBeGreaterThan(0);
++  });
++
++  it("falls back to Tessera when nothing matches and does not claim the task", () => {
++    const decision = service.routeTask("zzzz-no-such-topic");
++    expect(decision.laneId).toBe("tessera");
++    expect(decision.fallback).toBe(true);
++    expect(decision.score).toBe(0);
++    expect(decision.explanation).toMatch(/does not claim/i);
++  });
++});
++
++describe("github tools", () => {
++  it("searches markdown through the code search API", async () => {
++    const { service, calls } = serviceFrom((method, url) => {
++      if (method === "GET" && url.pathname === "/search/code") {
++        expect(url.searchParams.get("q")).toContain("repo:vitalitychems-dot/Gitbook");
++        expect(url.searchParams.get("q")).toContain("extension:md");
++        return {
++          body: {
++            items: [
++              {
++                name: "HANDOFF.md",
++                path: "mesh/HANDOFF.md",
++                html_url: "https://github.test/mesh/HANDOFF.md",
++                text_matches: [{ fragment: "coordination board" }],
++              },
++            ],
++          },
++        };
++      }
++      return { status: 404, body: { message: "unexpected" } };
++    });
++    const result = await service.searchDocs("coordination board");
++    expect(result.hits).toEqual([
++      {
++        path: "mesh/HANDOFF.md",
++        name: "HANDOFF.md",
++        htmlUrl: "https://github.test/mesh/HANDOFF.md",
++        snippet: "coordination board",
++        score: 1,
++        source: "github-code-search",
++      },
++    ]);
++    expect(calls[0]?.authorization).toBe("Bearer [REDACTED]");
++  });
++
++  it("redacts the token from GitHub error text", async () => {
++    const { service } = serviceFrom(() => ({
++      status: 401,
++      body: { message: "bad credentials [REDACTED]" },
++    }));
++    try {
++      await service.getBoard();
++      expect.fail("expected GitHub error");
++    } catch (error) {
++      const text = error instanceof Error ? error.message : String(error);
++      expect(text).toContain("[REDACTED]");
++      expect(text).not.toContain("[REDACTED]");
++    }
++  });
++
++  it("falls back to a tree scan when code search is forbidden", async () => {
++    const { service } = serviceFrom((method, url) => {
++      if (method === "GET" && url.pathname === "/search/code") {
++        return { status: 403, body: { message: "code search unavailable" } };
++      }
++      if (method === "GET" && url.pathname.endsWith("/git/trees/main")) {
++        return {
++          body: {
++            tree: [
++              { path: "mesh/HANDOFF.md", type: "blob" },
++              { path: "README.md", type: "blob" },
++              { path: "mesh", type: "tree" },
++            ],
++          },
++        };
++      }
++      if (method === "GET" && url.pathname.endsWith("/contents/mesh/HANDOFF.md")) {
++        return {
++          body: {
++            encoding: "base64",
++            content: encodeBase64("# Handoff\n\nThe coordination board lives here."),
++            path: "mesh/HANDOFF.md",
++          },
++        };
++      }
++      if (method === "GET" && url.pathname.endsWith("/contents/README.md")) {
++        return { body: { encoding: "base64", content: encodeBase64("Hello"), path: "README.md" } };
++      }
++      return { status: 404, body: { message: `${method} ${url.pathname}` } };
++    });
++    const result = await service.searchDocs("coordination board");
++    expect(result.hits[0]).toMatchObject({ path: "mesh/HANDOFF.md", source: "tree-scan" });
++    expect(result.hits[0]?.snippet).toContain("coordination board");
++  });
++
++  it("reads a page and lists markdown plus directories", async () => {
++    const { service } = serviceFrom((method, url) => {
++      if (method === "GET" && url.pathname.endsWith("/contents/mesh/roles.md")) {
++        return {
++          body: {
++            type: "file",
++            encoding: "base64",
++            content: encodeBase64("# Roles\nHello page"),
++            sha: "page-sha",
++            path: "mesh/roles.md",
++            size: 18,
++          },
++        };
++      }
++      if (method === "GET" && url.pathname.endsWith("/contents/mesh")) {
++        return {
++          body: [
++            { type: "file", name: "HANDOFF.md", path: "mesh/HANDOFF.md" },
++            { type: "file", name: "diagram.png", path: "mesh/diagram.png" },
++            { type: "dir", name: "roles", path: "mesh/roles" },
++          ],
++        };
++      }
++      return { status: 404, body: { message: url.pathname } };
++    });
++    const page = await service.readPage("mesh/roles.md");
++    expect(page.content).toBe("# Roles\nHello page");
++    expect(page.sha).toBe("page-sha");
++    const listed = await service.listPages("mesh");
++    expect(listed.entries.map((entry) => entry.path)).toEqual(["mesh/HANDOFF.md", "mesh/roles"]);
++  });
++
++  it("rejects traversal and the protected vault", async () => {
++    const { service, calls } = serviceFrom(() => ({ body: {} }));
++    await expect(service.readPage("../secrets")).rejects.toThrow(/traversal/);
++    await expect(service.readPage("vault/1T/secret.md")).rejects.toThrow(/1T/);
++    expect(calls).toHaveLength(0);
++  });
++
++  it("reads the coordination board and prefixes comments", async () => {
++    const { service, calls } = serviceFrom((method, url, body) => {
++      if (method === "GET" && url.pathname.endsWith("/issues/2/comments")) {
++        return {
++          body: [
++            {
++              id: 7,
++              body: "AGENT: Tessera\n\nClaimed the list",
++              html_url: "https://github.test/issues/2#issuecomment-7",
++              created_at: "2026-10-05T22:00:00Z",
++              user: { login: "tessera" },
++            },
++          ],
++        };
++      }
++      if (method === "POST" && url.pathname.endsWith("/issues/2/comments")) {
++        return { body: { id: 8, html_url: "https://github.test/issues/2#issuecomment-8", body } };
++      }
++      return { status: 404, body: { message: url.pathname } };
++    });
++    const board = await service.getBoard();
++    expect(board.issue).toBe(2);
++    expect(board.comments[0]).toMatchObject({ id: 7, author: "tessera" });
++    const posted = await service.postBoardUpdate("Build", "Typecheck passed.");
++    expect(posted.body).toBe("AGENT: Build\n\nTypecheck passed.");
++    const post = calls.find((call) => call.method === "POST");
++    expect(post?.body).toEqual({ body: "AGENT: Build\n\nTypecheck passed." });
++  });
++
++  it("writes a handoff through a draft pull request and keeps the existing page", async () => {
++    const { service, calls } = serviceFrom((method, url, body) => {
++      const payload = body as { ref?: string; branch?: string; sha?: string; content?: string; draft?: boolean; base?: string; head?: string };
++      if (method === "GET" && url.pathname.endsWith("/git/ref/heads/main")) {
++        return { body: { object: { sha: "abc123" } } };
++      }
++      if (method === "POST" && url.pathname.endsWith("/git/refs")) {
++        return { body: { ref: payload.ref, object: { sha: "abc123" } } };
++      }
++      if (method === "GET" && url.pathname.endsWith("/contents/mesh/HANDOFF.md")) {
++        return {
++          body: {
++            type: "file",
++            encoding: "base64",
++            content: encodeBase64("ORIGINAL handoff\n"),
++            sha: "file-sha",
++            path: "mesh/HANDOFF.md",
++          },
++        };
++      }
++      if (method === "PUT" && url.pathname.endsWith("/contents/mesh/HANDOFF.md")) {
++        return { body: { commit: { sha: "commit-sha" } } };
++      }
++      if (method === "POST" && url.pathname.endsWith("/pulls")) {
++        return { body: { number: 9, html_url: "https://github.test/pull/9", draft: true } };
++      }
++      return { status: 404, body: { message: `${method} ${url.pathname}` } };
++    });
++    const handoff = await service.readHandoff();
++    expect(handoff.content).toContain("ORIGINAL handoff");
++    const result = await service.writeHandoff("Build", "Verified the connector.");
++    expect(result.pullRequest.draft).toBe(true);
++    expect(result.branch.startsWith("gitbook-mcp/handoff-")).toBe(true);
++    expect(result.commitSha).toBe("commit-sha");
++    const refCall = calls.find((call) => call.method === "POST" && call.url.endsWith("/git/refs"));
++    expect(refCall?.body).toMatchObject({ sha: "abc123" });
++    expect(JSON.stringify(refCall?.body)).not.toContain("refs/heads/main");
++    const put = calls.find((call) => call.method === "PUT");
++    const putBody = put?.body as { branch: string; sha: string; content: string };
++    expect(putBody.branch).toBe(result.branch);
++    expect(putBody.branch).not.toBe("main");
++    expect(putBody.sha).toBe("file-sha");
++    const decoded = Buffer.from(putBody.content, "base64").toString("utf8");
++    expect(decoded).toContain("ORIGINAL handoff");
++    expect(decoded).toContain("AGENT: Build");
++    expect(decoded).toContain("Verified the connector.");
++    const pull = calls.find((call) => call.method === "POST" && call.url.endsWith("/pulls"));
++    expect(pull?.body).toMatchObject({ draft: true, base: "main", head: result.branch });
++  });
++
++  it("proposes a page change as a draft and refuses a non-draft response", async () => {
++    const { service } = serviceFrom((method, url) => {
++      if (method === "GET" && url.pathname.endsWith("/git/ref/heads/main")) return { body: { object: { sha: "abc123" } } };
++      if (method === "POST" && url.pathname.endsWith("/git/refs")) return { body: { ref: "ok" } };
++      if (method === "GET" && url.pathname.includes("/contents/")) return { status: 404, body: { message: "missing" } };
++      if (method === "PUT") return { body: { commit: { sha: "new-sha" } } };
++      if (method === "POST" && url.pathname.endsWith("/pulls")) return { body: { number: 4, draft: false } };
++      if (method === "PATCH" && url.pathname.endsWith("/pulls/4")) return { body: { number: 4, state: "closed" } };
++      return { status: 404, body: { message: url.pathname } };
++    });
++    await expect(service.proposePageChange("mesh/roles.md", "# Roles\nUpdated\n", "Update roles")).rejects.toThrow(/closed/);
++  });
++
++  it("opens a draft pull request for a new page without pushing main", async () => {
++    const { service, calls } = serviceFrom((method, url) => {
++      if (method === "GET" && url.pathname.endsWith("/git/ref/heads/main")) return { body: { object: { sha: "abc123" } } };
++      if (method === "POST" && url.pathname.endsWith("/git/refs")) return { body: { ref: "ok" } };
++      if (method === "GET" && url.pathname.includes("/contents/")) return { status: 404, body: { message: "missing" } };
++      if (method === "PUT") return { body: { commit: { sha: "new-sha" } } };
++      if (method === "POST" && url.pathname.endsWith("/pulls")) {
++        return { body: { number: 4, html_url: "https://github.test/pull/4", draft: true } };
++      }
++      return { status: 404, body: { message: url.pathname } };
++    });
++    const result = await service.proposePageChange("mesh/roles.md", "# Roles\nUpdated", "Update roles");
++    expect(result).toMatchObject({
++      commitSha: "new-sha",
++      pullRequest: { number: 4, draft: true, base: "main" },
++    });
++    const put = calls.find((call) => call.method === "PUT");
++    const putBody = put?.body as { branch: string; sha?: string; content: string };
++    expect(putBody.sha).toBeUndefined();
++    expect(putBody.branch.startsWith("gitbook-mcp/page-")).toBe(true);
++    expect(Buffer.from(putBody.content, "base64").toString("utf8")).toContain("# Roles\nUpdated");
++  });
++
++  it("returns main commits and open pull requests for the overlap check", async () => {
++    const { service } = serviceFrom((method, url) => {
++      if (method === "GET" && url.pathname.endsWith("/commits")) {
++        return {
++          body: [
++            {
++              sha: "5c1137fa",
++              html_url: "https://github.test/commit/5c1137fa",
++              commit: { message: "HYB-005\n\nbody", author: { name: "Tessera", date: "2026-10-05T23:00:00Z" } },
++            },
++          ],
++        };
++      }
++      if (method === "GET" && url.pathname.endsWith("/pulls")) {
++        return {
++          body: [
++            {
++              number: 3,
++              title: "Draft roles",
++              draft: true,
++              html_url: "https://github.test/pull/3",
++              head: { ref: "gitbook-mcp/page-1", sha: "def456" },
++              user: { login: "cordnation" },
++            },
++          ],
++        };
++      }
++      return { status: 404, body: { message: url.pathname } };
++    });
++    const recent = await service.recentChanges();
++    expect(recent.headSha).toBe("5c1137fa");
++    expect(recent.commits[0]).toMatchObject({ sha: "5c1137fa", message: "HYB-005" });
++    expect(recent.openPullRequests[0]).toMatchObject({ number: 3, draft: true, headRef: "gitbook-mcp/page-1" });
++    expect(recent.overlapCheck).toMatch(/before claiming work/i);
++  });
++
++  it("blocks file writes from the read-only security lane", async () => {
++    const { service, calls } = serviceFrom(() => ({ body: {} }), "security");
++    await expect(service.proposePageChange("README.md", "nope", "nope")).rejects.toThrow(/read-only/);
++    await expect(service.writeHandoff("Security", "report")).rejects.toThrow(/read-only/);
++    expect(calls).toHaveLength(0);
++  });
++
++  it("does not call GitHub for routing when the token is absent", async () => {
++    const service = createGitbookService({
++      owner: "vitalitychems-dot",
++      repo: "Gitbook",
++      branch: "main",
++      boardIssue: 2,
++      handoffPath: "mesh/HANDOFF.md",
++    });
++    expect(service.routeTask("status feed").laneId).toBe("command-center");
++    await expect(service.getBoard()).rejects.toThrow(/GITBOOK_GITHUB_TOKEN/);
++  });
++
++  it("refuses to construct a client without a token", () => {
++    expect(() => createGitHubClient({ token: "  ", apiBase: "https://github.test" })).toThrow(/GITBOOK_GITHUB_TOKEN/);
++  });
++});
++
++describe("http and mcp transports", () => {
++  const servers: Server[] = [];
++
++  afterEach(async () => {
++    await Promise.all(servers.splice(0).map((server) => new Promise<void>((resolve) => server.close(() => resolve()))));
++  });
++
++  it("serves health, tool list, and route_task over HTTP", async () => {
++    const { service } = serviceFrom(() => ({ body: {} }));
++    const server = createHttpServer(service);
++    servers.push(server);
++    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", () => resolve()));
++    const address = server.address();
++    const port = address && typeof address === "object" ? address.port : 0;
++    const health = await fetch(`http://127.0.0.1:${port}/health`);
++    expect(await health.json()).toEqual({ ok: true, service: "tessera-gitbook-mcp" });
++    const tools = await fetch(`http://127.0.0.1:${port}/v1/tools`);
++    const toolBody = (await tools.json()) as { data: Array<{ name: string }> };
++    expect(toolBody.data.map((tool) => tool.name)).toContain("recent_changes");
++    const routed = await fetch(`http://127.0.0.1:${port}/v1/route_task`, {
++      method: "POST",
++      headers: { "content-type": "application/json" },
++      body: JSON.stringify({ description: "read-only security sweep" }),
++    });
++    const routedBody = (await routed.json()) as { ok: boolean; data: { laneId: string } };
++    expect(routedBody.ok).toBe(true);
++    expect(routedBody.data.laneId).toBe("security");
++  });
++
++  it("returns 503 for GitHub tools when the token is missing", async () => {
++    const service = createGitbookService({
++      owner: "vitalitychems-dot",
++      repo: "Gitbook",
++      branch: "main",
++      boardIssue: 2,
++      handoffPath: "mesh/HANDOFF.md",
++    });
++    const server = createHttpServer(service);
++    servers.push(server);
++    await new Promise<void>((resolve) => server.listen(0, "127.0.0.1", () => resolve()));
++    const address = server.address();
++    const port = address && typeof address === "object" ? address.port : 0;
++    const missing = await fetch(`http://127.0.0.1:${port}/v1/get_board`);
++    expect(missing.status).toBe(503);
++    const body = (await missing.json()) as { ok: boolean; error: string };
++    expect(body.ok).toBe(false);
++    expect(body.error).toMatch(/GITBOOK_GITHUB_TOKEN/);
++  });
++
++  it("answers MCP initialize and tools/call", async () => {
++    const { service } = serviceFrom(() => ({ body: {} }));
++    const info = { name: "tessera-gitbook-mcp", version: "0.0.0" };
++    const initialized = await handleMcpMessage(
++      service,
++      { jsonrpc: "2.0", id: 1, method: "initialize", params: { protocolVersion: "2024-11-05" } },
++      info,
++    );
++    expect(initialized).toMatchObject({
++      id: 1,
++      result: { protocolVersion: "2024-11-05", serverInfo: info },
++    });
++    expect(await handleMcpMessage(service, { jsonrpc: "2.0", method: "notifications/initialized" }, info)).toBeNull();
++    const called = await handleMcpMessage(
++      service,
++      {
++        jsonrpc: "2.0",
++        id: 2,
++        method: "tools/call",
++        params: { name: "route_task", arguments: { description: "ledger receipts" } },
++      },
++      info,
++    );
++    const result = called?.result as { isError: boolean; content: Array<{ text: string }> };
++    expect(result.isError).toBe(false);
++    expect(JSON.parse(result.content[0]?.text ?? "{}")).toMatchObject({ laneId: "gitbook-helper" });
++  });
++
++  it("decodes a split Content-Length frame", () => {
++    const frame = encodeMessage({ jsonrpc: "2.0", id: 1, method: "ping" });
++    expect(takeFrames(frame.subarray(0, 8)).messages).toHaveLength(0);
++    expect(takeFrames(frame).messages).toEqual([{ jsonrpc: "2.0", id: 1, method: "ping" }]);
++  });
++});
+diff --git a/artifacts/gitbook-mcp/src/service.ts b/artifacts/gitbook-mcp/src/service.ts
+new file mode 100644
+index 0000000..a124068
+--- /dev/null
++++ b/artifacts/gitbook-mcp/src/service.ts
+@@ -0,0 +1,710 @@
++import type { GitHubClient } from "./github.js";
++import { GitHubApiError } from "./github.js";
++import { assertAgentName, assertOptionalDir, assertRepoPath, branchName, isMarkdownPath } from "./paths.js";
++import { findLane, loadLanes, routeTask, type Lane, type RouteDecision } from "./routing.js";
++
++interface ContentResponse {
++  type?: string;
++  encoding?: string;
++  content?: string;
++  sha?: string;
++  path?: string;
++  size?: number;
++  name?: string;
++  html_url?: string;
++}
++
++interface ContentEntry {
++  type?: string;
++  name?: string;
++  path?: string;
++  sha?: string;
++  html_url?: string;
++}
++
++interface TreeResponse {
++  tree?: Array<{ path?: string; type?: string }>;
++}
++
++interface SearchResponse {
++  items?: Array<{
++    name?: string;
++    path?: string;
++    html_url?: string;
++    text_matches?: Array<{ fragment?: string }>;
++  }>;
++}
++
++interface CommentResponse {
++  id?: number;
++  body?: string;
++  html_url?: string;
++  created_at?: string;
++  user?: { login?: string | null } | null;
++}
++
++interface RefResponse {
++  object?: { sha?: string };
++  ref?: string;
++}
++
++interface PutContentResponse {
++  commit?: { sha?: string };
++  content?: { path?: string; sha?: string };
++}
++
++interface PullResponse {
++  number?: number;
++  html_url?: string;
++  draft?: boolean;
++  title?: string;
++  head?: { ref?: string; sha?: string };
++  user?: { login?: string | null } | null;
++}
++
++interface CommitResponse {
++  sha?: string;
++  html_url?: string;
++  commit?: {
++    message?: string;
++    author?: { name?: string | null; date?: string | null } | null;
++  };
++}
++
++export interface GitbookServiceOptions {
++  client?: GitHubClient;
++  owner: string;
++  repo: string;
++  branch: string;
++  boardIssue: number;
++  handoffPath: string;
++  agentLane?: string;
++  lanes?: Lane[];
++  now?: () => Date;
++}
++
++export interface DocHit {
++  path: string;
++  name: string;
++  htmlUrl: string | null;
++  snippet: string;
++  score: number;
++  source: "github-code-search" | "tree-scan";
++}
++
++export interface DraftChange {
++  branch: string;
++  base: string;
++  path: string;
++  commitSha: string | null;
++  pullRequest: {
++    number: number;
++    url: string | null;
++    draft: true;
++    base: string;
++    head: string;
++  };
++}
++
++function requireClient(client: GitHubClient | undefined): GitHubClient {
++  if (!client) {
++    throw new Error("GITBOOK_GITHUB_TOKEN is not set. Put the token in the environment, never in source control.");
++  }
++  return client;
++}
++
++function decodeContent(payload: ContentResponse): string {
++  const raw = payload.content ?? "";
++  if (payload.encoding === "none") return raw;
++  if (!raw) return "";
++  return Buffer.from(raw.replace(/\s/g, ""), "base64").toString("utf8");
++}
++
++function snippetAround(text: string, query: string): string {
++  const flat = text.replace(/\s+/g, " ").trim();
++  const needle = query.trim().toLowerCase();
++  const index = needle ? flat.toLowerCase().indexOf(needle.split(/\s+/)[0] ?? needle) : 0;
++  const start = Math.max(0, index - 80);
++  const slice = flat.slice(start, start + 240);
++  return start > 0 ? `…${slice}` : slice;
++}
++
++function repoPath(owner: string, repo: string, suffix: string): string {
++  return `/repos/${encodeURIComponent(owner)}/${encodeURIComponent(repo)}${suffix}`;
++}
++
++export function createGitbookService(options: GitbookServiceOptions) {
++  const now = options.now ?? (() => new Date());
++  const lanes = options.lanes ?? loadLanes();
++  const owner = options.owner;
++  const repo = options.repo;
++
++  function assertFileWrite(explicitLane: string | undefined): void {
++    const laneId = explicitLane?.trim() || options.agentLane;
++    const lane = findLane(lanes, laneId);
++    if (lane && lane.fileWrites === false) {
++      throw new Error(
++        `${lane.name} is ${lane.mode} and cannot open draft pull requests or change files through this connector`,
++      );
++    }
++  }
++
++  async function getMainSha(client: GitHubClient): Promise<string> {
++    const ref = await client.request<RefResponse>(
++      "GET",
++      repoPath(owner, repo, `/git/ref/heads/${encodeURIComponent(options.branch)}`),
++    );
++    const sha = ref.object?.sha;
++    if (!sha) throw new Error(`main ref ${options.branch} did not include a commit sha`);
++    return sha;
++  }
++
++  async function createBranch(client: GitHubClient, branch: string, sha: string): Promise<void> {
++    if (branch === options.branch || branch === "main") {
++      throw new Error("refusing to create a branch that targets main directly");
++    }
++    await client.request("POST", repoPath(owner, repo, "/git/refs"), {
++      ref: `refs/heads/${branch}`,
++      sha,
++    });
++  }
++
++  async function readContent(client: GitHubClient, filePath: string, ref: string): Promise<ContentResponse | null> {
++    try {
++      return await client.request<ContentResponse>(
++        "GET",
++        repoPath(owner, repo, `/contents/${encodePath(filePath)}?ref=${encodeURIComponent(ref)}`),
++      );
++    } catch (error) {
++      if (error instanceof GitHubApiError && error.status === 404) return null;
++      throw error;
++    }
++  }
++
++  async function openDraftPull(client: GitHubClient, branch: string, title: string, body: string): Promise<PullResponse> {
++    if (branch === options.branch) {
++      throw new Error("refusing to open a pull request whose head is the default branch");
++    }
++    const pull = await client.request<PullResponse>("POST", repoPath(owner, repo, "/pulls"), {
++      title,
++      head: branch,
++      base: options.branch,
++      draft: true,
++      body,
++    });
++    if (pull.draft !== true) {
++      if (pull.number) {
++        await client.request("PATCH", repoPath(owner, repo, `/pulls/${pull.number}`), { state: "closed" });
++      }
++      throw new Error("GitHub did not open the pull request as a draft, so it was closed. No merge was attempted.");
++    }
++    return pull;
++  }
++
++  async function commitFile(input: {
++    client: GitHubClient;
++    branch: string;
++    filePath: string;
++    content: string;
++    message: string;
++    existingSha: string | undefined;
++  }): Promise<string | null> {
++    if (input.branch === "main" || input.branch === options.branch) {
++      throw new Error("refusing a direct commit to the default branch");
++    }
++    const result = await input.client.request<PutContentResponse>(
++      "PUT",
++      repoPath(owner, repo, `/contents/${encodePath(input.filePath)}`),
++      {
++        message: input.message,
++        content: Buffer.from(input.content, "utf8").toString("base64"),
++        branch: input.branch,
++        ...(input.existingSha ? { sha: input.existingSha } : {}),
++      },
++    );
++    return result.commit?.sha ?? null;
++  }
++
++  function draftResult(branch: string, filePath: string, commitSha: string | null, pull: PullResponse): DraftChange {
++    return {
++      branch,
++      base: options.branch,
++      path: filePath,
++      commitSha,
++      pullRequest: {
++        number: pull.number ?? 0,
++        url: pull.html_url ?? null,
++        draft: true,
++        base: options.branch,
++        head: branch,
++      },
++    };
++  }
++
++  return {
++    lanes,
++
++    async searchDocs(query: string): Promise<{ query: string; hits: DocHit[] }> {
++      const text = query.trim();
++      if (!text) throw new Error("query is required");
++      const client = requireClient(options.client);
++      try {
++        const hits = await searchViaCodeSearch(client, owner, repo, text);
++        return { query: text, hits };
++      } catch (error) {
++        if (error instanceof GitHubApiError && (error.status === 403 || error.status === 422 || error.status === 503)) {
++          const hits = await searchViaTree(client, owner, repo, options.branch, text);
++          return { query: text, hits };
++        }
++        throw error;
++      }
++    },
++
++    async readPage(filePath: string): Promise<{ path: string; sha: string | null; size: number; content: string }> {
++      const safe = assertRepoPath(filePath);
++      const client = requireClient(options.client);
++      const payload = await client.request<ContentResponse | ContentEntry[]>(
++        "GET",
++        repoPath(owner, repo, `/contents/${encodePath(safe)}?ref=${encodeURIComponent(options.branch)}`),
++      );
++      if (Array.isArray(payload)) {
++        throw new Error(`${safe} is a directory. Use list_pages.`);
++      }
++      if (payload.type === "dir") {
++        throw new Error(`${safe} is a directory. Use list_pages.`);
++      }
++      const content = decodeContent(payload);
++      return {
++        path: payload.path ?? safe,
++        sha: payload.sha ?? null,
++        size: payload.size ?? Buffer.byteLength(content, "utf8"),
++        content,
++      };
++    },
++
++    async listPages(dir: string | undefined): Promise<{
++      dir: string;
++      entries: Array<{ type: string; name: string; path: string }>;
++    }> {
++      const safe = assertOptionalDir(dir);
++      const client = requireClient(options.client);
++      const suffix = safe ? `/contents/${encodePath(safe)}` : "/contents";
++      const payload = await client.request<ContentEntry[] | ContentResponse>(
++        "GET",
++        repoPath(owner, repo, `${suffix}?ref=${encodeURIComponent(options.branch)}`),
++      );
++      if (!Array.isArray(payload)) {
++        throw new Error(`${safe || "/"} is not a directory`);
++      }
++      const entries = payload
++        .filter((entry) => entry.type === "dir" || (entry.type === "file" && isMarkdownPath(entry.path ?? entry.name ?? "")))
++        .map((entry) => ({
++          type: entry.type ?? "file",
++          name: entry.name ?? "",
++          path: entry.path ?? "",
++        }))
++        .sort((a, b) => a.path.localeCompare(b.path));
++      return { dir: safe, entries };
++    },
++
++    async getBoard(): Promise<{
++      owner: string;
++      repo: string;
++      issue: number;
++      url: string;
++      comments: Array<{ id: number; author: string | null; createdAt: string | null; body: string; url: string | null }>;
++    }> {
++      const client = requireClient(options.client);
++      const comments: CommentResponse[] = [];
++      for (let page = 1; page <= 20; page += 1) {
++        const batch = await client.request<CommentResponse[]>(
++          "GET",
++          repoPath(owner, repo, `/issues/${options.boardIssue}/comments?per_page=100&page=${page}`),
++        );
++        comments.push(...batch);
++        if (batch.length < 100) break;
++      }
++      return {
++        owner,
++        repo,
++        issue: options.boardIssue,
++        url: `https://github.com/${owner}/${repo}/issues/${options.boardIssue}`,
++        comments: comments.map((comment) => ({
++          id: comment.id ?? 0,
++          author: comment.user?.login ?? null,
++          createdAt: comment.created_at ?? null,
++          body: comment.body ?? "",
++          url: comment.html_url ?? null,
++        })),
++      };
++    },
++
++    async postBoardUpdate(agent: string, text: string): Promise<{ id: number | null; url: string | null; body: string }> {
++      const name = assertAgentName(agent);
++      const note = text.trim();
++      if (!note) throw new Error("text is required");
++      const body = `AGENT: ${name}\n\n${note}`;
++      const client = requireClient(options.client);
++      const comment = await client.request<CommentResponse>(
++        "POST",
++        repoPath(owner, repo, `/issues/${options.boardIssue}/comments`),
++        { body },
++      );
++      return { id: comment.id ?? null, url: comment.html_url ?? null, body };
++    },
++
++    async readHandoff(): Promise<{ path: string; sha: string | null; content: string }> {
++      const page = await this.readPage(options.handoffPath);
++      return page;
++    },
++
++    async writeHandoff(agent: string, note: string, lane?: string): Promise<DraftChange> {
++      assertFileWrite(lane);
++      const name = assertAgentName(agent);
++      const text = note.trim();
++      if (!text) throw new Error("note is required");
++      const client = requireClient(options.client);
++      const filePath = assertRepoPath(options.handoffPath);
++      const branch = branchName("handoff", name, now());
++      const baseSha = await getMainSha(client);
++      await createBranch(client, branch, baseSha);
++      const existing = await readContent(client, filePath, branch);
++      const previous = existing ? decodeContent(existing) : "";
++      const next = appendHandoff(previous, name, text, now());
++      const commitSha = await commitFile({
++        client,
++        branch,
++        filePath,
++        content: next,
++        message: `docs: handoff note from ${name}`,
++        existingSha: existing?.sha,
++      });
++      const pull = await openDraftPull(
++        client,
++        branch,
++        `Handoff note from ${name}`,
++        [
++          `Draft handoff note for \`${filePath}\`.`,
++          "This connector does not push to main and does not merge.",
++          "Run recent_changes before claiming related work.",
++          "",
++          `Agent: ${name}`,
++        ].join("\n"),
++      );
++      return draftResult(branch, filePath, commitSha, pull);
++    },
++
++    async proposePageChange(filePath: string, content: string, summary: string, lane?: string): Promise<DraftChange> {
++      assertFileWrite(lane);
++      const safe = assertRepoPath(filePath);
++      const next = content;
++      const title = summary.trim();
++      if (!title) throw new Error("summary is required");
++      if (!next.trim()) throw new Error("content is required");
++      if (next.includes("\0")) throw new Error("content must be text");
++      const client = requireClient(options.client);
++      const branch = branchName("page", safe, now());
++      const baseSha = await getMainSha(client);
++      await createBranch(client, branch, baseSha);
++      const existing = await readContent(client, safe, branch);
++      if (existing?.type === "dir") throw new Error(`${safe} is a directory`);
++      const commitSha = await commitFile({
++        client,
++        branch,
++        filePath: safe,
++        content: next.endsWith("\n") ? next : `${next}\n`,
++        message: `docs: ${title}`,
++        existingSha: existing?.sha,
++      });
++      const pull = await openDraftPull(
++        client,
++        branch,
++        title,
++        [
++          `Draft proposal for \`${safe}\`.`,
++          "The file on this branch is the proposed content. main is not modified.",
++          "This connector does not merge.",
++          "Run recent_changes before claiming related work.",
++        ].join("\n"),
++      );
++      return draftResult(branch, safe, commitSha, pull);
++    },
++
++    async recentChanges(): Promise<{
++      owner: string;
++      repo: string;
++      branch: string;
++      headSha: string | null;
++      commits: Array<{ sha: string; message: string; date: string | null; author: string | null; url: string | null }>;
++      openPullRequests: Array<{
++        number: number;
++        title: string;
++        draft: boolean;
++        url: string | null;
++        headRef: string;
++        headSha: string;
++        author: string | null;
++      }>;
++      overlapCheck: string;
++    }> {
++      const client = requireClient(options.client);
++      const [commits, pulls] = await Promise.all([
++        client.request<CommitResponse[]>(
++          "GET",
++          repoPath(owner, repo, `/commits?sha=${encodeURIComponent(options.branch)}&per_page=20`),
++        ),
++        client.request<PullResponse[]>(
++          "GET",
++          repoPath(owner, repo, "/pulls?state=open&per_page=30"),
++        ),
++      ]);
++      return {
++        owner,
++        repo,
++        branch: options.branch,
++        headSha: commits[0]?.sha ?? null,
++        commits: commits.map((commit) => ({
++          sha: commit.sha ?? "",
++          message: (commit.commit?.message ?? "").split("\n")[0] ?? "",
++          date: commit.commit?.author?.date ?? null,
++          author: commit.commit?.author?.name ?? null,
++          url: commit.html_url ?? null,
++        })),
++        openPullRequests: pulls.map((pull) => ({
++          number: pull.number ?? 0,
++          title: pull.title ?? "",
++          draft: pull.draft === true,
++          url: pull.html_url ?? null,
++          headRef: pull.head?.ref ?? "",
++          headSha: pull.head?.sha ?? "",
++          author: pull.user?.login ?? null,
++        })),
++        overlapCheck:
++          "Compare this main head and these open pull requests before claiming work. Do not start a task whose paths already appear here.",
++      };
++    },
++
++    routeTask(description: string): RouteDecision {
++      return routeTask(description, lanes);
++    },
++  };
++}
++
++export type GitbookService = ReturnType<typeof createGitbookService>;
++
++function encodePath(filePath: string): string {
++  return filePath.split("/").map((part) => encodeURIComponent(part)).join("/");
++}
++
++function appendHandoff(existing: string, agent: string, note: string, at: Date): string {
++  const block = ["## Handoff note", "", `AGENT: ${agent}`, "", `- At: ${at.toISOString()}`, `- Note: ${note}`, ""].join("\n");
++  if (!existing) return `${block}\n`;
++  const base = existing.endsWith("\n") ? existing : `${existing}\n`;
++  return `${base}\n${block}\n`;
++}
++
++async function searchViaCodeSearch(client: GitHubClient, owner: string, repo: string, query: string): Promise<DocHit[]> {
++  const q = `${query} repo:${owner}/${repo} extension:md`;
++  const result = await client.request<SearchResponse>(
++    "GET",
++    `/search/code?q=${encodeURIComponent(q)}&per_page=20`,
++    undefined,
++    { Accept: "application/vnd.github.text-match+json" },
++  );
++  return (result.items ?? []).map((item) => {
++    const fragment = item.text_matches?.map((match) => match.fragment ?? "").find(Boolean) ?? "";
++    return {
++      path: item.path ?? "",
++      name: item.name ?? "",
++      htmlUrl: item.html_url ?? null,
++      snippet: fragment.replace(/\s+/g, " ").trim(),
++      score: fragment ? 1 : 0,
++      source: "github-code-search" as const,
++    };
++  });
++}
++
++async function searchViaTree(
++  client: GitHubClient,
++  owner: string,
++  repo: string,
++  branch: string,
++  query: string,
++): Promise<DocHit[]> {
++  const tree = await client.request<TreeResponse>(
++    "GET",
++    repoPath(owner, repo, `/git/trees/${encodeURIComponent(branch)}?recursive=1`),
++  );
++  const terms = query.toLowerCase().split(/\s+/).filter((term) => term.length > 1);
++  const markdown = (tree.tree ?? [])
++    .filter((entry) => entry.type === "blob" && isMarkdownPath(entry.path ?? ""))
++    .map((entry) => entry.path ?? "");
++  const pathMatches = markdown.filter((filePath) => terms.some((term) => filePath.toLowerCase().includes(term)));
++  const rest = markdown.filter((filePath) => !pathMatches.includes(filePath));
++  const candidates = [...pathMatches, ...rest].slice(0, 40);
++  const hits: DocHit[] = [];
++  for (const filePath of candidates) {
++    const payload = await client.request<ContentResponse>(
++      "GET",
++      repoPath(owner, repo, `/contents/${encodePath(filePath)}?ref=${encodeURIComponent(branch)}`),
++    );
++    const content = decodeContent(payload);
++    const haystack = `${filePath}\n${content}`.toLowerCase();
++    const score = terms.reduce((sum, term) => sum + (haystack.includes(term) ? 1 : 0), 0);
++    if (score === 0) continue;
++    hits.push({
++      path: filePath,
++      name: filePath.split("/").pop() ?? filePath,
++      htmlUrl: payload.html_url ?? null,
++      snippet: snippetAround(content, query),
++      score,
++      source: "tree-scan",
++    });
++  }
++  return hits.sort((a, b) => b.score - a.score || a.path.localeCompare(b.path)).slice(0, 20);
++}
++
++export async function invokeTool(
++  service: GitbookService,
++  name: string,
++  args: Record<string, unknown>,
++): Promise<unknown> {
++  switch (name) {
++    case "search_docs":
++      return service.searchDocs(requiredString(args, "query"));
++    case "read_page":
++      return service.readPage(requiredString(args, "path"));
++    case "list_pages":
++      return service.listPages(optionalString(args, "dir"));
++    case "get_board":
++      return service.getBoard();
++    case "post_board_update":
++      return service.postBoardUpdate(requiredString(args, "agent"), requiredString(args, "text"));
++    case "read_handoff":
++      return service.readHandoff();
++    case "write_handoff":
++      return service.writeHandoff(requiredString(args, "agent"), requiredString(args, "note"), optionalString(args, "lane"));
++    case "propose_page_change":
++      return service.proposePageChange(
++        requiredString(args, "path"),
++        requiredString(args, "content"),
++        requiredString(args, "summary"),
++        optionalString(args, "lane"),
++      );
++    case "recent_changes":
++      return service.recentChanges();
++    case "route_task":
++      return service.routeTask(requiredString(args, "description"));
++    default:
++      throw new Error(`Unknown tool: ${name}`);
++  }
++}
++
++function requiredString(args: Record<string, unknown>, key: string): string {
++  const value = args[key];
++  if (typeof value !== "string") throw new Error(`${key} must be a string`);
++  return value;
++}
++
++function optionalString(args: Record<string, unknown>, key: string): string | undefined {
++  const value = args[key];
++  if (value === undefined || value === null) return undefined;
++  if (typeof value !== "string") throw new Error(`${key} must be a string`);
++  return value;
++}
++
++export const TOOL_DEFINITIONS = [
++  {
++    name: "search_docs",
++    description: "Search Gitbook markdown. Falls back to a tree scan when GitHub code search is unavailable.",
++    inputSchema: {
++      type: "object",
++      properties: { query: { type: "string" } },
++      required: ["query"],
++      additionalProperties: false,
++    },
++  },
++  {
++    name: "read_page",
++    description: "Read one Gitbook file from the default branch.",
++    inputSchema: {
++      type: "object",
++      properties: { path: { type: "string" } },
++      required: ["path"],
++      additionalProperties: false,
++    },
++  },
++  {
++    name: "list_pages",
++    description: "List markdown files and directories under a Gitbook path. Omit dir for the repository root.",
++    inputSchema: {
++      type: "object",
++      properties: { dir: { type: "string" } },
++      additionalProperties: false,
++    },
++  },
++  {
++    name: "get_board",
++    description: "Read comments on Gitbook issue #2, the mesh coordination board.",
++    inputSchema: { type: "object", properties: {}, additionalProperties: false },
++  },
++  {
++    name: "post_board_update",
++    description: "Comment on Gitbook issue #2. Every comment is prefixed with AGENT: <name>.",
++    inputSchema: {
++      type: "object",
++      properties: { agent: { type: "string" }, text: { type: "string" } },
++      required: ["agent", "text"],
++      additionalProperties: false,
++    },
++  },
++  {
++    name: "read_handoff",
++    description: "Read mesh/HANDOFF.md from the default branch.",
++    inputSchema: { type: "object", properties: {}, additionalProperties: false },
++  },
++  {
++    name: "write_handoff",
++    description: "Append a handoff note by opening a draft pull request. Never pushes to main.",
++    inputSchema: {
++      type: "object",
++      properties: {
++        agent: { type: "string" },
++        note: { type: "string" },
++        lane: { type: "string" },
++      },
++      required: ["agent", "note"],
++      additionalProperties: false,
++    },
++  },
++  {
++    name: "propose_page_change",
++    description: "Propose a page change as a draft pull request. Never pushes to main.",
++    inputSchema: {
++      type: "object",
++      properties: {
++        path: { type: "string" },
++        content: { type: "string" },
++        summary: { type: "string" },
++        lane: { type: "string" },
++      },
++      required: ["path", "content", "summary"],
++      additionalProperties: false,
++    },
++  },
++  {
++    name: "recent_changes",
++    description: "Latest commits on main and open pull requests. Run this overlap check before claiming work.",
++    inputSchema: { type: "object", properties: {}, additionalProperties: false },
++  },
++  {
++    name: "route_task",
++    description: "Suggest a mesh lane from keyword and specialty matching. Deterministic and explainable. Does not claim the task.",
++    inputSchema: {
++      type: "object",
++      properties: { description: { type: "string" } },
++      required: ["description"],
++      additionalProperties: false,
++    },
++  },
++] as const;
+diff --git a/artifacts/gitbook-mcp/tsconfig.json b/artifacts/gitbook-mcp/tsconfig.json
+new file mode 100644
+index 0000000..374539f
+--- /dev/null
++++ b/artifacts/gitbook-mcp/tsconfig.json
+@@ -0,0 +1,11 @@
++{
++  "extends": "../../tsconfig.base.json",
++  "compilerOptions": {
++    "outDir": "dist",
++    "rootDir": "src",
++    "types": ["node"],
++    "module": "NodeNext",
++    "moduleResolution": "NodeNext"
++  },
++  "include": ["src"]
++}
+diff --git a/artifacts/gitbook-mcp/vitest.config.ts b/artifacts/gitbook-mcp/vitest.config.ts
+new file mode 100644
+index 0000000..c1433e6
+--- /dev/null
++++ b/artifacts/gitbook-mcp/vitest.config.ts
+@@ -0,0 +1,8 @@
++import { defineConfig } from "vitest/config";
++
++export default defineConfig({
++  test: {
++    environment: "node",
++    include: ["src/**/*.test.ts"],
++  },
++});
+diff --git a/pnpm-lock.yaml b/pnpm-lock.yaml
+index 71810d4..8249841 100644
+--- a/pnpm-lock.yaml
++++ b/pnpm-lock.yaml
+@@ -263,6 +263,15 @@ importers:
+         specifier: ^4.1.11
+         version: 4.1.11(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.9.1)
+ 
++  artifacts/gitbook-mcp:
++    devDependencies:
++      '@types/node':
++        specifier: 'catalog:'
++        version: 25.3.5
++      vitest:
++        specifier: 4.1.11
++        version: 4.1.11(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
++
+   artifacts/mockup-sandbox:
+     devDependencies:
+       '@hookform/resolvers':
+@@ -5972,6 +5981,14 @@ snapshots:
+     optionalDependencies:
+       vite: 8.3.2(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.9.1)
+ 
++  '@vitest/mocker@4.1.11(vite@8.3.2(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))':
++    dependencies:
++      '@vitest/spy': 4.1.11
++      estree-walker: 3.0.3
++      magic-string: 0.30.21
++    optionalDependencies:
++      vite: 8.3.2(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
++
+   '@vitest/pretty-format@4.1.11':
+     dependencies:
+       tinyrainbow: 3.1.0
+@@ -8306,6 +8323,21 @@ snapshots:
+       tsx: 4.21.0
+       yaml: 2.9.1
+ 
++  vite@8.3.2(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1):
++    dependencies:
++      lightningcss: 1.33.0
++      picomatch: 4.0.7
++      postcss: 8.5.28
++      rolldown: 1.2.12
++      tinyglobby: 0.2.17
++    optionalDependencies:
++      '@types/node': 25.3.5
++      esbuild: 0.28.1
++      fsevents: 2.3.3
++      jiti: 2.7.0
++      tsx: 4.21.0
++      yaml: 2.9.1
++
+   vitest@4.1.11(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.21.0)(yaml@2.9.1):
+     dependencies:
+       '@vitest/expect': 4.1.11
+@@ -8344,6 +8376,44 @@ snapshots:
+       - tsx
+       - yaml
+ 
++  vitest@4.1.11(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1):
++    dependencies:
++      '@vitest/expect': 4.1.11
++      '@vitest/mocker': 4.1.11(vite@8.3.2(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1))
++      '@vitest/pretty-format': 4.1.11
++      '@vitest/runner': 4.1.11
++      '@vitest/snapshot': 4.1.11
++      '@vitest/spy': 4.1.11
++      '@vitest/utils': 4.1.11
++      es-module-lexer: 2.0.0
++      expect-type: 1.3.0
++      magic-string: 0.30.21
++      obug: 2.1.1
++      pathe: 2.0.3
++      picomatch: 4.0.7
++      std-env: 4.0.0
++      tinybench: 2.9.0
++      tinyexec: 1.1.1
++      tinyglobby: 0.2.15
++      tinyrainbow: 3.1.0
++      vite: 8.3.2(@types/node@25.3.5)(esbuild@0.28.1)(jiti@2.7.0)(tsx@4.21.0)(yaml@2.9.1)
++      why-is-node-running: 2.3.0
++    optionalDependencies:
++      '@types/node': 25.3.5
++    transitivePeerDependencies:
++      - '@vitejs/devtools'
++      - esbuild
++      - jiti
++      - less
++      - msw
++      - sass
++      - sass-embedded
++      - stylus
++      - sugarss
++      - terser
++      - tsx
++      - yaml
++
+   web-streams-polyfill@3.3.3: {}
+ 
+   webgl-constants@1.1.1: {}
+diff --git a/scripts/test-unified.mjs b/scripts/test-unified.mjs
+index ad8a391..ca60201 100644
+--- a/scripts/test-unified.mjs
++++ b/scripts/test-unified.mjs
+@@ -56,6 +56,7 @@ delete isolatedEnv.TESSERA_TEST_FATHER_NATAL_CHART_JSON;
+ let failures = 0;
+ for (const [label, selector] of [
+   ["Suite safety policy", "@workspace/scripts"],
++  ["Gitbook MCP", "@workspace/gitbook-mcp"],
+ ]) {
+   failures += await runWorkspaceTest(label, selector, { ...isolatedEnv });
+ }

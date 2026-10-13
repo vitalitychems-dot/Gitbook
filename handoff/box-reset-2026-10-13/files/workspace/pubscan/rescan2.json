@@ -1,0 +1,42 @@
+[
+ {
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 10,
+  "EndLine": 10,
+  "StartColumn": 16,
+  "EndColumn": 68,
+  "Match": "_COLONIAL_SECRET = \"REDACTED\"",
+  "Secret": "[REDACTED]",
+  "File": "artifacts/api-server/src/__tests__/compression-pipeline.test.ts",
+  "SymlinkFile": "",
+  "Commit": "40b2bf3af21993b3934d664abebf9fde038e77ea",
+  "Entropy": 3.8431392,
+  "Author": "Cursor Agent",
+  "Email": "cursoragent@cursor.com",
+  "Date": "2026-10-09T08:46:03Z",
+  "Message": "Fail closed when COLONIAL_MASTER_SECRET is unset or short.\n\nRemove the hardcoded fallback from the cipher, lattice bands, sovereign kernel, and colonial language kernel. Operations that need the secret report colonial-secret-not-configured, and routes that reach them return 503 without the secret or its length.\n\nCo-authored-by: Tessera \u003cvitalitychems-dot@users.noreply.github.com\u003e",
+  "Tags": [],
+  "RuleID": "generic-api-key",
+  "Fingerprint": "40b2bf3af21993b3934d664abebf9fde038e77ea:artifacts/api-server/src/__tests__/compression-pipeline.test.ts:generic-api-key:10"
+ },
+ {
+  "Description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+  "StartLine": 39,
+  "EndLine": 39,
+  "StartColumn": 8,
+  "EndColumn": 56,
+  "Match": "OTHER_SECRET = \"REDACTED\"",
+  "Secret": "[REDACTED]",
+  "File": "artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts",
+  "SymlinkFile": "",
+  "Commit": "40b2bf3af21993b3934d664abebf9fde038e77ea",
+  "Entropy": 3.7303379,
+  "Author": "Cursor Agent",
+  "Email": "cursoragent@cursor.com",
+  "Date": "2026-10-09T08:46:03Z",
+  "Message": "Fail closed when COLONIAL_MASTER_SECRET is unset or short.\n\nRemove the hardcoded fallback from the cipher, lattice bands, sovereign kernel, and colonial language kernel. Operations that need the secret report colonial-secret-not-configured, and routes that reach them return 503 without the secret or its length.\n\nCo-authored-by: Tessera \u003cvitalitychems-dot@users.noreply.github.com\u003e",
+  "Tags": [],
+  "RuleID": "generic-api-key",
+  "Fingerprint": "40b2bf3af21993b3934d664abebf9fde038e77ea:artifacts/api-server/src/__tests__/colonial-secret-fail-closed.test.ts:generic-api-key:39"
+ }
+]

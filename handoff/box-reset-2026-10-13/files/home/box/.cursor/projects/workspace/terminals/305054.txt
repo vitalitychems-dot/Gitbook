@@ -1,0 +1,9 @@
+---
+pid: 248123
+cwd: "/workspace"
+command: "cd /tmp && rm -rf gb && git clone -q --depth 2 --filter=blob:none https://github.com/vitalitychems-dot/Gitbook gb && cd gb && git config user.name vitalitychems-dot && git config user.email 332565808+vitalitychems-dot@users.noreply.github.com && git log --oneline -2 && git checkout -q -b autogate-close-bypass && git apply --check /workspace/security-gate/autogate-fix.patch && git apply /workspace/security-gate/autogate-fix.patch && git status --short && bash -n mesh/queue/autogate.sh 2>&1; ls mesh/queue/"
+title: "Clone Gitbook, apply autogate patch"
+status: running  
+started_at: 2026-10-13T09:46:26.385Z
+running_for_ms: 60008    
+---

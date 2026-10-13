@@ -1,0 +1,24 @@
+---
+pid: 1053651
+cwd: "/workspace/gitbook-cordnation/GB-063"
+command: "cd /tmp && rm -rf g63 && git clone -q https://github.com/vitalitychems-dot/Gitbook g63 2>&1|tail -2; cd g63 && git log -1 --format=%H origin/main && git rev-parse 56a7a48d d27e3e6c && git diff --stat d27e3e6c 56a7a48d -- intake/log.md; echo ---; git checkout -q 56a7a48d && git apply --check /workspace/gitbook-cordnation/GB-063/GB-063-rev3.56a7a48.diff && echo APPLY_OK && git apply /workspace/gitbook-cordnation/GB-063/GB-063-rev3.56a7a48.diff && grep '^| GB-' intake/log.md | awk -F'|' '{print NF-1}' | sort | uniq -c; grep -o '^| GB-[0-9]*' intake/log.md | sort | uniq -d; grep -c '^| GB-' intake/log.md; git checkout -q .; git fetch -q origin pull/45/head:pr45 && git diff 56a7a48d...pr45 -- intake/log.md > /tmp/p45.diff; wc -l /tmp/p45.diff; git apply /workspace/gitbook-cordnation/GB-063/GB-063-rev3.56a7a48.diff && git apply --check /tmp/p45.diff 2>&1 | head -3"
+status: succeeded
+started_at: 2026-10-12T21:54:35.525Z
+running_for_ms: 62091    
+---
+56a7a48d05ae2f507bbccdf888f0cf6e6e8ad5b3
+56a7a48d05ae2f507bbccdf888f0cf6e6e8ad5b3
+d27e3e6c31d4909e23ac2937d35133bfbc6c3884
+---
+APPLY_OK
+     56 13
+56
+9 /tmp/p45.diff
+error: patch failed: intake/log.md:65
+error: intake/log.md: patch does not apply
+
+---
+exit_code: 0
+elapsed_ms: 62091
+ended_at: 2026-10-12T21:55:37.616Z
+---

@@ -1,0 +1,10 @@
+error: patch failed: intake/how-to-submit.md:24
+error: intake/how-to-submit.md: patch does not apply
+error: patch failed: mesh/TESSERA-GITBOOK-OPERATING-MODE.md:14
+error: mesh/TESSERA-GITBOOK-OPERATING-MODE.md: patch does not apply
+error: patch failed: mesh/flow.md:7
+error: mesh/flow.md: patch does not apply
+error: patch failed: mesh/roles.md:28
+error: mesh/roles.md: patch does not apply
+error: patch failed: review/moderator-handoff.md:35
+error: review/moderator-handoff.md: patch does not apply
