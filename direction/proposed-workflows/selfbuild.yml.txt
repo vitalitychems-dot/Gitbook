@@ -1,15 +1,37 @@
-# PROPOSAL ONLY - Father reviews before install
+# PROPOSAL ONLY - Father reviews before install. All actions pinned to full SHA.
 name: selfbuild-offline
 on:
   schedule: [{cron: "15,45 * * * *"}]
 concurrency: {group: selfassembly, cancel-in-progress: false}
-permissions: {contents: write, pull-requests: write}
+permissions: {contents: read}
 jobs:
+  guard:
+    runs-on: ubuntu-latest
+    outputs: {stop: ${{ steps.s.outputs.stop }}}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: {sparse-checkout: "STOP\ndirection/STOP", sparse-checkout-cone-mode: false}
+      - id: s
+        run: if [ -f STOP ] || [ -f direction/STOP ]; then echo stop=true >> "$GITHUB_OUTPUT"; else echo stop=false >> "$GITHUB_OUTPUT"; fi
   build:
+    needs: guard
+    if: needs.guard.outputs.stop != 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
-      - run: if [ -f STOP ] || [ -f direction/STOP ]; then exit 0; fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Deterministic self-build (no LLM)
-        run: node scripts/selfbuild/run.mjs --next direction/NEXT.md --max-prs 1 --min-n 7 --ci 0.95
+        run: node scripts/selfbuild/run.mjs --next direction/NEXT.md --min-n 7 --ci 0.95 --out /tmp/proposal
+      - name: App token (Gitbook contents + pull-requests only)
+        id: app
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          app-id: ${{ vars.SELFBUILD_APP_ID }}
+          private-key: ${{ secrets.SELFBUILD_APP_KEY }}
+          owner: vitalitychems-dot
+          repositories: Gitbook
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Open at most 1 PR
+        env: {GH_TOKEN: "${{ steps.app.outputs.token }}"}
+        run: node scripts/selfbuild/open-pr.mjs --from /tmp/proposal --max-prs 1

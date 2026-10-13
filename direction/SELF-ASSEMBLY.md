@@ -47,3 +47,12 @@ Father (2026-10-13 08:58 CT): "Tessera should be able to post ideas on gitbook a
 4. **No-veto window**: 30 minutes from that merge. Father can veto at any time with a `veto` label or by closing the issue or PR. Any later step stops on a veto.
 5. **Publish to TESSERA**: the promote job opens a mirror PR, and TESSERA branch protection plus the required checks decide the merge.
 6. **Override**: a live Moderator FAIL or a veto always wins over the scrub PASS. The scrub only stands in for the Moderator when none is active.
+
+## Security hardening (from Security review, 2026-10-13)
+- STOP is checked by a `guard` job; every other job has `needs: guard` and `if: needs.guard.outputs.stop != 'true'`.
+- Workflow `permissions: contents: read`. PRs are opened only with a GitHub App token (`actions/create-github-app-token`) scoped to one repo, contents + pull-requests. No GITHUB_TOKEN writes, no PAT.
+- Every action is pinned to a full commit SHA with a version comment: checkout v7.0.1, create-github-app-token v3.3.0, gitleaks-action v3.0.0.
+- promote runs gitleaks plus a private-data scrub before anything is copied to public TESSERA. Both fail closed.
+
+## ⚠️ Needs Father's explicit sign-off
+**(a)** the rule-scrub standing in for Moderator; **(b)** any pre-approved rule classes. Until Father signs off, neither is active, and a live Moderator PASS is required.

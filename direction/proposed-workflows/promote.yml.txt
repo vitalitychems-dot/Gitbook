@@ -1,21 +1,41 @@
-# PROPOSAL ONLY - Father reviews before install
+# PROPOSAL ONLY - Father reviews before install. All actions pinned to full SHA.
 name: promote-to-tessera
 on:
   schedule: [{cron: "*/30 * * * *"}]
   workflow_dispatch: {}
 concurrency: {group: selfassembly, cancel-in-progress: false}
-permissions: {contents: read, pull-requests: read}
+permissions: {contents: read}
 jobs:
+  guard:
+    runs-on: ubuntu-latest
+    outputs: {stop: ${{ steps.s.outputs.stop }}}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: {sparse-checkout: "STOP\ndirection/STOP", sparse-checkout-cone-mode: false}
+      - id: s
+        run: if [ -f STOP ] || [ -f direction/STOP ]; then echo stop=true >> "$GITHUB_OUTPUT"; else echo stop=false >> "$GITHUB_OUTPUT"; fi
   promote:
+    needs: guard
+    if: needs.guard.outputs.stop != 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with: {sparse-checkout: "direction\nscripts/selfbuild"}
-      - name: Kill switch
-        run: if [ -f STOP ] || [ -f direction/STOP ]; then echo stopped; exit 0; fi
-      - name: Open mirror PRs (no merge)
-        env: {GH_TOKEN: "${{ secrets.TESSERA_PR_TOKEN }}"}
-        run: |
-          # for each Gitbook PR merged >=30 min ago, label promote:tessera, no 'veto' label,
-          # open a PR on TESSERA with the same diff. Branch protection does the merging.
-          node scripts/selfbuild/promote.mjs --min-age-min 30 --veto-label veto --max-prs 1
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with: {fetch-depth: 0}
+      - name: Secret scan (fail closed)
+        uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e # v3.0.0
+        env: {GITHUB_TOKEN: "${{ github.token }}"}
+      - name: Private-data scrub (fail closed)
+        run: node scripts/selfbuild/scrub.mjs --mode private-data --fail-closed
+      - name: App token scoped to TESSERA (contents + pull-requests only)
+        id: app
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          app-id: ${{ vars.PROMOTE_APP_ID }}
+          private-key: ${{ secrets.PROMOTE_APP_KEY }}
+          owner: vitalitychems-dot
+          repositories: TESSERA
+          permission-contents: write
+          permission-pull-requests: write
+      - name: Open mirror PR (no merge; branch protection decides)
+        env: {GH_TOKEN: "${{ steps.app.outputs.token }}"}
+        run: node scripts/selfbuild/promote.mjs --min-age-min 30 --veto-label veto --max-prs 1
