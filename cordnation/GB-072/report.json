@@ -1,0 +1,420 @@
+{
+ "base_ref": "eedc736c",
+ "base_sha": "eedc736cc362323a1a116164f9b0b49e480585d7",
+ "rows_changed": [
+  [
+   "PR #76",
+   76,
+   "head ba230b90 -> 17ccff7e"
+  ]
+ ],
+ "prs_without_row": [],
+ "apply_forward": true,
+ "apply_reverse": true,
+ "bad_rows": [],
+ "dup_ids": [],
+ "api_calls": 63,
+ "wall_s": 33.7,
+ "pr_info": {
+  "8": {
+   "n": 8,
+   "checks": null,
+   "state": "merged",
+   "head": "cba4140d",
+   "merge": "979c35e",
+   "merged_at": "16:30 CT 2026-10-05",
+   "title": "Approved digest: GB-022, GB-024, GB-025, GB-023",
+   "gates": [],
+   "locks": []
+  },
+  "9": {
+   "n": 9,
+   "checks": null,
+   "state": "merged",
+   "head": "b23d9eb8",
+   "merge": "ebe003f",
+   "merged_at": "17:00 CT 2026-10-05",
+   "title": "Approved: GB-026 rev 3, GB-027",
+   "gates": [],
+   "locks": []
+  },
+  "10": {
+   "n": 10,
+   "checks": null,
+   "state": "merged",
+   "head": "c507f0c2",
+   "merge": "4565152",
+   "merged_at": "17:00 CT 2026-10-05",
+   "title": "Approved: GB-028 rev 3",
+   "gates": [],
+   "locks": []
+  },
+  "12": {
+   "n": 12,
+   "checks": null,
+   "state": "merged",
+   "head": "64778b33",
+   "merge": "cdc95b7",
+   "merged_at": "18:04 CT 2026-10-05",
+   "title": "List 1 Gitbook: HYB-012 close, orphan nav, lane handoff",
+   "gates": [],
+   "locks": []
+  },
+  "14": {
+   "n": 14,
+   "checks": null,
+   "state": "merged",
+   "head": "9511a776",
+   "merge": "9511a77",
+   "merged_at": "18:55 CT 2026-10-06",
+   "title": "GB-030\u2013GB-038: Gitbook batch 013",
+   "gates": [],
+   "locks": []
+  },
+  "15": {
+   "n": 15,
+   "checks": null,
+   "state": "merged",
+   "head": "46654c24",
+   "merge": "46654c2",
+   "merged_at": "18:57 CT 2026-10-06",
+   "title": "GB-040: Batch 013 follow-up (protocol link, SUMMARY, handle strip, AGI-01/02 REPORTED, Graft commands commented, Instrument line)",
+   "gates": [],
+   "locks": []
+  },
+  "44": {
+   "n": 44,
+   "checks": null,
+   "state": "merged",
+   "head": "4dc54792",
+   "merge": "d27e3e6",
+   "merged_at": "15:58 CT 2026-10-12",
+   "title": "GB-062: Consolidation map 2026-10-12",
+   "gates": [],
+   "locks": []
+  },
+  "46": {
+   "n": 46,
+   "checks": null,
+   "state": "merged",
+   "head": "10c25311",
+   "merge": "961858f",
+   "merged_at": "17:12 CT 2026-10-12",
+   "title": "GB-063 rev3: intake log update",
+   "gates": [],
+   "locks": []
+  },
+  "47": {
+   "n": 47,
+   "checks": null,
+   "state": "merged",
+   "head": "aa9c1002",
+   "merge": "78bd20c",
+   "merged_at": "17:15 CT 2026-10-12",
+   "title": "Docs: GitbookAI -> GitMesh",
+   "gates": [],
+   "locks": []
+  },
+  "48": {
+   "n": 48,
+   "checks": null,
+   "state": "merged",
+   "head": "2263aea9",
+   "merge": "7181709",
+   "merged_at": "17:17 CT 2026-10-12",
+   "title": "O8: Gitbook Offline Internet page",
+   "gates": [],
+   "locks": []
+  },
+  "49": {
+   "n": 49,
+   "checks": null,
+   "state": "merged",
+   "head": "c43afe9e",
+   "merge": "3bdcd45",
+   "merged_at": "17:17 CT 2026-10-12",
+   "title": "O9: LoRa/Meshtastic research note",
+   "gates": [],
+   "locks": []
+  },
+  "50": {
+   "n": 50,
+   "checks": null,
+   "state": "merged",
+   "head": "8592dd50",
+   "merge": "2344334",
+   "merged_at": "17:18 CT 2026-10-12",
+   "title": "O11: mesh/secure-mesh.md",
+   "gates": [],
+   "locks": []
+  },
+  "51": {
+   "n": 51,
+   "checks": null,
+   "state": "merged",
+   "head": "89b903d3",
+   "merge": "3fc9d89",
+   "merged_at": "19:11 CT 2026-10-12",
+   "title": "GB-066: intake log backfill for PRs #46\u2013#50",
+   "gates": [],
+   "locks": []
+  },
+  "52": {
+   "n": 52,
+   "checks": null,
+   "state": "merged",
+   "head": "1d0abd8e",
+   "merge": "0f05d58",
+   "merged_at": "19:55 CT 2026-10-12",
+   "title": "Add mesh/IDLE-MODE.md (idle mode rev 2)",
+   "gates": [],
+   "locks": []
+  },
+  "53": {
+   "n": 53,
+   "checks": null,
+   "state": "merged",
+   "head": "2ca906de",
+   "merge": "17bac6d",
+   "merged_at": "01:08 CT 2026-10-13",
+   "title": "GB-067: single mesh/HANDOFF.md",
+   "gates": [],
+   "locks": []
+  },
+  "54": {
+   "n": 54,
+   "checks": null,
+   "state": "merged",
+   "head": "834b65a9",
+   "merge": "8138ea2",
+   "merged_at": "01:08 CT 2026-10-13",
+   "title": "GB-068: HYB-024 self-fix design page",
+   "gates": [],
+   "locks": []
+  },
+  "55": {
+   "n": 55,
+   "checks": null,
+   "state": "merged",
+   "head": "3e17e9ab",
+   "merge": "bd1b475",
+   "merged_at": "03:28 CT 2026-10-13",
+   "title": "tools/qlab v1: quantum sim, optimizer, calibrated noise twin (simulation)",
+   "gates": [],
+   "locks": []
+  },
+  "56": {
+   "n": 56,
+   "checks": null,
+   "state": "merged",
+   "head": "c81a530e",
+   "merge": "4feab77",
+   "merged_at": "02:51 CT 2026-10-13",
+   "title": "mesh/queue: Cursor cloud-agent dispatch pipeline",
+   "gates": [],
+   "locks": []
+  },
+  "57": {
+   "n": 57,
+   "checks": null,
+   "state": "merged",
+   "head": "15419af6",
+   "merge": "1c7db22",
+   "merged_at": "03:00 CT 2026-10-13",
+   "title": "Q-003: Rename leftover GitbookAI references to GitMesh (5 files as of 8138ea2f; keep historical quotes intact)",
+   "gates": [],
+   "locks": []
+  },
+  "58": {
+   "n": 58,
+   "checks": null,
+   "state": "merged",
+   "head": "fb1e336c",
+   "merge": "8dab9a5",
+   "merged_at": "04:01 CT 2026-10-13",
+   "title": "Q-002: Land GB-067 + GB-068 (Build PASS 2026-10-13, see GATE-2026-10-13-GB-067-068.md)",
+   "gates": [],
+   "locks": []
+  },
+  "59": {
+   "n": 59,
+   "checks": null,
+   "state": "merged",
+   "head": "06ded50d",
+   "merge": "4dd0106",
+   "merged_at": "04:00 CT 2026-10-13",
+   "title": "Add offline keyless SHEPHERD allowlist and terms gate",
+   "gates": [],
+   "locks": []
+  },
+  "60": {
+   "n": 60,
+   "checks": null,
+   "state": "merged",
+   "head": "bbda6f2d",
+   "merge": "6b21df6",
+   "merged_at": "04:03 CT 2026-10-13",
+   "title": "GB-065: rebase HYB-011 refresh onto main (supersedes #45)",
+   "gates": [],
+   "locks": []
+  },
+  "61": {
+   "n": 61,
+   "checks": null,
+   "state": "merged",
+   "head": "57cd2917",
+   "merge": "d0ee5a7",
+   "merged_at": "04:08 CT 2026-10-13",
+   "title": "Turn qlab AQFT sweeps into pytest invariant checks",
+   "gates": [],
+   "locks": []
+  },
+  "62": {
+   "n": 62,
+   "checks": null,
+   "state": "merged",
+   "head": "c796386e",
+   "merge": "dbd34db",
+   "merged_at": "04:09 CT 2026-10-13",
+   "title": "mesh/queue: agent spawning with lineage, caps, quarantine and immutable-core gate",
+   "gates": [],
+   "locks": []
+  },
+  "63": {
+   "n": 63,
+   "checks": null,
+   "state": "merged",
+   "head": "65a68544",
+   "merge": "243ddd4",
+   "merged_at": "04:10 CT 2026-10-13",
+   "title": "mesh: scoreboard, ranked bulk lists, collab protocol",
+   "gates": [],
+   "locks": []
+  },
+  "64": {
+   "n": 64,
+   "checks": null,
+   "state": "merged",
+   "head": "9750e03c",
+   "merge": "efcca74",
+   "merged_at": "04:32 CT 2026-10-13",
+   "title": "mesh/charter: GATE_RULES v0.1 draft + gate_check.py",
+   "gates": [
+    [
+     "Moderator",
+     "FAIL",
+     "efcca741",
+     6145820919
+    ]
+   ],
+   "locks": []
+  },
+  "65": {
+   "n": 65,
+   "checks": null,
+   "state": "merged",
+   "head": "5e437c30",
+   "merge": "aa9506f",
+   "merged_at": "07:20 CT 2026-10-13",
+   "title": "GB-070 rev3: intake backfill + ledger #15",
+   "gates": [
+    [
+     "Security",
+     "PASS",
+     "5e437c30",
+     6144484215
+    ],
+    [
+     "Moderator",
+     "PASS",
+     "5e437c30",
+     6144572456
+    ],
+    [
+     "Moderator",
+     "PASS",
+     "5e437c30",
+     6144738347
+    ],
+    [
+     "Build",
+     "PASS",
+     "5e437c30",
+     6144981113
+    ]
+   ],
+   "locks": []
+  },
+  "70": {
+   "n": 70,
+   "checks": null,
+   "state": "merged",
+   "head": "b861691b",
+   "merge": "75b5ffc",
+   "merged_at": "06:00 CT 2026-10-13",
+   "title": "Moderator retro fixes for #60, #62, #63 + HANDOFF verdicts",
+   "gates": [
+    [
+     "Moderator",
+     "FAIL",
+     "75b5ffcc",
+     6145821175
+    ]
+   ],
+   "locks": []
+  },
+  "76": {
+   "n": 76,
+   "checks": 0,
+   "state": "open",
+   "head": "17ccff7e",
+   "merge": "d297b0d",
+   "merged_at": null,
+   "title": "Retire autogate self-merge and the father-approved bypass",
+   "gates": [],
+   "locks": [
+    [
+     "ba230b90",
+     6145821453,
+     "07:43 CT 2026-10-13"
+    ],
+    [
+     "17ccff7e",
+     6145895156,
+     "07:48 CT 2026-10-13"
+    ]
+   ]
+  },
+  "77": {
+   "n": 77,
+   "checks": null,
+   "state": "merged",
+   "head": "b3593ac2",
+   "merge": "10687c2",
+   "merged_at": "07:19 CT 2026-10-13",
+   "title": "Moderator lock evaluator + docs (non-locked half of #75)",
+   "gates": [
+    [
+     "Moderator",
+     "FAIL",
+     "46dace81",
+     6144829782
+    ],
+    [
+     "Moderator",
+     "PASS",
+     "b3593ac2",
+     6144864716
+    ],
+    [
+     "Security",
+     "PASS",
+     "b3593ac2",
+     6144888286
+    ]
+   ],
+   "locks": []
+  }
+ },
+ "sha256": "8d6f70f0c20bd54141977c8551eddc192d9c1db6fd7d69897bef914b72604dd0"
+}
