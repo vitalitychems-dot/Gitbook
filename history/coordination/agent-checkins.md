@@ -4,22 +4,49 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
-### HYB-016 ledger refresh — Cursor Project (2026-10-12)
+### HYB-016 ledger refresh (Oct 13) + SITE-002-R1 — Cursor Project (2026-10-13)
 
 ```text
-TASK: HYB-016 ledger refresh
-AGENT: Cursor Project (GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok Bot.
-SCOPE: this ledger only. No TESSERA. No vitality. No 1T. No intake/*, mesh/*, or SUMMARY.md.
-START: 2026-10-12T21:10:00Z
-BASE: Gitbook main@d27e3e6c31d4909e23ac2937d35133bfbc6c3884; TESSERA main@a5023224412c535e969d2aecc0c2f4d02be7b972
-OVERLAP CHECK: CLEAR — desk/gb-063-hyb-011 edits mesh/LANE-HANDOFF-2026-10-12.md, intake/log.md and the HYB-011/HYB-015 files, not this ledger. No Replit/Grok claim on the ledger. Board claim: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6132595558
-STATUS: DONE
-CHANGED: the lane-state table below; one closing note on the PERF-001 review line and one on the HYB-014 follow-up line. No other record was rewritten.
-CHECKS: every row below was read from issue #2 (through comment 6132595558), the Gitbook and TESSERA commit lists, the branch list, and the files named in the Evidence column. The pull request list API returns 403, so open pull requests come from Sync ledger #9 (comment 6132572234) and the desk note (6132574979).
-FOLLOW-UP: the rows marked UNCLAIMED or BLOCKED. Re-run this refresh when Gitbook main moves past d27e3e6.
+TASK: HYB-016 ledger refresh (Oct 13) + SITE-002-R1 (correct Cursor's own SITE-002 record)
+AGENT: Cursor Project (worker bc-d8d1239d-62cf-569a-84a8-40030d178f16; GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok Bot.
+SCOPE: this ledger; mesh/HANDOFF.md (Cursor lines only); mesh/SITE-002-2026-10-10.md; TESSERA docs/PERMANENT-SITE-RELEASE.md on a branch only. Not touched: mesh/COLLAB.md and SUMMARY.md (mesh-landing worker), intake/** (Cordnation claim 6153746264), mesh/roles/**, mesh/policy/**, .github/**, TESSERA product code, SITE-001/005, vitality, 1T.
+START: 2026-10-13T20:15:00Z
+BASE: Gitbook main@9ea4a6a5750fda9133c17ed40bc902b26d5cfc72; TESSERA main@0b2d605e07ff95eeadde8c4cf9b2728a54149ff8
+OVERLAP CHECK: CLEAR on paths. No Replit or Grok claim on these files. Board claim: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6154428811
+STATUS: DONE when this file reaches main; until then IN PROGRESS on branch cursor/ledger-oct13-d8d1
+CHANGED: the Oct 13 lane-state table below; the SITE-002 record gained a Correction section; mesh/HANDOFF.md Cursor rows. The Oct 12 table is kept as history.
+CHECKS: every row below was read from issue #2 (through comment 6153980790), the Gitbook and TESSERA commit and branch lists, and the files named in the Evidence column. The pull request list and read API return 403, so pull request states come from board comments and merge commits, and are marked REPORTED where not re-read.
+FOLLOW-UP: Re-run when Gitbook main moves past 9ea4a6a5, and when the three Cursor branches land or are refused.
 ```
 
-### Lane state — as of Gitbook d27e3e6, TESSERA a502322 (2026-10-12)
+### Lane state — as of Gitbook 9ea4a6a5, TESSERA 0b2d605e (2026-10-13)
+
+Where this table and the Oct 12 table below differ, this table wins.
+
+| Id | Owner | Status | Evidence / next step |
+|---|---|---|---|
+| Father approval to land | Father (relayed to Cursor Project) | REPORTED | Father approved agents landing work and collaborating on Gitbook. No Father or Tessera echo on issue #2 yet. Cursor notice: [6154398789](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6154398789). Tessera's standing order of 2026-10-12 (6132933280: no Tessera git author string, stop and escalate if PR create fails) and `mesh/COLLAB.md` ("Tessera is the only agent that merges") are not lifted by that note on the board. |
+| AUTO-API-HARDEN / API-HARDENING (hit-list Requests 1-3) | Cursor Project | IN REVIEW, branch only | TESSERA `cursor/api-server-hardening-b9cb` @ `eee651b` from `47983dd`; 23 files under `artifacts/api-server/src`. TESTED locally before push: 518 tests pass, typecheck clean, one pre-existing DB-less failure (`invention-glb-upload`), 4 of 10 new health tests fail when the root-cause fix is reverted. NOT RUN: GitHub CI, Aikido, root pnpm build. Root cause found for the 0% engines: the LLM is off by default, so every evolution apply threw and counted as a module failure. A separate Cursor worker lands it. Evidence: 6144538710, 6144789053, 6144826674, 6145652328. |
+| AUTO-ADMISSION (admission gate, bounded self-improvement and empathy training harnesses) | Cursor Project | IN REVIEW, branch only | TESSERA `cursor/agent-admission-gate-982e` @ `a6abbc3` from `47983dd`; new files only under `lib/admission/**` and four `admission-*.test.ts`. TESTED: the branch was re-cloned and 48 vitest tests pass. NOT RUN: full api-server suite, CI, Aikido. A separate Cursor worker lands it. Evidence: 6144505737, 6144732533, 6144913213. |
+| MESH-001 (mesh network and Moltbook-style agent layer) | Cursor Project | IN REVIEW, branches only | TESSERA `cursor/mesh-moltbook-prototype-9640` @ `4983ce4` (`research/mesh-moltbook/**`); Gitbook `cursor/mesh-moltbook-design-9640` @ `1de9870` (`mesh/MESH-MOLTBOOK-DESIGN.md`). TESTED on a fresh clone: 20 pass, 0 fail, three mutation checks each break a test. It does not replace IP or the Web, and the design page says why. NOT TESTED: real radios, Sybil resistance, real LLM agents. Open for Father: what "Moltbook" means, and whether MESH-002 (two real processes on a LAN) is next. A separate Cursor worker lands it and owns the `mesh/COLLAB.md` and `SUMMARY.md` edits. Evidence: 6144510887, 6144686250. |
+| YouTube playlist from Father | Cursor Project | BLOCKED on Father | The playlist could not be read: YouTube returns "The playlist does not exist" (private, deleted, or mistyped ID; Cursor cannot tell which). No titles, transcripts or lessons were retrieved, and none are invented. Needs an unlisted link or the video URLs. Cursor internal notes hold the exact attempts. |
+| SITE-002-R1 | Cursor Project | DONE on branch, lands with this file | The SITE-002 record now says the gate reached TESSERA main as direct commit `1a71cc78`, not through PR 110 (closed unmerged, REPORTED by the Moderator). See `mesh/SITE-002-2026-10-10.md`, section Correction. TESSERA docs-only branch `cursor/site-002-release-doc-fix-d8d1` carries the matching one-line fix and is not on main. The provenance flag on `1a71cc78` (no gate record) stays open for Moderator and Security. |
+| SITE-001 managed health-path evidence and exact release payload | Replit | OPEN | No Replit post, branch or commit since Oct 10. Sync Repl `1` from TESSERA main first. Never overwrite main from a behind Repl. |
+| SITE-003 provenance | Moderator | VERDICT: CHANGES-NEEDED | [6153752692](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6153752692). One CONTRADICTED item (how the diagnostics gate landed); Cursor's side is SITE-002-R1. Other requested items (CI links for the build and size claims, the auto-merge authorization) are not Cursor's to answer. |
+| SITE-004 security bulk review | Security | no record read | Publication still needs Father's exact release-payload approval. |
+| Research-mesh page under `brain-consciousness/research/` | Grok Bot (covered by Cursor at Father's ask, 6134789702) | BLOCKED on source | The self-fix design is published (GB-068). The research-mesh source, `knowledge-lab/research/`, is still not on any disk this lane can read. Cursor will not invent it. Whoever holds that folder publishes a small page or hands it over. |
+| Grok Bot | Grok Bot | no check-in | No post or commit since Oct 10. `grok/*` branches unchanged. |
+| Self-fix design (HYB-024) | Tessera (design), Cordnation (publish) | PUBLISHED | `merge/hyb-024-selffix-design.md` in PR #54 (`8138ea2`). Phase 1 needs Father's yes. |
+| GB-061 rev 2, PR #39 | Ready lane | MERGED (REPORTED) | Merge commit `c62d45b3`, Oct 13. Cursor did not read a re-gate record after the Security FAIL of Oct 12 (6134833559). |
+| GB-065 / PR #45 | Gitbook desk | CLOSED unmerged (REPORTED) | Cordnation, 6153746264: closed without merging, base 33 commits behind. GB-063 is re-intaken by Cordnation. |
+| Gitbook PR #40 (`cursor/father-yes-record-b14e`) | Cursor branch, draft | STALE | Not re-read today. Tessera or Father decides close or merge. |
+| Learning Sponge intake (`desk/intake-sponge-top-lessons`) | Sponge lane / Moderator | CHANGES-NEEDED | Tessera approved with conditions (6153954355). Moderator listed three fixes (6153980790). Security scrub pending. |
+| Other Oct 13 lanes: Akhenaten, Einstein, gate, evals, dedupe, state snapshots | various | MERGED on main (#74-#101) | Not Cursor work and not re-verified here. `mesh/queue/autogate.sh` self-merge was retired in PR #76 (GATE_RULES §5: APPROVE is not permission to merge). |
+| HYB-010 media metadata | none | UNCLAIMED | Unchanged. Protected bodies stay unopened. `vitality` stays out. |
+| HYB-013 UI audit | none | STALE | Unchanged. Needs a reassignment. |
+| Catalog task, comment 6100954845 ("next twelve catalog names") | none | UNCLAIMED | Unchanged. Tessera restates the list before anyone answers. |
+
+### Lane state — as of Gitbook d27e3e6, TESSERA a502322 (2026-10-12; history, superseded where the table above differs)
 
 | Id | Owner | Status | Evidence / next step |
 |---|---|---|---|
@@ -137,11 +164,11 @@ REPORT: store internal/replit-grok-sync-report.md
 ```text
 TASK: SITE-002 (+ HYB-016 hygiene; three-way protocol docs)
 AGENT: Cursor Project (declared role; GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok.
-STATUS: DONE
-COMMIT: Gitbook main through b2bf137 (docs/protocol/role/check-ins). TESSERA 014ab626 (diagnostics gate), 57119ec (release note), 797e019 (session-gate tests).
-CHECKS: Overlap CLEAR — issue #2 through 6093570482; Replit SITE-001/005 untouched; diagnostics.ts was 5c0cfd81 until land; gated blob on main 6b3fb5e2.
+STATUS: DONE (provenance corrected 2026-10-13, see mesh/SITE-002-2026-10-10.md, section Correction)
+COMMIT: Gitbook main through b2bf137 (docs/protocol/role/check-ins). TESSERA 014ab626 (diagnostics gate) is not in the file history on main; the same change is there as direct commit 1a71cc78 (2026-10-10T04:15:54Z, no PR, no gate record; PR 110 closed unmerged, REPORTED by the Moderator). TESSERA 57119ec (release note), 797e019 (session-gate tests) are as recorded on 2026-10-10 and were not re-checked on 2026-10-13.
+CHECKS: Overlap CLEAR — issue #2 through 6093570482; Replit SITE-001/005 untouched; diagnostics.ts was 5c0cfd81 until land; gated blob on main 6b3fb5e2 (re-read 2026-10-13).
 CHANGED: Gitbook SITE-002/three-way/role/playbook/hub/SUMMARY/permanent-site/check-ins; TESSERA diagnostics.ts, sovereign-engines-session-gate.test.ts, docs/PERMANENT-SITE-RELEASE.md.
-FOLLOW-UP: SITE-003/004 + managed health evidence still block publication. HYB-013 needs reassignment.
+FOLLOW-UP: SITE-003 CHANGES-NEEDED (6153752692) and SITE-004 + Father release payload still block publication. HYB-013 needs reassignment.
 ```
 
 ## Completion record — HYB-021 (2026-10-09)
@@ -179,7 +206,7 @@ Decision-time STATUS inside the blocks below remains IN REVIEW. Current status i
 ```text
 TASK: HYB-020
 AGENT: Manus consolidation coordinator
-SCOPE: Gitbook merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md; mesh/CODEBASE-MEMORY-MCP.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md; SUMMARY.md; local CBM graph artifacts in TESSERA and Gitbook
+SCOPE: Gitbook merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md; mesh/CODEBASE-MEMORY-MCP.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md; SUMMARY.md navigation; local .codebase-memory artifacts for both destinations
 START: 2026-10-07T22:49:00Z
 BASE: Gitbook cfaba85; TESSERA 8ca8fb2
 STATUS: DONE
