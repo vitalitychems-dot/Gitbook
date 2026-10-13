@@ -31,6 +31,7 @@
 * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)
 * [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
 * [HYB-007 Z-app functional comparison](merge/hyb-007-z-app.md)
+* [HYB-024 self-fix loop design](merge/hyb-024-selffix-design.md)
 * [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
 * [Source heads and agent work launch](merge/SOURCE-HEADS-2026-10-05.md)
 * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
