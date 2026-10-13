@@ -1,0 +1,215 @@
+{
+  "file": "Grok-ready__artifacts_mockup-sandbox.json",
+  "subject": {
+    "name": "mockup-sandbox",
+    "digest": {
+      "sha256": "5c07792d9781facdf0bc403e8d144dadc094a31d36c291ed6ab86180c151c469"
+    },
+    "format": "directory",
+    "architecture": null,
+    "local_path": "/workspace/repo-lab/vitalitychems-dot__Grok-ready/artifacts/mockup-sandbox"
+  },
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "statistics": {
+    "relevant_files": 71,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 211713,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 67,
+    "visited_ast_nodes": 24671,
+    "findings": 816,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "summary_electronish": {
+    "browser_windows": 0,
+    "explicit_web_preferences": 0,
+    "preload_entrypoints": 0,
+    "context_bridge_apis": 0,
+    "exposed_api_members": 0,
+    "ipc": {
+      "operations": 0,
+      "literal_channels": 0,
+      "dynamic_channel_operations": 0,
+      "renderer_transmissions": 0,
+      "renderer_listeners": 0,
+      "main_handlers": 0,
+      "paired_renderer_transmissions": 0,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "graph": {
+    "nodes": 887,
+    "edges": 1007,
+    "coverage": {
+      "status": "complete",
+      "truncated": false,
+      "omitted_count": 0,
+      "limits": []
+    },
+    "root_node_ids": [
+      "jag_node_92e7e560c0927a20a97b15b5ca3ecc3d460e64139421e450c562118831bcafce"
+    ]
+  },
+  "node_kind_counts_sample": {
+    "javascript-module": 813,
+    "artifact": 5,
+    "javascript-asset": 67,
+    "package": 1,
+    "electron-renderer": 1
+  },
+  "sample_nodes": [
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    }
+  ],
+  "semantic": {
+    "nodes": 11426,
+    "relations": 10175,
+    "unknowns": 3122,
+    "fingerprints": 354,
+    "rel_kinds": {
+      "unknown": 8000
+    }
+  },
+  "limitations_head": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Static imports, entrypoints, workers, endpoints, and storage relationships do not prove runtime execution.",
+    "Static paths and relationships may remain unresolved when expressions are dynamic or obfuscated.",
+    "Webpack/Rspack factories were recovered from AST literals; REA did not invoke push handlers or bundle bootstrap code."
+  ],
+  "evidence_id": "ev_bc37fbbd3c16283b5d3d20a33bd3c903977cd252f6c8aaf8300f2f8addc3963f"
+}

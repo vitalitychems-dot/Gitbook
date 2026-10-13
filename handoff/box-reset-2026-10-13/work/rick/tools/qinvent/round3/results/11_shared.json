@@ -1,0 +1,10 @@
+{
+ "agents": 5,
+ "queries": 40,
+ "solo_calls": 200,
+ "shared_calls": 40,
+ "solo_s": 13.03,
+ "shared_s": 2.6,
+ "speedup": 5.01,
+ "state_bytes": 25103
+}

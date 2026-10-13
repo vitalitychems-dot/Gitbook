@@ -1,0 +1,269 @@
+{
+ "i1_double_slit": {
+  "V_coherent": 0.9999950652140344,
+  "V_whichpath": 0.0,
+  "V_vs_D": {
+   "0": 1.0,
+   "0.5": 0.866,
+   "0.9": 0.4359,
+   "1": 0.0
+  },
+  "sec": 0.001
+ },
+ "i2_phase_knob": {
+  "phase_to_I": [
+   1.0,
+   0.933,
+   0.75,
+   0.5,
+   0.25,
+   0.067,
+   0.0
+  ],
+  "dot_rel_err_mean": 0.007179773826038106,
+  "dot_rel_err_p95": 0.018275759028042047,
+  "effective_bits": 7.121845887019418,
+  "sec": 0.015
+ },
+ "i3_grover": {
+  "table": [
+   {
+    "N": 4,
+    "grover_queries": 1,
+    "p_success": 1.0,
+    "classical_queries_same_p": 4,
+    "classical_avg": 2.5
+   },
+   {
+    "N": 8,
+    "grover_queries": 2,
+    "p_success": 0.9453,
+    "classical_queries_same_p": 8,
+    "classical_avg": 4.5
+   },
+   {
+    "N": 16,
+    "grover_queries": 3,
+    "p_success": 0.9613,
+    "classical_queries_same_p": 16,
+    "classical_avg": 8.5
+   },
+   {
+    "N": 32,
+    "grover_queries": 4,
+    "p_success": 0.9992,
+    "classical_queries_same_p": 32,
+    "classical_avg": 16.5
+   },
+   {
+    "N": 64,
+    "grover_queries": 6,
+    "p_success": 0.9966,
+    "classical_queries_same_p": 64,
+    "classical_avg": 32.5
+   },
+   {
+    "N": 128,
+    "grover_queries": 8,
+    "p_success": 0.9956,
+    "classical_queries_same_p": 128,
+    "classical_avg": 64.5
+   },
+   {
+    "N": 256,
+    "grover_queries": 12,
+    "p_success": 0.9999,
+    "classical_queries_same_p": 256,
+    "classical_avg": 128.5
+   },
+   {
+    "N": 512,
+    "grover_queries": 17,
+    "p_success": 0.9994,
+    "classical_queries_same_p": 512,
+    "classical_avg": 256.5
+   },
+   {
+    "N": 1024,
+    "grover_queries": 25,
+    "p_success": 0.9995,
+    "classical_queries_same_p": 1024,
+    "classical_avg": 512.5
+   },
+   {
+    "N": 2048,
+    "grover_queries": 35,
+    "p_success": 1.0,
+    "classical_queries_same_p": 2048,
+    "classical_avg": 1024.5
+   },
+   {
+    "N": 4096,
+    "grover_queries": 50,
+    "p_success": 0.9999,
+    "classical_queries_same_p": 4096,
+    "classical_avg": 2048.5
+   }
+  ],
+  "sec": 0.005
+ },
+ "i4_mzi_gates": {
+  "NOT": true,
+  "XOR": 1.0,
+  "AND": 1.0,
+  "OR": 1.0,
+  "phase_tolerance_rad": 0.3142,
+  "sec": 0.008
+ },
+ "i5_nosignal": {
+  "bob_P0_over_settings": [
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5,
+   0.5
+  ],
+  "max_dev": 0.0,
+  "MI_bits_sampled": 6.005614892057309e-07,
+  "sec": 0.028
+ },
+ "i6_grating": {
+  "table": [
+   {
+    "N": 2,
+    "peak_to_N2": 1.0,
+    "fwhm_orders": 0.5,
+    "bits_classical_8lvl": 6,
+    "hilbert_dim": 2,
+    "qubits_equiv": 1.0
+   },
+   {
+    "N": 4,
+    "peak_to_N2": 1.0,
+    "fwhm_orders": 0.25,
+    "bits_classical_8lvl": 12,
+    "hilbert_dim": 4,
+    "qubits_equiv": 2.0
+   },
+   {
+    "N": 8,
+    "peak_to_N2": 1.0,
+    "fwhm_orders": 0.125,
+    "bits_classical_8lvl": 24,
+    "hilbert_dim": 8,
+    "qubits_equiv": 3.0
+   },
+   {
+    "N": 16,
+    "peak_to_N2": 1.0,
+    "fwhm_orders": 0.0625,
+    "bits_classical_8lvl": 48,
+    "hilbert_dim": 16,
+    "qubits_equiv": 4.0
+   },
+   {
+    "N": 32,
+    "peak_to_N2": 1.0,
+    "fwhm_orders": 0.0312,
+    "bits_classical_8lvl": 96,
+    "hilbert_dim": 32,
+    "qubits_equiv": 5.0
+   }
+  ],
+  "sec": 0.017
+ },
+ "i7_optimizer": {
+  "optimum": 13.0,
+  "hit_rate_by_evals": {
+   "10": {
+    "optical_hit": 0.125,
+    "random_hit": 0.12
+   },
+   "30": {
+    "optical_hit": 0.36,
+    "random_hit": 0.37
+   },
+   "100": {
+    "optical_hit": 0.77,
+    "random_hit": 0.79
+   }
+  },
+  "sec": 0.967
+ },
+ "i8_crystal": {
+  "table": [
+   {
+    "orient": 2,
+    "retard": 2,
+    "bits_per_voxel": 2.0,
+    "symbol_err": 0.0,
+    "raw_TB_per_cm3": 0.5
+   },
+   {
+    "orient": 4,
+    "retard": 4,
+    "bits_per_voxel": 4.0,
+    "symbol_err": 0.00115,
+    "raw_TB_per_cm3": 1.0
+   },
+   {
+    "orient": 8,
+    "retard": 4,
+    "bits_per_voxel": 5.0,
+    "symbol_err": 0.0064,
+    "raw_TB_per_cm3": 1.25
+   },
+   {
+    "orient": 8,
+    "retard": 8,
+    "bits_per_voxel": 6.0,
+    "symbol_err": 0.1094,
+    "raw_TB_per_cm3": 1.5
+   }
+  ],
+  "assumptions": "sigma 4deg orientation, 0.04 retardance; voxel pitch 0.5x0.5x2 um (assumed, not published value)",
+  "sec": 0.004
+ },
+ "i9_tessera_memory": {
+  "text_bytes": 320516,
+  "compressed_bytes": 89543,
+  "ratio": 3.58,
+  "voxels_raw": 179086,
+  "voxels_ecc": 313401,
+  "noise": {
+   "sig4deg_0.04": {
+    "ber_raw": 0.0003615581340808327,
+    "ber_hamming74": 1.3959773516634466e-06,
+    "whole_archive_exact": false,
+    "blocks_2KB_recovered": 1.0
+   },
+   "sig8deg_0.07": {
+    "ber_raw": 0.01517706576728499,
+    "ber_hamming74": 0.0018371061947890957,
+    "whole_archive_exact": false,
+    "blocks_2KB_recovered": 0.0127
+   },
+   "sig10deg_0.09": {
+    "ber_raw": 0.037086930301642784,
+    "ber_hamming74": 0.011000301531107958,
+    "whole_archive_exact": false,
+    "blocks_2KB_recovered": 0.0
+   }
+  },
+  "sec": 1.778
+ },
+ "i10_palace_grover": {
+  "N": 1024,
+  "target_path": "/workspace/rick/INVENTIONS.md",
+  "grover_queries": 25,
+  "grover_p": 0.9995,
+  "classical_expected": 512.5,
+  "classical_worst": 1024,
+  "note": "simulated amplitudes; real wall-clock here is classical (statevector costs O(N) per step)",
+  "sec": 0.002
+ }
+}

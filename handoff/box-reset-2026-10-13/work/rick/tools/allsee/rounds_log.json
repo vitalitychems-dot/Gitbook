@@ -1,0 +1,529 @@
+{
+ "base": {
+  "recall5": 0.9628,
+  "acc": 0.1953,
+  "p50_ms": 51.27,
+  "p95_ms": 91.38,
+  "tokens_brief": 2295.7,
+  "index_bytes": 235220992,
+  "disk_free": 17159151616
+ },
+ "log": [
+  {
+   "round": 0,
+   "bench": {
+    "recall5": 0.9628,
+    "acc": 0.1953,
+    "p50_ms": 51.27,
+    "p95_ms": 91.38,
+    "tokens_brief": 2295.7,
+    "index_bytes": 235220992,
+    "disk_free": 17159151616
+   }
+  },
+  {
+   "round": 1,
+   "version": "v4",
+   "tried": [
+    {
+     "change": "chunk-level dedup (identical chunks stored once across clones)",
+     "kept": true,
+     "why": "recall5 0.9628->0.9674; p50_ms 51.27->43.04; index_bytes 235220992->211062784",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 43.04,
+      "p95_ms": 80.0,
+      "tokens_brief": 2329.6,
+      "index_bytes": 211062784,
+      "disk_free": 17183305728
+     }
+    },
+    {
+     "change": "FTS5 segment optimize + vacuum",
+     "kept": true,
+     "why": "p50_ms 43.04->40.51",
+     "info": "fts optimize + vacuum",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 40.51,
+      "p95_ms": 75.36,
+      "tokens_brief": 2329.6,
+      "index_bytes": 206753792,
+      "disk_free": 16975904768
+     }
+    },
+    {
+     "change": "brief compression: only query-matching lines per hit",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->41.57",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 41.57,
+      "p95_ms": 75.54,
+      "tokens_brief": 1723.6,
+      "index_bytes": 206753792,
+      "disk_free": 17418194944
+     }
+    },
+    {
+     "change": "TF-IDF cosine rerank (weight 0.5)",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->44.55",
+     "info": "",
+     "bench": {
+      "recall5": 0.9767,
+      "acc": 0.1953,
+      "p50_ms": 44.55,
+      "p95_ms": 79.3,
+      "tokens_brief": 2264.0,
+      "index_bytes": 206753792,
+      "disk_free": 17417179136
+     }
+    }
+   ],
+   "kept": [
+    {
+     "change": "chunk-level dedup (identical chunks stored once across clones)",
+     "gain": "recall5 0.9628->0.9674; p50_ms 51.27->43.04; index_bytes 235220992->211062784",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 43.04,
+      "p95_ms": 80.0,
+      "tokens_brief": 2329.6,
+      "index_bytes": 211062784,
+      "disk_free": 17183305728
+     }
+    },
+    {
+     "change": "FTS5 segment optimize + vacuum",
+     "gain": "p50_ms 43.04->40.51",
+     "info": "fts optimize + vacuum",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 40.51,
+      "p95_ms": 75.36,
+      "tokens_brief": 2329.6,
+      "index_bytes": 206753792,
+      "disk_free": 16975904768
+     }
+    }
+   ],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 40.51,
+    "p95_ms": 75.36,
+    "tokens_brief": 2329.6,
+    "index_bytes": 206753792,
+    "disk_free": 16975904768
+   }
+  },
+  {
+   "round": "resume-rebench",
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 45.56,
+    "p95_ms": 81.95,
+    "tokens_brief": 2329.6,
+    "index_bytes": 206753792,
+    "disk_free": 16031436800
+   }
+  },
+  {
+   "round": 2,
+   "version": "v5",
+   "tried": [
+    {
+     "change": "brief compression: only query-matching lines per hit",
+     "kept": true,
+     "why": "tokens_brief 2329.6->1723.6",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 46.07,
+      "p95_ms": 86.62,
+      "tokens_brief": 1723.6,
+      "index_bytes": 206753792,
+      "disk_free": 16025792512,
+      "latency_ratio_paired": 1.011
+     }
+    },
+    {
+     "change": "TF-IDF cosine rerank (weight 0.5)",
+     "kept": false,
+     "why": "regressed p50_ms 46.07->49.58",
+     "info": "",
+     "bench": {
+      "recall5": 0.9767,
+      "acc": 0.1953,
+      "p50_ms": 49.58,
+      "p95_ms": 87.85,
+      "tokens_brief": 1666.5,
+      "index_bytes": 206753792,
+      "disk_free": 6551580672,
+      "latency_ratio_paired": 1.076
+     }
+    },
+    {
+     "change": "candidate pool 30->60",
+     "kept": false,
+     "why": "regressed tokens_brief 1723.6->1779.5",
+     "info": "",
+     "bench": {
+      "recall5": 0.9721,
+      "acc": 0.1953,
+      "p50_ms": 46.72,
+      "p95_ms": 84.48,
+      "tokens_brief": 1779.5,
+      "index_bytes": 206753792,
+      "disk_free": 2183401472,
+      "latency_ratio_paired": 1.014
+     }
+    },
+    {
+     "change": "synapses: TF-IDF cosine links + spreading activation 0.2",
+     "kept": false,
+     "why": "regressed recall5 0.9674->0.9349",
+     "info": 18003,
+     "bench": {
+      "recall5": 0.9349,
+      "acc": 0.1814,
+      "p50_ms": 46.33,
+      "p95_ms": 85.72,
+      "tokens_brief": 1811.5,
+      "index_bytes": 208674816,
+      "disk_free": 3843244032,
+      "latency_ratio_paired": 1.006
+     }
+    }
+   ],
+   "kept": [
+    {
+     "change": "brief compression: only query-matching lines per hit",
+     "gain": "tokens_brief 2329.6->1723.6",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 46.07,
+      "p95_ms": 86.62,
+      "tokens_brief": 1723.6,
+      "index_bytes": 206753792,
+      "disk_free": 16025792512,
+      "latency_ratio_paired": 1.011
+     }
+    }
+   ],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 46.07,
+    "p95_ms": 86.62,
+    "tokens_brief": 1723.6,
+    "index_bytes": 206753792,
+    "disk_free": 16025792512,
+    "latency_ratio_paired": 1.011
+   }
+  },
+  {
+   "round": "resume-rebench",
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 47.7,
+    "p95_ms": 85.69,
+    "tokens_brief": 1723.6,
+    "index_bytes": 206753792,
+    "disk_free": 40815648768
+   }
+  },
+  {
+   "round": 3,
+   "version": "v6",
+   "tried": [
+    {
+     "change": "synapses: same-folder co-location links",
+     "kept": false,
+     "why": "regressed tokens_brief 1723.6->1831.7",
+     "info": 9360,
+     "bench": {
+      "recall5": 0.9581,
+      "acc": 0.1953,
+      "p50_ms": 47.14,
+      "p95_ms": 92.37,
+      "tokens_brief": 1831.7,
+      "index_bytes": 207171584,
+      "disk_free": 40608870400,
+      "latency_ratio_paired": 0.988
+     }
+    },
+    {
+     "change": "synapses: fullpicture graph edges mapped to files",
+     "kept": false,
+     "why": "no measurable gain",
+     "info": 410,
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 48.12,
+      "p95_ms": 87.78,
+      "tokens_brief": 1727.6,
+      "index_bytes": 206778368,
+      "disk_free": 40609263616,
+      "latency_ratio_paired": 1.009
+     }
+    },
+    {
+     "change": "synapses: Hebbian strengthen/prune on dev split",
+     "kept": false,
+     "why": "no measurable gain",
+     "info": {
+      "used": 0,
+      "strengthened": 0,
+      "pruned": 0
+     },
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 46.73,
+      "p95_ms": 86.26,
+      "tokens_brief": 1723.6,
+      "index_bytes": 206753792,
+      "disk_free": 40402509824,
+      "latency_ratio_paired": 0.98
+     }
+    },
+    {
+     "change": "multi-chunk evidence aggregation",
+     "kept": false,
+     "why": "regressed recall5 0.9674->0.907",
+     "info": "",
+     "bench": {
+      "recall5": 0.907,
+      "acc": 0.1721,
+      "p50_ms": 48.0,
+      "p95_ms": 88.47,
+      "tokens_brief": 1716.5,
+      "index_bytes": 206753792,
+      "disk_free": 40402509824,
+      "latency_ratio_paired": 1.006
+     }
+    }
+   ],
+   "kept": [],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 47.7,
+    "p95_ms": 85.69,
+    "tokens_brief": 1723.6,
+    "index_bytes": 206753792,
+    "disk_free": 40815648768
+   }
+  },
+  {
+   "round": 4,
+   "version": "v7",
+   "tried": [
+    {
+     "change": "FTS5 detail=column (smaller postings)",
+     "kept": false,
+     "why": "regressed p50_ms 47.7->308.46",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 308.46,
+      "p95_ms": 549.15,
+      "tokens_brief": 1727.2,
+      "index_bytes": 226422784,
+      "disk_free": 40176041984,
+      "latency_ratio_paired": 6.467
+     }
+    },
+    {
+     "change": "porter stemming tokenizer",
+     "kept": false,
+     "why": "regressed p50_ms 47.7->66.14",
+     "info": "",
+     "bench": {
+      "recall5": 0.9628,
+      "acc": 0.2,
+      "p50_ms": 66.14,
+      "p95_ms": 123.98,
+      "tokens_brief": 1729.8,
+      "index_bytes": 239210496,
+      "disk_free": 28592054272,
+      "latency_ratio_paired": 1.386
+     }
+    },
+    {
+     "change": "15-line chunks",
+     "kept": false,
+     "why": "regressed recall5 0.9674->0.9395",
+     "info": "",
+     "bench": {
+      "recall5": 0.9395,
+      "acc": 0.186,
+      "p50_ms": 58.32,
+      "p95_ms": 111.49,
+      "tokens_brief": 1015.1,
+      "index_bytes": 246427648,
+      "disk_free": 28344352768,
+      "latency_ratio_paired": 1.223
+     }
+    },
+    {
+     "change": "candidate pool ->15 (latency)",
+     "kept": false,
+     "why": "no measurable gain",
+     "info": "",
+     "bench": {
+      "recall5": 0.9628,
+      "acc": 0.1953,
+      "p50_ms": 47.35,
+      "p95_ms": 95.5,
+      "tokens_brief": 1705.3,
+      "index_bytes": 206753792,
+      "disk_free": 28344193024,
+      "latency_ratio_paired": 0.993
+     }
+    }
+   ],
+   "kept": [],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 47.7,
+    "p95_ms": 85.69,
+    "tokens_brief": 1723.6,
+    "index_bytes": 206753792,
+    "disk_free": 40815648768
+   }
+  },
+  {
+   "round": 5,
+   "version": "v8",
+   "tried": [
+    {
+     "change": "TF-IDF rerank weight 1.0",
+     "kept": false,
+     "why": "regressed p50_ms 47.7->50.49",
+     "info": "",
+     "bench": {
+      "recall5": 0.9767,
+      "acc": 0.1953,
+      "p50_ms": 50.49,
+      "p95_ms": 93.27,
+      "tokens_brief": 1671.7,
+      "index_bytes": 206753792,
+      "disk_free": 28373798912,
+      "latency_ratio_paired": 1.059
+     }
+    },
+    {
+     "change": "spreading activation 0.05",
+     "kept": false,
+     "why": "no measurable gain",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 47.64,
+      "p95_ms": 91.45,
+      "tokens_brief": 1723.6,
+      "index_bytes": 206753792,
+      "disk_free": 26881470464,
+      "latency_ratio_paired": 0.999
+     }
+    },
+    {
+     "change": "60-line chunks",
+     "kept": false,
+     "why": "regressed acc 0.1953->0.186",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.186,
+      "p50_ms": 49.14,
+      "p95_ms": 85.35,
+      "tokens_brief": 2508.3,
+      "index_bytes": 249102336,
+      "disk_free": 26455703552,
+      "latency_ratio_paired": 1.03
+     }
+    },
+    {
+     "change": "FTS5 detail=none",
+     "kept": false,
+     "why": "regressed p50_ms 47.7->310.31",
+     "info": "",
+     "bench": {
+      "recall5": 0.9721,
+      "acc": 0.1953,
+      "p50_ms": 310.31,
+      "p95_ms": 566.81,
+      "tokens_brief": 1712.3,
+      "index_bytes": 215158784,
+      "disk_free": 27613757440,
+      "latency_ratio_paired": 6.506
+     }
+    }
+   ],
+   "kept": [],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 47.7,
+    "p95_ms": 85.69,
+    "tokens_brief": 1723.6,
+    "index_bytes": 206753792,
+    "disk_free": 40815648768
+   }
+  }
+ ],
+ "kept": [
+  {
+   "version": "v4",
+   "change": "chunk-level dedup (identical chunks stored once across clones)",
+   "gain": "recall5 0.9628->0.9674; p50_ms 51.27->43.04; index_bytes 235220992->211062784",
+   "info": ""
+  },
+  {
+   "version": "v4",
+   "change": "FTS5 segment optimize + vacuum",
+   "gain": "p50_ms 43.04->40.51",
+   "info": "fts optimize + vacuum"
+  },
+  {
+   "version": "v5",
+   "change": "brief compression: only query-matching lines per hit",
+   "gain": "tokens_brief 2329.6->1723.6",
+   "info": ""
+  }
+ ],
+ "cfg": {
+  "ncand": 30,
+  "agg": "max",
+  "tfidf": 0.0,
+  "spread": 0.0,
+  "prior": 0.0,
+  "compress": true,
+  "pathw": 0.0,
+  "dedupfile": true
+ },
+ "env": {
+  "ALLSEE_CHUNKDEDUP": "1"
+ },
+ "links": []
+}

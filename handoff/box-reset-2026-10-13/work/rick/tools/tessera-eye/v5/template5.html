@@ -1,0 +1,178 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Tessera's Eye v5</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob: https://server.arcgisonline.com https://basemap.nationalmap.gov https://gibs.earthdata.nasa.gov https://*.openstreetcam.org; connect-src https://earthquake.usgs.gov https://eonet.gsfc.nasa.gov https://api.openstreetcam.org https://api.open-meteo.com https://api.weather.gov https://services.swpc.noaa.gov">
+<style>
+body{margin:0;background:#000;color:#cde;font:12px system-ui;overflow:hidden}
+#m{position:absolute;inset:0;cursor:grab;touch-action:none;overflow:hidden}
+#m img.t{position:absolute;width:256px;height:256px;user-select:none;-webkit-user-drag:none;pointer-events:none}
+canvas#ov{position:absolute;inset:0;pointer-events:none}
+.pn{position:absolute;background:#0b1626e6;padding:8px;border-radius:6px;backdrop-filter:blur(2px)}
+#p{top:8px;left:8px;width:300px;max-height:92vh;overflow:auto}
+#info{top:8px;right:8px;width:320px;white-space:pre-wrap;max-height:80vh;overflow:auto}
+#attr{position:absolute;right:4px;bottom:2px;background:#000a;padding:2px 5px;font-size:10px}
+a{color:#8cf}#info img{max-width:100%;border-radius:4px}
+label{display:block;margin:2px 0}.row{display:flex;gap:8px;flex-wrap:wrap}
+.leg span{display:inline-block;width:10px;height:10px;margin-right:4px;border-radius:2px}
+button{background:#1a3350;color:#cde;border:1px solid #3a5a7a;border-radius:4px;padding:3px 8px;cursor:pointer;margin:2px 2px 0 0}
+button:hover{background:#244866}
+</style></head><body>
+<div id="m"></div><canvas id="ov"></canvas>
+<div id="p" class="pn">
+<b>Tessera's Eye v5</b> — unified safe live layers<br>
+<small><a href="../v4/eye4.html">v4</a> · <a href="../v3/eye3.html">v3 globe</a> · <a href="../EXCLUDED.md">excluded</a></small>
+<hr style="border-color:#234">
+<div class="row">
+<label><input type="radio" name="b" value="esri" checked> Esri z0-19</label>
+<label><input type="radio" name="b" value="usgs"> USGS z0-16</label>
+<label><input type="radio" name="b" value="gibs"> GIBS z0-8</label>
+</div>
+<label><input type="checkbox" id="online"> Online: tiles + refresh every 5 min</label>
+<label><input type="checkbox" id="street"> Click empty = KartaView street photos</label>
+<hr style="border-color:#234"><b>Layers</b>
+<label><input type="checkbox" class="ly" data-k="quakes" checked> USGS / EONET / NWS / Meteo</label>
+<label><input type="checkbox" class="ly" data-k="fires" checked> FIRMS fire cells</label>
+<label><input type="checkbox" class="ly" data-k="heat" checked> Simons heatmap</label>
+<label><input type="checkbox" class="ly" data-k="sats"> CelesTrak satellites (current)</label>
+<label><input type="checkbox" class="ly" data-k="probes" checked> Eye Shield probes</label>
+<label><input type="checkbox" class="ly" data-k="streetmarks" checked> KartaView marks</label>
+<div class="leg" style="margin-top:6px">
+<span style="background:#ff4"></span>quake
+<span style="background:#4cf"></span>natural/weather
+<span style="background:#f60"></span>fire
+<span style="background:#a8f"></span>sat
+<span style="background:#f0f"></span>probe
+<span style="background:#fff"></span>street
+</div>
+<div id="st" style="margin-top:6px"></div>
+<div id="cones" style="margin-top:6px;font-size:11px"></div>
+<button id="btnZoom">Zoom to click (×4)</button>
+<button id="btnRefresh">Refresh now</button>
+</div>
+<div id="info" class="pn">Drag to pan · wheel/double-click to zoom · click a marker to expand · click empty ground for lat/lon (and street photos if enabled). Safe layers only — see EXCLUDED.md.</div>
+<div id="attr"></div>
+<script>
+const D=__DATA__;
+const SRC={
+ esri:{u:(z,x,y)=>`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`,max:19,a:'Imagery: Esri, Maxar, Earthstar Geographics, and the GIS User Community'},
+ usgs:{u:(z,x,y)=>`https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/${z}/${y}/${x}`,max:16,a:'USGS The National Map: Orthoimagery (public domain)'},
+ gibs:{u:(z,x,y)=>`https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/${z}/${y}/${x}.jpeg`,max:8,a:'NASA GIBS / EOSDIS'}
+};
+const MAXZ=21;
+const LAY={quakes:true,fires:true,heat:true,sats:false,probes:true,streetmarks:true};
+const T5=window.T5={z:3,cx:0,cy:0,base:'esri',loads:[],fail:0,clicks:[],refreshes:[],events:D.events.slice(),street:[],probes:D.probes.slice(),sats:D.sats,kp:D.kp,expand:null};
+const m=document.getElementById('m'),ov=document.getElementById('ov'),cx=ov.getContext('2d'),info=document.getElementById('info');
+const W=()=>innerWidth,H=()=>innerHeight;
+function ll2p(la,lo,z){const s=256*2**z,r=Math.max(-85.05,Math.min(85.05,la))*Math.PI/180;return[(lo+180)/360*s,(1-Math.asinh(Math.tan(r))/Math.PI)/2*s]}
+function p2ll(x,y,z){const s=256*2**z;return[Math.atan(Math.sinh(Math.PI*(1-2*y/s)))*180/Math.PI,x/s*360-180]}
+T5.setView=(la,lo,z)=>{T5.z=z;[T5.cx,T5.cy]=ll2p(la,lo,z);draw()};
+T5.center=()=>p2ll(T5.cx,T5.cy,T5.z);
+T5.mpp=()=>156543.03392*Math.cos(T5.center()[0]*Math.PI/180)/2**T5.z;
+const cache=new Map();
+function draw(){
+ const on=document.getElementById('online').checked,src=SRC[T5.base],z=Math.round(T5.z),sz=z>src.max?src.max:z,f=2**(z-sz);
+ const tl=256*f,ox=T5.cx-W()/2,oy=T5.cy-H()/2,n=2**sz,want=new Set();
+ if(on){for(let ty=Math.floor(oy/tl);ty<=Math.floor((oy+H())/tl);ty++)for(let tx=Math.floor(ox/tl);tx<=Math.floor((ox+W())/tl);tx++){
+  if(ty<0||ty>=n)continue;const wx=((tx%n)+n)%n,k=`${T5.base}/${sz}/${wx}/${ty}`;want.add(k);let im=cache.get(k);
+  if(!im){im=new Image();im.className='t';const t0=performance.now();im.onload=()=>{T5.loads.push({k,ms:performance.now()-t0,z:sz})};im.onerror=()=>{T5.fail++};im.src=src.u(sz,wx,ty);cache.set(k,im);m.appendChild(im)}
+  im.style.display='';im.style.transform=`translate(${tx*tl-ox}px,${ty*tl-oy}px) scale(${f})`;im.style.transformOrigin='0 0'}}
+ for(const[k,im]of cache){if(!want.has(k)){im.style.display='none';if(!im.complete){im.onload=im.onerror=null;im.src='';im.remove();cache.delete(k)}}}
+ if(cache.size>400){for(const[k,im]of cache){if(!want.has(k)){im.remove();cache.delete(k)}if(cache.size<250)break}}
+ overlay();document.getElementById('attr').textContent=src.a+(z>src.max?` (overzoomed x${f})`:'');
+ const[la,lo]=T5.center();
+ const sc=D.sat_census||{};
+ document.getElementById('st').textContent=`z${z} (src z${sz}) ${la.toFixed(4)},${lo.toFixed(4)} ~${T5.mpp().toFixed(2)} m/px
+events ${T5.events.length} · fires ${D.fires.length} · sats ${sc.total||0} (LEO ${sc.LEO||0}/GEO ${sc.GEO||0}) · probes ${T5.probes.length} · Kp ${T5.kp.length?T5.kp[T5.kp.length-1][1]:'?'} · refreshes ${T5.refreshes.length}`;
+ const cn=D.cones||[];document.getElementById('cones').textContent=cn.length?('cones: '+cn.slice(0,6).map(c=>c.join(' ')).join(' · ')):'';
+}
+function heatColor(v,max){const t=max?v/max:0;return `rgba(${Math.floor(40+200*t)},${Math.floor(20+40*(1-t))},${Math.floor(80+20*t)},${0.15+0.45*t})`}
+function overlay(){
+ ov.width=W();ov.height=H();const ox=T5.cx-W()/2,oy=T5.cy-H()/2;
+ if(LAY.heat&&D.heat&&D.heat.length){
+  let mx=0;for(const row of D.heat)for(const v of row)if(v>mx)mx=v;
+  for(let i=0;i<18;i++)for(let j=0;j<36;j++){const v=D.heat[i][j];if(!v)continue;
+   const la0=i*10-90,lo0=j*10-180,[x0,y0]=ll2p(la0+10,lo0,T5.z),[x1,y1]=ll2p(la0,lo0+10,T5.z);
+   cx.fillStyle=heatColor(v,mx);cx.fillRect(x0-ox,y0-oy,Math.max(1,x1-x0),Math.max(1,y1-y0))}
+ }
+ if(LAY.fires){cx.fillStyle='#f604';for(const[la,lo,c]of D.fires){const[x,y]=ll2p(la,lo,T5.z);cx.fillRect(x-ox-2,y-oy-2,4+Math.min(c,10),4+Math.min(c,10))}}
+ if(LAY.sats&&T5.sats){for(const p of T5.sats){const[x,y]=ll2p(p[0],p[1],T5.z);if(x-ox<-2||y-oy<-2||x-ox>W()+2||y-oy>H()+2)continue;
+  cx.fillStyle=['#a8f','#8af','#fa8','#f8a'][p[2]||0];cx.fillRect(x-ox-1,y-oy-1,2,2)}}
+ if(LAY.quakes){for(const e of T5.events){let[x,y]=ll2p(e.la,e.lo,T5.z);x-=ox;y-=oy;if(x<-10||y<-10||x>W()+10||y>H()+10)continue;
+  cx.fillStyle=e.k==='earthquake'?'#ff4':(e.s==='nws'?'#f84':(e.s==='meteo'?'#4f8':'#4cf'));
+  cx.beginPath();cx.arc(x,y,3+(e.sv||0)*3,0,7);cx.fill()}}
+ if(LAY.probes){for(const p of T5.probes){const[x,y]=ll2p(p.la,p.lo,T5.z);
+  cx.fillStyle=p.sev==='critical'?'#f0f':(p.sev==='high'?'#e0e':'#c8c');cx.beginPath();cx.arc(x-ox,y-oy,5,0,7);cx.fill();
+  cx.strokeStyle='#fff8';cx.stroke()}}
+ if(LAY.streetmarks){cx.fillStyle='#fff';for(const p of T5.street){const[x,y]=ll2p(p.la,p.lo,T5.z);cx.fillRect(x-ox-3,y-oy-3,6,6)}}
+ if(T5.expand){const[x,y]=ll2p(T5.expand.la,T5.expand.lo,T5.z);cx.strokeStyle='#0ff';cx.lineWidth=2;cx.strokeRect(x-ox-12,y-oy-12,24,24)}
+}
+let drag=null,moved=0;
+m.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];moved=0;m.setPointerCapture(e.pointerId)});
+m.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];moved+=Math.abs(dx)+Math.abs(dy);T5.cx-=dx;T5.cy-=dy;drag=[e.clientX,e.clientY];draw()});
+m.addEventListener('pointerup',e=>{drag=null;if(moved<4)click(e.clientX,e.clientY)});
+function zoomAt(px,py,dz){const nz=Math.max(1,Math.min(MAXZ,T5.z+dz)),k=2**(nz-T5.z),wx=T5.cx-W()/2+px,wy=T5.cy-H()/2+py;T5.cx=wx*k-(px-W()/2);T5.cy=wy*k-(py-H()/2);T5.z=nz;draw()}
+m.addEventListener('wheel',e=>{e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1:-1)},{passive:false});
+m.addEventListener('dblclick',e=>zoomAt(e.clientX,e.clientY,1));
+function pick(px,py){
+ const ox=T5.cx-W()/2,oy=T5.cy-H()/2;let best=null,bd=14,kind=null;
+ const consider=(arr,k,rad)=>{for(const e of arr){const[x,y]=ll2p(e.la,e.lo,T5.z),d=Math.hypot(x-ox-px,y-oy-py);if(d<Math.min(bd,rad)){bd=d;best=e;kind=k}}};
+ if(LAY.streetmarks)consider(T5.street,'street',12);
+ if(LAY.probes)consider(T5.probes,'probe',14);
+ if(LAY.quakes)consider(T5.events,'event',12);
+ if(LAY.sats&&T5.sats&&T5.z>=4){for(let i=0;i<T5.sats.length;i++){const p=T5.sats[i],[x,y]=ll2p(p[0],p[1],T5.z),d=Math.hypot(x-ox-px,y-oy-py);
+  if(d<Math.min(bd,6)){bd=d;best={la:p[0],lo:p[1],i,c:p[2]};kind='sat'}}}
+ return {best,kind,bd};
+}
+function expandTo(la,lo,levels){const nz=Math.min(MAXZ,Math.round(T5.z)+(levels||4));T5.setView(la,lo,nz);T5.expand={la,lo}}
+function show(best,kind,la,lo){
+ T5.expand=best?{la:best.la,lo:best.lo}:{la,lo};
+ if(kind==='street'&&best.img){info.innerHTML=`<b>KartaView</b> ${best.dt||''}\n<img src="${best.th}"><br><a href="${best.img}" target="_blank">full image</a>\n(privacy-blurred by KartaView; position/date/image only)`}
+ else if(kind==='probe'){info.textContent=`Eye Shield probe (defensive)\n${best.kind} · ${best.sev||''}\nIP ${best.ip}\nASN ${best.asn||'?'} · CC ${best.cc}\ngeo: ${best.geo}\n${best.detail||''}\nfeeds: ${(best.feeds||[]).join(', ')}\n\nNo people/vehicles. Country-centroid or placeholder only.`}
+ else if(kind==='sat'){const n=D.sat_names[best.i]||[];info.textContent=`CelesTrak satellite\n${n[0]||'?'}\nNORAD ${n[1]||'?'} · ${n[2]||'?'}\n${best.la.toFixed(2)}, ${best.lo.toFixed(2)}\n(current SGP4 frame; not aircraft/ship)`}
+ else if(kind==='event'){info.textContent=`${best.t}\n${best.tm||''}\nsource: ${best.s} · kind: ${best.k}\n${best.cite||''}\n\nClick "Zoom to click" to expand.`}
+ else{info.textContent=`${la.toFixed(5)}, ${lo.toFixed(5)}\n\nHeat window: ${(D.heat_window||[]).join(' → ')}\nShield: ${(D.shield&&D.shield.findings_count)||0} findings · anomaly ${(D.shield&&D.shield.anomaly&&D.shield.anomaly.level)||'?'}`;}
+}
+function click(px,py){
+ const {best,kind}=pick(px,py);const[la,lo]=p2ll(T5.cx-W()/2+px,T5.cy-H()/2+py,T5.z);
+ T5.clicks.push({px,py,la,lo,hit:best?(best.t||best.kind||best.ip||'sat'):null,kind});
+ show(best,kind,la,lo);
+ if(!best&&document.getElementById('street').checked&&document.getElementById('online').checked)street(la,lo);
+ draw();
+}
+async function street(la,lo){info.textContent+=`\nsearching KartaView...`;const t0=performance.now();
+ try{const r=await fetch(`https://api.openstreetcam.org/2.0/photo/?lat=${la}&lng=${lo}&radius=300&itemsPerPage=20`),j=await r.json();
+  T5.street=(j.result&&j.result.data||[]).map(p=>({la:+p.lat,lo:+p.lng,dt:p.shotDate||'',th:p.fileurlTh,img:p.fileurlProc}));
+  T5.streetMs=performance.now()-t0;info.textContent=`${T5.street.length} KartaView photos within 300 m (${(T5.streetMs/1000).toFixed(1)} s). Click a white square.`;draw()}catch(e){info.textContent='KartaView error: '+e}}
+async function refresh(){
+ if(!document.getElementById('online').checked)return;const t0=performance.now(),ev=[],meta={};
+ try{const u=await (await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')).json();
+  for(const f of u.features){const c=f.geometry.coordinates;ev.push({k:'earthquake',s:'usgs',t:f.properties.title,la:c[1],lo:c[0],tm:new Date(f.properties.time).toISOString(),sv:Math.min(1,(f.properties.mag||0)/8),cite:f.properties.url})}
+  meta.usgs=u.features.length}catch(e){meta.usgs_err=String(e)}
+ try{const n=await (await fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=200')).json();
+  for(const e of n.events){const g=e.geometry[e.geometry.length-1];if(g.type!=='Point')continue;ev.push({k:'natural',s:'eonet',t:e.title,la:g.coordinates[1],lo:g.coordinates[0],tm:g.date,sv:.4,cite:e.link})}
+  meta.eonet=n.events.length}catch(e){meta.eonet_err=String(e)}
+ try{const nws=await (await fetch('https://api.weather.gov/alerts/active?severity=Severe,Extreme',{headers:{'Accept':'application/geo+json'}})).json();
+  let n=0;for(const f of nws.features||[]){const g=f.geometry;if(!g)continue;let la,lo;try{const c=g.coordinates;const flat=[];(function w(x){if(typeof x[0]==='number')flat.push(x);else x.forEach(w)})(c);if(!flat.length)continue;la=flat.reduce((s,p)=>s+p[1],0)/flat.length;lo=flat.reduce((s,p)=>s+p[0],0)/flat.length}catch(e){continue}
+  ev.push({k:'weather-alert',s:'nws',t:(f.properties.headline||f.properties.event||'').slice(0,90),la,lo,tm:f.properties.sent,sv:f.properties.severity==='Extreme'?1:.7,cite:f.properties['@id']||''});n++}
+  meta.nws=n}catch(e){meta.nws_err=String(e)}
+ try{const om=await (await fetch('https://api.open-meteo.com/v1/forecast?latitude=41.88,29.76,34.05,40.71,51.51,35.68,-33.87,-23.55&longitude=-87.63,-95.37,-118.24,-74.01,-0.13,139.69,151.21,-46.63&current=temperature_2m,wind_speed_10m,precipitation')).json();
+  const arr=Array.isArray(om)?om:[om];for(const c of arr){const cur=c.current;ev.push({k:'weather-now',s:'meteo',t:`${cur.temperature_2m}°C wind ${cur.wind_speed_10m} km/h`,la:c.latitude,lo:c.longitude,tm:cur.time+'Z',sv:.1,cite:'https://open-meteo.com/'})}
+  meta.meteo=arr.length}catch(e){meta.meteo_err=String(e)}
+ try{const kp=await (await fetch('https://services.swpc.noaa.gov/products/noaa-planetary-k-index.json')).json();
+  T5.kp=kp[0]&&Array.isArray(kp[0])?kp.slice(1).map(r=>[r[0],+r[1]]):kp.map(r=>[r.time_tag,+r.Kp]);meta.kp=T5.kp.length}catch(e){meta.kp_err=String(e)}
+ if(ev.length){const keep=D.events.filter(e=>!['usgs','eonet','nws','meteo'].includes(e.s));T5.events=ev.concat(keep)}
+ T5.refreshes.push({at:new Date().toISOString(),n:ev.length,ms:performance.now()-t0,meta});draw();
+}
+T5.REFRESH_MS=5*60*1000;setInterval(refresh,T5.REFRESH_MS);T5.refresh=refresh;T5.expandTo=expandTo;T5.LAY=LAY;
+document.getElementById('online').onchange=()=>{draw();refresh()};
+document.getElementById('btnRefresh').onclick=()=>{document.getElementById('online').checked=true;refresh()};
+document.getElementById('btnZoom').onclick=()=>{if(T5.expand)expandTo(T5.expand.la,T5.expand.lo,4);else{const[la,lo]=T5.center();expandTo(la,lo,4)}};
+document.querySelectorAll('input[name=b]').forEach(r=>r.onchange=()=>{T5.base=r.value;draw()});
+document.querySelectorAll('.ly').forEach(c=>{c.onchange=()=>{LAY[c.dataset.k]=c.checked;draw()};LAY[c.dataset.k]=c.checked});
+addEventListener('resize',draw);
+const q=new URLSearchParams(location.search);
+if(q.get('online')==='1')document.getElementById('online').checked=true;
+if(q.get('street')==='1')document.getElementById('street').checked=true;
+if(q.get('base'))T5.base=q.get('base');
+if(q.get('sats')==='1'){LAY.sats=true;const el=[...document.querySelectorAll('.ly')].find(x=>x.dataset.k==='sats');if(el)el.checked=true}
+T5.setView(+(q.get('lat')||20),+(q.get('lon')||0),+(q.get('z')||3));
+if(q.get('online')==='1')refresh();
+</script></body></html>

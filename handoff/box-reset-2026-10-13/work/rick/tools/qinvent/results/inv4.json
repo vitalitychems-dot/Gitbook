@@ -1,0 +1,15 @@
+{
+ "individual_acc": {
+  "A": 0.772,
+  "B": 0.781,
+  "C": 0.767
+ },
+ "majority_acc": 0.781,
+ "syndrome_answered": 215,
+ "syndrome_precision": 0.781,
+ "baseline": {
+  "acc": 0.772,
+  "precision": 0.779
+ },
+ "A_B_outcome_agreement": 0.991
+}

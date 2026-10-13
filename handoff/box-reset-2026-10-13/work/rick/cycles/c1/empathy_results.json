@@ -1,0 +1,14 @@
+{
+ "train": 36308,
+ "test": 4590,
+ "acc": 0.59,
+ "macro_f1": 0.509,
+ "per_class": {
+  "pos": 0.693,
+  "neg": 0.472,
+  "amb": 0.291,
+  "neu": 0.582
+ },
+ "majority_class": "pos",
+ "majority_acc": 0.349
+}

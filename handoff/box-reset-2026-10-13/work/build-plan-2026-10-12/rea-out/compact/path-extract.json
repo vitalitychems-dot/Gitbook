@@ -1,0 +1,201 @@
+{
+  "Grok-ready.json": {
+    "stats": {
+      "relevant_files": 850,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 13303139,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 804,
+      "visited_ast_nodes": 1375577,
+      "findings": 6083,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "coverage": "partial",
+    "nodes": 2806,
+    "edges": 3461,
+    "kind_counts": {
+      "javascript-module": 453,
+      "unknown": 1534,
+      "javascript-asset": 746,
+      "package": 11,
+      "artifact": 45,
+      "electron-renderer": 3,
+      "storage": 2,
+      "endpoint": 12
+    },
+    "path_samples": [],
+    "interesting_paths": [],
+    "electron_summary": {
+      "browser_windows": 0,
+      "explicit_web_preferences": 0,
+      "preload_entrypoints": 0,
+      "context_bridge_apis": 0,
+      "exposed_api_members": 0,
+      "ipc": {
+        "operations": 0,
+        "literal_channels": 0,
+        "dynamic_channel_operations": 0,
+        "renderer_transmissions": 0,
+        "renderer_listeners": 0,
+        "main_handlers": 0,
+        "paired_renderer_transmissions": 0,
+        "ambiguous_renderer_transmissions": 0,
+        "unpaired_literal_renderer_transmissions": 0
+      },
+      "sender_validation_observations": 0,
+      "utility_processes": 0,
+      "resolved_utility_entrypoints": 0,
+      "native_addon_bindings": 0,
+      "resolved_native_addon_bindings": 0
+    }
+  },
+  "Grok-ready__artifacts_api-server.json": {
+    "stats": {
+      "relevant_files": 333,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 4384347,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 331,
+      "visited_ast_nodes": 559849,
+      "findings": 3400,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "coverage": "partial",
+    "nodes": 1263,
+    "edges": 1622,
+    "kind_counts": {
+      "unknown": 581,
+      "javascript-module": 334,
+      "javascript-asset": 331,
+      "endpoint": 13,
+      "artifact": 3,
+      "package": 1
+    },
+    "path_samples": [],
+    "interesting_paths": [],
+    "electron_summary": {
+      "browser_windows": 0,
+      "explicit_web_preferences": 0,
+      "preload_entrypoints": 0,
+      "context_bridge_apis": 0,
+      "exposed_api_members": 0,
+      "ipc": {
+        "operations": 0,
+        "literal_channels": 0,
+        "dynamic_channel_operations": 0,
+        "renderer_transmissions": 0,
+        "renderer_listeners": 0,
+        "main_handlers": 0,
+        "paired_renderer_transmissions": 0,
+        "ambiguous_renderer_transmissions": 0,
+        "unpaired_literal_renderer_transmissions": 0
+      },
+      "sender_validation_observations": 0,
+      "utility_processes": 0,
+      "resolved_utility_entrypoints": 0,
+      "native_addon_bindings": 0,
+      "resolved_native_addon_bindings": 0
+    }
+  },
+  "Grok-ready__artifacts_mockup-sandbox.json": {
+    "stats": {
+      "relevant_files": 71,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 211713,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 67,
+      "visited_ast_nodes": 24671,
+      "findings": 816,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "coverage": "complete",
+    "nodes": 887,
+    "edges": 1007,
+    "kind_counts": {
+      "javascript-module": 813,
+      "artifact": 5,
+      "javascript-asset": 67,
+      "package": 1,
+      "electron-renderer": 1
+    },
+    "path_samples": [],
+    "interesting_paths": [],
+    "electron_summary": {
+      "browser_windows": 0,
+      "explicit_web_preferences": 0,
+      "preload_entrypoints": 0,
+      "context_bridge_apis": 0,
+      "exposed_api_members": 0,
+      "ipc": {
+        "operations": 0,
+        "literal_channels": 0,
+        "dynamic_channel_operations": 0,
+        "renderer_transmissions": 0,
+        "renderer_listeners": 0,
+        "main_handlers": 0,
+        "paired_renderer_transmissions": 0,
+        "ambiguous_renderer_transmissions": 0,
+        "unpaired_literal_renderer_transmissions": 0
+      },
+      "sender_validation_observations": 0,
+      "utility_processes": 0,
+      "resolved_utility_entrypoints": 0,
+      "native_addon_bindings": 0,
+      "resolved_native_addon_bindings": 0
+    }
+  },
+  "Grok-ready__artifacts_tessera.json": {
+    "stats": {
+      "relevant_files": 249,
+      "nested_asar_containers": 0,
+      "text_bytes_read": 2833012,
+      "invalid_utf8_files": 0,
+      "parsed_javascript_files": 245,
+      "visited_ast_nodes": 398444,
+      "findings": 1708,
+      "modules": 0,
+      "parse_failures": 0
+    },
+    "coverage": "partial",
+    "nodes": 1134,
+    "edges": 1512,
+    "kind_counts": {
+      "javascript-module": 427,
+      "javascript-asset": 245,
+      "storage": 13,
+      "unknown": 418,
+      "artifact": 5,
+      "endpoint": 24,
+      "package": 1,
+      "electron-renderer": 1
+    },
+    "path_samples": [],
+    "interesting_paths": [],
+    "electron_summary": {
+      "browser_windows": 0,
+      "explicit_web_preferences": 0,
+      "preload_entrypoints": 0,
+      "context_bridge_apis": 0,
+      "exposed_api_members": 0,
+      "ipc": {
+        "operations": 0,
+        "literal_channels": 0,
+        "dynamic_channel_operations": 0,
+        "renderer_transmissions": 0,
+        "renderer_listeners": 0,
+        "main_handlers": 0,
+        "paired_renderer_transmissions": 0,
+        "ambiguous_renderer_transmissions": 0,
+        "unpaired_literal_renderer_transmissions": 0
+      },
+      "sender_validation_observations": 0,
+      "utility_processes": 0,
+      "resolved_utility_entrypoints": 0,
+      "native_addon_bindings": 0,
+      "resolved_native_addon_bindings": 0
+    }
+  }
+}

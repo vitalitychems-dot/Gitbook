@@ -1,0 +1,581 @@
+{
+  "elapsed_sec": 107.8,
+  "files_indexed": 305496,
+  "bytes_indexed": 71768051855,
+  "node_modules_files": 54400,
+  "node_modules_bytes": 755054872,
+  "hardlink_skips": 53773,
+  "files_hashed": 240378,
+  "duplicate_groups": 19582,
+  "total_reclaimable_bytes": 21902296428,
+  "reclaimable_excl_all_nm_groups": 21878102596,
+  "reclaimable_all_nm_groups": 24193832,
+  "top_groups": [
+    {
+      "sha256": "b7a2b5e239f8064fba140b75be9f5a89d629cf554fdc5021b59784342bc7be05",
+      "size": 93635859,
+      "count": 17,
+      "wasted": 1498173744,
+      "paths": [
+        "/workspace/build-gate/full-f76d/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/einstein/r4/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/gitmesh/repo/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/tesseract_consolidated.zip",
+        "/workspace/rea-batch/b3-collink1007_amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/rea-batch/b3-collink1007_amber-flame-tiger-sand/artifacts/drive/tesseract_consolidated.zip",
+        "/workspace/rea-batch/b3-collink1007_z/artifacts/drive/1e3Vip.zip",
+        "/workspace/rea-batch/b3-collink1007_z/artifacts/drive/tesseract_consolidated.zip",
+        "/workspace/rea-batch/tessera-v2/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/rick/src/Gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/tb3/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/tess-opt/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/tv3/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip",
+        "/workspace/tw/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "996102e83517161ca63fee7b48e2dfde0fae89c4d382887de416bf012c3b1af9",
+      "size": 47185920,
+      "count": 8,
+      "wasted": 330301440,
+      "paths": [
+        "/workspace/build-gate/full-f76d/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/einstein/r4/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/einstein/round3/tess/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/rea-batch/b2-TESSERA/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/rea-batch/tessera-v2/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/tess-opt/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/tv3/archive/sections/3_9_1776105526328/part-04",
+        "/workspace/tw/archive/sections/3_9_1776105526328/part-04"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "0f5a4962a0d3737250206b8bcf069b2bb52cdd9470a2610d3158bf80a8304d40",
+      "size": 47185920,
+      "count": 8,
+      "wasted": 330301440,
+      "paths": [
+        "/workspace/build-gate/full-f76d/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/einstein/r4/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/einstein/round3/tess/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/rea-batch/b2-TESSERA/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/rea-batch/tessera-v2/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/tess-opt/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/tv3/archive/sections/3_9_1776105526328/part-03",
+        "/workspace/tw/archive/sections/3_9_1776105526328/part-03"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "b2cfd889f271df96097040559c2d31ea6cc83b00c79102c00095dd2cdbb9bc59",
+      "size": 47185920,
+      "count": 8,
+      "wasted": 330301440,
+      "paths": [
+        "/workspace/build-gate/full-f76d/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/einstein/r4/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/einstein/round3/tess/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/rea-batch/b2-TESSERA/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/rea-batch/tessera-v2/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/tess-opt/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/tv3/archive/sections/3_9_1776105526328/part-01",
+        "/workspace/tw/archive/sections/3_9_1776105526328/part-01"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "467e9d54015e0a0a581588d53883ceb067cfc16773785bf67cd1b3c7089b9214",
+      "size": 47185920,
+      "count": 8,
+      "wasted": 330301440,
+      "paths": [
+        "/workspace/build-gate/full-f76d/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/einstein/r4/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/einstein/round3/tess/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/rea-batch/b2-TESSERA/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/rea-batch/tessera-v2/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/tess-opt/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/tv3/archive/sections/3_9_1776105526328/part-02",
+        "/workspace/tw/archive/sections/3_9_1776105526328/part-02"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "e8f4e8daefbce456d09e07f04b6acd5311c0f6657aa7b6b3fc534ffd09a75034",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-01",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-01",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-01"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "23ca5f12d07f2340c1fc26d677fa79397d1fc72e14329703c8c72844a1866f2b",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-03",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-03",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-03"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "aa64566a90f2e01769e46f80b364b4c97292ca0786d20533088c9e517305d23c",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-02",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-02",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-02"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "a19ac8f99768e958b7e29011d928310daf4950342a2f0c58838e3a3d5e2ace94",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-06",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-06",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-06"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "04161576c76f5acdccdbab0e1645bd5d43e9a85606482488d03591e7938c4507",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-05",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-05",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-05"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "8d1bfb4ef584fc5d738eb67c8d74931694820bdac42d1bf4fd196db4b6378d68",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-07",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-07",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-07"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "aeb6f85c3d08ef8ab5b5e1d96d40cf7c8e92c641ca17867b2bdf68d81becbef9",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/8-2/part-04",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/8-2/part-04",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/8-2/part-04"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "8f59b59d4cd9003930da403ac5edb6188b36219725235a10341e83f40ec4da50",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-03",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-03",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-03"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "3d32b2b05f81b4d507a5986b6c65b4abf04abeeed9528b77711238a068125974",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-02",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-02",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-02"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "dee619454812e8fed3bac80b8a710f0aa23876997ddd308e439a10a08df96c3c",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-06",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-06",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-06"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "704df7df7b78b4da5b5388ebfe30a929e68d26cba0d1685c97de78e445e1a84d",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-05",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-05",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-05"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "672ca32fef89c73868da38939977f2b8d64f3003c7234cf51417c434e1f74de9",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-08",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-08",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-08"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "b1d9e0ecff333ed6201286fa40a1c14caedee64a7516b6d54a7e4b7f05ef08ff",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-04",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-04",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-04"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "aeb83d2a01bc8e26403674592238c2ed42128a89779e326322cd51f038aedd79",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-01",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-01",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-01"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "25e816c5df5b249e14c5a93787a4c9a30f5a61026474aa83204fccbec8641218",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseract-AI-5/part-07",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseract-AI-5/part-07",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseract-AI-5/part-07"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "ef3a3663ca8c47fc8b2d6ad8fb3569e1f08814b2735a5b2548993f1e991f4e46",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-05",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-05",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-05"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "0e1883912533d958e6d0b8cc756443763618e3f0cf285b7cdb12d8cfadf33390",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-04",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-04",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-04"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "fd3f0b939f628c2010a2ca414ec81b1dd12ec248440e9432ccba7c4e24589aa6",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-08",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-08",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-08"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "09316d05d244f0b786fcf06e666de7e9086222b20403b6d1bab7562efd31a557",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-10",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-10",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-10"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "a18a2bcbde91627b5d461e530bc756bf7fc4e5970bac727e987023d375542f81",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-12",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-12",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-12"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "798e6a8aceb59a1ba875a9a5da7b728c0e625637e668b27ea3597faeca7e5060",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-03",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-03",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-03"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "00e4c849c3831d000d1a269981f46813abf865c2b93defaa8dc11463b20b7ede",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-09",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-09",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-09"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "ead74048798ea51353e8078b6a17d9b3dfbe466d5ebf843993f6b950619a791e",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-02",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-02",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-02"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "6c63ae6186f8933188e43e216a63eed65a0e62979dac5adb1e78726e253beadd",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-07",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-07",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-07"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    },
+    {
+      "sha256": "33c26fce2a5bf7bf8e4df7135249a1945419f1bf17431440c506b0b8152721a8",
+      "size": 47185920,
+      "count": 3,
+      "wasted": 94371840,
+      "paths": [
+        "/workspace/gitmesh/repo/archive/drive-rest/Tesseracxt9/part-11",
+        "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/drive-rest/Tesseracxt9/part-11",
+        "/workspace/rick/src/Gitbook/archive/drive-rest/Tesseracxt9/part-11"
+      ],
+      "all_node_modules": false,
+      "any_node_modules": false,
+      "nm_count": 0
+    }
+  ],
+  "folder_waste": {
+    "/workspace/rea-batch": 9689600857,
+    "/workspace/rick": 6316062131,
+    "/workspace/einstein": 1573252406,
+    "/workspace/tv3": 781134063,
+    "/workspace/tw": 780296378,
+    "/workspace/tess-opt": 779875383,
+    "/workspace/gitmesh": 585183365,
+    "/workspace/tb3": 558260643,
+    "/workspace/repo-lab": 306332422,
+    "/workspace/rea-inventory": 253239528,
+    "/workspace/build-gate": 67049303,
+    "/workspace/node22": 55602300,
+    "/workspace/tools": 48548187,
+    "/workspace/agent-tools": 38874902,
+    "/home/box/.local": 24495938,
+    "/workspace/pubscan": 14406493,
+    "/workspace/build-plan-2026-10-12": 11421767,
+    "/workspace/consolidation": 9243209,
+    "/home/box/.corepack": 3501076,
+    "/workspace/gitbook-cordnation": 1470388,
+    "/workspace/cloud-agent-artifacts": 1209658,
+    "/home/box/chrome-profile": 1104641,
+    "/workspace/tessera-brain": 374824,
+    "/workspace/improve-from-logs-2026-10-12": 281249,
+    "/home/box/.npm": 264668,
+    "/workspace/security-gate": 191462,
+    "/home/box/.cache": 147623,
+    "/workspace/evals": 98778,
+    "/home/box/.cursor": 79641,
+    "/workspace/gitbook-gate-feaeb55": 68493,
+    "/workspace/rea-categories": 67983,
+    "/workspace/gitbook-gate-feaeb558": 63406,
+    "/workspace/gitbook-gate-beadc44": 63353,
+    "/workspace/gitbook-gate-e73fb185": 55787,
+    "/workspace/gitbook-gate-fb984ad": 55250,
+    "/workspace/gitbook-gate-1e3bb50": 50832,
+    "/workspace/build-o": 41191,
+    "/home/box/sand-data": 30048,
+    "/workspace/sec-retro": 26747,
+    "/workspace/tess-fix.git": 26350,
+    "/workspace/sec-history": 26340,
+    "/workspace/WORK=": 23739,
+    "/workspace/full-picture": 21138,
+    "/workspace/ollama-home": 11357,
+    "/workspace/ollama-install": 11357,
+    "/workspace/hyb-selffix": 10945,
+    "/workspace/gitbookai": 9994,
+    "/workspace/improvements": 9559,
+    "/workspace/gitbook-gate-95993af": 8761,
+    "/workspace/glm53f": 6372,
+    "[REDACTED-PATH] 2047,
+    "/workspace/learning-rate": 1809,
+    "/workspace/backups": 287
+  },
+  "folder_dup_bytes": {
+    "/workspace/rea-batch": 10709023371,
+    "/workspace/rick": 6316070616,
+    "/workspace/gitmesh": 6255216708,
+    "/workspace/einstein": 1579664186,
+    "/workspace/build-gate": 838259421,
+    "/workspace/tv3": 781134063,
+    "/workspace/tw": 780296378,
+    "/workspace/tess-opt": 779875383,
+    "/workspace/tb3": 558260643,
+    "/workspace/repo-lab": 320725912,
+    "/workspace/rea-inventory": 260997246,
+    "/workspace/agent-tools": 63863259,
+    "/workspace/node22": 57534793,
+    "/home/box/.cache": 56765620,
+    "/workspace/tools": 49911397,
+    "/home/box/.local": 36922194,
+    "/home/box/.corepack": 23789104,
+    "/home/box/sand-data": 16990330,
+    "/home/box/.npm": 15322120,
+    "/workspace/pubscan": 14406575,
+    "/workspace/build-plan-2026-10-12": 11451175,
+    "/workspace/consolidation": 9243209,
+    "/workspace/cr": 7334039,
+    "/home/box/chrome-profile": 2165003,
+    "/workspace/gitbook-cordnation": 2081275,
+    "/workspace/cloud-agent-artifacts": 1209658,
+    "/workspace/tessera-brain": 749577,
+    "/workspace/improve-from-logs-2026-10-12": 297290,
+    "/workspace/security-gate": 191462,
+    "/home/box/.cursor": 159282,
+    "/workspace/evals": 134413,
+    "/workspace/rea-categories": 70250,
+    "/workspace/gitbook-gate-feaeb55": 68493,
+    "/workspace/gitbook-gate-feaeb558": 63406,
+    "/workspace/gitbook-gate-beadc44": 63353,
+    "/workspace/gitbook-gate-e73fb185": 55787,
+    "/workspace/gitbook-gate-1e3bb50": 55250,
+    "/workspace/gitbook-gate-fb984ad": 55250,
+    "/workspace/WORK=": 47478,
+    "/workspace/build-o": 41191,
+    "/workspace/backups": 27037,
+    "/workspace/sec-retro": 26882,
+    "/workspace/tess-fix.git": 26350,
+    "/workspace/sec-history": 26340,
+    "/workspace/full-picture": 21138,
+    "/workspace/ollama-home": 11357,
+    "/workspace/ollama-install": 11357,
+    "/workspace/hyb-selffix": 10945,
+    "/workspace/gitbookai": 9994,
+    "/workspace/improvements": 9559,
+    "/workspace/gitbook-gate-95993af": 8761,
+    "/workspace/glm53f": 8496,
+    "[REDACTED-PATH] 2047,
+    "/workspace/learning-rate": 1809,
+    "/workspace/cl1-sim": 71
+  }
+}

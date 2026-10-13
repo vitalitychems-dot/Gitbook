@@ -1,0 +1,20 @@
+{
+ "load1": 2.78,
+ "ncpu": 8,
+ "threshold": 6.0,
+ "chosen_ncand": 30,
+ "test15": {
+  "recall5": 0.9674,
+  "acc": 0.1953,
+  "tokens_brief": 2311.5
+ },
+ "test30": {
+  "recall5": 0.9674,
+  "acc": 0.1953,
+  "tokens_brief": 2326.2
+ },
+ "p50_15": 55.12,
+ "tot_15": 13293,
+ "p50_30": 56.44,
+ "tot_30": 13746
+}

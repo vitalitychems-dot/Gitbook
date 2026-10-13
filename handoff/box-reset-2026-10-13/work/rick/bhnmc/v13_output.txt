@@ -1,0 +1,10 @@
+{
+ "version": "1.3",
+ "seed": 42,
+ "feature_dims": 192,
+ "ridge_acc": 1.0,
+ "rbf_acc": 1.0,
+ "qi_ridge_acc": 1.0,
+ "dna_sequence_string": "CGCTGGTTGTGCGGTTAGCTGTAAACACACTAGTAGACTGTCACGCGCTAAACTCTAGCTACGA"
+}
+DNA: CGCTGGTTGTGCGGTTAGCTGTAAACACACTAGTAGACTGTCACGCGCTAAACTCTAGCTACGA

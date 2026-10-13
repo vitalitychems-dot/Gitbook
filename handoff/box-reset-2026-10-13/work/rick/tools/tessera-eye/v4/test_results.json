@@ -1,0 +1,152 @@
+{
+ "checks": [
+  [
+   "drag moves map by exactly the pointer delta (300,200 px)",
+   true,
+   [
+    300,
+    200.00000000000023
+   ]
+  ],
+  [
+   "wheel zooms 4->19 in 15 events, keeps point under cursor",
+   true,
+   {
+    "z": 19,
+    "center": [
+     41.8827,
+     -87.6233
+    ]
+   }
+  ],
+  [
+   "wheel out",
+   true,
+   17
+  ],
+  [
+   "click on marker opens its details",
+   true,
+   {
+    "px": 640,
+    "py": 400,
+    "la": 38.7864990234375,
+    "lo": -122.768669128418,
+    "hit": "M 1.0 - 1 km NW of The Geysers, CA"
+   }
+  ],
+  [
+   "click on empty map reports coordinates",
+   true,
+   "33.46613, -134.63390"
+  ],
+  [
+   "refresh interval is 5 minutes",
+   true,
+   300000
+  ],
+  [
+   "esri z19 tiles stream with no failures",
+   true,
+   {
+    "tiles": 24,
+    "fail": 0,
+    "median_ms": 316,
+    "p95_ms": 538,
+    "screen_full_s": 0.61
+   }
+  ],
+  [
+   "usgs z16 tiles stream with no failures",
+   true,
+   {
+    "tiles": 24,
+    "fail": 0,
+    "median_ms": 102,
+    "p95_ms": 108,
+    "screen_full_s": 0.2
+   }
+  ],
+  [
+   "gibs z8 tiles stream with no failures",
+   true,
+   {
+    "tiles": 24,
+    "fail": 0,
+    "median_ms": 202,
+    "p95_ms": 228,
+    "screen_full_s": 0.41
+   }
+  ],
+  [
+   "live feed refresh pulled USGS+EONET",
+   true,
+   {
+    "at": "2026-10-13T07:53:44.666Z",
+    "n": 439,
+    "ms": 214.89999997615814
+   }
+  ],
+  [
+   "KartaView keyless photos near click, only position/date/image fields",
+   true,
+   {
+    "photos": 6,
+    "ms": 1656.8999999761581,
+    "fields": [
+     "la",
+     "lo",
+     "dt",
+     "th",
+     "img"
+    ]
+   }
+  ],
+  [
+   "no remote scripts; no tracking terms in page code",
+   true,
+   []
+  ]
+ ],
+ "metrics": {
+  "z19_m_per_px": 0.22229833354674633,
+  "esri_z19": {
+   "tiles": 24,
+   "fail": 0,
+   "median_ms": 316,
+   "p95_ms": 538,
+   "screen_full_s": 0.61
+  },
+  "usgs_z16": {
+   "tiles": 24,
+   "fail": 0,
+   "median_ms": 102,
+   "p95_ms": 108,
+   "screen_full_s": 0.2
+  },
+  "gibs_z8": {
+   "tiles": 24,
+   "fail": 0,
+   "median_ms": 202,
+   "p95_ms": 228,
+   "screen_full_s": 0.41
+  },
+  "refresh": {
+   "at": "2026-10-13T07:53:44.666Z",
+   "n": 439,
+   "ms": 214.89999997615814
+  },
+  "shot_bytes": 1753769,
+  "kartaview": {
+   "photos": 6,
+   "ms": 1656.8999999761581,
+   "fields": [
+    "la",
+    "lo",
+    "dt",
+    "th",
+    "img"
+   ]
+  }
+ }
+}

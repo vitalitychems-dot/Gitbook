@@ -1,0 +1,80 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Tessera's Eye v4</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob: https://server.arcgisonline.com https://basemap.nationalmap.gov https://gibs.earthdata.nasa.gov https://*.openstreetcam.org; connect-src https://earthquake.usgs.gov https://eonet.gsfc.nasa.gov https://api.openstreetcam.org">
+<style>body{margin:0;background:#000;color:#cde;font:12px system-ui;overflow:hidden}#m{position:absolute;inset:0;cursor:grab;touch-action:none;overflow:hidden}
+#m img.t{position:absolute;width:256px;height:256px;user-select:none;-webkit-user-drag:none;pointer-events:none}
+canvas#ov{position:absolute;inset:0;pointer-events:none}
+.pn{position:absolute;background:#0b1626d8;padding:8px;border-radius:6px}#p{top:8px;left:8px;width:260px}#info{top:8px;right:8px;width:300px;white-space:pre-wrap;max-height:80vh;overflow:auto}
+#attr{position:absolute;right:4px;bottom:2px;background:#000a;padding:2px 5px;font-size:10px}a{color:#8cf}#info img{max-width:100%}</style></head><body>
+<div id="m"></div><canvas id="ov"></canvas>
+<div id="p" class="pn"><b>Tessera's Eye v4</b> (flat deep-zoom; <a href="../v3/eye3.html">v3 globe</a>)<br>
+<label><input type="radio" name="b" value="esri" checked> Esri World Imagery (z0-19)</label>
+<label><input type="radio" name="b" value="usgs"> USGS National Map ortho (US, z0-16)</label>
+<label><input type="radio" name="b" value="gibs"> NASA GIBS Blue Marble (z0-8)</label>
+<label><input type="checkbox" id="online"> Online: stream tiles + refresh feeds every 5 min</label>
+<label><input type="checkbox" id="street"> Click = KartaView street photos (keyless, privacy-blurred)</label>
+<div id="st"></div></div>
+<div id="info" class="pn">Drag to pan, wheel/double-click to zoom, click a marker for details.</div>
+<div id="attr"></div>
+<script>
+const D=__DATA__;
+const SRC={esri:{u:(z,x,y)=>`https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/${z}/${y}/${x}`,max:19,a:'Imagery: Esri, Maxar, Earthstar Geographics, and the GIS User Community'},
+usgs:{u:(z,x,y)=>`https://basemap.nationalmap.gov/arcgis/rest/services/USGSImageryOnly/MapServer/tile/${z}/${y}/${x}`,max:16,a:'USGS The National Map: Orthoimagery (public domain)'},
+gibs:{u:(z,x,y)=>`https://gibs.earthdata.nasa.gov/wmts/epsg3857/best/BlueMarble_ShadedRelief_Bathymetry/default/GoogleMapsCompatible_Level8/${z}/${y}/${x}.jpeg`,max:8,a:'NASA GIBS / EOSDIS'}};
+const MAXZ=21;// beyond source max, tiles are overzoomed (scaled), no new detail
+const T4=window.T4={z:3,cx:0,cy:0,base:'esri',loads:[],fail:0,clicks:[],refreshes:[],events:D.events,street:[]};
+const m=document.getElementById('m'),ov=document.getElementById('ov'),cx=ov.getContext('2d'),info=document.getElementById('info');
+const W=()=>innerWidth,H=()=>innerHeight;
+function ll2p(la,lo,z){const s=256*2**z,r=Math.max(-85.05,Math.min(85.05,la))*Math.PI/180;return[(lo+180)/360*s,(1-Math.asinh(Math.tan(r))/Math.PI)/2*s]}
+function p2ll(x,y,z){const s=256*2**z;return[Math.atan(Math.sinh(Math.PI*(1-2*y/s)))*180/Math.PI,x/s*360-180]}
+T4.setView=(la,lo,z)=>{T4.z=z;[T4.cx,T4.cy]=ll2p(la,lo,z);draw()};
+T4.center=()=>p2ll(T4.cx,T4.cy,T4.z);
+T4.mpp=()=>156543.03392*Math.cos(T4.center()[0]*Math.PI/180)/2**T4.z;
+const cache=new Map();let gen=0;
+function draw(){const on=document.getElementById('online').checked,src=SRC[T4.base],z=Math.round(T4.z),sz=z>src.max?src.max:z,f=2**(z-sz);
+ const tl=256*f,ox=T4.cx-W()/2,oy=T4.cy-H()/2,n=2**sz,want=new Set();
+ if(on){for(let ty=Math.floor(oy/tl);ty<=Math.floor((oy+H())/tl);ty++)for(let tx=Math.floor(ox/tl);tx<=Math.floor((ox+W())/tl);tx++){
+  if(ty<0||ty>=n)continue;const wx=((tx%n)+n)%n,k=`${T4.base}/${sz}/${wx}/${ty}`;want.add(k);let im=cache.get(k);
+  if(!im){im=new Image();im.className='t';const t0=performance.now();im.onload=()=>{T4.loads.push({k,ms:performance.now()-t0,z:sz})};im.onerror=()=>{T4.fail++};im.src=src.u(sz,wx,ty);cache.set(k,im);m.appendChild(im)}
+  im.style.display='';im.style.transform=`translate(${tx*tl-ox}px,${ty*tl-oy}px) scale(${f})`;im.style.transformOrigin='0 0'}}
+ for(const[k,im]of cache){if(!want.has(k)){im.style.display='none';if(!im.complete){im.onload=im.onerror=null;im.src='';im.remove();cache.delete(k)}}}// cancel off-screen downloads
+ if(cache.size>400){for(const[k,im]of cache){if(!want.has(k)){im.remove();cache.delete(k)}if(cache.size<250)break}}
+ overlay();document.getElementById('attr').textContent=src.a+(z>src.max?` (overzoomed x${f})`:'');
+ const[la,lo]=T4.center();document.getElementById('st').textContent=`z${z} (source z${sz}) ${la.toFixed(4)},${lo.toFixed(4)} ~${T4.mpp().toFixed(2)} m/px | events ${T4.events.length} | refreshes ${T4.refreshes.length}`}
+function overlay(){ov.width=W();ov.height=H();const ox=T4.cx-W()/2,oy=T4.cy-H()/2,s=256*2**T4.z;
+ cx.fillStyle='#f604';for(const[la,lo,c]of D.fires){const[x,y]=ll2p(la,lo,T4.z);cx.fillRect(x-ox-2,y-oy-2,4+Math.min(c,10),4+Math.min(c,10))}
+ for(const e of T4.events){let[x,y]=ll2p(e.la,e.lo,T4.z);x-=ox;y-=oy;if(x<-10||y<-10||x>W()+10||y>H()+10)continue;
+  cx.fillStyle=e.k=='earthquake'?'#ff4':'#4cf';cx.beginPath();cx.arc(x,y,3+(e.sv||0)*3,0,7);cx.fill()}
+ cx.fillStyle='#fff';for(const p of T4.street){const[x,y]=ll2p(p.la,p.lo,T4.z);cx.fillRect(x-ox-3,y-oy-3,6,6)}}
+// input
+let drag=null,moved=0;
+m.addEventListener('pointerdown',e=>{drag=[e.clientX,e.clientY];moved=0;m.setPointerCapture(e.pointerId)});
+m.addEventListener('pointermove',e=>{if(!drag)return;const dx=e.clientX-drag[0],dy=e.clientY-drag[1];moved+=Math.abs(dx)+Math.abs(dy);T4.cx-=dx;T4.cy-=dy;drag=[e.clientX,e.clientY];draw()});
+m.addEventListener('pointerup',e=>{drag=null;if(moved<4)click(e.clientX,e.clientY)});
+function zoomAt(px,py,dz){const nz=Math.max(1,Math.min(MAXZ,T4.z+dz)),k=2**(nz-T4.z),wx=T4.cx-W()/2+px,wy=T4.cy-H()/2+py;T4.cx=wx*k-(px-W()/2);T4.cy=wy*k-(py-H()/2);T4.z=nz;draw()}
+m.addEventListener('wheel',e=>{e.preventDefault();zoomAt(e.clientX,e.clientY,e.deltaY<0?1:-1)},{passive:false});
+m.addEventListener('dblclick',e=>zoomAt(e.clientX,e.clientY,1));
+function click(px,py){const ox=T4.cx-W()/2,oy=T4.cy-H()/2;let best=null,bd=12;
+ for(const e of T4.events.concat(T4.street)){const[x,y]=ll2p(e.la,e.lo,T4.z),d=Math.hypot(x-ox-px,y-oy-py);if(d<bd){bd=d;best=e}}
+ const[la,lo]=p2ll(ox+px,oy+py,T4.z);T4.clicks.push({px,py,la,lo,hit:best?(best.t||'street'):null});
+ if(best&&best.img){info.innerHTML=`KartaView photo ${best.dt||''}<br><img src="${best.th}"><br><a href="${best.img}" target="_blank">full image</a> (privacy-blurred by KartaView)`}
+ else if(best){info.textContent=`${best.t}\n${best.tm||''}\nsource: ${best.s}\n${best.cite||''}`}
+ else{info.textContent=`${la.toFixed(5)}, ${lo.toFixed(5)}`;if(document.getElementById('street').checked&&document.getElementById('online').checked)street(la,lo)}}
+async function street(la,lo){info.textContent+='\nsearching KartaView...';const t0=performance.now();
+ try{const r=await fetch(`https://api.openstreetcam.org/2.0/photo/?lat=${la}&lng=${lo}&radius=300&itemsPerPage=20`),j=await r.json();
+  T4.street=(j.result&&j.result.data||[]).map(p=>({la:+p.lat,lo:+p.lng,dt:p.shotDate||'',th:p.fileurlTh,img:p.fileurlProc}));// keep only position, date, image URLs
+  T4.streetMs=performance.now()-t0;info.textContent=`${T4.street.length} KartaView photos within 300 m (${(T4.streetMs/1000).toFixed(1)} s). Click a white square.`;draw()}catch(e){info.textContent='KartaView error: '+e}}
+// live refresh
+async function refresh(){if(!document.getElementById('online').checked)return;const t0=performance.now(),ev=[];
+ try{const u=await (await fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day.geojson')).json();
+  for(const f of u.features){const c=f.geometry.coordinates;ev.push({k:'earthquake',s:'usgs',t:f.properties.title,la:c[1],lo:c[0],tm:new Date(f.properties.time).toISOString(),sv:Math.min(1,(f.properties.mag||0)/8),cite:f.properties.url})}}catch(e){}
+ try{const n=await (await fetch('https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=200')).json();
+  for(const e of n.events){const g=e.geometry[e.geometry.length-1];if(g.type!='Point')continue;ev.push({k:'natural',s:'eonet',t:e.title,la:g.coordinates[1],lo:g.coordinates[0],tm:g.date,sv:.4,cite:e.link})}}catch(e){}
+ if(ev.length){T4.events=ev.concat(D.events.filter(e=>e.s!='usgs'&&e.s!='eonet'))}
+ T4.refreshes.push({at:new Date().toISOString(),n:ev.length,ms:performance.now()-t0});draw()}
+T4.REFRESH_MS=5*60*1000;setInterval(refresh,T4.REFRESH_MS);T4.refresh=refresh;
+document.getElementById('online').onchange=()=>{draw();refresh()};
+document.querySelectorAll('input[name=b]').forEach(r=>r.onchange=()=>{T4.base=r.value;draw()});
+addEventListener('resize',draw);
+const q=new URLSearchParams(location.search);if(q.get('online')=='1')document.getElementById('online').checked=true;if(q.get('base'))T4.base=q.get('base');
+T4.setView(+(q.get('lat')||20),+(q.get('lon')||0),+(q.get('z')||3));if(q.get('online')=='1')refresh();
+</script></body></html>

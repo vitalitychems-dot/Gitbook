@@ -92,3 +92,34 @@ Rules: no push or merge without the gates; merge freeze needs 'Security PASS <he
 
 ## work/
 210 files, 19M. These are unique (deduped by sha256) small files: gate reports, improvements, dedupe notes, evals, logs. 64 files with key/token/URL-credential pattern hits were dropped. gitleaks: 0 leaks.
+
+## Update 2 (6:47 AM CT): "Complete all and push to GitHub so nothing is lost"
+Everything below was redacted: secret values became `[REDACTED]`, and secrets or 1T-vault paths became `[REDACTED-PATH]`. Final gitleaks pass over this whole folder (/workspace/pubscan/gl.toml): **0 findings**.
+- `work/security-gate/`, `work/build-gate/`, `work/improvements/gates/security.md`, ...: the 64 reports dropped in commit 1, now redacted. The remaining `ghp_`/`AKIA`/`PRIVATE KEY` strings are pattern *descriptions*, not values.
+- `work/patches/`: uncommitted changes in `/workspace/sec-retro/gbfix/r` (Gitbook @243ddd4b, 3 files) and `/workspace/rea-batch/amber-flame-tiger-sand` (@781f30a9, 2 files).
+- `work/rick/`, `work/build-plan-2026-10-12/`, `work/rea-inventory/` (non-git files only), `work/pubscan/` (scripts and path lists; leaks.json/gl.json excluded): unique text files under 5 MB.
+- `work/dedupe/all-groups.jsonl.gz`, `work/learning-rate/results/dense_index.json.gz`
+- `transcripts/cloud-agents/*.jsonl.gz`: 49 cloud-agent transcripts (raw jsonl, redacted).
+- `repos/tess-fix-unpushed.bundle`: incremental bundle of the 5 refs in /workspace/tess-fix.git that are not on GitHub TESSERA (main c5143bd9, desk/consolidation-pointer, feat/local-pen-adapter, fix/api-server-db-optional-boot, gitai/moltbook-real-avatars; 6 commits). gitleaks: no leaks (a partial scan, because the clone is blobless).
+- `repos/tessera-loop.bundle`: /workspace/si/tessera-loop.bundle (branch loop/self-improve-0token 34e569ba, prerequisite TESSERA 47983dda). It replaced /workspace/si/fx, which another agent removed at 6:19 AM. gitleaks: no leaks.
+- `archives/rick-save.tgz`: gitleaks: no leaks.
+
+## Restore
+```bash
+git clone https://github.com/vitalitychems-dot/TESSERA.git && cd TESSERA
+git fetch ../Gitbook/handoff/box-reset-2026-10-13/repos/tess-fix-unpushed.bundle 'refs/heads/*:refs/remotes/tessfix/*'
+git fetch origin 47983ddabd96c7804845705bc3d2b9eac0da2c4d   # prerequisite, if it is not already present
+git fetch ../Gitbook/handoff/box-reset-2026-10-13/repos/tessera-loop.bundle 'refs/heads/*:refs/heads/*'
+# Patches: clone the repo at the listed SHA, then `git apply work/patches/<name>.patch`
+# Archives: tar xzf archives/rick-save.tgz -C /workspace/
+# gz: gunzip -k <file>.gz ; work/ files go back under /workspace/<same relative path>
+```
+
+## Still NOT on GitHub (deliberately)
+- The ollama installs: `/workspace/ollama-install`, `/workspace/ollama-home` (about 2.2 GB each). Reinstall ollama and re-pull the models.
+- `/workspace/backups/TESSERA-git-crypt.key`: a key, so excluded by rule. **Save it out-of-band (Father) before the reset, or the encrypted TESSERA files cannot be decrypted.**
+- `/workspace/backups/TESSERA-pre-public-2026-10-12.git`, `/workspace/pubscan/final.git`, `/workspace/sec-history/TESSERA`: pre-scrub TESSERA history that contains the leaked secrets the purge was for. Excluded.
+- `/workspace/pubscan/leaks.json`, `gl.json`: leak reports (they contain the values). Excluded.
+- Name-filtered files (secret/key/token/.env in the path) and `/workspace/secrets`: excluded.
+- Dirty third-party clones in `rea-inventory/` (tesseract3, TESS, Zz, sentiment-analysis, signal-protocol, tensorflow-js, tink, twilio-node, vix-analysis, 1): only local edits to other people's repos. Not captured. Every rea-inventory repo is 0 commits ahead.
+- `/workspace/tess-fix.git`, full: only the unpushed part is bundled. The rest is on GitHub.

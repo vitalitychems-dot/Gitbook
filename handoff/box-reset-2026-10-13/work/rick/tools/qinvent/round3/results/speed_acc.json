@@ -1,0 +1,155 @@
+{
+ "6_resonance_batch": {
+  "seq_total_ms": 13136,
+  "resonant_total_ms": 13409,
+  "speedup": 0.98
+ },
+ "7_bifilar_cache": {
+  "nocache": {
+   "hit_rate": 0.0,
+   "total_s": 37.52
+  },
+  "exact_only": {
+   "hit_rate": 0.613,
+   "total_s": 13.72
+  },
+  "bifilar": {
+   "hit_rate": 0.707,
+   "total_s": 10.38
+  }
+ },
+ "8_canon_memo": {
+  "base": {
+   "recall5": 0.9674,
+   "acc": 0.1953,
+   "p50_ms": 55.1,
+   "total_ms": 13198
+  },
+  "memo": {
+   "recall5": 0.9674,
+   "acc": 0.1953,
+   "p50_ms": 57.14,
+   "total_ms": 13909
+  }
+ },
+ "9_thermal_ncand": {
+  "ncand10": {
+   "recall5": 0.9351,
+   "acc": 0.6108,
+   "p50_ms": 43.12,
+   "total_ms": 9076
+  },
+  "ncand15": {
+   "recall5": 0.9351,
+   "acc": 0.6108,
+   "p50_ms": 48.19,
+   "total_ms": 9548
+  },
+  "ncand30": {
+   "recall5": 0.9351,
+   "acc": 0.6108,
+   "p50_ms": 44.27,
+   "total_ms": 9222
+  },
+  "test_ncand15": {
+   "recall5": 0.9674,
+   "acc": 0.1953,
+   "p50_ms": 54.57,
+   "total_ms": 13061
+  },
+  "test_ncand30": {
+   "recall5": 0.9674,
+   "acc": 0.1953,
+   "p50_ms": 56.76,
+   "total_ms": 14152
+  },
+  "loadavg_now": "3.31"
+ },
+ "links": 0,
+ "13_spread": {
+  "{\"spread\": 0.1}": {
+   "dev": {
+    "recall5": 0.9351,
+    "acc": 0.6108,
+    "p50_ms": 43.49,
+    "total_ms": 9079
+   },
+   "test": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 55.2,
+    "total_ms": 13230
+   }
+  },
+  "{\"spread\": 0.3}": {
+   "dev": {
+    "recall5": 0.9351,
+    "acc": 0.6108,
+    "p50_ms": 42.91,
+    "total_ms": 8772
+   },
+   "test": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 55.76,
+    "total_ms": 13451
+   }
+  }
+ },
+ "14_prior_tfidf": {
+  "{\"prior\": 0.5}": {
+   "dev": {
+    "recall5": 0.9351,
+    "acc": 0.6108,
+    "p50_ms": 43.2,
+    "total_ms": 8707
+   },
+   "test": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 55.19,
+    "total_ms": 13417
+   }
+  },
+  "{\"tfidf\": 0.5}": {
+   "dev": {
+    "recall5": 0.8919,
+    "acc": 0.5838,
+    "p50_ms": 46.64,
+    "total_ms": 9584
+   },
+   "test": {
+    "recall5": 0.9767,
+    "acc": 0.1953,
+    "p50_ms": 59.84,
+    "total_ms": 14458
+   }
+  }
+ },
+ "15_rrf_fusion": {
+  "dev": {
+   "recall5": 0.9027,
+   "acc": 0.6,
+   "p50_ms": 133.83,
+   "total_ms": 28590
+  },
+  "test": {
+   "recall5": 0.9581,
+   "acc": 0.1953,
+   "p50_ms": 181.13,
+   "total_ms": 44672
+  },
+  "base_dev": {
+   "recall5": 0.9351,
+   "acc": 0.6108,
+   "p50_ms": 43.91,
+   "total_ms": 9360
+  },
+  "base_test": {
+   "recall5": 0.9674,
+   "acc": 0.1953,
+   "p50_ms": 55.1,
+   "total_ms": 13198
+  }
+ }
+}

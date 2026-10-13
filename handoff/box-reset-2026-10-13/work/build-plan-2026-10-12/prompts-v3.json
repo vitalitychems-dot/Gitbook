@@ -1,0 +1,51 @@
+{
+ "version": "v3",
+ "updated": "2026-10-13T04:35-05:00",
+ "rule": "Only items that were tested and look promising. Shipped winners are listed under shipped. Each prompt must beat v2 on the 87-relation held-out set or its stated metric, or the PR is dropped.",
+ "shipped": [
+  {
+   "id": "V3-CRYSTAL",
+   "pr": 274,
+   "sha": "15ff520",
+   "result": "cold 3D load 1847->7.5 ms; recall@5 15/87 = 15/87"
+  },
+  {
+   "id": "V3-PACK",
+   "pr": 274,
+   "sha": "15ff520",
+   "result": "tokens/query top-5 333->149; recall at v2 budget 15->21/87"
+  }
+ ],
+ "needs_gpu_not_tested": [
+  "vllm-project/vllm",
+  "sgl-project/sglang",
+  "FasterDecoding/Medusa",
+  "SafeAILab/EAGLE",
+  "deepseek-ai/DeepSeek-V3",
+  "QwenLM/Qwen3",
+  "zai-org/GLM-5",
+  "NVIDIA/TensorRT-LLM",
+  "huggingface/text-generation-inference",
+  "deepspeedai/DeepSpeed"
+ ],
+ "items": [
+  {
+   "id": "V3-P1",
+   "title": "Use the v3 packer in the live context-ranker prompt path, with a real tokenizer check",
+   "why": "pack.mjs cut approximate tokens 55% and raised recall at the v2 budget from 15 to 21/87 (inner split: 10 to 12/56). The token counter was a regex, and no answer quality was measured.",
+   "cursor_prompt": "In vitalitychems-dot/TESSERA, wire artifacts/v3/src/pack.mjs (packV3 with idf, sink:16) into wherever the context ranker's top-k results are turned into LLM prompt text. Keep the v2 JSON format behind a parameter for comparison. Add a benchmark that counts tokens with a real BPE tokenizer (an MIT/Apache JS tokenizer, offline, CPU) on the 87 outer held-out relations (same split as artifacts/v2/src/brain/bench4.mjs) and reports tokens/query and recall at an equal budget for v2 vs v3. Keep the change only if v3 has fewer tokens at equal or better recall. Do not flip TESSERA_ENABLE_* flags or edit workflows. Author: vitalitychems-dot noreply."
+  },
+  {
+   "id": "V3-P2",
+   "title": "Answer-quality check: does sink-16 truncation lose facts the LLM needs?",
+   "why": "sink16 cuts each item after 16 words. Recall of the target name is fine, but the facts in the observations may be lost.",
+   "cursor_prompt": "In TESSERA artifacts/v3, add an offline, CPU-only eval. For each of the 87 held-out relations, check whether the packed context still contains the observation tokens that justify the relation (overlap between the relation's endpoint observations and the packed text). Compare sink:0 with sink:16 and sink:32. Keep the smallest sink whose fact-coverage is within 2 percentage points of sink:0. Report the numbers in the PR."
+  },
+  {
+   "id": "V3-P3",
+   "title": "Faster warm crystal snapshots",
+   "why": "Crystal cold snapshot dropped from 1748 to 6.2 ms, but warm is 5.8 ms vs v2 cached 0.7 ms.",
+   "cursor_prompt": "In TESSERA artifacts/v3/src/crystal.mjs, add incremental checkpoints, for example a graphAt snapshot every 256 events with replay from the nearest checkpoint, so that warm /brain/snapshot?src=crystal p95 is at or below the v2 cached replayAt p95 on docs/v2/v2-memory.jsonl. Keep cold-load under 20 ms on the 3014-line full-picture file. Add a test like v2-079 W3-04. Keep it only if both targets pass."
+  }
+ ]
+}

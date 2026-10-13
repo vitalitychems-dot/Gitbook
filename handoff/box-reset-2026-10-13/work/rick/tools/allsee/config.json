@@ -1,0 +1,1 @@
+{"cfg": {"ncand": 30, "agg": "max", "tfidf": 0.0, "spread": 0.0, "prior": 0.0, "compress": true, "pathw": 0.0, "dedupfile": true}, "env": {"ALLSEE_CHUNKDEDUP": "1"}, "links": []}

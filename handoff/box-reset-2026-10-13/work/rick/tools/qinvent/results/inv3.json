@@ -1,0 +1,54 @@
+{
+ "baseline": {
+  "top1": 0.028,
+  "recall5": 0.94,
+  "n": 215
+ },
+ "mwpm_dedup": {
+  "top1": 0.298,
+  "recall5": 0.991,
+  "n": 215
+ },
+ "ablation_prior_only": {
+  "top1": 0.893,
+  "recall5": 0.995,
+  "n": 215
+ },
+ "dev": {
+  "top1": 0.265,
+  "recall5": 0.957,
+  "n": 185
+ },
+ "tau": 0.6,
+ "priors": {
+  "/workspace/TESSERA-ro": 166,
+  "/workspace/rick": 19
+ },
+ "leak_fixed": {
+  "clean_baseline": {
+   "top1": 0.047,
+   "recall5": 0.94,
+   "n": 215
+  },
+  "clean_mwpm_mirror_rule": {
+   "top1": 0.851,
+   "recall5": 0.874,
+   "n": 215
+  },
+  "clean_mwpm_dev_prior": {
+   "top1": 0.94,
+   "recall5": 0.991,
+   "n": 215
+  },
+  "clean_prior_only": {
+   "top1": 0.898,
+   "recall5": 0.995,
+   "n": 215
+  },
+  "clean_mirror_rule_only": {
+   "top1": 0.851,
+   "recall5": 0.907,
+   "n": 215
+  }
+ }
+}

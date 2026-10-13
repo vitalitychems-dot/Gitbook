@@ -1,0 +1,15 @@
+{
+ "steps": 49,
+ "fifo": 32,
+ "longest_chain": 25,
+ "anneal_runs": [
+  25,
+  25,
+  25,
+  25,
+  25
+ ],
+ "anneal_best": 25,
+ "lower_bound": 24,
+ "busiest_lane": "security"
+}

@@ -1,0 +1,9 @@
+OK   test_sim.py (1.4s)
+OK   test_opt.py (10.9s)
+OK   test_noise.py (1.4s)
+OK   test_geom.py (0.1s)
+OK   test_opt2.py (18.3s)
+OK   test_opt3.py (38.9s)
+OK   qlab/selftest_twin.py (10.3s)
+OK   qlab/selftest_cli.py (0.4s)
+ALL PASS

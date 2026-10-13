@@ -1,0 +1,120 @@
+[alone] Q1 ok=True ans='Tessera Mesh: Design and implementation. Gitbook: Documentation.'
+[alone] Q2 ok=True ans='The single coordination board is not a standard term in the Tessera mesh or Gitb'
+[alone] Q3 ok=False ans='Father typically refers to a male parent or clergy member in religious contexts.'
+[alone] Q4 ok=True ans='No, Tessera does not have owned weights.'
+[alone] Q5 ok=True ans='No'
+[alone] Q6 ok=False ans='The Pen is an input device.'
+[alone] Q7 ok=False ans='It means the content has been reviewed and is ready for use.'
+[alone] Q8 ok=True ans='It typically refers to a status indicating information has been reported.'
+[alone] Q9 ok=False ans='It decides the hybridization strategy.'
+[alone] Q10 ok=False ans='GHSA is not mentioned and thus ignored.'
+[alone] Q11 ok=False ans='Not specified in the given information.'
+[alone] Q12 ok=True ans='2'
+[alone] Q13 ok=False ans='The Tessera module "Quantum" wins GET /quantum/state.'
+[alone] Q14 ok=False ans='Yes, agents can be configured to enable or disable TESSERA_ENABLE_* settings.'
+[alone] Q15 ok=True ans='No, agents cannot open [REDACTED-PATH]
+[alone] Q16 ok=False ans='Two read, one write, one delete.'
+[alone] Q17 ok=True ans='The Tessera team merges TESSERA.'
+[alone] Q18 ok=True ans='No, Command Center does not push Gitbook.'
+[alone] Q19 ok=False ans='Not explicitly covered in the Tessera mesh/Gitbook docs.'
+[alone] Q20 ok=False ans='Not specified in provided information.'
+[alone] Q21 ok=True ans='OpenManus cannot be directly copied into TESSERA as they are different platforms'
+[alone] Q22 ok=True ans='No, the term "Storefront" is not typically associated with an "active workspace"'
+[alone] Q23 ok=False ans='There is no specific "Honesty banner instrument line" mentioned in the Tessera m'
+[alone] Q24 ok=True ans='SOVEREIGN_NO_EXTERNAL_LLM is not a default behavior in Gitbook docs.'
+[alone] Q25 ok=False ans='CI job name typically stands for Continuous Integration.'
+{
+  "mode": "alone",
+  "n": 25,
+  "correct": 12,
+  "accuracy": 0.48,
+  "wall_s": 23.551320552825928,
+  "model": "qwen2.5:3b-instruct",
+  "item_ids": [
+    "gitbook_q1",
+    "gitbook_q2",
+    "gitbook_q3",
+    "gitbook_q4",
+    "gitbook_q5",
+    "gitbook_q6",
+    "gitbook_q7",
+    "gitbook_q8",
+    "gitbook_q9",
+    "gitbook_q10",
+    "gitbook_q11",
+    "gitbook_q12",
+    "gitbook_q13",
+    "gitbook_q14",
+    "gitbook_q15",
+    "gitbook_q16",
+    "gitbook_q17",
+    "gitbook_q18",
+    "gitbook_q19",
+    "gitbook_q20",
+    "gitbook_q21",
+    "gitbook_q22",
+    "gitbook_q23",
+    "gitbook_q24",
+    "gitbook_q25"
+  ]
+}
+[rag] Q1 ok=True ans='TESSERA is the product repository and Gitbook is the agent workspace.'
+[rag] Q2 ok=True ans='The single coordination board is the issue [vitalitychems-dot/Gitbook issue #2]('
+[rag] Q3 ok=False ans='Father is the only override for the origin mark and the only one who can overrid'
+[rag] Q4 ok=True ans='No, Tessera does not have owned weights.'
+[rag] Q5 ok=True ans='No'
+[rag] Q6 ok=True ans='The Pen is xAI/Grok.'
+[rag] Q7 ok=True ans='Label TESTED means Real output or a named unit/preview check was seen. Link or n'
+[rag] Q8 ok=True ans='Label REPORTED means stated by a lane or doc; not yet proven by a test in this c'
+[rag] Q9 ok=False ans='HYB-005 decides intake items: approve, reject, or changes needed.'
+[rag] Q10 ok=True ans='GHSA-vfj7-8cjw-p6xm'
+[rag] Q11 ok=True ans='HYB-012 delivered a proposal to preserve duplicate METHOD+path registrations in '
+[rag] Q12 ok=True ans='2'
+[rag] Q13 ok=True ans='system-runtime'
+[rag] Q14 ok=True ans='No, stay **`0`**.'
+[rag] Q15 ok=True ans='No, agents may not open [REDACTED-PATH]
+[rag] Q16 ok=True ans='Gitbook Moderator → Tessera → Security → CI/Build'
+[rag] Q17 ok=True ans='Father merges the approved package.'
+[rag] Q18 ok=False ans='No'
+[rag] Q19 ok=True ans='The Recursive Learning Sponge lane status is Provisional and it does not do anyt'
+[rag] Q20 ok=False ans='The blocker for HYB-012 is a partial snapshot of the local Replit worktree and i'
+[rag] Q21 ok=True ans='OpenManus full copy into TESSERA is not allowed without an AGPL compatibility re'
+[rag] Q22 ok=True ans='No'
+[rag] Q23 ok=True ans='The pen is currently xAI/Grok.'
+[rag] Q24 ok=True ans='SOVEREIGN_NO_EXTERNAL_LLM default behavior is not specified in the provided exce'
+[rag] Q25 ok=False ans='CI job name: audit job 111894232164'
+{
+  "mode": "rag",
+  "n": 25,
+  "correct": 20,
+  "accuracy": 0.8,
+  "wall_s": 102.39169502258301,
+  "model": "qwen2.5:3b-instruct",
+  "item_ids": [
+    "gitbook_q1",
+    "gitbook_q2",
+    "gitbook_q3",
+    "gitbook_q4",
+    "gitbook_q5",
+    "gitbook_q6",
+    "gitbook_q7",
+    "gitbook_q8",
+    "gitbook_q9",
+    "gitbook_q10",
+    "gitbook_q11",
+    "gitbook_q12",
+    "gitbook_q13",
+    "gitbook_q14",
+    "gitbook_q15",
+    "gitbook_q16",
+    "gitbook_q17",
+    "gitbook_q18",
+    "gitbook_q19",
+    "gitbook_q20",
+    "gitbook_q21",
+    "gitbook_q22",
+    "gitbook_q23",
+    "gitbook_q24",
+    "gitbook_q25"
+  ]
+}

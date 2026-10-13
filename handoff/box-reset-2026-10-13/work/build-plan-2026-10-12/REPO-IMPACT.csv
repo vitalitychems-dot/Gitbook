@@ -1,0 +1,159 @@
+row,repo,status,improves,metrics,pct_change,label,reasoning
+1,collink1007/olive-giant-ever-glade,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+2,nicholasgasior/ad-copy-generator,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: lunalimadev-sketch/ad-copy-generator","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+3,nicholasgasior/GoLogin,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+4,nicholasgasior/CreepJS,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+5,collink1007/Vitalitychems,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+6,nicholasgasior/2captcha-python,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+7,nicholasgasior/Multilogin,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+8,nicholasgasior/FingerprintJS,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+9,collink1007/z,"ACCESSIBLE (public, REA read-only)","Zz tree REA'd 83.9% (115/137). Graph/tree imports for knowledge-graph memory (reference only, no wholesale copy)",token use,-10% tokens/task,ESTIMATE,graph recall replaces re-reading pages; vs V2-051 baseline 10 tokens fixture
+10,collink1007/fleet-moss-monarch-rapid,"ACCESSIBLE (public, REA read-only)",REA'd 94.5% (207/219). Site/layout components reusable for studio pages,build time; task completion rate,-5% build time,ESTIMATE,shared Vite config reuse; not benchmarked
+11,collink1007/XXX,"ACCESSIBLE (public, REA read-only)",REA'd 89.9% (1740/1936). Service-worker precache pattern (O3) + client page list,offline uptime; security findings,"+15% offline uptime; 1 HIGH finding (hard-coded admin key, already logged)",ESTIMATE (finding MEASURED),precache = pages load without network; key found by REA/grep
+12,collink1007/amber-flame-tiger-sand,"ACCESSIBLE (public, REA read-only)",REA'd 82.6% (147/178). Offline queue + cache patterns for TESSERA preview,offline uptime; test coverage,+10% offline uptime / +3 tests,ESTIMATE,queue/cache module ports into preview; no fixture run yet
+13,nicholasgasior/ai-freelance-platform,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: amyrpyrzady92-cyber/ai-freelance-platform","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+14,nicholasgasior/affiliate-tracking,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Databowl/affiliate-tracking","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+15,nicholasgasior/age,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: FiloSottile/age","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+16,nicholasgasior/ai-agent-marketplace,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: aiagenta2z/ai-agent-marketplace","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+17,nicholasgasior/ai-service-marketplace,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: rohitranmale11/AI-Service-MarketPlace","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+18,nicholasgasior/ai-gig-economy,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+19,nicholasgasior/alpha-vantage,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+20,nicholasgasior/anticaptchaofficial,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+21,nicholasgasior/antidetect,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+22,nicholasgasior/api-monetization,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: InMobi/api-monetization","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+23,nicholasgasior/arbitrage-bot,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: ogwurujohnson/arbitrage-bot","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+24,nicholasgasior/apify-sdk,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+25,nicholasgasior/beautifulsoup4,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: wention/BeautifulSoup4","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+26,nicholasgasior/backlink-checker,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: rvalitov/backlink-checker","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+27,nicholasgasior/audio-captcha-solver,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+28,nicholasgasior/bond-yield-tracker,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+29,nicholasgasior/bounty-hunter,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+30,nicholasgasior/brain-js,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+31,nicholasgasior/blog-generator,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: zupzup/blog-generator","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+32,nicholasgasior/brightdata-sdk,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+33,nicholasgasior/browser-fingerprinting,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+34,nicholasgasior/capsolver-python,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: capsolver/capsolver-python","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+35,nicholasgasior/captcha-harvester,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+36,nicholasgasior/case-study-builder,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: nesdown/Case-Study-Builder","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+37,nicholasgasior/cf-clearance,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: vvanglro/cf-clearance","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+38,nicholasgasior/censys-python,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: censys/censys-python","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+39,nicholasgasior/checkout-optimizer,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: chrisdemonxxx/checkout-optimizer","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+40,nicholasgasior/cloudflare-bypass,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+41,nicholasgasior/cloudflare-scrape,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Anorov/cloudflare-scrape","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+42,nicholasgasior/cfscrape,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: ScoLib/cfscrape","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+43,nicholasgasior/chromedp,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: chromedp/chromedp","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+44,nicholasgasior/cloudscraper,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: VeNoMouS/cloudscraper","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+45,nicholasgasior/cf-workers,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: dockkkk/CF-WORKERS","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+46,nicholasgasior/code-marketplace,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: coder/code-marketplace","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+47,nicholasgasior/colly,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: gocolly/colly","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+48,nicholasgasior/commodity-tracker,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Sagar-03/Commodity-Tracker","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+49,nicholasgasior/compromise-nlp,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+50,nicholasgasior/competitor-analyzer,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: guillaumekey/competitor-analyzer","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+51,nicholasgasior/content-optimizer,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: career-gradient-descent/content-optimizer","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+52,nicholasgasior/customer-analytics,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Prakhar-FF13/Customer-Analytics","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+53,nicholasgasior/decentralized-work,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+54,nicholasgasior/creative-testing,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Boierul/creative-testing","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+55,nicholasgasior/conversion-optimizer,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: SHOPGEN431/conversion-optimizer","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+56,nicholasgasior/dropshipping-automation,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Chetupatil24/dropshipping-automation","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+57,nicholasgasior/dilithium,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: pq-crystals/dilithium","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+58,nicholasgasior/defi-yield-farming,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+59,nicholasgasior/email-marketing-engine,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: shubh-codes7/Email-Marketing-Engine","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+60,nicholasgasior/ebook-creator,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: ArnavK-09/ebook-creator","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+61,nicholasgasior/email-sequence-builder,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: SidGit195/Email-Sequence-Builder","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+62,nicholasgasior/facebook-ads-api,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: narrowcast/facebook-ads-api","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+63,nicholasgasior/finnhub-python,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Finnhub-Stock-API/finnhub-python","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+64,nicholasgasior/forex-correlation,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Shawwnscott/Forex-Correlation","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+65,nicholasgasior/flaresolverr,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: FlareSolverr/FlareSolverr","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+66,nicholasgasior/fractal-analysis,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: laasya2005/Fractal-Analysis","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+67,nicholasgasior/funcaptcha-solver,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+68,nicholasgasior/freelance-api,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: agheadof/freelance-api","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+69,nicholasgasior/futures-data,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+70,nicholasgasior/funnel-builder,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: AI-Captains-Academy/funnel-builder","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+71,nicholasgasior/gocolly,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+72,nicholasgasior/google-ads-api,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Opteo/google-ads-api","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+73,nicholasgasior/goquery,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: PuerkitoBio/goquery","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+74,nicholasgasior/gpg4win,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: gpg/gpg4win","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+75,nicholasgasior/goscrapy,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: tech-engine/goscrapy","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+76,nicholasgasior/hcaptcha-solver,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+77,nicholasgasior/hashcat,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+78,nicholasgasior/headless-chrome-crawler,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: yujiosaka/headless-chrome-crawler","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+79,nicholasgasior/gumroad-api,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: SamyPesse/gumroad-api","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+80,nicholasgasior/human-ai-marketplace,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+81,nicholasgasior/grpcurl,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: fullstorydev/grpcurl","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+82,nicholasgasior/httpie,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: lukeed/httpie","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+83,nicholasgasior/image-captcha-solver,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+84,nicholasgasior/infographic-data,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+85,nicholasgasior/insomnia,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Kong/insomnia","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+86,nicholasgasior/intermarket-analysis,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: abulashsufans/Intermarket-Analysis","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+87,nicholasgasior/inventory-management,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: beck-source/inventory-management","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+88,nicholasgasior/keyword-research-tool,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: boringmarketer/keyword-research-tool","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+89,nicholasgasior/lemon-squeezy-sdk,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+90,nicholasgasior/lattigo,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: tuneinsight/lattigo","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+91,nicholasgasior/landing-page-builder,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Jauharmuhammed/landing-page-builder","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+92,nicholasgasior/kyber,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: pq-crystals/kyber","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+93,nicholasgasior/libsodium,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: jedisct1/libsodium","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+94,nicholasgasior/liquidity-mining,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+95,nicholasgasior/linkedin-ads-api,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: Smietje77/linkedin-ads-api","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+96,nicholasgasior/mailgun-js,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: mateuspancieridev/mailgun-js","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+97,nicholasgasior/market-correlation,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: KentHocaoglu/Market-Correlation","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+98,nicholasgasior/marketstack,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: apilayer/marketstack","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+99,nicholasgasior/mechanize,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: sparklemotion/mechanize","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+100,nicholasgasior/mercury-parser,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: jocmp/mercury-parser","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+101,nicholasgasior/mev-templates,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: solidquant/mev-templates","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+102,nicholasgasior/meta-tag-generator,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: PragatiVerma18/Meta-Tag-Generator","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+103,nicholasgasior/micro-saas-template,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: jgalan247/micro-saas-template","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+104,nicholasgasior/microwork-platform,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+105,nicholasgasior/moltbook-platform,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+106,nicholasgasior/natural-nlp,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+107,nicholasgasior/ml5-js,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+108,nicholasgasior/newsletter-builder,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: mechtron/newsletter-builder","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+109,nicholasgasior/nmap,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: nmap/nmap","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+110,nicholasgasior/nft-minter,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+111,nicholasgasior/newspaper3k,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: webscraping-python/newspaper3k","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+112,nicholasgasior/onnxruntime-web,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+113,nicholasgasior/nodriver,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: ultrafunkamsterdam/nodriver","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+114,nicholasgasior/options-flow,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+115,nicholasgasior/noise-protocol,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: emilbayes/noise-protocol","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+116,nicholasgasior/openssl,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: openssl/openssl","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+117,nicholasgasior/order-fulfillment,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+118,nicholasgasior/oxylabs-sdk,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+119,nicholasgasior/page-speed-analyzer,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: tanzimine/Page-Speed-Analyzer","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+120,nicholasgasior/paddle-sdk,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: avaly/paddle-sdk","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+121,nicholasgasior/passive-income-bot,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: yktvjdpluggz/passive-income-bot","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+122,nicholasgasior/pinterest-ads-api,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: kayr-jpg/pinterest-ads-api","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+123,nicholasgasior/plaid-node,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: plaid/plaid-node","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+124,nicholasgasior/playwright-python,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: microsoft/playwright-python","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+125,nicholasgasior/playwright-stealth,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+126,nicholasgasior/podcast-outline-gen,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+127,nicholasgasior/playwright-cf-bypass,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+128,nicholasgasior/postman-collection,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: postmanlabs/postman-collection","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+129,nicholasgasior/price-comparison,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+130,nicholasgasior/press-release-writer,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: common-repository/press-release-writer","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+131,nicholasgasior/product-description-ai,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: radoi5873-commits/product-description-ai","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+132,nicholasgasior/product-sourcing-api,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+133,nicholasgasior/programmatic-advertising,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: pierian-co/Programmatic-Advertising","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+134,nicholasgasior/puppeteer-core,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: KarinJS/puppeteer-core","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+135,nicholasgasior/puppeteer-cf-bypass,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+136,nicholasgasior/puppeteer-extra-plugin-stealth,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+137,nicholasgasior/readability,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: mozilla/readability","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+138,nicholasgasior/rank-tracker,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: dejwid/rank-tracker","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+139,nicholasgasior/puppeteer-extra,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: berstend/puppeteer-extra","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+140,nicholasgasior/quandl-python,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: quandl/quandl-python","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+141,nicholasgasior/requests-html,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: psf/requests-html","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+142,nicholasgasior/residential-proxy,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+143,nicholasgasior/rentahuman-ai,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+144,nicholasgasior/recaptcha-solver,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion
+145,nicholasgasior/retargeting-engine,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+146,nicholasgasior/ring,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: briansmith/ring","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+147,nicholasgasior/review-management,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: ruthleee/review-management","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+148,nicholasgasior/rod,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: go-rod/rod","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+149,nicholasgasior/saas-boilerplate,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: ixartz/SaaS-Boilerplate","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+150,nicholasgasior/sandwich-bot,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: 0xRLA/sandwich-bot","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+151,nicholasgasior/scraperapi-sdk,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: evgeek/scraperapi-sdk","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+152,nicholasgasior/schema-markup,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+153,nicholasgasior/scrapy-redis,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: rmax/scrapy-redis","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+154,nicholasgasior/scrapy-splash,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: scrapy-plugins/scrapy-splash","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+155,nicholasgasior/scrapingbee,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+156,nicholasgasior/scrapydweb,"BLOCKED (404/private); same-name public repo(s) exist, unverified, not REA'd: my8100/scrapydweb","Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+157,nicholasgasior/sector-rotation,BLOCKED (404/private),"Not assessed, contents unknown",,,,not readable with vitalitychems-dot token
+158,nicholasgasior/selenium-cf-bypass,EXCLUDED (category),Not used: excluded category,,,,hard-limit exclusion

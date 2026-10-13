@@ -1,0 +1,22 @@
+<!doctype html><meta charset=utf-8><title>Tessera's Eye v1</title>
+<style>body{margin:0;background:#04070f;color:#cde;font:13px sans-serif}#i{position:fixed;right:8px;top:8px;width:340px;background:#0b1424e0;padding:10px;border:1px solid #2a4}a{color:#7cf}#l{position:fixed;left:8px;bottom:8px}</style>
+<canvas id=c></canvas><div id=i><b>Tessera's Eye v1</b><br>Drag to spin. Click a dot for details.<br>Public open data only.</div>
+<div id=l>● quake <span style=color:#f84>■</span> eonet <span style=color:#4f8>■</span> nws <span style=color:#f4f>■</span> meteo <span style=color:#8cf>■</span></div>
+<script>
+const E=/*EVENTS*/[];const C={usgs:'#f84',eonet:'#4f8',nws:'#f4f',meteo:'#8cf'};
+const c=document.getElementById('c'),x=c.getContext('2d');let W,H,R,rot=-90,tilt=20,P=[];
+function rs(){W=c.width=innerWidth;H=c.height=innerHeight;R=Math.min(W,H)*.42}onresize=()=>{rs();d()};rs();
+function pr(la,lo){la*=Math.PI/180;lo=(lo+rot)*Math.PI/180;const t=tilt*Math.PI/180;
+let X=Math.cos(la)*Math.sin(lo),Y=Math.sin(la),Z=Math.cos(la)*Math.cos(lo);const y2=Y*Math.cos(t)-Z*Math.sin(t),z2=Y*Math.sin(t)+Z*Math.cos(t);
+return[W/2+R*X,H/2-R*y2,z2]}
+function d(){x.fillStyle='#04070f';x.fillRect(0,0,W,H);x.fillStyle='#0a1a33';x.beginPath();x.arc(W/2,H/2,R,0,7);x.fill();
+x.strokeStyle='#1d3a5c';for(let lo=-180;lo<180;lo+=30){x.beginPath();let f=1;for(let la=-90;la<=90;la+=5){const[p,q,z]=pr(la,lo);if(z<0){f=1;continue}f?x.moveTo(p,q):x.lineTo(p,q);f=0}x.stroke()}
+for(let la=-60;la<=60;la+=30){x.beginPath();let f=1;for(let lo=-180;lo<=180;lo+=5){const[p,q,z]=pr(la,lo);if(z<0){f=1;continue}f?x.moveTo(p,q):x.lineTo(p,q);f=0}x.stroke()}
+P=[];for(const e of E){const[p,q,z]=pr(e.lat,e.lon);if(z<0)continue;P.push([p,q,e]);x.fillStyle=C[e.source]||'#fff';x.beginPath();x.arc(p,q,2+6*e.severity,0,7);x.globalAlpha=.75;x.fill();x.globalAlpha=1}}
+let dr=null;c.onmousedown=e=>dr=[e.clientX,e.clientY,rot,tilt,0];onmouseup=e=>{if(dr&&Math.abs(e.clientX-dr[0])+Math.abs(e.clientY-dr[1])<4)pick(e);dr=null};
+onmousemove=e=>{if(!dr)return;rot=dr[2]+(e.clientX-dr[0])*.4;tilt=Math.max(-80,Math.min(80,dr[3]+(e.clientY-dr[1])*.4));d()};
+const s=v=>String(v).replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));
+function pick(ev){let b=null,bd=150;for(const[p,q,e]of P){const k=(p-ev.clientX)**2+(q-ev.clientY)**2;if(k<bd){bd=k;b=e}}if(!b)return;
+document.getElementById('i').innerHTML=`<b>${s(b.title)}</b><br>${s(b.kind)} · ${s(b.time)}<br>${b.lat.toFixed(2)}, ${b.lon.toFixed(2)}<br>source: ${s(b.license)}<br><a href="${s(b.cite)}" target=_blank>citation</a><pre>${s(JSON.stringify(b.extra,null,1))}</pre>`}
+d();
+</script>

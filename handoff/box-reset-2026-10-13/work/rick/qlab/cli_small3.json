@@ -1,0 +1,111 @@
+{
+ "device": "ibmq_manila",
+ "calibration_source": "IBM backend properties 2024-05-27T15:27:23-03:00",
+ "n": 3,
+ "input": {
+  "gates": 9,
+  "twoq": 4
+ },
+ "optimized": {
+  "gates": 4,
+  "twoq": 2
+ },
+ "naive_layout": {
+  "layout": [
+   0,
+   1,
+   2
+  ],
+  "swaps": 1,
+  "esp": 0.9096516278448177,
+  "routed": {
+   "gates": 7,
+   "twoq": 5
+  },
+  "final_positions": {
+   "0": 1,
+   "1": 0,
+   "2": 2
+  },
+  "twin_fidelity": 0.9199775700361861
+ },
+ "best_layout": {
+  "layout": [
+   2,
+   4,
+   3
+  ],
+  "swaps": 0,
+  "esp": 0.9700055872402181,
+  "routed": {
+   "gates": 4,
+   "twoq": 2
+  },
+  "final_positions": {
+   "0": 0,
+   "1": 1,
+   "2": 2
+  },
+  "twin_fidelity": 0.9787607973579615
+ },
+ "optimized_circuit": [
+  [
+   "H",
+   [
+    1
+   ]
+  ],
+  [
+   "CNOT",
+   [
+    1,
+    2
+   ]
+  ],
+  [
+   "CNOT",
+   [
+    0,
+    2
+   ]
+  ],
+  [
+   "P",
+   [
+    2
+   ],
+   1.5707963267948966
+  ]
+ ],
+ "routed_circuit": [
+  [
+   "H",
+   [
+    1
+   ]
+  ],
+  [
+   "CNOT",
+   [
+    1,
+    2
+   ]
+  ],
+  [
+   "CNOT",
+   [
+    0,
+    2
+   ]
+  ],
+  [
+   "P",
+   [
+    2
+   ],
+   1.5707963267948966
+  ]
+ ],
+ "seconds": 0.02,
+ "note": "twin_fidelity = state fidelity from |0..0> under the calibrated twin (no readout). Predicted, not measured on hardware."
+}

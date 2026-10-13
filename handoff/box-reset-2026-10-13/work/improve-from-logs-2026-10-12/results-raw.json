@@ -1,0 +1,566 @@
+{
+  "as_of": "2026-10-12 CT",
+  "quiz_n": 10,
+  "retrieval": {
+    "before": {
+      "n": 10,
+      "correct": 4,
+      "accuracy": 0.4,
+      "items": [
+        {
+          "id": 1,
+          "q": "What are the two active destination repos and their roles?",
+          "hit": true,
+          "key_hits": 2,
+          "top_ids": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles.md#0"
+          ],
+          "top_scores": [
+            15.175,
+            8.643,
+            8.431
+          ]
+        },
+        {
+          "id": 2,
+          "q": "Which repository is the protected vault that must never be opened?",
+          "hit": true,
+          "key_hits": 1,
+          "top_ids": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#6"
+          ],
+          "top_scores": [
+            14.228,
+            13.553,
+            10.258
+          ]
+        },
+        {
+          "id": 3,
+          "q": "Name historical snapshot repos that should not be bulk-merged wholesale.",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#6",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2",
+            "mesh__roles__pen-tone-guide.md#4"
+          ],
+          "top_scores": [
+            10.794,
+            9.17,
+            8.055
+          ]
+        },
+        {
+          "id": 4,
+          "q": "What open-source memory library is listed for Tessera RAG/memory work?",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "mesh__roles__pen-tone-guide.md#4",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles__tessera-pen.md#0"
+          ],
+          "top_scores": [
+            7.746,
+            6.916,
+            6.594
+          ]
+        },
+        {
+          "id": 5,
+          "q": "Which Cortical Labs package is referenced for CL1 simulation?",
+          "hit": true,
+          "key_hits": 1,
+          "top_ids": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "intake__CORTICAL-LABS-READINESS.md#1",
+            "intake__CORTICAL-LABS-READINESS.md#0"
+          ],
+          "top_scores": [
+            18.944,
+            18.652,
+            13.068
+          ]
+        },
+        {
+          "id": 6,
+          "q": "What multi-agent framework successor of OpenManus is mentioned?",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#0",
+            "mesh__COLLABORATION-PLAYBOOK.md#0",
+            "history__coordination__agent-checkins.md#4"
+          ],
+          "top_scores": [
+            6.186,
+            6.054,
+            5.862
+          ]
+        },
+        {
+          "id": 7,
+          "q": "Name a spiking neural network library Tessera brain work references.",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "brain-consciousness__AGENT-WORKPLAN.md#0",
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#4"
+          ],
+          "top_scores": [
+            12.277,
+            7.155,
+            4.975
+          ]
+        },
+        {
+          "id": 8,
+          "q": "What are the four gates in order before merge?",
+          "hit": true,
+          "key_hits": 3,
+          "top_ids": [
+            "intake__how-to-submit.md#2",
+            "mesh__roles__command-center.md#3",
+            "brain-consciousness__AGENT-WORKPLAN.md#2"
+          ],
+          "top_scores": [
+            12.334,
+            9.795,
+            8.961
+          ]
+        },
+        {
+          "id": 9,
+          "q": "Which empty/duplicate repos were already deleted per the deletion manifest?",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "README.md#2"
+          ],
+          "top_scores": [
+            11.737,
+            8.887,
+            8.641
+          ]
+        },
+        {
+          "id": 10,
+          "q": "What local LLM runtime is listed for on-box inference?",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "mesh__roles__tessera-pen.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6",
+            "mesh__roles__pen-ability-set-framing.md#1"
+          ],
+          "top_scores": [
+            7.116,
+            5.944,
+            5.896
+          ]
+        }
+      ],
+      "chunks": 173
+    },
+    "after": {
+      "n": 10,
+      "correct": 7,
+      "accuracy": 0.7,
+      "items": [
+        {
+          "id": 1,
+          "q": "What are the two active destination repos and their roles?",
+          "hit": true,
+          "key_hits": 2,
+          "top_ids": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles.md#0"
+          ],
+          "top_scores": [
+            14.957,
+            8.909,
+            8.623
+          ]
+        },
+        {
+          "id": 2,
+          "q": "Which repository is the protected vault that must never be opened?",
+          "hit": true,
+          "key_hits": 1,
+          "top_ids": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6",
+            "ZZ_EXPANDED_REPO_INDEX.md#3"
+          ],
+          "top_scores": [
+            13.94,
+            13.187,
+            12.072
+          ]
+        },
+        {
+          "id": 3,
+          "q": "Name historical snapshot repos that should not be bulk-merged wholesale.",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#6",
+            "ZZ_EXPANDED_REPO_INDEX.md#3",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2"
+          ],
+          "top_scores": [
+            10.82,
+            9.464,
+            9.122
+          ]
+        },
+        {
+          "id": 4,
+          "q": "What open-source memory library is listed for Tessera RAG/memory work?",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "mesh__roles__pen-tone-guide.md#4",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles__tessera-pen.md#0"
+          ],
+          "top_scores": [
+            8.01,
+            7.154,
+            6.817
+          ]
+        },
+        {
+          "id": 5,
+          "q": "Which Cortical Labs package is referenced for CL1 simulation?",
+          "hit": true,
+          "key_hits": 1,
+          "top_ids": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "intake__CORTICAL-LABS-READINESS.md#1",
+            "intake__CORTICAL-LABS-READINESS.md#0"
+          ],
+          "top_scores": [
+            19.002,
+            18.685,
+            13.258
+          ]
+        },
+        {
+          "id": 6,
+          "q": "What multi-agent framework successor of OpenManus is mentioned?",
+          "hit": true,
+          "key_hits": 2,
+          "top_ids": [
+            "ZZ_EXPANDED_REPO_INDEX.md#4",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#0",
+            "mesh__COLLABORATION-PLAYBOOK.md#0"
+          ],
+          "top_scores": [
+            15.584,
+            6.068,
+            5.728
+          ]
+        },
+        {
+          "id": 7,
+          "q": "Name a spiking neural network library Tessera brain work references.",
+          "hit": true,
+          "key_hits": 4,
+          "top_ids": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "ZZ_EXPANDED_REPO_INDEX.md#5",
+            "brain-consciousness__AGENT-WORKPLAN.md#0"
+          ],
+          "top_scores": [
+            11.809,
+            7.612,
+            7.248
+          ]
+        },
+        {
+          "id": 8,
+          "q": "What are the four gates in order before merge?",
+          "hit": true,
+          "key_hits": 3,
+          "top_ids": [
+            "intake__how-to-submit.md#2",
+            "mesh__roles__command-center.md#3",
+            "brain-consciousness__AGENT-WORKPLAN.md#2"
+          ],
+          "top_scores": [
+            12.46,
+            9.866,
+            9.166
+          ]
+        },
+        {
+          "id": 9,
+          "q": "Which empty/duplicate repos were already deleted per the deletion manifest?",
+          "hit": false,
+          "key_hits": 0,
+          "top_ids": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "README.md#2"
+          ],
+          "top_scores": [
+            11.409,
+            8.951,
+            8.773
+          ]
+        },
+        {
+          "id": 10,
+          "q": "What local LLM runtime is listed for on-box inference?",
+          "hit": true,
+          "key_hits": 2,
+          "top_ids": [
+            "ZZ_EXPANDED_REPO_INDEX.md#6",
+            "mesh__roles__tessera-pen.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6"
+          ],
+          "top_scores": [
+            18.107,
+            7.196,
+            6.003
+          ]
+        }
+      ],
+      "chunks": 182
+    },
+    "delta_correct": 3
+  },
+  "model_rag": {
+    "status": "TESTED",
+    "before": {
+      "mode": "rag",
+      "n": 10,
+      "correct": 3,
+      "accuracy": 0.3,
+      "wall_s": 38.7122962474823,
+      "model": "qwen2.5:3b-instruct",
+      "items": [
+        {
+          "id": 1,
+          "correct": true,
+          "answer": "The two active destination repos are TESSERA and Gitbook. TESSERA is the product/repository, while Gitbook is the agent/workspace.",
+          "retrieved": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles.md#0"
+          ]
+        },
+        {
+          "id": 2,
+          "correct": true,
+          "answer": "The protected vault that must never be opened is the `1T` vault.",
+          "retrieved": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#6"
+          ]
+        },
+        {
+          "id": 3,
+          "correct": false,
+          "answer": "Historical snapshot repos that should not be bulk-merged wholesale include protected `1T` vault content, credentials, private/runtime data, and raw archive chunks.",
+          "retrieved": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#6",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2",
+            "mesh__roles__pen-tone-guide.md#4"
+          ]
+        },
+        {
+          "id": 4,
+          "correct": false,
+          "answer": "I don't have that yet.",
+          "retrieved": [
+            "mesh__roles__pen-tone-guide.md#4",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles__tessera-pen.md#0"
+          ]
+        },
+        {
+          "id": 5,
+          "correct": false,
+          "answer": " 1. No, CL1 is not a code-deployable biological computer.\n 2. No, CL1 is not a self-contained system for neurons.\n 9. No, CL1 is not a programmable bi-directional stimulation system.\n 4. No, CL1 is not a remote access system for CL1 arrays.",
+          "retrieved": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "intake__CORTICAL-LABS-READINESS.md#1",
+            "intake__CORTICAL-LABS-READINESS.md#0"
+          ]
+        },
+        {
+          "id": 6,
+          "correct": false,
+          "answer": "Tessera",
+          "retrieved": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#0",
+            "mesh__COLLABORATION-PLAYBOOK.md#0",
+            "history__coordination__agent-checkins.md#4"
+          ]
+        },
+        {
+          "id": 7,
+          "correct": false,
+          "answer": "The spiking neural network library Tessera brain work references are inspired by Cortical Labs' CL1 but are software-only and do not reproduce biological CL1. They are part of a research program for the Tessera platform.",
+          "retrieved": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "brain-consciousness__AGENT-WORKPLAN.md#0",
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#4"
+          ]
+        },
+        {
+          "id": 8,
+          "correct": true,
+          "answer": "The four gates in order before merge are: Gitbook Moderator, Tessera (admin), Security (read-only sweep), and CI/Build (independent verification).",
+          "retrieved": [
+            "intake__how-to-submit.md#2",
+            "mesh__roles__command-center.md#3",
+            "brain-consciousness__AGENT-WORKPLAN.md#2"
+          ]
+        },
+        {
+          "id": 9,
+          "correct": false,
+          "answer": "Eight previously confirmed repositories were deleted.",
+          "retrieved": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "README.md#2"
+          ]
+        },
+        {
+          "id": 10,
+          "correct": false,
+          "answer": "The local LLM runtime listed for on-box inference is Qwen 2.5 1.5B Instruct. Rollback: 0.5B.",
+          "retrieved": [
+            "mesh__roles__tessera-pen.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6",
+            "mesh__roles__pen-ability-set-framing.md#1"
+          ]
+        }
+      ]
+    },
+    "after": {
+      "mode": "rag",
+      "n": 10,
+      "correct": 4,
+      "accuracy": 0.4,
+      "wall_s": 20.458773374557495,
+      "model": "qwen2.5:3b-instruct",
+      "items": [
+        {
+          "id": 1,
+          "correct": true,
+          "answer": "The two active destination repos are TESSERA and Gitbook. TESSERA is the product/repository, while Gitbook is the agent/workspace.",
+          "retrieved": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles.md#0"
+          ]
+        },
+        {
+          "id": 2,
+          "correct": true,
+          "answer": "The protected vault contents must never be opened, copied, indexed, or deleted. This instruction applies to the [REDACTED-PATH] contents.",
+          "retrieved": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6",
+            "ZZ_EXPANDED_REPO_INDEX.md#3"
+          ]
+        },
+        {
+          "id": 3,
+          "correct": false,
+          "answer": "Four gates: Moderator \u2192 Tessera \u2192 Security \u2192 CI/Build.",
+          "retrieved": [
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#6",
+            "ZZ_EXPANDED_REPO_INDEX.md#3",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#2"
+          ]
+        },
+        {
+          "id": 4,
+          "correct": false,
+          "answer": "I don't have that yet.",
+          "retrieved": [
+            "mesh__roles__pen-tone-guide.md#4",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#1",
+            "mesh__roles__tessera-pen.md#0"
+          ]
+        },
+        {
+          "id": 5,
+          "correct": false,
+          "answer": "CL1 is a simulated environment for neurons, described as a biological computer, where neurons are grown on a silicon chip and interact with each other and with a simulated world. It is a closed-loop system that can run for up to 6 months without needing to be physically connected to a lab. It is mar",
+          "retrieved": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "intake__CORTICAL-LABS-READINESS.md#1",
+            "intake__CORTICAL-LABS-READINESS.md#0"
+          ]
+        },
+        {
+          "id": 6,
+          "correct": false,
+          "answer": "`microsoft/autogen`",
+          "retrieved": [
+            "ZZ_EXPANDED_REPO_INDEX.md#4",
+            "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#0",
+            "mesh__COLLABORATION-PLAYBOOK.md#0"
+          ]
+        },
+        {
+          "id": 7,
+          "correct": true,
+          "answer": "The spiking neural network library Tessera brain work references include: `brian2`, `Cortical-Labs/cl-sdk`, `NeuroConscious`, and `spikingjelly`.",
+          "retrieved": [
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "ZZ_EXPANDED_REPO_INDEX.md#5",
+            "brain-consciousness__AGENT-WORKPLAN.md#0"
+          ]
+        },
+        {
+          "id": 8,
+          "correct": true,
+          "answer": "The four gates in order before merge are: Gitbook Moderator, Tessera (admin), Security (read-only sweep), and CI/Build (independent verification).",
+          "retrieved": [
+            "intake__how-to-submit.md#2",
+            "mesh__roles__command-center.md#3",
+            "brain-consciousness__AGENT-WORKPLAN.md#2"
+          ]
+        },
+        {
+          "id": 9,
+          "correct": false,
+          "answer": "Eight previously confirmed repositories were deleted.",
+          "retrieved": [
+            "intake__HYBRID-CONSOLIDATION-BACKLOG.md#3",
+            "brain-consciousness__SNN-SOURCE-MANIFEST.md#0",
+            "README.md#2"
+          ]
+        },
+        {
+          "id": 10,
+          "correct": false,
+          "answer": "`huggingface/text-generation-inference`",
+          "retrieved": [
+            "ZZ_EXPANDED_REPO_INDEX.md#6",
+            "mesh__roles__tessera-pen.md#2",
+            "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#6"
+          ]
+        }
+      ]
+    }
+  }
+}

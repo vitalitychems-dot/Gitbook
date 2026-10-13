@@ -1,0 +1,158 @@
+repo,status,url,improves,metrics,pct,label,reason
+nicholasgasior/selenium-python,FOUND,https://github.com/baijum/selenium-python,Browser automation for gateway fetches only (no bypass),task completion,+8% live-fetch jobs,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings; Python
+nicholasgasior/sentiment-analysis,FOUND,https://github.com/BUPTLdy/Sentiment-Analysis,ML curriculum + on-device inference patterns,task completion; token use,+5% ML curriculum tasks,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+nicholasgasior/sendgrid-nodejs,FOUND,https://github.com/sendgrid/sendgrid-nodejs,Notify SDKs for GitAI/human alerts from gateway node,task completion,+5% publish/notify flows,ESTIMATE,REA: 121 JS parsed / 137 relevant / 492 findings
+nicholasgasior/selenium-wire,FOUND,https://github.com/wkeeling/selenium-wire,Browser automation for gateway fetches only (no bypass),task completion,+8% live-fetch jobs,ESTIMATE,REA: 0 JS parsed / 1 relevant / 0 findings; Python
+nicholasgasior/shipping-calculator,FOUND,https://github.com/carolineschnapp/shipping-calculator,Small workflow/UI patterns for studio widgets,task completion; build time,+2-5% widget/task glue,ESTIMATE,REA: 2 JS parsed / 3 relevant / 0 findings
+nicholasgasior/shodan-python,EXCLUDED,,Not analyzed: people-OSINT,,,,hard-limit exclusion
+nicholasgasior/sitemap-generator,FOUND,https://github.com/lgraubner/sitemap-generator,Public-page SEO/sitemap helpers for GitMesh/GitAI,task completion; build time,+4% publish completeness,ESTIMATE,REA: 22 JS parsed / 24 relevant / 93 findings
+nicholasgasior/signal-protocol,FOUND,https://github.com/elsehow/signal-protocol,E2E message crypto patterns for signed mesh drops (not wallets),security findings; offline uptime,+10% mesh message integrity,ESTIMATE,REA: 49 JS parsed / 52 relevant / 1591 findings
+nicholasgasior/seo-analyzer,FOUND,https://github.com/maddevsio/seo-analyzer,Public-page SEO/sitemap helpers for GitMesh/GitAI,task completion; build time,+4% publish completeness,ESTIMATE,REA: 38 JS parsed / 52 relevant / 211 findings
+nicholasgasior/smartproxy-sdk,EXCLUDED,,Not analyzed: captcha/bot bypass,,,,hard-limit exclusion
+nicholasgasior/snapchat-ads-api,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+nicholasgasior/social-content-calendar,FOUND,https://github.com/shamitbiswas-SH/social-content-calendar,Content drafting templates for agent studio posts,token use; task completion,-8% draft tokens,ESTIMATE,REA: 0 JS parsed / 1 relevant / 1 findings
+nicholasgasior/social-media-scheduler,FOUND,https://github.com/readysetcloud/social-media-scheduler,Content drafting templates for agent studio posts,token use; task completion,-8% draft tokens,ESTIMATE,REA: 14 JS parsed / 19 relevant / 124 findings
+nicholasgasior/sphincs,FOUND,https://github.com/ahf/sphincs,Transport/post-quantum primitives for offline mesh links,security findings; offline uptime,+5% offline mesh trust,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings; non-JS
+nicholasgasior/staking-contracts,EXCLUDED,,Not analyzed: wallets/payments/crypto,,,,hard-limit exclusion
+nicholasgasior/sniper-bot,EXCLUDED,,Not analyzed: wallets/payments/crypto,,,,hard-limit exclusion
+nicholasgasior/story-writer,FOUND,https://github.com/haesleinhuepf/story-writer,Content drafting templates for agent studio posts,token use; task completion,-8% draft tokens,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+nicholasgasior/task-automation-platform,FOUND,https://github.com/l-Spook-l/task-automation-platform,Small workflow/UI patterns for studio widgets,task completion; build time,+2-5% widget/task glue,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+nicholasgasior/tensorflow-js,FOUND,https://github.com/bangoc123/tensorflow-js,ML curriculum + on-device inference patterns,task completion; token use,+5% ML curriculum tasks,ESTIMATE,REA: 12 JS parsed / 25 relevant / 666 findings
+nicholasgasior/tiingo-python,FOUND,https://github.com/hydrosquall/tiingo-python,Open data / ads API adapters for shepherd gateway cache,offline uptime; task completion,+5% gateway data freshness,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+nicholasgasior/testimonial-generator,FOUND,https://github.com/husainahmadrayhan-blip/testimonial-generator,Content drafting templates for agent studio posts,token use; task completion,-8% draft tokens,ESTIMATE,REA: 0 JS parsed / 1 relevant / 0 findings
+nicholasgasior/tiktok-ads-api,FOUND,https://github.com/romeuauri-lgtm/tiktok-ads-api,Open data / ads API adapters for shepherd gateway cache,offline uptime; task completion,+5% gateway data freshness,ESTIMATE,REA: 0 JS parsed / 1 relevant / 0 findings
+nicholasgasior/tink,FOUND,https://github.com/tink-crypto/tink,Google Tink crypto primitives reference for mesh signing,security findings,+8% crypto hygiene,ESTIMATE,REA: 0 JS parsed / 50 relevant / 0 findings; mostly Java
+nicholasgasior/trafilatura,FOUND,https://github.com/adbar/trafilatura,HTML→clean text for shepherd keyless pulls and mesh docs,token use; offline uptime,-15% tokens on scrape/summarize,ESTIMATE,REA: 0 JS parsed / 1050 relevant / 13296 findings; Python lib (JS parse 0 expected)
+nicholasgasior/token-creator,EXCLUDED,,Not analyzed: wallets/payments/crypto,,,,hard-limit exclusion
+nicholasgasior/turnstile-solver,EXCLUDED,,Not analyzed: captcha/bot bypass,,,,hard-limit exclusion
+nicholasgasior/twelve-data-python,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+nicholasgasior/twilio-node,FOUND,https://github.com/twilio/twilio-node,Notify SDKs for GitAI/human alerts from gateway node,task completion,+5% publish/notify flows,ESTIMATE,REA: 801 JS parsed / 808 relevant / 5730 findings
+nicholasgasior/vix-analysis,FOUND,https://github.com/andrewjgora/vix-analysis,Open data / ads API adapters for shepherd gateway cache,offline uptime; task completion,+5% gateway data freshness,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+nicholasgasior/undetected-chromedriver,EXCLUDED,,Not analyzed: captcha/bot bypass,,,,hard-limit exclusion
+nicholasgasior/twitter-ads-api,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+nicholasgasior/video-script-writer,FOUND,https://github.com/Anirudh071/video-script-writer,Content drafting templates for agent studio posts,token use; task completion,-8% draft tokens,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+nicholasgasior/web-unlocker,EXCLUDED,,Not analyzed: captcha/bot bypass,,,,hard-limit exclusion
+nicholasgasior/whitepaper-generator,FOUND,https://github.com/jeffabailey/whitepaper-generator,Same-name public stub is empty — no useful code,,0%,ESTIMATE,public exact name exists; empty repo; not cloned
+nicholasgasior/wink-nlp,FOUND,https://github.com/winkjs/wink-nlp,Local NLP tagging for memory graph without cloud LLM,token use; task completion,-10% classify tokens; +5% task completion,ESTIMATE,REA: 104 JS parsed / 121 relevant / 484 findings
+nicholasgasior/wireguard-go,FOUND,https://github.com/WireGuard/wireguard-go,Transport/post-quantum primitives for offline mesh links,security findings; offline uptime,+5% offline mesh trust,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings; non-JS
+sovereign-archive/T5,FOUND,https://github.com/NovelAI/t5,T5 model wrapper — curriculum only,task completion,0% runtime,ESTIMATE,REA: 0 JS parsed / 1 relevant / 0 findings
+nicholasgasior/zenrows-scraper,EXCLUDED,,Not analyzed: captcha/bot bypass,,,,hard-limit exclusion
+nicholasgasior/yahoo-finance-api,FOUND,https://github.com/scheb/yahoo-finance-api,Open data / ads API adapters for shepherd gateway cache,offline uptime; task completion,+5% gateway data freshness,ESTIMATE,REA: 0 JS parsed / 26 relevant / 9 findings
+sovereign-core/Doxiwehu-OmniMind-Public,EXCLUDED,,Not analyzed: people-OSINT,,,,hard-limit exclusion
+sovereign-core/awesome-machine-learning,FOUND,https://github.com/josephmisiti/awesome-machine-learning,ML curriculum + on-device inference patterns,task completion; token use,+5% ML curriculum tasks,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings
+sovereign-core/complete-digital-organism,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/TESSERACT-UNIFIED,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/lexi-3.0-sovereign-consciousness,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/lexi-2.0-sovereign-ultimate,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/lexi-sovereign,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/mining,EXCLUDED,,Not analyzed: wallets/payments/crypto,,,,hard-limit exclusion
+sovereign-core/nemo-sovereign-organism,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/nexus-complete,FOUND,https://github.com/ArturoPardo/nexus-complete,Small workflow/UI patterns for studio widgets,task completion; build time,+2-5% widget/task glue,ESTIMATE,REA: 38 JS parsed / 58 relevant / 233 findings
+sovereign-core/nexus-omniscience,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/sovereign-ai-2025,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/openmunus,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/sovereign-tessera,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/sovereign-zenith,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-aetherion-orion,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-ai-orchestration,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-omniscience-complete,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-payment-processing,EXCLUDED,,Not analyzed: wallets/payments/crypto,,,,hard-limit exclusion
+sovereign-core/tessera-singularity-swarm,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-sovereign-authority,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-sovereign-complete,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-sovereign-tumbler,EXCLUDED,,Not analyzed: wallets/payments/crypto,,,,hard-limit exclusion
+sovereign-core/tessera-sovereign-ultimate,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-sovereign-organism,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-super-hybrid-final-complete,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-complete-final,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-ultimate-sovereign,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-ecosystem,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-hybrid-unified,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tessera-tesseract-unified,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-omniscience-v8,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-swarm-ultimate,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-quantum-agi,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-omniversal,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-ultimate,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-unified-agi,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-unified-final,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v10,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v13,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v11,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v15,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v14,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v12,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v17,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v16,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v18,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v19,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v20,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v21,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v22,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v23,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v3-trained,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v31,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v30,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v32-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v36-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v33-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v38-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v34-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v35-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v37-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v39-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v40-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v4-ollama,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v41-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v42-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v43-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v47-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v46-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v45-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v48-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v49-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v44-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v51-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v53-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v52-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v50-real,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v8,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract-v7,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract2,FOUND,https://github.com/mbrukman/tesseract2,Same-name public OCR dump (mbrukman/tesseract2) — too large / low fit; not cloned,,0%,ESTIMATE,public exact name exists; REA skipped (size ~450MB OCR fork)
+sovereign-core/tesseract-v9,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract1,FOUND,https://github.com/tongletuvan/tesseract1,Same-name public code — OCR or unrelated Tess; ideas only,task completion,0-2%,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings; weak fit to TESSERA
+sovereign-core/ultimate-tessera,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseractA1,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-core/tesseract3,FOUND,https://github.com/fuAD3351-max/Tesseract3,Same-name public code — OCR or unrelated Tess; ideas only,task completion,0-2%,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings; weak fit to TESSERA
+sovereign-origin/TessV1,FOUND,https://github.com/pablopeu/tessv1,Same-name public code — OCR or unrelated Tess; ideas only,task completion,0-2%,ESTIMATE,REA: 48 JS parsed / 52 relevant / 486 findings; weak fit to TESSERA
+sovereign-origin/tessera-sovereign-complete,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-origin/tessera-sovereign-ultimate,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-origin/tesseract-quantum-agi,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+sovereign-origin/tesseract-v4-ollama,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+thetesseractai/18,FOUND,https://github.com/TheTesseractAI/18,Tessera Sovereign v18 architecture — multi-agent + sandbox patterns,task completion; offline uptime,+10% design reuse,ESTIMATE,REA: 1605 JS parsed / 2668 relevant / 36057 findings; clean-room only
+thetesseractai/Tesseract-Sovereign-Moon-v2-Consolidated,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+thetesseractai/consolidated-project-all-in-one,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+thetesseractai/Tesseract2.0,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+thetesseractai/Tesseract-Unified-Ecosystem,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+thetesseractai/Tesseract-Sovereign-Moon-v3.0,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+thetesseractai/Tesseraxt-Sovereign-Brain,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/5t,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/1T,EXCLUDED,,Not analyzed: vault/1T skip,,,,hard-limit exclusion
+vitalitychems-dot/Everything,FOUND,https://github.com/yuzhengyang/Everything,Ambiguous same-name public repo — not TESSERA-related,,0%,ESTIMATE,REA: 0 JS parsed / 0 relevant / 0 findings; name collision only
+vitalitychems-dot/1,FOUND,https://github.com/ChuheGit/1,Ambiguous same-name public repo — not TESSERA-related,,0%,ESTIMATE,REA: 124 JS parsed / 125 relevant / 1184 findings; name collision only
+vitalitychems-dot/GitbookAI,FOUND,https://github.com/vitalitychems-dot/GitMesh,Public mesh drop room (GitMesh) — TESSERA tab + offline sync surface,offline uptime; task completion,+20% offline drop UX,ESTIMATE,7 JS parsed; is the mesh UI
+vitalitychems-dot/Grok-ready,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/Gitbook,FOUND,https://github.com/vitalitychems-dot/Gitbook,Offline queue/cache + archive patterns already mapped into v2 plan,offline uptime; token use,+15% offline uptime,ESTIMATE,lattice-mesh/offline from REA batch2
+vitalitychems-dot/TX,FOUND,https://github.com/microsoft/Tx,Ambiguous same-name public repo — not TESSERA-related,,0%,ESTIMATE,REA: 0 JS parsed / 2 relevant / 0 findings; name collision only
+vitalitychems-dot/Zz,FOUND,https://github.com/zetzit/zz,Utility/archive same-name — little direct gain,,0%,ESTIMATE,REA: 0 JS parsed / 1 relevant / 0 findings
+vitalitychems-dot/T44,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/TESS,FOUND,https://github.com/Squitch1/Tess,Same-name public code — OCR or unrelated Tess; ideas only,task completion,0-2%,ESTIMATE,REA: 26 JS parsed / 32 relevant / 219 findings; weak fit to TESSERA
+vitalitychems-dot/tessera-complete-archives,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/tessera-coordination,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/tessera-grok-handoff-complete,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/tessera-grok-handoff,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/TESSERA,FOUND,https://github.com/vitalitychems-dot/TESSERA,Baseline repo itself — no external gain,,0%,ESTIMATE,is TESSERA baseline
+vitalitychems-dot/tessera-unified,BLOCKED,,Not assessed — original 404 and no public exact-name match,,,,never guess
+vitalitychems-dot/z,FOUND,https://github.com/z-pattern-matching/z,Utility/archive same-name — little direct gain,,0%,ESTIMATE,REA: 18 JS parsed / 20 relevant / 72 findings
+vitalitychems-dot/vitality,FOUND,https://github.com/vitalitychems-dot/vitality,Artifact health check scripts for CI hygiene,build time; test coverage,-5% flaky CI; +2 checks,ESTIMATE,REA 692 JS; scripts/check-*.mjs reusable
+collin-keane/Tessera,FOUND,https://github.com/tessera-metrics/tessera,Public observability/metrics Tessera (unrelated product) — name collision only,,0%,ESTIMATE,REA: 109 JS / 154 relevant / 504 findings; not our TESSERA

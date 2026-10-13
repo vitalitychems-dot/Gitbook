@@ -1,0 +1,6 @@
+rows 317
+accessible 9
+public_match_found 128
+unknown_license_inacc 180
+include counts {'n': 224, 'excluded': 47, 'y': 46}
+lookup2 lines 302

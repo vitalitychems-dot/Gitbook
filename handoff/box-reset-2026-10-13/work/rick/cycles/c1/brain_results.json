@@ -1,0 +1,88 @@
+{
+ "qa": {
+  "total": 400,
+  "dev": 185,
+  "test": 215
+ },
+ "baseline_top1_k1": 0.181,
+ "S1_rag_k5": 0.181,
+ "S1_citation_check": {
+  "accepted": 206,
+  "precision_accepted": 0.165,
+  "precision_all": 0.181
+ },
+ "S2_self_consistency": 0.181,
+ "S3_verifier": {
+  "answered": 206,
+  "acc_all": 0.158,
+  "precision": 0.165
+ },
+ "S4_mistake_library": {
+  "lib_size": 78,
+  "acc": 0.181
+ },
+ "S5_curriculum": {
+  "easy": {
+   "n": 138,
+   "acc": 0.116
+  },
+  "medium": {
+   "n": 68,
+   "acc": 0.265
+  },
+  "hard": {
+   "n": 9,
+   "acc": 0.556
+  }
+ },
+ "F1_prompt_compressor": {
+  "tokens_raw": 1054439,
+  "tokens_comp": 991972,
+  "saved": 0.059,
+  "answer_kept": 1.0
+ },
+ "F2_semantic_cache": {
+  "queries": 430,
+  "hit_rate": 0.756,
+  "ms_miss": 9.748,
+  "ms_hit": 0.028
+ },
+ "F3_context_dedup": {
+  "tokens_raw": 2045750,
+  "tokens_dedup": 801674,
+  "saved": 0.608,
+  "answer_kept": 1.0
+ },
+ "F4_summary_first": {
+  "tokens": 115221,
+  "saved": 0.891,
+  "answer_kept": 0.947
+ },
+ "F5_router_small_to_large": {
+  "routed_small": 0.958,
+  "small_path_acc": 0.165,
+  "large_tokens_avoided": 1018999,
+  "large_tokens_total": 1054439
+ },
+ "recall_baseline": {
+  "@1": 0.428,
+  "@5": 0.451
+ },
+ "M1_tiered_memory": {
+  "recall_at5": 0.451,
+  "tiers_2pass": {
+   "cold": 397,
+   "warm": 6,
+   "hot": 27
+  },
+  "ms_avg": 15.94
+ },
+ "M2_graph_recall": {
+  "@1": 0.428,
+  "@5": 0.451
+ },
+ "M3_decay_reinforce": {
+  "@1": 0.423,
+  "@5": 0.451
+ }
+}

@@ -1,0 +1,83 @@
+diff --git a/mesh/queue/PROMPT-TEMPLATE.md b/mesh/queue/PROMPT-TEMPLATE.md
+index 343e533..0faaadc 100644
+--- a/mesh/queue/PROMPT-TEMPLATE.md
++++ b/mesh/queue/PROMPT-TEMPLATE.md
+@@ -33,4 +33,4 @@ Commit as `vitalitychems-dot <332565808+vitalitychems-dot@users.noreply.github.c
+ Acceptance for this task: {acceptance}
+ 
+ ## 5. Finish
+-PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge; `mesh/queue/autogate.sh` merges passing PRs.
++PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge; `mesh/queue/autogate.sh` only reports PASS/FAIL, and Tessera merges after Moderator, Security and Build PASS.
+diff --git a/mesh/queue/README.md b/mesh/queue/README.md
+index 87ec4cf..23d82dc 100644
+--- a/mesh/queue/README.md
++++ b/mesh/queue/README.md
+@@ -3,7 +3,7 @@
+ 2. Next batch: `python3 mesh/queue/dispatch.py --next --max 12 --agent Tessera --claim` → JSON `[{id, repo_url, title, prompt, parent_id, depth, branch}]`. Caps: depth ≤ 3, ≤ 4 children per task, ≤ 12 running cloud agents, per-task budget (default 20 files / 800 lines; a child's budget never exceeds its parent's). No two running tasks with overlapping scope, and none overlapping an open PR. Quarantined lineages never launch.
+ 3. Spawning: agents cannot launch agents. They add a `## SPAWN` section (one JSON object per line) to their PR body; the launcher runs `dispatch.py --spawn body.md --parent <ID> --spawned-by <agent>`.
+ 4. Lineage: `dispatch.py --record <ID> --agent-id <bc-…> --pr <N> --status launched|in_review|merged` appends to `LINEAGE.jsonl`.
+-5. Gate + watchdog: `autogate.sh <repo> <pr> <task-id> [--merge]` runs `gatecheck.py` (protected paths from `mesh/policy/protected-paths.txt`, `TESSERA_ENABLE_*` defaults, noreply identity, gitleaks, declared scope, budget, unlisted hosts from `mesh/policy/allowed-hosts.txt`, gate tampering) then Node 22 tests for TESSERA. Writes one PASS/FAIL line to `$GATE_LOG` and, with `GB_CHECKOUT`, to `mesh/HANDOFF.md`. Rogue signs go to `$ROGUE_LOG` (notify parent + Security) and quarantine the task and all descendants.
+-6. Protected paths change only via Father-approved Tessera PRs (`--father-approved`); `CODEOWNERS` mirrors them.
++5. Gate + watchdog: `autogate.sh <repo> <pr> <task-id> [--father-approved]` runs `gatecheck.py` (protected paths from `mesh/policy/protected-paths.txt`, `TESSERA_ENABLE_*` defaults, noreply identity, gitleaks, declared scope, budget, unlisted hosts from `mesh/policy/allowed-hosts.txt`, gate tampering) then Node 22 tests for TESSERA. Writes one PASS/FAIL line to `$GATE_LOG` and, with `GB_CHECKOUT`, to `mesh/HANDOFF.md`. Rogue signs go to `$ROGUE_LOG` (notify parent + Security) and quarantine the task and all descendants.
++6. Protected paths change only via Father-approved Tessera PRs. `--father-approved` is honoured only if the PR has label `father-approved` applied by `vitalitychems-dot`, or a `vitalitychems-dot` comment `FATHER APPROVED <head-sha>`; otherwise (or if `gh api` fails) it is ignored. autogate never merges: Tessera merges by hand after Moderator, Security and Build PASS. Caveat: agents share the `vitalitychems-dot` account, so this is an audit speed bump, not real separation. `CODEOWNERS` mirrors the protected paths.
+ 7. Tests: `cd mesh/queue && python3 -m unittest tests.test_spawn`; benchmark: `python3 tests/bench.py`.
+ Gitbook is ~11 GB at depth 1, so autogate uses a blob-less, sparse checkout of only the changed files.
+diff --git a/mesh/queue/autogate.sh b/mesh/queue/autogate.sh
+index 6da111e..7c36a1d 100755
+--- a/mesh/queue/autogate.sh
++++ b/mesh/queue/autogate.sh
+@@ -1,13 +1,14 @@
+ #!/usr/bin/env bash
+-# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--merge] [--father-approved]
++# autogate.sh <TESSERA|Gitbook> <pr-number> <task-id> [--father-approved]
+ # Merge gate + watchdog. Shallow-clones the PR, runs gatecheck.py (protected paths, flag defaults,
+ # noreply identity, gitleaks, task scope, budget, unlisted hosts, gate tampering), Node 22 tests (TESSERA).
+ # Writes one PASS/FAIL line to mesh/HANDOFF.md in $GB_CHECKOUT (if set) and $GATE_LOG; on rogue signs
+ # appends to $ROGUE_LOG for the parent + Security and quarantines the task and its descendants.
+-# --father-approved is only for Tessera's own PRs that Father approved in chat (protected-path changes).
++# --father-approved is only honoured if GitHub shows Father's approval on this PR (see father_ok below).
++# This script NEVER merges: merging is a manual step by Tessera after Moderator, Security and Build PASS.
+ set -euo pipefail
+-REPO=$1; PR=$2; TASK=$3; shift 3; MERGE=; FA=
+-for x in "$@"; do case $x in --merge) MERGE=1;; --father-approved) FA=--father-approved;; esac; done
++REPO=$1; PR=$2; TASK=$3; shift 3; FA=
++for x in "$@"; do case $x in --merge) echo "autogate: --merge was removed; merge manually after all lane PASSes" >&2; exit 2;; --father-approved) FA=--father-approved;; *) echo "autogate: unknown option $x" >&2; exit 2;; esac; done
+ NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com
+ HERE=$(cd "$(dirname "$0")" && pwd)
+ GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-/workspace/pubscan/gl.toml}
+@@ -18,6 +19,29 @@ cd "$W"; git init -q r; cd r; git remote add origin "https://github.com/vitality
+ git fetch -q --filter=blob:none --depth 50 origin "main:refs/remotes/origin/main" "pull/$PR/head:pr"
+ if [ "$REPO" = Gitbook ]; then git sparse-checkout init --no-cone -q 2>/dev/null || git sparse-checkout init --no-cone; git diff --name-only origin/main...pr | git sparse-checkout set --no-cone --stdin; fi
+ git checkout -q pr
++HEAD_SHA=$(git rev-parse HEAD)
++# father_ok: --father-approved counts only if, via gh api on THIS PR, either
++#  (a) the PR currently has label 'father-approved' and its most recent 'labeled' event was by actor vitalitychems-dot, or
++#  (b) a PR comment by vitalitychems-dot contains 'FATHER APPROVED <full head sha>'.
++# Fails closed: any gh/api/jq error => not approved.
++# CAVEAT: all agents act through the shared vitalitychems-dot account, so this is a speed bump that
++# leaves an auditable trail, NOT true separation of duties. Real separation needs a distinct Father
++# identity plus branch protection requiring code-owner review.
++father_ok(){
++  local api="repos/vitalitychems-dot/$REPO/issues/$PR" lab actor cmt
++  lab=$(gh api "$api/labels" --paginate --jq '.[].name' 2>/dev/null) || return 1
++  if printf '%s\n' "$lab" | rg -qx 'father-approved'; then
++    actor=$(gh api "$api/events" --paginate --jq '.[] | select(.event=="labeled" and .label.name=="father-approved") | .actor.login' 2>/dev/null | tail -n1) || return 1
++    [ "$actor" = vitalitychems-dot ] && return 0
++  fi
++  cmt=$(gh api "$api/comments" --paginate --jq ".[] | select(.user.login==\"vitalitychems-dot\") | .body" 2>/dev/null) || return 1
++  printf '%s\n' "$cmt" | rg -qF "FATHER APPROVED $HEAD_SHA" && return 0
++  return 1
++}
++if [ -n "$FA" ] && ! father_ok; then
++  echo "autogate: --father-approved given but no verifiable Father approval for $REPO#$PR @ $HEAD_SHA (or check could not run); ignoring it" >&2
++  FA=
++fi
+ report(){ # $1 PASS|FAIL  $2 reason-json
+   local line="| $(date '+%Y-%m-%d %H:%M %Z') | $REPO#$PR | $TASK | $1 | $(git rev-parse --short HEAD) | metric: $METRIC | $2 |"
+   echo "$line" >> "$GATE_LOG"
+@@ -39,5 +63,4 @@ if [ "$REPO" = TESSERA ]; then
+     rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && { report FAIL "api-server non-DB failure"; exit 1; } || true; }
+ fi
+ report PASS "$R"
+-[ -n "$MERGE" ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
+ exit 0

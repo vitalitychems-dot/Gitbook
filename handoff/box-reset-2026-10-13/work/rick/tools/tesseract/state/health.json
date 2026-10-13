@@ -1,0 +1,1 @@
+{'usgs': {'age_s': 613, 'stale': False}, 'eonet': {'age_s': 26924, 'stale': True}, 'nws': {'age_s': 14144, 'stale': True}, 'meteo': {'age_s': 824, 'stale': False}}

@@ -1,0 +1,8 @@
+glob:**/natal-vault.json
+archive/from-gitbook/archive/moved/1T/
+glob:archive/**/.replit
+archive/from-gitbook/archive/moved/collink1007-XXX/tess/data/secret-society.json
+archive/from-gitbook/archive/moved/collink1007-XXX/tess/server/saved-credentials.enc.json
+archive/from-gitbook/archive/moved/collink1007-XXX/tess/server/dimensional-secrets.json
+regex:^archive/from-gitbook/archive/moved/[^/]+/artifacts/api-server/data/.*\.jsonl$
+regex:^archive/.*/\.env(\..*)?$

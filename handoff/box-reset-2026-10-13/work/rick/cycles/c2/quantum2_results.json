@@ -1,0 +1,249 @@
+{
+ "Q6_deutsch_jozsa": {
+  "table": [
+   {
+    "n": 1,
+    "quantum_queries": 1,
+    "classical_worst": 2,
+    "all_correct": true
+   },
+   {
+    "n": 2,
+    "quantum_queries": 1,
+    "classical_worst": 3,
+    "all_correct": true
+   },
+   {
+    "n": 3,
+    "quantum_queries": 1,
+    "classical_worst": 5,
+    "all_correct": true
+   },
+   {
+    "n": 4,
+    "quantum_queries": 1,
+    "classical_worst": 9,
+    "all_correct": true
+   },
+   {
+    "n": 5,
+    "quantum_queries": 1,
+    "classical_worst": 17,
+    "all_correct": true
+   },
+   {
+    "n": 6,
+    "quantum_queries": 1,
+    "classical_worst": 33,
+    "all_correct": true
+   },
+   {
+    "n": 7,
+    "quantum_queries": 1,
+    "classical_worst": 65,
+    "all_correct": true
+   },
+   {
+    "n": 8,
+    "quantum_queries": 1,
+    "classical_worst": 129,
+    "all_correct": true
+   }
+  ],
+  "verdict": "CONFIRMED"
+ },
+ "Q7_teleportation": {
+  "table": [
+   {
+    "F": 1.0,
+    "fidelity": 1.0,
+    "theory": 1.0
+   },
+   {
+    "F": 0.9,
+    "fidelity": 0.933333,
+    "theory": 0.933333
+   },
+   {
+    "F": 0.75,
+    "fidelity": 0.833333,
+    "theory": 0.833333
+   },
+   {
+    "F": 0.5,
+    "fidelity": 0.666667,
+    "theory": 0.666667
+   },
+   {
+    "F": 0.4,
+    "fidelity": 0.6,
+    "theory": 0.6
+   }
+  ],
+  "classical_limit": 0.6666666666666666,
+  "verdict": "CONFIRMED"
+ },
+ "Q8_shor_15": {
+  "table": [
+   {
+    "a": 2,
+    "period": 4,
+    "true_period": 4,
+    "shot_success": 0.57,
+    "factors": [
+     3,
+     5
+    ]
+   },
+   {
+    "a": 7,
+    "period": 4,
+    "true_period": 4,
+    "shot_success": 0.54,
+    "factors": [
+     3,
+     5
+    ]
+   },
+   {
+    "a": 8,
+    "period": 4,
+    "true_period": 4,
+    "shot_success": 0.52,
+    "factors": [
+     3,
+     5
+    ]
+   },
+   {
+    "a": 11,
+    "period": 2,
+    "true_period": 2,
+    "shot_success": 0.51,
+    "factors": [
+     3,
+     5
+    ]
+   },
+   {
+    "a": 13,
+    "period": 4,
+    "true_period": 4,
+    "shot_success": 0.505,
+    "factors": [
+     3,
+     5
+    ]
+   }
+  ],
+  "verdict": "CONFIRMED"
+ },
+ "Q9_T2_scaling": {
+  "table": [
+   {
+    "T1": 100.0,
+    "Tphi": 80.0,
+    "T2_theory": 57.143,
+    "T2_fit": 57.143
+   },
+   {
+    "T1": 50.0,
+    "Tphi": "inf",
+    "T2_theory": 100.0,
+    "T2_fit": 100.0
+   },
+   {
+    "T1": 200.0,
+    "Tphi": 40.0,
+    "T2_theory": 36.364,
+    "T2_fit": 36.364
+   }
+  ],
+  "verdict": "CONFIRMED",
+  "note": "T2 <= 2*T1 holds; Tphi=inf gives T2=2*T1"
+ },
+ "Q10_repetition_threshold": {
+  "table": [
+   {
+    "p": 0.01,
+    "PL_d1": 0.01,
+    "PL_d3": 0.000298,
+    "PL_d5": 9.85e-06,
+    "PL_d7": 3.42e-07,
+    "PL_d9": 1.22e-08,
+    "mc_d3": 0.00024,
+    "mc_d7": 0.0,
+    "d_helps": true
+   },
+   {
+    "p": 0.05,
+    "PL_d1": 0.05,
+    "PL_d3": 0.00725,
+    "PL_d5": 0.00116,
+    "PL_d7": 0.000194,
+    "PL_d9": 3.32e-05,
+    "mc_d3": 0.00787,
+    "mc_d7": 0.00023,
+    "d_helps": true
+   },
+   {
+    "p": 0.1,
+    "PL_d1": 0.1,
+    "PL_d3": 0.028,
+    "PL_d5": 0.00856,
+    "PL_d7": 0.00273,
+    "PL_d9": 0.000891,
+    "mc_d3": 0.02839,
+    "mc_d7": 0.00293,
+    "d_helps": true
+   },
+   {
+    "p": 0.2,
+    "PL_d1": 0.2,
+    "PL_d3": 0.104,
+    "PL_d5": 0.0579,
+    "PL_d7": 0.0333,
+    "PL_d9": 0.0196,
+    "mc_d3": 0.105,
+    "mc_d7": 0.0328,
+    "d_helps": true
+   },
+   {
+    "p": 0.3,
+    "PL_d1": 0.3,
+    "PL_d3": 0.216,
+    "PL_d5": 0.163,
+    "PL_d7": 0.126,
+    "PL_d9": 0.0988,
+    "mc_d3": 0.21618,
+    "mc_d7": 0.12436,
+    "d_helps": true
+   },
+   {
+    "p": 0.45,
+    "PL_d1": 0.45,
+    "PL_d3": 0.425,
+    "PL_d5": 0.407,
+    "PL_d7": 0.392,
+    "PL_d9": 0.379,
+    "mc_d3": 0.42526,
+    "mc_d7": 0.39269,
+    "d_helps": true
+   },
+   {
+    "p": 0.55,
+    "PL_d1": 0.55,
+    "PL_d3": 0.575,
+    "PL_d5": 0.593,
+    "PL_d7": 0.608,
+    "PL_d9": 0.621,
+    "mc_d3": 0.57149,
+    "mc_d7": 0.60863,
+    "d_helps": false
+   }
+  ],
+  "threshold": "0.5 (code-capacity bit-flip)",
+  "verdict": "CONFIRMED",
+  "note": "surface-code ~1% threshold not simulated here (needs a decoder); this is the repetition-code analogue"
+ }
+}
