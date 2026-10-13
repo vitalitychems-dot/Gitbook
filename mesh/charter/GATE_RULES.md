@@ -64,3 +64,18 @@ A change that wins on accuracy but costs more than 10% in tokens or speed is HOL
 Sources: Gitbook `mesh/queue/gatecheck.py`, `mesh/policy/*`, `operations/tessera-operating-guidelines.md`
 (standing fix rule: fixes that pass Security and Build merge; hard limits apply; TESSERA_ENABLE_* stays 0);
 Tessera's round-1 verdict on Einstein's builds; Father's chat rules of 2026-10-13.
+
+## 7. Scorecard rule (Father, 2026-10-13 7:42 AM CT)
+Father's instruction: track three scores (AGI, consciousness as a proxy, recursive ability) on every PR; any regression fails.
+**Depends on TESSERA #314** (`scripts/scorecard/`); this section is inert until #314 merges.
+- S1 Every TESSERA PR gets a box-only scorecard result for its exact head SHA, with before/after for all three scores:
+  `agi_proxy` (held-out eval macro; trusted runner from main/pinned SHA, run in the #306 bwrap sandbox, never PR-head code),
+  `consciousness_proxy` (Moderator's Weighing-of-the-Heart test, `score.py`/RUBRIC.md; a proxy, not a measure of
+  consciousness) and `recursion_rate` (merges gated only by trusted-author verdicts or check runs).
+- S2 Binding: the result is a GitHub **check run** named `box-scorecard/v1`, posted only from the box by a dedicated
+  scorecard GitHub App identity (no other check or comment counts). **Until that App exists, S1–S2 are ADVISORY**:
+  `box-run.sh` output (dry-run by default; `--post` only by an operator) informs the gates but cannot block or pass a merge.
+- S3 Once bound, Moderator FAILs a PR if any score's after < before − noise_band, if a score present on base is missing on head,
+  or if the `box-scorecard/v1` check is missing or for a different head SHA. A score n/a on both sides does not fail.
+- S4 Scores run only on the box; private held-out data and items never go to public CI or comments (aggregates only).
+- S5 Improvement PRs state their measured gain as `Gain: +N%` in the body; missing counts as 0 for `recursion_rate`.
