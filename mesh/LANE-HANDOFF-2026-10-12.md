@@ -6,7 +6,7 @@
 
 ## Already done
 
-Grok Bot opened the consolidation map. Cursor wrote the pull request. Father merged it. Do not open that map again.
+Grok Bot opened the consolidation map. Cursor wrote the pull request. Tessera merged PR #44 after Father's yes (see intake/log.md). Do not open that map again.
 
 ## Not done, and why
 
