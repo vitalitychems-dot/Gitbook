@@ -1,0 +1,162 @@
+{
+  "schema": "shepherd-allowlist/v1",
+  "scope": "Offline keyless SHEPHERD-RELAY allowlist. Records publisher-stated license, terms URL, and rate limit only. Does not fetch, scrape, sign, or encrypt.",
+  "sources": [
+    {
+      "id": "arxiv-rss-atom",
+      "kind": "rss-atom",
+      "name": "arXiv RSS 2.0 and Atom feeds",
+      "endpoint": "https://rss.arxiv.org/rss/",
+      "atom_endpoint": "https://rss.arxiv.org/atom/",
+      "license": "CC0-1.0",
+      "license_scope": "Descriptive metadata only. E-print files stay under the submitter's license.",
+      "license_url": "https://info.arxiv.org/help/api/tou.html",
+      "terms_url": "https://info.arxiv.org/help/api/tou.html",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "rate_limit": {
+        "max_requests": 1,
+        "per_seconds": 3,
+        "concurrency": 1,
+        "published": "When using the legacy APIs (including OAI-PMH, RSS, and the arXiv API), make no more than one request every three seconds, and limit requests to a single connection at a time.",
+        "citation": "https://info.arxiv.org/help/api/tou.html",
+        "scope_note": "The limit applies to all machines under your control as a whole."
+      }
+    },
+    {
+      "id": "wikimedia-dumps",
+      "kind": "wikimedia-dumps",
+      "name": "Wikimedia content dumps",
+      "endpoint": "https://dumps.wikimedia.org/",
+      "license": "CC-BY-SA-4.0 AND GFDL",
+      "license_scope": "Original textual content, as stated on the dumps legal page. Some text is CC-only. Images and fair-use media are not covered by that default.",
+      "license_url": "https://dumps.wikimedia.org/legal.html",
+      "terms_url": "https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "user_agent_policy_url": "https://foundation.wikimedia.org/wiki/Policy:Wikimedia_Foundation_User-Agent_Policy",
+      "excluded": "Wikimedia Enterprise HTML dumps need an account and are not on this list.",
+      "rate_limit": {
+        "numeric_request_rate_published": false,
+        "max_connections_per_ip": 3,
+        "published": "Downloads are also rate limited and capped at 3 connections per-IP. Clients that do not respect the user-agent policy or who try to evade these limits may be blocked.",
+        "citation": "https://dumps.wikimedia.org/"
+      }
+    },
+    {
+      "id": "arxiv-oai-pmh",
+      "kind": "arxiv-oai-pmh",
+      "name": "arXiv OAI-PMH",
+      "endpoint": "https://export.arxiv.org/oai2",
+      "license": "CC0-1.0",
+      "license_scope": "Descriptive metadata only. E-print files stay under the submitter's license.",
+      "license_url": "https://info.arxiv.org/help/api/tou.html",
+      "terms_url": "https://info.arxiv.org/help/api/tou.html",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "rate_limit": {
+        "max_requests": 1,
+        "per_seconds": 3,
+        "concurrency": 1,
+        "published": "When using the legacy APIs (including OAI-PMH, RSS, and the arXiv API), make no more than one request every three seconds, and limit requests to a single connection at a time.",
+        "citation": "https://info.arxiv.org/help/api/tou.html",
+        "scope_note": "The limit applies to all machines under your control as a whole."
+      }
+    },
+    {
+      "id": "medlineplus-xml",
+      "kind": "medlineplus-xml",
+      "name": "MedlinePlus XML files",
+      "endpoint": "https://medlineplus.gov/xml.html",
+      "license": "mixed",
+      "license_scope": "Some MedlinePlus content is in the public domain. Other content is copyrighted and licensed specifically for use on MedlinePlus. Attribute use to MedlinePlus.gov.",
+      "license_url": "https://medlineplus.gov/about/using/usingcontent/",
+      "terms_url": "https://medlineplus.gov/about/using/usingcontent/",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "excluded": "MedlinePlus RSS feeds are personal-use only and are not on this list.",
+      "rate_limit": {
+        "numeric_request_rate_published": false,
+        "published": "MedlinePlus produces XML data sets that you are welcome to download and use. The XML files page does not publish a numeric request cap.",
+        "citation": "https://medlineplus.gov/xml.html"
+      }
+    },
+    {
+      "id": "pmc-oa",
+      "kind": "pmc-oa",
+      "name": "PMC Open Access via OAI-PMH set pmc-open",
+      "endpoint": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/",
+      "oai_set": "pmc-open",
+      "license": "per-article",
+      "license_scope": "License terms vary. Full text is limited to items whose license or usage rights allow reuse. set=pmc-open is the collection for which full text may be retrieved.",
+      "license_url": "https://pmc.ncbi.nlm.nih.gov/tools/oai/",
+      "terms_url": "https://pmc.ncbi.nlm.nih.gov/tools/oai/",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "rate_limit": {
+        "max_requests": 3,
+        "per_seconds": 1,
+        "concurrency": 1,
+        "published": "Requests are limited to 3 requests per second (rps); rates higher than that will receive an error message. Please make sure that your system does not make concurrent requests, even at off-peak times.",
+        "citation": "https://pmc.ncbi.nlm.nih.gov/tools/oai/"
+      }
+    },
+    {
+      "id": "noaa-nws-api",
+      "kind": "noaa",
+      "name": "National Weather Service API",
+      "endpoint": "https://api.weather.gov/",
+      "license": "public-domain",
+      "license_scope": "NWS web information is in the public domain unless specifically noted otherwise. Third-party material on NWS pages is not public domain.",
+      "license_url": "https://www.weather.gov/disclaimer",
+      "terms_url": "https://www.weather.gov/disclaimer",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "excluded": "NOAA token APIs, including Climate Data Online, require a token and are not on this list.",
+      "rate_limit": {
+        "numeric_request_rate_published": false,
+        "retry_interval_seconds": 60,
+        "published": "The rate limit is not public information, but allows a generous amount for typical use. If a Web Service isn't available users should limit the number of retries to 1 minute intervals.",
+        "citation": "https://www.weather.gov/documentation/services-web-api",
+        "retry_citation": "https://www.weather.gov/disclaimer"
+      }
+    },
+    {
+      "id": "osm-planet-diffs",
+      "kind": "osm-diffs",
+      "name": "OpenStreetMap planet replication diffs",
+      "endpoint": "https://planet.openstreetmap.org/replication/",
+      "license": "ODbL-1.0",
+      "license_scope": "OpenStreetMap data, including the live replication diffs. Attribute OpenStreetMap contributors and keep share-alike on a derivative database.",
+      "license_url": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "terms_url": "https://www.openstreetmap.org/copyright",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "excluded": "The editing API is not a bulk-read source. Overpass has its own policy and is not on this list.",
+      "rate_limit": {
+        "numeric_request_rate_published": false,
+        "published": "Large or frequent data users must use the download service planet.osm, which offers the entire planet of vector data, as well as diffs for syncing on a minutely basis. That policy page does not publish a numeric requests-per-second cap for the replication diffs.",
+        "citation": "https://operations.osmfoundation.org/policies/api/"
+      }
+    },
+    {
+      "id": "github-public-releases",
+      "kind": "github-public-releases",
+      "name": "GitHub public release assets",
+      "endpoint": "https://api.github.com/repos/{owner}/{repo}/releases",
+      "license": "per-repository",
+      "license_scope": "Each public repository's own published license. GitHub does not grant one license for every release asset.",
+      "license_url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "terms_url": "https://docs.github.com/en/site-policy/github-terms/github-terms-of-service",
+      "auth_required": false,
+      "access": "unauthenticated",
+      "rate_limit": {
+        "max_requests": 60,
+        "per_seconds": 3600,
+        "published": "The primary rate limit for unauthenticated requests is 60 requests per hour.",
+        "citation": "https://docs.github.com/en/rest/using-the-rest-api/rate-limits-for-the-rest-api",
+        "scope_note": "Unauthenticated requests for public data, counted per originating IP address."
+      }
+    }
+  ]
+}
