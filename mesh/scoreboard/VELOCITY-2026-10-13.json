@@ -1,0 +1,10 @@
+{
+ "kept_improvements": 16,
+ "kept_per_day": 16.0,
+ "merged_prs": 10,
+ "mean_pct_gain": 118.6,
+ "gate_pass_rate": 0.594,
+ "launch_to_merge_min_median": 10.4,
+ "launch_to_merge_min_max": 11.6,
+ "tokens_per_merged_improvement_est": 77010
+}
