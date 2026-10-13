@@ -1,0 +1,15 @@
+/workspace/gitbook-cordnation/GB-018/GB-018.f4b2c41.diff:92: trailing whitespace.
+**Date:** 2026-10-05  
+/workspace/gitbook-cordnation/GB-018/GB-018.f4b2c41.diff:93: trailing whitespace.
+**Owner:** Security (mesh security/privacy lane)  
+/workspace/gitbook-cordnation/GB-018/GB-018.f4b2c41.diff:95: trailing whitespace.
+**Base:** TESSERA `fec56eb` · Gitbook `6fe412f`  
+Checking patch SUMMARY.md...
+Checking patch history/coordination/agent-checkins.md...
+Checking patch intake/HYBRID-CONSOLIDATION-BACKLOG.md...
+Checking patch merge/hyb-005-braces-decision.md...
+Applied patch SUMMARY.md cleanly.
+Applied patch history/coordination/agent-checkins.md cleanly.
+Applied patch intake/HYBRID-CONSOLIDATION-BACKLOG.md cleanly.
+Applied patch merge/hyb-005-braces-decision.md cleanly.
+warning: 3 lines add whitespace errors.

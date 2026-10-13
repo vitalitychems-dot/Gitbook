@@ -1,0 +1,8 @@
+Warning: Jitter detection is currently not supported in cl-sdk. This may lead to unexpected loop timing behaviour if your loop body takes a long time to execute.
+Spike(timestamp=10, channel=40)
+Spike(timestamp=60, channel=11)
+Spike(timestamp=240, channel=61)
+Spike(timestamp=252, channel=41)
+Spike(timestamp=505, channel=8)
+SUMMARY spikes=159 unique_channels=55 first_ts=10 last_ts=49827 wall_s=2.085
+Random data source is using seed: 42

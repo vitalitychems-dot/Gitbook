@@ -1,0 +1,35 @@
+---
+pid: 137023
+cwd: "/workspace/si/tsr"
+command: "cd /workspace/si/tsr && export PATH=/tmp/node-v22.11.0-linux-x64/bin:$PATH && corepack enable --install-directory /tmp/node-v22.11.0-linux-x64/bin >/dev/null 2>&1; (pnpm -v && pnpm install --frozen-lockfile --ignore-scripts >install.log 2>&1; echo install=$?; S=$(date +%s); NO_COLOR=1 pnpm test > test.log 2>&1; echo $? > test.exit; echo test_s=$(( $(date +%s)-S )); for i in 1 2 3 4 5; do node scripts/bench-latency.mjs > bench-$i.json; done; node scripts/loop/scores.mjs collect test.log $(cat test.exit) bench-*.json > scores.json; node scripts/loop/scores.mjs compare - scores.json > findings.json; node scripts/loop/findings.mjs findings.json scores.json --dry-run) 2>&1 | tail -20"
+title: "Dry-run self-improve on real main"
+status: succeeded
+started_at: 2026-10-13T11:16:35.216Z
+running_for_ms: 2740     
+---
+
+Error: EACCES: permission denied, mkdir '/usr/local/share/corepack/v1'
+    at mkdirSync (node:fs:1363:26)
+    at getTemporaryFolder (/tmp/node-v22.11.0-linux-x64/lib/node_modules/corepack/dist/lib/corepack.cjs:21486:27)
+    at download (/tmp/node-v22.11.0-linux-x64/lib/node_modules/corepack/dist/lib/corepack.cjs:21760:21)
+    at installVersion (/tmp/node-v22.11.0-linux-x64/lib/node_modules/corepack/dist/lib/corepack.cjs:21854:61)
+    at async Engine.ensurePackageManager (/tmp/node-v22.11.0-linux-x64/lib/node_modules/corepack/dist/lib/corepack.cjs:22310:32)
+    at async Engine.executePackageManagerRequest (/tmp/node-v22.11.0-linux-x64/lib/node_modules/corepack/dist/lib/corepack.cjs:22410:25)
+    at async Object.runMain (/tmp/node-v22.11.0-linux-x64/lib/node_modules/corepack/dist/lib/corepack.cjs:23096:5) {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'mkdir',
+  path: '/usr/local/share/corepack/v1'
+}
+
+Node.js v22.11.0
+install=1
+test_s=0
+[dry-run] gh issue create -R vitalitychems-dot/TESSERA
+{"opened":1,"refreshed":0,"closed":0}
+
+---
+exit_code: 0
+elapsed_ms: 2739
+ended_at: 2026-10-13T11:16:37.955Z
+---

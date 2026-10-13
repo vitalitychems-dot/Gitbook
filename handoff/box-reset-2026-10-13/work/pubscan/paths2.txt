@@ -1,0 +1,17 @@
+archive/from-gitbook/archive/moved/1T/
+archive/from-gitbook/archive/moved/T44/artifacts/api-server/.local-data/
+artifacts/api-server/.local-data/natal-vault.json
+archive/from-gitbook/archive/moved/collink1007-XXX/.replit
+archive/from-gitbook/archive/moved/collink1007-XXX/tess/.replit
+archive/from-gitbook/archive/moved/collink1007-XXX/x/.replit
+archive/from-gitbook/archive/moved/Zz/.replit
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/.replit
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/.replit
+archive/from-gitbook/archive/moved/Zz/artifacts/z-app/data/ingest/
+archive/from-gitbook/archive/moved/collink1007-XXX/tess/data/secret-society.json
+archive/drive-rest/share-2c60.html
+archive/drive-rest/share-3ad6.html
+glob:**/.local-data/**
+glob:*/.local-data/*
+glob:**/natal-vault*
+glob:*natal-vault*

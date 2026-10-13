@@ -1,0 +1,90 @@
+{"rea_progress":{"phase":"analyze_javascript_application","completed":0,"total":1,"message":"Inventorying and parsing application artifacts","sequence":1}}
+{"rea_progress":{"phase":"read_javascript_artifacts","completed":0,"total":1,"message":"Reading inventoried JavaScript application sources","sequence":2}}
+{"rea_progress":{"phase":"parse_javascript_sources","completed":0,"total":1,"message":"Parsing and projecting 77 application source files","sequence":3}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .devcontainer/devcontainer.json (1/77)","sequence":4}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .github/scripts/pr-labeler-config.json (2/77)","sequence":5}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .github/scripts/pr-labeler.js (3/77)","sequence":6}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .markdownlint.json (4/77)","sequence":7}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .mcp.json (5/77)","sequence":8}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .vscode/extensions.json (6/77)","sequence":9}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting .vscode/settings.json (7/77)","sequence":10}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/data/prompts/prompt_extra_args.json (8/77)","sequence":11}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/data/prompts/prompt_missing_args.json (9/77)","sequence":12}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/data/prompts/simple_prompt.json (10/77)","sequence":13}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/example_prompt.json (11/77)","sequence":14}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/examples.json (12/77)","sequence":15}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/few_shot_prompt.json (13/77)","sequence":16}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/few_shot_prompt_example_prompt.json (14/77)","sequence":17}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/few_shot_prompt_examples_in.json (15/77)","sequence":18}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/jinja_injection_prompt.json (16/77)","sequence":19}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/prompt_with_output_parser.json (17/77)","sequence":20}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/simple_prompt.json (18/77)","sequence":21}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/examples/simple_prompt_with_template_file.json (19/77)","sequence":22}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/prompts/prompt_extra_args.json (20/77)","sequence":23}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/prompts/prompt_missing_args.json (21/77)","sequence":24}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/core/tests/unit_tests/prompts/simple_prompt.json (22/77)","sequence":25}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/integration_tests/examples/brandfetch-brandfetch-2.0.0-resolved.json (23/77)","sequence":26}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/integration_tests/examples/example-utf8.html (24/77)","sequence":27}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/integration_tests/examples/example.html (25/77)","sequence":28}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/integration_tests/examples/example.json (26/77)","sequence":29}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/integration_tests/examples/facebook_chat.json (27/77)","sequence":30}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/integration_tests/examples/hello_world.js (28/77)","sequence":31}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/data/prompts/prompt_extra_args.json (29/77)","sequence":32}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/data/prompts/prompt_missing_args.json (30/77)","sequence":33}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/data/prompts/simple_prompt.json (31/77)","sequence":34}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/apis-guru/apispec.json (32/77)","sequence":35}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/biztoc/apispec.json (33/77)","sequence":36}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/calculator/apispec.json (34/77)","sequence":37}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/datasette/apispec.json (35/77)","sequence":38}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/freetv-app/apispec.json (36/77)","sequence":39}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/joinmilo/apispec.json (37/77)","sequence":40}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/klarna/apispec.json (38/77)","sequence":41}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/milo/apispec.json (39/77)","sequence":42}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/quickchart/apispec.json (40/77)","sequence":43}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/schooldigger/apispec.json (41/77)","sequence":44}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/shop/apispec.json (42/77)","sequence":45}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/slack/apispec.json (43/77)","sequence":46}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/speak/apispec.json (44/77)","sequence":47}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/urlbox/apispec.json (45/77)","sequence":48}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/wellknown/apispec.json (46/77)","sequence":49}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/wolframalpha/apispec.json (47/77)","sequence":50}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/wolframcloud/apispec.json (48/77)","sequence":51}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain/tests/unit_tests/examples/test_specs/zapier/apispec.json (49/77)","sequence":52}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain_v1/examples/mcp/langgraph.json (50/77)","sequence":53}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain_v1/tests/unit_tests/agents/specifications/responses.json (51/77)","sequence":54}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting libs/langchain_v1/tests/unit_tests/agents/specifications/return_direct.json (52/77)","sequence":55}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/agent-execution.json (53/77)","sequence":56}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/agent-factory.json (54/77)","sequence":57}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/architecture.json (55/77)","sequence":58}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/callbacks.json (56/77)","sequence":59}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/chat-models.json (57/77)","sequence":60}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/ci-workflows.json (58/77)","sequence":61}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/composability.json (59/77)","sequence":62}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/dev-commands.json (60/77)","sequence":63}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/integration-tests.json (61/77)","sequence":64}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/mcp-integration.json (62/77)","sequence":65}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/messages.json (63/77)","sequence":66}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/middleware.json (64/77)","sequence":67}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/model-initialization.json (65/77)","sequence":68}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/openai-provider.json (66/77)","sequence":69}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/partner-pattern.json (67/77)","sequence":70}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/prompts.json (68/77)","sequence":71}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/quickstart.json (69/77)","sequence":72}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/runnables.json (70/77)","sequence":73}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/source-map.json (71/77)","sequence":74}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/streaming.json (72/77)","sequence":75}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/structured-output.json (73/77)","sequence":76}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/tools.json (74/77)","sequence":77}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.claims/unit-tests.json (75/77)","sequence":78}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.last-update.json (76/77)","sequence":79}}
+{"rea_progress":{"phase":"parse_javascript_source","completed":0,"total":1,"message":"Parsing and projecting openwiki/.page-manifest.json (77/77)","sequence":80}}
+{"rea_progress":{"phase":"build_javascript_application_graph","completed":0,"total":1,"message":"Constructing application and Electron boundary relationships","sequence":81}}
+{"rea_progress":{"phase":"seal_javascript_application_graph","completed":0,"total":1,"message":"Sealing the validated application graph","sequence":82}}
+{"rea_progress":{"phase":"build_javascript_semantic_graph","completed":0,"total":1,"message":"Binding and validating static semantic relationships","sequence":83}}
+{"rea_progress":{"phase":"seal_javascript_semantic_graph","completed":0,"total":1,"message":"Validating and sealing the semantic graph","sequence":84}}
+{"rea_progress":{"phase":"validate_javascript_application_result","completed":0,"total":1,"message":"Validating result metadata and cross-graph bindings","sequence":85}}
+{"rea_progress":{"phase":"create_javascript_application_evidence","completed":0,"total":1,"message":"Creating and hashing application analysis Evidence","sequence":86}}
+{"rea_progress":{"phase":"seal_javascript_application_result","completed":0,"total":1,"message":"Sealing the complete application analysis result","sequence":87}}
+{"rea_progress":{"phase":"validate_javascript_application_evidence","completed":0,"total":1,"message":"Validating the immutable application Evidence JSON","sequence":88}}
+{"rea_progress":{"phase":"hash_javascript_application_evidence","completed":0,"total":1,"message":"Hashing the complete application analysis Evidence","sequence":89}}
+{"rea_progress":{"phase":"analyze_javascript_application","completed":1,"total":1,"message":"Application graph and Electron boundaries reconstructed","terminal":true,"sequence":90}}

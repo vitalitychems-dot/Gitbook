@@ -1,0 +1,645 @@
+[sand-supervisor] started (tick 5000ms, role combined, uid 1000, dir /tmp/sand-supervisor, host supervision on, host bundle present, host version 726deab, desktop supervision on)
+[sand-supervisor] boot-fetch: image-baked host 726deab; checking the latest pointer before the first launch (budget 20000ms)
+[sand-supervisor] boot-fetch: baked host 726deab is current (held first launch 105ms)
+[sand-supervisor] launching host: node /opt/sand/sand-host/host-main.cjs
+[sand-supervisor] desktop: restarted d2/x11vnc (pid 29982, 1 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 38777, 1 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 42239, 2 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 44162, 3 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=5.4% of 1 core over 63s stalled=0.3%
+[sand-supervisor] cgroup agent: cpu=356.3% of 1 core over 63s stalled=5.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 44412, 4 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 44817, 5 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 46008, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=331.7% of 1 core over 63s stalled=4.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 59645, 7 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 62077, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.1% of 1 core over 64s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=461.6% of 1 core over 64s stalled=16.3%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 1; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=91.9% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d4/dock (pid 67910, 1 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 69153, 2 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 69194, 3 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 69462, 4 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 70275, 5 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.2% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=163.0% of 1 core over 63s stalled=0.5%
+[sand-supervisor] desktop: restarted d4/dock (pid 70957, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 72274, 7 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.1% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=272.6% of 1 core over 63s stalled=0.8%
+[sand-supervisor] desktop: restarted d4/dock (pid 75000, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 1; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=218.7% of 1 core over 63s stalled=0.7%
+[sand-supervisor] cgroup interactive: cpu=3.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=270.5% of 1 core over 63s stalled=0.9%
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=48.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=69.9% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 83503, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 85282, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=62.0% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 86535, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 88706, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=271.0% of 1 core over 63s stalled=5.4%
+[sand-supervisor] desktop: restarted d5/dock (pid 109351, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 115244, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=373.4% of 1 core over 63s stalled=11.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 118765, 7 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 119565, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d5/dock (pid 120365, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 2; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 64s stalled=0.3%
+[sand-supervisor] cgroup agent: cpu=583.0% of 1 core over 64s stalled=17.2%
+[sand-supervisor] desktop: restarted d4/dock (pid 121524, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 123730, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=177.5% of 1 core over 63s stalled=1.3%
+[sand-supervisor] desktop: restarted d4/dock (pid 131386, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 132035, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 64s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=301.2% of 1 core over 64s stalled=1.8%
+[sand-supervisor] desktop: restarted d4/dock (pid 132624, 6 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: restarted d4/dock (pid 133078, 7 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.3%
+[sand-supervisor] cgroup agent: cpu=727.5% of 1 core over 63s stalled=7.7%
+[sand-supervisor] desktop: restarted d4/dock (pid 133522, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 2; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.2% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=331.3% of 1 core over 63s stalled=5.1%
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=41.0% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 136289, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 3; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=91.9% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 137750, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 4; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 141749, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 5; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=122.0% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 142035, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 6; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 143067, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 7; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=198.0% of 1 core over 63s stalled=3.4%
+[sand-supervisor] desktop: restarted d5/dock (pid 145424, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 8; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 146527, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 9; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=112.9% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d4/dock (pid 149398, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 3; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 158649, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 10; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 178833, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 4; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=230.8% of 1 core over 63s stalled=0.5%
+[sand-supervisor] desktop: restarted d4/dock (pid 199780, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 5; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 200274, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 6; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=146.7% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 200422, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 7; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 201268, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 8; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=124.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d4/dock (pid 201762, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 9; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 203327, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 10; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=151.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=133.1% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=297.9% of 1 core over 63s stalled=1.8%
+[sand-supervisor] desktop: restarted d5/dock (pid 214857, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 11; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 215676, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 12; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=300.9% of 1 core over 63s stalled=0.5%
+[sand-supervisor] desktop: restarted d5/dock (pid 216878, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 13; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 217378, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 14; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=530.9% of 1 core over 63s stalled=15.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 218624, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 15; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 220179, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 16; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=427.2% of 1 core over 63s stalled=3.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 221830, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 17; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 222655, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 11; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 223853, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 18; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=530.6% of 1 core over 63s stalled=13.8%
+[sand-supervisor] desktop: restarted d4/dock (pid 225721, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 12; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 226633, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 13; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=286.4% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 227016, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 14; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 227589, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 15; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=144.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d4/dock (pid 228365, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 16; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 229045, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 17; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=168.4% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 229905, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 18; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=164.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=142.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 234232, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 19; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=201.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d5/dock (pid 234617, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 20; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 235303, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 21; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=256.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 235809, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 22; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 236092, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 23; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=225.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d5/dock (pid 236768, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 24; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 237017, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 25; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=246.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 237112, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 19; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 237197, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 26; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 237367, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 20; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=218.2% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d4/dock (pid 237774, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 21; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 238245, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 22; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=256.7% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 238752, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 23; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 239236, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 24; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=226.2% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d4/dock (pid 240130, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 25; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 241972, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 26; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=290.1% of 1 core over 63s stalled=0.4%
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=352.7% of 1 core over 63s stalled=0.4%
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=275.6% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 246725, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 27; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 249345, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 64s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=595.7% of 1 core over 64s stalled=24.0%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 28; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 253022, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 29; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 257906, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=504.8% of 1 core over 63s stalled=20.9%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 30; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 259388, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 31; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 260828, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=99.4% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 32; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 265099, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 33; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 268257, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 27; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 270353, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 64s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=599.7% of 1 core over 64s stalled=54.0%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 34; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 270931, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 28; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 272191, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 29; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=363.4% of 1 core over 63s stalled=4.6%
+[sand-supervisor] desktop: restarted d4/dock (pid 273222, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 30; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 274684, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 31; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=309.4% of 1 core over 63s stalled=10.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 278025, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 32; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 280575, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 33; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=246.1% of 1 core over 63s stalled=7.2%
+[sand-supervisor] desktop: restarted d4/dock (pid 283313, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 34; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=193.7% of 1 core over 63s stalled=7.9%
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=403.0% of 1 core over 63s stalled=17.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 300579, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=75.5% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 35; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 301496, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 36; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 302390, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=37.0% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 37; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 303286, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 38; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 304345, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=74.1% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 39; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 305123, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 40; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=29.5% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 305967, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 41; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 306205, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 35; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 306940, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 42; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 307690, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 36; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=88.4% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d4/dock (pid 310751, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 37; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 315855, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 38; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=415.3% of 1 core over 63s stalled=14.7%
+[sand-supervisor] desktop: restarted d4/dock (pid 320581, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 39; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 321400, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 40; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=224.0% of 1 core over 63s stalled=7.5%
+[sand-supervisor] desktop: restarted d4/dock (pid 321544, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 41; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 321709, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 42; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=60.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=35.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=15.3% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d5/dock (pid 322534, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 43; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=53.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 323247, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 44; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 323919, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 45; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=28.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] desktop: restarted d5/dock (pid 324471, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 46; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 325211, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 47; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=74.3% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 326101, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 48; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 327128, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 49; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 327568, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 43; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=62.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 327971, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 50; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 328632, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 44; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 330225, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 45; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=60.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 331547, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 46; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 332551, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 47; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=88.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 334723, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 48; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 336697, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 49; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=433.5% of 1 core over 63s stalled=13.4%
+[sand-supervisor] desktop: restarted d4/dock (pid 340079, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 50; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=236.5% of 1 core over 63s stalled=7.4%
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=69.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=66.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 343876, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 51; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 344287, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 52; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=55.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 345302, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 53; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 345846, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 54; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=24.7% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 346433, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 55; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 347751, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 56; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=75.8% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 349264, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 57; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 349941, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 51; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 351074, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 58; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 352259, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 52; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=47.1% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 353474, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 53; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 354129, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 54; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=73.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 355087, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 55; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 357398, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 56; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=75.1% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 359945, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 57; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 361761, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 58; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=171.5% of 1 core over 63s stalled=0.5%
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=473.4% of 1 core over 63s stalled=19.4%
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=228.5% of 1 core over 63s stalled=5.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 374264, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 59; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=146.8% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 374486, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 60; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 375275, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 61; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=68.0% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 376524, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 62; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 377846, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 63; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=115.8% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 379052, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 64; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 379769, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 65; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 380126, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 59; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.4% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=39.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 380944, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 66; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 381364, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 60; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 382054, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=65.7% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 61; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 382825, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 62; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 386952, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=312.1% of 1 core over 63s stalled=12.2%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 63; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 387706, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 64; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 388267, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=74.2% of 1 core over 63s stalled=0.4%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 65; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 389133, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 66; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=36.1% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=3.2% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=105.9% of 1 core over 63s stalled=0.2%
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=52.8% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 394191, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 67; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 395035, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 68; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=98.8% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 395981, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 69; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 396624, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 70; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 64s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=212.4% of 1 core over 64s stalled=0.4%
+[sand-supervisor] desktop: restarted d5/dock (pid 397520, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 71; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 399578, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 72; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=139.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 400680, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 73; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 401479, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 67; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 401970, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 74; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 402882, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 68; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=120.4% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d4/dock (pid 406647, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 69; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 412760, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.3% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=364.0% of 1 core over 63s stalled=4.5%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 70; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 417836, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 71; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 423595, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.4% of 1 core over 64s stalled=0.2%
+[sand-supervisor] cgroup agent: cpu=451.6% of 1 core over 64s stalled=11.3%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 72; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 430418, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 73; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 441546, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.3% of 1 core over 64s stalled=0.4%
+[sand-supervisor] cgroup agent: cpu=673.4% of 1 core over 64s stalled=44.0%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 74; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 64s stalled=0.3%
+[sand-supervisor] cgroup agent: cpu=636.0% of 1 core over 64s stalled=36.7%
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=365.2% of 1 core over 63s stalled=12.2%
+[sand-supervisor] desktop: restarted d5/dock (pid 481383, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 75; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=181.9% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 489680, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 76; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 495079, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 77; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=217.9% of 1 core over 63s stalled=1.0%
+[sand-supervisor] desktop: restarted d5/dock (pid 497155, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 78; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 497980, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 79; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=65.7% of 1 core over 63s stalled=0.4%
+[sand-supervisor] desktop: restarted d5/dock (pid 499320, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 80; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 500416, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 81; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 501357, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 75; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=49.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 501919, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 82; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 502247, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 76; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 504417, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 64s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=72.5% of 1 core over 64s stalled=0.2%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 77; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 505231, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 78; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 505632, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=72.6% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 79; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 506608, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 80; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 507336, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=56.8% of 1 core over 63s stalled=0.1%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 81; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 513695, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 82; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.7% of 1 core over 64s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=268.6% of 1 core over 64s stalled=17.4%
+[sand-supervisor] cgroup interactive: cpu=3.3% of 1 core over 64s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=373.0% of 1 core over 64s stalled=22.0%
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 64s stalled=0.1%
+[sand-supervisor] cgroup agent: cpu=260.5% of 1 core over 64s stalled=2.5%
+[sand-supervisor] desktop: restarted d5/dock (pid 522441, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 83; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 525513, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 84; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 64s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=104.9% of 1 core over 64s stalled=0.1%
+[sand-supervisor] desktop: restarted d5/dock (pid 528496, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 85; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 531276, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 86; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=141.4% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 534818, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 87; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 539264, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 88; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=3.1% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=157.1% of 1 core over 63s stalled=0.3%
+[sand-supervisor] desktop: restarted d5/dock (pid 543917, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 89; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 547607, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 83; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d5/dock (pid 549251, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 90; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 550336, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 84; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=269.7% of 1 core over 63s stalled=1.5%
+[sand-supervisor] desktop: restarted d4/dock (pid 553045, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 85; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 555308, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=3.0% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=227.3% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 86; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 557625, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 87; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 560360, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.8% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=274.1% of 1 core over 63s stalled=0.4%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 88; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 561944, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 89; down reason unknown); giving up until the storm subsides
+[sand-supervisor] desktop: restarted d4/dock (pid 563182, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=227.7% of 1 core over 63s stalled=0.2%
+[sand-supervisor] desktop: d4/dock crash-looping (8 restarts within 600000ms; episode 90; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.6% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=227.2% of 1 core over 63s stalled=0.1%
+[sand-supervisor] cgroup interactive: cpu=2.5% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=294.1% of 1 core over 63s stalled=0.6%
+[sand-supervisor] desktop: restarted d5/dock (pid 574928, 8 restart(s) in window; down reason unknown)
+[sand-supervisor] desktop: d5/dock crash-looping (8 restarts within 600000ms; episode 91; down reason unknown); giving up until the storm subsides
+[sand-supervisor] cgroup interactive: cpu=2.9% of 1 core over 63s stalled=0.0%
+[sand-supervisor] cgroup agent: cpu=376.2% of 1 core over 63s stalled=1.1%

@@ -1,0 +1,207 @@
+{
+ "T1 decay P1=exp(-t/T1)": {
+  "pass_": true,
+  "info": "max err 4.44e-16 (T1=100us, t=5..200us)"
+ },
+ "T2 Ramsey P0=(1+exp(-t/T2))/2": {
+  "pass_": true,
+  "info": "max err 4.44e-16 (T2=80us)"
+ },
+ "readout confusion": {
+  "pass_": true,
+  "info": "P(0|1)=0.0300"
+ },
+ "RB on thermal device recovers calibrated U3 error 2*e1q (tol 10%)": {
+  "pass_": true,
+  "info": "fit=7.023e-04 vs 7.0e-4 (relerr 0.3%; T1 decay is non-unital so B!=0.5 is a known bias)"
+ },
+ "RB injected-error recovery (tol 5%)": {
+  "pass_": true,
+  "info": "e=1.0e-04 fit=1.000e-04 relerr=0.00%; e=5.0e-04 fit=5.000e-04 relerr=0.00%; e=2.0e-03 fit=2.000e-03 relerr=0.00%"
+ },
+ "layout": {
+  "manila": {
+   "rows": [
+    {
+     "m": 2,
+     "naive_F": 0.3887174017345106,
+     "naive_swaps": 4,
+     "best_F": 0.4135846861155936,
+     "best_layout": [
+      0,
+      1,
+      2,
+      4,
+      3
+     ],
+     "best_swaps": 4
+    },
+    {
+     "m": 3,
+     "naive_F": 0.5341612245078868,
+     "naive_swaps": 5,
+     "best_F": 0.5402723366024789,
+     "best_layout": [
+      0,
+      4,
+      3,
+      2,
+      1
+     ],
+     "best_swaps": 5
+    },
+    {
+     "m": 4,
+     "naive_F": 0.5298815349863756,
+     "naive_swaps": 7,
+     "best_F": 0.5513732782388583,
+     "best_layout": [
+      0,
+      4,
+      1,
+      2,
+      3
+     ],
+     "best_swaps": 6
+    },
+    {
+     "m": 5,
+     "naive_F": 0.47307824315155744,
+     "naive_swaps": 11,
+     "best_F": 0.4981576490247603,
+     "best_layout": [
+      0,
+      4,
+      3,
+      2,
+      1
+     ],
+     "best_swaps": 9
+    }
+   ],
+   "best_m": 4
+  },
+  "nairobi": {
+   "rows": [
+    {
+     "m": 2,
+     "naive_F": 0.360989682066186,
+     "naive_swaps": 3,
+     "best_F": 0.44557563278350554,
+     "best_layout": [
+      1,
+      4,
+      6,
+      5,
+      3
+     ],
+     "best_swaps": 2
+    },
+    {
+     "m": 3,
+     "naive_F": 0.3863151582800348,
+     "naive_swaps": 6,
+     "best_F": 0.5180756036845792,
+     "best_layout": [
+      0,
+      5,
+      3,
+      1,
+      2
+     ],
+     "best_swaps": 3
+    },
+    {
+     "m": 4,
+     "naive_F": 0.31363308495471054,
+     "naive_swaps": 10,
+     "best_F": 0.5877704563567538,
+     "best_layout": [
+      1,
+      4,
+      6,
+      3,
+      5
+     ],
+     "best_swaps": 4
+    },
+    {
+     "m": 5,
+     "naive_F": 0.27661133543835625,
+     "naive_swaps": 12,
+     "best_F": 0.37798354308719423,
+     "best_layout": [
+      0,
+      2,
+      5,
+      3,
+      1
+     ],
+     "best_swaps": 6
+    }
+   ],
+   "best_m": 4
+  },
+  "guadalupe": {
+   "rows": [
+    {
+     "m": 2,
+     "naive_F": 0.3775191064044932,
+     "naive_swaps": 4,
+     "best_F": 0.45937625880669974,
+     "best_layout": [
+      7,
+      13,
+      15,
+      12,
+      10
+     ],
+     "best_swaps": 2
+    },
+    {
+     "m": 3,
+     "naive_F": 0.4328149159648919,
+     "naive_swaps": 7,
+     "best_F": 0.4970692357027996,
+     "best_layout": [
+      4,
+      12,
+      6,
+      10,
+      7
+     ],
+     "best_swaps": 3
+    },
+    {
+     "m": 4,
+     "naive_F": 0.34205929814861696,
+     "naive_swaps": 11,
+     "best_F": 0.5657257792792816,
+     "best_layout": [
+      7,
+      13,
+      15,
+      10,
+      12
+     ],
+     "best_swaps": 4
+    },
+    {
+     "m": 5,
+     "naive_F": 0.29676741434801807,
+     "naive_swaps": 13,
+     "best_F": 0.5063005514084442,
+     "best_layout": [
+      5,
+      9,
+      14,
+      11,
+      8
+     ],
+     "best_swaps": 6
+    }
+   ],
+   "best_m": 4
+  }
+ }
+}

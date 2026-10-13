@@ -1,0 +1,71 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "10 parity k=4 vs full snapshots",
+      "metric": "snapshot bytes",
+      "n_seeds": 5,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 465582.0,
+        "lo": 465582.0,
+        "hi": 465582.0
+      },
+      "candidate": {
+        "mean": 236337.0,
+        "lo": 236337.0,
+        "hi": 236337.0
+      },
+      "improvement": {
+        "mean": 229245.0,
+        "lo": 229245.0,
+        "hi": 229245.0
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "10 restorable at q=0.01",
+      "metric": "P(all restorable)",
+      "n_seeds": 10,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0
+      },
+      "candidate": {
+        "mean": 0.9967750000000001,
+        "lo": 0.9965548749999998,
+        "hi": 0.9970401250000002
+      },
+      "improvement": {
+        "mean": -0.003225,
+        "lo": -0.0034451250000000194,
+        "hi": -0.002959874999999986
+      },
+      "verdict": "DROP"
+    },
+    {
+      "name": "10 restorable at q=0.05",
+      "metric": "P(all restorable)",
+      "n_seeds": 10,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0
+      },
+      "candidate": {
+        "mean": 0.9193349999999999,
+        "lo": 0.918594875,
+        "hi": 0.920060125
+      },
+      "improvement": {
+        "mean": -0.08066499999999999,
+        "lo": -0.081405125,
+        "hi": -0.079939875
+      },
+      "verdict": "DROP"
+    }
+  ]
+}

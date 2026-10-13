@@ -1,0 +1,88 @@
+=== brian-team__brian2 ===
+INSTALL: pip install -e .
+Obtaining file:///workspace/repo-lab/brian-team__brian2
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Getting requirements to build editable: started
+  Getting requirements to build editable: finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Getting requirements to build editable did not run successfully.
+  │ exit code: 1
+  ╰─> [69 lines of output]
+      /tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/vcs_versioning/_backends/_git.py:709: UserWarning: "/workspace/repo-lab/brian-team__brian2" is shallow and may cause errors
+        pre_parse(wd)
+      Traceback (most recent call last):
+        File "/workspace/repo-lab/brian-team__brian2/.venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 389, in <module>
+          main()
+          ~~~~^^
+        File "/workspace/repo-lab/brian-team__brian2/.venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 373, in main
+          json_out["return_val"] = hook(**hook_input["kwargs"])
+                                   ~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/workspace/repo-lab/brian-team__brian2/.venv/lib/python3.13/site-packages/pip/_vendor/pyproject_hooks/_in_process/_in_process.py", line 157, in get_requires_for_build_editable
+          return hook(config_settings)
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 481, in get_requires_for_build_editable
+          return self.get_requires_for_build_wheel(config_settings)
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 333, in get_requires_for_build_wheel
+          return self._get_build_requires(config_settings, requirements=[])
+                 ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 301, in _get_build_requires
+          self.run_setup()
+          ~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/build_meta.py", line 317, in run_setup
+          exec(code, locals())  # noqa: S102 # exec is intentional here
+          ~~~~^^^^^^^^^^^^^^^^
+        File "<string>", line 53, in <module>
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/__init__.py", line 117, in setup
+          return distutils.core.setup(**attrs)  # type: ignore[return-value]
+                 ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/_distutils/core.py", line 130, in setup
+          _setup_distribution = dist = klass(attrs)
+                                       ~~~~~^^^^^^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/dist.py", line 321, in __init__
+          _Distribution.__init__(self, dist_attrs)
+          ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/_distutils/dist.py", line 338, in __init__
+          self.finalize_options()
+          ~~~~~~~~~~~~~~~~~~~~~^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools/dist.py", line 790, in finalize_options
+          ep(self)
+          ~~^^^^^^
+        File "/usr/lib/python3.13/contextlib.py", line 85, in inner
+          return func(*args, **kwds)
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools_scm/_integration/setuptools.py", line 267, in infer_version
+          _infer_version_impl(
+          ~~~~~~~~~~~~~~~~~~~^
+              dist,
+              ^^^^^
+          ...<3 lines>...
+              _get_version_inference_config=_get_version_inference_config,
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+          )
+          ^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools_scm/_integration/setuptools.py", line 300, in _infer_version_impl
+          result.apply(dist)
+          ~~~~~~~~~~~~^^^^^^
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools_scm/_integration/version_inference.py", line 199, in apply
+          data = infer_version_with_config(
+              self.dist_name,
+          ...<2 lines>...
+              env=self.env,
+          )
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/setuptools_scm/_integration/version_inference.py", line 133, in infer_version_with_config
+          scm_version = workdir.get_scm_version()
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/vcs_versioning/_backends/_git.py", line 327, in get_scm_version
+          return _git_parse_inner(config, self, pre_parse=effective_pre_parse)
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/vcs_versioning/_backends/_git.py", line 715, in _git_parse_inner
+          tag = config.version_cls(config.fallback_version or "0.0")
+        File "/tmp/pip-build-env-zo1yqxik/overlay/lib/python3.13/site-packages/packaging/version.py", line 452, in __init__
+          raise InvalidVersion(f"Invalid version: {version!r}")
+      packaging.version.InvalidVersion: Invalid version: 'unknown'
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+ERROR: Failed to build 'file:///workspace/repo-lab/brian-team__brian2' when getting requirements to build editable
+INSTALL_FAIL_1

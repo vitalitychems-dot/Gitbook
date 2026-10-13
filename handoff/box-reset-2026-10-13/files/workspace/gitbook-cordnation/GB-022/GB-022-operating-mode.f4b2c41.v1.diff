@@ -1,0 +1,50 @@
+diff --git a/mesh/TESSERA-GITBOOK-OPERATING-MODE.md b/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+--- a/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
++++ b/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+@@ -14,12 +14,13 @@
+ 
+ | Role | Responsibility | Authority boundary |
+ |---|---|---|
+-| Tessera | Product/system admin voice and implementation target; states what is real, tested, proposed, or unknown | Does not invent agent activity or bypass the review gate |
+-| Tessera Pen | Directs the work: frames goals, assigns one scoped task, protects coherence, and records decisions | Does not silently impersonate Tessera, push, merge, or approve for the owner |
+-| Agents/collaborators | Research, compare history, implement scoped changes, test, and report | Must claim one task, use the skill matrix, and provide evidence |
++| Tessera | Product/system admin voice and implementation target; states what is real, tested, proposed, or unknown; assigns tasks; second review gate (after Moderator) | Does not invent agent activity or bypass the review gates |
++| Tessera Pen | Tessera's own writing voice — not a separate agent, not a lane, not a gate; needs no check-in | Does not assign tasks (Tessera does), push, merge, or approve for the owner |
++| Agents/collaborators | Research, compare history, implement scoped changes, test, and report | Must run the overlap check, claim one task only after Tessera assigns it, use the skill matrix, and provide evidence |
+ | Gitbook / Cordnation | Intake, organization, source records, forum, and task ledger | Does not make unreviewed product changes |
+-| Gitbook Moderator | Scope, provenance, license, security, and claim review | Approves eligibility for the digest; does not replace owner approval |
+-| Build | Independent verification of proposed results | Reports `TESTED` versus `REPORTED`; does not auto-approve |
++| Gitbook Moderator | Scope, provenance, license, security, and claim review | First of four gates (Moderator → Tessera → Security → CI/Build); does not replace the other gates or owner approval |
++| Security | Read-only security/privacy sweep (third gate, after Tessera) | Changes nothing; reports to Tessera |
++| Build | Independent verification of proposed results (CI/Build, fourth gate) | Reports `TESTED` versus `REPORTED`; does not auto-approve |
+ | Tessera Grok bot / Command Center | Collects completed check-ins and prepares the periodic bulk digest | May ask the owner for `yes` or `no`; never auto-pushes or auto-merges |
+ | Father / human owner | Final bulk approval and GitHub publication authority | Must explicitly approve the exact digest; Origin merge requires separate `merge` |
+ 
+@@ -29,17 +30,19 @@
+ 
+ The target cadence is **one digest every 30–45 minutes while work is active**. This is a coordination target, not evidence that an unattended job is currently running.
+ 
+-1. Agents read the latest Gitbook board and claim one task.
+-2. Pen assigns or confirms scope and acceptance criteria.
++1. Agents read the latest Gitbook board and run the overlap check (latest main SHA plus open PRs).
++2. Tessera assigns one scoped task with acceptance criteria; the agent claims it only after assignment.
+ 3. Agents work in Gitbook for research/docs or in a scoped TESSERA branch/worktree for code.
+ 4. Agents post check-ins at claim, blocker, candidate result, and closure.
+ 5. Gitbook Moderator reviews scope, provenance, licensing, security, and unsupported claims.
+-6. Build independently verifies the stated checks.
+-7. Tessera Grok bot / Command Center collects only eligible items into a **bulk digest**.
+-8. The digest asks the human owner for one explicit response: `yes`, `no`, or `revise`.
+-9. On `yes`, Father alone publishes the approved Gitbook changes to GitHub. If the digest contains TESSERA changes, it identifies the exact TESSERA commit/branch and required action.
+-10. A separate explicit `merge` is required for any Origin/main merge.
+-11. The next cycle begins with the new remote commit and unresolved items carried forward.
++6. Tessera (admin) reviews product truth.
++7. Security sweeps the item read-only.
++8. CI/Build independently verifies the stated checks.
++9. Tessera Grok bot / Command Center collects only items that cleared all four gates (Ready) into a **bulk digest**.
++10. The digest asks the human owner for one explicit response: `yes`, `no`, or `revise`.
++11. On `yes`, Father alone publishes the approved Gitbook changes to GitHub. If the digest contains TESSERA changes, it identifies the exact TESSERA commit/branch and required action.
++12. A separate explicit `merge` is required for any Origin/main merge.
++13. The next cycle begins with the new remote commit and unresolved items carried forward.
+ 
+ ## Bulk digest contract
+ 

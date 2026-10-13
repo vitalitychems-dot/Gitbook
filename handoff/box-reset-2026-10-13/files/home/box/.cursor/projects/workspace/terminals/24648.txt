@@ -1,0 +1,41 @@
+---
+pid: 45486
+cwd: "/workspace"
+command: "mkdir -p /workspace/rick/tools/{perceive,wstate,spacetime} && cd /workspace/rick/tools/perceive && cat > perceive.py <<'EOF'\n\"\"\"Classical CV anomaly detector: flags blurry / low-detail / warped blocks. numpy+PIL only.\"\"\"\nimport numpy as np, json, sys\nfrom PIL import Image\nB=16\ndef gray(a): return a[...,:3].astype(float)@[.299,.587,.114] if a.ndim==3 else a.astype(float)\ndef conv3(g,k):\n    p=np.pad(g,1,mode='edge');o=np.zeros_like(g)\n    for i in range(3):\n        for j in range(3): o+=k[i][j]*p[i:i+g.shape[0],j:j+g.shape[1]]\n    return o\ndef blocks(x,f):\n    H,W=x.shape[0]//B,x.shape[1]//B\n    return f(x[:H*B,:W*B].reshape(H,B,W,B).swapaxes(1,2).reshape(H,W,B*B),-1)\ndef features(g):\n    lap=conv3(g,[[0,1,0],[1,-4,1],[0,1,0]])\n    gx=conv3(g,[[-1,0,1],[-2,0,2],[-1,0,1]]);gy=conv3(g,[[-1,-2,-1],[0,0,0],[1,2,1]])\n    mag=np.hypot(gx,gy); edge=(mag>np.percentile(mag,75)).astype(float)\n    lv=blocks(lap,np.var); ed=blocks(edge,np.mean)\n    jxx=blocks(gx*gx,np.mean);jyy=blocks(gy*gy,np.mean);jxy=blocks(gx*gy,np.mean)\n    coh=np.sqrt((jxx-jyy)**2+4*jxy**2)/(jxx+jyy+1e-9)\n    return lv,ed,coh\ndef rz(x):\n    m=np.median(x);s=np.median(abs(x-m))*1.4826+1e-9;return (x-m)/s\ndef score(g,mode='combined'):\n    lv,ed,coh=features(g); l=np.log(lv+1e-6)\n    if mode=='laplacian': return -rz(l)\n    return np.maximum.reduce([-rz(l),-rz(ed),rz(coh)])\ndef detect(g,mode='combined',t=3.0): return score(g,mode)>t\ndef inpaint(a,mask,iters=300):\n    a=a.astype(float).copy();m=np.kron(mask,np.ones((B,B)))>0\n    m=np.pad(m,((0,a.shape[0]-m.shape[0]),(0,a.shape[1]-m.shape[1])))\n    for _ in range(iters):\n        p=np.pad(a,((1,1),(1,1))+((0,0),)*(a.ndim-2),mode='edge')\n        avg=(p[:-2,1:-1]+p[2:,1:-1]+p[1:-1,:-2]+p[1:-1,2:])/4; a[m]=avg[m]\n    return a.clip(0,255).astype(np.uint8)\ndef annotate(a,s,mask,out):\n    rgb=a[...,:3] if a.ndim==3 else np.stack([a]*3,-1)\n    h=np.kron(np.clip(s/6,0,1),np.ones((B,B)));h=np.pad(h,((0,rgb.shape[0]-h.shape[0]),(0,rgb.shape[1]-h.shape[1])))\n    o=rgb.astype(float);o[...,0]=o[...,0]*(1-h*.6)+255*h*.6;o[...,1]*=1-h*.4;o[...,2]*=1-h*.4\n    for (i,j) in zip(*np.nonzero(mask)):\n        o[i*B,j*B:(j+1)*B]=o[(i+1)*B-1,j*B:(j+1)*B]=[255,255,0];o[i*B:(i+1)*B,j*B]=o[i*B:(i+1)*B,(j+1)*B-1]=[255,255,0]\n    Image.fromarray(o.astype(np.uint8)).save(out)\nif __name__=='__main__':\n    src,pre=sys.argv[1],sys.argv[2]\n    a=np.array(Image.open(src).convert('RGB'));g=gray(a);s=score(g);m=s>3\n    annotate(a,s,m,pre+'_heatmap.png');Image.fromarray(inpaint(a,m)).save(pre+'_inpaint.png')\n    json.dump({'image':src,'block':B,'shape':a.shape[:2],'flagged_blocks':int(m.sum()),'total_blocks':int(m.size),\n      'regions':[{'x':int(j*B),'y':int(i*B),'w':B,'h':B,'score':round(float(s[i,j]),2)} for i,j in zip(*np.nonzero(m))][:500]},open(pre+'.json','w'),indent=1)\n    print(int(m.sum()),'/',m.size,'blocks flagged')\nEOF\ncat > test_synth.py <<'EOF'\nimport numpy as np,time,json\nfrom perceive import *\nrng=np.random.default_rng(0)\ndef blur(x,k=7):\n    for _ in range(k): x=conv3(x,[[1/9]*3]*3)\n    return x\nres={m:{'tp':0,'fp':0,'fn':0} for m in ['laplacian','combined']}\nfor trial in range(20):\n    img=blur(rng.normal(128,40,(256,256)),1)+rng.normal(0,8,(256,256)); truth=np.zeros((16,16),bool)\n    for kind in ['blur','flat','warp']*2:\n        i,j=rng.integers(0,15,2)*16; p=img[i:i+32,j:j+32]\n        if kind=='blur': img[i:i+32,j:j+32]=blur(p.copy(),6)\n        elif kind=='flat': img[i:i+32,j:j+32]=p.mean()+rng.normal(0,1,p.shape)\n        else: img[i:i+32,j:j+32]=128+60*np.sin(np.arange(32)/2.0)[None,:]+rng.normal(0,8,p.shape)  # stretched/smeared stripes\n        truth[i//16:i//16+2,j//16:j//16+2]=True\n    for m in res:\n        d=detect(img,m);r=res[m];r['tp']+=int((d&truth).sum());r['fp']+=int((d&~truth).sum());r['fn']+=int((~d&truth).sum())\nfor m,r in res.items():\n    r['precision']=round(r['tp']/max(1,r['tp']+r['fp']),3);r['recall']=round(r['tp']/max(1,r['tp']+r['fn']),3)\n    r['f1']=round(2*r['precision']*r['recall']/max(1e-9,r['precision']+r['recall']),3)\nt=time.time();detect(img);res['ms_per_256px']=round((time.time()-t)*1000,1)\nprint(json.dumps(res,indent=1));json.dump(res,open('synth_results.json','w'),indent=1)\nEOF\npython3 test_synth.py && python3 perceive.py /home/box/agent-data/agents/44c2f1e8-c5b4-4103-9b1b-c2768593fa09/attachments/8c4333ae09c840b8e3e24a7595596fec1e16c1ebca23b54d9e098cbc4ade4063.png attachment && ls"
+status: succeeded
+started_at: 2026-10-13T10:57:04.302Z
+running_for_ms: 92979    
+---
+{
+ "laplacian": {
+  "tp": 315,
+  "fp": 3,
+  "fn": 148,
+  "precision": 0.991,
+  "recall": 0.68,
+  "f1": 0.807
+ },
+ "combined": {
+  "tp": 463,
+  "fp": 11,
+  "fn": 0,
+  "precision": 0.977,
+  "recall": 1.0,
+  "f1": 0.988
+ },
+ "ms_per_256px": 5.0
+}
+5177 / 14678 blocks flagged
+__pycache__
+attachment.json
+attachment_heatmap.png
+attachment_inpaint.png
+perceive.py
+synth_results.json
+test_synth.py
+
+---
+exit_code: 0
+elapsed_ms: 92979
+ended_at: 2026-10-13T10:58:37.281Z
+---

@@ -1,0 +1,923 @@
+{
+  "experiment": "self_consistency_majority_vote",
+  "claim_label": "TESTED",
+  "honest_framing": "This is the honest version of 'multiplying agents to sway odds': self-consistency / majority vote over stochastic samples (Wang et al., arXiv:2203.11171). It can improve accuracy on some tasks when the model is noisy, at roughly linear compute cost. It does not grant agency, consciousness, or the ability to change physical odds outside the model.",
+  "model": "qwen2.5:3b-instruct",
+  "temperature": 0.7,
+  "seed_items": 42,
+  "indices": [
+    588,
+    1214,
+    57,
+    906,
+    1252,
+    618,
+    599,
+    289,
+    608,
+    400
+  ],
+  "summary_by_n": {
+    "1": {
+      "N_samples": 1,
+      "n_items": 10,
+      "correct": 2,
+      "accuracy": 0.2,
+      "wall_s_total": 178.12081789970398,
+      "mean_wall_s_per_item": 17.8120817899704,
+      "relative_cost_vs_N1": 1.0
+    },
+    "3": {
+      "N_samples": 3,
+      "n_items": 10,
+      "correct": 4,
+      "accuracy": 0.4,
+      "wall_s_total": 545.1585800647736,
+      "mean_wall_s_per_item": 54.51585800647736,
+      "relative_cost_vs_N1": 3.0606112552870752
+    },
+    "5": {
+      "N_samples": 5,
+      "n_items": 10,
+      "correct": 4,
+      "accuracy": 0.4,
+      "wall_s_total": 873.4996955394745,
+      "mean_wall_s_per_item": 87.34996955394745,
+      "relative_cost_vs_N1": 4.903973077595699
+    }
+  },
+  "total_generate_calls": 50,
+  "wall_s_all": 873.5170710086823,
+  "items": [
+    {
+      "index": 588,
+      "gold": "52",
+      "question": "Jared is trying to increase his typing speed. He starts with 47 words per minute (WPM). After some lessons the next time he tests his typing speed it has increased to 52 WPM. If he continues to increa",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "57",
+          "response": "To find the average of the three measurements, we first need to calculate each of the measurements.\n\nJared's initial speed is 47 WPM.\nAfter some lessons, his speed increased to 52 WPM.\nIf he continues to increase his speed by 5 words per minute (WPM), his speed will be 52 + 5 = 57 WPM.\n\nNow we have three measurements: 47, 52, and 57.\n\nTo find the average, we add these measurements together and divide by 3:\n(47 + 52 + 57) / ",
+          "wall_s": 14.629997253417969,
+          "eval_count": 128,
+          "tok_s": 18.812507495608457,
+          "seed": 42
+        },
+        {
+          "sample_i": 1,
+          "pred": ".",
+          "response": "To solve this problem, let's break it down step by step:\n\n1. **Initial Speed**: Jared's initial typing speed is 47 words per minute (WPM).\n2. **Speed After Lessons**: After the lessons, his speed increases to 52 WPM.\n3. **Future Increase**: He will continue to increase his speed by 5 words per minute, making it 52 + 5 = 57 WPM.\n\nNow, we need to calculate the average of the three measurements: 47 WPM, 52 WPM, and 57 WPM.\n\nTo find the average",
+          "wall_s": 23.32332158088684,
+          "eval_count": 128,
+          "tok_s": 18.55043965991247,
+          "seed": 59
+        },
+        {
+          "sample_i": 2,
+          "pred": "52",
+          "response": "Jared's initial typing speed was 47 WPM. After the lessons, it increased to 52 WPM. If he continues to increase his speed by 5 words per minute, his new speed would be 52 + 5 = 57 WPM.\n\nTo find the average of the three measurements, first add them together: 47 + 52 + 57 = 156.\nThen divide by the number of measurements (3): 156 \u00f7 3 = 52.\n\n#### 52",
+          "wall_s": 20.676347732543945,
+          "eval_count": 117,
+          "tok_s": 11.742708229831898,
+          "seed": 76
+        },
+        {
+          "sample_i": 3,
+          "pred": "47",
+          "response": "To solve this problem, we need to find the average of three measurements of Jared's typing speed. We are given two measurements and need to add a third one.\n\n1. Jared's initial speed is 47 WPM.\n2. After some lessons, his speed increased to 52 WPM.\n3. He continues to increase his speed by 5 WPM, making his new speed 52 WPM + 5 WPM = 57 WPM.\n\nTo find the average speed, we add all three measurements together and divide by 3:\n\n\\[ \\text{Average} = \\frac{47 +",
+          "wall_s": 20.780067205429077,
+          "eval_count": 128,
+          "tok_s": 19.63699782213421,
+          "seed": 93
+        },
+        {
+          "sample_i": 4,
+          "pred": "3",
+          "response": "To find the average of the three measurements, we first need to determine the third measurement. Jared's typing speed increased by 5 words after the second measurement from 47 WPM to 52 WPM. Adding 5 words to his second measurement gives us:\n\n\\[ 52 + 5 = 57 \\text{ WPM} \\]\n\nNow, we have the three measurements: 47 WPM, 52 WPM, and 57 WPM.\n\nTo find the average, we add these measurements together and divide by the number of measurements (which is 3):\n\n\\[ \\text{",
+          "wall_s": 16.428321361541748,
+          "eval_count": 128,
+          "tok_s": 17.071911157774334,
+          "seed": 110
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "57",
+          "correct": false,
+          "preds": [
+            "57"
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 14.629997253417969
+        },
+        "3": {
+          "voted": "57",
+          "correct": false,
+          "preds": [
+            "57",
+            ".",
+            "52"
+          ],
+          "agreement": 0.3333333333333333,
+          "wall_s_sum": 58.629666566848755
+        },
+        "5": {
+          "voted": "57",
+          "correct": false,
+          "preds": [
+            "57",
+            ".",
+            "52",
+            "47",
+            "3"
+          ],
+          "agreement": 0.2,
+          "wall_s_sum": 95.83805513381958
+        }
+      }
+    },
+    {
+      "index": 1214,
+      "gold": "5",
+      "question": "Jordan has 2 children who wear diapers.  Each child requires 5 diaper changes per day.  Jordan's wife changes half of the diapers.  How many diapers does Jordan change per day?",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "3.",
+          "response": "To solve this, let's break it down step by step:\n\n1. Jordan has 2 children, and each child requires 5 diaper changes per day. So, the total diaper changes per day for both children are:\n   \\( 2 \\text{ children} \\times 5 \\text{ diaper changes/child} = 10 \\text{ diaper changes/day} \\)\n\n2. Jordan's wife changes half of the diapers. So, she changes:\n   \\( \\frac{10 \\text{ diaper changes}}{2} = 5 \\text{ diaper changes/day} \\)\n\n3. Since the other",
+          "wall_s": 21.002856969833374,
+          "eval_count": 128,
+          "tok_s": 16.34231845918493,
+          "seed": 142
+        },
+        {
+          "sample_i": 1,
+          "pred": "5",
+          "response": "To solve this problem, let's break it down step by step:\n\n1. Jordan has 2 children, each needing 5 diaper changes per day.\n   - For 2 children: 2 children * 5 diaper changes/child = 10 diaper changes per day\n\n2. Jordan's wife changes half of the diapers.\n   - Half of 10 diaper changes: 10 / 2 = 5 diaper changes per day\n\n3. The other half of the diapers are changed by Jordan.\n   - Jordan changes the other half: 10 diaper changes / 2 = 5 diaper changes per day",
+          "wall_s": 16.290711879730225,
+          "eval_count": 128,
+          "tok_s": 18.849353025409517,
+          "seed": 159
+        },
+        {
+          "sample_i": 2,
+          "pred": "5",
+          "response": "Each child requires 5 diaper changes per day, so for 2 children it's 5 * 2 = 10 diaper changes per day in total.\n\nJordan's wife changes half of the diapers, so she changes 10 / 2 = 5 diapers per day.\n\nTherefore, Jordan must change the other half, which is also 5 diapers per day.\n\n#### 5",
+          "wall_s": 15.27071213722229,
+          "eval_count": 80,
+          "tok_s": 18.974206937444414,
+          "seed": 176
+        },
+        {
+          "sample_i": 3,
+          "pred": "5",
+          "response": "To solve this, let's break it down step by step:\n\n1. Jordan has 2 children who each require 5 diaper changes per day. So, the total diaper changes per day for both children would be:\n   2 children * 5 diaper changes/child = 10 diaper changes\n\n2. Jordan's wife changes half of these diaper changes. So the number of diaper changes she changes is:\n   10 diaper changes / 2 = 5 diaper changes\n\n3. Therefore, Jordan changes the remaining half, which is also 5 diaper changes.\n\n#### 5",
+          "wall_s": 18.558414697647095,
+          "eval_count": 121,
+          "tok_s": 14.102036508890519,
+          "seed": 193
+        },
+        {
+          "sample_i": 4,
+          "pred": "5",
+          "response": "To solve this, let's break it down:\n\n1. Jordan has 2 children.\n2. Each child requires 5 diaper changes per day.\n3. So, for 2 children, that's 2 * 5 = 10 diaper changes per day in total.\n4. Jordan's wife changes half of the diapers. So, she changes 10 / 2 = 5 diapers per day.\n5. This means Jordan must be changing the other half of the diapers. So, Jordan changes 10 / 2 = 5 diapers per day.\n\n#### 5",
+          "wall_s": 17.68016743659973,
+          "eval_count": 121,
+          "tok_s": 17.18800294440434,
+          "seed": 210
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "3.",
+          "correct": false,
+          "preds": [
+            "3."
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 21.002856969833374
+        },
+        "3": {
+          "voted": "5",
+          "correct": true,
+          "preds": [
+            "3.",
+            "5",
+            "5"
+          ],
+          "agreement": 0.6666666666666666,
+          "wall_s_sum": 52.56428098678589
+        },
+        "5": {
+          "voted": "5",
+          "correct": true,
+          "preds": [
+            "3.",
+            "5",
+            "5",
+            "5",
+            "5"
+          ],
+          "agreement": 0.8,
+          "wall_s_sum": 88.80286312103271
+        }
+      }
+    },
+    {
+      "index": 57,
+      "gold": "83",
+      "question": "A wooden bridge can carry no more than 5000 pounds. A delivery truck filled with identical boxes, each weighing 15 pounds, will pass over the bridge. The combined weight of the driver and the empty tr",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": ".",
+          "response": "To solve this, we need to find the maximum number of boxes that can be loaded onto the truck without exceeding the bridge's weight limit of 5000 pounds.\n\n1. The weight limit of the bridge is 5000 pounds.\n2. The driver and the empty truck together weigh 3755 pounds.\n3. The total weight of the truck with the boxes will be the weight of the driver and the empty truck plus the weight of the boxes.\n\nLet's denote the number of boxes as \\( x \\). The total weight of the boxes will be \\( 15x \\) pounds.\n\n",
+          "wall_s": 17.27556562423706,
+          "eval_count": 128,
+          "tok_s": 18.415178250293348,
+          "seed": 242
+        },
+        {
+          "sample_i": 1,
+          "pred": "1",
+          "response": "To solve this problem, we need to find the maximum number of boxes the truck can carry without exceeding the bridge's weight limit.\n\nFirst, we calculate the maximum weight the truck can carry, which is the bridge's weight limit minus the weight of the driver and the empty truck:\n\\[ 5000 \\text{ pounds} - 3755 \\text{ pounds} = 1245 \\text{ pounds} \\]\n\nEach box weighs 15 pounds. To find the maximum number of boxes, we divide the maximum weight the truck can carry by the weight of one box:\n\\[ \\frac{1",
+          "wall_s": 17.869760513305664,
+          "eval_count": 128,
+          "tok_s": 18.88372405922172,
+          "seed": 259
+        },
+        {
+          "sample_i": 2,
+          "pred": "1",
+          "response": "To solve this, we first determine the maximum weight the truck can carry while accounting for the weight of the driver and the empty truck. The bridge's weight limit is 5000 pounds. The weight limit minus the driver and empty truck weight gives us the weight that can be carried by the boxes.\n\n\\[\n5000 - 3755 = 1245 \\text{ pounds}\n\\]\n\nEach box weighs 15 pounds, so to find the maximum number of boxes, we divide the remaining weight limit by the weight of one box:\n\n\\[\n\\frac{1245}{1",
+          "wall_s": 16.607019901275635,
+          "eval_count": 128,
+          "tok_s": 19.458955893236006,
+          "seed": 276
+        },
+        {
+          "sample_i": 3,
+          "pred": ".",
+          "response": "To solve this, let's break down the problem step by step:\n\n1. **Total Weight Limit**: The bridge can carry no more than 5000 pounds.\n2. **Truck and Driver Weight**: The combined weight of the driver and the empty truck is 3755 pounds.\n3. **Weight of Each Box**: Each box weighs 15 pounds.\n4. **Weight Constraint for Boxes**: The maximum weight of the boxes that can be loaded onto the truck is the total weight limit minus the weight of the driver and the empty truck.\n\nLet's calculate the maximum we",
+          "wall_s": 16.919692039489746,
+          "eval_count": 128,
+          "tok_s": 18.7391152092515,
+          "seed": 293
+        },
+        {
+          "sample_i": 4,
+          "pred": "83",
+          "response": "To solve this, first we calculate the total weight capacity allowed by the bridge after accounting for the driver and the empty truck:\n\n5000 pounds (total allowed) - 3755 pounds (driver and empty truck) = 1245 pounds (available for boxes)\n\nEach box weighs 15 pounds, so to find the maximum number of boxes, we divide the available weight by the weight of one box:\n\n1245 pounds \u00f7 15 pounds/box = 83 boxes\n\n#### 83",
+          "wall_s": 15.032179117202759,
+          "eval_count": 112,
+          "tok_s": 16.9172867028465,
+          "seed": 310
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": ".",
+          "correct": false,
+          "preds": [
+            "."
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 17.27556562423706
+        },
+        "3": {
+          "voted": "1",
+          "correct": false,
+          "preds": [
+            ".",
+            "1",
+            "1"
+          ],
+          "agreement": 0.6666666666666666,
+          "wall_s_sum": 51.75234603881836
+        },
+        "5": {
+          "voted": ".",
+          "correct": false,
+          "preds": [
+            ".",
+            "1",
+            "1",
+            ".",
+            "83"
+          ],
+          "agreement": 0.4,
+          "wall_s_sum": 83.70421719551086
+        }
+      }
+    },
+    {
+      "index": 906,
+      "gold": "10",
+      "question": "Tim has a box with 7 blue shoe boxes and 9 red shoe boxes. If he uses 3 blue shoeboxes and 1/3 red of his shoeboxes to go fishing, how many red and blue shoe boxes are left in Tim's box?",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "4.",
+          "response": "To solve this, let's break it down step by step:\n\n1. Tim initially has 7 blue shoe boxes and 9 red shoe boxes.\n\n2. He uses 3 blue shoe boxes. So, the number of blue shoe boxes left is:\n   7 blue shoe boxes - 3 blue shoe boxes = 4 blue shoe boxes\n\n3. He uses 1/3 of his red shoe boxes. The number of red shoe boxes used is:\n   1/3 of 9 red shoe boxes = 9 red shoe boxes / 3 = 3 red shoe boxes\n\n4. So, the number of red",
+          "wall_s": 17.491829872131348,
+          "eval_count": 128,
+          "tok_s": 18.23792570951943,
+          "seed": 342
+        },
+        {
+          "sample_i": 1,
+          "pred": "10",
+          "response": "Tim originally has 7 blue shoe boxes and 9 red shoe boxes. If he uses 3 blue shoeboxes, then he has 7 - 3 = 4 blue shoe boxes left. Using 1/3 of the red shoeboxes means he uses 9 * 1/3 = 3 red shoeboxes. So, he has 9 - 3 = 6 red shoe boxes left.\n\nTo find the total number of shoe boxes left:\n- Blue shoe boxes: 4\n- Red shoe boxes: 6\n\nTotal shoe boxes left = 4 blue + 6 red = 10 shoe boxes",
+          "wall_s": 13.892669916152954,
+          "eval_count": 128,
+          "tok_s": 18.291677372537734,
+          "seed": 359
+        },
+        {
+          "sample_i": 2,
+          "pred": "10",
+          "response": "Tim originally has 7 blue shoe boxes and 9 red shoe boxes. He uses 3 blue shoe boxes, leaving him with 7 - 3 = 4 blue shoe boxes. He uses 1/3 of his red shoe boxes, which is 1/3 * 9 = 3 red shoe boxes. So he has 9 - 3 = 6 red shoe boxes left. In total, Tim has 4 blue + 6 red = 10 shoe boxes left.\n\n#### 10",
+          "wall_s": 19.756117343902588,
+          "eval_count": 107,
+          "tok_s": 12.92473143892904,
+          "seed": 376
+        },
+        {
+          "sample_i": 3,
+          "pred": "10",
+          "response": "Tim started with 7 blue shoe boxes and 9 red shoe boxes. He used 3 blue shoe boxes, leaving him with 7 - 3 = 4 blue shoe boxes. For the red shoe boxes, he used 1/3 of them, which means he used 9 * (1/3) = 3 red shoe boxes. This leaves him with 9 - 3 = 6 red shoe boxes.\n\nSo, the total number of shoe boxes left is 4 blue + 6 red = 10 shoe boxes.\n\n#### 10",
+          "wall_s": 16.017985820770264,
+          "eval_count": 117,
+          "tok_s": 19.385175145885867,
+          "seed": 393
+        },
+        {
+          "sample_i": 4,
+          "pred": ".",
+          "response": "Tim originally has 7 blue shoe boxes and 9 red shoe boxes. If he uses 3 blue shoeboxes, then he has 7 - 3 = 4 blue shoeboxes left. For the red shoe boxes, if he uses 1/3 of his red shoeboxes, he uses 9 * 1/3 = 3 red shoeboxes. Thus, he has 9 - 3 = 6 red shoe boxes left.\n\nTo find the total number of shoe boxes left, we add the remaining blue and red shoe boxes: 4 blue + 6 red = 10 shoe boxes.\n\n#### ",
+          "wall_s": 15.945303201675415,
+          "eval_count": 128,
+          "tok_s": 19.92866161911034,
+          "seed": 410
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "4.",
+          "correct": false,
+          "preds": [
+            "4."
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 17.491829872131348
+        },
+        "3": {
+          "voted": "10",
+          "correct": true,
+          "preds": [
+            "4.",
+            "10",
+            "10"
+          ],
+          "agreement": 0.6666666666666666,
+          "wall_s_sum": 51.14061713218689
+        },
+        "5": {
+          "voted": "10",
+          "correct": true,
+          "preds": [
+            "4.",
+            "10",
+            "10",
+            "10",
+            "."
+          ],
+          "agreement": 0.6,
+          "wall_s_sum": 83.10390615463257
+        }
+      }
+    },
+    {
+      "index": 1252,
+      "gold": "70",
+      "question": "Dominick went to his team's changing room and saw half as many robots as helmets and half as many helmets as footballs kept there. If there were 20 helmets, calculate the total number of items Dominic",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "70",
+          "response": "If there were 20 helmets, and Dominick saw half as many robots as helmets, then there were 20 / 2 = 10 robots.\n\nSince he saw half as many helmets as footballs, then there were 20 * 2 = 40 footballs.\n\nTo find the total number of items, we add up all the items: 20 helmets + 10 robots + 40 footballs = 70 items.\n\n#### 70",
+          "wall_s": 14.435307264328003,
+          "eval_count": 102,
+          "tok_s": 16.99974217057708,
+          "seed": 442
+        },
+        {
+          "sample_i": 1,
+          "pred": "70",
+          "response": "If there were 20 helmets, and Dominick saw half as many robots as helmets, the number of robots is:\n\\[ \\frac{20}{2} = 10 \\]\n\nIf he saw half as many helmets as footballs, the number of footballs is:\n\\[ 20 \\times 2 = 40 \\]\n\nTherefore, the total number of items Dominick saw is:\n\\[ 10 \\text{ (robots)} + 20 \\text{ (helmet)} + 40 \\text{ (football)} = 70 \\]\n\n#### 70",
+          "wall_s": 20.448710680007935,
+          "eval_count": 126,
+          "tok_s": 14.223002455499781,
+          "seed": 459
+        },
+        {
+          "sample_i": 2,
+          "pred": "3.",
+          "response": "To solve this problem, let's break it down step by step:\n\n1. **Given Data:**\n   - Number of helmets: 20\n   - Number of robots: half as many as helmets\n   - Number of footballs: half as many as helmets\n\n2. **Calculating the Number of Robots:**\n   - Since there are half as many robots as helmets:\n     \\[\n     \\text{Number of robots} = \\frac{1}{2} \\times 20 = 10\n     \\]\n\n3. **Calculating the Number of Footballs:**\n   - Since there are",
+          "wall_s": 16.109882593154907,
+          "eval_count": 128,
+          "tok_s": 19.868988854739065,
+          "seed": 476
+        },
+        {
+          "sample_i": 3,
+          "pred": "70",
+          "response": "If there were 20 helmets, and Dominick saw half as many robots as helmets, then there were 20 / 2 = 10 robots.\nSince he saw half as many helmets as footballs, there were 20 * 2 = 40 footballs.\n\nTo find the total number of items, we add the helmets, robots, and footballs together:\n20 helmets + 10 robots + 40 footballs = 70 items.\n\n#### 70",
+          "wall_s": 15.405387878417969,
+          "eval_count": 105,
+          "tok_s": 19.979746245805682,
+          "seed": 493
+        },
+        {
+          "sample_i": 4,
+          "pred": "70",
+          "response": "If there were 20 helmets, and Dominick saw half as many robots as helmets, then there were 20 / 2 = 10 robots.\n\nIf he also saw half as many helmets as footballs, then there were 20 * 2 = 40 footballs.\n\nTo find the total number of items, we add the helmets, robots, and footballs together: 20 + 10 + 40 = 70 items.\n\n#### 70",
+          "wall_s": 16.33672595024109,
+          "eval_count": 104,
+          "tok_s": 18.356321979065672,
+          "seed": 510
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "70",
+          "correct": true,
+          "preds": [
+            "70"
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 14.435307264328003
+        },
+        "3": {
+          "voted": "70",
+          "correct": true,
+          "preds": [
+            "70",
+            "70",
+            "3."
+          ],
+          "agreement": 0.6666666666666666,
+          "wall_s_sum": 50.993900537490845
+        },
+        "5": {
+          "voted": "70",
+          "correct": true,
+          "preds": [
+            "70",
+            "70",
+            "3.",
+            "70",
+            "70"
+          ],
+          "agreement": 0.8,
+          "wall_s_sum": 82.7360143661499
+        }
+      }
+    },
+    {
+      "index": 618,
+      "gold": "36",
+      "question": "The school auditorium has 4 rows of seats. There are 18 seats in each row. One-fourth of the seats were occupied by the administrators. One-third of the remaining seats were occupied by the parents an",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": ".",
+          "response": "To solve this problem, let's break it down step by step:\n\n1. **Calculate Total Seats**:\n   - There are 4 rows with 18 seats each.\n   - Total seats = 4 rows * 18 seats/row = 72 seats.\n\n2. **Seats Occupied by Administrators**:\n   - One-fourth of the seats were occupied by administrators.\n   - Seats occupied by administrators = 1/4 * 72 seats = 18 seats.\n\n3. **Remaining Seats After Administrators**:\n   - Total seats initially = 72 seats.\n   - Seats occupied",
+          "wall_s": 20.113784551620483,
+          "eval_count": 128,
+          "tok_s": 17.090271750007776,
+          "seed": 542
+        },
+        {
+          "sample_i": 1,
+          "pred": "3.",
+          "response": "To solve this, let's break down the problem step by step:\n\n1. **Total seats in the auditorium**: There are 4 rows with 18 seats each.\n   \\[\n   \\text{Total seats} = 4 \\times 18 = 72\n   \\]\n\n2. **Occupied by administrators**: One-fourth of the seats were occupied by the administrators.\n   \\[\n   \\text{Seats occupied by administrators} = \\frac{1}{4} \\times 72 = 18\n   \\]\n\n3. **Remaining seats**: Subtract the seats occupied by administrators from",
+          "wall_s": 14.367370367050171,
+          "eval_count": 128,
+          "tok_s": 19.20707492604901,
+          "seed": 559
+        },
+        {
+          "sample_i": 2,
+          "pred": "3.",
+          "response": "To solve this problem, let's break it down step by step:\n\n1. **Total Seats Calculation**:\n   - The auditorium has 4 rows of seats.\n   - Each row has 18 seats.\n   - Therefore, the total number of seats is \\( 4 \\times 18 = 72 \\) seats.\n\n2. **Occupied Seats by Administrators**:\n   - One-fourth of the seats were occupied by the administrators.\n   - One-fourth of 72 is \\( \\frac{72}{4} = 18 \\) seats.\n\n3. **Remaining Seats After",
+          "wall_s": 21.894240856170654,
+          "eval_count": 128,
+          "tok_s": 16.914056770445857,
+          "seed": 576
+        },
+        {
+          "sample_i": 3,
+          "pred": "3.",
+          "response": "To solve this problem, let's break it down step by step:\n\n1. **Total Seats Calculation:**\n   - There are 4 rows of seats, and each row has 18 seats.\n   - Total seats = 4 rows * 18 seats/row = 72 seats.\n\n2. **Seats Occupied by Administrators:**\n   - One-fourth of the seats were occupied by the administrators.\n   - Seats occupied by administrators = 1/4 * 72 = 18 seats.\n\n3. **Remaining Seats After Administrators:**\n   - Remaining seats = Total seats - Seats occupied",
+          "wall_s": 16.5841281414032,
+          "eval_count": 128,
+          "tok_s": 19.43682114434588,
+          "seed": 593
+        },
+        {
+          "sample_i": 4,
+          "pred": "3.",
+          "response": "To solve this, let's break down the problem step by step:\n\n1. **Total number of seats in the auditorium:**\n   - There are 4 rows with 18 seats each.\n   - Total seats = 4 rows * 18 seats/row = 72 seats.\n\n2. **Number of seats occupied by administrators:**\n   - One-fourth of the seats were occupied by administrators.\n   - Number of occupied seats by administrators = \\( \\frac{1}{4} \\times 72 = 18 \\) seats.\n\n3. **Number of remaining seats:**\n   - Remaining",
+          "wall_s": 16.336344718933105,
+          "eval_count": 128,
+          "tok_s": 19.779342886961985,
+          "seed": 610
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": ".",
+          "correct": false,
+          "preds": [
+            "."
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 20.113784551620483
+        },
+        "3": {
+          "voted": "3.",
+          "correct": false,
+          "preds": [
+            ".",
+            "3.",
+            "3."
+          ],
+          "agreement": 0.6666666666666666,
+          "wall_s_sum": 56.37539577484131
+        },
+        "5": {
+          "voted": "3.",
+          "correct": false,
+          "preds": [
+            ".",
+            "3.",
+            "3.",
+            "3.",
+            "3."
+          ],
+          "agreement": 0.8,
+          "wall_s_sum": 89.29586863517761
+        }
+      }
+    },
+    {
+      "index": 599,
+      "gold": "48",
+      "question": "A pet store currently has 5 dogs, 2 cats, and 10 birds. How many legs in total do the pets in the store have?",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "2",
+          "response": "To solve this, let's calculate the number of legs for each type of pet:\n\n- Dogs have 4 legs each. With 5 dogs, the total legs are 5 * 4 = 20 legs.\n- Cats have 4 legs each. With 2 cats, the total legs are 2 * 4 = 8 legs.\n- Birds have 2 legs each. With 10 birds, the total legs are 10 * 2 = 20 legs.\n\nNow, let's add up all the legs:\n20 (from dogs) + 8 (from cats) + 2",
+          "wall_s": 18.19409489631653,
+          "eval_count": 128,
+          "tok_s": 15.168563627700472,
+          "seed": 642
+        },
+        {
+          "sample_i": 1,
+          "pred": "20",
+          "response": "To solve this, let's break it down by the number of legs each type of pet has:\n\n- Dogs have 4 legs each. With 5 dogs, that's 5 * 4 = 20 legs.\n- Cats have 4 legs each. With 2 cats, that's 2 * 4 = 8 legs.\n- Birds have 2 legs each. With 10 birds, that's 10 * 2 = 20 legs.\n\nNow, we add the legs together: 20 (from dogs) + 8 (from cats) + 20 (from birds",
+          "wall_s": 20.163025379180908,
+          "eval_count": 128,
+          "tok_s": 15.114416130104894,
+          "seed": 659
+        },
+        {
+          "sample_i": 2,
+          "pred": "8",
+          "response": "To solve this, let's break it down by the number of legs each type of pet has:\n\n- A dog has 4 legs.\n- A cat has 4 legs.\n- A bird has 2 legs.\n\nNow, we calculate the total legs for each type of pet:\n\n- For the dogs: \\(5 \\text{ dogs} \\times 4 \\text{ legs per dog} = 20 \\text{ legs}\\)\n- For the cats: \\(2 \\text{ cats} \\times 4 \\text{ legs per cat} = 8 \\text{ legs}\\)\n- For the birds: \\(",
+          "wall_s": 17.39868474006653,
+          "eval_count": 128,
+          "tok_s": 16.209214355842654,
+          "seed": 676
+        },
+        {
+          "sample_i": 3,
+          "pred": "8",
+          "response": "To solve this, let's break it down by the number of legs each type of pet has and then add them up:\n\n- Each dog has 4 legs. There are 5 dogs, so 5 * 4 = 20 legs.\n- Each cat has 4 legs. There are 2 cats, so 2 * 4 = 8 legs.\n- Each bird has 2 legs. There are 10 birds, so 10 * 2 = 20 legs.\n\nNow we add all the legs together: 20 (from dogs) + 8 (from cats) + ",
+          "wall_s": 20.201456308364868,
+          "eval_count": 128,
+          "tok_s": 18.225346730102263,
+          "seed": 693
+        },
+        {
+          "sample_i": 4,
+          "pred": "20",
+          "response": "To solve this, let's break it down by category:\n\n- **Dogs**: Each dog has 4 legs. With 5 dogs, that's 5 * 4 = 20 legs.\n- **Cats**: Each cat has 4 legs. With 2 cats, that's 2 * 4 = 8 legs.\n- **Birds**: Each bird has 2 legs. With 10 birds, that's 10 * 2 = 20 legs.\n\nAdding these together: 20 (from dogs) + 8 (from cats) + 20 (from birds",
+          "wall_s": 18.87175726890564,
+          "eval_count": 128,
+          "tok_s": 18.301147381856442,
+          "seed": 710
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "2",
+          "correct": false,
+          "preds": [
+            "2"
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 18.19409489631653
+        },
+        "3": {
+          "voted": "2",
+          "correct": false,
+          "preds": [
+            "2",
+            "20",
+            "8"
+          ],
+          "agreement": 0.3333333333333333,
+          "wall_s_sum": 55.755805015563965
+        },
+        "5": {
+          "voted": "20",
+          "correct": false,
+          "preds": [
+            "2",
+            "20",
+            "8",
+            "8",
+            "20"
+          ],
+          "agreement": 0.4,
+          "wall_s_sum": 94.82901859283447
+        }
+      }
+    },
+    {
+      "index": 289,
+      "gold": "16",
+      "question": "A car in the fast lane is traveling at 60 miles/hour. A car in the slow lane is traveling at half that speed. If the car in the fast lane traveled for a total of 480 miles, calculate the time the car ",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "3",
+          "response": "To solve this, we first need to determine the speed of the car in the slow lane. The car in the fast lane travels at 60 miles per hour, and the car in the slow lane travels at half that speed.\n\nSpeed of car in the slow lane = 60 / 2 = 30 miles per hour\n\nNow, we need to calculate the time it took for the car in the slow lane to travel 480 miles at a speed of 30 miles per hour.\n\nTime = Distance / Speed\n\nFor the car in the slow lane:\nTime = 480 miles / 3",
+          "wall_s": 22.625295877456665,
+          "eval_count": 128,
+          "tok_s": 18.124530248991398,
+          "seed": 742
+        },
+        {
+          "sample_i": 1,
+          "pred": "480",
+          "response": "To solve this problem, we need to find the time the car in the slow lane took to cover 480 miles.\n\n1. The car in the fast lane travels at 60 miles/hour.\n2. The car in the slow lane travels at half that speed, so it travels at 30 miles/hour.\n3. The car in the fast lane travels 480 miles.\n\nTo find the time the car in the slow lane took to cover the same 480 miles:\n\n\\[ \\text{Time} = \\frac{\\text{Distance}}{\\text{Speed}} \\]\n\nFor the car",
+          "wall_s": 16.05455732345581,
+          "eval_count": 128,
+          "tok_s": 18.37223438665085,
+          "seed": 759
+        },
+        {
+          "sample_i": 2,
+          "pred": "4.",
+          "response": "To solve this problem, let's break it down step by step.\n\n1. **Determine Speed of Cars**: \n   - Car in the fast lane: 60 mph\n   - Car in the slow lane: half of 60 mph = 30 mph\n\n2. **Distance Covered by Fast Lane Car**: \n   - Distance = 480 miles\n\n3. **Calculate Time for Fast Lane Car**:\n   - Time = Distance / Speed\n   - Time for fast lane car = 480 miles / 60 mph = 8 hours\n\n4. **Calculate Time for Slow Lane",
+          "wall_s": 49.00067353248596,
+          "eval_count": 128,
+          "tok_s": 3.272892470115104,
+          "seed": 776
+        },
+        {
+          "sample_i": 3,
+          "pred": "480",
+          "response": "To solve this problem, we first need to determine the speed of the car in the slow lane. Since it travels at half the speed of the car in the fast lane, and the fast lane car travels at 60 miles/hour, the slow lane car travels at 30 miles/hour.\n\nNext, we need to find out how long it took the car in the fast lane to travel 480 miles. Using the formula time = distance / speed, the time taken by the fast lane car is:\n\n\\[ \\text{Time}_{\\text{fast lane}} = \\frac{480 \\text{",
+          "wall_s": 18.917681217193604,
+          "eval_count": 128,
+          "tok_s": 16.78083754208975,
+          "seed": 793
+        },
+        {
+          "sample_i": 4,
+          "pred": ".",
+          "response": "First, let's find the speed of the car in the slow lane. Since the car in the fast lane is traveling at 60 miles/hour and the car in the slow lane is traveling at half that speed, we have:\n\n\\[\n\\text{Speed of car in slow lane} = \\frac{60}{2} = 30 \\text{ miles/hour}\n\\]\n\nNext, we need to find the time it took for the car in the slow lane to cover the 480 miles distance. We use the formula for time:\n\n\\[\n\\text{Time} = \\frac{\\text",
+          "wall_s": 17.96094799041748,
+          "eval_count": 128,
+          "tok_s": 15.310462691751583,
+          "seed": 810
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "3",
+          "correct": false,
+          "preds": [
+            "3"
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 22.625295877456665
+        },
+        "3": {
+          "voted": "3",
+          "correct": false,
+          "preds": [
+            "3",
+            "480",
+            "4."
+          ],
+          "agreement": 0.3333333333333333,
+          "wall_s_sum": 87.68052673339844
+        },
+        "5": {
+          "voted": "480",
+          "correct": false,
+          "preds": [
+            "3",
+            "480",
+            "4.",
+            "480",
+            "."
+          ],
+          "agreement": 0.4,
+          "wall_s_sum": 124.55915594100952
+        }
+      }
+    },
+    {
+      "index": 608,
+      "gold": "8",
+      "question": "Joe has $50 to buy an outfit for his new field trip. There is a 30% off sale at the clothing store. The shirt he picks out has a price of $25. He also picks out a pair of shorts for $35. Assuming that",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "35",
+          "response": "First, we need to calculate the discount on the shirt. The shirt originally costs $25, and there is a 30% off sale.\nDiscount on shirt = 30% of $25 = 0.30 * $25 = $7.50\n\nSo, the shirt price after the discount = $25 - $7.50 = $17.50\n\nNext, we add the discounted price of the shirt to the price of the shorts to find the total cost of the outfit.\nTotal cost = $17.50 (shirt) + $35 (",
+          "wall_s": 21.03944993019104,
+          "eval_count": 128,
+          "tok_s": 19.27601399739804,
+          "seed": 842
+        },
+        {
+          "sample_i": 1,
+          "pred": "50.",
+          "response": "First, calculate the discount on the shirt:\n- Original price of shirt: $25\n- Discount: 30% of $25 = 0.30 * $25 = $7.50\n- Discounted price of shirt: $25 - $7.50 = $17.50\n\nNext, add the discounted price of the shirt to the price of the shorts:\n- Price of shorts: $35\n- Total cost before tax: $17.50 + $35 = $52.50\n\nJoe initially has $50. After",
+          "wall_s": 15.839355230331421,
+          "eval_count": 128,
+          "tok_s": 18.982871073233692,
+          "seed": 859
+        },
+        {
+          "sample_i": 2,
+          "pred": "2",
+          "response": "First, we calculate the discount on the shirt:\n- Original price of shirt = $25\n- Discount = 30% of $25 = 0.30 * $25 = $7.50\n- Discounted price of shirt = $25 - $7.50 = $17.50\n\nNext, we calculate the discounted price of the shorts:\n- Original price of shorts = $35\n- Discounted price of shorts = $35 - ($35 * 0.30) = $35 - $10.50 = $2",
+          "wall_s": 19.990249156951904,
+          "eval_count": 128,
+          "tok_s": 12.968501030742539,
+          "seed": 876
+        },
+        {
+          "sample_i": 3,
+          "pred": "52.50",
+          "response": "First, let's calculate the sale price of the shirt after the 30% discount:\n\nOriginal price of shirt = $25\n\nDiscount = 30% of $25 = 0.30 * $25 = $7.50\n\nSale price of shirt = $25 - $7.50 = $17.50\n\nNow, let's add the price of the shorts:\n\nPrice of shorts = $35\n\nTotal cost before discount = $17.50 (shirt) + $35 (shorts) = $52.50\n\nJoe has",
+          "wall_s": 19.434834480285645,
+          "eval_count": 128,
+          "tok_s": 13.815064637233672,
+          "seed": 893
+        },
+        {
+          "sample_i": 4,
+          "pred": "24.50",
+          "response": "First, calculate the discount amount on the shirt:\n- Original price of shirt: $25\n- Discount: 30% of $25 = 0.30 * $25 = $7.50\n- Discounted price of shirt: $25 - $7.50 = $17.50\n\nNext, calculate the discounted price of the shorts:\n- Original price of shorts: $35\n- Discounted price: $35 * (1 - 0.30) = $35 * 0.70 = $24.50\n\n",
+          "wall_s": 23.43181014060974,
+          "eval_count": 128,
+          "tok_s": 15.082231152159917,
+          "seed": 910
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "35",
+          "correct": false,
+          "preds": [
+            "35"
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 21.03944993019104
+        },
+        "3": {
+          "voted": "35",
+          "correct": false,
+          "preds": [
+            "35",
+            "50.",
+            "2"
+          ],
+          "agreement": 0.3333333333333333,
+          "wall_s_sum": 56.869054317474365
+        },
+        "5": {
+          "voted": "35",
+          "correct": false,
+          "preds": [
+            "35",
+            "50.",
+            "2",
+            "52.50",
+            "24.50"
+          ],
+          "agreement": 0.2,
+          "wall_s_sum": 99.73569893836975
+        }
+      }
+    },
+    {
+      "index": 400,
+      "gold": "48",
+      "question": "A glass of milk is 8 ounces of milk.  John drinks 2 glasses of milk.  If milk has 3 calories per ounce how many calories did he consume?",
+      "samples": [
+        {
+          "sample_i": 0,
+          "pred": "48",
+          "response": "To solve this, let's break down the problem step by step:\n\n1. **Determine the total ounces of milk John drinks:**  \n   John drinks 2 glasses of milk, and each glass is 8 ounces.  \n   Total ounces = 2 glasses \u00d7 8 ounces/glass = 16 ounces\n\n2. **Calculate the total calories consumed:**  \n   Each ounce of milk contains 3 calories.  \n   Total calories = Total ounces \u00d7 Calories per ounce  \n   Total calories = 16 ounces \u00d7 3 calories/ounce  \n   Total calories = 48 calories\n\nSo, John consumed 48",
+          "wall_s": 11.312635660171509,
+          "eval_count": 128,
+          "tok_s": 15.576941941521842,
+          "seed": 942
+        },
+        {
+          "sample_i": 1,
+          "pred": "48",
+          "response": "To solve this, let's break it down:\n\n1. A glass of milk is 8 ounces.\n2. John drinks 2 glasses of milk.\n3. Each ounce of milk contains 3 calories.\n\nNow let's calculate:\n- 8 ounces per glass \u00d7 2 glasses = 16 ounces total\n- 16 ounces \u00d7 3 calories per ounce = 48 calories\n\n#### 48",
+          "wall_s": 5.163065433502197,
+          "eval_count": 86,
+          "tok_s": 16.909335290097342,
+          "seed": 959
+        },
+        {
+          "sample_i": 2,
+          "pred": "3",
+          "response": "To find out how many calories John consumed, we need to calculate the total number of ounces he drank and then multiply that by the calories per ounce.\n\n1. John drinks 2 glasses of milk.\n2. Each glass is 8 ounces, so in total, he drinks: \\( 8 \\, \\text{ounces/glass} \\times 2 \\, \\text{glasses} = 16 \\, \\text{ounces} \\).\n3. Each ounce of milk has 3 calories, so the total number of calories is: \\( 16 \\, \\text{ounces} \\times 3 \\",
+          "wall_s": 6.92128586769104,
+          "eval_count": 128,
+          "tok_s": 18.81354716497482,
+          "seed": 976
+        },
+        {
+          "sample_i": 3,
+          "pred": "48",
+          "response": "Each glass of milk is 8 ounces, so 2 glasses would be 8 * 2 = 16 ounces.\nMilk has 3 calories per ounce, so for 16 ounces, John consumed 3 * 16 = 48 calories.\n#### 48",
+          "wall_s": 3.342069387435913,
+          "eval_count": 61,
+          "tok_s": 18.570950162876365,
+          "seed": 993
+        },
+        {
+          "sample_i": 4,
+          "pred": "48",
+          "response": "First, calculate the total ounces of milk John drank:\n- 1 glass = 8 ounces\n- 2 glasses = 8 * 2 = 16 ounces\n\nNext, calculate the total calories consumed:\n- 1 ounce of milk = 3 calories\n- 16 ounces of milk = 16 * 3 = 48 calories\n\n#### 48",
+          "wall_s": 4.155841112136841,
+          "eval_count": 80,
+          "tok_s": 19.539163933829645,
+          "seed": 1010
+        }
+      ],
+      "by_n": {
+        "1": {
+          "voted": "48",
+          "correct": true,
+          "preds": [
+            "48"
+          ],
+          "agreement": 1.0,
+          "wall_s_sum": 11.312635660171509
+        },
+        "3": {
+          "voted": "48",
+          "correct": true,
+          "preds": [
+            "48",
+            "48",
+            "3"
+          ],
+          "agreement": 0.6666666666666666,
+          "wall_s_sum": 23.396986961364746
+        },
+        "5": {
+          "voted": "48",
+          "correct": true,
+          "preds": [
+            "48",
+            "48",
+            "3",
+            "48",
+            "48"
+          ],
+          "agreement": 0.8,
+          "wall_s_sum": 30.8948974609375
+        }
+      }
+    }
+  ]
+}

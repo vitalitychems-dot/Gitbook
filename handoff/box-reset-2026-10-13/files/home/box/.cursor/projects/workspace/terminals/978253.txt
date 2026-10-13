@@ -1,0 +1,68 @@
+---
+pid: 125032
+cwd: "/workspace/TESSERA-ro"
+command: "cd /workspace; gh auth status 2>&1|head -3; cd einstein/round2/tess && git log --oneline -2 && git status -s|head; cd /workspace; mkdir -p einstein/charter einstein/round3; cd einstein/charter; git clone -q https://github.com/vitalitychems-dot/Gitbook.git gb 2>&1|tail -2; cd gb && git log --oneline -3 && ls && git ls-files | grep -iE \"rule|gate|charter|policy|limit|moderat\" | head -30"
+status: succeeded
+started_at: 2026-10-13T09:13:02.695Z
+running_for_ms: 81296    
+---
+github.com
+  ✓ Logged in to github.com account vitalitychems-dot (/home/box/.config/gh/hosts.yml)
+  - Active account: true
+919a1390 fix(embeddings): key the embedding cache on the whole text, not a 32-bit hash of its first 500 chars
+f91ff82c Add a read-only Gitbook task-queue mirror and checker (#264)
+243ddd4 mesh: scoreboard, ranked bulk lists, collab protocol (#63)
+dbd34db mesh/queue: agent spawning with lineage, caps, quarantine and immutable-core gate (#62)
+d0ee5a7 Turn qlab AQFT sweeps into pytest invariant checks (#61)
+CODEOWNERS
+README.md
+SUMMARY.md
+archive
+brain
+brain-consciousness
+forum
+history
+intake
+merge
+mesh
+operations
+posts
+review
+state
+tools
+archive/moved/Zz/artifacts/tessera/src/components/OwnerSessionGate.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/lib/sovereign-rules.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/RulesPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/SovereignRulesPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.grok/skills/generate2dmap/references/object-production-gate.md
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.grok/skills/generate2dsprite/references/prompt-rules.md
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.grok/skills/video2dsprite/references/prompt-rules.md
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/src/components/age-gate.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/src/lib/catalog-policy.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/SovereignRulesPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/T44/main/artifacts/tessera/src/components/TesseractKeyGate.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/__tests__/safe-fetch-policy.test.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/external-sandbox-policy.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/outbound-host-policy.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/quarantine-gate.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/components/AdminGate.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/components/TesseractKeyGate.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/lib/sovereign-rules.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/pages/RulesPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/scripts/suite-policy.mjs
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/scripts/suite-policy.test.mjs
+archive/moved/collink1007-XXX/tess/client/src/pages/RulesPage.tsx
+archive/moved/collink1007-XXX/tess/public/nexus-gateway.html
+archive/moved/collink1007-XXX/tess/server/moltbook-forum-gateway.ts
+archive/moved/collink1007-XXX/tess/server/pg-rate-limiter.ts
+archive/moved/collink1007-XXX/tess/server/rate-limit-intelligence.ts
+archive/moved/collink1007-XXX/tess/server/rate-limit-optimizer.ts
+archive/moved/collink1007-XXX/tess/server/tsrt-payment-gateway.ts
+archive/moved/collink1007-XXX/x/tess/server/moltbook-forum-gateway.ts
+archive/moved/collink1007-XXX/x/tess/server/sovereign-api-gateway.ts
+
+---
+exit_code: 0
+elapsed_ms: 81296
+ended_at: 2026-10-13T09:14:23.991Z
+---

@@ -1,0 +1,15 @@
+---
+pid: 1657741
+cwd: "/workspace/dispatch/T"
+command: "cd /workspace/dispatch/T; git checkout -q -B gitai-key-required origin/main; rg -n -i \"x-gitai-handle|handle-only|handleOnly\" --glob '!**/node_modules/**' | head -40"
+title: "Find handle login"
+status: failed   
+started_at: 2026-10-13T07:43:40.140Z
+running_for_ms: 32941    
+---
+
+---
+exit_code: unknown
+elapsed_ms: 32941
+ended_at: 2026-10-13T07:44:13.081Z
+---

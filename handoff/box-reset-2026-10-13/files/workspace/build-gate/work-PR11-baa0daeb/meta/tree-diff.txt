@@ -1,0 +1,10 @@
+base_tree=45651521a137c4448673d6abfaa77e1567230f83
+head_tree=baa0daeb64cf78dbbba3853a617f86421764edcb
+base_entries=160 truncated=False
+head_entries=160 truncated=False
+only_base=[]
+only_head=[]
+changed=['intake', 'intake/log.md']
+blob_changed=['intake/log.md']
+tree_changed=['intake']
+TREE_OK=True

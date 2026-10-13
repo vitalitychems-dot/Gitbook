@@ -1,0 +1,1 @@
+{"dev": {"recall5": 0.9351, "acc": 0.6108, "tokens_brief": 217.9}, "test": {"recall5": 0.9674, "acc": 0.1953, "tokens_brief": 782.2}}

@@ -1,0 +1,102 @@
+---
+pid: 1041963
+cwd: "/workspace/build-plan-2026-10-12"
+command: "cd /workspace; mkdir -p rea-batch build-plan-2026-10-12/rea-shards; for r in collink1007/amber-flame-tiger-sand collink1007/fleet-moss-monarch-rapid vitalitychems-dot/Gitbook vitalitychems-dot/GitbookAI; do n=${r#*/}; [ -d rea-batch/$n ] || gh repo clone $r rea-batch/$n -- --depth 1 -q 2>&1 | tail -1; done; for n in amber-flame-tiger-sand fleet-moss-monarch-rapid GitbookAI; do echo \"== $n\"; git -C rea-batch/$n log -1 --format=%h; git -C rea-batch/$n ls-files | wc -l; git -C rea-batch/$n ls-files | awk -F/ '{print $1}' | sort | uniq -c | head -15; git -C rea-batch/$n ls-files | grep -iE 'package.json$|requirements|pyproject|README' | head; git -C rea-batch/$n ls-files | grep -iE 'wallet|secret|credential|payment|stripe|\\.env|private.?key|seed|mnemonic|1T/|vault' | head -20; done; echo \"== Gitbook\"; git -C rea-batch/Gitbook log -1 --format=%h; git -C rea-batch/Gitbook ls-files | wc -l; git -C rea-batch/Gitbook ls-files | grep -iE 'wallet|secret|credential|payment|stripe|\\.env|private.?key|mnemonic|vault' | grep -v '/1T/' | head -25; awk -F, '$2==\"n\"{print $1}' /tmp/ah.txt | tr '\\n' ' '"
+title: "Shallow clone and static pass"
+status: succeeded
+started_at: 2026-10-12T21:52:47.217Z
+running_for_ms: 73400    
+---
+== amber-flame-tiger-sand
+781f30a
+1702
+      1 .gitignore
+     91 .grok
+      1 .node_modules.lock
+      1 .prettierrc
+     45 .vercel
+      1 AGENTS.md
+     18 artifacts
+     19 attachments
+   1358 data
+      1 eslint.config.mjs
+      1 migrations
+      1 package-lock.json
+      1 package.json
+     18 public
+     14 screenshots
+data/ingest/everything/README.md
+package.json
+.vercel/output/static/tessera/TESSERA-SEED.md
+public/tessera/TESSERA-SEED.md
+== fleet-moss-monarch-rapid
+a816960
+1407
+      1 .gitignore
+    101 .grok
+      1 .node_modules.lock
+      1 .prettierrc
+    398 .vercel
+      1 AGENTS.md
+     14 artifacts
+    163 attachments
+      1 eslint.config.mjs
+      8 migrations
+      1 package-lock.json
+      1 package.json
+    561 public
+     25 screenshots
+     26 scripts
+package.json
+== GitbookAI
+b9945ad
+22
+      1 BANNED.md
+      1 README.md
+      1 RULES.md
+      1 index.html
+      3 mesh
+     15 projects
+README.md
+projects/admit/README.md
+projects/carry/README.md
+projects/house/README.md
+projects/live/README.md
+projects/pass/README.md
+projects/shift/README.md
+projects/spin/README.md
+projects/tie/README.md
+== Gitbook
+56a7a48
+10407
+archive/moved/T44/artifacts/api-server/.local-data/natal-vault.json
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/AgentSecretsPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/LiveSecretKnowledgePage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/SecretKnowledgePage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/SecretSocietyPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/SovereignSecretsPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/src/pages/WalletDashboardPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/AgentSecretsPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/LiveSecretKnowledgePage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/SecretSocietyPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/SecretsPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/SovereignSecretsPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/migration-review/legacy-ui/WalletDashboardPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/T44/main/artifacts/api-server/src/routes/secret-knowledge.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/sacred-knowledge-vault.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/sovereign-memory-vault.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/sovereign-vault.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/lib/wallet-observer.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/src/routes/secret-knowledge.ts
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/components/SourcedSecretsPanel.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/pages/CredentialsPage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/tessera/src/pages/SecretKnowledgePage.tsx
+archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/modal/tesseract_secret.py
+archive/moved/collink1007-XXX/tess/client/src/pages/CredentialsPage.tsx
+archive/moved/collink1007-XXX/tess/client/src/pages/KnowledgeSecretsPage.tsx
+nicholasgasior/CreepJS nicholasgasior/FingerprintJS nicholasgasior/GoLogin nicholasgasior/ad-copy-generator nicholasgasior/affiliate-tracking nicholasgasior/age nicholasgasior/ai-agent-marketplace nicholasgasior/ai-freelance-platform nicholasgasior/ai-gig-economy nicholasgasior/ai-service-marketplace nicholasgasior/alpha-vantage nicholasgasior/anticaptchaofficial nicholasgasior/antidetect nicholasgasior/api-monetization nicholasgasior/apify-sdk nicholasgasior/arbitrage-bot nicholasgasior/audio-captcha-solver nicholasgasior/backlink-checker nicholasgasior/beautifulsoup4 nicholasgasior/blog-generator nicholasgasior/bond-yield-tracker nicholasgasior/bounty-hunter nicholasgasior/brain-js nicholasgasior/brightdata-sdk nicholasgasior/browser-fingerprinting nicholasgasior/capsolver-python nicholasgasior/captcha-harvester nicholasgasior/case-study-builder nicholasgasior/censys-python nicholasgasior/cf-clearance nicholasgasior/cf-workers nicholasgasior/cfscrape nicholasgasior/checkout-optimizer nicholasgasior/chromedp nicholasgasior/cloudflare-bypass nicholasgasior/cloudflare-scrape nicholasgasior/cloudscraper nicholasgasior/code-marketplace nicholasgasior/colly nicholasgasior/commodity-tracker nicholasgasior/competitor-analyzer nicholasgasior/compromise-nlp nicholasgasior/content-optimizer nicholasgasior/conversion-optimizer nicholasgasior/creative-testing nicholasgasior/customer-analytics nicholasgasior/decentralized-work nicholasgasior/defi-yield-farming nicholasgasior/dilithium nicholasgasior/dropshipping-automation nicholasgasior/ebook-creator nicholasgasior/email-marketing-engine nicholasgasior/email-sequence-builder nicholasgasior/facebook-ads-api nicholasgasior/finnhub-python nicholasgasior/flaresolverr nicholasgasior/forex-correlation nicholasgasior/fractal-analysis nicholasgasior/freelance-api nicholasgasior/funcaptcha-solver nicholasgasior/funnel-builder nicholasgasior/futures-data nicholasgasior/gocolly nicholasgasior/google-ads-api nicholasgasior/goquery nicholasgasior/goscrapy nicholasgasior/gpg4win nicholasgasior/grpcurl nicholasgasior/gumroad-api nicholasgasior/hashcat nicholasgasior/hcaptcha-solver nicholasgasior/headless-chrome-crawler nicholasgasior/httpie nicholasgasior/human-ai-marketplace sovereign-core/Doxiwehu-OmniMind-Public sovereign-core/awesome-machine-learning sovereign-core/complete-digital-organism thetesseractai/consolidated-project-all-in-one vitalitychems-dot/Everything vitalitychems-dot/Grok-ready 
+---
+exit_code: 0
+elapsed_ms: 73400
+ended_at: 2026-10-12T21:54:00.617Z
+---

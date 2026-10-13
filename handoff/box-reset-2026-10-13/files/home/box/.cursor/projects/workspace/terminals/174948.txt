@@ -1,0 +1,14 @@
+---
+pid: 1367400
+cwd: "/workspace/pubscan/tree"
+command: "set -e; export PATH=$HOME/.local/bin:$PATH; cd /workspace/pubscan\ncp -a work.git /workspace/backups/work.git.pre-msgfix-$(date +%H%M) \ncd work.git && git filter-repo --force --replace-message ../priv/expr.txt >/dev/null 2>&1\ngit reflog expire --expire=now --all && git gc -q --prune=now --aggressive\necho main $(git rev-parse main); git for-each-ref | wc -l\ngit log --all --format=%B > /tmp/msgs.txt\npython3 - <<'E'\nlits=[]\nfor l in open('/workspace/pubscan/priv/expr.txt'):\n    l=l.rstrip('\\n')\n    if not l or l.startswith('regex:'): continue\n    if l.startswith('literal:'): l=l[8:]\n    l=l.split('==>')[0]\n    if l: lits.append(l)\nm=open('/tmp/msgs.txt',errors='ignore').read()\nprint(len(lits),'literals; hits:',sum(m.count(x) for x in lits))\nE\ngit cat-file --batch-all-objects --batch | python3 -c \"\nimport sys\nd=sys.stdin.buffer.read().decode('latin1')\nlits=[l.rstrip('\\n').removeprefix('literal:').split('==>')[0] for l in open('/workspace/pubscan/priv/expr.txt') if l.strip() and not l.startswith('regex:')]\nprint('all-object hits:',sum(d.count(x) for x in lits if x))\"\nrm /tmp/msgs.txt; git log --oneline -1 replit-agent"
+status: failed   
+started_at: 2026-10-13T00:04:27.039Z
+running_for_ms: 319667   
+---
+
+---
+exit_code: unknown
+elapsed_ms: 319667
+ended_at: 2026-10-13T00:09:46.706Z
+---

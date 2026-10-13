@@ -1,0 +1,381 @@
+[
+  {
+    "label": "TESSERA/archives/source-repositories",
+    "entries": 375,
+    "blobs": 276,
+    "dirs": 99,
+    "js_ts": 198,
+    "package_json": 6,
+    "md": 1,
+    "truncated": false,
+    "top_exts": [
+      [
+        ".ts",
+        106
+      ],
+      [
+        ".tsx",
+        72
+      ],
+      [
+        ".json",
+        42
+      ],
+      [
+        ".mjs",
+        20
+      ],
+      [
+        ".yaml",
+        9
+      ],
+      [
+        ".py",
+        8
+      ],
+      [
+        ".sql",
+        7
+      ],
+      [
+        ".toml",
+        3
+      ],
+      [
+        ".sh",
+        3
+      ],
+      [
+        ".html",
+        2
+      ],
+      [
+        ".css",
+        2
+      ],
+      [
+        ".md",
+        1
+      ]
+    ],
+    "pkg_paths": [
+      "Zz/artifacts/api-server/package.json",
+      "Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/api-server/package.json",
+      "Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/package.json",
+      "Zz/artifacts/z-app/package.json",
+      "Zz/package.json",
+      "olive-giant-ever-glade/package.json"
+    ],
+    "js_sample": [
+      "Zz/artifacts/api-server/src/__tests__/interactive-status.test.ts",
+      "Zz/artifacts/api-server/src/__tests__/route-inventory.test.ts",
+      "Zz/artifacts/api-server/src/__tests__/tessera-model.test.ts",
+      "Zz/artifacts/api-server/src/__tests__/tessera-workspace.test.ts",
+      "Zz/artifacts/api-server/src/app.ts",
+      "Zz/artifacts/api-server/src/eval/chatbot-cases.ts",
+      "Zz/artifacts/api-server/src/index.ts",
+      "Zz/artifacts/api-server/src/interactive-app.ts",
+      "Zz/artifacts/api-server/src/interactive-index.ts",
+      "Zz/artifacts/api-server/src/lib/require-father.ts",
+      "Zz/artifacts/api-server/src/lib/sovereign-session.ts",
+      "Zz/artifacts/api-server/src/lib/tessera-heritage.ts",
+      "Zz/artifacts/api-server/src/lib/tessera-model.ts",
+      "Zz/artifacts/api-server/src/lib/tessera-study-notes.ts",
+      "Zz/artifacts/api-server/src/lib/workspace-connections.ts"
+    ],
+    [REDACTED-PATH] 0,
+    "rea_eligible": true
+  },
+  {
+    "label": "TESSERA/archives/source-repositories/Zz",
+    "entries": 307,
+    "blobs": 235,
+    "dirs": 72,
+    "js_ts": 180,
+    "package_json": 5,
+    "md": 0,
+    "truncated": false,
+    "top_exts": [
+      [
+        ".ts",
+        102
+      ],
+      [
+        ".tsx",
+        67
+      ],
+      [
+        ".json",
+        24
+      ],
+      [
+        ".mjs",
+        11
+      ],
+      [
+        ".py",
+        8
+      ],
+      [
+        ".yaml",
+        7
+      ],
+      [
+        ".sql",
+        7
+      ],
+      [
+        ".toml",
+        2
+      ],
+      [
+        ".html",
+        2
+      ],
+      [
+        ".css",
+        2
+      ],
+      [
+        ".sh",
+        2
+      ],
+      [
+        ".rs",
+        1
+      ]
+    ],
+    "pkg_paths": [
+      "artifacts/api-server/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/api-server/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/package.json",
+      "artifacts/z-app/package.json",
+      "package.json"
+    ],
+    "js_sample": [
+      "artifacts/api-server/src/__tests__/interactive-status.test.ts",
+      "artifacts/api-server/src/__tests__/route-inventory.test.ts",
+      "artifacts/api-server/src/__tests__/tessera-model.test.ts",
+      "artifacts/api-server/src/__tests__/tessera-workspace.test.ts",
+      "artifacts/api-server/src/app.ts",
+      "artifacts/api-server/src/eval/chatbot-cases.ts",
+      "artifacts/api-server/src/index.ts",
+      "artifacts/api-server/src/interactive-app.ts",
+      "artifacts/api-server/src/interactive-index.ts",
+      "artifacts/api-server/src/lib/require-father.ts",
+      "artifacts/api-server/src/lib/sovereign-session.ts",
+      "artifacts/api-server/src/lib/tessera-heritage.ts",
+      "artifacts/api-server/src/lib/tessera-model.ts",
+      "artifacts/api-server/src/lib/tessera-study-notes.ts",
+      "artifacts/api-server/src/lib/workspace-connections.ts"
+    ],
+    [REDACTED-PATH] 0,
+    "rea_eligible": true
+  },
+  {
+    "label": "TESSERA/archives/source-repositories/olive-giant-ever-glade",
+    "entries": 46,
+    "blobs": 32,
+    "dirs": 14,
+    "js_ts": 18,
+    "package_json": 1,
+    "md": 0,
+    "truncated": false,
+    "top_exts": [
+      [
+        ".json",
+        13
+      ],
+      [
+        ".mjs",
+        9
+      ],
+      [
+        ".tsx",
+        5
+      ],
+      [
+        ".ts",
+        4
+      ],
+      [
+        ".sh",
+        1
+      ]
+    ],
+    "pkg_paths": [
+      "package.json"
+    ],
+    "js_sample": [
+      "data/tools/workshop-pass.mjs",
+      "scripts/chamber-cycle.test.mjs",
+      "scripts/desk-study.mjs",
+      "scripts/github-desk.test.mjs",
+      "scripts/import-pass.test.mjs",
+      "scripts/import-recall.test.mjs",
+      "scripts/imported-laws.test.mjs",
+      "scripts/recall.test.mjs",
+      "scripts/tessera-worker.mjs",
+      "src/components/tessera/app-shell.tsx",
+      "src/components/tessera/board-view.tsx",
+      "src/components/tessera/chamber.tsx",
+      "src/components/tessera/code-view.tsx",
+      "src/components/tessera/world-stage.tsx",
+      "src/lib/tessera/chat.ts"
+    ],
+    [REDACTED-PATH] 0,
+    "rea_eligible": true
+  },
+  {
+    "label": "TESSERA/archives/source-variants",
+    "entries": 124,
+    "blobs": 80,
+    "dirs": 44,
+    "js_ts": 63,
+    "package_json": 0,
+    "md": 11,
+    "truncated": false,
+    "top_exts": [
+      [
+        ".ts",
+        45
+      ],
+      [
+        ".tsx",
+        18
+      ],
+      [
+        ".md",
+        11
+      ],
+      [
+        "(none)",
+        3
+      ],
+      [
+        ".sha256",
+        2
+      ],
+      [
+        ".toml",
+        1
+      ]
+    ],
+    "pkg_paths": [],
+    "js_sample": [
+      "1/main/artifacts/api-server/src/__tests__/invention-glb-upload.test.ts",
+      "1/main/artifacts/api-server/src/__tests__/moltbook-sandbox-boundary.test.ts",
+      "1/main/artifacts/api-server/src/lib/safe-fetch.ts",
+      "1/main/artifacts/api-server/src/lib/sovereign-fetch-guard.ts",
+      "1/main/artifacts/api-server/src/routes/inventions.ts",
+      "5t/main/artifacts/api-server/src/app.ts",
+      "5t/main/artifacts/api-server/src/lib/eval-runner.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/pipeline.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/scheduler.ts",
+      "5t/main/artifacts/api-server/src/lib/tessera-codex.ts",
+      "5t/main/artifacts/api-server/src/routes/index.ts",
+      "T44/main/artifacts/api-server/src/app.ts",
+      "T44/main/artifacts/api-server/src/index.ts",
+      "T44/main/artifacts/api-server/src/lib/consensus-engine.ts",
+      "T44/main/artifacts/api-server/src/lib/father-verify-throttle.ts"
+    ],
+    [REDACTED-PATH] 0,
+    "rea_eligible": true
+  },
+  {
+    "label": "TESSERA/archives/source-variants/1",
+    "blobs": 5,
+    "js_ts": 5,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": true,
+    "js_sample": [
+      "1/main/artifacts/api-server/src/__tests__/invention-glb-upload.test.ts",
+      "1/main/artifacts/api-server/src/__tests__/moltbook-sandbox-boundary.test.ts",
+      "1/main/artifacts/api-server/src/lib/safe-fetch.ts",
+      "1/main/artifacts/api-server/src/lib/sovereign-fetch-guard.ts",
+      "1/main/artifacts/api-server/src/routes/inventions.ts"
+    ]
+  },
+  {
+    "label": "TESSERA/archives/source-variants/5t",
+    "blobs": 10,
+    "js_ts": 6,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": true,
+    "js_sample": [
+      "5t/main/artifacts/api-server/src/app.ts",
+      "5t/main/artifacts/api-server/src/lib/eval-runner.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/pipeline.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/scheduler.ts",
+      "5t/main/artifacts/api-server/src/lib/tessera-codex.ts",
+      "5t/main/artifacts/api-server/src/routes/index.ts"
+    ]
+  },
+  {
+    "label": "TESSERA/archives/source-variants/Everything",
+    "blobs": 1,
+    "js_ts": 0,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": false,
+    "js_sample": []
+  },
+  {
+    "label": "TESSERA/archives/source-variants/T44",
+    "blobs": 57,
+    "js_ts": 52,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": true,
+    "js_sample": [
+      "T44/main/artifacts/api-server/src/app.ts",
+      "T44/main/artifacts/api-server/src/index.ts",
+      "T44/main/artifacts/api-server/src/lib/consensus-engine.ts",
+      "T44/main/artifacts/api-server/src/lib/father-verify-throttle.ts",
+      "T44/main/artifacts/api-server/src/lib/forum-identity-registry.ts",
+      "T44/main/artifacts/api-server/src/lib/moltbook-bridge.ts",
+      "T44/main/artifacts/api-server/src/lib/sovereign-loop.ts",
+      "T44/main/artifacts/api-server/src/lib/sovereign-society.ts",
+      "T44/main/artifacts/api-server/src/routes/agi.ts",
+      "T44/main/artifacts/api-server/src/routes/compression.ts"
+    ]
+  },
+  {
+    "label": "TESSERA/archives/source-variants/TX",
+    "blobs": 2,
+    "js_ts": 0,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": false,
+    "js_sample": []
+  },
+  {
+    "label": "TESSERA/archives/source-variants/tessera-complete-archives",
+    "blobs": 2,
+    "js_ts": 0,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": false,
+    "js_sample": []
+  },
+  {
+    "label": "TESSERA/archives/source-variants/tessera-grok-handoff",
+    "blobs": 1,
+    "js_ts": 0,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": false,
+    "js_sample": []
+  },
+  {
+    "label": "TESSERA/archives/source-variants/tessera-grok-handoff-complete",
+    "blobs": 2,
+    "js_ts": 0,
+    "package_json": 0,
+    "pkg_paths": [],
+    "rea_eligible": false,
+    "js_sample": []
+  }
+]

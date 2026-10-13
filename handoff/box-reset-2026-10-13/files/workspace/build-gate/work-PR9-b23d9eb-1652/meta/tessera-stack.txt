@@ -1,0 +1,9 @@
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/intake/how-to-submit.md:34:- Do not change `TESSERA_ENABLE_*` (stay `0`)
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/review/moderator-handoff.md:18:5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/roles/gitbook-cordnation.md:27:- Flag changes (`TESSERA_ENABLE_*` stay `0`)
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/roles/pen-tone-guide.md:53:Also stay clear of: merging/deploying without Father; flipping TESSERA_ENABLE_*; speaking as Tessera from another lane’s mouth; treating archives or other agents as canon without Father’s yes.
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/roles/build.md:21:- Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/roles/tessera.md:18:- `TESSERA_ENABLE_*` flags stay **`0`**
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/roles/grok-bot.md:18:- Never to main (after Father's yes, Tessera merges approved packages to main; Father may push himself). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/roles/open-helper-agent-2.md:23:- Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+/workspace/build-gate/work-PR9-b23d9eb-1652/after-stack/mesh/flow.md:47:| `TESSERA_ENABLE_*` flags | Stay **`0`**. Do not flip them. |

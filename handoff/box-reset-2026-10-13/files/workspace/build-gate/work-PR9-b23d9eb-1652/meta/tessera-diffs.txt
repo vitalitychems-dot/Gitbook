@@ -1,0 +1,5 @@
+/workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff:221: - Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+/workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff:320:-- Never to main (Father alone pushes main). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
+/workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff:321:+- Never to main (after Father's yes, Tessera merges approved packages to main; Father may push himself). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0.
+/workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff:401: - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+/workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff:193: - Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).

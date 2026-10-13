@@ -1,0 +1,106 @@
+--- a/SUMMARY.md
++++ b/SUMMARY.md
+@@ -31,6 +31,7 @@
+ * [HYB-005 braces decision](merge/hyb-005-braces-decision.md)
+ * [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
+ * [HYB-007 Z-app functional comparison](merge/hyb-007-z-app.md)
++* [HYB-024 self-fix loop design](merge/hyb-024-selffix-design.md)
+ * [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
+ * [Source heads and agent work launch](merge/SOURCE-HEADS-2026-10-05.md)
+ * [Conference next steps](intake/CONFERENCE-NEXT-STEPS.md)
+--- a/intake/HYBRID-CONSOLIDATION-BACKLOG.md
++++ b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
+@@ -50,7 +50,7 @@
+ | HYB-021 | TESSERA dependency maintainer (Replit Agent) | DONE (TESSERA PR #20 merged `9e218bc`, Gitbook PR #17 merged `39e892e`; check-in refreshed 2026-10-09) | Update only the KaTeX range in `artifacts/tessera/package.json` to `^0.19.0` and its matching entries in `pnpm-lock.yaml`; no other dependency or runtime changes. | TESSERA main has `katex` `^0.19.0`. Actions run 37713667003 passed on the pull request head before the merge. |
+ | HYB-022 | Tessera / Brain lane | TESTED LOCALLY (Phase 1 evidence recorded; promotion and later phases gated) | Execute the owner-provided local own-brain plan: deterministic original SNN, 10k→100M synapse scale ladder, bounded learning rules, read-only memory adapter, connectome-statistics controls, and computable indicators. | Phase 1 report records 5/5 tests, S0–S2 measured, S3–S4 blocked by the local 512 MiB cap; later phases require their own check-in and review. See [OWN-BRAIN-PHASE1-RESULT-2026-10-09.md](../brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md). |
+ | HYB-023 | Permanent-site coordination | IN REVIEW — TESSERA build hardened; SITE-001–SITE-004 reports pending | Prepare the private TESSERA application for permanent managed-web publication without creating a replica, exposing protected material, or bypassing approval gates. | TESSERA `e5e5719` typecheck, tests, build, and 51-route manifest pass; Gitbook contains the readiness evidence; managed health/security evidence, exact release payload, and owner bulk approval remain. See [PERMANENT-SITE-COORDINATION.md](../mesh/PERMANENT-SITE-COORDINATION.md). |
+-| HYB-SELFFIX | Tessera (admin) | REPORTED phase 0 (suggest-only) | Self-fix dry run. No branches, pull requests, or merges. Board note: [comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185). The local design file is not in Gitbook or on TESSERA main. | A classification note on issue #2, with no pull request opened by the dry run. |
++| HYB-024 | Tessera (admin) | APPROVED phase 0 (suggest-only), as Tessera reports; phase 1 needs Father's yes | Self-fix loop for TESSERA CI (formerly HYB-SELFFIX). Phase 0 dry run: no branches, pull requests or merges. Board note: [comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185). Design: [hyb-024-selffix-design.md](../merge/hyb-024-selffix-design.md). | Phase 0 notes classify each failing run correctly, and no pull request is opened. |
+ 
+ ## Check-in protocol
+ 
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -72,5 +72,6 @@
+ | O11 | Secure mesh page (mesh/secure-mesh.md: end-to-end mesh, content addressing, OPSEC, honest gateway limits) | not recorded | 2026-10-12 | PR #50 body | TBD | published | No gate, secret-grep or Father's yes recorded in the PR #50 body or on the board. Published 2344334 (PR #50, merged 17:18 CT; commit 8592dd50); link check clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #50) | Link check (PR body) | Gate evidence for PR #50 to be recorded by Tessera | No gate record |
+ | GB-066 | Intake log backfill for PR #46 to PR #50 (GB-063, GitMesh rename, O8, O9, O11) | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 6:39 PM CT | TBD | published | Four gates cleared (Moderator 6:43 PM CT, Tessera, Security, Build) and auto-approved under Father's 5:15 PM CT rule, as stated in the PR #51 body (REPORTED). Published 3fc9d89 (PR #51, merged 19:11 CT; diff sha256 79181882…8536); Tessera receipt pending (sync ledger #14) | Tessera (merged PR #51) | Build PASS (/workspace/build-gate/GATE-2026-10-12-GB-066.md, per PR #51 body) | none | none |
+ | GB-067 | Single lane handoff: mesh/HANDOFF.md rewritten as one line per item (id, lane, state, where left, next step, link) | Gitbook / Cordnation | 2026-10-13 | Tessera lane scope 12:57 AM CT; Security mesh-cleanup proposal 2026-10-12 8:20 PM CT | TBD | in review |  | Gitbook Moderator | git apply --check on main 0f05d58 | Gitbook Moderator reviews (gate 1 of 4) | none |
++| GB-068 | HYB-024 self-fix loop design page; backlog row HYB-SELFFIX renamed to HYB-024; phase 0 approved (REPORTED by Tessera) | Gitbook / Cordnation | 2026-10-13 | Tessera design (2026-10-05) and dry-run ledger; Tessera lane scope 12:57 AM CT; HYB-024 number per Tessera ruling 3:53 PM CT Oct 12 | TBD | in review |  | Gitbook Moderator | git apply --check on main 0f05d58 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ 
+ Held, not logged: four direct commits to `main` after cdc95b7 with no PR (44f5266, d2b8339, 779135e, fcabd13; 2026-10-06, 15:13–15:27 CT). Their attribution waits on Father's answer; no intake rows until then.
+--- /dev/null
++++ b/merge/hyb-024-selffix-design.md
+@@ -0,0 +1,73 @@
++# HYB-024 — Self-fix loop for TESSERA CI
++
++**Design author:** Tessera (admin). **Published by:** Gitbook / Cordnation.
++**Status:** Phase 0 (suggest-only dry run) approved, as Tessera reports: Father's 5:32 PM CT approval of the Oct 5 bulk update ([comment 6004515093](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004515093)). Phase 1 is not approved.
++**Source:** the design file from 2026-10-05 and its dry-run ledger, both kept on the work machine.
++
++This is a narrow loop. When the TESSERA CI job `validate` fails, it reads the logs, proposes a small fix, and sends that fix through the normal gates. It makes no claims about self-improvement and trains no weights.
++
++## What it must never do
++
++- Edit `.github/workflows/*` or any other CI config.
++- Flip a feature flag, read secrets, or touch wallet, payment, blockchain or 1T paths.
++- Upgrade dependencies broadly or run a mass `pnpm update`.
++- Delete, skip or weaken tests or audit rules. The one exception is a narrow, dated ignore for a single advisory, as in HYB-005.
++- Push to `main`.
++
++## Trigger and dedupe
++
++- One failing run id is one attempt.
++- If a branch or draft PR already exists for that run id, no second agent starts.
++- A run that never got a runner (empty steps, runner id 0) is infrastructure, not code. It is escalated and gets no fix PR.
++- Two trigger options are open: a polling routine, or a `workflow_run` watcher. The watcher is itself a CI-config change, so it needs Father's yes.
++
++## Fix classes allowed in phase 1
++
++| Class | Real example | Fix |
++|---|---|---|
++| Audit advisory with no patched version | `braces` advisory GHSA-vfj7-8cjw-p6xm, fixed by HYB-005 | One dated ignore entry with the advisory URL, path and review date |
++| One-file TypeScript error | Not yet seen in CI | Smallest type or import fix under `artifacts/**` or `lib/**` |
++| Broken deterministic test | Route-inventory test from HYB-012 | Fix the test or the code under test; never delete the test |
++| Lockfile or install mismatch | Not yet seen | Regenerate the lockfile only for the package that broke; Build re-verifies |
++
++## Runner and limits
++
++- Branch `selffix/<run-id>`, one commit, draft PR only.
++- 50 lines and 3 files at most. Anything larger is BLOCKED.
++- 2 attempts per run id. After that it is BLOCKED and Father is told.
++- The PR body carries the failing log excerpt and the passing `validate` run on the new head.
++
++## Gates and merge
++
++1. Gitbook Moderator: docs impact, or N/A for code-only fixes.
++2. Tessera: class, size, one commit, evidence present.
++3. Security: changed paths, no secrets, inside the allow-list.
++4. Build: re-runs `validate` on the exact head.
++
++If Security and Build both pass on the same head, Tessera may merge pinned to that head. If the head moves, the fix is re-gated.
++
++**Kill switch:** Father says "stop selffix". Open drafts stay open; nothing new starts and nothing merges.
++
++## Rollout
++
++- **Phase 0 (approved):** diagnose and write a proposal note only. No branch, no PR, no merge.
++- **Phase 1 (needs Father's yes):** draft PRs and gated merges for the classes above.
++- **Phase 2:** widen the classes only with phase 1 evidence and Father's yes for each new class.
++
++## Phase 0 results so far
++
++- 13 runs are recorded in the dry-run ledger. All were classified, and none led to a code change.
++- The two replay runs from Oct 5 were classified correctly: the audit class, and an infrastructure cancel. That meets the "two clean dry runs" mark.
++- Oct 12: 11 `main` runs never started because of the GitHub Actions billing or spending limit. They were recorded as infrastructure and escalated once. No fix PR was opened.
++
++## Measures
++
++Time to green, fix acceptance rate, reverts within 7 days, false fixes caught by the gates, and infrastructure cancels skipped.
++
++## Open questions for Father (yes or no)
++
++1. After two clean dry runs, turn on phase 1 draft PRs, with Tessera merging when Security and Build pass?
++2. Polling instead of a watcher workflow?
++3. Keep the limit of 2 attempts per failure?
++4. Keep the limit of 50 lines and 3 files?
++5. Let the single-advisory ignore class run in phase 1 without a new yes each time?

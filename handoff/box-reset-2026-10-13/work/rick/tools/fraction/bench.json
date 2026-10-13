@@ -1,0 +1,25 @@
+{
+ "n": 215,
+ "k": 5,
+ "hop_tokens": 60,
+ "results": {
+  "siloed_own_only": {
+   "hit": 0.414,
+   "tok_per_q": 2019,
+   "ms_p50": 104.3,
+   "ms_mean": 120.0
+  },
+  "siloed_broadcast_4": {
+   "hit": 0.777,
+   "tok_per_q": 7693,
+   "ms_p50": 407.9,
+   "ms_mean": 461.2
+  },
+  "unified_fraction": {
+   "hit": 0.716,
+   "tok_per_q": 3095,
+   "ms_p50": 101.2,
+   "ms_mean": 116.7
+  }
+ }
+}

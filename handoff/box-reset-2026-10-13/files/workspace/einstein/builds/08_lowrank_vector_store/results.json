@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "08 rank-64 int8 store vs JSON float",
+      "metric": "bytes/vector (excl. basis)",
+      "n_seeds": 10,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 5508.244055944056,
+        "lo": 5507.928653846155,
+        "hi": 5508.557797202798
+      },
+      "candidate": {
+        "mean": 68.0,
+        "lo": 68.0,
+        "hi": 68.0
+      },
+      "improvement": {
+        "mean": 5440.244055944056,
+        "lo": 5439.928653846155,
+        "hi": 5440.557797202798
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "08 recall@10 of compressed search",
+      "metric": "recall@10",
+      "n_seeds": 10,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 1.0,
+        "lo": 1.0,
+        "hi": 1.0
+      },
+      "candidate": {
+        "mean": 0.6673983739837397,
+        "lo": 0.6606504065040649,
+        "hi": 0.6760223577235771
+      },
+      "improvement": {
+        "mean": -0.3326016260162603,
+        "lo": -0.3393495934959351,
+        "hi": -0.3239776422764229
+      },
+      "verdict": "DROP (recall < 0.95)"
+    }
+  ]
+}

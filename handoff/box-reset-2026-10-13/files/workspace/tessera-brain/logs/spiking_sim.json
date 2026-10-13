@@ -1,0 +1,209 @@
+{
+  "honesty": "Blueprint spiking + CL1-style loop. Not living tissue. No weight training.",
+  "brian2": {
+    "label": "TESTED",
+    "engine": "Brian2",
+    "brian2_version": "2.10.1",
+    "duration_ms": 500,
+    "total_spikes": 235,
+    "spikes_by_node": {
+      "sensory_intake": 70,
+      "thalamus_router": 27,
+      "hippocampus_learning_memory": 26,
+      "cortex_reasoning": 13,
+      "prefrontal_tessera_admin": 26,
+      "creator_model": 60,
+      "immune_security": 0,
+      "error_build": 0,
+      "error_moderator": 0,
+      "cordnation": 13,
+      "command_center": 0,
+      "mesh_cloud": 0,
+      "historical_analysis": 0,
+      "knowledge_packs": 0,
+      "research_theories": 0,
+      "motor_output": 0
+    },
+    "wall_s": 0.36565613746643066,
+    "drive": "PoissonInput on sensory_intake + creator_model",
+    "note": "LIF toy network on blueprint graph; not biological CL1 neurons."
+  },
+  "numpy": {
+    "label": "TESTED",
+    "engine": "numpy_discrete",
+    "steps": 100,
+    "total_spikes": 84,
+    "spikes_by_node": {
+      "sensory_intake": 50,
+      "thalamus_router": 0,
+      "hippocampus_learning_memory": 0,
+      "cortex_reasoning": 0,
+      "prefrontal_tessera_admin": 0,
+      "creator_model": 34,
+      "immune_security": 0,
+      "error_build": 0,
+      "error_moderator": 0,
+      "cordnation": 0,
+      "command_center": 0,
+      "mesh_cloud": 0,
+      "historical_analysis": 0,
+      "knowledge_packs": 0,
+      "research_theories": 0,
+      "motor_output": 0
+    },
+    "first_events": [
+      {
+        "t": 1,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 2,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 3,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 5,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      },
+      {
+        "t": 7,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 8,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 9,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 11,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      },
+      {
+        "t": 13,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 14,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 15,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 17,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      },
+      {
+        "t": 19,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 20,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 21,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 23,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      },
+      {
+        "t": 25,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 26,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 27,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 29,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      }
+    ]
+  },
+  "cl1_sdk": {
+    "label": "TESTED",
+    "engine": "cl-sdk",
+    "is_simulator": true,
+    "spike_events": 82,
+    "stim_events": 82,
+    "mapped_nodes": [
+      "sensory_intake",
+      "thalamus_router",
+      "hippocampus_learning_memory",
+      "cortex_reasoning",
+      "prefrontal_tessera_admin",
+      "creator_model",
+      "immune_security",
+      "error_build",
+      "error_moderator",
+      "cordnation",
+      "command_center",
+      "mesh_cloud",
+      "historical_analysis",
+      "knowledge_packs",
+      "research_theories",
+      "motor_output"
+    ],
+    "warning_REPORTED": "Simulator produces non-learning control data that does not respond to stimulation (docs.corticallabs.com).",
+    "license": "CC BY-NC 4.0"
+  }
+}

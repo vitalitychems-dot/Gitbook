@@ -1,0 +1,8 @@
+interactions=10 lessons=10
+PASS should I buy the paid plan? -> Prefer free routes: no paid Replit connector; sync via GitHub + Gitbook (Father 
+PASS skip tests for now? -> Test as you build. Father's rule 2026-10-05: every script ships with a small tes
+PASS how often should we digest to father? -> Bulk yes/no/revise digests every 30-45 minutes while work is active.
+PASS may an agent push gitbook to github? -> After digest yes, Father alone pushes GitBook to GitHub. Agents and Command Cent
+PASS full copy openmanus into tessera? -> OpenManus full copy is not the board rule — recover portable pieces only.
+PASS buy cl1 hardware today? -> CL1 path: simulator-only for now (Father 2026-10-05 5:38 PM CT); no Cloud signup
+passed=6 failed=0 total=6

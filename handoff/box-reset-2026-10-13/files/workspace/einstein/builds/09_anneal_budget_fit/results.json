@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "09 anneal max-coverage vs fitBudget head/tail",
+      "metric": "needle paragraphs kept",
+      "n_seeds": 10,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.6034165699648497,
+        "lo": 0.5746445538243541,
+        "hi": 0.6293617635072963
+      },
+      "candidate": {
+        "mean": 0.8401343101343102,
+        "lo": 0.8100732600732601,
+        "hi": 0.8717362637362637
+      },
+      "improvement": {
+        "mean": 0.23671774016946046,
+        "lo": 0.20335212818668702,
+        "hi": 0.26962114780469376
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "09 anneal vs greedy coverage (non-quantum control)",
+      "metric": "needle paragraphs kept",
+      "n_seeds": 10,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.8401343101343102,
+        "lo": 0.8100732600732601,
+        "hi": 0.8717362637362637
+      },
+      "candidate": {
+        "mean": 0.8401343101343102,
+        "lo": 0.8100732600732601,
+        "hi": 0.8717362637362637
+      },
+      "improvement": {
+        "mean": 0.0,
+        "lo": 0.0,
+        "hi": 0.0
+      },
+      "verdict": "DROP"
+    }
+  ]
+}

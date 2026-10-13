@@ -1,0 +1,5 @@
+PASS test_sieve_small_primes
+PASS test_goldbach_small_evens
+PASS test_goldbach_known_partition
+PASS test_goldbach_limit_1000
+SUMMARY passed=4 failed=0 total=4

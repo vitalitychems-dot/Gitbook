@@ -1,0 +1,83 @@
+diff --git a/intake/how-to-submit.md b/intake/how-to-submit.md
+--- a/intake/how-to-submit.md
++++ b/intake/how-to-submit.md
+@@ -32,7 +32,7 @@
+ - No crypto / money / store work
+ - No uncensoring tools or surveillance of real people
+ - Do not change `TESSERA_ENABLE_*` (stay `0`)
+-- Single coordination board: `vitalitychems-dot/tessera-coordination` issue **#4**
++- Single coordination board: [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2)
+ 
+ ## Status values
+ 
+diff --git a/mesh/TESSERA-GITBOOK-OPERATING-MODE.md b/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+--- a/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
++++ b/mesh/TESSERA-GITBOOK-OPERATING-MODE.md
+@@ -4,7 +4,7 @@
+ **Owner:** Human owner / Father
+ **Product repository:** [`vitalitychems-dot/TESSERA`](https://github.com/vitalitychems-dot/TESSERA)
+ **Agent workspace:** [`vitalitychems-dot/Gitbook`](https://github.com/vitalitychems-dot/Gitbook)
+-**Coordination board:** [`vitalitychems-dot/tessera-coordination` issue #4](https://github.com/vitalitychems-dot/tessera-coordination/issues/4)
++**Coordination board:** [`vitalitychems-dot/Gitbook` issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)
+ 
+ ## Purpose
+ 
+diff --git a/mesh/flow.md b/mesh/flow.md
+--- a/mesh/flow.md
++++ b/mesh/flow.md
+@@ -48,7 +48,7 @@
+ | Secrets | None. No credentials, tokens, or private keys in docs or commits. |
+ | Crypto / money / store | Out of scope for the current consolidation. |
+ | Uncensoring / surveillance | No uncensoring tools. No surveillance of real people. |
+-| Coordination board | **One board only:** GitHub `vitalitychems-dot/tessera-coordination` issue **#4**. |
++| Coordination board | **One board only:** GitHub [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2). |
+ | Command Center | Digests, status, and handoff coordination; never pushes GitBook or TESSERA/Origin. **Only** push: private push of the Replit app set (see Replit push set), after all four gates and Father's yes on the listed digest item — not a GitBook publication path. |
+ | Replit | Replit may prototype or verify assigned work; it is outside the GitBook → GitHub push path and is never a GitBook publication path. The Replit **app set** private push is Command Center's separate, only push. Every Replit push item still clears Moderator→Tessera→Security→CI/Build before Ready. |
+ | Push authority | (1) GitBook docs: **Father** alone pushes GitBook → GitHub after Ready yes on the listed digest item — Replit outside that path. (2) Replit app set (not a GitBook path): Command Center's only push — "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply" — privately, only after all four gates and Father's yes on the listed digest item(s). CC never pushes GitBook or TESSERA. (3) Grok lane: feature-branch pushes only, for its own Gitbook PRs on HYB items Tessera assigns; never main; merges need Tessera's go + Father's final yes. |
+diff --git a/mesh/roles.md b/mesh/roles.md
+--- a/mesh/roles.md
++++ b/mesh/roles.md
+@@ -36,6 +36,6 @@
+ 
+ - Father = Collin Keane. Agents address him as "Father".
+ - Tessera Pen = Tessera's own writing voice; only posts opening with the [Tessera identity line](roles/tessera-pen.md#tessera-identity-line) and coming from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.
+-- Single coordination board: `vitalitychems-dot/tessera-coordination` issue **#4**.
++- Single coordination board: [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2).
+ - See [Flow & standing rules](flow.md) and the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the end-to-end pipeline and hard constraints.
+ - A role is not considered live merely because a page exists; live participation requires an identified agent check-in.
+diff --git a/mesh/roles/command-center.md b/mesh/roles/command-center.md
+--- a/mesh/roles/command-center.md
++++ b/mesh/roles/command-center.md
+@@ -37,7 +37,7 @@
+ - Push the Replit app set before all four gates clear and Father says yes on the listed item
+ - Add work to a digest without a task ID, owner, scope, checks, provenance, and status
+ - Treat a missing owner response as approval
+-- Create new coordination boards (board is issue **#4** only)
++- Create new coordination boards (board is [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2) only)
+ 
+ ## Replit boundary
+ 
+diff --git a/mesh/roles/open-helper-agent-2.md b/mesh/roles/open-helper-agent-2.md
+--- a/mesh/roles/open-helper-agent-2.md
++++ b/mesh/roles/open-helper-agent-2.md
+@@ -21,7 +21,7 @@
+ - Own Ready staging or the Replit app set push (docs Ready staging: Gitbook / Cordnation only after all four gates; Replit app set staging and push: Command Center). OHA2 stays a floating helper.
+ - Moderate or approve GitBook pages, run digests, or replace Mesh Cloud's tracking.
+ - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+-- Open new boards. The one board is `vitalitychems-dot/tessera-coordination` issue #4.
++- Open new boards. The one board is [`vitalitychems-dot/Gitbook` issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2).
+ 
+ ## Handoffs
+ 
+diff --git a/review/moderator-handoff.md b/review/moderator-handoff.md
+--- a/review/moderator-handoff.md
++++ b/review/moderator-handoff.md
+@@ -16,7 +16,7 @@
+ 3. No secrets, credentials, or tokens in the page
+ 4. Does not propose crypto / money / store work, uncensoring tools, or surveillance of real people
+ 5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`
+-6. Does not create or point at a new coordination board (only issue **#4**)
++6. Does not create or point at a new coordination board (only [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2))
+ 7. Author lane and ownership boundaries are clear (or explicitly marked provisional / TBD)
+ 8. Status moved to `in review` by Gitbook / Cordnation at handoff
+ 

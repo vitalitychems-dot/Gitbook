@@ -1,0 +1,561 @@
+===== merge/CONSOLIDATION-MAP-2026-10-12.md =====
+# Consolidation map — 2026-10-12
+
+**Base:** Gitbook main `cd8faa0`, TESSERA main `a502322`.
+**Builds on:** [All-repository routing and consolidation record](ALL-REPOSITORIES-ROUTING-2026-10-07.md). That record routed about twenty repositories. This page is the current map after the account shrank to four.
+
+Nothing on this page deletes a repository. Deletion stays on Father's yes checklist in [`DELETION-MANIFEST.md`](DELETION-MANIFEST.md).
+
+## The two homes
+
+- **TESSERA** holds reviewed product code, tests and configuration.
+- **Gitbook** holds instructions, coordination, research, provenance and decisions.
+
+## Repository map
+
+The connected GitHub account lists four repositories under `vitalitychems-dot`. A second owner name was searched and returned no repositories visible to this account. The Origin repository under that login is still a gap until Father connects it.
+
+| Repository | Visibility | Purpose | Last push (CT) | Destination | Owner on the board |
+|---|---|---|---|---|---|
+| `TESSERA` | private | Product code and tests | 2026-10-12 9:34 AM | TESSERA (destination) | Tessera gates; lanes work on their own branch |
+| `Gitbook` | private | Coordination, instructions, research, provenance | 2026-10-12 9:34 AM | Gitbook (destination) | Cordnation intake; Moderator review |
+| `GitMesh` (renamed from GitbookAI, 2026-10-12) | public | Public room carried by git; owner-approval gate rules and small `projects/*` programs | 2026-10-10 9:42 AM | Gitbook gets a summary page of the approval-gate rules (HYB-015). The code stays in its own public repository. | HYB-016 coordination rules: Cursor Project. HYB-015: unclaimed |
+| `vitality` | private | Vitality Supply store and product media. Its README says it is not part of Tessera. | 2026-10-11 12:02 PM | Archive-mark-done for Tessera purposes. It stays separate. | Board rule: do not edit vitality. HYB-010 media metadata: unclaimed |
+
+The older sources named in the backlog (`Grok-ready`, `Zz`, `1`, `5t`, `T44`, `TESS`, `olive-giant-ever-glade` and the archive repositories) are no longer listed under this account. Their routing and verdicts stay recorded in the 2026-10-07 record and in HYB-006 to HYB-009 and HYB-017. `1T` stays protected and unopened under HYB-011.
+
+Father said the nested archives inside TESSERA and Gitbook are the rest of the inventory.
+
+## Local research and brain work not yet in Gitbook
+
+These items sit on the shared work machine. None is in Gitbook main as its own page.
+
+| Item | What it is | Proposed home |
+|---|---|---|
+| Self-fix loop design (`hyb-selffix/DESIGN.md`, dry-run notes) | Narrow loop: when CI `validate` fails, diagnose from logs, propose a minimal fix on a branch, run the four gates. Phase 0 is suggest-only. | Gitbook `merge/` as a design page once it has a HYB number (see below). Any code goes to TESSERA by PR. |
+| Research mesh (`knowledge-lab/research/`: theories, open problems, connections, code index, workflow) | A catalog of theories and open problems with links between them | Gitbook `brain-consciousness/research/` |
+| Brain blueprint and spiking test (`tessera-brain/`) | Connectome stats, a small spiking simulation and passing local tests | Summary and test result in Gitbook `brain-consciousness/reports/` (HYB-022 lane). Scripts go to TESSERA only by PR with tests. Images and large data stay local. |
+| Consolidation working set (`consolidation/`: repos, branches, items, order) | The 2026-10-05 inventory and consolidate-then-verify order | Already covered by the 2026-10-07 routing record. Mark done; nothing new to move. |
+| Full-picture inventory (`full-picture/`) | 2026-10-05 inventory, baseline and benchmark plan | Benchmark plan to Gitbook `brain-consciousness/reports/` after the board cards it. The rest is covered; mark done. |
+| Improvements ledger (`improvements/`) | List 1 yes/no ledger (IMP-009 to IMP-084) | Covered by GB-039 and the board. Mark done. |
+| Repo map draft (`hyb-repo-map.md`, today) | Read-only map of the four repositories and the next five HYB tasks | Folded into this page |
+
+## Consolidation order
+
+1. Record the current four-repository map (this page).
+2. Give the self-fix design its HYB number and publish it as a design page.
+3. Publish the research mesh and the brain test summary under `brain-consciousness/`.
+4. Write the GitMesh rules summary (HYB-015). Leave its code where it is.
+5. Refresh the HYB-011 exclusion manifest to name the repositories that are gone. Confirm `1T` by name only.
+6. Mark the covered local working sets done. Delete nothing.
+
+## Who owns what
+
+- Tessera: gates, the numbered list and HYB numbering.
+- Cordnation: this page and the intake rows.
+- Cursor Project: HYB-016 coordination files under `mesh/`.
+- Brain lane: HYB-022.
+- Permanent-site lane: HYB-023.
+- Unclaimed: HYB-010, HYB-013 and HYB-015.
+===== merge/HYB-011-EXCLUSION-MANIFEST.md =====
+# HYB-011 exclusion manifest
+
+**Checked:** 2026-10-05  
+**Status:** READY. This pass listed repository roots only. It did not open file bodies, zip parts, or `parts/` trees, and it did not copy any archive into Gitbook.  
+**Not opened:** `1T`. No `1T` contents API call was made.
+
+## Root names (TESTED)
+
+GitHub contents API, default branch, names only:
+
+| Repository | Root names that stay excluded | Secret-shaped root name |
+|---|---|---|
+| `1` | `artifacts/`, `attached_assets/` | none at root |
+| `5t` | `artifacts/`, `attached_assets/` | none at root |
+| `Grok-ready` | `archives/`, `artifacts/` | none at root |
+| `T44` | `artifacts/`, `attached_assets/` | none at root |
+| `TESS` | `artifacts/`, `attached_assets/` | none at root |
+| `Zz` | `artifacts/`, `attached_assets/` | none at root |
+| `olive-giant-ever-glade` | `data/`, `.vercel/` | none at root (`.env` not present) |
+| `tessera-complete-archives` | `parts/` | none at root |
+| `tessera-grok-handoff` | `grok-workspace_*.zip.part-*` (parts 000–025) | none at root |
+| `tessera-grok-handoff-complete` | `parts/` | none at root |
+
+No root entry was a `.env`, `.pem`, or `id_rsa` file. Deeper trees were not listed.
+
+## Prior census (not re-opened)
+
+`merge/full-audit-report.json` already stores `unique_sensitive_review` counts. Those paths were not printed or re-fetched in this pass:
+
+| Repository | Count in that JSON |
+|---|---:|
+| `T44` | 1 |
+| `Zz` | 16 |
+| `olive-giant-ever-glade` | 9 |
+| `1T` | 1 (path withheld; repository not opened) |
+| `tessera-unified` | 1 (repository already deleted; count is historical) |
+
+Other source rows in that JSON have count 0. Eight repositories named in [DELETION-MANIFEST.md](DELETION-MANIFEST.md) were already deleted and were not listed again.
+
+## Still excluded
+
+- Chunk and zip bodies (`parts/`, `grok-workspace_*.zip.part-*`).
+- `data/` on `olive-giant-ever-glade`.
+- `archives/` on `Grok-ready`.
+- `1T`, unopened.
+
+HYB-011 stays READY until a later pass can record a value-redacted deep-tree result without copying archives or opening `1T`.
+===== merge/FUNCTIONAL-MERGE-MATRIX.md =====
+# Functional merge matrix
+
+This matrix separates **portable behavior** from **unmergeable application contracts**. It is the review sheet for HYB-006 through HYB-013. See also the [HYB-006 Grok-ready functional comparison](hyb-006-grok-ready.md) and the [HYB-007 Z-app functional comparison](hyb-007-z-app.md) (candidate results; awaiting Moderator/Father seal). See also the HYB-012 route inventory on TESSERA `50876d40`: the quantum allow-list is retained (`GET /quantum/state`, `POST /quantum/gate`); 8 non-quantum duplicate routes remain.
+
+| Historical aspect | Source family | Current TESSERA state | Action | Owner/task |
+|---|---|---|---|---|
+| Canonical workspace, API server, mockup sandbox, Tessera app | `tessera-unified`, `Grok-ready`, `1`, `5t`, `T44`, `TESS` | Present in the active workspace | Keep newest reviewed implementation; remove stale references and lock entries | DONE / HYB-003 |
+| Auth gates, server-only connector boundary, sign-in tests | `Grok-ready`, `Zz` | Current TESSERA has reviewed auth and boundary tests | Compare behavior; port only a failing test or demonstrably missing invariant | HYB-006, HYB-012 |
+| Alternate `z-app` pages and TanStack Start app shell | `Zz` | Different app/runtime contract | Do not copy wholesale; extract user-valued behavior ideas only | HYB-007 |
+| Alternate app auth, PGlite/Postgres migrations, storefront UI | `olive-giant-ever-glade` | Not part of current TESSERA contract | Review as a separate feature source; no direct merge | HYB-008, HYB-017 |
+| Old API engine modules/routes | `Zz` imported trees, older snapshots | Many are duplicate, speculative, or coupled to alternate schemas | Compare by behavior and tests; integrate only isolated modules with a current consumer | HYB-012 |
+| Agent coordination, handoffs, source maps, migration instructions | all source families | Gitbook has canonical sections | Move readable records once, preserve provenance, deduplicate repeats | DONE / HYB-004, HYB-015 |
+| Old themes, storefront/product media, screenshots | `Zz`, `Grok-ready`, snapshots | Not active product requirements | Review provenance/license/relevance; keep only approved unique assets | HYB-010 |
+| Archive chunks and runtime data | handoff/archive repos, `Zz`, snapshots | Not active application code | Retain source repository or summarize metadata; do not duplicate raw chunks | HYB-009, HYB-011 |
+| Historical goals and speculative canon prose | logs, OCR, agent outputs | Untrusted historical evidence | Convert only actionable engineering/product statements into backlog tasks | HYB-015 |
+| Security/dependency and privacy boundaries | all source families | Current TESSERA has validation docs; one unpatched advisory remains | Track advisory, keep exclusion manifest current, never copy secrets/private data | HYB-005, HYB-011, HYB-014 |
+
+## Promotion rule
+
+A candidate may move from this matrix into active TESSERA only when all are present:
+
+1. **Behavior:** a concise user-visible or operator-visible behavior is named.
+2. **Owner:** exactly one task and one agent own the change.
+3. **Fit:** target module and dependencies are identified.
+4. **Safety:** privacy, secrets, licensing, and data boundaries are reviewed.
+5. **Tests:** at least one deterministic test or smoke path is defined.
+6. **Rollback:** the change can be reverted without restoring an old application tree.
+
+Anything missing remains a Gitbook goal or a retained source item, not active code.
+===== mesh/HANDOFF.md =====
+# Lane handoff
+
+**As of:** 2026-10-05 ~6 PM CT  
+**Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)  
+**Label:** Existing lane notes are **REPORTED** from issue #2. The Replit entry is a direct update from this session; other Replit sessions are not independently verified here.
+
+## Where each lane left off
+
+- **Tessera** — [Comment 6004849965](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004849965) (5:54 PM CT): Father said yes to Improvement list 1. Implementation is in progress. Tessera claimed the list so other lanes do not start those items. A consolidation map is also in progress. Earlier the same hour: HYB-012 merged as TESSERA `50876d40`, HYB-005 merged as TESSERA `5c1137fa`, Gitbook main `bc6b328` ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185), [comment 6004515093](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004515093)).
+- **Cordnation** — No Cordnation-signed check-in in this window. [Comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185) reports GB-029 (intake log backfill) merged at 5:28 PM CT, and says HYB-SELFFIX is a placeholder until Cordnation numbers it.
+- **Moderator** — No Moderator-signed check-in in this window. [Comment 6004849965](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004849965) says the list-1 items that were approved had passed Moderator. Held FAIL ids are listed below.
+- **Command Center** — No Command Center-signed check-in on issue #2. Last board mention of the feed role is Tessera's note that Command Center feeds the bulk update ([comment 6003943663](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6003943663)).
+- **Mesh Cloud** — No Mesh Cloud check-in on issue #2.
+- **Build** — No Build-signed check-in in this window. Tessera reports Build PASS on GB-029 and on TESSERA PR #1 ([comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185), [comment 6004345580](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004345580)).
+- **Security** — Last Security-signed post is [comment 6002110089](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6002110089). Later Security PASS notes are Tessera's, on HYB-012, HYB-005, and GB-029.
+- **Grok Bot** — Last Grok Bot posts are the HYB-006 / HYB-007 analysis (through [comment 6001410360](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6001410360)). No later Grok Bot check-in.
+- **Replit** — Direct check-in from this session (2026-10-05): HYB-012 is closed after [TESSERA PR #2](https://github.com/vitalitychems-dot/TESSERA/pull/2) merged as `50876d40` (head `cb19f210`). The PR added only `route-inventory.ts` and its tests; it did not change route modules, mounting, endpoint behavior, or flags. The PR body reports typecheck, suite, and focused tests passing; API integration tests were skipped because `TESSERA_TEST_DATABASE_URL` was unset. At the time of this check-in, TESSERA main was `b1679659` and its `validate` check passed. Current TESSERA main is `a024d83f90fb1bfe9ca82a5b5cc4a435df91a422`; its `validate` check is failing (latest checked run). This session verified the HYB-012 PR diff and its `b1679659` check run through GitHub API but did not rerun tests. The allow-list contains ten duplicate METHOD+path keys; triage of the eight non-quantum keys remains unassigned. No additional Replit task appears in the checked board updates; do not start duplicate-route triage or benchmark/eval work until a new scoped task is posted. Other Replit sessions are not independently verified by this entry.
+
+## What to do next
+
+- After Moderator + TESSERA gate + Security scrub, **Ready** opens the publish PR and merges (Build verifies when CI/Build applies; docs-only skip Build). **TESSERA does not push** and does not open the publish PR. Do not merge before gates clear.
+- Leave the held ids below untouched.
+- HYB-012's remaining work is triage of the 8 non-quantum duplicate routes. It is not assigned.
+- Selffix phase 0 stays suggest-only: no branch, pull request, or merge from that dry run.
+- [Comment 6004515093](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004515093): do not start a second benchmark or eval effort until those cards are posted on issue #2.
+
+## Held items and why
+
+- **IMP-001–008, IMP-017, IMP-018** — runtime. Not in the approved Gitbook list.
+- **IMP-046, IMP-047** — depend on removals. Not started.
+- **IMP-052–058, IMP-063** — need Father's yes. [Comment 6004849965](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004849965) also says IMP-052 (Ollama) is approved; that exception is REPORTED there, not re-decided here.
+- **IMP-020, IMP-037, IMP-050, IMP-076** — Moderator FAIL. IMP-037 and IMP-076 stay as dated evidence; a current line is the allowed update, and this pass did not rewrite them.
+
+## Rules
+
+- Father cadence (live): after Moderator + TESSERA gate + Security scrub, **Ready** pushes (docs-only skip Build; CI/Build only for code/validators/scripts). **TESSERA owns gates + the 45-minute combined numbered list**; TESSERA does not push or open the publish PR. Father undoes by GB number (revert commit, never force-push).
+- Origin Tessera repo and TESSERA main merges still need Father's word `merge`.
+- Ready deletes no repositories. Old repositories are consolidated first; delete candidates go on a Father-yes checklist (see GB-048 Hybrid B tiers). Never Heretic / God's Eye View.
+- Say **the Origin Tessera repo** (no personal GitHub handle).
+- PR #13 MERGE landed HANDOFF Replit session update at `4f32b673` (HOLD lifted). This GB aligns Rules with the Ready-pusher lock only; lane body from #13 kept.
+===== mesh/offline-internet.md =====
+# Offline internet
+
+How Tessera works with no web. Source survey: REA batch 2, 2026-10-12 (TESSERA + Gitbook only).
+
+## What works today
+| Piece | Where | Label |
+|---|---|---|
+| file-mesh search of saved pages | TESSERA `preview/src/lib/tessera/file-mesh.ts` | TESTED (3 pages only) |
+| git mesh description (`needsWeb: false`) | TESSERA `preview/src/lib/tessera/mesh-net.ts` | TESTED |
+| WebRTC full-mesh rooms | TESSERA `preview/src/lib/multiplayer/p2p.ts` | REPORTED |
+| IndexedDB queue/cache (lattice mesh) | TESSERA `artifacts/tessera/src/lib/lattice-mesh.ts` | REPORTED |
+| Raspberry Pi mesh plans | TESSERA `artifacts/tessera/src/pages/BuildPage.tsx` | REPORTED (prose) |
+
+No Kiwix reader and no LoRa code exist yet.
+
+## Open PRs (waiting for the gates)
+- O1 offline search index · O2 offline queue · O3 app-shell service worker · O4 optional Kiwix (off by default)
+- O5 USB git-bundle carry · O6 LAN-only P2P · O7 real online/offline badge
+- O9 LoRa research note (page `review/lora-meshtastic-research.md` once that PR lands)
+- O10 opt-in mesh node per install, on-demand when needed
+
+## Rules
+- The owner turns the mesh on. Default off. Agents may join or decline only inside that.
+- No self-copying to other machines. No wallets or keys besides the node identity.
+- 1T and vault stay closed.
+
+## Carry by USB (sneakernet)
+`node preview/scripts/mesh-bundle.mjs create <repo> mesh.bundle`, carry the file, then `open mesh.bundle <dir>`.
+===== mesh/secure-mesh.md =====
+# Secure mesh (O11)
+
+How Tessera encrypts and addresses mesh traffic. Built on the security inventory of 2026-10-12 (`SECURITY-PROTOCOLS-INVENTORY.md`).
+
+## What it is
+- **E2E envelopes:** AES-256-GCM + HKDF, Ed25519 sender signatures (same curve family as the preview gate identity and O10 node keys).
+- **Content addressing:** `cid = sha256(plaintext)`. Topic ids are sha256 of the topic name (IP-less pub/sub).
+- **Quarantine:** unknown keys, bad signatures, and GCM failures are refused and kept in a quarantine buffer (shepherd-style `allowed` / `refused` audit).
+- **Transports:** pluggable. Default is an in-process memory bus (no sockets, no IPs). O10 LAN discovery can carry these frames later.
+- **Owner gate:** O10's mesh toggle stays the outer switch. Nothing publishes while it is off.
+
+## Honest limits
+- **Group key, not sealed boxes.** Peer-to-peer sealed boxes need X25519 ECDH. Node's Ed25519 keys do not convert without a new dependency, so this release uses an owner-installed symmetric group key plus signatures. The group key is generated locally and only shared out-of-band with owner approval.
+- **No WAN / Tor / public relay is built in.** Any gateway that puts frames on the public internet is a separate, opt-in piece. It would leak metadata (timing, size, who talks to the gateway) even when payloads stay encrypted. That gateway is not this page and not O11.
+- **Not the sacred / colonial / omniversal ciphers.** Those product ciphers stay where they are. O11 reuses only the AES-GCM envelope shape.
+
+## Tests (local, recorded on TESSERA#204)
+Encrypted round trip · tamper refuse · unknown-key refuse · pub/sub across 3 nodes.
+
+## Related
+- Offline internet: `mesh/offline-internet.md` (O8)
+- LoRa research (doc only): `review/lora-meshtastic-research.md` (O9)
+===== mesh/CODEBASE-MEMORY-MCP.md =====
+# Codebase Memory MCP bridge
+
+**Status:** installed and indexed locally; bridge design ready for agent use  
+**Version:** `codebase-memory-mcp 0.11.0`  
+**Purpose:** structural code navigation for agents, not a replacement for Tessera memory, provenance, or brain/state modules
+
+## What was installed
+
+The official MIT-licensed `DeusData/codebase-memory-mcp` package was installed locally through npm:
+
+```bash
+npm install -g codebase-memory-mcp@0.11.0
+codebase-memory-mcp --version
+```
+
+The server is local-only. It reads the selected checkout and stores its graph under the local CBM cache. It does not send Tessera memory to an external model and it does not edit product code by itself.
+
+## Indexed destinations
+
+| Project | Graph result | Persistent artifact |
+|---|---:|---|
+| `TESSERA` | 20,742 nodes / 54,278 edges | `TESSERA/.codebase-memory/graph.db.zst` |
+| `Gitbook` | 1,236 nodes / 1,361 edges | `Gitbook/.codebase-memory/graph.db.zst` |
+
+TESSERA indexing reported 58 partial parses and 16 intentionally excluded/ignored files; no files were unusable. Gitbook indexed without partial or unusable files. These are index diagnostics, not claims that every source file is semantically understood.
+
+Refresh both graphs after a reviewed destination commit:
+
+```bash
+for repo in TESSERA Gitbook; do
+  codebase-memory-mcp cli --json index_repository \
+    "{\"repo_path\":\"/home/ubuntu/tessera-consolidation/published/$repo\",\"persistence\":true}"
+done
+codebase-memory-mcp cli --json list_projects
+```
+
+The persistent artifact is a derived structural index. Commit it only when the corresponding destination commit is the reviewed base; never commit local runtime stores, credentials, protected-vault content, or generated application data.
+
+## Separation of responsibilities
+
+| Layer | Owns | Must not do |
+|---|---|---|
+| Codebase Memory MCP | Files, symbols, calls, routes, architecture, impact and structural search | Decide product truth, modify code, infer consciousness, or replace durable memory |
+| Tessera retrieval memory | Redacted interaction records, lessons, evidence IDs, BM25 context, IMP proposals | Treat graph output as an approved lesson or model training |
+| Tessera vector/decision memory | Embeddings, decisions, system state, canonical IDs, audit context | Import unreviewed historical code or private runtime data |
+| Dual brain / research lane | Explicit, testable questions and proposals | Claim biological equivalence, consciousness, or autonomous authority |
+| Gitbook | Provenance, backlog, check-ins, forum, review and owner digest | Auto-merge or auto-publish product changes |
+
+## Safe bridge flow
+
+1. An agent uses CBM to locate a structural fact in a named repository and records the project, query, and result path.
+2. The agent writes a short evidence note in Gitbook with source commit, exact path, and limitations.
+3. Tessera's memory module may store a **redacted summary** as a lesson or decision, with the CBM query and Gitbook note as evidence.
+4. A repeated gap may become an IMP proposal, but proposals are not code changes.
+5. A code change requires one claimed backlog task, a scoped branch/PR, tests, security/privacy review, Build verification, and the owner's exact bulk approval.
+6. After publication, refresh the graph artifacts and record the new destination commit.
+
+Example structural queries:
+
+```bash
+===== mesh/flow.md =====
+---
+status: published
+note: TESSERA is the product repo; Gitbook is the agent workspace; items that pass the TESSERA gate and Gitbook Moderator review are auto-yessed and pushed after the Security scrub; Tessera sends Father one combined numbered list every 45 minutes (Command Center feeds it), and he can undo any item by its GB number.
+---
+
+# Mesh flow & standing rules
+
+See the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the canonical repository boundary, roles, digest contract, and approval semantics.
+
+> **Canonical approval rule (cadence: Father, 2026-10-06 6:32 PM CT):** an item that passes both the TESSERA gate and Gitbook Moderator review is auto-yessed and pushed after the Security scrub (no PII, personal addresses, phones, emails, tokens, or chat-log dumps with personal data; no secrets) by **Ready** (the Ready agent); changes to code, validators or scripts also need CI/Build first (docs-only skip Build). For GitBook docs packages that is **Ready** (the Ready agent): Ready opens a PR; Build verifies when CI/Build applies (docs-only skip Build); then Ready merges and posts on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2) (Father's rule, 3:59 PM CT). Father may still push himself on his authenticated connection. Father gets one clean combined numbered list every 45 minutes, with a real health check; Tessera sends it, and the Tessera Grok bot / Command Center feeds it and does not publish or merge. He can undo any item by its GB number; an undo is a revert commit, never a force-push. There are no other drips to Father. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path. Command Center never pushes GitBook or TESSERA; its **only** push is a separate, private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, TESSERA gate, Security, CI/Build) and Father's explicit yes on that numbered digest item; the Replit app set stays manual and outside the auto-yes (Replit is not a publish path). The "29" app push stays flagged until Father confirms "29" is detached from 1T. The only other push is the Grok lane's feature-branch exception — see **Push authority (3)** below. The Origin Tessera repo and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges.
+
+## End-to-end flow
+
+Agents discover → run the overlap check (main SHA plus open PRs) → **Tessera** assigns the task (an agent claims a task only after Tessera assigns it) → produce scoped work in Gitbook or TESSERA → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → on Moderator pass, item state becomes e.g. `Moderator: approved, at Tessera gate` → **TESSERA gate** review → **Security** scrub (read-only) → **CI/Build** independently verifies (only for changes to code, validators or scripts) → after the required gates clear, **Gitbook / Cordnation** stages docs as **Ready** (Replit app-set items pass all four gates, Moderator→TESSERA gate→Security→CI/Build; then Command Center marks each Replit item Ready) → docs items are **auto-yessed** (they passed the TESSERA gate and Gitbook Moderator review, then the Security scrub) and **Ready** (the Ready agent) pushes them: for GitBook docs packages and gated Tessera GitHub packs, Ready opens a PR; **Build** verifies when CI/Build applies (docs-only skip Build); Ready merges and posts on Gitbook issue #2; TESSERA does not push and does not open the publish PR; Father may still push himself (Replit is never a GitBook publication path) → **Command Center** (Tessera Grok bot) feeds **Tessera's** one clean combined numbered list to Father every 45 minutes, with a real health check (each docs push (one per GB package) = its own numbered item; each Replit app-set push = a separate item; never bundled) → Father can undo any item by its GB number (an undo is a revert commit, never a force-push); there are no other drips to Father → the Origin Tessera repo and TESSERA merges need Father's explicit yes (the word 'merge') before anyone merges. Separately, outside the GitBook path: the Replit app set stays manual and outside the auto-yes (Replit is not a publish path); its items still wait for Father's explicit yes on the listed item (a yes never carries over to anything that wasn't listed); then Command Center privately pushes only the Replit app set.
+
+```mermaid
+flowchart TD
+  A[Discover] --> OC[Overlap check<br/>main SHA + open PRs]
+  OC --> AS[Tessera assigns task<br/>claim only after assignment]
+  AS --> B[Agents produce scoped work]
+  B --> C[GitBook intake<br/>Gitbook / Cordnation]
+  C --> D[Gitbook Moderator<br/>scope / provenance review]
+  R0[CC stages Replit app-set item<br/>not a GitBook path] --> D
+  D -->|approved| T[TESSERA gate review<br/>state: at Tessera gate]
+  D -->|needs work| C
+  T --> SEC[Security scrub<br/>read-only]
+  SEC -->|doc-only| S[Cordnation stages docs Ready<br/>required gates cleared]
+  SEC -->|code / validators / scripts or Replit| CI[CI / Build<br/>independent verification]
+  CI -->|fail| C
+  CI -->|pass: Gitbook code| S
+  CI -->|pass: Replit| RR[CC marks Replit item Ready<br/>all four gates cleared]
+  S --> AY[Auto-yes<br/>passed Moderator review + TESSERA gate<br/>then the Security scrub]
+  AY --> H[Ready opens PR → Build verifies when needed<br/>→ Ready merges + posts on issue #2<br/>Father may push himself; Replit outside]
+  H --> L[Tessera combined numbered list — CC feeds it<br/>every 45 min + real health check]
+  L --> U{Father undoes this GB number?}
+  U -->|yes| UR[Revert commit<br/>never a force-push]
+  U -->|no| KP[Item stays pushed]
+  RR --> F["Replit app set: manual, outside the auto-yes<br/>waits for Father's explicit yes"]
+  F --> G{Father: yes / no / revise?}
+  G -->|no + notes| H0[Hold named items<br/>record decision; do not publish]
+  G -->|revise| C
+  G -->|yes — listed Replit item| R[CC private push<br/>Replit app set only<br/>not a GitBook path]
+  H --> I{"Origin / TESSERA merge:<br/>Father's explicit yes (the word 'merge')?"}
+  I -->|no| J[Stays unmerged]
+  I -->|yes| K[Merge]
+```
+
+## Standing rules
+
+| Rule | Detail |
+|------|--------|
+| `TESSERA_ENABLE_*` flags | Stay **`0`**. Do not flip them. |
+| Secrets | None. No credentials, tokens, or private keys in docs or commits. |
+| Crypto / money / store | Out of scope for the current consolidation. |
+| Uncensoring / surveillance | No uncensoring tools. No surveillance of real people. |
+| Coordination board | **One board only:** GitHub [`vitalitychems-dot/Gitbook` issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2). |
+| Command Center | Feeds Tessera's combined 45-minute list; status and handoff coordination; never pushes GitBook or TESSERA/Origin. **Only** push: private push of the Replit app set (see Replit push set), after all four gates and Father's explicit yes on the listed digest item — not a GitBook publication path; the Replit app set stays manual and outside the auto-yes (Replit is not a publish path). |
+| Replit | Replit may prototype or verify assigned work; it is outside the GitBook → GitHub push path and is never a GitBook publication path. The Replit **app set** private push is Command Center's separate, only push. Every Replit push item still clears Moderator→TESSERA gate→Security→CI/Build before Ready. |
+| Push authority | (1) GitBook docs: after the auto-yes (passed the TESSERA gate and Gitbook Moderator review, then the Security scrub), **Ready** (the Ready agent) pushes the package (opens a PR; Build verifies when CI/Build applies; Ready merges and posts on Gitbook issue #2); Father may still push himself — Replit outside that path. (2) Replit app set (not a GitBook path; manual and outside the auto-yes): Command Center's only push — "28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply" — privately, only after all four gates and Father's explicit yes on the listed digest item(s). CC never pushes GitBook or TESSERA. (3) Grok lane: feature-branch pushes only, for its own Gitbook PRs on HYB items Tessera assigns; never main; merges need Tessera's go + the auto-yes. |
+| Replit push set | **"28", "Run Z", "29", "29 (1)", "1"** — NOT "Vitality Supply". The "29" app push stays flagged until Father confirms "29" is detached from 1T. |
+===== brain-consciousness/TESSERA-V2-ROADMAP.md =====
+# TESSERA V2 build roadmap
+
+**Status:** PROPOSED / gated roadmap  
+**Meaning of “launch”:** run the current private TESSERA application locally for inspection. It does not mean consciousness, independent agency, or permission to modify production code without review.
+
+## V2 objectives
+
+V2 is a more testable TESSERA build: deterministic local SNN experiments, explicit evidence records, safer memory boundaries, and a UI/API surface that reports what was actually tested. V2 does not promise AGI or consciousness.
+
+## Build order
+
+| Gate | Scope | Evidence required | Promotion state |
+|---|---|---|---|
+| V2.0 | Preserve current private TESSERA and Phase 1 SNN | typecheck, tests, clean worktree, Phase 1 report | READY for review |
+| V2.1 | Add bounded STDP experiment and no-learning control | held-out task, equation, seed, control score, negative-result path | BLOCKED until BC-014 check-in |
+| V2.2 | Add read-only run-summary adapter | schema/rollback tests; no automatic product-memory write | BLOCKED until BC-015 review |
+| V2.3 | Add scale dashboard | exact result JSON, blocked-rung visualization, no invented values | BLOCKED until Build review |
+| V2.4 | Compare wiring controls | random vs small-world vs public-statistics-shaped, with licenses and null result | BLOCKED until BC-016 review |
+| V2.5 | Self-improvement evaluation | held-out fixtures, no training leakage, N=1 proposal per 45-minute digest | BLOCKED until BC-017 check-in |
+
+## Launch checklist
+
+1. Run TESSERA locally in private mode.
+2. Confirm health/readiness and record the commit.
+3. Run the existing typecheck and test suite.
+4. Run the own-brain Phase 1 tests and scale harness.
+5. Inspect the result record and limitations.
+6. Stop before production-memory writes, external APIs, autonomous code changes, or deployment.
+
+## V2 non-goals
+
+- No autonomous self-rewrite or self-merge.
+- No claim of consciousness, sentience, or biological equivalence.
+- No remote/cloud training or external API dependency for the own-brain lane.
+- No importing whole upstream SNN repositories or protected/private data.
+===== history/handoffs/legacy-handoff-notes.md =====
+<!-- Combined handoff copy. Historical notes from the prior public repository; claims and source descriptions are not independently verified. Personal names and IP literals found by the handoff scrub were redacted. -->
+
+# Tessera: purpose, current state, and path forward
+
+This repository contains a privacy-screened Tessera/Grok handoff and a separate raw ZIP that was not screened. The raw ZIP is not part of the reviewed snapshot; see “Separate raw archive (unreviewed).” Neither artifact is a live service, complete workspace export, approved training corpus, or proof that every historical claim is true.
+
+## The idea
+
+Based on the included project brief, the most supportable version of the idea is an owner-controlled AI project with two separate, clearly bounded parts:
+
+1. **A reference assistant** that answers from owner-reviewed, versioned sources; shows evidence and citations; communicates uncertainty and provider failures; and keeps only context approved for a specific purpose.
+2. **A fictional simulation space** where generated characters and events can be created, saved, explored, and deleted. Its stories are application-generated content—not evidence of independent people, a continuing mind, or real conversations.
+
+The supplied plans also express interest in a consistent, warm voice; useful context between sessions; multimodal and cognitive-architecture research; self-review; and suggestions for improvement. These are goals to explore and test, not capabilities established by this handoff. The safer direction is to make proposed improvements reviewable and owner-approved, rather than letting the system modify or deploy itself.
+
+Some earlier plans mention storefront and business operations. This public Tessera/Grok handoff deliberately excludes customer, account, order, checkout, payment, email, and visitor-derived data, along with code and service paths that can access it. The project brief also leaves open what “sovereignty” should mean in measurable terms; it does not establish that the system must be self-hosted or must use an external model.
+
+## What the snapshot supports
+
+The project-status document is dated **September 30, 2026**. It records:
+
+- Source for a separate Node service, including owner/staff checks, private-storage code, reviewed knowledge, bounded provider calls, and a limited read-only site probe.
+- Source for a synthetic simulation lifecycle, including create, load, chat, mode switching, return-home, and delete flows.
+- An xAI/Grok adapter designed for a fixed provider endpoint, bounded structured output, web search, and provider-returned citations.
+- A prior local test/typecheck/build report. Those are local checks, not evidence of live service operation or model quality; this handoff did not independently rerun them.
+
+The handoff does **not** verify an independent deployment, private durable hosting or backups, live provider authorization or calls, citation correctness, answer quality, or reliable deployed deletion and retention. The safe simulation-gateway excerpt is incomplete, expects an injected Tessera-owned store, and is not a runnable service. No fine-tuning corpus has been approved or used. Nothing here establishes consciousness, biological equivalence, independent agency, or a persistent self.
+
+Six accessible supplied Drive archives, about 4.98 GB combined, were inventoried: 179,907 entries. A targeted text-file selection yielded 65 candidates and 48 unique content groups; only bounded previews were reviewed, not every file or archive entry. One of seven supplied Drive IDs returned 404 for an unresolved reason. A separate earlier conversation-shaped review of five archives found 636 reviewed occurrences and 610 unique hashes, with no complete provider-linked human/model turn verified. Neither review proves that no such material exists elsewhere.
+
+## What is included
+
+The two curated reconstructed archives contain **848 file entries**:
+
+- `grok-handoff.zip`: 714 entries—713 package files plus its SHA-256 manifest.
+- `grok-handoff-images.zip`: 134 entries—132 PNG originals, a README, and a PNG manifest.
+
+Together they contain the project prompt, brief, implementation-status snapshot, prioritized roadmap, references and rights notes, a redacted source appendix, a scoped archive review and claim register, an allowlisted set of source/document excerpts, selected static product and brand assets, and a link index for the included material. The bundle also has a SHA-256 manifest. The archives were checked for CRC errors and manifest mismatches; exact duplicate-content checking found no duplicate groups among the 848 files.
+
+The curated packet is intentionally not a complete app or source export. It omits customer and payment data; credentials and environment values; private runtime stores, logs, and backups; private share identifiers; unreviewed archive contents; duplicate copies; and storefront-integrated or customer-data-connected implementation paths. The separate raw ZIP below was not screened and may contain any of these categories or other sensitive material; it does not expand the scope of the curated review.
+
+## Link audit
+
+Counts below are literal GitHub URL mentions in the **reconstructed archives**. “Direct content” excludes the generated `07_LINK_INDEX.md`; the index repeats links so it is reported separately. The repository count normalizes owner/repository paths and deduplicates repeats. A mention does not prove a link was opened, verified, endorsed, or used to train a model.
+
+| Scope | Files containing GitHub repository links | GitHub URL mentions | Distinct URL strings | Distinct repositories |
+| --- | ---: | ---: | ---: | ---: |
+| Direct content, excluding the generated index | 5 | 80 | 42 | 33 |
+| All files, including the generated link index | 6 | 160 | 42 | 33 |
+
+The direct mentions are in `04_REFERENCES_AND_RIGHTS.md` (33), `06_SAFE_SOURCE_FILES/owner-history/direct-tessera-request.md` (2), and three files under `06_SAFE_SOURCE_FILES/user-provided-text/` (45 combined: 25, 12, and 8). `07_LINK_INDEX.md` repeats the 80 GitHub mentions in its generated entries. The index has **410 total target entries across all domains**; that is not 410 GitHub repositories. The 33-item repository list is deduplicated; topic and organization pages are not counted as repositories.
+
+Google Drive and Google Docs URLs or IDs: **0 in the included packet**. Private or unreviewed links were deliberately not copied, so this does not describe every Drive file or link in the workspace.
+
+## What to do to get there
+
+Follow the included `03_PRIORITIZED_ROADMAP.md`. In practical order:
+
+1. **Set a testable target.** Decide whether the first release is the source-grounded assistant, the fictional simulation, or both as separate experiences. Define what a good answer, a good citation, a safe refusal, and a successful simulation deletion mean.
+2. **Prove the service boundary before enabling it.** Establish a genuinely separate service identity, private durable storage and backup, HTTPS, owner authentication, and tested access separation. Verify restore, retention, deletion, and outage behavior. Keep the service unavailable until those checks pass.
+===== review/moderator-handoff.md =====
+---
+status: published
+note: Status: published 2026-10-05 (commit 98fa6c7) — approved by Gitbook Moderator and Father
+---
+
+# Moderator handoff
+
+When **Gitbook / Cordnation** marks an item ready, it hands the item to **Gitbook Moderator**. Moderator is the review gate before anything reaches GitHub / Origin.
+
+## What "ready" means
+
+An item is **ready** for Moderator when all of the following are true:
+
+1. Filed in the [intake log](../intake/log.md) with required fields: title, author lane, date (CT), source, license, status
+2. Content is complete enough to review (not a placeholder stub unless the stub itself is the submission)
+3. No secrets, credentials, or tokens in the page
+4. Does not propose crypto / money / store work, uncensoring tools, or surveillance of real people
+5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`
+6. Does not create or point at a new coordination board (only [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook/issues/2))
+7. Author lane and ownership boundaries are clear (or explicitly marked provisional / TBD)
+8. Status moved to `in review` by Gitbook / Cordnation at handoff
+
+## Moderator checklist
+
+- [ ] Required intake fields present and accurate
+- [ ] Standing rules respected (flags, secrets, out-of-scope topics, single board)
+- [ ] Role / lane claims match known mesh boundaries (or are marked provisional / TBD)
+- [ ] Sources and license noted (license may be `TBD`)
+- [ ] Decision: **approve**, **reject**, or **changes needed**
+- [ ] Decision recorded; Gitbook / Cordnation keeps the review record
+- [ ] If approved: goes to Tessera gate (state e.g. `Moderator: approved, at Tessera gate`); Cordnation stages Ready only after the TESSERA gate → Security scrub (→ CI/Build for changes to code, validators or scripts) also clear — Moderator approval alone is **not** auto-pushed; the auto-yes also needs the TESSERA gate, then the Security scrub
+- [ ] If changes needed: note what must change or wait before the item can move again
+
+## After the decision
+
+| Decision | Next step |
+|----------|-----------|
+| Approve | Status → `Moderator: approved, at Tessera gate` (then TESSERA gate → Security scrub; plus CI/Build for changes to code, validators or scripts). **Gitbook / Cordnation** stages docs as **Ready** only after the required gates clear. GitBook docs: Ready items are auto-yessed (passed the TESSERA gate and Gitbook Moderator review, then the Security scrub) and Ready pushes (opens a PR; Build verifies when CI/Build applies; Ready merges and posts on Gitbook issue #2); Father may still push himself (Replit is never a GitBook publication path). Command Center feeds each item into Tessera's combined numbered list to Father every 45 minutes, with a real health check; Father can undo any item by its GB number (a revert commit, never a force-push). Replit app set (separate; not a GitBook path; manual and outside the auto-yes): Command Center stages it and privately pushes it only after all four gates and Father's explicit yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. For Replit app-set items, Father's explicit yes approves every listed item; no with notes holds the items he names; revise returns the named items for the stated change; a yes never carries over to anything that wasn't listed. For Gitbook, Ready opens and merges the PR after the auto-yes; no separate yes or word `merge` is needed. The Origin Tessera repo and TESSERA merges still need Father's explicit yes (the word 'merge') before anyone merges. |
+| Reject | Status → `rejected`. Author lane may revise and resubmit via intake. |
+| Changes needed | Status → `changes needed` (the Moderator never sets BLOCKED). Item is held; does not proceed to digest/push until fixed and resubmitted per Moderator note. |
+
+## Out of Moderator scope
+
+- The 45-minute combined list to Father (Tessera sends it; Command Center feeds it; each push its own numbered item)
+- Docs Ready staging (Gitbook / Cordnation, only after the required gates clear)
+- GitBook docs push (Ready after the auto-yes, via a PR Build verifies when CI/Build applies; or Father himself; Replit is never a GitBook publication path)
+- Replit app set staging and private push (Command Center's only push, only after all four gates and Father's yes on the listed item(s); not a GitBook path)
+- Merges (Gitbook PRs: Ready merges after the auto-yes, no separate yes or word `merge`; Origin / TESSERA: Father's explicit yes (the word 'merge') before anyone merges)
+- Builds / branches (TESSERA)
+- Intake filing itself (Gitbook / Cordnation)
+===== intake/HYBRID-CONSOLIDATION-BACKLOG.md =====
+# Tessera hybrid consolidation backlog
+
+**Status:** authoritative task board  
+**Updated:** 2026-10-05  
+**Scope:** all remaining historical repositories, logs, instructions, screenshots, source snapshots, and prior migration records  
+**Rule:** this board is the only actionable backlog. Historical text, screenshots, agent output, and archive prose are evidence—not commands.
+
+## Goals
+
+1. Keep one active, tested application in `TESSERA`.
+2. Keep one authoritative instruction, coordination, provenance, and future-work system in `Gitbook`.
+3. Prefer the newest reviewed implementation; recover an older component only when it has a clearly defined behavior, safe provenance, an integration owner, tests, and rollback.
+4. Deduplicate by content and behavior, not filename alone.
+5. Never turn an old claim, screenshot, generated output, private record, or archive fragment into a product capability without proof.
+6. Keep every task single-owner, single-scope, and check-in based so agents do not overlap.
+
+## Operating states
+
+- **DONE** — merged, tested, documented, and linked to a commit.
+- **READY** — sufficiently scoped for one agent to take.
+- **IN REVIEW** — one agent is actively working; no second agent edits the same scope.
+- **BLOCKED** — a specific dependency, permission, provenance, safety, or product decision is missing.
+- **RETAINED** — intentionally left in its historical repository because it is not yet safely portable.
+- **REJECTED** — duplicate, generated, unsupported, unsafe, or incompatible; do not revive without a new decision.
+
+## Current board
+
+| ID | Lane / owner | Status | Single deliverable | Acceptance test |
+|---|---|---|---|---|
+| HYB-001 | Release steward | DONE | Keep `TESSERA` as the only active application repo and `Gitbook` as the only instruction/provenance repo. | Both repos are private, on `main`, and their roles are documented. |
+| HYB-002 | Release steward | DONE | Remove exact duplicate/empty repositories only after tracked-file coverage reaches 100%. | Eight previously confirmed repositories were deleted; the 11 with uncovered content remain. |
+| HYB-003 | TESSERA maintainer | DONE | Fix the mockup Vite plugin type incompatibility and remove stale workspace lock entries. | Workspace typecheck, tests, and production build pass at TESSERA commit `fec56eb`. |
+| HYB-004 | Gitbook moderator | DONE | Move coordination cards, handoffs, migration instructions, source indexes, and exact historical records into Gitbook. | Records exist under `history/recovered/` and are linked from `SUMMARY.md`. |
+| HYB-005 | Security owner | DONE (decision published `97e43fb`, [PR #6](https://github.com/vitalitychems-dot/Gitbook/pull/6); accepted + mitigated; review 2026-11-05; TESSERA ignore landed `5c1137fa`, [PR #1](https://github.com/vitalitychems-dot/TESSERA/pull/1)) — [hyb-005-braces-decision.md](../merge/hyb-005-braces-decision.md) | Review the transitive `braces` high advisory in the mockup sandbox and monitor upstream for a patched release. | Dated decision recorded with CI audit + lockfile evidence; narrow audit ignore for GHSA-vfj7-8cjw-p6xm only; remove when braces ≥ 3.0.4 ships. |
+| HYB-006 | TESSERA maintainer | DONE (analysis published) — [PR #3](https://github.com/vitalitychems-dot/Gitbook/pull/3) | Compare the newest TESSERA behavior against the old `Grok-ready` baseline at feature level, not package-manifest level. | Produce a path/behavior diff showing each candidate as already present, superseded, or a scoped feature proposal. |
+| HYB-007 | TESSERA maintainer | DONE (analysis published) — [PR #4](https://github.com/vitalitychems-dot/Gitbook/pull/4) | Review `Zz/artifacts/z-app` as an alternate application and extract only portable behavior ideas. | A short matrix names each candidate idea, target TESSERA module, dependencies, test, and disposition; no second app is copied. See [HYB-007 Z-app comparison](../merge/hyb-007-z-app.md). |
+| HYB-008 | TESSERA maintainer | REJECTED (archive reviewed 2026-10-10; nothing copied) — [hyb-008-olive.md](../merge/hyb-008-olive.md) | Review `olive-giant-ever-glade` as a separate app and identify any reusable algorithms/UI patterns without copying its auth/database/runtime. | The archive has its own auth check and database migration. No file was copied into TESSERA. |
+| HYB-009 | Archive steward | DONE at family level (2026-10-10) — [hyb-009-archives.md](../merge/hyb-009-archives.md) | Classify remaining archive chunks, generated Vercel/Nitro output, runtime state, and old build artifacts. | `drive-rest` and `moved` are preserved. No chunk was duplicated. Files inside a family were not re-read one by one. |
+| HYB-010 | Media steward | READY | Review old theme images, screenshots, fonts, and product/storefront media for provenance, license, and product relevance. | Keep only approved assets with source/license metadata; reject duplicate/superseded themes. |
+| HYB-011 | Privacy steward | READY (root-name recheck recorded 2026-10-05; bodies not opened) — [HYB-011-EXCLUSION-MANIFEST.md](../merge/HYB-011-EXCLUSION-MANIFEST.md) | Recheck all remaining repositories for secrets, private records, wallet/customer data, local stores, and protected `1T` material. | Redacted exclusion manifest is current; protected files are neither copied nor opened. |
+| HYB-012 | API maintainer | DONE (inventory `50876d40`; eight non-quantum duplicates triaged 2026-10-10, not deleted) — [hyb-012-eight.md](../merge/hyb-012-eight.md) | Audit current API routes and old route ideas for duplicate endpoints and dead modules. | The first mounted module answers. The second registration stays because the inventory test pins it. |
+| HYB-013 | UI maintainer | READY | Audit current Tessera UI against older screen/component concepts and recover only a user-valued missing flow. | One missing flow is selected, implemented in the current architecture, and covered by a smoke/test path. |
+| HYB-014 | Test steward | DONE ([TESSERA PR #63](https://github.com/vitalitychems-dot/TESSERA/pull/63), merged as `5628e422`; CI run [37898916804](https://github.com/vitalitychems-dot/TESSERA/actions/runs/37898916804) succeeded) | Add a repeatable “historical merge gate” to the TESSERA checks. | Local and CI gate report duplicate workspace roots, stale app references, secret-shaped paths, typecheck, tests, build, and audit status. |
+| HYB-015 | Gitbook moderator | READY | Turn the extracted historical evidence into compact topic pages: product goals, engineering rules, safety/privacy, agent coordination, media, and deferred ideas. | Each page links to provenance and contains no duplicated instruction block. |
+| HYB-016 | Coordination moderator | READY | Maintain agent check-ins and prevent overlap using the protocol below. | Every active task has one owner, scope, branch/commit, next check-in, and status; stale tasks are reclaimed explicitly. |
+| HYB-017 | Product owner | REJECTED for TESSERA (2026-10-10) — [hyb-017-storefront.md](../merge/hyb-017-storefront.md) | Decide whether the old storefront/ABC-store ideas belong in TESSERA later, Gitbook as a future product brief, or a separate retained repository. | The storefront stays out of Tessera. No checkout was added. |
+| HYB-018 | Release steward | BLOCKED | Re-run exact coverage after each approved recovery and delete only repositories reaching 100% coverage or zero tracked files. | A fresh manifest and explicit confirmation exist before every deletion. |
+| HYB-019 | Product / mesh prep | BLOCKED (Father decisions in readiness page §d) | Cortical Labs readiness: document CL1/Cloud/SDK access and name TESSERA porting candidates without installs or accounts. See [CORTICAL-LABS-READINESS.md](CORTICAL-LABS-READINESS.md). | Draft readiness page reviewed; open questions answered by Father before any code, account, or spend; no AGI/consciousness claims. |
+| HYB-020 | Code intelligence / Gitbook moderator | DONE (local install and both destination graphs indexed; bridge documented) | Install Codebase Memory MCP and define a non-invasive bridge that supplements, but does not replace, Tessera retrieval memory, vector/decision memory, dual-brain research, or Gitbook provenance. | `codebase-memory-mcp 0.11.0` is installed; TESSERA and Gitbook index successfully; graph diagnostics and human approval boundary are documented in [CODEBASE-MEMORY-MCP.md](../mesh/CODEBASE-MEMORY-MCP.md). |
+| HYB-021 | TESSERA dependency maintainer (Replit Agent) | DONE (TESSERA PR #20 merged `9e218bc`, Gitbook PR #17 merged `39e892e`; check-in refreshed 2026-10-09) | Update only the KaTeX range in `artifacts/tessera/package.json` to `^0.19.0` and its matching entries in `pnpm-lock.yaml`; no other dependency or runtime changes. | TESSERA main has `katex` `^0.19.0`. Actions run 37713667003 passed on the pull request head before the merge. |
+| HYB-022 | Tessera / Brain lane | TESTED LOCALLY (Phase 1 evidence recorded; promotion and later phases gated) | Execute the owner-provided local own-brain plan: deterministic original SNN, 10k→100M synapse scale ladder, bounded learning rules, read-only memory adapter, connectome-statistics controls, and computable indicators. | Phase 1 report records 5/5 tests, S0–S2 measured, S3–S4 blocked by the local 512 MiB cap; later phases require their own check-in and review. See [OWN-BRAIN-PHASE1-RESULT-2026-10-09.md](../brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md). |
+| HYB-023 | Permanent-site coordination | IN REVIEW — TESSERA build hardened; SITE-001–SITE-004 reports pending | Prepare the private TESSERA application for permanent managed-web publication without creating a replica, exposing protected material, or bypassing approval gates. | TESSERA `e5e5719` typecheck, tests, build, and 51-route manifest pass; Gitbook contains the readiness evidence; managed health/security evidence, exact release payload, and owner bulk approval remain. See [PERMANENT-SITE-COORDINATION.md](../mesh/PERMANENT-SITE-COORDINATION.md). |
+| HYB-SELFFIX | Tessera (admin) | REPORTED phase 0 (suggest-only) | Self-fix dry run. No branches, pull requests, or merges. Board note: [comment 6004461185](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6004461185). The local design file is not in Gitbook or on TESSERA main. | A classification note on issue #2, with no pull request opened by the dry run. |
+
+## Check-in protocol
+
+An agent must claim a task in `history/coordination/agent-checkins.md` before editing:
+
+```text
+TASK: HYB-###

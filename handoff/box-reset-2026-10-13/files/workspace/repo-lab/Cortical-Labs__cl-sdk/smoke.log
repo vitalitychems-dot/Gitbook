@@ -1,0 +1,4 @@
+cl module <module 'cl' from '/workspace/repo-lab/Cortical-Labs__cl-sdk/src/cl/__init__.py'>
+Data visualiser: http://127.0.0.1:8000/visualiser
+open ok <class 'cl.neurons.Neurons'>
+Random data source is using seed: 2231142269

@@ -1,0 +1,1 @@
+| GB-016 | Push-path split (rev 3) | Tessera (admin) / Cordnation | 2026-10-05 | Tessera push-path decision | TBD | draft (Tessera-gate fixes) | Full pipeline + 30–45 min + per-GB items + Grok exception; stacks after GB-017 |

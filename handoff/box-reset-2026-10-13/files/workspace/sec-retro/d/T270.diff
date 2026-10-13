@@ -1,0 +1,327 @@
+diff --git a/artifacts/v2/src/brain/brain-client.js b/artifacts/v2/src/brain/brain-client.js
+index e5be3a93..f64d2fc7 100644
+--- a/artifacts/v2/src/brain/brain-client.js
++++ b/artifacts/v2/src/brain/brain-client.js
+@@ -5,17 +5,73 @@ const scene = new THREE.Scene(); scene.background = new THREE.Color(0x05060a); s
+ const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 500); camera.position.set(0, 10, 60);
+ const root = new THREE.Group(); scene.add(root);
+ const stat = document.querySelector("#stat"), info = document.querySelector("#info"), sel = document.querySelector("#src");
++const replay = document.querySelector("#replay"), time = document.querySelector("#time"), timeLabel = document.querySelector("#timelabel"), diffCount = document.querySelector("#diffcount");
+ let idx = new Map(), lines = null, edgeIndex = new Map(), pulses = [], baseCol = null, nodePos = [];
++let nodeIds = [], nodeBase = null, nodeColor = null, edgeKeys = [], edgeKinds = [], origEdge = null;
++let shown = null, scrubSeq = 0, loadSeq = 0, replayLive = true;
++const ADDED = [0.25, 1, 0.55], REMOVED = [1, 0.32, 0.22], HIDDEN = [0, 0, 0];
++const edgeKey = (a, b) => (a < b ? `${a}\0${b}` : `${b}\0${a}`);
+ function resize() { const w = innerWidth, h = innerHeight; renderer.setSize(w, h, false); camera.aspect = w / h; camera.updateProjectionMatrix(); }
+ addEventListener("resize", resize); resize();
+ const hue = (s) => { let h = 0; for (const c of String(s)) h = (h * 31 + c.charCodeAt(0)) >>> 0; return (h % 360) / 360; };
++function clearPulses() { for (const p of pulses) root.remove(p.m); pulses = []; }
++function labelSnap(snap) {
++  if (timeLabel) timeLabel.textContent = snap.events ? `${snap.t + 1} / ${snap.events}` : "0 / 0";
++  if (diffCount) diffCount.textContent = `forward ${snap.diff.forward} · back ${snap.diff.back}`;
++  document.body.dataset.replay = String(snap.t);
++  document.body.dataset.forward = String(snap.diff.forward);
++  document.body.dataset.back = String(snap.diff.back);
++}
++/** Show the snapshot: edges added since the previous index glow, edges removed stay lit in red. */
++function paintSnap(snap) {
++  if (!lines || !nodeColor || !origEdge) return;
++  const atEnd = snap.events > 0 && snap.t === snap.events - 1;
++  const presentN = new Set(snap.nodes.map((n) => n.id));
++  const presentE = new Set(snap.edges.map((e) => edgeKey(e.a, e.b)));
++  const addedE = new Set(snap.diff.edgesAdded.map(([a, b]) => edgeKey(a, b)));
++  const removedE = new Set(snap.diff.edgesRemoved.map(([a, b]) => edgeKey(a, b)));
++  const addedN = new Set(snap.diff.nodesAdded);
++  const removedN = new Set(snap.diff.nodesRemoved);
++  for (const [a, b] of snap.diff.edgesRemoved) { removedN.add(a); removedN.add(b); }
++  const EC = lines.geometry.attributes.color.array;
++  for (let i = 0; i < edgeKeys.length; i++) {
++    const k = edgeKeys[i]; let rgb;
++    if (addedE.has(k)) rgb = ADDED;
++    else if (removedE.has(k)) rgb = REMOVED;
++    else if (presentE.has(k) || (atEnd && edgeKinds[i] === "synapse")) rgb = origEdge.subarray(i * 6, i * 6 + 3);
++    else rgb = HIDDEN;
++    EC.set(rgb, i * 6); EC.set(rgb, i * 6 + 3);
++  }
++  baseCol = EC.slice(); lines.geometry.attributes.color.needsUpdate = true;
++  const NC = nodeColor.array;
++  for (let i = 0; i < nodeIds.length; i++) {
++    const id = nodeIds[i]; let rgb;
++    if (addedN.has(id)) rgb = [Math.min(1, nodeBase[i * 3] + 0.4), Math.min(1, nodeBase[i * 3 + 1] + 0.4), Math.min(1, nodeBase[i * 3 + 2] + 0.4)];
++    else if (presentN.has(id) || atEnd) rgb = nodeBase.subarray(i * 3, i * 3 + 3);
++    else if (removedN.has(id)) rgb = REMOVED;
++    else rgb = HIDDEN;
++    NC.set(rgb, i * 3);
++  }
++  nodeColor.needsUpdate = true;
++  replayLive = atEnd;
++  if (!replayLive) clearPulses();
++}
++async function scrubTo(t) {
++  const seq = ++scrubSeq; const prev = shown ?? t;
++  const snap = await (await fetch(`/brain/snapshot?t=${t}&prev=${prev}`)).json();
++  if (seq !== scrubSeq) return;
++  paintSnap(snap); shown = snap.t; labelSnap(snap);
++}
+ async function load(src) {
+-  root.clear(); pulses = []; edgeIndex = new Map();
++  const seq = ++loadSeq; root.clear(); pulses = []; edgeIndex = new Map(); edgeKeys = []; edgeKinds = []; shown = null; replayLive = true;
+   const g = await (await fetch(`/brain/graph?src=${src}`)).json();
+-  idx = new Map(g.nodes.map((n, i) => [n.id, i])); nodePos = g.nodes.map((n) => n.p);
++  if (seq !== loadSeq) return;
++  idx = new Map(g.nodes.map((n, i) => [n.id, i])); nodePos = g.nodes.map((n) => n.p); nodeIds = g.nodes.map((n) => n.id);
+   const P = new Float32Array(g.nodes.length * 3), C = new Float32Array(g.nodes.length * 3), col = new THREE.Color();
+   g.nodes.forEach((n, i) => { P.set(n.p, i * 3); col.setHSL(hue(n.group), 0.75, 0.6); C.set([col.r, col.g, col.b], i * 3); });
++  nodeBase = C.slice();
+   const ng = new THREE.BufferGeometry(); ng.setAttribute("position", new THREE.BufferAttribute(P, 3)); ng.setAttribute("color", new THREE.BufferAttribute(C, 3));
++  nodeColor = ng.getAttribute("color");
+   root.add(new THREE.Points(ng, new THREE.PointsMaterial({ size: 0.9, vertexColors: true, transparent: true, opacity: 0.95, blending: THREE.AdditiveBlending, depthWrite: false })));
+   const E = g.edges.filter((e) => idx.has(e.a) && idx.has(e.b)); const maxW = Math.max(...E.map((e) => e.w), 1);
+   const LP = new Float32Array(E.length * 6), LC = new Float32Array(E.length * 6);
+@@ -24,12 +80,20 @@ async function load(src) {
+     const b = 0.08 + 0.9 * (e.w / maxW);
+     if (e.sign < 0) col.setRGB(b, 0.15 * b, 0.3 * b); else if (e.kind === "synapse") col.setRGB(0.3 * b, 0.8 * b, b); else col.setRGB(0.5 * b, 0.5 * b, 0.6 * b);
+     LC.set([col.r, col.g, col.b, col.r, col.g, col.b], i * 6); edgeIndex.set(e.a + "\0" + e.b, i); edgeIndex.set(e.b + "\0" + e.a, i);
++    edgeKeys.push(edgeKey(e.a, e.b)); edgeKinds.push(e.kind);
+   });
++  origEdge = LC.slice();
+   const lg = new THREE.BufferGeometry(); lg.setAttribute("position", new THREE.BufferAttribute(LP, 3)); lg.setAttribute("color", new THREE.BufferAttribute(LC, 3));
+   baseCol = LC.slice(); lines = new THREE.LineSegments(lg, new THREE.LineBasicMaterial({ vertexColors: true, transparent: true, opacity: 0.85, blending: THREE.AdditiveBlending, depthWrite: false })); root.add(lines);
+   const ext = Math.max(10, ...g.nodes.flatMap((n) => n.p.map(Math.abs))); camera.position.set(0, ext * 0.25, ext * 2.1); camera.lookAt(0, 0, 0);
+   stat.textContent = `${g.nodes.length} nodes · ${E.length} edges${g.modules ? ` · ${g.modules} modules` : ""}`; info.textContent = g.license ?? "";
+   document.body.dataset.ready = src; document.body.dataset.nodes = g.nodes.length; document.body.dataset.edges = E.length;
++  if (src === "memory" && time) {
++    replay.hidden = false;
++    const snap = await (await fetch("/brain/snapshot")).json();
++    if (seq !== loadSeq) return;
++    time.max = String(Math.max(0, snap.events - 1)); time.value = String(snap.t); shown = snap.t; labelSnap(snap);
++  } else if (replay) replay.hidden = true;
+ }
+ const sphere = new THREE.SphereGeometry(0.35, 8, 8);
+ function pulse(a, b, w) {
+@@ -38,11 +102,13 @@ function pulse(a, b, w) {
+   root.add(m); pulses.push({ m, from: nodePos[i], to: nodePos[j], t: 0, e: edgeIndex.get(a + "\0" + b), w });
+ }
+ async function learn() {
++  if (!replayLive) return;
+   if (sel.value === "memory") { const s = await (await fetch("/brain/learn?n=3")).json(); for (const [a, b, w] of s.fired.slice(0, 30)) pulse(a, b, w); document.body.dataset.fired = Number(document.body.dataset.fired ?? 0) + s.fired.length; }
+   else { const keys = [...edgeIndex.keys()]; for (let k = 0; k < 12 && keys.length; k++) { const [a, b] = keys[(Math.random() * keys.length) | 0].split("\0"); pulse(a, b, 1); } }
+ }
+ setInterval(learn, 400);
+ sel.onchange = () => load(sel.value);
++time?.addEventListener("input", () => { scrubTo(Number(time.value)); });
+ const q = new URLSearchParams(location.search).get("src"); if (q) sel.value = q;
+ await load(sel.value);
+ let last = performance.now();
+@@ -50,10 +116,10 @@ renderer.setAnimationLoop((now) => {
+   const dt = (now - last) / 1000; last = now; root.rotation.y += dt * 0.15; root.rotation.x = Math.sin(now / 9000) * 0.2;
+   const C = lines?.geometry.attributes.color;
+   for (const p of pulses) {
+-    p.t += dt * 1.5; const t = Math.min(1, p.t); p.m.position.set(...p.from.map((v, k) => v + (p.to[k] - v) * t)); p.m.material.opacity = 1 - t * 0.6;
+-    if (C && p.e != null) for (let k = 0; k < 6; k++) C.array[p.e * 6 + k] = Math.min(1, baseCol[p.e * 6 + k] + (1 - t));
++    p.t += dt * 1.5; const u = Math.min(1, p.t); p.m.position.set(...p.from.map((v, k) => v + (p.to[k] - v) * u)); p.m.material.opacity = 1 - u * 0.6;
++    if (C && p.e != null && baseCol) for (let k = 0; k < 6; k++) C.array[p.e * 6 + k] = Math.min(1, baseCol[p.e * 6 + k] + (1 - u));
+   }
+-  for (const p of pulses.filter((p) => p.t >= 1)) { root.remove(p.m); if (C && p.e != null) for (let k = 0; k < 6; k++) C.array[p.e * 6 + k] = baseCol[p.e * 6 + k]; }
++  for (const p of pulses.filter((p) => p.t >= 1)) { root.remove(p.m); if (C && p.e != null && baseCol) for (let k = 0; k < 6; k++) C.array[p.e * 6 + k] = baseCol[p.e * 6 + k]; }
+   pulses = pulses.filter((p) => p.t < 1); if (C) C.needsUpdate = true;
+   renderer.render(scene, camera);
+ });
+diff --git a/artifacts/v2/src/brain/http.mjs b/artifacts/v2/src/brain/http.mjs
+index 165d9634..34599cae 100644
+--- a/artifacts/v2/src/brain/http.mjs
++++ b/artifacts/v2/src/brain/http.mjs
+@@ -3,12 +3,13 @@
+  *  /brain                 page   /brain.js  client
+  *  /brain/graph?src=memory|celegans|hemibrain|flywire   nodes+edges with 3D positions
+  *  /brain/learn?n=4       next Hebbian learning step on the memory graph (fired edges)
++ *  /brain/snapshot?t=&prev=   memory graph at event index t, diff vs previous index
+  * Memory file: TESSERA_BRAIN_MEMORY (path) or docs/v2/v2-memory.jsonl. Not a TESSERA_ENABLE flag.
+  */
+ import { readFileSync, existsSync } from "node:fs";
+ import { fileURLToPath } from "node:url";
+ import { dirname, join } from "node:path";
+-import { buildBrain, createBrainLoop, layout3d } from "./view.mjs";
++import { buildBrain, createBrainLoop, layout3d, replayAt } from "./view.mjs";
+ import { TEMPLATES, loadTemplate } from "./templates.mjs";
+ const HERE = dirname(fileURLToPath(import.meta.url));
+ const memPath = () => process.env.TESSERA_BRAIN_MEMORY || join(HERE, "../../../../docs/v2/v2-memory.jsonl");
+@@ -38,10 +39,14 @@ export function handleBrain(req, res, url) {
+   if (url.pathname === "/brain.js") return send("text/javascript; charset=utf-8", readFileSync(join(HERE, "brain-client.js")));
+   if (url.pathname === "/brain/graph") { const g = brainGraph(url.searchParams.get("src") ?? "memory"); return g ? send("application/json", JSON.stringify(g)) : send("application/json", '{"error":"unknown src"}', 404); }
+   if (url.pathname === "/brain/learn") { loop ??= createBrainLoop(memory()); const s = loop.step(Math.min(16, Number(url.searchParams.get("n")) || 1)); if (s.done) loop = null; return send("application/json", JSON.stringify(s)); }
++  if (url.pathname === "/brain/snapshot") {
++    const q = url.searchParams;
++    return send("application/json", JSON.stringify(replayAt(memory(), q.has("t") ? q.get("t") : undefined, q.has("prev") ? q.get("prev") : undefined)));
++  }
+   return false;
+ }
+ const PAGE = `<!doctype html><meta charset="utf-8"><title>Tessera brain</title>
+-<style>body{margin:0;background:#05060a;color:#cfd6e6;font:13px system-ui}#ui{position:fixed;top:10px;left:10px;z-index:2}#info{position:fixed;bottom:10px;left:10px;max-width:70vw;opacity:.8}canvas{display:block}</style>
+-<div id="ui"><label>Brain <select id="src"><option value="memory">Tessera memory + synapses</option>${Object.keys(TEMPLATES).map((k) => `<option value="${k}">${k} — ${TEMPLATES[k].species}</option>`).join("")}</select></label> <span id="stat"></span></div>
++<style>body{margin:0;background:#05060a;color:#cfd6e6;font:13px system-ui}#ui{position:fixed;top:10px;left:10px;z-index:2}#replay{display:flex;gap:8px;align-items:center;margin-top:6px}#time{width:min(46vw,280px)}#diffcount{color:#9fdfb4;font-variant-numeric:tabular-nums}#info{position:fixed;bottom:10px;left:10px;max-width:70vw;opacity:.8}canvas{display:block}</style>
++<div id="ui"><label>Brain <select id="src"><option value="memory">Tessera memory + synapses</option>${Object.keys(TEMPLATES).map((k) => `<option value="${k}">${k} — ${TEMPLATES[k].species}</option>`).join("")}</select></label> <span id="stat"></span><div id="replay"><label>Time <input id="time" type="range" min="0" max="0" value="0" step="1"></label> <span id="timelabel"></span> <span id="diffcount"></span></div></div>
+ <div id="info"></div><canvas id="brain-3d"></canvas>
+ <script type="module" src="/brain.js"></script>`;
+diff --git a/artifacts/v2/src/brain/view.mjs b/artifacts/v2/src/brain/view.mjs
+index d20e66ad..6ab5a43b 100644
+--- a/artifacts/v2/src/brain/view.mjs
++++ b/artifacts/v2/src/brain/view.mjs
+@@ -5,6 +5,7 @@
+  */
+ import { loadGraph, hebbian, coMentionEpisodes, synapse } from "./synapse.mjs";
+ import { connectome } from "./synapse.mjs";
++import { createTimeline } from "./temporal.mjs";
+ const K = (a, b) => (a < b ? `${a}\u0000${b}` : `${b}\u0000${a}`);
+ function rng(seed = 7) { let x = seed >>> 0; return () => ((x = (x * 1664525 + 1013904223) >>> 0) / 2 ** 32); }
+ /** Deterministic 3D force layout (repulsion via grid buckets + spring edges + centering). */
+@@ -59,3 +60,66 @@ export function createBrainLoop(jsonl) {
+   };
+ }
+ export { K as synKey };
++
++/**
++ * Time index of the real memory JSONL. One event per entity or relation line; t is that
++ * line's index, so timeline.at(t) matches loadGraph of the prefix through t.
++ * Snapshots are taken once from createTimeline. A slider tick reads two of them instead of
++ * rebuilding the log and scanning it again.
++ */
++let timelineSlot = null;
++const absent = (have, other) => { const out = []; for (const k of have.keys()) if (!other.has(k)) out.push(k); return out; };
++/** Same added/removed sets as createTimeline.diff, over two at() snapshots. */
++export function snapshotDiff(A, B) {
++  return {
++    nodesAdded: absent(B.nodes, A.nodes),
++    nodesRemoved: absent(A.nodes, B.nodes),
++    edgesAdded: absent(B.edges, A.edges).map((k) => k.split("\u0000")),
++    edgesRemoved: absent(A.edges, B.edges).map((k) => k.split("\u0000")),
++  };
++}
++export function memoryTimeline(jsonl) {
++  const src = String(jsonl ?? "");
++  if (timelineSlot?.src === src) return timelineSlot;
++  const timeline = createTimeline();
++  const index = [];
++  src.split("\n").forEach((line, t) => {
++    if (!line.trim()) return;
++    let r; try { r = JSON.parse(line); } catch { return; }
++    if (r.type === "entity" && r.name) { timeline.addNode(t, r.name, { type: r.entityType }); index.push(t); }
++    else if (r.type === "relation" && r.from && r.to && r.from !== r.to) { timeline.link(t, r.from, r.to, 1); index.push(t); }
++  });
++  const snaps = index.map((t) => timeline.at(t));
++  timelineSlot = { src, timeline, index, snaps };
++  return timelineSlot;
++}
++function clampIndex(v, n, fallback) {
++  const x = Number(v);
++  if (!Number.isFinite(x)) return fallback;
++  return Math.max(0, Math.min(n - 1, Math.trunc(x)));
++}
++/** Snapshot at event index, plus the forward/back diff against a previous event index. */
++export function replayAt(jsonl, eventIndex, prevIndex) {
++  const { index, snaps } = memoryTimeline(jsonl);
++  const n = index.length;
++  const emptyDiff = { from: 0, to: 0, forward: 0, back: 0, edgesAdded: [], edgesRemoved: [], nodesAdded: [], nodesRemoved: [] };
++  if (!n) return { t: 0, line: -1, events: 0, nodes: [], edges: [], diff: emptyDiff };
++  const i = clampIndex(eventIndex, n, n - 1);
++  const p = clampIndex(prevIndex, n, i);
++  const s = snaps[i];
++  const d = i === p ? { nodesAdded: [], nodesRemoved: [], edgesAdded: [], edgesRemoved: [] } : snapshotDiff(snaps[p], snaps[i]);
++  return {
++    t: i,
++    line: index[i],
++    events: n,
++    nodes: [...s.nodes].map(([id, a]) => ({ id, type: a.type ?? "unknown" })),
++    edges: [...s.edges].map(([k, w]) => { const [a, b] = k.split("\u0000"); return { a, b, w }; }),
++    diff: {
++      from: p, to: i,
++      forward: d.nodesAdded.length + d.edgesAdded.length,
++      back: d.nodesRemoved.length + d.edgesRemoved.length,
++      edgesAdded: d.edgesAdded, edgesRemoved: d.edgesRemoved,
++      nodesAdded: d.nodesAdded, nodesRemoved: d.nodesRemoved,
++    },
++  };
++}
+diff --git a/artifacts/v2/test/v2-079-brain-time.test.mjs b/artifacts/v2/test/v2-079-brain-time.test.mjs
+new file mode 100644
+index 00000000..e45f693d
+--- /dev/null
++++ b/artifacts/v2/test/v2-079-brain-time.test.mjs
+@@ -0,0 +1,77 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { readFileSync } from "node:fs";
++import { handleBrain } from "../src/brain/http.mjs";
++import { loadGraph } from "../src/brain/synapse.mjs";
++import { createTimeline } from "../src/brain/temporal.mjs";
++import { memoryTimeline, snapshotDiff } from "../src/brain/view.mjs";
++const memPath = new URL("../../../docs/v2/v2-memory.jsonl", import.meta.url);
++const jsonl = readFileSync(memPath, "utf8");
++const lines = jsonl.split("\n");
++const mk = () => { const r = { code: 0, body: "", writeHead(c) { r.code = c; }, end(b) { r.body = String(b); } }; return r; };
++const get = (path) => { const r = mk(); assert.equal(handleBrain({ method: "GET" }, r, new URL(`http://x${path}`)), true); assert.equal(r.code, 200); return JSON.parse(r.body); };
++const pct = (a, p) => { const s = [...a].sort((x, y) => x - y); return s[Math.min(s.length - 1, Math.floor(p * s.length))]; };
++function sameGraph(snap, ref) {
++  assert.equal(snap.nodes.length, ref.nodes.size);
++  for (const n of snap.nodes) assert.equal(n.type, ref.nodes.get(n.id)?.type);
++  assert.equal(snap.edges.length, ref.edges.size);
++  for (const e of snap.edges) {
++    const k = e.a < e.b ? `${e.a}\0${e.b}` : `${e.b}\0${e.a}`;
++    assert.equal(e.w, ref.edges.get(k));
++  }
++}
++test("W3-04 /brain snapshot at t matches loadGraph on the real memory log", () => {
++  const page = mk(); handleBrain({ method: "GET" }, page, new URL("http://x/brain"));
++  assert.match(page.body, /id="time"/); assert.match(page.body, /id="diffcount"/);
++  const js = mk(); handleBrain({ method: "GET" }, js, new URL("http://x/brain.js"));
++  assert.match(js.body, /\/brain\/snapshot/); assert.match(js.body, /forward /); assert.match(js.body, /edgesAdded/);
++  const end = get("/brain/snapshot");
++  assert.ok(end.events > 100); assert.equal(end.t, end.events - 1); assert.equal(end.diff.forward, 0); assert.equal(end.diff.back, 0);
++  const idxs = [...new Set([0, 1, Math.floor(end.events / 4), Math.floor(end.events / 2), Math.floor(end.events * 3 / 4), end.events - 1])];
++  for (const t of idxs) {
++    const snap = get(`/brain/snapshot?t=${t}`);
++    assert.equal(snap.t, t);
++    sameGraph(snap, loadGraph(lines.slice(0, snap.line + 1).join("\n")));
++  }
++  const built = memoryTimeline(jsonl);
++  for (const [a, b] of [[0, end.events - 1], [end.events - 1, 0], [1, Math.floor(end.events / 2)]]) {
++    const live = built.timeline.diff(built.index[a], built.index[b]);
++    const cached = snapshotDiff(built.snaps[a], built.snaps[b]);
++    assert.deepEqual(cached.edgesAdded, live.edgesAdded);
++    assert.deepEqual(cached.edgesRemoved, live.edgesRemoved);
++    assert.deepEqual(cached.nodesAdded, live.nodesAdded);
++    assert.deepEqual(cached.nodesRemoved, live.nodesRemoved);
++  }
++  const span = get(`/brain/snapshot?t=${end.events - 1}&prev=0`);
++  const back = get(`/brain/snapshot?t=0&prev=${end.events - 1}`);
++  assert.ok(span.diff.forward > 0); assert.equal(span.diff.back, 0);
++  assert.equal(span.diff.forward, back.diff.back); assert.equal(span.diff.back, back.diff.forward);
++  assert.equal(span.diff.edgesAdded.length, back.diff.edgesRemoved.length);
++  assert.equal(span.diff.edgesRemoved.length, 0);
++  const full = loadGraph(jsonl);
++  sameGraph(end, full);
++});
++test("W3-04 snapshot p95 on the full memory log stays under 50ms and beats a rebuild", () => {
++  const end = get("/brain/snapshot");
++  const step = Math.max(1, Math.floor(end.events / 24));
++  const samples = [];
++  for (let t = 0; t < end.events; t += step) samples.push([t, Math.max(0, t - step * 4)]);
++  const time = (fn) => { const a = process.hrtime.bigint(); fn(); return Number(process.hrtime.bigint() - a) / 1e6; };
++  const index = memoryTimeline(jsonl).index;
++  const rebuild = (t, prev) => {
++    const T = createTimeline();
++    lines.forEach((line, i) => {
++      if (!line.trim()) return; let r; try { r = JSON.parse(line); } catch { return; }
++      if (r.type === "entity" && r.name) T.addNode(i, r.name, { type: r.entityType });
++      else if (r.type === "relation" && r.from && r.to && r.from !== r.to) T.link(i, r.from, r.to, 1);
++    });
++    const s = T.at(index[t]); const d = T.diff(index[prev], index[t]);
++    JSON.stringify({ nodes: s.nodes.size, edges: s.edges.size, forward: d.edgesAdded.length, back: d.edgesRemoved.length });
++  };
++  for (const [t, prev] of samples) { rebuild(t, prev); get(`/brain/snapshot?t=${t}&prev=${prev}`); }
++  const before = samples.map(([t, prev]) => time(() => rebuild(t, prev)));
++  const after = samples.map(([t, prev]) => time(() => get(`/brain/snapshot?t=${t}&prev=${prev}`)));
++  const beforeP95 = pct(before, 0.95), afterP95 = pct(after, 0.95);
++  assert.ok(afterP95 < 50, `snapshot p95 ${afterP95}ms`);
++  assert.ok(afterP95 < beforeP95, `cached p95 ${afterP95}ms did not beat rebuild p95 ${beforeP95}ms`);
++});

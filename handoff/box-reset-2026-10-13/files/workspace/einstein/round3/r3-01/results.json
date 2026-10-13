@@ -1,0 +1,4 @@
+{"title":"semantic-cache full system-prompt fingerprint","repo":"TESSERA","data_source":"fixture",
+ "command":"cd artifacts/api-server && npx vitest run src/__tests__/semantic-cache-sysfp.test.ts",
+ "metrics":[{"name":"distinct_sysfp_of_4_real_domain_prompts","kind":"accuracy","before":1,"after":4,"better":"higher"}],
+ "tests":{"failed_before":1,"failed_after":1},"ci":"pass","findings":["every withCodexDirective prompt shared one semantic-cache fingerprint"],"notify":["Father","Tessera","Rick"]}

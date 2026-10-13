@@ -1,0 +1,72 @@
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -70,9 +70,19 @@
+ | O8 | Offline Internet page (mesh/offline-internet.md) | not recorded | 2026-10-12 | PR #48 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #48 body; four gates not recorded). Published 7181709 (PR #48, merged 17:17 CT; commit 2263aea9); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #48) | Secret grep on diff (PR body) | none | none |
+ | O9 | LoRa/Meshtastic research note (review/lora-meshtastic-research.md; doc only, no code until hardware exists) | not recorded | 2026-10-12 | PR #49 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #49 body; four gates not recorded). Published 3bdcd45 (PR #49, merged 17:17 CT; commit c43afe9e); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #49) | Secret grep on diff (PR body) | none | none |
+ | O11 | Secure mesh page (mesh/secure-mesh.md: end-to-end mesh, content addressing, OPSEC, honest gateway limits) | not recorded | 2026-10-12 | PR #50 body | TBD | published | No gate, secret-grep or Father's yes recorded in the PR #50 body or on the board. Published 2344334 (PR #50, merged 17:18 CT; commit 8592dd50); link check clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #50) | Link check (PR body) | Gate evidence for PR #50 to be recorded by Tessera | No gate record |
+-| GB-065 | HYB-011 account refresh, HYB-015 GitbookAI rules summary from the public README, and the 2026-10-12 lane handoff | Gitbook desk | 2026-10-12 | Consolidation map step 4 and step 5; self-fix design was not on this disk | TBD | in review |  | Gitbook Moderator | branch desk/gb-065-rebased off main bd1b475 | Four gates not recorded yet | none |
++| GB-065 | HYB-011 account refresh, HYB-015 GitbookAI rules summary from the public README, and the 2026-10-12 lane handoff | Gitbook desk | 2026-10-12 | Consolidation map step 4 and step 5; self-fix design was not on this disk | TBD | retro-review pending | Merged via PR #60 (supersedes #45, which closed after a Moderator FAIL), with no new four-gate record. Body: autogate GATE PASS Gitbook#60 bbda6f2d; qlab test ALL PASS (REPORTED). Published 6b21df6 (PR #60, merged 04:03 CT Oct 13); squash commit author is the noreply address (verified from the main commit list) | none | autogate line (PR #60 body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No four-gate record |
+ | GB-066 | Intake log backfill for PR #46 to PR #50 (GB-063, GitMesh rename, O8, O9, O11) | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 6:39 PM CT | TBD | published | Four gates cleared (Moderator 6:43 PM CT, Tessera, Security, Build) and auto-approved under Father's 5:15 PM CT rule, as stated in the PR #51 body (REPORTED). Published 3fc9d89 (PR #51, merged 19:11 CT; diff sha256 79181882…8536); Tessera receipt pending (sync ledger #14) | Tessera (merged PR #51) | Build PASS (/workspace/build-gate/GATE-2026-10-12-GB-066.md, per PR #51 body) | none | none |
+ | GB-067 | Single lane handoff: mesh/HANDOFF.md rewritten as one line per item (id, lane, state, where left, next step, link) | Gitbook / Cordnation | 2026-10-13 | Tessera lane scope 12:57 AM CT; Security mesh-cleanup proposal 2026-10-12 8:20 PM CT | TBD | published | All four gates PASS, as stated in the PR #53 body (REPORTED). Published 17bac6d (PR #53, merged 2026-10-13 01:08 CT; commit 17bac6db). Build gate file named in that body: GATE-2026-10-13-GB-067-068.md | Tessera (merged PR #53) | Build PASS (PR #53 body cites GATE-2026-10-13-GB-067-068.md) | none | none |
+ | GB-068 | HYB-024 self-fix loop design page; backlog row HYB-SELFFIX renamed to HYB-024; phase 0 approved (REPORTED by Tessera) | Gitbook / Cordnation | 2026-10-13 | Tessera design (2026-10-05) and dry-run ledger; Tessera lane scope 12:57 AM CT; HYB-024 number per Tessera ruling 3:53 PM CT Oct 12 | TBD | published | All four gates PASS, as stated in the PR #54 body (REPORTED). Published 8138ea2 (PR #54, merged 2026-10-13 01:08 CT; commit 8138ea2f). Build gate file named in that body: GATE-2026-10-13-GB-067-068.md | Tessera (merged PR #54) | Build PASS (PR #54 body cites GATE-2026-10-13-GB-067-068.md) | none | none |
++| GB-069 | Rick idle mode page, rev 2 (mesh/IDLE-MODE.md) | Rick lane | 2026-10-12 | PR #52 body | TBD | published | Moderator PASS and Security PASS pinned to sha256 91249323…b309 (Mesh Cloud), as stated in the PR #52 body (REPORTED). Tessera's approval is REPORTED (no board comment). Merged by Tessera under Father's 'approve all' (REPORTED). The body also said "do not merge" and records no Build result. Published 0f05d58 (PR #52, merged 19:55 CT Oct 12); squash commit author is the noreply address (verified from the main commit list) | Tessera (merged PR #52) | No Build or CI result recorded | Tessera receipt on the board (Tessera) | none |
++| PR #55 | tools/qlab v1: quantum simulator, optimizer and calibrated noise twin (simulation only) | Rick lane | 2026-10-13 | PR #55 body | TBD | published | Moderator, Security and Build PASS, as REPORTED by Tessera. Found locally: Build PASS at head 3e17e9ab (qlab test 8/8 ALL PASS; build-gate/GATE-2026-10-13-Gitbook-PR55.md) and Security PASS with low notes (improvements/gates/security.md, 01:59 CT). No Moderator record found. The PR body asks for Father's yes before merge; none is cited. Published bd1b475 (PR #55, merged 03:28 CT); squash commit author is the noreply address (verified from the main commit list) | Tessera (merged PR #55) | Build gate file and security gate line (local) | Moderator verdict and Father yes to be cited (Tessera) | Moderator evidence missing |
++| PR #56 | mesh/queue: cloud-agent dispatch pipeline (TASKS.json, prompt template, dispatch.py, autogate.sh) | not recorded | 2026-10-13 | PR #56 body | TBD | retro-review pending | Body: smoke test (dispatch picks the right tasks) and "autogate PASS on Gitbook#55"; no autogate line for #56 itself, no gitleaks result (REPORTED). Published 4feab77 (PR #56, merged 02:51 CT); squash commit author is the noreply address (verified from the main commit list) | none | Smoke test (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No gate record |
++| PR #57 | Rename leftover old-name references to GitMesh (5 files; quoted history kept) | not recorded | 2026-10-13 | PR #57 body | TBD | retro-review pending | Body: git grep count 6 to 4; no tests (docs only); no autogate or gitleaks line (REPORTED). Published 1c7db22 (PR #57, merged 03:00 CT); squash commit author is the noreply address (verified from the main commit list) | none | git grep count (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No gate record |
++| PR #59 | Offline keyless SHEPHERD allowlist and terms gate (tools/shepherd) | not recorded | 2026-10-13 | PR #59 body | TBD | retro-review pending | Body: test_check_terms.py 13 tests OK; no autogate or gitleaks line (REPORTED). Published 4dd0106 (PR #59, merged 04:00 CT); squash commit author is the noreply address (verified from the main commit list) | none | 13 unit tests (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No gate record |
++| PR #61 | qlab AQFT sweeps turned into pytest invariant checks | not recorded | 2026-10-13 | PR #61 body | TBD | retro-review pending | Body: 10 passed in 5.3 s, and 10 failed against a deliberately broken aqft.py; full qlab suite ALL PASS; no autogate or gitleaks line (REPORTED). Published d0ee5a7 (PR #61, merged 04:08 CT); squash commit author is the noreply address (verified from the main commit list) | none | pytest 10/10 (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No gate record |
++| PR #62 | mesh/queue: agent spawning with lineage, caps, quarantine and an immutable-core gate | not recorded | 2026-10-13 | PR #62 body; Father's 4:00 AM CT request (REPORTED) | TBD | retro-review pending | Body: 12/12 unittest pass, gitleaks clean, gatecheck catches 20/20 crafted bad PRs (REPORTED). Published dbd34db (PR #62, merged 04:09 CT); squash commit author is the noreply address (verified from the main commit list) | none | unittest 12/12 and gitleaks (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No gate record |
++| PR #63 | mesh: scoreboard, ranked bulk lists and collab protocol | not recorded | 2026-10-13 | PR #63 body | TBD | retro-review pending | Body: 5 checks pass; no autogate or gitleaks line (REPORTED). Published 243ddd4 (PR #63, merged 04:10 CT); squash commit author is the noreply address (verified from the main commit list) | none | 5 checks (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No gate record |
++| PR #58 | Record GB-067 and GB-068 as published; tools/check_handoff.py checker | not recorded | 2026-10-13 | PR #58 body | TBD | retro-review pending | Body: autogate printed GATE PASS Gitbook#58 fb1e336c; checker output unchanged; the cited GATE-2026-10-13-GB-067-068.md is not in the repo (REPORTED). Published 8dab9a5 (PR #58, merged 04:01 CT); squash commit author is the noreply address (verified from the main commit list) | none | autogate line (PR body) | Not gated. Retro-review by Moderator, Security and Build (Cordnation routes) | No four-gate record |
++| GB-070 | Intake log backfill for retro-review (PRs #52, #55 to #63) and sync ledger #15 as a repo file (mesh/ledger/ledger-15.md) | Gitbook / Cordnation | 2026-10-13 | Tessera assignment 4:23 AM CT; Tessera ruling 4:25 AM CT (ledger #15 goes through the Moderator, not issue #2); PR bodies; main commit list; local gate files | TBD | in review |  | Gitbook Moderator | git apply --check on main 243ddd4 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ 
+ Held, not logged: four direct commits to `main` after cdc95b7 with no PR (44f5266, d2b8339, 779135e, fcabd13; 2026-10-06, 15:13–15:27 CT). Their attribution waits on Father's answer; no intake rows until then.
+--- /dev/null
++++ b/mesh/ledger/ledger-15.md
+@@ -0,0 +1,46 @@
++# Sync ledger #15
++
++Filed by Gitbook / Cordnation (GB-070). Sync ledgers #1 to #14 were posted on issue #2; this one goes through review as a repo file instead.
++- Checked: 2026-10-13 4:20 AM CT (routine)
++- Checkpoint was: 0f05d58b (Ledger #14, comment 6135901156)
++- New main head: **243ddd4b** (Oct 13, 4:10 AM CT)
++- 11 new commits since 0f05d58b (11 squash PR merges #53–#63; **0 direct pushes; 0 NONE**)
++
++| SHA | Author | Time (CT) | Files | Summary | Maps to | Via |
++|---|---|---|---|---|---|---|
++| 17bac6db | Tessera* | 1:08 AM | 2 (+55/−30) | GB-067: single mesh/HANDOFF.md | GB-067 | PR #53 |
++| 8138ea2f | Tessera* | 1:08 AM | 4 (+76/−1) | GB-068: HYB-024 self-fix design page | GB-068 | PR #54 |
++| 4feab775 | Tessera* | 2:51 AM | 5 (+109/−0) | mesh/queue: task queue, prompt template, dispatcher, auto-gate | NONE (mesh/queue) | PR #56 |
++| 1c7db22f | Tessera* | 3:00 AM | 5 (+5/−5) | Rename leftover GitbookAI refs to GitMesh | GitMesh rename leftover | PR #57 |
++| bd1b475b | Tessera* | 3:28 AM | 34 (+1266/−0) | tools/qlab v1: quantum sim / optimizer / noise twin | NONE (qlab) | PR #55 |
++| 4dd0106a | Tessera* | 4:00 AM | 4 (+549/−0) | Offline keyless SHEPHERD allowlist and terms gate | NONE (shepherd) | PR #59 |
++| 8dab9a57 | Tessera* | 4:01 AM | 3 (+150/−6) | Record GB-067 and GB-068 as published after gate PASS | GB-067, GB-068 | PR #58 |
++| 6b21df68 | Tessera* | 4:03 AM | 4 (+54/−0) | GB-065: rebase HYB-011 refresh onto main (supersedes #45) | GB-065 | PR #60 |
++| d0ee5a7c | Tessera* | 4:08 AM | 6 (+1473/−55) | Turn qlab AQFT sweeps into pytest invariant checks | NONE (qlab) | PR #61 |
++| dbd34dbf | Tessera* | 4:09 AM | 15 (+642/−65) | mesh/queue: agent spawning, lineage, caps, quarantine | NONE (mesh/queue) | PR #62 |
++| 243ddd4b | Tessera* | 4:10 AM | 12 (+161/−0) | mesh: scoreboard, ranked bulk lists, collab protocol | NONE (mesh scoreboard) | PR #63 |
++
++\* Git author name only; proves nothing about Pen-voice.
++
++**Gate check (intake log, Cordnation Ready list, PR bodies):**
++- **Gated (four gates PASS, REPORTED):** PR #53 GB-067; PR #54 GB-068; PR #58 only records those as published (cites a Build gate file kept outside the repo). Intake rows GB-067 / GB-068 are `published`.
++- **Ungated / no four-gate record in intake:** PR #55 (qlab v1), #56 (mesh/queue), #57 (GitMesh leftovers), #59 (SHEPHERD), #60 (GB-065 rebase), #61 (qlab pytest), #62 (spawn/lineage), #63 (scoreboard). Intake still lists GB-065 as `in review` with “Four gates not recorded yet” even though #60 merged. The Cordnation Ready list noted GB-067/068 Ready at 01:06 CT and that #45 needed a rebase afterwards. It does not stage the later merges.
++- **Prior FAIL path:** #45 (GB-065) closed unmerged after Moderator FAIL 6:40 PM CT Oct 12; superseded by #60, which merged without a new Moderator/Security/Build PASS recorded on the board or in intake.
++
++**Open PRs (2):**
++- #39 `ready/gb-061-rev2-archive-preserved` @ 71a8c78f — Moderator PASS; Security FAIL (unverifiable pack checksums). Do not merge.
++- #40 `cursor/father-yes-record-b14e` @ 4d577008 — draft / STALE.
++
++**Pen-voice (issue #2 since Ledger #14):**
++- No new board comments after 6135901156. No new `IDENTITY: Tessera Admin coordinator` posts. No new RECEIPTs.
++- Pending RECEIPTs carried: 3fc9d896 / PR #51; 0f05d58b / PR #52; plus all 11 merges in this ledger.
++- Flag 6097968213 (and 6098667302, 6029798860, 6039104029) stay UNVERIFIED. No impersonation counted as Tessera. No Manus.
++
++**Problems (for Tessera, not Father):**
++1. **Ungated merges on main:** #55, #56, #57, #59, #60, #61, #62, #63 landed with no four-gate record in intake/log (and no verified Pen RECEIPT).
++2. **GB-065 (#60)** merged after #45 Moderator FAIL, with intake still `in review` / gates not recorded.
++3. No direct pushes this window. No unverified Pen vote newly counted as verified. Open Security FAIL on #39 is unchanged (not merged).
++
++Next ledger compares against **243ddd4b**.
++
++Recorded in the intake log as rows GB-065 (updated), GB-069, PR #55 to PR #63 and GB-070.

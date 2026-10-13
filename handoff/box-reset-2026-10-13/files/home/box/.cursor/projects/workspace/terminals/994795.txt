@@ -1,0 +1,15 @@
+---
+pid: 649310
+cwd: "/workspace"
+command: "# Kill the fixed-seed run; restart with seeded client\nkill 635663 2>/dev/null; sleep 1\n# Also kill child python if any\npkill -f \"exp2_self_consistency.py\" 2>/dev/null || true\nsleep 1\n# Rewrite exp2 to use seeded client\npython3 - << 'PY'\nfrom pathlib import Path\nsrc = Path(\"/workspace/knowledge-lab/scripts/exp2_self_consistency.py\")\ntext = src.read_text()\ntext = text.replace(\n    'sys.path.insert(0, \"/workspace/evals/harness\")\\nfrom ollama_client import generate, DEFAULT_MODEL',\n    'sys.path.insert(0, \"/workspace/knowledge-lab/scripts\")\\nfrom ollama_client_seeded import generate, DEFAULT_MODEL'\n)\n# replace generate call to pass varying seed\nold = '''            out = generate(\n                prompt, model=args.model, system=system,\n                num_predict=128, num_ctx=2048, temperature=args.temperature,\n            )\n            # ollama_client hardcodes seed=42 in options; temperature still adds diversity via sampling'''\nnew = '''            out = generate(\n                prompt, model=args.model, system=system,\n                num_predict=128, num_ctx=2048, temperature=args.temperature,\n                seed=args.seed + rank * 100 + s * 17,\n            )'''\nif old not in text:\n    raise SystemExit('pattern not found')\nsrc.write_text(text.replace(old, new))\nprint('patched ok')\nPY\nexport PATH=/workspace/ollama-install/bin:$PATH\nexport OLLAMA_HOST=127.0.0.1:11434\nexport OLLAMA_MODELS=/workspace/ollama-home/models\npython3 /workspace/knowledge-lab/scripts/exp2_self_consistency.py --n-items 10 --ns 1,3,5 --out /workspace/knowledge-lab/results/exp2_self_consistency.json"
+title: "Restart exp2 with per-sample seeds"
+status: failed   
+started_at: 2026-10-05T23:52:26.194Z
+running_for_ms: 1060     
+---
+
+---
+exit_code: unknown
+elapsed_ms: 1060
+ended_at: 2026-10-05T23:52:27.254Z
+---

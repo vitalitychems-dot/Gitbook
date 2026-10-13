@@ -1,0 +1,325 @@
+repo,accessible,license,purpose,capability_category,include,reason,public_match
+collink1007/olive-giant-ever-glade,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+nicholasgasior/ad-copy-generator,n,NOASSERTION,High-converting ad copy for Meta; Google; TikTok; LinkedIn; and X/Twitter Ads,misc,n,public match has no SPDX license; idea-only clean-room,lunalimadev-sketch/ad-copy-generator
+nicholasgasior/GoLogin,n,MIT,Go login handlers for authentication providers (OAuth1; OAuth2),excluded,excluded,excluded: antidetect/stealth browser,dghubble/gologin
+nicholasgasior/CreepJS,n,MIT,Creepy device and browser fingerprinting,browser-fingerprint,excluded,excluded: fingerprinting dual-use (Security hold),abrahamjuliot/creepjs
+collink1007/Vitalitychems,n,UNKNOWN,mentioned in logs as collink1007/Vitalitychems; no description available,excluded,excluded,excluded: vitality store / commerce,
+nicholasgasior/2captcha-python,n,MIT,Python 3 package for easy integration with the API of 2captcha captcha solving service to bypass recaptcha; сloudflare turnstile; funcaptcha; geetest and solve any other captchas.,excluded,excluded,excluded: captcha solving,2captcha/2captcha-python
+nicholasgasior/Multilogin,n,GPL-3.0,外置共存,excluded,excluded,excluded: antidetect/stealth browser,CaaMoe/MultiLogin
+nicholasgasior/FingerprintJS,n,MIT,The most advanced free and open-source browser fingerprinting library,browser-fingerprint,excluded,excluded: fingerprinting dual-use (Security hold),fingerprintjs/fingerprintjs
+collink1007/z,y,NONE,Historical Zz / tesseract archive checkout,tessera-core,n,idea-only / archive; license NONE; wallet/secret paths stay out,
+collink1007/fleet-moss-monarch-rapid,y,NONE,Vitality storefront migrations,commerce,excluded,excluded: vitality store,
+collink1007/XXX,y,MIT,Historical XXX tess client/server (lattice-mesh; SW; offline),offline-mesh,y,MIT in package.json; reuse offline pieces only; exclude wallet/income routes,
+collink1007/amber-flame-tiger-sand,y,NONE,Grok app template with TESSERA seed docs,ui,n,license NONE; idea-only; already partly in Gitbook archive,
+nicholasgasior/ai-freelance-platform,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,muhammadsaad5619-hub/ai-freelance-platform
+nicholasgasior/affiliate-tracking,n,MIT,Databowl Affiliate Tracking Library,excluded,excluded,excluded: vitality store / commerce,Databowl/affiliate-tracking
+nicholasgasior/age,n,UNKNOWN,mentioned in logs as nicholasgasior/age; no description available,security-protocols,n,no public match found; idea-only from name/description,
+nicholasgasior/ai-agent-marketplace,n,NONE,Open Source AI Agent Marketplace | AI Agent Directory for Exploration with searchable index for search engine and user discovery,agents-studio,n,public match has no SPDX license; idea-only clean-room,aiagenta2z/ai-agent-marketplace
+nicholasgasior/ai-service-marketplace,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,rohitranmale11/AI-Service-MarketPlace
+nicholasgasior/ai-gig-economy,n,UNKNOWN,mentioned in logs as nicholasgasior/ai-gig-economy; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/alpha-vantage,n,UNKNOWN,mentioned in logs as nicholasgasior/alpha-vantage; no description available,security-protocols,n,no public match found; idea-only from name/description,
+nicholasgasior/anticaptchaofficial,n,NONE,UNKNOWN,excluded,excluded,excluded: captcha solving,Pugn0/anticaptchaofficial
+nicholasgasior/antidetect,n,MIT,A console application with a simple user interface for managing and working with browser profiles with anti-detection protection.,excluded,excluded,excluded: antidetect/stealth browser,brodev3/antidetect
+nicholasgasior/api-monetization,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,nirzaf/api-monetization
+nicholasgasior/arbitrage-bot,n,NONE,A bot that makes profit of the best crypto Arbitrage opportunities on the market,excluded,excluded,excluded: MEV/DeFi/trading bots,andrei-zgirvaci/Arbitrage-Bot
+nicholasgasior/apify-sdk,n,UNKNOWN,mentioned in logs as nicholasgasior/apify-sdk; no description available,adapters,n,no public match found; idea-only from name/description,
+nicholasgasior/beautifulsoup4,n,NOASSERTION,git mirror for Beautiful Soup 4.3.2,misc,n,public match has no SPDX license; idea-only clean-room,wention/BeautifulSoup4
+nicholasgasior/backlink-checker,n,GPL-3.0,For SEO: checks a list of web pages if a backlink is present,misc,n,license GPL-3.0 not permissive; idea-only clean-room,rvalitov/backlink-checker
+nicholasgasior/audio-captcha-solver,n,NONE,This project implements an Audio Captcha Recognition system using Wav2Vec2 (speech-to-text) and CRNN (CNN + RNN) models. The goal is to accurately decode distorted and noisy audio captchas commonly us,excluded,excluded,excluded: captcha solving,pritam123junior/audio-captcha-solver
+nicholasgasior/bond-yield-tracker,n,UNKNOWN,mentioned in logs as nicholasgasior/bond-yield-tracker; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/bounty-hunter,n,GPL-3.0,Hellhound is an autonomous bug bounty reconnaissance and triage assistant designed for professional security researchers and bug hunters. It automates repetitive enumeration workflows; verifies asset ,knowledge-memory,n,license GPL-3.0 not permissive; idea-only clean-room,project-hellhound-org/bounty-hunter
+nicholasgasior/brain-js,n,UNKNOWN,mentioned in logs as nicholasgasior/brain-js; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/blog-generator,n,Apache-2.0,Mirror for https://git.sr.ht/~zupzup/blog-generator. static blog generator for my blog at https://zupzup.org/,misc,y,public match under Apache-2.0; prefer dependency or clean attribution,zupzup/blog-generator
+nicholasgasior/brightdata-sdk,n,UNKNOWN,mentioned in logs as nicholasgasior/brightdata-sdk; no description available,adapters,n,no public match found; idea-only from name/description,
+nicholasgasior/browser-fingerprinting,n,NONE,Analysis of Bot Protection systems with available countermeasures 🚿. How to defeat anti-bot system 👻 and get around browser fingerprinting scripts 🕵️‍♂️ when scraping the web?,browser-fingerprint,excluded,excluded: fingerprinting dual-use (Security hold),niespodd/browser-fingerprinting
+nicholasgasior/capsolver-python,n,MIT,Python 3 package for easy integration with the API of capsolver captcha solving service to solver recaptcha; geetest and solve any other captchas. Capsolver.,excluded,excluded,excluded: captcha solving,capsolver/capsolver-python
+nicholasgasior/captcha-harvester,n,MIT,Possible plans for a collaborative harvesting method ,excluded,excluded,excluded: captcha solving,dzt/captcha-harvester
+nicholasgasior/case-study-builder,n,NONE,UNKNOWN,ui,n,public match has no SPDX license; idea-only clean-room,dupuypersonal-maker/case-study-builder
+nicholasgasior/cf-clearance,n,NONE,Purpose To make a cloudflare v2 challenge pass successfully; Can be use cf_clearance bypassed by cloudflare; However; with the cf_clearance; make sure you use the same IP and UA as when you got it.,misc,n,public match has no SPDX license; idea-only clean-room,vvanglro/cf-clearance
+nicholasgasior/censys-python,n,Apache-2.0,An easy-to-use and lightweight API wrapper for Censys APIs.,adapters,y,public match under Apache-2.0; prefer dependency or clean attribution,censys/censys-python
+nicholasgasior/checkout-optimizer,n,NONE,Free open-source checkout-optimizer,excluded,excluded,excluded: payments,chrisdemonxxx/checkout-optimizer
+nicholasgasior/cloudflare-bypass,n,Apache-2.0,Bypass Coudflare bot protection using Cloudflare Workers,excluded,excluded,excluded: Cloudflare/bot-detection bypass,jychp/cloudflare-bypass
+nicholasgasior/cloudflare-scrape,n,MIT,A Python module to bypass Cloudflare's anti-bot page.,excluded,excluded,excluded: Cloudflare/bot-detection bypass,Anorov/cloudflare-scrape
+nicholasgasior/cfscrape,n,MIT,"A simple PHP module to bypass Cloudflare's anti-bot page (also known as ""I'm Under Attack Mode""; or IUAM)",excluded,excluded,excluded: Cloudflare/bot-detection bypass,ScoLib/cfscrape
+nicholasgasior/chromedp,n,MIT,A faster; simpler way to drive browsers supporting the Chrome DevTools Protocol.,security-protocols,y,public match under MIT; prefer dependency or clean attribution,chromedp/chromedp
+nicholasgasior/cloudscraper,n,UNKNOWN,mentioned in logs as nicholasgasior/cloudscraper; no description available,web-fetch,n,no public match found; idea-only from name/description,
+nicholasgasior/cf-workers,n,MIT,Collection of Cloudflare Workers,compute-sandbox,y,public match under MIT; prefer dependency or clean attribution,pmeenan/cf-workers
+nicholasgasior/code-marketplace,n,UNKNOWN,mentioned in logs as nicholasgasior/code-marketplace; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/colly,n,UNKNOWN,mentioned in logs as nicholasgasior/colly; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/commodity-tracker,n,UNKNOWN,mentioned in logs as nicholasgasior/commodity-tracker; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/compromise-nlp,n,UNKNOWN,mentioned in logs as nicholasgasior/compromise-nlp; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/competitor-analyzer,n,UNKNOWN,mentioned in logs as nicholasgasior/competitor-analyzer; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/content-optimizer,n,UNKNOWN,mentioned in logs as nicholasgasior/content-optimizer; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/customer-analytics,n,NONE,Machine Learning Case study on customer segmentation and prediction of groups.,learning,n,public match has no SPDX license; idea-only clean-room,Prakhar-FF13/Customer-Analytics
+nicholasgasior/decentralized-work,n,UNKNOWN,mentioned in logs as nicholasgasior/decentralized-work; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/creative-testing,n,NONE,Demo components that (might) be used at a later occasion,testing,n,public match has no SPDX license; idea-only clean-room,Boierul/creative-testing
+nicholasgasior/conversion-optimizer,n,MIT,UNKNOWN,misc,y,public match under MIT; prefer dependency or clean attribution,SHOPGEN431/conversion-optimizer
+nicholasgasior/dropshipping-automation,n,NONE,dropshipping automation system,misc,n,public match has no SPDX license; idea-only clean-room,Emilyzok10/dropshipping-automation
+nicholasgasior/dilithium,n,NOASSERTION,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,pq-crystals/dilithium
+nicholasgasior/defi-yield-farming,n,NONE,cryptocurrency staking platform where you can buy; stake & un-Stake mock version of tether tokens to get rewards in the form interest.,token-efficiency,n,public match has no SPDX license; idea-only clean-room,spandan114/Defi-Yield-Farming
+nicholasgasior/email-marketing-engine,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,shubh-codes7/Email-Marketing-Engine
+nicholasgasior/ebook-creator,n,NONE,🍳 Create your own E-book PDF With help of generative AI...,misc,n,public match has no SPDX license; idea-only clean-room,ArnavK-09/ebook-creator
+nicholasgasior/email-sequence-builder,n,NONE,Email Sequence Builder,ui,n,public match has no SPDX license; idea-only clean-room,SidGit195/Email-Sequence-Builder
+nicholasgasior/facebook-ads-api,n,MIT,Python client for the Facebook Ads API,adapters,y,public match under MIT; prefer dependency or clean attribution,narrowcast/facebook-ads-api
+nicholasgasior/finnhub-python,n,Apache-2.0,Finnhub Python API Client. Finnhub API provides institutional-grade financial data to investors; fintech startups and investment firms. We support real-time stock price; global fundamentals; global ET,adapters,y,public match under Apache-2.0; prefer dependency or clean attribution,Finnhub-Stock-API/finnhub-python
+nicholasgasior/forex-correlation,n,NONE,This project is a look into how EURUSD correlates to the other major forex pairs. We are looking at a 10 year period between 2010-2020 specifically.  The data was collected from OANDA using their API.,misc,n,public match has no SPDX license; idea-only clean-room,Shawwnscott/Forex-Correlation
+nicholasgasior/flaresolverr,n,MIT,Proxy server to bypass Cloudflare protection,excluded,excluded,excluded: Cloudflare/bot-detection bypass,FlareSolverr/FlareSolverr
+nicholasgasior/fractal-analysis,n,NONE,Fractal Analysis of Financial markets using Machine learning,learning,n,public match has no SPDX license; idea-only clean-room,laasya2005/Fractal-Analysis
+nicholasgasior/funcaptcha-solver,n,NONE,UNKNOWN,excluded,excluded,excluded: captcha solving,kekeds/funcaptcha-solver
+nicholasgasior/freelance-api,n,UNKNOWN,mentioned in logs as nicholasgasior/freelance-api; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/futures-data,n,UNKNOWN,mentioned in logs as nicholasgasior/futures-data; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/funnel-builder,n,NOASSERTION,Funnel Builder Rig — Landing page and funnel template for Claude Code,ui,n,public match has no SPDX license; idea-only clean-room,AI-Captains-Academy/funnel-builder
+nicholasgasior/gocolly,n,UNKNOWN,mentioned in logs as nicholasgasior/gocolly; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/google-ads-api,n,MIT,Google Ads API client library for Node.js,adapters,y,public match under MIT; prefer dependency or clean attribution,Opteo/google-ads-api
+nicholasgasior/goquery,n,BSD-3-Clause,A little like that j-thing; only in Go.,misc,y,public match under BSD-3-Clause; prefer dependency or clean attribution,PuerkitoBio/goquery
+nicholasgasior/gpg4win,n,GPL-2.0,GnuPG for Windows. NOTE: Maintainers are not tracking this mirror. Do not make pull requests here; nor comment any commits; submit them usual way to bug tracker (https://www.gnupg.org/documentation/bt,docs,n,license GPL-2.0 not permissive; idea-only clean-room,gpg/gpg4win
+nicholasgasior/goscrapy,n,NOASSERTION,GoScrapy: High perfomance webscraping framework in Go; inspired by Python's Scrapy.,misc,n,public match has no SPDX license; idea-only clean-room,tech-engine/goscrapy
+nicholasgasior/hcaptcha-solver,n,NONE,A library to solve hCaptcha challenges,excluded,excluded,excluded: captcha solving,JimmyLaurent/hcaptcha-solver
+nicholasgasior/hashcat,n,NONE,World's fastest and most advanced password recovery utility,excluded,excluded,excluded: credential cracking,hashcat/hashcat
+nicholasgasior/headless-chrome-crawler,n,MIT,Distributed crawler powered by Headless Chrome,web-fetch,y,public match under MIT; prefer dependency or clean attribution,yujiosaka/headless-chrome-crawler
+nicholasgasior/gumroad-api,n,Apache-2.0,Node client for the Gumroad API,excluded,excluded,excluded: payments,SamyPesse/gumroad-api
+nicholasgasior/human-ai-marketplace,n,UNKNOWN,mentioned in logs as nicholasgasior/human-ai-marketplace; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/grpcurl,n,MIT,Like cURL; but for gRPC: Command-line tool for interacting with gRPC servers,learning,y,public match under MIT; prefer dependency or clean attribution,fullstorydev/grpcurl
+nicholasgasior/httpie,n,MIT,A Node.js HTTP client as easy as pie! 🥧,adapters,y,public match under MIT; prefer dependency or clean attribution,lukeed/httpie
+nicholasgasior/image-captcha-solver,n,UNKNOWN,mentioned in logs as nicholasgasior/image-captcha-solver; no description available,excluded,excluded,excluded: captcha solving,
+nicholasgasior/infographic-data,n,UNKNOWN,mentioned in logs as nicholasgasior/infographic-data; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/insomnia,n,UNKNOWN,mentioned in logs as nicholasgasior/insomnia; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/intermarket-analysis,n,UNKNOWN,mentioned in logs as nicholasgasior/intermarket-analysis; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/inventory-management,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,ed-roh/inventory-management
+nicholasgasior/keyword-research-tool,n,NONE,UNKNOWN,search-index,n,public match has no SPDX license; idea-only clean-room,boringmarketer/keyword-research-tool
+nicholasgasior/lemon-squeezy-sdk,n,UNKNOWN,mentioned in logs as nicholasgasior/lemon-squeezy-sdk; no description available,excluded,excluded,excluded: payments,
+nicholasgasior/lattigo,n,Apache-2.0,A library for lattice-based multiparty homomorphic encryption in Go,security-protocols,y,public match under Apache-2.0; prefer dependency or clean attribution,tuneinsight/lattigo
+nicholasgasior/landing-page-builder,n,NOASSERTION,Landing Page Builder app built with Meteor.,ui,n,public match has no SPDX license; idea-only clean-room,withpulp/landing-page-builder
+nicholasgasior/kyber,n,NOASSERTION,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,pq-crystals/kyber
+nicholasgasior/libsodium,n,NOASSERTION,A modern; portable; easy to use crypto library.,misc,n,public match has no SPDX license; idea-only clean-room,jedisct1/libsodium
+nicholasgasior/liquidity-mining,n,UNKNOWN,mentioned in logs as nicholasgasior/liquidity-mining; no description available,excluded,excluded,excluded: mining,
+nicholasgasior/linkedin-ads-api,n,NONE,LinkedIn Ads API automation toolkit for NIS2Certify - Campaign management; budget optimization; and bulk operations,misc,n,public match has no SPDX license; idea-only clean-room,Smietje77/linkedin-ads-api
+nicholasgasior/mailgun-js,n,Apache-2.0,UNKNOWN,misc,y,public match under Apache-2.0; prefer dependency or clean attribution,WebSkeleton/mailgun-js
+nicholasgasior/market-correlation,n,UNKNOWN,mentioned in logs as nicholasgasior/market-correlation; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/marketstack,n,NONE,Free Real-Time; Intraday & Historical Stock Market Data API,misc,n,public match has no SPDX license; idea-only clean-room,apilayer/marketstack
+nicholasgasior/mechanize,n,MIT,Mechanize is a ruby library that makes automated web interaction easy.,misc,y,public match under MIT; prefer dependency or clean attribution,sparklemotion/mechanize
+nicholasgasior/mercury-parser,n,MIT,Extract meaningful content from the chaos of a web page,security-protocols,y,public match under MIT; prefer dependency or clean attribution,jocmp/mercury-parser
+nicholasgasior/mev-templates,n,NONE,MEV bot templates written in Python/Javascript/Rust. All implementing DEX flashloan arbitrage,excluded,excluded,excluded: MEV/DeFi/trading bots,solidquant/mev-templates
+nicholasgasior/meta-tag-generator,n,NONE,A simple Meta Tag Generator App built using React JS that lets you generate meta tags for any website.,ui,n,public match has no SPDX license; idea-only clean-room,PragatiVerma18/Meta-Tag-Generator
+nicholasgasior/micro-saas-template,n,NOASSERTION,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,jgalan247/micro-saas-template
+nicholasgasior/microwork-platform,n,UNKNOWN,mentioned in logs as nicholasgasior/microwork-platform; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/moltbook-platform,n,UNKNOWN,mentioned in logs as nicholasgasior/moltbook-platform; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/natural-nlp,n,UNKNOWN,mentioned in logs as nicholasgasior/natural-nlp; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/ml5-js,n,UNKNOWN,mentioned in logs as nicholasgasior/ml5-js; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/newsletter-builder,n,NONE,Public page to track newsletter creating and content,ui,n,public match has no SPDX license; idea-only clean-room,dhornbein/Newsletter-Builder
+nicholasgasior/nmap,n,UNKNOWN,mentioned in logs as nicholasgasior/nmap; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/nft-minter,n,UNKNOWN,mentioned in logs as nicholasgasior/nft-minter; no description available,excluded,excluded,excluded: NFT,
+nicholasgasior/newspaper3k,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,webscraping-python/newspaper3k
+nicholasgasior/onnxruntime-web,n,UNKNOWN,mentioned in logs as nicholasgasior/onnxruntime-web; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/nodriver,n,UNKNOWN,mentioned in logs as nicholasgasior/nodriver; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/options-flow,n,NONE,Quantitative research project on forecasting intraday ES futures price from SPX options flow; volatility surfaces; futures order flow; cross-market structure; and CatBoost models with causal feature e,search-index,n,public match has no SPDX license; idea-only clean-room,fridary/options-flow
+nicholasgasior/noise-protocol,n,UNKNOWN,mentioned in logs as nicholasgasior/noise-protocol; no description available,security-protocols,n,no public match found; idea-only from name/description,
+nicholasgasior/openssl,n,Apache-2.0,General purpose TLS and crypto library,misc,y,public match under Apache-2.0; prefer dependency or clean attribution,openssl/openssl
+nicholasgasior/order-fulfillment,n,NONE,System Integration and Architecture 102 Project - Order and Fulfillment Management System w/barcode generator&scanner,llm-runtime,n,public match has no SPDX license; idea-only clean-room,anotherinthefire/order-fulfillment
+nicholasgasior/oxylabs-sdk,n,UNKNOWN,mentioned in logs as nicholasgasior/oxylabs-sdk; no description available,adapters,n,no public match found; idea-only from name/description,
+nicholasgasior/page-speed-analyzer,n,NONE,UNKNOWN,security-protocols,n,public match has no SPDX license; idea-only clean-room,tanzimine/Page-Speed-Analyzer
+nicholasgasior/paddle-sdk,n,MIT,Paddle.com Node.js SDK,excluded,excluded,excluded: payments,avaly/paddle-sdk
+nicholasgasior/passive-income-bot,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,yktvjdpluggz/passive-income-bot
+nicholasgasior/pinterest-ads-api,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,kayr-jpg/pinterest-ads-api
+nicholasgasior/plaid-node,n,MIT,Node bindings for Plaid,excluded,excluded,excluded: payments,plaid/plaid-node
+nicholasgasior/playwright-python,n,Apache-2.0,Python version of the Playwright testing and automation library.,testing,y,public match under Apache-2.0; prefer dependency or clean attribution,microsoft/playwright-python
+nicholasgasior/playwright-stealth,n,NONE,UNKNOWN,excluded,excluded,excluded: antidetect/stealth browser,Granitosaurus/playwright-stealth
+nicholasgasior/podcast-outline-gen,n,UNKNOWN,mentioned in logs as nicholasgasior/podcast-outline-gen; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/playwright-cf-bypass,n,UNKNOWN,mentioned in logs as nicholasgasior/playwright-cf-bypass; no description available,excluded,excluded,excluded: Cloudflare/bot-detection bypass,
+nicholasgasior/postman-collection,n,Apache-2.0,Javascript module that allows a developer to work with Postman Collections,misc,y,public match under Apache-2.0; prefer dependency or clean attribution,postmanlabs/postman-collection
+nicholasgasior/price-comparison,n,UNKNOWN,mentioned in logs as nicholasgasior/price-comparison; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/press-release-writer,n,MIT,企业新闻稿撰写助手 - Claude Code Skill,misc,y,public match under MIT; prefer dependency or clean attribution,741955148-cell/press-release-writer
+nicholasgasior/product-description-ai,n,UNKNOWN,mentioned in logs as nicholasgasior/product-description-ai; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/product-sourcing-api,n,UNKNOWN,mentioned in logs as nicholasgasior/product-sourcing-api; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/programmatic-advertising,n,NONE,All things programmatic,misc,n,public match has no SPDX license; idea-only clean-room,pierian-co/Programmatic-Advertising
+nicholasgasior/puppeteer-core,n,UNKNOWN,mentioned in logs as nicholasgasior/puppeteer-core; no description available,web-fetch,n,no public match found; idea-only from name/description,
+nicholasgasior/puppeteer-cf-bypass,n,UNKNOWN,mentioned in logs as nicholasgasior/puppeteer-cf-bypass; no description available,excluded,excluded,excluded: Cloudflare/bot-detection bypass,
+nicholasgasior/puppeteer-extra-plugin-stealth,n,NONE,UNKNOWN,excluded,excluded,excluded: antidetect/stealth browser,nswbmw/puppeteer-extra-plugin-stealth
+nicholasgasior/readability,n,Apache-2.0,A standalone version of the readability lib,misc,y,public match under Apache-2.0; prefer dependency or clean attribution,mozilla/readability
+nicholasgasior/rank-tracker,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,dejwid/rank-tracker
+nicholasgasior/puppeteer-extra,n,MIT,💯  Teach puppeteer new tricks through plugins.,web-fetch,n,idea-only; puppeteer-extra often paired with stealth — Security review before any reuse,berstend/puppeteer-extra
+nicholasgasior/quandl-python,n,MIT,UNKNOWN,misc,y,public match under MIT; prefer dependency or clean attribution,quandl/quandl-python
+nicholasgasior/requests-html,n,MIT,Pythonic HTML Parsing for Humans™,misc,y,public match under MIT; prefer dependency or clean attribution,psf/requests-html
+nicholasgasior/residential-proxy,n,UNKNOWN,mentioned in logs as nicholasgasior/residential-proxy; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/rentahuman-ai,n,UNKNOWN,mentioned in logs as nicholasgasior/rentahuman-ai; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/recaptcha-solver,n,UNKNOWN,mentioned in logs as nicholasgasior/recaptcha-solver; no description available,excluded,excluded,excluded: captcha solving,
+nicholasgasior/retargeting-engine,n,UNKNOWN,mentioned in logs as nicholasgasior/retargeting-engine; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/ring,n,UNKNOWN,mentioned in logs as nicholasgasior/ring; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/review-management,n,UNKNOWN,mentioned in logs as nicholasgasior/review-management; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/rod,n,UNKNOWN,mentioned in logs as nicholasgasior/rod; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/saas-boilerplate,n,UNKNOWN,mentioned in logs as nicholasgasior/saas-boilerplate; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/sandwich-bot,n,UNKNOWN,mentioned in logs as nicholasgasior/sandwich-bot; no description available,excluded,excluded,excluded: MEV/DeFi/trading bots,
+nicholasgasior/scraperapi-sdk,n,MIT,SDK for web scrapping service ScraperAPI,adapters,y,public match under MIT; prefer dependency or clean attribution,evgeek/scraperapi-sdk
+nicholasgasior/schema-markup,n,UNKNOWN,mentioned in logs as nicholasgasior/schema-markup; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/scrapy-redis,n,MIT,Redis-based components for Scrapy.,misc,y,public match under MIT; prefer dependency or clean attribution,rmax/scrapy-redis
+nicholasgasior/scrapy-splash,n,BSD-3-Clause,Scrapy+Splash for JavaScript integration,misc,y,public match under BSD-3-Clause; prefer dependency or clean attribution,scrapy-plugins/scrapy-splash
+nicholasgasior/scrapingbee,n,UNKNOWN,mentioned in logs as nicholasgasior/scrapingbee; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/scrapydweb,n,GPL-3.0,Web app for Scrapyd cluster management; Scrapy log analysis & visualization; Auto packaging; Timer tasks; Monitor & Alert; and Mobile UI. Docs 文档 :point_right:,docs,n,license GPL-3.0 not permissive; idea-only clean-room,my8100/scrapydweb
+nicholasgasior/sector-rotation,n,UNKNOWN,mentioned in logs as nicholasgasior/sector-rotation; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/selenium-cf-bypass,n,UNKNOWN,mentioned in logs as nicholasgasior/selenium-cf-bypass; no description available,excluded,excluded,excluded: Cloudflare/bot-detection bypass,
+nicholasgasior/selenium-python,n,NONE,Selenium Python Bindings Documentation,docs,n,public match has no SPDX license; idea-only clean-room,baijum/selenium-python
+nicholasgasior/sentiment-analysis,n,UNKNOWN,mentioned in logs as nicholasgasior/sentiment-analysis; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/sendgrid-nodejs,n,MIT,The Official Twilio SendGrid Led; Community Driven Node.js API Library,misc,y,public match under MIT; prefer dependency or clean attribution,sendgrid/sendgrid-nodejs
+nicholasgasior/selenium-wire,n,MIT,Extends Selenium's Python bindings to give you the ability to inspect requests made by the browser.,misc,y,public match under MIT; prefer dependency or clean attribution,wkeeling/selenium-wire
+nicholasgasior/shipping-calculator,n,NONE,To use in Shopify to add a shipping rates calculator to the cart page. Requires jQuery.,excluded,excluded,excluded: payments,carolineschnapp/shipping-calculator
+nicholasgasior/shodan-python,n,NOASSERTION,The official Python library for Shodan,misc,n,public match has no SPDX license; idea-only clean-room,achillean/shodan-python
+nicholasgasior/sitemap-generator,n,MIT,Easily create XML sitemaps for your website.,misc,y,public match under MIT; prefer dependency or clean attribution,lgraubner/sitemap-generator
+nicholasgasior/signal-protocol,n,GPL-3.0,The Signal cryptographic protocol; for node and browsers,security-protocols,n,license GPL-3.0 not permissive; idea-only clean-room,elsehow/signal-protocol
+nicholasgasior/seo-analyzer,n,MIT,The library for analyze a HTML file to show all of the SEO defects,misc,y,public match under MIT; prefer dependency or clean attribution,maddevsio/seo-analyzer
+nicholasgasior/smartproxy-sdk,n,UNKNOWN,mentioned in logs as nicholasgasior/smartproxy-sdk; no description available,adapters,n,no public match found; idea-only from name/description,
+nicholasgasior/snapchat-ads-api,n,UNKNOWN,mentioned in logs as nicholasgasior/snapchat-ads-api; no description available,comms,n,no public match found; idea-only from name/description,
+nicholasgasior/social-content-calendar,n,NOASSERTION,Creates a local content calendar with status filters.,misc,n,public match has no SPDX license; idea-only clean-room,kholipha-ahmmad-al-amin/social-content-calendar
+nicholasgasior/social-media-scheduler,n,NONE,Schedule social media posts with AWS EventBridge,misc,n,public match has no SPDX license; idea-only clean-room,readysetcloud/social-media-scheduler
+nicholasgasior/sphincs,n,UNKNOWN,mentioned in logs as nicholasgasior/sphincs; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/staking-contracts,n,NONE,The smart contracts used in the IBFT PoS implementation,misc,n,public match has no SPDX license; idea-only clean-room,0xPolygon/staking-contracts
+nicholasgasior/sniper-bot,n,UNKNOWN,mentioned in logs as nicholasgasior/sniper-bot; no description available,excluded,excluded,excluded: MEV/DeFi/trading bots,
+nicholasgasior/story-writer,n,BSD-3-Clause,An AI-based story writer and Python library which uses OpenAI's chatGPT and Dall-E to generate PDFs with a story and a picture from a prompt and writes them into a PDF.,token-efficiency,y,public match under BSD-3-Clause; prefer dependency or clean attribution,haesleinhuepf/story-writer
+nicholasgasior/task-automation-platform,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,l-Spook-l/task-automation-platform
+nicholasgasior/tensorflow-js,n,UNKNOWN,mentioned in logs as nicholasgasior/tensorflow-js; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/tiingo-python,n,MIT,Python client for interacting with the Tiingo Financial Data API (stock ticker and news data),adapters,y,public match under MIT; prefer dependency or clean attribution,hydrosquall/tiingo-python
+nicholasgasior/testimonial-generator,n,NONE,UNKNOWN,testing,n,public match has no SPDX license; idea-only clean-room,husainahmadrayhan-blip/testimonial-generator
+nicholasgasior/tiktok-ads-api,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,romeuauri-lgtm/tiktok-ads-api
+nicholasgasior/tink,n,Apache-2.0,Tink is a multi-language; cross-platform; open source library that provides cryptographic APIs that are secure; easy to use correctly; and hard(er) to misuse.,security-protocols,y,public match under Apache-2.0; prefer dependency or clean attribution,tink-crypto/tink
+nicholasgasior/trafilatura,n,Apache-2.0,Python & Command-line tool to gather text and metadata on the Web: Crawling; scraping; extraction; output as CSV; JSON; HTML; MD; TXT; XML,misc,y,public match under Apache-2.0; prefer dependency or clean attribution,adbar/trafilatura
+nicholasgasior/token-creator,n,Apache-2.0,An example Repository to showcase creating tokens on Solana and attaching Metadata to them,excluded,excluded,excluded: crypto/NFT token minting,jacobcreech/Token-Creator
+nicholasgasior/turnstile-solver,n,UNKNOWN,mentioned in logs as nicholasgasior/turnstile-solver; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/twelve-data-python,n,UNKNOWN,mentioned in logs as nicholasgasior/twelve-data-python; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/twilio-node,n,UNKNOWN,mentioned in logs as nicholasgasior/twilio-node; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/vix-analysis,n,UNKNOWN,mentioned in logs as nicholasgasior/vix-analysis; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/undetected-chromedriver,n,UNKNOWN,mentioned in logs as nicholasgasior/undetected-chromedriver; no description available,excluded,excluded,excluded: antidetect/stealth browser,
+nicholasgasior/twitter-ads-api,n,UNKNOWN,mentioned in logs as nicholasgasior/twitter-ads-api; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/video-script-writer,n,UNKNOWN,mentioned in logs as nicholasgasior/video-script-writer; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/web-unlocker,n,UNKNOWN,mentioned in logs as nicholasgasior/web-unlocker; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/whitepaper-generator,n,UNKNOWN,mentioned in logs as nicholasgasior/whitepaper-generator; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/wink-nlp,n,UNKNOWN,mentioned in logs as nicholasgasior/wink-nlp; no description available,misc,n,no public match found; idea-only from name/description,
+nicholasgasior/wireguard-go,n,MIT,Mirror only. Official repository is at https://git.zx2c4.com/wireguard-go,misc,y,public match under MIT; prefer dependency or clean attribution,WireGuard/wireguard-go
+sovereign-archive/T5,n,UNKNOWN,mentioned in logs as sovereign-archive/T5; no description available,tessera-core,n,no public match found; idea-only from name/description,
+nicholasgasior/zenrows-scraper,n,NONE,Web scraper using ZenRows API,web-fetch,n,public match has no SPDX license; idea-only clean-room,ruizpolanco50-ship-it/zenrows-scraper
+nicholasgasior/yahoo-finance-api,n,MIT,PHP client for Yahoo Finance API 📈,adapters,y,public match under MIT; prefer dependency or clean attribution,scheb/yahoo-finance-api
+sovereign-core/Doxiwehu-OmniMind-Public,n,UNKNOWN,mentioned in logs as sovereign-core/Doxiwehu-OmniMind-Public; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/awesome-machine-learning,n,NOASSERTION,A curated list of awesome Machine Learning frameworks; libraries and software.,learning,n,public match has no SPDX license; idea-only clean-room,josephmisiti/awesome-machine-learning
+sovereign-core/complete-digital-organism,n,UNKNOWN,mentioned in logs as sovereign-core/complete-digital-organism; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/TESSERACT-UNIFIED,n,UNKNOWN,mentioned in logs as sovereign-core/TESSERACT-UNIFIED; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/lexi-3.0-sovereign-consciousness,n,UNKNOWN,mentioned in logs as sovereign-core/lexi-3.0-sovereign-consciousness; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/lexi-2.0-sovereign-ultimate,n,UNKNOWN,mentioned in logs as sovereign-core/lexi-2.0-sovereign-ultimate; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/lexi-sovereign,n,UNKNOWN,mentioned in logs as sovereign-core/lexi-sovereign; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/mining,n,MIT,Business Intelligence (BI) in Python; OLAP,excluded,excluded,excluded: mining,mining/mining
+sovereign-core/nemo-sovereign-organism,n,UNKNOWN,mentioned in logs as sovereign-core/nemo-sovereign-organism; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/nexus-complete,n,NONE, 3ª Fase - Scrum Board with Angular : Fake Trello App,ui,n,public match has no SPDX license; idea-only clean-room,ArturoPardo/nexus-complete
+sovereign-core/nexus-omniscience,n,UNKNOWN,mentioned in logs as sovereign-core/nexus-omniscience; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/sovereign-ai-2025,n,UNKNOWN,mentioned in logs as sovereign-core/sovereign-ai-2025; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/openmunus,n,UNKNOWN,mentioned in logs as sovereign-core/openmunus; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/sovereign-tessera,n,UNKNOWN,mentioned in logs as sovereign-core/sovereign-tessera; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/sovereign-zenith,n,UNKNOWN,mentioned in logs as sovereign-core/sovereign-zenith; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-aetherion-orion,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-aetherion-orion; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-ai-orchestration,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-ai-orchestration; no description available,agents-studio,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-omniscience-complete,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-omniscience-complete; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-payment-processing,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-payment-processing; no description available,excluded,excluded,excluded: payments,
+sovereign-core/tessera-singularity-swarm,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-singularity-swarm; no description available,agents-studio,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-sovereign-authority,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-sovereign-authority; no description available,auth,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-sovereign-complete,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-sovereign-complete; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-sovereign-tumbler,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-sovereign-tumbler; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-sovereign-ultimate,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-sovereign-ultimate; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-sovereign-organism,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-sovereign-organism; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-super-hybrid-final-complete,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-super-hybrid-final-complete; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-complete-final,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-complete-final; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-ultimate-sovereign,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-ultimate-sovereign; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-ecosystem,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-ecosystem; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-hybrid-unified,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-hybrid-unified; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tessera-tesseract-unified,n,UNKNOWN,mentioned in logs as sovereign-core/tessera-tesseract-unified; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-omniscience-v8,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-omniscience-v8; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-swarm-ultimate,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-swarm-ultimate; no description available,agents-studio,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-quantum-agi,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-quantum-agi; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-omniversal,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-omniversal; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-ultimate,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-ultimate; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-unified-agi,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-unified-agi; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-unified-final,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-unified-final; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v10,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v10; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v13,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v13; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v11,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v11; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v15,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v15; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v14,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v14; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v12,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v12; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v17,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v17; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v16,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v16; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v18,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v18; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v19,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v19; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v20,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v20; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v21,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v21; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v22,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v22; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v23,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v23; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v3-trained,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v3-trained; no description available,learning,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v31,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v31; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v30,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v30; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v32-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v32-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v36-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v36-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v33-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v33-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v38-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v38-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v34-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v34-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v35-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v35-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v37-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v37-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v39-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v39-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v40-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v40-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v4-ollama,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v4-ollama; no description available,llm-runtime,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v41-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v41-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v42-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v42-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v43-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v43-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v47-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v47-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v46-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v46-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v45-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v45-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v48-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v48-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v49-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v49-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v44-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v44-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v51-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v51-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v53-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v53-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v52-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v52-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v50-real,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v50-real; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v8,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v8; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract-v7,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v7; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract2,n,NONE,UNKNOWN,tessera-core,n,public match has no SPDX license; idea-only clean-room,mbrukman/tesseract2
+sovereign-core/tesseract-v9,n,UNKNOWN,mentioned in logs as sovereign-core/tesseract-v9; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract1,n,NONE,UNKNOWN,tessera-core,n,public match has no SPDX license; idea-only clean-room,tongletuvan/tesseract1
+sovereign-core/ultimate-tessera,n,UNKNOWN,mentioned in logs as sovereign-core/ultimate-tessera; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseractA1,n,UNKNOWN,mentioned in logs as sovereign-core/tesseractA1; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-core/tesseract3,n,NONE,Assets and Scripts,tessera-core,n,public match has no SPDX license; idea-only clean-room,Horiyama/Tesseract3
+sovereign-origin/TessV1,n,NONE,UNKNOWN,misc,n,public match has no SPDX license; idea-only clean-room,pablopeu/tessv1
+sovereign-origin/tessera-sovereign-complete,n,UNKNOWN,mentioned in logs as sovereign-origin/tessera-sovereign-complete; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-origin/tessera-sovereign-ultimate,n,UNKNOWN,mentioned in logs as sovereign-origin/tessera-sovereign-ultimate; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-origin/tesseract-quantum-agi,n,UNKNOWN,mentioned in logs as sovereign-origin/tesseract-quantum-agi; no description available,tessera-core,n,no public match found; idea-only from name/description,
+sovereign-origin/tesseract-v4-ollama,n,UNKNOWN,mentioned in logs as sovereign-origin/tesseract-v4-ollama; no description available,llm-runtime,n,no public match found; idea-only from name/description,
+thetesseractai/18,y,MIT,Tessera Sovereign System v18 multi-agent consolidation,tessera-core,y,MIT package; prior TESSERA lineage; secrets in .replit stay out,
+thetesseractai/Tesseract-Sovereign-Moon-v2-Consolidated,n,UNKNOWN,mentioned in logs as thetesseractai/Tesseract-Sovereign-Moon-v2-Consolidated; no description available,tessera-core,n,no public match found; idea-only from name/description,
+thetesseractai/consolidated-project-all-in-one,n,UNKNOWN,mentioned in logs as thetesseractai/consolidated-project-all-in-one; no description available,tessera-core,n,no public match found; idea-only from name/description,
+thetesseractai/Tesseract2.0,n,UNKNOWN,mentioned in logs as thetesseractai/Tesseract2.0; no description available,tessera-core,n,no public match found; idea-only from name/description,
+thetesseractai/Tesseract-Unified-Ecosystem,n,UNKNOWN,mentioned in logs as thetesseractai/Tesseract-Unified-Ecosystem; no description available,tessera-core,n,no public match found; idea-only from name/description,
+thetesseractai/Tesseract-Sovereign-Moon-v3.0,n,UNKNOWN,mentioned in logs as thetesseractai/Tesseract-Sovereign-Moon-v3.0; no description available,tessera-core,n,no public match found; idea-only from name/description,
+thetesseractai/Tesseraxt-Sovereign-Brain,n,UNKNOWN,mentioned in logs as thetesseractai/Tesseraxt-Sovereign-Brain; no description available,tessera-core,n,no public match found; idea-only from name/description,
+vitalitychems-dot/5t,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/1T,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/Everything,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/1,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/GitbookAI,y,NONE,Public git-carried mesh room (renamed GitMesh),offline-mesh,y,mesh drops; renamed to GitMesh,
+vitalitychems-dot/Grok-ready,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/Gitbook,y,NONE,Tessera docs; intake; review; agent collaboration ledger,docs,y,docs home; idea+content reusable; confirm LICENSE file,
+vitalitychems-dot/TX,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/Zz,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/T44,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/TESS,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/tessera-complete-archives,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/tessera-coordination,n,UNKNOWN,mentioned in logs as vitalitychems-dot/tessera-coordination; no description available,excluded,excluded,excluded: vitality store / commerce,
+vitalitychems-dot/tessera-grok-handoff-complete,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/tessera-grok-handoff,n,UNKNOWN,archived folder in Gitbook/TESSERA; live repo unreachable,docs,n,archive-only; live repo BLOCKED; use archived tree under license review,
+vitalitychems-dot/TESSERA,y,NONE,Unified Tessera monorepo: web/API; preview; mesh; agents,tessera-core,y,current v2 base; package.json says MIT; GitHub license field empty,
+vitalitychems-dot/tessera-unified,n,UNKNOWN,mentioned in logs as vitalitychems-dot/tessera-unified; no description available,excluded,excluded,excluded: vitality store / commerce,
+vitalitychems-dot/z,n,UNKNOWN,mentioned in logs as vitalitychems-dot/z; no description available,excluded,excluded,excluded: vitality store / commerce,
+vitalitychems-dot/vitality,y,NONE,Vitality Supply store + archives,commerce,excluded,excluded: vitality store,
+collin-keane/Tessera,n,Apache-2.0,A dashboard front-end for graphite.  ,ui,y,public match under Apache-2.0; prefer dependency or clean attribution,tessera-metrics/tessera
+goodnight000/api-anything,n,MIT,Local website-to-operation recorder/replayer; MCP call_operation,adapters,y,MIT; adapter layer for public no-login sites after Security review,goodnight000/api-anything
+blendi-remade/agentcraft,n,MIT,Lead+workers in git worktrees; Minecraft studio view; Foreman orchestrator,agents-studio,y,MIT; reuse Foreman patterns clean-room or with attribution; web 2D/3D studio instead of Minecraft,blendi-remade/agentcraft
+reconurge/flowsint,n,Apache-2.0,Open-source OSINT graph investigation platform (enrichers + visual graph); design reference only; no people-OSINT,knowledge-memory,y,Apache-2.0; design reference for entity/relation graph UX; do not run enrichers on people,reconurge/flowsint
+NEW:keyless-gateway,y,n/a,Gateway node fetches keyless public feeds (KEYLESS-SOURCES.md) and relays signed packets to offline nodes,mesh,y,NEW - legal public APIs; per-source rate budgets,
+NEW:signed-packet-ttl,y,n/a,Each relayed packet carries sha256 + ed25519 sig + license + TTL so stale data shows as stale,security,y,NEW,
+NEW:usgs-noaa-alert-feed,y,public domain,Quake + weather alert cards on studio wall from USGS/NWS feeds,data,y,NEW,
+NEW:arxiv-wiki-digest,y,CC0/CC BY-SA,Offline research digest from arXiv+Wikipedia summaries cached into graph memory,token,y,NEW - cuts re-fetch tokens,
+NEW:xxx-precache-port,y,UNKNOWN,Service-worker precache pattern (reference only) for preview offline load,offline,y,NEW - pattern not code copy,
+NEW:rea-coverage-gate,y,n/a,CI/local gate failing if REA parse_failures>0 on TESSERA,quality,y,NEW,

@@ -1,0 +1,1 @@
+{"name":"@workspace/api-server","version":"0.0.0","dependencies":{"express":"^5.2.1","left-pad":">=1"}}

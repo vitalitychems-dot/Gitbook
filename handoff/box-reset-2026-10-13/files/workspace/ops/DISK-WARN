@@ -1,0 +1,5 @@
+2026-10-13T06:06:35-05:00 WARN disk 93% free 10G -> aggressive
+2026-10-13T06:06:38-05:00 STILL 93% after clean (free 10G) - needs list for Father
+2026-10-13T06:06:46-05:00 WARN disk 93% free 10G -> aggressive
+2026-10-13T06:06:50-05:00 STILL 93% after clean (free 10G) - needs list for Father
+2026-10-13T06:08:34-05:00 WARN disk 92% free 11G -> aggressive

@@ -1,0 +1,4 @@
+505c505
+< +- [`history/coordination/`](../../history/coordination/) — merged records from the deleted tessera-coordination repo (PEN.md, COORDINATION.md, COMMAND.md); STATUS.md is at [`history/recovered/coordination/STATUS.md`](../../history/recovered/coordination/STATUS.md)
+---
+> +- Merged records from the deleted tessera-coordination repo, in [`history/coordination/`](../../history/coordination/)

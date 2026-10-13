@@ -1,0 +1,128 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Tessera's Eye v3</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data: blob: https://gibs.earthdata.nasa.gov; connect-src 'none'">
+<style>body{margin:0;background:#000;color:#cde;font:12px system-ui;overflow:hidden}canvas{display:block;touch-action:none}
+#p{position:absolute;top:8px;left:8px;background:#0b1626d0;padding:8px;border-radius:6px;width:270px;max-height:92vh;overflow:auto}
+#info{position:absolute;top:8px;right:8px;background:#0b1626e0;padding:8px;border-radius:6px;width:300px;white-space:pre-wrap}
+#bar{position:absolute;bottom:8px;left:8px;right:8px;background:#0b1626d0;padding:6px;border-radius:6px;display:flex;gap:8px;align-items:center}
+#bar input[type=range]{flex:1}h3{margin:2px 0 6px}label{display:block}input[type=search]{width:95%}
+a{color:#8cf}.sw{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:4px}</style></head><body>
+<canvas id="c"></canvas>
+<div id="p"><h3>Tessera's Eye v3</h3><div id="lay"></div>
+<label>Tilt <input id="tilt" type="range" min="0" max="70" value="0"></label>
+<label><input type="checkbox" id="online"> Online imagery (NASA GIBS for slider date)</label>
+<div id="kp"></div><div id="cones"></div>
+<h3>Harvard Dataverse (entries only)</h3><input type="search" id="dvq" placeholder="search datasets"><div id="dv"></div>
+<div style="opacity:.6;margin-top:6px">Public open data only. No cameras, ALPR, people, aircraft or ship tracks.</div><div id="perf"></div></div>
+<div id="info">Click a satellite, event or the globe to inspect. Drag rotate, wheel/pinch zoom, right-drag or slider tilt.</div>
+<div id="bar"><button id="play">▶</button><input id="time" type="range" min="0" max="1440" value="720"><span id="tl"></span></div>
+<script>
+const D=/*DATA*/null;
+const C=document.getElementById('c'),gl=C.getContext('webgl',{preserveDrawingBuffer:true,antialias:true});
+const R=Math.PI/180,T0=Date.parse(D.t0);
+let cam={lat:20,lon:-40,dist:3.2,tilt:0},sel=null,mins=720;
+const L={sats:{on:1,col:[.6,.9,1],name:'Satellites (CelesTrak SGP4)'},quake:{on:1,col:[1,.35,.2],name:'Earthquakes (USGS)'},
+ natural:{on:1,col:[1,.8,.2],name:'Natural events (EONET)'},alert:{on:1,col:[1,.2,.8],name:'Weather alerts (NWS)'},
+ weather:{on:1,col:[.3,1,.5],name:'Weather (Open-Meteo)'},fires:{on:1,col:[1,.55,0],name:'Fires (FIRMS, 1° counts)'},heat:{on:1,col:[1,0,0],name:'Simons heat map (90d M4.5+)'}};
+const kindMap=k=>k=='earthquake'?'quake':k=='weather'?'weather':(k=='alert'||k=='weather_alert'||k=='severe_weather')?'alert':'natural';
+lay.innerHTML=Object.entries(L).map(([k,v])=>`<label><input type=checkbox data-k=${k} checked><span class=sw style="background:rgb(${v.col.map(c=>c*255|0)})"></span>${v.name}</label>`).join('');
+lay.onchange=e=>{L[e.target.dataset.k].on=e.target.checked;dirty=1};
+// matrices (column-major)
+function mul(a,b){const o=new Float32Array(16);for(let i=0;i<4;i++)for(let j=0;j<4;j++){let s=0;for(let k=0;k<4;k++)s+=a[k*4+j]*b[i*4+k];o[i*4+j]=s}return o}
+function persp(f,a,n,fa){const t=1/Math.tan(f/2);return new Float32Array([t/a,0,0,0,0,t,0,0,0,0,(fa+n)/(n-fa),-1,0,0,2*fa*n/(n-fa),0])}
+function tr(x,y,z){return new Float32Array([1,0,0,0,0,1,0,0,0,0,1,0,x,y,z,1])}
+function rx(a){const c=Math.cos(a),s=Math.sin(a);return new Float32Array([1,0,0,0,0,c,s,0,0,-s,c,0,0,0,0,1])}
+function ry(a){const c=Math.cos(a),s=Math.sin(a);return new Float32Array([c,0,-s,0,0,1,0,0,s,0,c,0,0,0,0,1])}
+function xyz(la,lo,r=1){la*=R;lo*=R;return[r*Math.cos(la)*Math.sin(lo),r*Math.sin(la),r*Math.cos(la)*Math.cos(lo)]}
+function view(){return mul(tr(0,0,-(cam.dist-1)),mul(rx(cam.tilt*R),mul(tr(0,0,-1),mul(rx(cam.lat*R),ry(-cam.lon*R)))))}
+function camPos(V){// inverse of rigid transform: -R^T t
+ const t=[V[12],V[13],V[14]];return[0,1,2].map(i=>-(V[i*4]*t[0]+V[i*4+1]*t[1]+V[i*4+2]*t[2]))}
+function sh(vs,fs){const p=gl.createProgram();for(const[t,s]of[[gl.VERTEX_SHADER,vs],[gl.FRAGMENT_SHADER,fs]]){const x=gl.createShader(t);gl.shaderSource(x,s);gl.compileShader(x);if(!gl.getShaderParameter(x,gl.COMPILE_STATUS))throw gl.getShaderInfoLog(x);gl.attachShader(p,x)}gl.linkProgram(p);return p}
+const G=sh(`attribute vec3 p;attribute vec2 uv;uniform mat4 M;varying vec2 v;varying vec3 n;void main(){v=uv;n=p;gl_Position=M*vec4(p,1);}`,
+`precision mediump float;varying vec2 v;varying vec3 n;uniform sampler2D tex,ht;uniform float hon;void main(){vec3 c=max(texture2D(tex,v).rgb,vec3(.04,.07,.13));vec4 h=texture2D(ht,v);c=mix(c,h.rgb,h.a*hon*.6);gl_FragColor=vec4(c*(.55+.45*max(dot(normalize(n),normalize(vec3(.4,.5,1.))),0.)),1);}`);
+const P=sh(`attribute vec3 p;attribute vec3 c;attribute float s;uniform mat4 M;varying vec3 vc;void main(){vc=c;gl_Position=M*vec4(p,1);gl_PointSize=s;}`,
+`precision mediump float;varying vec3 vc;void main(){vec2 d=gl_PointCoord-.5;if(dot(d,d)>.25)discard;gl_FragColor=vec4(vc,1);}`);
+// sphere
+const sv=[],si=[],NB=64,NL=128;for(let i=0;i<=NB;i++)for(let j=0;j<=NL;j++){const la=90-180*i/NB,lo=-180+360*j/NL;sv.push(...xyz(la,lo),j/NL,i/NB)}
+for(let i=0;i<NB;i++)for(let j=0;j<NL;j++){const a=i*(NL+1)+j,b=a+NL+1;si.push(a,b,a+1,b,b+1,a+1)}
+const sb=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,sb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(sv),gl.STATIC_DRAW);
+const ib=gl.createBuffer();gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);gl.bufferData(gl.ELEMENT_ARRAY_BUFFER,new Uint16Array(si),gl.STATIC_DRAW);
+function texFrom(img){const t=gl.createTexture();gl.bindTexture(gl.TEXTURE_2D,t);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,img);
+ [gl.TEXTURE_WRAP_S,gl.TEXTURE_WRAP_T].forEach(w=>gl.texParameteri(gl.TEXTURE_2D,w,gl.CLAMP_TO_EDGE));gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);return t}
+let tex=texFrom(new ImageData(new Uint8ClampedArray([10,30,60,255]),1,1)),baseTex=null;
+const bi=new Image();bi.onload=()=>{baseTex=tex=texFrom(bi);dirty=1};bi.src='data:image/jpeg;base64,%%IMG%%';
+// heat texture 36x18
+const hc=document.createElement('canvas');hc.width=36;hc.height=18;const hx=hc.getContext('2d');const hm=Math.max(...D.heat.flat());
+D.heat.forEach((row,la)=>row.forEach((v,lo)=>{const a=v/hm;hx.fillStyle=`rgba(255,${(1-a)*200|0},0,${a})`;hx.fillRect(lo,17-la,1,1)}));
+const htex=texFrom(hc);
+const pb=gl.createBuffer(),lb=gl.createBuffer();let pts=[],npts=0,nl=0;
+function tnow(){return T0+(mins-720)*60000}
+function frame(){const k=Math.round((mins-720)/120);return Math.max(0,Math.min(D.steps.length-1,D.steps.indexOf(k*2)))}
+function rebuild(){pts=[];const f=frame(),tn=tnow();
+ if(L.sats.on)for(const s of D.sats){const la=s.p[f*3],lo=s.p[f*3+1],al=s.p[f*3+2];pts.push({x:xyz(la,lo,1+Math.min(al,60000)/6371),c:s===sel?[1,1,1]:L.sats.col,s:s===sel?7:2,o:s,ty:'sat',la,lo,al})}
+ if(L.fires.on)for(const[la,lo,n]of D.fires)pts.push({x:xyz(la,lo,1.002),c:L.fires.col,s:2+Math.min(n,40)/8,o:{la,lo,n},ty:'fire'});
+ for(const e of D.events){const k=kindMap(e.k);if(!L[k].on)continue;const t=e.tm?Date.parse(e.tm):T0;if(t>tn||t<tn-7*864e5&&k=='quake')continue;
+  pts.push({x:xyz(e.la,e.lo,1.003),c:L[k].col,s:3+(e.sv||.3)*9,o:e,ty:k})}
+ const a=new Float32Array(pts.length*7);pts.forEach((p,i)=>a.set([...p.x,...p.c,p.s*devicePixelRatio],i*7));
+ gl.bindBuffer(gl.ARRAY_BUFFER,pb);gl.bufferData(gl.ARRAY_BUFFER,a,gl.DYNAMIC_DRAW);npts=pts.length;
+ // orbit of selected satellite: two-body from mean elements, rotated by GMST (display approximation; dots are SGP4)
+ const ol=[];if(sel){const[n,e,i,raan,w,M0,ep]=sel.el,mu=398600.4418,nr=n*2*Math.PI/86400,a=Math.cbrt(mu/nr/nr),te=Date.parse(ep+'Z');
+  for(let j=0;j<=240;j++){const t=tn+(j/240)*(86400/n)*1000,dtt=(t-te)/1000;let M=(M0*R+nr*dtt)%(2*Math.PI),E=M;for(let q=0;q<8;q++)E=M+e*Math.sin(E);
+   const nu=2*Math.atan2(Math.sqrt(1+e)*Math.sin(E/2),Math.sqrt(1-e)*Math.cos(E/2)),r=a*(1-e*Math.cos(E)),u=nu+w*R,O=raan*R,I=i*R;
+   const x=r*(Math.cos(O)*Math.cos(u)-Math.sin(O)*Math.sin(u)*Math.cos(I)),y=r*(Math.sin(O)*Math.cos(u)+Math.cos(O)*Math.sin(u)*Math.cos(I)),z=r*Math.sin(u)*Math.sin(I);
+   const jd=t/864e5+2440587.5,tt=(jd-2451545)/36525,th=((67310.54841+(876600*3600+8640184.812866)*tt)%86400)/240*R;
+   const xe=x*Math.cos(th)+y*Math.sin(th),ye=-x*Math.sin(th)+y*Math.cos(th);const la=Math.atan2(z,Math.hypot(xe,ye))/R,lo=Math.atan2(ye,xe)/R;
+   ol.push(...xyz(la,lo,Math.sqrt(x*x+y*y+z*z)/6371),1,1,1,1)}}
+ gl.bindBuffer(gl.ARRAY_BUFFER,lb);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array(ol),gl.DYNAMIC_DRAW);nl=ol.length/7;
+ tl.textContent=new Date(tn).toISOString().slice(0,16)+'Z  ('+((mins-720)/60).toFixed(1)+'h)  sat frame '+(D.steps[frame()]>=0?'+':'')+D.steps[frame()]+'h';
+ const kp=D.kp.filter(r=>Date.parse(r[0]+'Z')<=tn).pop();document.getElementById('kp').innerHTML='<h3>Kp (NOAA SWPC)</h3>'+(kp?kp[1].toFixed(2)+' at '+kp[0]:'n/a');
+ dirty=1}
+document.getElementById('cones').innerHTML='<h3>Quake-count cones (tesseract)</h3>'+[...new Set(D.cones.map(c=>c[0]))].map(d=>{const g=n=>(D.cones.find(c=>c[0]==d&&c[1]==n)||[,,'?'])[2];return `${d}: ${g('p10')} / <b>${g('p50')}</b> / ${g('p90')}`}).join('<br>');
+let M;function draw(){const w=innerWidth,h=innerHeight;if(C.width!=w*devicePixelRatio){C.width=w*devicePixelRatio;C.height=h*devicePixelRatio;C.style.width=w+'px';C.style.height=h+'px'}
+ gl.viewport(0,0,C.width,C.height);gl.clearColor(0,0,.02,1);gl.clear(16640);gl.enable(gl.DEPTH_TEST);
+ M=mul(persp(45*R,w/h,.01,100),view());
+ gl.useProgram(G);gl.bindBuffer(gl.ARRAY_BUFFER,sb);gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER,ib);
+ let a=gl.getAttribLocation(G,'p'),b=gl.getAttribLocation(G,'uv');gl.enableVertexAttribArray(a);gl.vertexAttribPointer(a,3,gl.FLOAT,0,20,0);gl.enableVertexAttribArray(b);gl.vertexAttribPointer(b,2,gl.FLOAT,0,20,12);
+ gl.uniformMatrix4fv(gl.getUniformLocation(G,'M'),0,M);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,tex);gl.uniform1i(gl.getUniformLocation(G,'tex'),0);
+ gl.activeTexture(gl.TEXTURE1);gl.bindTexture(gl.TEXTURE_2D,htex);gl.uniform1i(gl.getUniformLocation(G,'ht'),1);gl.uniform1f(gl.getUniformLocation(G,'hon'),L.heat.on?1:0);
+ gl.drawElements(gl.TRIANGLES,si.length,gl.UNSIGNED_SHORT,0);gl.disableVertexAttribArray(b);
+ gl.useProgram(P);gl.uniformMatrix4fv(gl.getUniformLocation(P,'M'),0,M);
+ const ap=gl.getAttribLocation(P,'p'),ac=gl.getAttribLocation(P,'c'),as=gl.getAttribLocation(P,'s');[ap,ac,as].forEach(x=>gl.enableVertexAttribArray(x));
+ for(const[buf,n,mode]of[[pb,npts,gl.POINTS],[lb,nl,gl.LINE_STRIP]]){if(!n)continue;gl.bindBuffer(gl.ARRAY_BUFFER,buf);gl.vertexAttribPointer(ap,3,gl.FLOAT,0,28,0);gl.vertexAttribPointer(ac,3,gl.FLOAT,0,28,12);gl.vertexAttribPointer(as,1,gl.FLOAT,0,28,24);gl.drawArrays(mode,0,n)}
+ [ap,ac,as].forEach(x=>gl.disableVertexAttribArray(x))}
+let dirty=1,ft=[];function loop(t){if(dirty){const s=performance.now();draw();gl.finish();ft.push(performance.now()-s);dirty=0;
+ {const m=ft.slice(-20).sort((a,b)=>a-b)[Math.floor(Math.min(ft.length,20)/2)];perf.textContent=`points ${npts}, median draw ${m.toFixed(2)} ms`;perf.dataset.ms=m}}requestAnimationFrame(loop)}
+// interaction
+let drag=null,moved=0;const ptrs=new Map();
+C.addEventListener('contextmenu',e=>e.preventDefault());
+C.onpointerdown=e=>{C.setPointerCapture(e.pointerId);ptrs.set(e.pointerId,[e.clientX,e.clientY]);drag={x:e.clientX,y:e.clientY,b:e.button||(e.shiftKey?2:0)};moved=0};
+C.onpointermove=e=>{if(!drag)return;const prev=ptrs.get(e.pointerId);ptrs.set(e.pointerId,[e.clientX,e.clientY]);
+ if(ptrs.size==2&&prev){const[p1,p2]=[...ptrs.values()];const d1=Math.hypot(p1[0]-p2[0],p1[1]-p2[1]);if(drag.pd)zoom(drag.pd/d1);drag.pd=d1;moved=9;return}
+ const dx=e.clientX-drag.x,dy=e.clientY-drag.y;drag.x=e.clientX;drag.y=e.clientY;moved+=Math.abs(dx)+Math.abs(dy);const k=(cam.dist-1)*0.12;
+ if(drag.b==2){cam.tilt=Math.max(0,Math.min(70,cam.tilt+dy*.3));tilt.value=cam.tilt}else{cam.lon-=dx*k;cam.lat=Math.max(-89,Math.min(89,cam.lat+dy*k))}dirty=1};
+C.onpointerup=e=>{ptrs.delete(e.pointerId);if(moved<4)pick(e.clientX,e.clientY);if(!ptrs.size)drag=null};
+function zoom(f){cam.dist=Math.max(1.05,Math.min(12,1+(cam.dist-1)*f));dirty=1}
+C.onwheel=e=>{e.preventDefault();zoom(Math.exp(e.deltaY*.001))};
+tilt.oninput=()=>{cam.tilt=+tilt.value;dirty=1};
+function occluded(p,c){const d=[p[0]-c[0],p[1]-c[1],p[2]-c[2]],A=d[0]**2+d[1]**2+d[2]**2,B=2*(c[0]*d[0]+c[1]*d[1]+c[2]*d[2]),Cc=c[0]**2+c[1]**2+c[2]**2-1,disc=B*B-4*A*Cc;if(disc<0)return false;const t=(-B-Math.sqrt(disc))/(2*A);return t>0&&t<.999}
+function proj(p){const x=M[0]*p[0]+M[4]*p[1]+M[8]*p[2]+M[12],y=M[1]*p[0]+M[5]*p[1]+M[9]*p[2]+M[13],w=M[3]*p[0]+M[7]*p[1]+M[11]*p[2]+M[15];return[(x/w+1)/2*innerWidth,(1-y/w)/2*innerHeight,w]}
+function pick(sx,sy){const c=camPos(view());let best=null,bd=10;for(const p of pts){const q=proj(p.x);if(q[2]<=0)continue;const d=Math.hypot(q[0]-sx,q[1]-sy);if(d<bd&&!occluded(p.x,c)){bd=d;best=p}}
+ if(best){const o=best.o;if(best.ty=='sat'){sel=o;info.textContent=`SATELLITE\n${o.n}\nNORAD ${o.id}\nOrbit class ${o.c}\nlat ${best.la} lon ${best.lo} alt ${best.al} km\nperiod ${(1440/o.el[0]).toFixed(1)} min, incl ${o.el[2]}°\nelements epoch ${o.el[6]}\nSource: CelesTrak GP, SGP4`}
+  else if(best.ty=='fire')info.textContent=`FIRE DETECTIONS (1° cell)\n${o.la}, ${o.lo}: ${o.n} hotspots / 24h\nSource: NASA FIRMS MODIS`;
+  else{info.textContent=`${best.ty.toUpperCase()}\n${o.t}\n${o.tm||''}\nsource ${o.s}`;if(o.cite){const a=document.createElement('a');a.href=o.cite;a.textContent='\ncitation';a.target='_blank';info.append(a)}}rebuild();return}
+ // globe hit -> lat/lon + heat cell
+ const inv=Math.tan(22.5*R),nx=(sx/innerWidth*2-1)*inv*innerWidth/innerHeight,ny=(1-sy/innerHeight*2)*inv,V=view();
+ const dir=[0,1,2].map(i=>V[i*4]*nx+V[i*4+1]*ny-V[i*4+2]);const B=2*(c[0]*dir[0]+c[1]*dir[1]+c[2]*dir[2]),A=dir.reduce((s,v)=>s+v*v,0),Cc=c.reduce((s,v)=>s+v*v,0)-1,disc=B*B-4*A*Cc;
+ if(disc<0){info.textContent='(space)';return}const t=(-B-Math.sqrt(disc))/(2*A),h=c.map((v,i)=>v+t*dir[i]);const la=Math.asin(h[1])/R,lo=Math.atan2(h[0],h[2])/R;
+ const hv=D.heat[Math.min(17,Math.floor((la+90)/10))][Math.min(35,Math.floor((lo+180)/10))];
+ info.textContent=`GROUND ${la.toFixed(2)}, ${lo.toFixed(2)}\nSimons heat (90d M4.5+ in 10° cell): ${Math.round(Math.expm1(hv))} quakes\nwindow ${D.heat_window.join(' to ')}`}
+// time slider + online imagery
+let playing=0;time.oninput=()=>{mins=+time.value;rebuild();if(online.checked)loadOnline()};
+play.onclick=()=>{playing=!playing;play.textContent=playing?'⏸':'▶'};setInterval(()=>{if(playing){mins=(mins+10)%1441;time.value=mins;rebuild()}},100);
+function loadOnline(){const d=new Date(tnow()-864e5).toISOString().slice(0,10),im=new Image();im.crossOrigin='anonymous';
+ im.onload=()=>{if(online.checked){tex=texFrom(im);dirty=1}};im.src='https://gibs.earthdata.nasa.gov/wms/epsg4326/best/wms.cgi?SERVICE=WMS&REQUEST=GetMap&VERSION=1.3.0&LAYERS=MODIS_Terra_CorrectedReflectance_TrueColor&CRS=EPSG:4326&BBOX=-90,-180,90,180&WIDTH=2048&HEIGHT=1024&FORMAT=image/jpeg&TIME='+d}
+online.onchange=()=>{if(online.checked)loadOnline();else{tex=baseTex||tex;dirty=1}};
+// dataverse list
+function dvr(){const q=dvq.value.toLowerCase();dv.innerHTML=D.dataverse.filter(x=>(x.title+x.desc+x.subj).toLowerCase().includes(q)).slice(0,30).map(x=>`<div>• <a href="${x.url}" target=_blank>${x.title.replace(/</g,'&lt;')}</a> <i>${x.pub}</i></div>`).join('')}
+dvq.oninput=dvr;dvr();
+addEventListener('resize',()=>dirty=1);rebuild();requestAnimationFrame(loop);
+</script></body></html>

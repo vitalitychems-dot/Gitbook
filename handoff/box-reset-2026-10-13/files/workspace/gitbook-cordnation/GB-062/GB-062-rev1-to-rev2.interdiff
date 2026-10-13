@@ -1,0 +1,20 @@
+--- a/merge/CONSOLIDATION-MAP-2026-10-12.md
++++ b/merge/CONSOLIDATION-MAP-2026-10-12.md
+@@ -12,7 +12,7 @@
+ 
+ ## Repository map
+ 
+-The connected GitHub account lists four repositories under `vitalitychems-dot`. A second owner name was searched and returned no repositories visible to this account.
++The connected GitHub account lists four repositories under `vitalitychems-dot`. A second owner name was searched and returned no repositories visible to this account. The Origin repository under that login is still a gap until Father connects it.
+ 
+ | Repository | Visibility | Purpose | Last push (CT) | Destination | Owner on the board |
+ |---|---|---|---|---|---|
+@@ -23,6 +23,8 @@
+ 
+ The older sources named in the backlog (`Grok-ready`, `Zz`, `1`, `5t`, `T44`, `TESS`, `olive-giant-ever-glade` and the archive repositories) are no longer listed under this account. Their routing and verdicts stay recorded in the 2026-10-07 record and in HYB-006 to HYB-009 and HYB-017. `1T` stays protected and unopened under HYB-011.
+ 
++Father said the nested archives inside TESSERA and Gitbook are the rest of the inventory.
++
+ ## Local research and brain work not yet in Gitbook
+ 
+ These items sit on the shared work machine. None is in Gitbook main as its own page.

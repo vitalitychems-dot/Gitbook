@@ -1,0 +1,446 @@
+{
+  "title": "Tessera Brain v0 (blueprint)",
+  "honesty": "Software architecture graph inspired by connectome statistics. Not a living brain. Does not train model weights.",
+  "version": "0.1.0",
+  "created_ct": "2026-10-05 ~19:15 CT",
+  "labels": {
+    "architecture": "GOAL",
+    "stats_matched": "TESTED+REPORTED",
+    "weights_measured": "TESTED where cited"
+  },
+  "connectome_match": {
+    "primary_sample": "C. elegans OpenWorm connectome tables (TESTED)",
+    "celegans_avg_clustering": 0.34922795169024184,
+    "celegans_modularity_greedy": 0.4064110521860221,
+    "celegans_degree_mean": 16.02006688963211,
+    "celegans_rich_club_phi_median_k": 0.1249087686372641,
+    "celegans_path_length_lcc": 2.700186303337748,
+    "flywire_published_clustering": 0.0463,
+    "flywire_published_rich_club_fraction": 0.3,
+    "design_intent": "Small Tessera graph (~16 nodes) uses high clustering among gate/admin hubs (rich-club), modular communities (sensory/memory/cortex/gates/motor), and short paths via thalamus hub \u2014 matching C.elegans small-world/modularity pattern at architecture scale. Synaptic-scale FlyWire clustering (~0.046) is literature context only; not copied onto this tiny graph."
+  },
+  "measured_tessera_weights": {
+    "gitbook_quiz_alone": {
+      "correct": 7,
+      "n": 25,
+      "acc": 0.28,
+      "source": "/workspace/evals/BASELINE-LOCAL.md",
+      "label": "TESTED"
+    },
+    "gitbook_quiz_bm25": {
+      "correct": 18,
+      "n": 25,
+      "acc": 0.72,
+      "source": "/workspace/evals/BASELINE-LOCAL.md",
+      "label": "TESTED"
+    },
+    "retrieval_delta": 0.43999999999999995,
+    "learning_rate_train_init_acc": {
+      "acc": 0.8,
+      "n": 25,
+      "source": "/workspace/learning-rate/results/learning_curve.json",
+      "label": "TESTED"
+    },
+    "lesson_consolidation": {
+      "before": 19,
+      "after": 2,
+      "source": "/workspace/learning-rate/results/consolidation.json",
+      "label": "TESTED"
+    }
+  },
+  "nodes": [
+    {
+      "id": "sensory_intake",
+      "name": "Sensory intake",
+      "tessera": "User + Gitbook MCP input",
+      "region": "sensory",
+      "role": "ingest",
+      "x": 0.12,
+      "y": 0.55
+    },
+    {
+      "id": "thalamus_router",
+      "name": "Thalamus-like router",
+      "tessera": "route_task router",
+      "region": "thalamus",
+      "role": "route",
+      "x": 0.32,
+      "y": 0.5
+    },
+    {
+      "id": "hippocampus_learning_memory",
+      "name": "Hippocampus-like memory",
+      "tessera": "artifacts/api-server/src/lib/memory (+ BM25/lessons)",
+      "region": "memory",
+      "role": "store_recall",
+      "x": 0.48,
+      "y": 0.72
+    },
+    {
+      "id": "cortex_reasoning",
+      "name": "Cortex reasoning",
+      "tessera": "Ollama qwen2.5:3b / reasoning model",
+      "region": "cortex",
+      "role": "reason",
+      "x": 0.62,
+      "y": 0.42
+    },
+    {
+      "id": "prefrontal_tessera_admin",
+      "name": "Prefrontal / Tessera admin",
+      "tessera": "Tessera admin lane",
+      "region": "prefrontal",
+      "role": "policy",
+      "x": 0.72,
+      "y": 0.28
+    },
+    {
+      "id": "creator_model",
+      "name": "Creator model",
+      "tessera": "Father preference pack (PRIVATE)",
+      "region": "creator",
+      "role": "preference_mirror",
+      "x": 0.86,
+      "y": 0.18,
+      "privacy": "PRIVATE Gitbook only"
+    },
+    {
+      "id": "immune_security",
+      "name": "Immune / safety",
+      "tessera": "Security lane",
+      "region": "immune",
+      "role": "gate_security",
+      "x": 0.55,
+      "y": 0.18
+    },
+    {
+      "id": "error_build",
+      "name": "Error-check Build",
+      "tessera": "Build lane",
+      "region": "error",
+      "role": "verify",
+      "x": 0.4,
+      "y": 0.22
+    },
+    {
+      "id": "error_moderator",
+      "name": "Error-check Moderator",
+      "tessera": "Moderator lane",
+      "region": "error",
+      "role": "review",
+      "x": 0.28,
+      "y": 0.28
+    },
+    {
+      "id": "cordnation",
+      "name": "Gitbook Cordnation",
+      "tessera": "Gitbook Cordnation lane",
+      "region": "association",
+      "role": "intake_org",
+      "x": 0.22,
+      "y": 0.62
+    },
+    {
+      "id": "command_center",
+      "name": "Command Center",
+      "tessera": "Command Center / digest",
+      "region": "association",
+      "role": "digest",
+      "x": 0.78,
+      "y": 0.55
+    },
+    {
+      "id": "mesh_cloud",
+      "name": "Mesh Cloud",
+      "tessera": "Mesh Cloud lane",
+      "region": "association",
+      "role": "ops",
+      "x": 0.68,
+      "y": 0.68
+    },
+    {
+      "id": "historical_analysis",
+      "name": "Historical Analysis Collab",
+      "tessera": "Historical Analysis lane",
+      "region": "association",
+      "role": "history",
+      "x": 0.52,
+      "y": 0.82
+    },
+    {
+      "id": "knowledge_packs",
+      "name": "Knowledge packs",
+      "tessera": "Gitbook knowledge + knowledge-lab packs",
+      "region": "knowledge",
+      "role": "corpus",
+      "x": 0.35,
+      "y": 0.78
+    },
+    {
+      "id": "research_theories",
+      "name": "Research / theories",
+      "tessera": "knowledge-lab research (GOAL connections)",
+      "region": "knowledge",
+      "role": "explore",
+      "x": 0.2,
+      "y": 0.78
+    },
+    {
+      "id": "motor_output",
+      "name": "Motor / output",
+      "tessera": "PRs + Father digest delivery",
+      "region": "motor",
+      "role": "act",
+      "x": 0.88,
+      "y": 0.48
+    }
+  ],
+  "edges": [
+    {
+      "source": "sensory_intake",
+      "target": "thalamus_router",
+      "weight": 0.9,
+      "kind": "excitatory",
+      "rationale": "Primary intake routing (architecture)"
+    },
+    {
+      "source": "sensory_intake",
+      "target": "cordnation",
+      "weight": 0.7,
+      "kind": "excitatory",
+      "rationale": "Gitbook MCP / Cordnation intake"
+    },
+    {
+      "source": "cordnation",
+      "target": "thalamus_router",
+      "weight": 0.65,
+      "kind": "excitatory",
+      "rationale": "Organized tasks enter router"
+    },
+    {
+      "source": "thalamus_router",
+      "target": "cortex_reasoning",
+      "weight": 0.85,
+      "kind": "excitatory",
+      "rationale": "Routed tasks to reasoner"
+    },
+    {
+      "source": "thalamus_router",
+      "target": "hippocampus_learning_memory",
+      "weight": 0.8,
+      "kind": "excitatory",
+      "rationale": "Router consults memory"
+    },
+    {
+      "source": "thalamus_router",
+      "target": "prefrontal_tessera_admin",
+      "weight": 0.75,
+      "kind": "excitatory",
+      "rationale": "Policy-aware routing"
+    },
+    {
+      "source": "hippocampus_learning_memory",
+      "target": "cortex_reasoning",
+      "weight": 0.94,
+      "kind": "excitatory",
+      "rationale": "TESTED retrieval delta: Gitbook quiz alone 7/25=0.28 \u2192 BM25 18/25=0.72 (+0.44) from /workspace/evals/BASELINE-LOCAL.md"
+    },
+    {
+      "source": "cortex_reasoning",
+      "target": "hippocampus_learning_memory",
+      "weight": 0.55,
+      "kind": "excitatory",
+      "rationale": "Write-back of reasoned traces (GOAL architecture)"
+    },
+    {
+      "source": "knowledge_packs",
+      "target": "hippocampus_learning_memory",
+      "weight": 0.72,
+      "kind": "excitatory",
+      "rationale": "Corpus chunks feed memory index"
+    },
+    {
+      "source": "knowledge_packs",
+      "target": "cortex_reasoning",
+      "weight": 0.6,
+      "kind": "excitatory",
+      "rationale": "Direct RAG context"
+    },
+    {
+      "source": "research_theories",
+      "target": "knowledge_packs",
+      "weight": 0.5,
+      "kind": "excitatory",
+      "rationale": "Research drafts enrich packs (GOAL)"
+    },
+    {
+      "source": "research_theories",
+      "target": "cortex_reasoning",
+      "weight": 0.45,
+      "kind": "excitatory",
+      "rationale": "Theory/exploration prompts"
+    },
+    {
+      "source": "historical_analysis",
+      "target": "hippocampus_learning_memory",
+      "weight": 0.58,
+      "kind": "excitatory",
+      "rationale": "History collab \u2192 memory"
+    },
+    {
+      "source": "historical_analysis",
+      "target": "knowledge_packs",
+      "weight": 0.52,
+      "kind": "excitatory",
+      "rationale": "Archive synthesis"
+    },
+    {
+      "source": "creator_model",
+      "target": "prefrontal_tessera_admin",
+      "weight": 0.98,
+      "kind": "excitatory",
+      "rationale": "GOAL Father 2026-10-05 7:03 PM CT: mirror creator; wire Creator model strongly to prefrontal (Tessera admin)"
+    },
+    {
+      "source": "creator_model",
+      "target": "hippocampus_learning_memory",
+      "weight": 0.96,
+      "kind": "excitatory",
+      "rationale": "GOAL Father 2026-10-05 7:03 PM CT: learn thoughts/patterns via memory lessons (retrieval, not weight training)"
+    },
+    {
+      "source": "prefrontal_tessera_admin",
+      "target": "creator_model",
+      "weight": 0.7,
+      "kind": "excitatory",
+      "rationale": "Admin may refresh creator preference queries"
+    },
+    {
+      "source": "hippocampus_learning_memory",
+      "target": "creator_model",
+      "weight": 0.4,
+      "kind": "excitatory",
+      "rationale": "Recall surfaces creator lessons into creator node context"
+    },
+    {
+      "source": "prefrontal_tessera_admin",
+      "target": "immune_security",
+      "weight": 0.88,
+      "kind": "excitatory",
+      "rationale": "Security gate before publish"
+    },
+    {
+      "source": "prefrontal_tessera_admin",
+      "target": "error_moderator",
+      "weight": 0.86,
+      "kind": "excitatory",
+      "rationale": "Moderator gate"
+    },
+    {
+      "source": "prefrontal_tessera_admin",
+      "target": "error_build",
+      "weight": 0.84,
+      "kind": "excitatory",
+      "rationale": "Build verification gate"
+    },
+    {
+      "source": "prefrontal_tessera_admin",
+      "target": "command_center",
+      "weight": 0.9,
+      "kind": "excitatory",
+      "rationale": "Admin \u2192 digest preparation"
+    },
+    {
+      "source": "error_moderator",
+      "target": "command_center",
+      "weight": 0.7,
+      "kind": "excitatory",
+      "rationale": "Eligible items only enter digest"
+    },
+    {
+      "source": "error_build",
+      "target": "command_center",
+      "weight": 0.7,
+      "kind": "excitatory",
+      "rationale": "TESTED results required for READY"
+    },
+    {
+      "source": "immune_security",
+      "target": "command_center",
+      "weight": 0.72,
+      "kind": "excitatory",
+      "rationale": "Security PASS required"
+    },
+    {
+      "source": "immune_security",
+      "target": "motor_output",
+      "weight": 0.8,
+      "kind": "inhibitory",
+      "rationale": "Inhibit unsafe acts"
+    },
+    {
+      "source": "error_moderator",
+      "target": "motor_output",
+      "weight": 0.55,
+      "kind": "inhibitory",
+      "rationale": "Inhibit unreviewed publish"
+    },
+    {
+      "source": "command_center",
+      "target": "motor_output",
+      "weight": 0.92,
+      "kind": "excitatory",
+      "rationale": "Digest to Father; GOAL token-saving: Tessera/CC as primary messaging channel (2026-10-05 7:02\u20137:03 PM CT)"
+    },
+    {
+      "source": "command_center",
+      "target": "prefrontal_tessera_admin",
+      "weight": 0.6,
+      "kind": "excitatory",
+      "rationale": "Digest feedback loop"
+    },
+    {
+      "source": "mesh_cloud",
+      "target": "thalamus_router",
+      "weight": 0.5,
+      "kind": "excitatory",
+      "rationale": "Cloud/ops signals"
+    },
+    {
+      "source": "mesh_cloud",
+      "target": "motor_output",
+      "weight": 0.48,
+      "kind": "excitatory",
+      "rationale": "Ops actions"
+    },
+    {
+      "source": "cortex_reasoning",
+      "target": "prefrontal_tessera_admin",
+      "weight": 0.78,
+      "kind": "excitatory",
+      "rationale": "Reasoned proposals to admin"
+    },
+    {
+      "source": "cortex_reasoning",
+      "target": "motor_output",
+      "weight": 0.4,
+      "kind": "excitatory",
+      "rationale": "Draft outputs (gated)"
+    },
+    {
+      "source": "hippocampus_learning_memory",
+      "target": "hippocampus_learning_memory",
+      "weight": 0.35,
+      "kind": "plasticity",
+      "rationale": "TESTED consolidation shrinkage signal from learning-rate: lessons 19\u21922 (consolidation.json); train_init accuracy 0.8 on n=25 seen"
+    }
+  ],
+  "blueprint_graph_stats_TESTED": {
+    "n_nodes": 16,
+    "n_edges": 29,
+    "avg_clustering": 0.5306547619047619,
+    "density": 0.24166666666666667,
+    "degree_mean": 3.625,
+    "avg_shortest_path": 2.15
+  }
+}

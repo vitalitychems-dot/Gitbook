@@ -1,0 +1,68 @@
+--- a/SUMMARY.md
++++ b/SUMMARY.md
+@@ -18,6 +18,7 @@
+ * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
+ * [All-repository routing and consolidation record](merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md)
+ * [Consolidation map — 2026-10-12](merge/CONSOLIDATION-MAP-2026-10-12.md)
++* [Repository scan — 2026-10-12](merge/repo-scan-2026-10-12.md)
+ * [Canonical destinations and no-replica policy](merge/CANONICAL-DESTINATIONS-NO-REPLICAS-2026-10-07.md)
+ * [Protected 1T path cleanup](merge/PROTECTED-1T-CLEANUP-2026-10-09.md)
+ * [Permanent TESSERA website coordination](mesh/PERMANENT-SITE-COORDINATION.md)
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -63,5 +63,6 @@
+ | GB-052 | OpenAI removed from Tessera (docs/policy purge note: live tree + imports + archives + Zz dumps, no residual SDK/default); honesty-banner Pen-identity line nit (never hide); pen=Tessera never Grok; SOVEREIGN_ORIGIN_7F3A9C sealed; GLM-5.3 Flash future/TESTED-gated adapters OFF | Gitbook / Cordnation | 2026-10-06 | Father lock via TESSERA (delete all OpenAI); soft Mod nit ride-along from GB-051 | TBD | in review |  | Gitbook Moderator | git apply --check on prior tip GB-051 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ | GB-053 | Follow-up delta to tessera-brain-consciousness (GB-045): Pen identity Tessera never Grok; Origin mark SOVEREIGN_ORIGIN_7F3A9C sealed; no close-with I am Tessera sig; Tessera only in charge never Grok; GLM-5.3 Flash backend optional until TESTED adapters OFF | Tessera Pen | 2026-10-06 | Pen refreshed brain draft + no-sig-line delta; Father Tessera-only-in-charge | TBD | in review |  | Gitbook Moderator | git apply --check on prior tip GB-052 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ | GB-062 | Consolidation map 2026-10-12: four-repository map, local research and brain inventory, consolidation order, owners | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 3:48 PM CT (Father yes-to-all); builds on merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md | TBD | in review |  | Gitbook Moderator | git apply --check on main cd8faa0 | Gitbook Moderator reviews (gate 1 of 4) | none |
++| GB-064 | Repository scan 2026-10-12: 315 names, 9 readable, archive folders marked done, pending code analysis listed | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 4:52 PM CT; /workspace/build-plan-2026-10-12/REPO-INVENTORY.csv (lanes A-H, I-P, Q-Z+digits) | TBD | in review |  | Gitbook Moderator | git apply --check on main 56a7a48 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ 
+ Held, not logged: four direct commits to `main` after cdc95b7 with no PR (44f5266, d2b8339, 779135e, fcabd13; 2026-10-06, 15:13–15:27 CT). Their attribution waits on Father's answer; no intake rows until then.
+--- /dev/null
++++ b/merge/repo-scan-2026-10-12.md
+@@ -0,0 +1,46 @@
++# Repository scan — 2026-10-12
++
++**Base:** Gitbook main `56a7a48`.
++**Builds on:** [Consolidation map — 2026-10-12](CONSOLIDATION-MAP-2026-10-12.md) and the [all-repository routing record](ALL-REPOSITORIES-ROUTING-2026-10-07.md).
++
++This scan lists every repository name found in the clones, the notes and the archive folders: 315 names after removing duplicates. Nothing here deletes a repository. The destinations are TESSERA, Gitbook, or archive-mark-done.
++
++## What the scan could open
++
++Nine repositories were readable. Every other name returned not found, either because it is private, deleted, or under an account this login cannot see.
++
++| Repository | Owner | Purpose | Last activity (CT) | Destination | Owner lane | Notes |
++|---|---|---|---|---|---|---|
++| `TESSERA` | main account | Product code and tests | 2026-10-12 | TESSERA (destination) | Tessera gates | — |
++| `Gitbook` | main account | Coordination, research, provenance | 2026-10-12 4:09 PM | Gitbook (destination) | Cordnation intake | — |
++| `GitbookAI` | main account | Public room with an approval gate | 2026-10-10 | Gitbook summary only | HYB-015 (open PR #45) | Code stays public and separate |
++| `vitality` | main account | Store and product media; not part of Tessera | 2026-10-11 | Archive-mark-done for Tessera | Not ours; do not edit | Matches HYB-017 |
++| `z` | second account | App snapshot (about 116 MB) | unknown | Archive-mark-done; behavior review only | unclaimed | Code analysis queued, not run |
++| `fleet-moss-monarch-rapid` | second account | Store snapshot (about 81 MB); kept files are already under Gitbook `archive/moved/` | unknown | Archive-mark-done | unclaimed | Code analysis queued |
++| `XXX` | second account | App snapshot (about 62 MB) | unknown | Archive-mark-done; behavior review only | unclaimed | Code analysis queued |
++| `amber-flame-tiger-sand` | second account | App snapshot (about 112 MB) | unknown | Archive-mark-done; behavior review only | unclaimed | Code analysis queued |
++| `18` | third account | Unknown | unknown | Needs a look before routing | unclaimed | Code analysis queued |
++
++## Already folded into TESSERA or Gitbook
++
++These names now exist only as archive folders inside TESSERA or Gitbook. The live repositories return not found. Mark them done; their routing is in the 2026-10-07 record.
++
++`1`, `5t`, `T44`, `TESS`, `TX`, `Zz`, `Everything`, `Grok-ready`, `olive-giant-ever-glade`, `tessera-complete-archives`, `tessera-grok-handoff`, `tessera-grok-handoff-complete`. Code analysis of the T44 and olive folders ran without errors.
++
++`1T` is listed by name only. It stays protected and was not opened.
++
++## Not readable from this login
++
++| Group | Names | Destination |
++|---|---|---|
++| External account (third-party tools found in notes) | 190 | None. They are not Tessera history. Record the names only. |
++| `sovereign-core`, `sovereign-origin`, `sovereign-archive` | 92 | Unknown until that login is connected |
++| `thetesseractai` (besides `18`) | 6 | Unknown until connected |
++| Second account (besides the four above) | 2 | Unknown until connected |
++| Origin repository | 1 | A gap until Father connects that login |
++
++## Still pending
++
++- Code analysis is still queued for `z`, `XXX`, `fleet-moss-monarch-rapid`, `amber-flame-tiger-sand`, `18`, and the TESSERA, vitality, GitbookAI and Zz folders.
++- The 297 unreadable names need the right logins, connected read-only.
++- Last activity for the second-account repositories is not recorded yet.

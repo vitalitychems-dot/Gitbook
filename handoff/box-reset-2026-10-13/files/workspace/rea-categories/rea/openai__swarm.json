@@ -1,0 +1,1 @@
+{"status":"ok","statistics":{"relevant_files":202,"nested_asar_containers":0,"text_bytes_read":401315,"invalid_utf8_files":0,"parsed_javascript_files":0,"visited_ast_nodes":0,"findings":0,"modules":0,"parse_failures":0},"nodes":129,"edges":202,"coverage":"complete","kinds":{"artifact":129},"repo":"openai/swarm","exit":0,"files_total":288,"js_ts_files":0,"py_files":62}

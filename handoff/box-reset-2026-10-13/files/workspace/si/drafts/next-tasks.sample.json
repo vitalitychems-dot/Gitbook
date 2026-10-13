@@ -1,0 +1,805 @@
+{
+  "generated_at": "2026-10-13T11:58:39.385Z",
+  "history_prs": 355,
+  "weights": {
+    "merged": 1,
+    "closed": -1,
+    "pass": 0.25,
+    "fail": -0.5,
+    "prior": 3
+  },
+  "tasks": [
+    {
+      "rank": 1,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 2,
+      "kind": "issue",
+      "title": "Tessera hybrid consolidation agent conference",
+      "score": 1.797,
+      "gates": {
+        "pass": 9,
+        "fail": 2
+      },
+      "evidence": [
+        {
+          "word": "tessera",
+          "n": 17,
+          "avg": 0.882
+        },
+        {
+          "word": "agent",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "hybrid",
+          "n": 4,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 297,
+      "kind": "pr",
+      "title": "needs Father code-owner review: TESSERA #294 locked paths (workflows, CODEOWNERS, gate rules)",
+      "score": 1.4121,
+      "gates": {
+        "pass": 4,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "tessera",
+          "n": 17,
+          "avg": 0.882
+        },
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "gate",
+          "n": 20,
+          "avg": 0.637
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 65,
+      "kind": "pr",
+      "title": "GB-070 rev3: intake backfill + ledger #15",
+      "score": 1.1333,
+      "gates": {
+        "pass": 3,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "intake",
+          "n": 3,
+          "avg": 1
+        },
+        {
+          "word": "backfill",
+          "n": 2,
+          "avg": 1
+        },
+        {
+          "word": "rev3",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 78,
+      "kind": "pr",
+      "title": "needs Father code-owner review: Gitbook #75 locked paths (CODEOWNERS, GATE_RULES, gate_check, autogate, PROMPT-TEMPLATE, moderator-lock.yml)",
+      "score": 0.9122,
+      "gates": {
+        "pass": 3,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "gitbook",
+          "n": 20,
+          "avg": 0.8
+        },
+        {
+          "word": "gate",
+          "n": 20,
+          "avg": 0.637
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 269,
+      "kind": "pr",
+      "title": "Ground memory-graph answers in cited observations, or abstain",
+      "score": 0.862,
+      "gates": {
+        "pass": 1,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "memory",
+          "n": 10,
+          "avg": 1
+        },
+        {
+          "word": "graph",
+          "n": 6,
+          "avg": 1
+        },
+        {
+          "word": "answers",
+          "n": 2,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 82,
+      "kind": "pr",
+      "title": "Quiet consensus: 3-agent panel, escalate only on disagreement (Akhenaten 5/5, #72)",
+      "score": 0.8375,
+      "gates": {
+        "pass": 1,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "only",
+          "n": 13,
+          "avg": 1
+        },
+        {
+          "word": "agent",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "panel",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 68,
+      "kind": "issue",
+      "title": "FATHER LOG — Tessera chat, 2026-10-13 (verbatim, pre-reset)",
+      "score": 0.7843,
+      "gates": {
+        "pass": 1,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "tessera",
+          "n": 17,
+          "avg": 0.882
+        },
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "log",
+          "n": 4,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 298,
+      "kind": "pr",
+      "title": "api-server: deterministic FNV-1a backing for non-physical Math.random (Mesh Cloud 1/5)",
+      "score": 0.7841,
+      "gates": {
+        "pass": 2,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "mesh",
+          "n": 18,
+          "avg": 1
+        },
+        {
+          "word": "non",
+          "n": 1,
+          "avg": 1
+        },
+        {
+          "word": "cloud",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 71,
+      "kind": "issue",
+      "title": "DESIGN: safe autonomous self-improvement, no human in loop (Father 6:03 AM)",
+      "score": 0.759,
+      "gates": {
+        "pass": 2,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "design",
+          "n": 1,
+          "avg": 1
+        },
+        {
+          "word": "autonomous",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 83,
+      "kind": "pr",
+      "title": "Disagreement-driven study queue from ritual rounds (Akhenaten 4/5, #72)",
+      "score": 0.7083,
+      "gates": {
+        "pass": 1,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "queue",
+          "n": 6,
+          "avg": 1
+        },
+        {
+          "word": "rounds",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 79,
+      "kind": "pr",
+      "title": "einstein: quiet-backoff gate timer (#72 idea 5, measured -73% checks)",
+      "score": 0.6219,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "einstein",
+          "n": 16,
+          "avg": 0.875
+        },
+        {
+          "word": "checks",
+          "n": 5,
+          "avg": 1
+        },
+        {
+          "word": "measured",
+          "n": 4,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 72,
+      "kind": "issue",
+      "title": "INVENT: Git-as-web, token-free mesh execution (Rick + Einstein + Tessera, Father 6:07 AM)",
+      "score": 0.5949,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "mesh",
+          "n": 18,
+          "avg": 1
+        },
+        {
+          "word": "tessera",
+          "n": 17,
+          "avg": 0.882
+        },
+        {
+          "word": "einstein",
+          "n": 16,
+          "avg": 0.875
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 267,
+      "kind": "draft-pr",
+      "title": "Add a GSM8K reasoning eval runner for local Ollama",
+      "score": 0.575,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "local",
+          "n": 9,
+          "avg": 1
+        },
+        {
+          "word": "eval",
+          "n": 2,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 73,
+      "kind": "draft-pr",
+      "title": "rick: #72 git-as-web / offline queue / speed / autoclean notes (measured)",
+      "score": 0.5716,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "offline",
+          "n": 11,
+          "avg": 1
+        },
+        {
+          "word": "rick",
+          "n": 8,
+          "avg": 1
+        },
+        {
+          "word": "queue",
+          "n": 6,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 40,
+      "kind": "draft-pr",
+      "title": "Record Father's yes and the drill already on TESSERA",
+      "score": 0.57,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "record",
+          "n": 9,
+          "avg": 1
+        },
+        {
+          "word": "tessera",
+          "n": 17,
+          "avg": 0.882
+        },
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 66,
+      "kind": "draft-pr",
+      "title": "mesh/charter: fraction-agent charter (DRAFT, not adopted)",
+      "score": 0.4864,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "mesh",
+          "n": 18,
+          "avg": 1
+        },
+        {
+          "word": "agent",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "not",
+          "n": 5,
+          "avg": 0.6
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 74,
+      "kind": "draft-pr",
+      "title": "Box reset handoff 2026-10-13 (all agents)",
+      "score": 0.45,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "handoff",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "agents",
+          "n": 2,
+          "avg": 1
+        },
+        {
+          "word": "all",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 300,
+      "kind": "pr",
+      "title": "needs Father code-owner review: ci.yml fetch-depth: 0 + test DB password was a literal '***'",
+      "score": 0.367,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "test",
+          "n": 3,
+          "avg": 1
+        },
+        {
+          "word": "code",
+          "n": 2,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 299,
+      "kind": "pr",
+      "title": "CI: fix v2-078 on shallow checkouts + db-optional-boot DATABASE_URL leak (non-locked)",
+      "score": 0.2929,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "optional",
+          "n": 4,
+          "avg": 1
+        },
+        {
+          "word": "url",
+          "n": 2,
+          "avg": 1
+        },
+        {
+          "word": "database",
+          "n": 4,
+          "avg": 0.5
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 295,
+      "kind": "draft-pr",
+      "title": "loop: ETag cache + skip-unchanged PRs (ideas #3, #11)",
+      "score": 0.2444,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "ideas",
+          "n": 3,
+          "avg": 1
+        },
+        {
+          "word": "cache",
+          "n": 7,
+          "avg": 0.429
+        },
+        {
+          "word": "skip",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 161,
+      "kind": "issue",
+      "title": "Copilot, take a worker seat",
+      "score": 0.2405,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "take",
+          "n": 2,
+          "avg": 1
+        },
+        {
+          "word": "copilot",
+          "n": 1,
+          "avg": 1
+        },
+        {
+          "word": "worker",
+          "n": 4,
+          "avg": 0.125
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 80,
+      "kind": "pr",
+      "title": "einstein: CSPRNG cron jitter + nonce-bound signed PASS (#72, for Security)",
+      "score": 0.1962,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "einstein",
+          "n": 16,
+          "avg": 0.875
+        },
+        {
+          "word": "pass",
+          "n": 8,
+          "avg": 1
+        },
+        {
+          "word": "signed",
+          "n": 3,
+          "avg": 0.333
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 76,
+      "kind": "pr",
+      "title": "Retire autogate self-merge and the father-approved bypass",
+      "score": 0.1528,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "father",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "approved",
+          "n": 6,
+          "avg": 1
+        },
+        {
+          "word": "merge",
+          "n": 5,
+          "avg": 1
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 67,
+      "kind": "issue",
+      "title": "MASTER HANDOFF 2026-10-13 05:25 CT — all open tasks, owners, where left off, how to finish",
+      "score": 0.1325,
+      "gates": {
+        "pass": 9,
+        "fail": 5
+      },
+      "evidence": [
+        {
+          "word": "handoff",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "open",
+          "n": 7,
+          "avg": 1
+        },
+        {
+          "word": "off",
+          "n": 6,
+          "avg": 0.417
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 39,
+      "kind": "pr",
+      "title": "GB-061 rev 2: archive/preserved preservation pack (70 additions)",
+      "score": 0.0887,
+      "gates": {
+        "pass": 0,
+        "fail": 0
+      },
+      "evidence": [
+        {
+          "word": "rev",
+          "n": 6,
+          "avg": 1
+        },
+        {
+          "word": "archive",
+          "n": 10,
+          "avg": 0.8
+        },
+        {
+          "word": "pack",
+          "n": 2,
+          "avg": 0
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 77,
+      "kind": "pr",
+      "title": "Moderator lock evaluator + docs (non-locked half of #75)",
+      "score": -0.0781,
+      "gates": {
+        "pass": 2,
+        "fail": 1
+      },
+      "evidence": [
+        {
+          "word": "docs",
+          "n": 13,
+          "avg": 0.846
+        },
+        {
+          "word": "non",
+          "n": 1,
+          "avg": 1
+        },
+        {
+          "word": "moderator",
+          "n": 3,
+          "avg": -1.25
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "repo": "vitalitychems-dot/TESSERA",
+      "number": 296,
+      "kind": "pr",
+      "title": "Loop self-improve: worker hardening + validator tests (non-locked half of #294)",
+      "score": -0.2166,
+      "gates": {
+        "pass": 3,
+        "fail": 2
+      },
+      "evidence": [
+        {
+          "word": "tests",
+          "n": 2,
+          "avg": 1
+        },
+        {
+          "word": "non",
+          "n": 1,
+          "avg": 1
+        },
+        {
+          "word": "self",
+          "n": 5,
+          "avg": 0.3
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "repo": "vitalitychems-dot/Gitbook",
+      "number": 81,
+      "kind": "draft-pr",
+      "title": "Silence as signal: post-on-change + heartbeat-absence watchdog (Akhenaten 1/5, #72)",
+      "score": -0.25,
+      "gates": {
+        "pass": 0,
+        "fail": 1
+      },
+      "evidence": [
+        {
+          "word": "change",
+          "n": 1,
+          "avg": 1
+        }
+      ]
+    }
+  ]
+}

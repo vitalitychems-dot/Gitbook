@@ -1,0 +1,262 @@
+{
+  "file": "Grok-ready__artifacts_tessera.json",
+  "subject": {
+    "name": "tessera",
+    "digest": {
+      "sha256": "bd6846b1c2074d473505eb91b456353d63e1301a4c7270a61f3c89515014d605"
+    },
+    "format": "directory",
+    "architecture": null,
+    "local_path": "/workspace/repo-lab/vitalitychems-dot__Grok-ready/artifacts/tessera"
+  },
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "statistics": {
+    "relevant_files": 249,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 2833012,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 245,
+    "visited_ast_nodes": 398444,
+    "findings": 1708,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "summary_electronish": {
+    "browser_windows": 0,
+    "explicit_web_preferences": 0,
+    "preload_entrypoints": 0,
+    "context_bridge_apis": 0,
+    "exposed_api_members": 0,
+    "ipc": {
+      "operations": 0,
+      "literal_channels": 0,
+      "dynamic_channel_operations": 0,
+      "renderer_transmissions": 0,
+      "renderer_listeners": 0,
+      "main_handlers": 0,
+      "paired_renderer_transmissions": 0,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "graph": {
+    "nodes": 1134,
+    "edges": 1512,
+    "coverage": {
+      "status": "partial",
+      "truncated": false,
+      "omitted_count": null,
+      "limits": [
+        {
+          "name": "javascript_analysis_parent_result_budget_bytes",
+          "value": 1990340356,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 0,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 13664,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 26976,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 384,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 40352,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_worker_heap_limit_bytes",
+          "value": 1098907648,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_worker_timeout_ms",
+          "value": 300000,
+          "unit": "milliseconds"
+        }
+      ]
+    },
+    "root_node_ids": [
+      "jag_node_42a2ec57b0d116b36abfd64fbc839a7b4694708c379a5f778da26614a45d0fe6"
+    ]
+  },
+  "node_kind_counts_sample": {
+    "javascript-module": 427,
+    "javascript-asset": 245,
+    "storage": 13,
+    "unknown": 418,
+    "artifact": 5,
+    "endpoint": 24,
+    "package": 1,
+    "electron-renderer": 1
+  },
+  "sample_nodes": [
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    }
+  ],
+  "semantic": {
+    "nodes": 25014,
+    "relations": 24352,
+    "unknowns": 10453,
+    "fingerprints": 874,
+    "rel_kinds": {
+      "unknown": 8000
+    }
+  },
+  "limitations_head": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/components/chat/ChatDataCommandResult.tsx exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/components/chat/ChatFileComponents.tsx exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/components/chat/ChatFileUploadArea.tsx exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/components/chat/ChatFontColorPicker.tsx exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/components/chat/ChatInputToolbar.tsx exceed the parent's result budget; complete static facts were retained on the file node"
+  ],
+  "evidence_id": "ev_35bfd31c4f3fd52bb9e2af816eb1c71792e3b6c866ffb76f9ce6d1400dccd7e2"
+}

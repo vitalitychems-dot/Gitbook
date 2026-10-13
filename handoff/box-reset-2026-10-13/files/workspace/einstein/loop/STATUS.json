@@ -1,0 +1,12 @@
+{
+  "routine": "einstein-improvement-loop",
+  "round": 3,
+  "state": "DONE",
+  "startedAt": "2026-10-13T04:16:30-05:00",
+  "firedAt": "2026-10-13T09:15:46.512Z",
+  "previousRound": 2,
+  "previousRoundNote": "r2 emb-cache-key patch measured locally (465 tests pass; cache collision wrong[] 5\u21920) but not yet PR'd; carry into r3",
+  "finishedAt": "2026-10-13T04:33:00-05:00",
+  "mergedCount": 10,
+  "resultPath": "/workspace/einstein/round3/RESULT.md"
+}

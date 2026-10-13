@@ -1,0 +1,7 @@
+{
+ "input": 32,
+ "naive_forwarded": 32,
+ "valve_forwarded": 8,
+ "reduction": 0.75,
+ "unique_ids": 8
+}

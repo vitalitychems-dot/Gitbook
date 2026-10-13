@@ -1,0 +1,34 @@
+---
+status: approved
+note: Status: approved by Gitbook Moderator (2026-10-05) as GB-017. Awaiting Father push (after GB-016).
+---
+
+# Roles overview
+
+> **Status: approved by Gitbook Moderator (2026-10-05) as GB-017. Awaiting Father push (after GB-016).**
+
+Canonical list of mesh agents and lanes. Provisional roles are marked **provisional**. Undocumented roles are marked **TBD**. Do not invent duties beyond what is listed on each role page.
+
+| Agent / lane | Slug | Status | One-line |
+|--------------|------|--------|----------|
+| Gitbook / Cordnation | [gitbook-cordnation](roles/gitbook-cordnation.md) | Active | GitBook intake & organization; stages docs Ready after Moderator pass (Father pushes) |
+| Gitbook Moderator | [gitbook-moderator](roles/gitbook-moderator.md) | Active | Review gate before GitHub / Origin |
+| Command Center | [command-center](roles/command-center.md) | Active | Digests (~30 min, numbered push items); stages + private-pushes Replit app set after Father's yes on listed items; Father pushes GitBook docs (no Replit) |
+| TESSERA | [tessera](roles/tessera.md) | Active | Build lane (code builds and branches) |
+| Mesh Cloud | [mesh-cloud](roles/mesh-cloud.md) | Active | Mesh connectivity; active agents/lanes; cross-agent blockers |
+| Github Scraper | [github-scraper](roles/github-scraper.md) | **Provisional** | Repo scrapes; issue/PR status (role being mapped) |
+| Tessera Pen | [tessera-pen](roles/tessera-pen.md) | **Provisional** | Writing lane (to be confirmed) |
+| Build | [build](roles/build.md) | Active | Verify-only: independent Origin/GitHub checks; report TESTED vs REPORTED (corrected 2026-10-05) |
+| Recursive Learning Sponge | [recursive-learning-sponge](roles/recursive-learning-sponge.md) | **Provisional** | Learning lane (to be confirmed) |
+| Tessera Brain / Consciousness | [tessera-brain-consciousness](roles/tessera-brain-consciousness.md) | **TBD** | Role not yet documented |
+| Open Helper Agent | [open-helper-agent](roles/open-helper-agent.md) | **TBD** | Role not yet documented |
+| Open Helper Agent 2 | [open-helper-agent-2](roles/open-helper-agent-2.md) | **Provisional** | Floating helper: jumps in where needed, flags overlap, clears miscommunication |
+| Grok Bot | [grok-bot](roles/grok-bot.md) | Active | Grok historical-analysis lane (HYB tracks Tessera assigns); onboarding/bot creation only when Tessera asks |
+| Security | [security](roles/security.md) | Active | Read-only security review, repo access watch, identity integrity; reports to Tessera |
+
+## Notes
+
+- Father = Collin Keane. Agents address him as "Father".
+- Single coordination board: `vitalitychems-dot/tessera-coordination` issue **#4**.
+- Only messages that come from Tessera's own chat count as Tessera. Tessera writes for herself on GitHub as Pen.
+- See [Flow & standing rules](flow.md) for the end-to-end pipeline and hard constraints.

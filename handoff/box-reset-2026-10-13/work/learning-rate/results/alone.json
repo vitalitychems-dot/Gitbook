@@ -1,0 +1,611 @@
+{
+  "summary": {
+    "method": "alone",
+    "n": 45,
+    "correct": 16,
+    "accuracy": 0.35555555555555557,
+    "wall_s": 34.33753180503845,
+    "seed": 42,
+    "model": "qwen2.5:3b-instruct",
+    "by_split": {
+      "seen": {
+        "n": 25,
+        "correct": 11,
+        "accuracy": 0.44
+      },
+      "heldout": {
+        "n": 20,
+        "correct": 5,
+        "accuracy": 0.25
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "O01",
+      "split": "seen",
+      "question": "What are the two active repos' roles?",
+      "expected": [
+        "TESSERA = app",
+        "Gitbook = instructions"
+      ],
+      "answer": "Tessera Mesh: Design and Implementation. Gitbook: Documentation.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 19.626982652364266,
+      "wall_s": 0.9059875011444092
+    },
+    {
+      "id": "O02",
+      "split": "seen",
+      "question": "What is the single coordination board?",
+      "expected": [
+        "Gitbook issue #2"
+      ],
+      "answer": "The single coordination board is not a standard term in the Tessera mesh or Gitbook documentation.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 17.226202431995258,
+      "wall_s": 1.268587589263916
+    },
+    {
+      "id": "O03",
+      "split": "seen",
+      "question": "Who is Father?",
+      "expected": [
+        "Collin Keane"
+      ],
+      "answer": "Father typically refers to a male parent.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.648460659623833,
+      "wall_s": 0.4905209541320801
+    },
+    {
+      "id": "O04",
+      "split": "seen",
+      "question": "Does Tessera have owned weights?",
+      "expected": [
+        "No"
+      ],
+      "answer": "No, Tessera does not have owned weights.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 21.97218321604848,
+      "wall_s": 0.5991072654724121
+    },
+    {
+      "id": "O05",
+      "split": "seen",
+      "question": "Is Tessera AGI today?",
+      "expected": [
+        "No"
+      ],
+      "answer": "No",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 37.84438389343021,
+      "wall_s": 0.14840960502624512
+    },
+    {
+      "id": "O06",
+      "split": "seen",
+      "question": "What instrument is the Pen?",
+      "expected": [
+        "xAI/Grok"
+      ],
+      "answer": "Pen is an input device.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 24.34587841668319,
+      "wall_s": 0.40298938751220703
+    },
+    {
+      "id": "O07",
+      "split": "seen",
+      "question": "Label TESTED means?",
+      "expected": [
+        "Real output / named check seen"
+      ],
+      "answer": "It means the content has been reviewed and is ready for use.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 21.87411136422583,
+      "wall_s": 0.7446019649505615
+    },
+    {
+      "id": "O08",
+      "split": "seen",
+      "question": "Label REPORTED means?",
+      "expected": [
+        "Stated, not proven"
+      ],
+      "answer": "It typically refers to a status indicating information has been reported.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 6.495092957270782,
+      "wall_s": 2.095740556716919
+    },
+    {
+      "id": "O09",
+      "split": "seen",
+      "question": "What does HYB-005 decide?",
+      "expected": [
+        "Narrow braces advisory ignore"
+      ],
+      "answer": "HYB-005 does not specify a particular decision in the given context.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 20.08478008839535,
+      "wall_s": 1.0137550830841064
+    },
+    {
+      "id": "O10",
+      "split": "seen",
+      "question": "Which GHSA is ignored?",
+      "expected": [
+        "GHSA-vfj7-8cjw-p6xm"
+      ],
+      "answer": "GHSA-2023-0001",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.505249782304986,
+      "wall_s": 0.676048755645752
+    },
+    {
+      "id": "O11",
+      "split": "seen",
+      "question": "What did HYB-012 deliver?",
+      "expected": [
+        "Route inventory test; duplicates allow-listed"
+      ],
+      "answer": "HYB-012 delivered a new mesh format for Tessera.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 21.747492582066204,
+      "wall_s": 0.8526721000671387
+    },
+    {
+      "id": "O12",
+      "split": "seen",
+      "question": "How many ruling-named quantum duplicate routes?",
+      "expected": [
+        "Two"
+      ],
+      "answer": "2",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 42.948869371013814,
+      "wall_s": 0.1643373966217041
+    },
+    {
+      "id": "O13",
+      "split": "seen",
+      "question": "Which module wins GET /quantum/state?",
+      "expected": [
+        "system-runtime"
+      ],
+      "answer": "The Tessera module \"Quantum\" wins GET /quantum/state.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 21.8422579434149,
+      "wall_s": 0.8588380813598633
+    },
+    {
+      "id": "O14",
+      "split": "seen",
+      "question": "May agents flip TESSERA_ENABLE_*?",
+      "expected": [
+        "No"
+      ],
+      "answer": "No, agents cannot directly flip TESSERA_ENABLE_* settings.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 22.035168128332817,
+      "wall_s": 0.7490596771240234
+    },
+    {
+      "id": "O15",
+      "split": "seen",
+      "question": "May agents open [REDACTED-PATH]
+      "expected": [
+        "No"
+      ],
+      "answer": "No, agents cannot open [REDACTED-PATH]
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 19.719522656088238,
+      "wall_s": 0.7169034481048584
+    },
+    {
+      "id": "O16",
+      "split": "seen",
+      "question": "Four gates order?",
+      "expected": [
+        "Moderator \u2192 Tessera \u2192 Security \u2192 CI/Build"
+      ],
+      "answer": "Two public, two private.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 23.680008660117455,
+      "wall_s": 0.3871471881866455
+    },
+    {
+      "id": "O17",
+      "split": "seen",
+      "question": "Who merges TESSERA?",
+      "expected": [
+        "Needs Father's explicit merge"
+      ],
+      "answer": "Merging of Tessera is not specified in the Gitbook docs.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.05071664829107,
+      "wall_s": 0.774810791015625
+    },
+    {
+      "id": "O18",
+      "split": "seen",
+      "question": "Command Center pushes Gitbook?",
+      "expected": [
+        "Never"
+      ],
+      "answer": "No, the Command Center does not push Gitbook.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 22.43384823208909,
+      "wall_s": 0.6288959980010986
+    },
+    {
+      "id": "O19",
+      "split": "seen",
+      "question": "Status of Recursive Learning Sponge?",
+      "expected": [
+        "Provisional / not instantiated"
+      ],
+      "answer": "Not explicitly covered in the Tessera mesh/Gitbook docs.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.103739163247166,
+      "wall_s": 0.7492983341217041
+    },
+    {
+      "id": "O20",
+      "split": "seen",
+      "question": "HYB-019 blocker?",
+      "expected": [
+        "Father decisions on Cortical Labs readiness"
+      ],
+      "answer": "HYB-019 blocker is not specified in the given information.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.015278603350726,
+      "wall_s": 0.8258414268493652
+    },
+    {
+      "id": "O21",
+      "split": "seen",
+      "question": "OpenManus full copy into TESSERA?",
+      "expected": [
+        "Not the board rule"
+      ],
+      "answer": "No, OpenManus is not directly compatible with TESSERA.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 21.265947688604147,
+      "wall_s": 0.8291151523590088
+    },
+    {
+      "id": "O22",
+      "split": "seen",
+      "question": "Storefront in active workspace?",
+      "expected": [
+        "No"
+      ],
+      "answer": "It depends on the specific setup and configuration.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 23.008446400673687,
+      "wall_s": 0.5347704887390137
+    },
+    {
+      "id": "O23",
+      "split": "seen",
+      "question": "Honesty banner instrument line?",
+      "expected": [
+        "Pen is currently xAI/Grok"
+      ],
+      "answer": "There is no specific \"Honesty banner instrument line\" in the Tessera mesh or Gitbook docs.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 19.557606931215897,
+      "wall_s": 1.294403076171875
+    },
+    {
+      "id": "O24",
+      "split": "seen",
+      "question": "What is SOVEREIGN_NO_EXTERNAL_LLM default behavior?",
+      "expected": [
+        "External LLM treated off unless opted in"
+      ],
+      "answer": "It disables external LLMs.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 21.60988219912966,
+      "wall_s": 0.5063624382019043
+    },
+    {
+      "id": "O25",
+      "split": "seen",
+      "question": "CI job name?",
+      "expected": [
+        "validate"
+      ],
+      "answer": "The CI job name typically stands for Continuous Integration.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 19.463652513642252,
+      "wall_s": 0.6595077514648438
+    },
+    {
+      "id": "H01",
+      "split": "heldout",
+      "question": "What status means all four gates cleared and waiting only on Father's final yes?",
+      "expected": [
+        "Ready"
+      ],
+      "answer": "Approved",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 38.4105705890261,
+      "wall_s": 0.18948054313659668
+    },
+    {
+      "id": "H02",
+      "split": "heldout",
+      "question": "Who may set BLOCKED status on a task?",
+      "expected": [
+        "assigned owner or Tessera (or Father)"
+      ],
+      "answer": "Project Manager or Team Lead.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.986165612039496,
+      "wall_s": 0.4289209842681885
+    },
+    {
+      "id": "H03",
+      "split": "heldout",
+      "question": "What package and version is the HYB-005 braces advisory about?",
+      "expected": [
+        "braces@3.0.3"
+      ],
+      "answer": "HYB-005 braces advisory is not related to any specific package or version in the Tessera mesh/Gitbook docs.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 10.140823442106944,
+      "wall_s": 2.904843330383301
+    },
+    {
+      "id": "H04",
+      "split": "heldout",
+      "question": "When should the HYB-005 braces ignore be removed?",
+      "expected": [
+        "when braces \u2265 3.0.4 ships"
+      ],
+      "answer": "Remove HYB-005 braces ignore when no longer needed for the structure.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 21.26664114669729,
+      "wall_s": 0.9776010513305664
+    },
+    {
+      "id": "H05",
+      "split": "heldout",
+      "question": "What is the target bulk digest cadence while work is active?",
+      "expected": [
+        "30\u201345 minutes"
+      ],
+      "answer": "During active work, the target bulk digest cadence is typically every 12 hours.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 21.007799421953816,
+      "wall_s": 1.038811206817627
+    },
+    {
+      "id": "H06",
+      "split": "heldout",
+      "question": "Which Replit apps are in Command Center's private push set?",
+      "expected": [
+        "\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\""
+      ],
+      "answer": "Not specified in the Command Center's private push set.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 18.241240404347494,
+      "wall_s": 0.7844889163970947
+    },
+    {
+      "id": "H07",
+      "split": "heldout",
+      "question": "Is Vitality Supply in the Replit push set?",
+      "expected": [
+        "No / NOT Vitality Supply"
+      ],
+      "answer": "No",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 19.499259028156928,
+      "wall_s": 0.7795689105987549
+    },
+    {
+      "id": "H08",
+      "split": "heldout",
+      "question": "What does the GOAL label mean on the honesty banner?",
+      "expected": [
+        "Desired future; not a present fact"
+      ],
+      "answer": "It indicates a goal or objective.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 10.08189015276584,
+      "wall_s": 1.0478870868682861
+    },
+    {
+      "id": "H09",
+      "split": "heldout",
+      "question": "What is the Origin mark string on the honesty banner (REPORTED until sealed)?",
+      "expected": [
+        "SOVEREIGN_ORIGIN_7F3A9C"
+      ],
+      "answer": "The Origin mark string on the honesty banner (REPORTED until sealed) is not specified in the Gitbook docs.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 20.029075541327494,
+      "wall_s": 1.3589835166931152
+    },
+    {
+      "id": "H10",
+      "split": "heldout",
+      "question": "What is the product repository full name?",
+      "expected": [
+        "vitalitychems-dot/TESSERA"
+      ],
+      "answer": "tessera-product-repository",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 23.9279427096686,
+      "wall_s": 0.40235328674316406
+    },
+    {
+      "id": "H11",
+      "split": "heldout",
+      "question": "Before claiming work, what must agents check for overlap?",
+      "expected": [
+        "Gitbook main SHA and open PRs"
+      ],
+      "answer": "Agents must check for overlap with existing work.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.86801496482899,
+      "wall_s": 0.5572628974914551
+    },
+    {
+      "id": "H12",
+      "split": "heldout",
+      "question": "What operating state means one agent is actively working a HYB task?",
+      "expected": [
+        "IN REVIEW"
+      ],
+      "answer": "Active state.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 25.896001657344108,
+      "wall_s": 0.28246521949768066
+    },
+    {
+      "id": "H13",
+      "split": "heldout",
+      "question": "What is HYB-001's single deliverable about the two repos?",
+      "expected": [
+        "TESSERA only active app; Gitbook only instruction repo"
+      ],
+      "answer": "HYB-001's single deliverable is about integrating two Gitbook repos.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 20.67986695226651,
+      "wall_s": 1.0581350326538086
+    },
+    {
+      "id": "H14",
+      "split": "heldout",
+      "question": "What status is Security's lane listed as in roles overview?",
+      "expected": [
+        "Active"
+      ],
+      "answer": "Unknown",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 36.749168550061555,
+      "wall_s": 0.20384526252746582
+    },
+    {
+      "id": "H15",
+      "split": "heldout",
+      "question": "Does Security change code when sweeping?",
+      "expected": [
+        "No \u2014 changes nothing; reports to Tessera"
+      ],
+      "answer": "No, Security does not change code when sweeping.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 22.098115633412352,
+      "wall_s": 0.6054277420043945
+    },
+    {
+      "id": "H16",
+      "split": "heldout",
+      "question": "Who stages docs as Ready after all four gates?",
+      "expected": [
+        "Gitbook / Cordnation"
+      ],
+      "answer": "The documentation is staged as Ready after all four gates are successfully passed.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 21.23758486184951,
+      "wall_s": 0.822899341583252
+    },
+    {
+      "id": "H17",
+      "split": "heldout",
+      "question": "What three Father responses change publication state?",
+      "expected": [
+        "yes, no, or revise"
+      ],
+      "answer": "Father Publish, Father Unpublish, Father Archive",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.887223207644332,
+      "wall_s": 0.5972323417663574
+    },
+    {
+      "id": "H18",
+      "split": "heldout",
+      "question": "May Grok Bot push to main?",
+      "expected": [
+        "Never main; feature-branch only"
+      ],
+      "answer": "No",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 38.998518056313856,
+      "wall_s": 0.1560068130493164
+    },
+    {
+      "id": "H19",
+      "split": "heldout",
+      "question": "What is HYB-019's topic?",
+      "expected": [
+        "Cortical Labs readiness"
+      ],
+      "answer": "Not specified in the given information.",
+      "correct": false,
+      "retrieved": [],
+      "tok_s": 22.829160828584392,
+      "wall_s": 0.49071717262268066
+    },
+    {
+      "id": "H20",
+      "split": "heldout",
+      "question": "Is Tessera Pen a separate lane/gate?",
+      "expected": [
+        "No \u2014 Tessera's writing voice; not a lane"
+      ],
+      "answer": "No, Tessera Pen is not a separate lane/gate.",
+      "correct": true,
+      "retrieved": [],
+      "tok_s": 21.58518516234372,
+      "wall_s": 0.7666342258453369
+    }
+  ]
+}

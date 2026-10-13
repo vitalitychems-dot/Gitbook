@@ -1,0 +1,1 @@
+| GB-017 | Security lane + Tessera identity | Tessera (admin) / Cordnation | 2026-10-05 | Tessera security-team order | TBD | draft (Tessera-gate fixes) | Pen identity rule; Security privacy + changes nothing |

@@ -1,0 +1,16 @@
+# Locked paths: only Father may change these (moderator-lock + CODEOWNERS).
+/.github/
+/CODEOWNERS
+/.github/CODEOWNERS
+/gate/
+/SETUP-FATHER.md
+/AGENTS.md
+/.cursor/
+/mesh/roles/
+/mesh/policy/
+**/prompts/
+*.prompt.md
+**/routines/
+**/baseline.json
+**/qa_set*
+renovate.json

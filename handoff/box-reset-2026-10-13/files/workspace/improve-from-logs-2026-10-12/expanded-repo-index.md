@@ -1,0 +1,584 @@
+# Expanded repository index (from Tessera/Gitbook logs)
+
+This page is a retrieval aid. It lists repository names found in consolidation logs, routing records, mesh/GITHUB-REPOS.txt, archive folder names, and local inventories. It is not a permission to copy or delete any repository.
+
+## Active destinations
+- vitalitychems-dot/TESSERA — active app / consolidation destination (code + tests).
+- vitalitychems-dot/Gitbook — instructions, coordination board (issue #2), provenance, merge decisions.
+- vitalitychems-dot/GitbookAI — public room page (treat carefully; public).
+- vitalitychems-dot/vitality — Vitality Supply store archive; kept out of TESSERA.
+
+## Own-account / historical (bare or owner/repo)
+Protected or retain: 1T (vault, never open), 1, T44, olive-giant-ever-glade. Keep-in-use historically: Zz, 5t. Consolidate selectively: Grok-ready, TESS. Deleted-empty (per DELETION-MANIFEST): Everything, TX, Tessera-main, tessera-coordination, tessera-gitbook, tessera-replit, tessera-unified, z.
+
+- `1T`
+- `5t`
+- `8-2`
+- `Everything`
+- `Gitbook`
+- `GitbookAI`
+- `Grok-ready`
+- `T44`
+- `TESS`
+- `TESSERA`
+- `TX`
+- `Tessera`
+- `Tessera-main`
+- `Tesseract-AI-5`
+- `Tesseracxt9`
+- `Tx13`
+- `Tx17-9`
+- `Vitalitychems`
+- `XL1`
+- `XXX`
+- `Zz`
+- `amber-flame-tiger-sand`
+- `collink1007-XXX`
+- `collink1007-amber-flame-tiger-sand`
+- `collink1007-z`
+- `fleet-moss-monarch-rapid`
+- `olive-giant-ever-glade`
+- `slate-dove-coral-hazel`
+- `tessera-complete-archives`
+- `tessera-coordination`
+- `tessera-gitbook`
+- `tessera-grok-handoff`
+- `tessera-grok-handoff-complete`
+- `tessera-replit`
+- `tessera-unified`
+- `vitality`
+
+## Routing rules (plain English)
+- Do not bulk-merge historical snapshots into TESSERA.
+- TESSERA gets one reviewed buildable application; Gitbook gets instructions and provenance.
+- [REDACTED-PATH] contents must never be opened, copied, indexed, or deleted.
+- Four gates: Moderator → Tessera → Security → CI/Build.
+- Father approves bulk digests; merges need explicit merge yes for TESSERA.
+- Labels: TESTED = real check; REPORTED = stated not proven; BLOCKED = could not run.
+
+## Third-party repos mentioned for research (not owned)
+Use as reference only. Prefer portable patterns over wholesale copy.
+
+### Memory / RAG
+- `cognitivecomputations/agi-memory` — memory/RAG reference
+- `commonsense/conceptnet5` — memory/RAG reference
+- `infiniflow/ragflow` — memory/RAG reference
+- `mem0ai/mem0` — memory/RAG reference
+
+### Multi-agent frameworks
+- `FoundationAgents/OpenManus` — agent framework reference
+- `OpenManus/OpenManus` — agent framework reference
+- `browser-use/browser-use` — agent framework reference
+- `continue-dev/continue` — agent framework reference
+- `geekan/MetaGPT` — agent framework reference
+- `joaomdmoura/crewAI` — agent framework reference
+- `Manus/OpenManus` — agent framework reference
+- `microsoft/autogen` — agent framework reference
+
+### Spiking / brain / CL1
+- `BindsNET/bindsnet` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/Brain-Cog` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/CACE-Net` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/casc` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/ETC` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/msg` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/PSU` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/sgad` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/TKS` — brain/SNN/CL1 reference
+- `Brain-Cog-Lab/Transfer-for-DVS` — brain/SNN/CL1 reference
+- `BrainCog-X/Brain-Cog` — brain/SNN/CL1 reference
+- `braincog-X/Brain-Cog` — brain/SNN/CL1 reference
+- `brian-team/brian2` — brain/SNN/CL1 reference
+- `Cortical-Labs/cl-sdk` — brain/SNN/CL1 reference
+- `EfekanSalman/NeuroConscious` — brain/SNN/CL1 reference
+- `fangwei123456/spikingjelly` — brain/SNN/CL1 reference
+- `FutureAIGuru/BrainSimII` — brain/SNN/CL1 reference
+- `jeshraghian/snntorch` — brain/SNN/CL1 reference
+- `xxx/Brain-Cog` — brain/SNN/CL1 reference
+
+### Local LLM tooling
+- `enricoros/big-AGI` — local LLM reference
+- `ggerganov/llama.cpp` — local LLM reference
+- `huggingface/text-generation-inference` — local LLM reference
+- `BerriAI/litellm` — local LLM reference
+- `huggingface/transformers` — local LLM reference
+
+### Full owner/repo list (alphabetical)
+- `008/017`
+- `06_SAFE_SOURCE_FILES/owner-history`
+- `06_SAFE_SOURCE_FILES/user-provided-text`
+- `0x0funky/agent-sprite-forge`
+- `1/5t`
+- `1inch/1inch-v2-contracts`
+- `26/312`
+- `269652/artificial-consciousness-ai`
+- `269652/artificial-consciousness-blueprint`
+- `5min/size`
+- `5t/T44`
+- `aave/aave-v3-core`
+- `ACCEPTED/RETAINED`
+- `accounts/orgs`
+- `activepieces/activepieces`
+- `adamgallas/FireFly-v1`
+- `adamgallas/FireFly-v2`
+- `adamgallas/firefly_v1_cifar_test`
+- `adamgallas/SpinalDLA`
+- `agents/memory`
+- `agents/outputs`
+- `AGI/consciousness`
+- `AI/DB`
+- `alexander-turner/attainable-utility-preservation`
+- `algorithms/UI`
+- `alpacahq/alpaca-trade-api-js`
+- `androoAGI/starnet`
+- `app/data`
+- `app/document`
+- `app/runtime`
+- `application/archive`
+- `application/source`
+- `approval-gate/admission`
+- `appwrite/appwrite`
+- `archive/drive-rest`
+- `archive/from-gitbook`
+- `archive/generated`
+- `Archive/handoff`
+- `archive/moved`
+- `archive/preserved`
+- `archive/sections`
+- `archives/drive-export`
+- `archives/migration-review`
+- `archives/source-repositories`
+- `archives/source-variants`
+- `artifacts/api-server`
+- `artifacts/mockup-sandbox`
+- `artifacts/tessera`
+- `artifacts/vitality-supply`
+- `artifacts/z-app`
+- `attribution/provenance`
+- `audit/runtime`
+- `AudiusProject/audius-protocol`
+- `auth/database`
+- `auth/payment`
+- `AUTOMATIC1111/stable-diffusion-webui`
+- `BabylonJS/Documentation`
+- `balancer/balancer-v2-monorepo`
+- `BerriAI/litellm`
+- `bharanidharanrangaraj/interfacing_rtc_with_raspberrypi_pico`
+- `binance/binance-connector-node`
+- `BindsNET/bindsnet`
+- `Brain-Cog-Lab/Brain-Cog`
+- `Brain-Cog-Lab/CACE-Net`
+- `Brain-Cog-Lab/casc`
+- `Brain-Cog-Lab/ETC`
+- `Brain-Cog-Lab/msg`
+- `Brain-Cog-Lab/PSU`
+- `Brain-Cog-Lab/sgad`
+- `Brain-Cog-Lab/TKS`
+- `Brain-Cog-Lab/Transfer-for-DVS`
+- `brain-consciousness/reports`
+- `BrainCog-X/Brain-Cog`
+- `braincog-X/Brain-Cog`
+- `BrainCog-X/tonic_braincog`
+- `branch/media`
+- `branch/PR`
+- `branch/runtime`
+- `branches/PRs`
+- `brian-team/brian2`
+- `browser-use/browser-use`
+- `browser/runtime`
+- `bryc/code`
+- `Build/Security`
+- `build/test`
+- `CanastaWiki/Canasta-CLI`
+- `catalog/metadata`
+- `ccxt/ccxt`
+- `chamber/desk`
+- `CL1/Cloud`
+- `ClickHouse/ClickHouse`
+- `Code/config`
+- `code/data`
+- `cognitivecomputations/agi-memory`
+- `coinbase/coinbase-pro-node`
+- `colbymchenry/codegraph`
+- `collin-keane/Tessera`
+- `collink1007-XXX/tess`
+- `collink1007/amber-flame-tiger-sand`
+- `collink1007/fleet-moss-monarch-rapid`
+- `collink1007/slate-dove-coral-hazel`
+- `collink1007/Vitalitychems`
+- `collink1007/XXX`
+- `commonsense/conceptnet5`
+- `compound-finance/compound-protocol`
+- `conan-io/cmake-conan`
+- `continue-dev/continue`
+- `coordination/handoff`
+- `Coordination/source`
+- `copied/moved`
+- `coral-xyz/anchor`
+- `Cortical-Labs/cl-sdk`
+- `CryptoSignal/Crypto-Signal`
+- `curvefi/curve-contract`
+- `customer/archive`
+- `cycle/chamber-text`
+- `data/drive`
+- `data/ingest`
+- `data/ingress-audit.jsonl`
+- `data/media`
+- `data/school`
+- `deepmind/deepmind-research`
+- `deepseek-ai/DeepSeek-V3`
+- `DeepVoltaire/AutoAugment`
+- `dexaai/dexter`
+- `distilled/ingested`
+- `Documentation/other`
+- `donmccurdy/three-pathfinding`
+- `Drakkar-Software/OctoBot`
+- `drive-rest/price-list.xlsx`
+- `duplicate/candidate`
+- `duplicate/empty`
+- `duplicate/superseded`
+- `EfekanSalman/NeuroConscious`
+- `empty/100`
+- `empty/HEAD`
+- `empty/placeholder`
+- `Empty/placeholder`
+- `EMPTY/TRIVIAL`
+- `engineering/product`
+- `enricoros/big-AGI`
+- `ericjang/gumbel-softmax`
+- `explosion/spaCy`
+- `facebookresearch/tribev2`
+- `fangwei123456/spikingjelly`
+- `fastai/fastai`
+- `file/hash`
+- `filecoin-project/lotus`
+- `Flag/route`
+- `flashbots/mev-boost`
+- `FloyedShen/tonic`
+- `forum/conversation`
+- `FoundationAgents/OpenManus`
+- `freqtrade/freqtrade`
+- `future-agi/future-agi`
+- `FutureAIGuru/BrainSimII`
+- `gadicc/node-yahoo-finance2`
+- `geekan/MetaGPT`
+- `generated/archive`
+- `generated/static`
+- `ggerganov/llama.cpp`
+- `Gil-ADDA/Piezoelectric-Energy-Generation-HarvestWalk`
+- `Gitbook/history`
+- `Gitbook/pull`
+- `Gitbook/vitality`
+- `github/workflows`
+- `google/mediapipe`
+- `HandingWang/RF-CMOCO`
+- `handoff/archive`
+- `Handoff/archive`
+- `health/security`
+- `heygen-com/hyperframes`
+- `history/coordination`
+- `history/handoffs`
+- `history/recovered`
+- `hmans/miniplex`
+- `huggingface/text-generation-inference`
+- `huggingface/transformers`
+- `human/model`
+- `humans/agents`
+- `hummingbot/hummingbot`
+- `HYB-002/HYB-018`
+- `HYB-005/012`
+- `HYB-006/007`
+- `HYB-006/HYB-014`
+- `HYB-008/011`
+- `HYB-008/017`
+- `HYB-008/HYB-017`
+- `HYB-009/012`
+- `hyperspaceai/agi`
+- `ikostrikov/pytorch-ddpg-naf`
+- `ildoonet/pytorch-gradual-warmup-lr`
+- `image/archive`
+- `image/text`
+- `Images/fonts`
+- `imports/trees`
+- `infiniflow/ragflow`
+- `instruction/provenance`
+- `isaac-mason/recast-navigation-js`
+- `jacobgil/pytorch-grad-cam`
+- `jakearchibald/idb`
+- `jbhinky/Theophilus-UDC`
+- `jeshraghian/snntorch`
+- `jesse-ai/jesse`
+- `joaomdmoura/crewAI`
+- `JuliusBrussee/caveman`
+- `jupyterhub/outreachy`
+- `kortix-ai/suna`
+- `ku2482/fqf-iqn-qrdqn.pytorch`
+- `kyegomez/swarms`
+- `langchain-ai/langchain`
+- `langchain-ai/langgraph`
+- `langflow-ai/langflow`
+- `langgenius/dify`
+- `lib/ingestion`
+- `lib/tessera`
+- `license/privacy`
+- `lichess-org/chessground`
+- `line/item`
+- `links/refs`
+- `LLM/cache`
+- `localForage/localForage`
+- `lqnankai/Music-Dataset`
+- `lyh983012/ES-imagenet-master`
+- `Manus/OpenManus`
+- `maximecb/gym-minigrid`
+- `media/data`
+- `mem0ai/mem0`
+- `mementum/backtrader`
+- `memory/audit`
+- `mesh/roles`
+- `microsoft/autogen`
+- `microsoft/semantic-kernel`
+- `migration-review/content-disposition-manifest.jsonl`
+- `migration/deployment`
+- `Mintplex-Labs/anything-llm`
+- `mit-han-lab/once-for-all`
+- `mksglu/context-mode`
+- `mockup/Tessera`
+- `Moderator/Father`
+- `modules/routes`
+- `monero-project/monero`
+- `moved/collink1007-fleet-moss-monarch-rapid`
+- `moved/summarized`
+- `msu-coinlab/pymoo`
+- `mvschwarz/openrig`
+- `mxgmn/WaveFunctionCollapse`
+- `n8n-io/n8n`
+- `NateTheGreatt/bitECS`
+- `numpy/numpy`
+- `NVIDIA/OpenShell`
+- `obra/superpowers`
+- `OCR/transcript`
+- `OCR/transcripts`
+- `ollama/ollama`
+- `open-jarvis/OpenJarvis`
+- `open-webui/open-webui`
+- `openai/baselines`
+- `openai/gym`
+- `openai/gym-http-api`
+- `OpenCausaLab/Awesome-LLM-Consciousness`
+- `opencv/opencv`
+- `OpenHands/OpenHands`
+- `OpenManus/OpenManus`
+- `operating/handoff`
+- `owner/agent`
+- `owner/repository`
+- `owner/staff`
+- `Owner/task`
+- `oxwhirl/smac`
+- `package/directory`
+- `pandas-dev/pandas`
+- `Panniantong/Agent-Reach`
+- `path/behavior`
+- `paths/modules`
+- `personal/secret-class`
+- `PGlite/Postgres`
+- `phaserjs/phaser`
+- `PIX2NVS/NVS2Graph`
+- `pkuxmq/OTTT-SNN`
+- `pmndrs/cannon-es`
+- `pmndrs/drei`
+- `pmndrs/react-three-rapier`
+- `ports/base`
+- `ports/DB`
+- `PR/branch-only`
+- `preview/src`
+- `Product/runtime`
+- `product/storefront`
+- `protected/uninspected`
+- `provenance/disposition`
+- `provenance/license`
+- `Provisional/TBD`
+- `public-apis/public-apis`
+- `public/separate`
+- `pybind/pybind11`
+- `python-lsp/python-lsp-server`
+- `pytorch/examples`
+- `pytorch/pytorch`
+- `pytorch/vision`
+- `quantum/gate`
+- `quantum/state`
+- `quark0/darts`
+- `QuixiAI/Hexis`
+- `RAG/memory`
+- `ranaroussi/yfinance`
+- `recastnavigation/recastnavigation`
+- `ref-count/sign-off`
+- `replit/replit-cursor-plugin`
+- `repos/vitalitychems-dot`
+- `retention/expiry`
+- `review/image-text`
+- `rgeirhos/texture-vs-shape`
+- `rights/terms`
+- `rohansx/agidb`
+- `run-llama/llama_index`
+- `runs/37382015797`
+- `runs/37898916804`
+- `runtime/data`
+- `runtime/media`
+- `rust-lang/crates.io-index`
+- `rust-lang/rust-analyzer`
+- `safety/privacy`
+- `Sairamg18814/shvayambhu`
+- `SanderMertens/ecs-faq`
+- `scrapy/scrapy`
+- `screen/component`
+- `screenpipe/screenpipe`
+- `seba-1511/dist_tuto.pth`
+- `Secrets/Credentials`
+- `secrets/private`
+- `Security/dependency`
+- `sensitive/personal`
+- `siddhant-rajhans/cortexlab`
+- `Significant-Gravitas/AutoGPT`
+- `singnet/das`
+- `singnet/das-toolbox`
+- `smoke/test`
+- `solana-labs/solana-program-library`
+- `songrotek/DDPG`
+- `Source-index/archive`
+- `source-index/import`
+- `source-versions/tessera-unified`
+- `source/data`
+- `source/document`
+- `source/license`
+- `sovereign-archive/T5`
+- `sovereign-origin/tessera-sovereign-complete`
+- `sovereign-origin/tessera-sovereign-ultimate`
+- `sovereign-origin/tesseract-quantum-agi`
+- `sovereign-origin/tesseract-v4-ollama`
+- `sovereign-origin/TessV1`
+- `spacejack/carphysics2d`
+- `sponsors/ai`
+- `src/lib`
+- `src/routes`
+- `starry-sky6688/MADDPG`
+- `Start/router`
+- `Steake/GodelOS`
+- `StockSharp/StockSharp`
+- `storefront/ABC-store`
+- `storefront/product`
+- `storefront/UI`
+- `stripe/stripe-node`
+- `summaries/indexes`
+- `Superalgos/Superalgos`
+- `SushiSwap/sushiswap`
+- `SWE-agent/SWE-agent`
+- `SWE-bench/SWE-bench`
+- `SYNTAEXIST-AI/TPIS-AGI-Architecture`
+- `TA-Lib/ta-lib-python`
+- `TabbyML/tabby`
+- `tensorflow/tensorflow`
+- `tensorflow/tpu`
+- `TESSERA/Gitbook`
+- `Tessera/Grok`
+- `TESSERA/pull`
+- `tesseract-swarm/node-runtime`
+- `test/typecheck`
+- `tests/configuration`
+- `text/provenance`
+- `theelderemo/Project-Aura`
+- `theme/runtime`
+- `therealdreg/pico-freq-meter-tcxo-ref`
+- `TheTesseractAI/18`
+- `TheTesseractAI/consolidated-project-all-in-one`
+- `TheTesseractAI/Tesseract-Sovereign-Moon-v2-Consolidated`
+- `TheTesseractAI/Tesseract-Sovereign-Moon-v3.0`
+- `TheTesseractAI/Tesseract-Unified-Ecosystem`
+- `TheTesseractAI/Tesseract2.0`
+- `TheTesseractAI/Tesseraxt-Sovereign-Brain`
+- `three-types/three-ts-types`
+- `thu-ml/tianshou`
+- `title/content`
+- `tlcdv/the_consciousness_ai`
+- `tomgoldstein/loss-landscape`
+- `topics/agi`
+- `topics/cognitive-architecture`
+- `topics/consciousness`
+- `topics/emergent-systems`
+- `topics/global-workspace-theory`
+- `trailhq/Graft`
+- `TransformerOptimus/SuperAGI`
+- `trueagi-io/hyperon-experimental`
+- `trueagi-io/jetta`
+- `trueagi-io/metta-examples`
+- `trueagi-io/protobuf-metta`
+- `twopirllc/pandas-ta`
+- `Uniswap/v3-core`
+- `unset/false`
+- `user-attachments/assets`
+- `vector/decision`
+- `venturaEffect/the_consciousness_ai`
+- `vercel/ai`
+- `Vercel/Nitro`
+- `vercel/output`
+- `vitality/Gitbook`
+- `vitalitychems-dot/1T`
+- `vitalitychems-dot/5t`
+- `vitalitychems-dot/Everything`
+- `vitalitychems-dot/Gitbook`
+- `vitalitychems-dot/Grok-ready`
+- `vitalitychems-dot/olive-giant-ever-glade`
+- `vitalitychems-dot/T44`
+- `vitalitychems-dot/TESS`
+- `vitalitychems-dot/TESSERA`
+- `vitalitychems-dot/tessera-complete-archives`
+- `vitalitychems-dot/tessera-coordination`
+- `vitalitychems-dot/tessera-grok-handoff`
+- `vitalitychems-dot/tessera-grok-handoff-complete`
+- `vitalitychems-dot/tessera-unified`
+- `vitalitychems-dot/TX`
+- `vitalitychems-dot/Zz`
+- `vitejs/vite`
+- `vllm-project/vllm`
+- `VRSEN/agency-swarm`
+- `wallet/customer`
+- `Wallet/payments`
+- `wayou/t-rex-runner`
+- `web/API`
+- `WingedGuardian/GENesis-AGI`
+- `workspace/build-gate`
+- `workspace/consolidation`
+- `workspace/full-picture`
+- `workspace/gitbook-cordnation`
+- `workspace/gitbookai`
+- `workspace/hyb-selffix`
+- `workspace/hyb012`
+- `workspace/improvements`
+- `workspace/repo-lab`
+- `workspace/security-gate`
+- `workspace/tessera-gate`
+- `xai-org/grok-1`
+- `xAI/Grok`
+- `xmrig/xmrig`
+- `xxx/Brain-Cog`
+- `YangyulinAi/Neurotech-Controls-for-AGI-Motivational-Framework`
+- `Yatrogenesis/CORTEXIA-Framework`
+- `Yatrogenesis/Drugs-Simulato-R`
+- `Yatrogenesis/HumanBrain`
+- `yatrogenesis/HumanBrain`
+- `Yatrogenesis/iatrogene-sys`
+- `Yatrogenesis/lirs-lab`
+- `Yatrogenesis/Materials-Simulato-R`
+- `Yatrogenesis/Simulato-R_v2.0`
+- `yearn/yearn-vaults-v3`
+- `yn-sun/e2epp`
+- `yoannmoinet/nipplejs`
+- `youngbryan97/aura`
+- `yourusername/godelOS`
+- `z-app/imports`
+- `z-app/src`
+- `Zae-Project/brain-emulation`
+- `zai-org/GLM-5`
+- `ZIP/Deflate`
+- `Zz/artifacts`
+
+Total unique names in extraction: 506.

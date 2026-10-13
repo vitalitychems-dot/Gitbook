@@ -1,0 +1,347 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Mesh City</title>
+<style>body{margin:0;background:#0b0f14;color:#dde;font:13px monospace;overflow:hidden}#i{position:fixed;top:8px;left:8px;background:#000a;padding:8px;max-width:340px;white-space:pre-wrap}</style></head>
+<body><canvas id="c"></canvas><div id="i">Mesh City - drag to orbit, click a building</div>
+<script id="city" type="application/json">{
+ "buildings": [
+  {
+   "files": 4817,
+   "height": 32,
+   "id": "agent:Tessera",
+   "kind": "agent",
+   "mentions": 1246,
+   "name": "Tessera",
+   "owned_dirs": [
+    "TESSERA-ro"
+   ],
+   "unknown": [],
+   "x": 0,
+   "z": 0
+  },
+  {
+   "files": null,
+   "height": 10.0,
+   "id": "agent:Command Center",
+   "kind": "agent",
+   "mentions": 64,
+   "name": "Command Center",
+   "owned_dirs": [],
+   "unknown": [
+    "owned files: no local dir found"
+   ],
+   "x": 3,
+   "z": 0
+  },
+  {
+   "files": 10492,
+   "height": 32,
+   "id": "agent:Mesh Cloud",
+   "kind": "agent",
+   "mentions": 24,
+   "name": "Mesh Cloud",
+   "owned_dirs": [
+    "gitmesh"
+   ],
+   "unknown": [],
+   "x": 6,
+   "z": 0
+  },
+  {
+   "files": null,
+   "height": 25.0,
+   "id": "agent:Security",
+   "kind": "agent",
+   "mentions": 529,
+   "name": "Security",
+   "owned_dirs": [],
+   "unknown": [
+    "owned files: no local dir found"
+   ],
+   "x": 9,
+   "z": 0
+  },
+  {
+   "files": 20125,
+   "height": 32,
+   "id": "agent:Build",
+   "kind": "agent",
+   "mentions": 604,
+   "name": "Build",
+   "owned_dirs": [
+    "build-gate",
+    "build-o",
+    "build-plan-2026-10-12"
+   ],
+   "unknown": [],
+   "x": 0,
+   "z": 3
+  },
+  {
+   "files": 1,
+   "height": 13.44,
+   "id": "agent:Gitbook Moderator",
+   "kind": "agent",
+   "mentions": 109,
+   "name": "Gitbook Moderator",
+   "owned_dirs": [
+    "moderator-tools"
+   ],
+   "unknown": [],
+   "x": 3,
+   "z": 3
+  },
+  {
+   "files": 627,
+   "height": 22.15,
+   "id": "agent:Gitbook Cordnation",
+   "kind": "agent",
+   "mentions": 49,
+   "name": "Gitbook Cordnation",
+   "owned_dirs": [
+    "gitbook-cordnation"
+   ],
+   "unknown": [],
+   "x": 6,
+   "z": 3
+  },
+  {
+   "files": 100,
+   "height": 18.75,
+   "id": "agent:Rick",
+   "kind": "agent",
+   "mentions": 109,
+   "name": "Rick",
+   "owned_dirs": [
+    "rick"
+   ],
+   "unknown": [],
+   "x": 9,
+   "z": 3
+  },
+  {
+   "files": 7,
+   "height": 4.71,
+   "id": "tool:diskguard",
+   "kind": "workshop",
+   "name": "diskguard",
+   "path": "/workspace/rick/tools/diskguard",
+   "x": 0,
+   "z": 14
+  },
+  {
+   "files": 3,
+   "height": 3.43,
+   "id": "tool:meshcity",
+   "kind": "workshop",
+   "name": "meshcity",
+   "path": "/workspace/rick/tools/meshcity",
+   "x": 3,
+   "z": 14
+  },
+  {
+   "files": 6,
+   "height": 4.43,
+   "id": "tool:palace",
+   "kind": "workshop",
+   "name": "palace",
+   "path": "/workspace/rick/tools/palace",
+   "x": 6,
+   "z": 14
+  },
+  {
+   "files": 62,
+   "height": 13.4,
+   "id": "tool:qlab",
+   "kind": "workshop",
+   "name": "qlab",
+   "path": "/workspace/rick/qlab",
+   "x": 9,
+   "z": 14
+  },
+  {
+   "docs": 733,
+   "height": 28.07,
+   "id": "room:TESSERA-ro/agents",
+   "kind": "library",
+   "name": "TESSERA-ro/agents",
+   "x": 14,
+   "z": 0
+  },
+  {
+   "docs": 338,
+   "height": 19.38,
+   "id": "room:TESSERA-ro/rules",
+   "kind": "library",
+   "name": "TESSERA-ro/rules",
+   "x": 17,
+   "z": 0
+  },
+  {
+   "docs": 115,
+   "height": 11.72,
+   "id": "room:TESSERA-ro/code",
+   "kind": "library",
+   "name": "TESSERA-ro/code",
+   "x": 20,
+   "z": 0
+  },
+  {
+   "docs": 52,
+   "height": 8.21,
+   "id": "room:TESSERA-ro/bhnmc",
+   "kind": "library",
+   "name": "TESSERA-ro/bhnmc",
+   "x": 23,
+   "z": 0
+  },
+  {
+   "docs": 20,
+   "height": 5.47,
+   "id": "room:gitbook-gate-1e3bb50/agents",
+   "kind": "library",
+   "name": "gitbook-gate-1e3bb50/agents",
+   "x": 14,
+   "z": 3
+  },
+  {
+   "docs": 19,
+   "height": 5.36,
+   "id": "room:gitbook-gate-1e3bb50/rules",
+   "kind": "library",
+   "name": "gitbook-gate-1e3bb50/rules",
+   "x": 17,
+   "z": 3
+  },
+  {
+   "docs": 12,
+   "height": 4.46,
+   "id": "room:rick/bhnmc",
+   "kind": "library",
+   "name": "rick/bhnmc",
+   "x": 20,
+   "z": 3
+  },
+  {
+   "docs": 10,
+   "height": 4.16,
+   "id": "room:rick/quantum",
+   "kind": "library",
+   "name": "rick/quantum",
+   "x": 23,
+   "z": 3
+  },
+  {
+   "docs": 10,
+   "height": 4.16,
+   "id": "room:rick/agents",
+   "kind": "library",
+   "name": "rick/agents",
+   "x": 14,
+   "z": 6
+  },
+  {
+   "docs": 8,
+   "height": 3.83,
+   "id": "room:TESSERA-ro/tesla",
+   "kind": "library",
+   "name": "TESSERA-ro/tesla",
+   "x": 17,
+   "z": 6
+  },
+  {
+   "docs": 7,
+   "height": 3.65,
+   "id": "room:TESSERA-ro/quantum",
+   "kind": "library",
+   "name": "TESSERA-ro/quantum",
+   "x": 20,
+   "z": 6
+  },
+  {
+   "docs": 3,
+   "height": 2.73,
+   "id": "room:TESSERA-ro/inventions",
+   "kind": "library",
+   "name": "TESSERA-ro/inventions",
+   "x": 23,
+   "z": 6
+  },
+  {
+   "docs": 2,
+   "height": 2.41,
+   "id": "room:rick/code",
+   "kind": "library",
+   "name": "rick/code",
+   "x": 14,
+   "z": 9
+  },
+  {
+   "docs": 1,
+   "height": 2.0,
+   "id": "room:rick/tesla",
+   "kind": "library",
+   "name": "rick/tesla",
+   "x": 17,
+   "z": 9
+  },
+  {
+   "docs": 1,
+   "height": 2.0,
+   "id": "room:rick/inventions",
+   "kind": "library",
+   "name": "rick/inventions",
+   "x": 20,
+   "z": 9
+  },
+  {
+   "docs": 1,
+   "height": 2.0,
+   "id": "room:gitbook-gate-1e3bb50/quantum",
+   "kind": "library",
+   "name": "gitbook-gate-1e3bb50/quantum",
+   "x": 23,
+   "z": 9
+  },
+  {
+   "docs": 1,
+   "height": 2.0,
+   "id": "room:gitbook-gate-1e3bb50/code",
+   "kind": "library",
+   "name": "gitbook-gate-1e3bb50/code",
+   "x": 14,
+   "z": 12
+  }
+ ],
+ "ground": {
+  "free_bytes": 4002402304,
+  "generated": "2026-10-13 02:03",
+  "level": "amber",
+  "percent": 91.94
+ },
+ "schema": "meshcity/1"
+}</script>
+<script>
+const C=JSON.parse(document.getElementById('city').textContent),cv=document.getElementById('c'),g=cv.getContext('2d'),info=document.getElementById('i');
+let yaw=0.7,pitch=0.6,dist=55,W,H,drag=null,hits=[];
+const col={agent:'#4fa3ff',workshop:'#ffb347',library:'#9f7bff'};
+const gnd={green:'#123d22',amber:'#4a3a10',red:'#4a1414',unknown:'#222'}[(C.ground||{}).level||'unknown'];
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;draw()}
+function P(x,y,z){x-=10;z-=10;const cy=Math.cos(yaw),sy=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
+ let X=x*cy-z*sy,Z=x*sy+z*cy,Y=y*cp-Z*sp;Z=y*sp+Z*cp+dist;const f=600/Z;return [W/2+X*f,H/2-Y*f,Z]}
+function shade(h,k){const n=parseInt(h.slice(1),16);return `rgb(${(n>>16)*k|0},${(n>>8&255)*k|0},${(n&255)*k|0})`}
+function draw(){g.fillStyle='#0b0f14';g.fillRect(0,0,W,H);
+ const q=[[-4,0,-4],[34,0,-4],[34,0,30],[-4,0,30]].map(p=>P(...p));g.fillStyle=gnd;g.beginPath();q.forEach((p,i)=>i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1]));g.fill();
+ const bs=(C.buildings||[]).map(b=>({b,d:P(b.x+1,0,b.z+1)[2]})).sort((a,b)=>b.d-a.d);hits=[];
+ for(const {b} of bs){const x=b.x,z=b.z,h=b.height,s=2,c=col[b.kind]||'#aaa';
+  const v=[[x,0,z],[x+s,0,z],[x+s,0,z+s],[x,0,z+s],[x,h,z],[x+s,h,z],[x+s,h,z+s],[x,h,z+s]].map(p=>P(...p));
+  const F=[[0,1,5,4,.8],[1,2,6,5,.6],[2,3,7,6,.5],[3,0,4,7,.7],[4,5,6,7,1]];
+  F.map(f=>({f,z:(v[f[0]][2]+v[f[1]][2]+v[f[2]][2]+v[f[3]][2])/4})).sort((a,b)=>b.z-a.z).forEach(({f})=>{
+   g.fillStyle=shade(c,f[4]);g.beginPath();for(let i=0;i<4;i++){const p=v[f[i]];i?g.lineTo(p[0],p[1]):g.moveTo(p[0],p[1])}g.closePath();g.fill();g.strokeStyle='#0006';g.stroke()});
+  const xs=v.map(p=>p[0]),ys=v.map(p=>p[1]);hits.push({b,x0:Math.min(...xs),x1:Math.max(...xs),y0:Math.min(...ys),y1:Math.max(...ys)});
+  if(b.kind==='agent'){g.fillStyle='#fff';g.fillText(b.name,v[4][0],v[4][1]-4)}}
+ g.fillStyle='#ccc';g.fillText(`disk ${(C.ground||{}).percent??'unknown'}% (${(C.ground||{}).level}) | blue=agents orange=workshops purple=library`,10,H-10)}
+cv.onmousedown=e=>drag=[e.clientX,e.clientY,0];onmouseup=e=>{if(drag&&drag[2]<4)pick(e);drag=null};
+onmousemove=e=>{if(!drag)return;yaw+=(e.clientX-drag[0])*.01;pitch=Math.max(.1,Math.min(1.5,pitch+(e.clientY-drag[1])*.01));drag[2]+=Math.abs(e.clientX-drag[0])+Math.abs(e.clientY-drag[1]);drag[0]=e.clientX;drag[1]=e.clientY;draw()};
+onwheel=e=>{dist=Math.max(15,Math.min(150,dist+e.deltaY*.05));draw()};
+function pick(e){for(let i=hits.length-1;i>=0;i--){const h=hits[i];if(e.clientX>=h.x0&&e.clientX<=h.x1&&e.clientY>=h.y0&&e.clientY<=h.y1){const b=Object.assign({},h.b);info.textContent=JSON.stringify(b,null,1);return}}}
+onresize=rs;rs();
+</script></body></html>

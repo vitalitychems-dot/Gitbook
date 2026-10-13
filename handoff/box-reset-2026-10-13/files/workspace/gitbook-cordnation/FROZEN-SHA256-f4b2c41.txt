@@ -1,0 +1,5 @@
+# Base f4b2c41ee458e54fc4f12cecd4cab941aa8e627c (PR #5 merged GB-015, 019, 021, 020 on feaeb558). Packages are content/mechanical rebases, NOT Ready.
+# GB-018 mechanical (context lines only); GB-017 and GB-016 rev 3.2 content changes. Push order: 017 -> 018 -> 016 rev 3.2.
+49028bee3aa3f9662ca7481c7c1dd370a2ab7e673ff9fa39d0e52801034c5fe0  GB-017/GB-017.f4b2c41.diff
+e6242006524510333b26baf7032c4e71c882f1a712cf3f2cf4e36279e6cf4e93  GB-018/GB-018.f4b2c41.diff
+872a885b28bb23f31562edd46a1eb23d152772ef8c94a371686d126db2482007  GB-016/rev3/GB-016-rev3.2.f4b2c41.diff

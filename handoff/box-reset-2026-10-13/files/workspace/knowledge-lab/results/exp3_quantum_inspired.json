@@ -1,0 +1,141 @@
+{
+  "experiment": "quantum_inspired",
+  "claim_label": "TESTED",
+  "disclaimer": "Grover demo is a classical numpy statevector simulation of the quantum algorithm. It shows the query-complexity advantage O(sqrt(N)) vs O(N), not a physical quantum computer. Simulated annealing is a classical heuristic inspired by statistical physics, not quantum hardware. Neither manipulates spacetime; neither proves agents become self-aware.",
+  "grover": [
+    {
+      "n_qubits": 4,
+      "N": 16,
+      "marked": 6,
+      "iterations": 3,
+      "oracle_queries": 3,
+      "classical_worst_queries": 16,
+      "classical_avg_queries": 8.5,
+      "measured_argmax": 6,
+      "success_prob_marked": 0.9613189697265625,
+      "wall_s": 0.0006972160008444916,
+      "quadratic_ratio_vs_classical_avg": 2.8333333333333335
+    },
+    {
+      "n_qubits": 6,
+      "N": 64,
+      "marked": 27,
+      "iterations": 6,
+      "oracle_queries": 6,
+      "classical_worst_queries": 64,
+      "classical_avg_queries": 32.5,
+      "measured_argmax": 27,
+      "success_prob_marked": 0.996585680786799,
+      "wall_s": 7.657199967070483e-05,
+      "quadratic_ratio_vs_classical_avg": 5.416666666666667
+    },
+    {
+      "n_qubits": 8,
+      "N": 256,
+      "marked": 109,
+      "iterations": 13,
+      "oracle_queries": 13,
+      "classical_worst_queries": 256,
+      "classical_avg_queries": 128.5,
+      "measured_argmax": 109,
+      "success_prob_marked": 0.986186240103673,
+      "wall_s": 5.6813998526195064e-05,
+      "quadratic_ratio_vs_classical_avg": 9.884615384615385
+    },
+    {
+      "n_qubits": 10,
+      "N": 1024,
+      "marked": 438,
+      "iterations": 25,
+      "oracle_queries": 25,
+      "classical_worst_queries": 1024,
+      "classical_avg_queries": 512.5,
+      "measured_argmax": 438,
+      "success_prob_marked": 0.9994612447444075,
+      "wall_s": 0.00011322899808874354,
+      "quadratic_ratio_vs_classical_avg": 20.5
+    }
+  ],
+  "classical_linear": [
+    {
+      "N": 16,
+      "marked": 6,
+      "avg_queries_20_shuffles": 7.55,
+      "median_queries": 8.0,
+      "theoretical_avg": 16.0
+    },
+    {
+      "N": 64,
+      "marked": 27,
+      "avg_queries_20_shuffles": 28.45,
+      "median_queries": 28.0,
+      "theoretical_avg": 64.0
+    },
+    {
+      "N": 256,
+      "marked": 109,
+      "avg_queries_20_shuffles": 133.85,
+      "median_queries": 145.5,
+      "theoretical_avg": 256.0
+    },
+    {
+      "N": 1024,
+      "marked": 438,
+      "avg_queries_20_shuffles": 486.75,
+      "median_queries": 411.0,
+      "theoretical_avg": 1024.0
+    }
+  ],
+  "optimizer_summary": [
+    {
+      "method": "random_search",
+      "budget": 50,
+      "mean_best_e": 0.019671266347209507,
+      "std_best_e": 0.012791466820943875,
+      "mean_wall_s": 0.0008691639995959122,
+      "n_seeds": 5
+    },
+    {
+      "method": "simulated_annealing",
+      "budget": 50,
+      "mean_best_e": 0.34497281626096116,
+      "std_best_e": 0.32417871490709044,
+      "mean_wall_s": 0.0002294169993547257,
+      "n_seeds": 5
+    },
+    {
+      "method": "random_search",
+      "budget": 200,
+      "mean_best_e": 0.0038294923375330795,
+      "std_best_e": 0.0020833439937243538,
+      "mean_wall_s": 0.00034004659901256675,
+      "n_seeds": 5
+    },
+    {
+      "method": "simulated_annealing",
+      "budget": 200,
+      "mean_best_e": 0.13028722399326884,
+      "std_best_e": 0.14844890646969636,
+      "mean_wall_s": 0.0024710752004466485,
+      "n_seeds": 5
+    },
+    {
+      "method": "random_search",
+      "budget": 1000,
+      "mean_best_e": 0.0015244521980389322,
+      "std_best_e": 0.00040200925697747743,
+      "mean_wall_s": 0.002472051999211544,
+      "n_seeds": 5
+    },
+    {
+      "method": "simulated_annealing",
+      "budget": 1000,
+      "mean_best_e": 0.008379353076418372,
+      "std_best_e": 0.008819828052143633,
+      "mean_wall_s": 0.008934268800658174,
+      "n_seeds": 5
+    }
+  ],
+  "optimizer_global_min_approx": 0.0,
+  "true_min_note": "Energy minimized near x\u22480.3; global min approaches 0."
+}

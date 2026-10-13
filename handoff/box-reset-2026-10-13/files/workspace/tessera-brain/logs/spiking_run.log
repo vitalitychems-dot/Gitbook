@@ -1,0 +1,127 @@
+WARNING    'w' is an internal variable of group 'synapses', but also exists in the run namespace with the value 0.4. The internal variable will be used. [brian2.groups.group.Group.resolve.resolution_conflict]
+Warning: Jitter detection is currently not supported in cl-sdk. This may lead to unexpected loop timing behaviour if your loop body takes a long time to execute.
+{
+  "honesty": "Blueprint spiking + CL1-style loop. Not living tissue. No weight training.",
+  "brian2": {
+    "label": "TESTED",
+    "engine": "Brian2",
+    "brian2_version": "2.10.1",
+    "duration_ms": 200,
+    "total_spikes": 10,
+    "spikes_by_node": {
+      "sensory_intake": 10,
+      "thalamus_router": 0,
+      "hippocampus_learning_memory": 0,
+      "cortex_reasoning": 0,
+      "prefrontal_tessera_admin": 0,
+      "creator_model": 0,
+      "immune_security": 0,
+      "error_build": 0,
+      "error_moderator": 0,
+      "cordnation": 0,
+      "command_center": 0,
+      "mesh_cloud": 0,
+      "historical_analysis": 0,
+      "knowledge_packs": 0,
+      "research_theories": 0,
+      "motor_output": 0
+    },
+    "wall_s": 0.30495548248291016,
+    "note": "LIF toy network on blueprint graph; not biological CL1 neurons."
+  },
+  "numpy": {
+    "label": "TESTED",
+    "engine": "numpy_discrete",
+    "steps": 100,
+    "total_spikes": 84,
+    "spikes_by_node": {
+      "sensory_intake": 50,
+      "thalamus_router": 0,
+      "hippocampus_learning_memory": 0,
+      "cortex_reasoning": 0,
+      "prefrontal_tessera_admin": 0,
+      "creator_model": 34,
+      "immune_security": 0,
+      "error_build": 0,
+      "error_moderator": 0,
+      "cordnation": 0,
+      "command_center": 0,
+      "mesh_cloud": 0,
+      "historical_analysis": 0,
+      "knowledge_packs": 0,
+      "research_theories": 0,
+      "motor_output": 0
+    },
+    "first_events": [
+      {
+        "t": 1,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 2,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 3,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 5,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      },
+      {
+        "t": 7,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 8,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 9,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 11,
+        "fired": [
+          "sensory_intake",
+          "creator_model"
+        ]
+      },
+      {
+        "t": 13,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+        "t": 14,
+        "fired": [
+          "creator_model"
+        ]
+      },
+      {
+        "t": 15,
+        "fired": [
+          "sensory_intake"
+        ]
+      },
+      {
+ 
+Wrote /workspace/tessera-brain/logs/spiking_sim.json
+Random data source is using seed: 42

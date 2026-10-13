@@ -1,0 +1,43 @@
+{
+ "marker": "FULLPICTURE-LOADED",
+ "at": "2026-10-13T04:3x-05:00",
+ "graph": "build-plan-2026-10-12/full-picture-memory.jsonl",
+ "lines_before": 3014,
+ "lines_after": 3064,
+ "appended": 50,
+ "sha256": "8d433d549888acd6ed02e75d8f73a0c89a3eedfed48556ee62213a8e4f42e572",
+ "owned_repos": {
+  "TESSERA": {
+   "sha": "736faed9286e0213a8e00fccbee6cfe1ef5586cf",
+   "tree_entries": 4959,
+   "readme_bytes": 6721,
+   "coverage": "metadata+README+full tree (API, not truncated); file bodies not read"
+  },
+  "Gitbook": {
+   "sha": "243ddd4befa9",
+   "tree_entries": 11193,
+   "readme_bytes": 1923,
+   "coverage": "metadata+README+full tree (API, not truncated); file bodies not read"
+  },
+  "GitMesh": {
+   "sha": "3f6f45d14d13",
+   "tree_entries": 32,
+   "readme_bytes": 569,
+   "coverage": "metadata+README+full tree (API, not truncated); file bodies not read"
+  },
+  "vitality": {
+   "sha": "2cf2931a725f",
+   "tree_entries": 3034,
+   "readme_bytes": 1589,
+   "coverage": "metadata+README+full tree (API, not truncated); file bodies not read"
+  }
+ },
+ "rea_records_loaded": 19,
+ [REDACTED-PATH] [],
+ "ideas_scoreboards": [
+  "IDEAS-BUILD-1.md",
+  "IDEAS-BUILD-2.md",
+  "IDEAS-BUILD-4.md"
+ ],
+ "benchmark_note": "held-out benchmark uses frozen pre-merge copy /workspace/fp-frozen-3014.jsonl so the 87-relation split is unchanged"
+}

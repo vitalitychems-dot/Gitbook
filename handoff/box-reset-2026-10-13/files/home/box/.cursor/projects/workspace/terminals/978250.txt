@@ -1,0 +1,14 @@
+---
+pid: 35072
+cwd: "/workspace"
+command: "cd /workspace/TESSERA-ro && rg -n 'function packContext|packContext\\b' --type ts -l | head; rg -n 'assign|pickAgent|selectAgent' artifacts/api-server/src/lib/agent-spawner.ts | head -15; sed -n 1,60p artifacts/api-server/src/lib/file-integrity.ts | rg -n 'function|hash|restore|backup' ; rg -n 'THRESHOLDS = ' -A8 artifacts/api-server/src/lib/anomaly-detection.ts"
+status: failed   
+started_at: 2026-10-13T08:29:31.740Z
+running_for_ms: 32099    
+---
+
+---
+exit_code: unknown
+elapsed_ms: 32099
+ended_at: 2026-10-13T08:30:03.839Z
+---

@@ -1,0 +1,24 @@
+---
+pid: 88145
+cwd: "/workspace"
+command: "timeout 10 head -3 /workspace/dedupe/all-groups.jsonl; echo '---'; timeout 10 wc -l /workspace/dedupe/all-groups.jsonl; echo '---'; timeout 10 python3 -c \"import json; f=open('/workspace/dedupe/all-groups.jsonl'); print(json.loads(f.readline()).keys()); d=json.loads(open('/workspace/dedupe/all-groups.jsonl').readline()); print({k:(type(v).__name__, (v[:2] if isinstance(v,list) else v) if k!='paths' else len(v)) for k,v in d.items()}); print('paths0', d.get('paths',[d.get('files')])[0] if True else None)\""
+title: "Inspect all-groups.jsonl schema"
+status: succeeded
+started_at: 2026-10-13T11:07:40.135Z
+running_for_ms: 84       
+---
+{"sha256": "b7a2b5e239f8064fba140b75be9f5a89d629cf554fdc5021b59784342bc7be05", "size": 93635859, "count": 17, "wasted": 1498173744, "paths": ["/workspace/build-gate/full-f76d/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/einstein/r4/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/einstein/round3/tess/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/gitmesh/repo/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/rea-batch/amber-flame-tiger-sand/artifacts/drive/tesseract_consolidated.zip", "/workspace/rea-batch/b3-collink1007_amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/rea-batch/b3-collink1007_amber-flame-tiger-sand/artifacts/drive/tesseract_consolidated.zip", "/workspace/rea-batch/b3-collink1007_z/artifacts/drive/1e3Vip.zip", "/workspace/rea-batch/b3-collink1007_z/artifacts/drive/tesseract_consolidated.zip", "/workspace/rea-batch/tessera-v2/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/rea-batch/v2-rea/Gitbook-novault/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/rick/src/Gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/tb3/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/tess-opt/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/tv3/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip", "/workspace/tw/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip"], "all_node_modules": false, "any_node_modules": false, "nm_count": 0}
+{"sha256": "996102e83517161ca63fee7b48e2dfde0fae89c4d382887de416bf012c3b1af9", "size": 47185920, "count": 8, "wasted": 330301440, "paths": ["/workspace/build-gate/full-f76d/archive/sections/3_9_1776105526328/part-04", "/workspace/einstein/r4/archive/sections/3_9_1776105526328/part-04", "/workspace/einstein/round3/tess/archive/sections/3_9_1776105526328/part-04", "/workspace/rea-batch/b2-TESSERA/archive/sections/3_9_1776105526328/part-04", "/workspace/rea-batch/tessera-v2/archive/sections/3_9_1776105526328/part-04", "/workspace/tess-opt/archive/sections/3_9_1776105526328/part-04", "/workspace/tv3/archive/sections/3_9_1776105526328/part-04", "/workspace/tw/archive/sections/3_9_1776105526328/part-04"], "all_node_modules": false, "any_node_modules": false, "nm_count": 0}
+{"sha256": "0f5a4962a0d3737250206b8bcf069b2bb52cdd9470a2610d3158bf80a8304d40", "size": 47185920, "count": 8, "wasted": 330301440, "paths": ["/workspace/build-gate/full-f76d/archive/sections/3_9_1776105526328/part-03", "/workspace/einstein/r4/archive/sections/3_9_1776105526328/part-03", "/workspace/einstein/round3/tess/archive/sections/3_9_1776105526328/part-03", "/workspace/rea-batch/b2-TESSERA/archive/sections/3_9_1776105526328/part-03", "/workspace/rea-batch/tessera-v2/archive/sections/3_9_1776105526328/part-03", "/workspace/tess-opt/archive/sections/3_9_1776105526328/part-03", "/workspace/tv3/archive/sections/3_9_1776105526328/part-03", "/workspace/tw/archive/sections/3_9_1776105526328/part-03"], "all_node_modules": false, "any_node_modules": false, "nm_count": 0}
+---
+19582 /workspace/dedupe/all-groups.jsonl
+---
+dict_keys(['sha256', 'size', 'count', 'wasted', 'paths', 'all_node_modules', 'any_node_modules', 'nm_count'])
+{'sha256': ('str', 'b7a2b5e239f8064fba140b75be9f5a89d629cf554fdc5021b59784342bc7be05'), 'size': ('int', 93635859), 'count': ('int', 17), 'wasted': ('int', 1498173744), 'paths': ('list', 17), 'all_node_modules': ('bool', False), 'any_node_modules': ('bool', False), 'nm_count': ('int', 0)}
+paths0 /workspace/build-gate/full-f76d/archive/from-gitbook/archive/moved/collink1007-amber-flame-tiger-sand/artifacts/drive/1e3Vip.zip
+
+---
+exit_code: 0
+elapsed_ms: 83
+ended_at: 2026-10-13T11:07:40.218Z
+---

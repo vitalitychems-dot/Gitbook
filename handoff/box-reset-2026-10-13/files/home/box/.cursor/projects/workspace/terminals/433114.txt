@@ -1,0 +1,62 @@
+---
+pid: 210571
+cwd: "/workspace"
+command: "# GB-070 Build gate (docs only) - use fresh tmp, don't fight /tmp/gb70 if someone's using it\nset -e\nDIFF=/workspace/gitbook-cordnation/GB-070/GB-070-rev3.diff\nBASE_SHA=243ddd4b\nEXPECT_HASH=ee8dcf89f3ddd00ec8eeeb60bc35134bba6670dd2638425710cc1418b8f9b7cc\nACTUAL=$(sha256sum \"$DIFF\" | awk '{print $1}')\necho \"hash_match=$([ \"$ACTUAL\" = \"$EXPECT_HASH\" ] && echo YES || echo NO) actual=$ACTUAL\"\n# Clone sparse or shallow gitbook for apply test\nGATE=/tmp/build-gb070-$$\nrm -rf \"$GATE\"\nmkdir -p \"$GATE\"\n# Prefer existing fresh clone if any at tip\nif [ -d /tmp/gb70/.git ]; then\n  echo \"existing /tmp/gb70 tip:\"; git -C /tmp/gb70 rev-parse HEAD 2>/dev/null; git -C /tmp/gb70 log -1 --oneline 2>/dev/null\nfi\n# Fresh shallow clone\ngit clone --depth 50 https://github.com/vitalitychems-dot/Gitbook.git \"$GATE/Gitbook\" 2>&1 | tail -5\ncd \"$GATE/Gitbook\"\ngit fetch --depth 50 origin main 2>&1 | tail -3\ngit checkout \"$BASE_SHA\" 2>&1 | tail -5 || git checkout origin/main 2>&1 | tail -5\nHEAD=$(git rev-parse HEAD)\necho \"HEAD=$HEAD\"\ngit log -1 --oneline\n# Apply check\ngit apply --check \"$DIFF\" 2>&1 && echo APPLY_CHECK=OK || echo APPLY_CHECK=FAIL\ngit apply \"$DIFF\" 2>&1 && echo APPLY=OK || echo APPLY=FAIL\necho \"=== changed files ===\"\ngit status --short\necho \"=== ENABLE flags ===\"\nrg -n 'TESSERA_ENABLE_' -- \"$DIFF\" || echo \"no TESSERA_ENABLE in diff\"\necho \"=== intake/log.md table check ===\"\npython3 << 'PY'\nfrom pathlib import Path\np = Path(\"intake/log.md\")\ntext = p.read_text() if p.exists() else \"\"\nrows = [ln for ln in text.splitlines() if ln.strip().startswith(\"|\") and not ln.strip().startswith(\"|---\") and \"ID\" not in ln.split(\"|\")[1] if False]\n# simpler parse\nlines = [ln for ln in text.splitlines() if ln.startswith(\"|\")]\nif not lines:\n    print(\"NO_TABLE\")\nelse:\n    header = lines[0]\n    cols = [c.strip() for c in header.strip(\"|\").split(\"|\")]\n    print(f\"header_cols={len(cols)} names={cols}\")\n    ids = []\n    for ln in lines[2:]:  # skip header + separator\n        parts = [c.strip() for c in ln.strip(\"|\").split(\"|\")]\n        if len(parts) != len(cols):\n            print(f\"COL_MISMATCH row_cols={len(parts)}: {ln[:120]}\")\n        if parts:\n            ids.append(parts[0])\n    from collections import Counter\n    dup = [i for i,c in Counter(ids).items() if c>1]\n    print(f\"rows={len(ids)} duplicate_ids={dup or 'none'}\")\n    # GB-070 row present?\n    gb70 = [ln for ln in lines if \"GB-070\" in ln]\n    print(f\"GB-070_rows={len(gb70)}\")\n    for ln in gb70[:5]:\n        print(ln[:200])\n# new ledger file\nfrom pathlib import Path\nlp = Path(\"mesh/ledger/ledger-15.md\")\nprint(f\"ledger15_exists={lp.exists()} size={lp.stat().st_size if lp.exists() else 0}\")\nif lp.exists():\n    t = lp.read_text()\n    # check markdown links\n    import re\n    links = re.findall(r'\\[([^\\]]+)\\]\\(([^)]+)\\)', t)\n    print(f\"links_in_ledger={len(links)}\")\n    for label, href in links[:20]:\n        if href.startswith(\"http\") or href.startswith(\"#\"):\n            print(f\"  OK-ext {href}\")\n            continue\n        target = (lp.parent / href).resolve()\n        # also relative from repo root\n        root_t = (Path('.') / href).resolve()\n        ok = target.exists() or root_t.exists()\n        print(f\"  {'OK' if ok else 'MISSING'} {href}\")\nPY\necho \"=== diff stat ===\"\nwc -l \"$DIFF\"; head -5 \"$DIFF\"\n# cleanup gate clone after - keep report\ndu -sh \"$GATE\"\n# write gate note\nmkdir -p /workspace/build-gate\ncat > /workspace/build-gate/GATE-2026-10-13-GB070-rev3.md << EOF\n# Build gate GB-070 rev 3\n- time: $(date)\n- diff: $DIFF\n- sha256: $ACTUAL (expected $EXPECT_HASH) match=$([ \"$ACTUAL\" = \"$EXPECT_HASH\" ] && echo YES || echo NO)\n- base requested: $BASE_SHA\n- HEAD checked out: $HEAD\nEOF\n# append apply result from this shell's echo - re-check quickly\ngit apply --reverse --check \"$DIFF\" 2>/dev/null || true\necho GATE_DIR=$GATE\nls mesh/ledger/ 2>/dev/null | head\n"
+title: "Run GB-070 rev3 Build gate checks"
+status: succeeded
+started_at: 2026-10-13T09:30:35.668Z
+running_for_ms: 102991   
+---
+hash_match=YES actual=ee8dcf89f3ddd00ec8eeeb60bc35134bba6670dd2638425710cc1418b8f9b7cc
+existing /tmp/gb70 tip:
+243ddd4befa946674386bd3a501e314f2d894574
+243ddd4 mesh: scoreboard, ranked bulk lists, collab protocol (#63)
+Cloning into '/tmp/build-gb070-210571/Gitbook'...
+Updating files:   0% (14/10483)Updating files:   0% (21/10483)Updating files:   0% (27/10483)Updating files:   0% (34/10483)Updating files:   0% (38/10483)Updating files:   0% (42/10483)Updating files:   0% (48/10483)Updating files:   0% (56/10483)Updating files:   0% (61/10483)Updating files:   0% (69/10483)Updating files:   0% (75/10483)Updating files:   0% (81/10483)Updating files:   0% (88/10483)Updating files:   0% (95/10483)Updating files:   0% (101/10483)Updating files:   1% (105/10483)Updating files:   1% (108/10483)Updating files:   1% (117/10483)Updating files:   1% (124/10483)Updating files:   1% (163/10483)Updating files:   2% (210/10483)Updating files:   2% (299/10483)Updating files:   3% (315/10483)Updating files:   4% (420/10483)Updating files:   5% (525/10483)Updating files:   6% (629/10483)Updating files:   7% (734/10483)Updating files:   8% (839/10483)Updating files:   9% (944/10483)Updating files:  10% (1049/10483)Updating files:  11% (1154/10483)Updating files:  12% (1258/10483)Updating files:  13% (1363/10483)Updating files:  14% (1468/10483)Updating files:  15% (1573/10483)Updating files:  16% (1678/10483)Updating files:  17% (1783/10483)Updating files:  18% (1887/10483)Updating files:  19% (1992/10483)Updating files:  20% (2097/10483)Updating files:  21% (2202/10483)Updating files:  22% (2307/10483)Updating files:  23% (2412/10483)Updating files:  24% (2516/10483)Updating files:  25% (2621/10483)Updating files:  26% (2726/10483)Updating files:  27% (2831/10483)Updating files:  28% (2936/10483)Updating files:  29% (3041/10483)Updating files:  30% (3145/10483)Updating files:  31% (3250/10483)Updating files:  32% (3355/10483)Updating files:  33% (3460/10483)Updating files:  34% (3565/10483)Updating files:  35% (3670/10483)Updating files:  36% (3774/10483)Updating files:  37% (3879/10483)Updating files:  38% (3984/10483)Updating files:  39% (4089/10483)Updating files:  40% (4194/10483)Updating files:  41% (4299/10483)Updating files:  42% (4403/10483)Updating files:  43% (4508/10483)Updating files:  44% (4613/10483)Updating files:  45% (4718/10483)Updating files:  46% (4823/10483)Updating files:  47% (4928/10483)Updating files:  48% (5032/10483)Updating files:  49% (5137/10483)Updating files:  50% (5242/10483)Updating files:  51% (5347/10483)Updating files:  51% (5385/10483)Updating files:  52% (5452/10483)Updating files:  53% (5556/10483)Updating files:  54% (5661/10483)Updating files:  55% (5766/10483)Updating files:  56% (5871/10483)Updating files:  57% (5976/10483)Updating files:  58% (6081/10483)Updating files:  59% (6185/10483)Updating files:  60% (6290/10483)Updating files:  61% (6395/10483)Updating files:  62% (6500/10483)Updating files:  63% (6605/10483)Updating files:  63% (6656/10483)Updating files:  64% (6710/10483)Updating files:  65% (6814/10483)Updating files:  66% (6919/10483)Updating files:  67% (7024/10483)Updating files:  68% (7129/10483)Updating files:  69% (7234/10483)Updating files:  70% (7339/10483)Updating files:  71% (7443/10483)Updating files:  72% (7548/10483)Updating files:  73% (7653/10483)Updating files:  74% (7758/10483)Updating files:  75% (7863/10483)Updating files:  76% (7968/10483)Updating files:  77% (8072/10483)Updating files:  78% (8177/10483)Updating files:  79% (8282/10483)Updating files:  80% (8387/10483)Updating files:  81% (8492/10483)Updating files:  82% (8597/10483)Updating files:  83% (8701/10483)Updating files:  84% (8806/10483)Updating files:  85% (8911/10483)Updating files:  86% (9016/10483)Updating files:  86% (9069/10483)Updating files:  87% (9121/10483)Updating files:  88% (9226/10483)Updating files:  89% (9330/10483)Updating files:  90% (9435/10483)Updating files:  91% (9540/10483)Updating files:  92% (9645/10483)Updating files:  93% (9750/10483)Updating files:  94% (9855/10483)Updating files:  95% (9959/10483)Updating files:  96% (10064/10483)Updating files:  97% (10169/10483)Updating files:  98% (10274/10483)Updating files:  99% (10379/10483)Updating files: 100% (10483/10483)Updating files: 100% (10483/10483), done.
+From https://github.com/vitalitychems-dot/Gitbook
+ * branch            main       -> FETCH_HEAD
+   243ddd4..efcca74  main       -> origin/main
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 243ddd4 mesh: scoreboard, ranked bulk lists, collab protocol (#63)
+HEAD=243ddd4befa946674386bd3a501e314f2d894574
+243ddd4 mesh: scoreboard, ranked bulk lists, collab protocol (#63)
+APPLY_CHECK=OK
+APPLY=OK
+=== changed files ===
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/shared-lfs-zip/3/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-complete-archives--grok-workspace_1789591148371/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/5t/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/archives/source-variants/T44/main/.gitignore': Too many levels of symbolic links
+warning: unable to access 'archive/moved/Zz/artifacts/z-app/imports/trees/tessera-unified-main/artifacts/api-server/.gitignore': Too many levels of symbolic links
+ M intake/log.md
+?? mesh/ledger/
+=== ENABLE flags ===
+no TESSERA_ENABLE in diff
+=== intake/log.md table check ===
+header_cols=12 names=['ID', 'Title', 'Author lane', 'Date (CT)', 'Source', 'License', 'Status', 'Moderator note', 'Reviewer', 'Check', 'Next action', 'Blocker']
+rows=75 duplicate_ids=none
+GB-070_rows=1
+| GB-070 | Intake log backfill for retro-review (PRs #52, #55 to #63) and sync ledger #15 as a repo file (mesh/ledger/ledger-15.md) | Gitbook / Cordnation | 2026-10-13 | Tessera assignment 4:23 AM CT;
+ledger15_exists=True size=4462
+links_in_ledger=1
+  OK-ext https://github.com/vitalitychems-dot/Gitbook/pull/55#issuecomment-6140282455
+=== diff stat ===
+73 /workspace/gitbook-cordnation/GB-070/GB-070-rev3.diff
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -70,9 +70,19 @@
+ | O8 | Offline Internet page (mesh/offline-internet.md) | not recorded | 2026-10-12 | PR #48 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #48 body; four gates not recorded). Published 7181709 (PR #48, merged 17:17 CT; commit 2263aea9); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #48) | Secret grep on diff (PR body) | none | none |
+ | O9 | LoRa/Meshtastic research note (review/lora-meshtastic-research.md; doc only, no code until hardware exists) | not recorded | 2026-10-12 | PR #49 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #49 body; four gates not recorded). Published 3bdcd45 (PR #49, merged 17:17 CT; commit c43afe9e); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #49) | Secret grep on diff (PR body) | none | none |
+11G	/tmp/build-gb070-210571
+GATE_DIR=/tmp/build-gb070-210571
+ledger-15.md
+
+---
+exit_code: 0
+elapsed_ms: 102991
+ended_at: 2026-10-13T09:32:18.659Z
+---

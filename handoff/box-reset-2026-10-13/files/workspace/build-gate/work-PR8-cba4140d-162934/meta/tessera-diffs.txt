@@ -1,0 +1,7 @@
+-- GB-022/GB-022-v4.ecd9022.diff: 0
+-- GB-024/GB-024-v3.ecd9022.diff: 0
+-- GB-025/GB-025.ecd9022.diff: 3
+-- GB-023/GB-023.ecd9022.diff: 0
+7: - Do not change `TESSERA_ENABLE_*` (stay `0`)
+66: - Flip `TESSERA_ENABLE_*` flags, touch `vows/` or `guard/`, or speak as Tessera.
+78: 5. Does not instruct flipping `TESSERA_ENABLE_*` away from `0`

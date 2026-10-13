@@ -1,0 +1,165 @@
+[1/50] id=Mercury_SC_410971 ok=True gold=A pred=A
+[2/50] id=Mercury_SC_414274 ok=True gold=B pred=B
+[3/50] id=Mercury_7214498 ok=False gold=C pred=B
+[4/50] id=Mercury_7009555 ok=True gold=C pred=C
+[5/50] id=Mercury_401699 ok=False gold=C pred=B
+[6/50] id=Mercury_7057680 ok=False gold=C pred=A
+[7/50] id=Mercury_7205608 ok=True gold=B pred=B
+[8/50] id=NYSEDREGENTS_2010_4_4 ok=True gold=A pred=A
+[9/50] id=ACTAAP_2010_7_3 ok=False gold=A pred=B
+[10/50] id=CSZ_2009_8_CSZ20740 ok=True gold=B pred=B
+[11/50] id=Mercury_SC_400579 ok=False gold=C pred=B
+[12/50] id=VASoL_2007_5_22 ok=True gold=B pred=B
+[13/50] id=Mercury_7186358 ok=True gold=C pred=C
+[14/50] id=MCAS_1998_8_24 ok=True gold=D pred=D
+[15/50] id=Mercury_SC_416169 ok=True gold=A pred=A
+[16/50] id=Mercury_SC_401142 ok=True gold=B pred=B
+[17/50] id=MCAS_2006_9_34 ok=False gold=D pred=A
+[18/50] id=Mercury_400828 ok=True gold=D pred=D
+[19/50] id=Mercury_SC_413299 ok=True gold=A pred=A
+[20/50] id=Mercury_SC_407382 ok=True gold=C pred=C
+[21/50] id=Mercury_SC_413089 ok=True gold=D pred=D
+[22/50] id=Mercury_LBS10610 ok=True gold=C pred=C
+[23/50] id=TIMSS_2011_4_pg27 ok=True gold=A pred=A
+[24/50] id=Mercury_SC_400661 ok=True gold=D pred=D
+[25/50] id=Mercury_7004725 ok=True gold=A pred=A
+[26/50] id=Mercury_SC_405880 ok=True gold=A pred=A
+[27/50] id=Mercury_SC_400392 ok=False gold=C pred=A
+[28/50] id=MCAS_2006_9_44 ok=True gold=D pred=D
+[29/50] id=Mercury_SC_406855 ok=True gold=D pred=D
+[30/50] id=Mercury_SC_410630 ok=False gold=C pred=B
+[31/50] id=MEAP_2005_8_45 ok=True gold=D pred=D
+[32/50] id=ACTAAP_2009_5_12 ok=True gold=B pred=B
+[33/50] id=MCAS_2014_5_13 ok=False gold=D pred=B
+[34/50] id=TIMSS_1995_8_L6 ok=True gold=D pred=D
+[35/50] id=Mercury_7268258 ok=False gold=C pred=B
+[36/50] id=Mercury_7264093 ok=True gold=C pred=C
+[37/50] id=Mercury_7234605 ok=True gold=D pred=D
+[38/50] id=Mercury_7081480 ok=True gold=A pred=A
+[39/50] id=Mercury_7007420 ok=False gold=C pred=B
+[40/50] id=Mercury_416633 ok=False gold=A pred=B
+[41/50] id=Mercury_SC_409030 ok=True gold=D pred=D
+[42/50] id=MCAS_2010_8_12005 ok=True gold=A pred=A
+[43/50] id=Mercury_SC_401277 ok=True gold=C pred=C
+[44/50] id=Mercury_7085225 ok=True gold=B pred=B
+[45/50] id=Mercury_415083 ok=False gold=B pred=A
+[46/50] id=Mercury_SC_405130 ok=False gold=A pred=C
+[47/50] id=VASoL_2010_3_39 ok=True gold=A pred=A
+[48/50] id=Mercury_LBS11018 ok=True gold=A pred=A
+[49/50] id=MCAS_1998_4_13 ok=True gold=B pred=B
+[50/50] id=NYSEDREGENTS_2008_8_36 ok=False gold=3 pred=C
+{
+  "benchmark": "ARC-Challenge",
+  "split": "test",
+  "n": 50,
+  "seed": 42,
+  "item_ids": [
+    "Mercury_SC_410971",
+    "Mercury_SC_414274",
+    "Mercury_7214498",
+    "Mercury_7009555",
+    "Mercury_401699",
+    "Mercury_7057680",
+    "Mercury_7205608",
+    "NYSEDREGENTS_2010_4_4",
+    "ACTAAP_2010_7_3",
+    "CSZ_2009_8_CSZ20740",
+    "Mercury_SC_400579",
+    "VASoL_2007_5_22",
+    "Mercury_7186358",
+    "MCAS_1998_8_24",
+    "Mercury_SC_416169",
+    "Mercury_SC_401142",
+    "MCAS_2006_9_34",
+    "Mercury_400828",
+    "Mercury_SC_413299",
+    "Mercury_SC_407382",
+    "Mercury_SC_413089",
+    "Mercury_LBS10610",
+    "TIMSS_2011_4_pg27",
+    "Mercury_SC_400661",
+    "Mercury_7004725",
+    "Mercury_SC_405880",
+    "Mercury_SC_400392",
+    "MCAS_2006_9_44",
+    "Mercury_SC_406855",
+    "Mercury_SC_410630",
+    "MEAP_2005_8_45",
+    "ACTAAP_2009_5_12",
+    "MCAS_2014_5_13",
+    "TIMSS_1995_8_L6",
+    "Mercury_7268258",
+    "Mercury_7264093",
+    "Mercury_7234605",
+    "Mercury_7081480",
+    "Mercury_7007420",
+    "Mercury_416633",
+    "Mercury_SC_409030",
+    "MCAS_2010_8_12005",
+    "Mercury_SC_401277",
+    "Mercury_7085225",
+    "Mercury_415083",
+    "Mercury_SC_405130",
+    "VASoL_2010_3_39",
+    "Mercury_LBS11018",
+    "MCAS_1998_4_13",
+    "NYSEDREGENTS_2008_8_36"
+  ],
+  "indices": [
+    595,
+    716,
+    511,
+    906,
+    148,
+    368,
+    930,
+    121,
+    1031,
+    280,
+    381,
+    314,
+    16,
+    599,
+    614,
+    622,
+    818,
+    263,
+    164,
+    860,
+    820,
+    12,
+    239,
+    445,
+    1156,
+    605,
+    711,
+    4,
+    838,
+    761,
+    387,
+    606,
+    710,
+    1074,
+    1136,
+    800,
+    585,
+    515,
+    439,
+    829,
+    980,
+    454,
+    81,
+    831,
+    371,
+    650,
+    666,
+    66,
+    1114,
+    670
+  ],
+  "correct": 35,
+  "accuracy": 0.7,
+  "model": "qwen2.5:3b-instruct",
+  "wall_s_total": 83.78358769416809,
+  "grading": "exact letter match A-D extracted from model response"
+}

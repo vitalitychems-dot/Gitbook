@@ -1,0 +1,9 @@
+{
+  "sha": "abc123",
+  "date_ct": "2026-10-05 17:54:00 CT",
+  "model": "fixture-model",
+  "suite": "internal-quiz",
+  "n": 4,
+  "pass": 3,
+  "cost_usd": 0
+}

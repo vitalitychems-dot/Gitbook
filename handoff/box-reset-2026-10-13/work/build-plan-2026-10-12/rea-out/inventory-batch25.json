@@ -1,0 +1,438 @@
+[
+  {
+    "label": "TESSERA/sr/Zz",
+    "entries": 307,
+    "blobs": 235,
+    "js_ts": 180,
+    "package_json": 5,
+    "md": 0,
+    "truncated": false,
+    "pkg_paths": [
+      "artifacts/api-server/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/api-server/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/package.json",
+      "artifacts/z-app/package.json",
+      "package.json"
+    ],
+    "js_sample": [
+      "artifacts/api-server/src/__tests__/interactive-status.test.ts",
+      "artifacts/api-server/src/__tests__/route-inventory.test.ts",
+      "artifacts/api-server/src/__tests__/tessera-model.test.ts",
+      "artifacts/api-server/src/__tests__/tessera-workspace.test.ts",
+      "artifacts/api-server/src/app.ts",
+      "artifacts/api-server/src/eval/chatbot-cases.ts",
+      "artifacts/api-server/src/index.ts",
+      "artifacts/api-server/src/interactive-app.ts",
+      "artifacts/api-server/src/interactive-index.ts",
+      "artifacts/api-server/src/lib/require-father.ts",
+      "artifacts/api-server/src/lib/sovereign-session.ts",
+      "artifacts/api-server/src/lib/tessera-heritage.ts"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sr/olive",
+    "entries": 46,
+    "blobs": 32,
+    "js_ts": 18,
+    "package_json": 1,
+    "md": 0,
+    "truncated": false,
+    "pkg_paths": [
+      "package.json"
+    ],
+    "js_sample": [
+      "data/tools/workshop-pass.mjs",
+      "scripts/chamber-cycle.test.mjs",
+      "scripts/desk-study.mjs",
+      "scripts/github-desk.test.mjs",
+      "scripts/import-pass.test.mjs",
+      "scripts/import-recall.test.mjs",
+      "scripts/imported-laws.test.mjs",
+      "scripts/recall.test.mjs",
+      "scripts/tessera-worker.mjs",
+      "src/components/tessera/app-shell.tsx",
+      "src/components/tessera/board-view.tsx",
+      "src/components/tessera/chamber.tsx"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/source-variants",
+    "entries": 124,
+    "blobs": 80,
+    "js_ts": 63,
+    "package_json": 0,
+    "md": 11,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [
+      "1/main/artifacts/api-server/src/__tests__/invention-glb-upload.test.ts",
+      "1/main/artifacts/api-server/src/__tests__/moltbook-sandbox-boundary.test.ts",
+      "1/main/artifacts/api-server/src/lib/safe-fetch.ts",
+      "1/main/artifacts/api-server/src/lib/sovereign-fetch-guard.ts",
+      "1/main/artifacts/api-server/src/routes/inventions.ts",
+      "5t/main/artifacts/api-server/src/app.ts",
+      "5t/main/artifacts/api-server/src/lib/eval-runner.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/pipeline.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/scheduler.ts",
+      "5t/main/artifacts/api-server/src/lib/tessera-codex.ts",
+      "5t/main/artifacts/api-server/src/routes/index.ts",
+      "T44/main/artifacts/api-server/src/app.ts"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/TESS",
+    "entries": 6,
+    "blobs": 3,
+    "js_ts": 0,
+    "package_json": 0,
+    "md": 0,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/Zz",
+    "entries": 5218,
+    "blobs": 4895,
+    "js_ts": 1404,
+    "package_json": 26,
+    "md": 146,
+    "truncated": false,
+    "pkg_paths": [
+      "artifacts/api-server/package.json",
+      "artifacts/tessera/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/api-server/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/mockup-sandbox/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/artifacts/tessera/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/lib/api-client-react/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/lib/api-spec/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/lib/api-zod/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/lib/db/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/package.json",
+      "artifacts/z-app/imports/trees/shared-lfs-zip/3/scripts/package.json",
+      "artifacts/z-app/imports/trees/tessera-complete-archives--grok-handoff/grok-packet/06_SAFE_SOURCE_FILES/isolated-mockup/package.json"
+    ],
+    "js_sample": [
+      "artifacts/api-server/build.mjs",
+      "artifacts/api-server/src/__tests__/interactive-status.test.ts",
+      "artifacts/api-server/src/__tests__/route-inventory.test.ts",
+      "artifacts/api-server/src/__tests__/tessera-model.test.ts",
+      "artifacts/api-server/src/__tests__/tessera-workspace.test.ts",
+      "artifacts/api-server/src/app.ts",
+      "artifacts/api-server/src/eval/chatbot-cases.ts",
+      "artifacts/api-server/src/index.ts",
+      "artifacts/api-server/src/interactive-app.ts",
+      "artifacts/api-server/src/interactive-index.ts",
+      "artifacts/api-server/src/lib/require-father.ts",
+      "artifacts/api-server/src/lib/sovereign-session.ts"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/olive",
+    "entries": 187,
+    "blobs": 155,
+    "js_ts": 48,
+    "package_json": 1,
+    "md": 11,
+    "truncated": false,
+    "pkg_paths": [
+      "package.json"
+    ],
+    "js_sample": [
+      ".vercel/output/functions/__server.func/_chunks/ssr-renderer.mjs",
+      ".vercel/output/functions/__server.func/_libs/@tanstack/react-router+[...].mjs",
+      ".vercel/output/functions/__server.func/_libs/@tanstack/router-core+[...].mjs",
+      ".vercel/output/functions/__server.func/_libs/h3-v2+rou3.mjs",
+      ".vercel/output/functions/__server.func/_libs/lucide-react.mjs",
+      ".vercel/output/functions/__server.func/_libs/tanstack__history.mjs",
+      ".vercel/output/functions/__server.func/_libs/zod.mjs",
+      ".vercel/output/functions/__server.func/_libs/zustand.mjs",
+      ".vercel/output/functions/__server.func/_runtime.mjs",
+      ".vercel/output/functions/__server.func/_ssr/audit-C_gfLgnl.mjs",
+      ".vercel/output/functions/__server.func/_ssr/bridge-BqwQPPLy.mjs",
+      ".vercel/output/functions/__server.func/_ssr/chat-CWY3ATPk.mjs"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/5t",
+    "entries": 30,
+    "blobs": 22,
+    "js_ts": 0,
+    "package_json": 0,
+    "md": 3,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/T44",
+    "entries": 9,
+    "blobs": 3,
+    "js_ts": 0,
+    "package_json": 0,
+    "md": 1,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/collink-amber",
+    "entries": 72,
+    "blobs": 49,
+    "js_ts": 26,
+    "package_json": 1,
+    "md": 0,
+    "truncated": false,
+    "pkg_paths": [
+      "package.json"
+    ],
+    "js_sample": [
+      ".vercel/output/functions/__server.func/_libs/lucide-react.mjs",
+      ".vercel/output/functions/__server.func/_ssr/chat-gffDOyY8.mjs",
+      ".vercel/output/functions/__server.func/_ssr/glyphs-BUZQespS.mjs",
+      ".vercel/output/functions/__server.func/_ssr/router-kQL0c6P9.mjs",
+      ".vercel/output/functions/__server.func/_ssr/routes-Cadct2gb.mjs",
+      ".vercel/output/functions/__server.func/_ssr/ssr.mjs",
+      ".vercel/output/functions/__server.func/_ssr/study-oi-afyiV.mjs",
+      ".vercel/output/functions/__server.func/_tanstack-start-manifest_v-CzeE4Lqz.mjs",
+      ".vercel/output/static/assets/index-Dl3_Jio_.js",
+      ".vercel/output/static/assets/routes-BJpkBgiQ.js",
+      "scripts/tessera-worker.mjs",
+      "src/components/tessera/app-shell.tsx"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/drive-rest/Tesseract-AI-5",
+    "entries": 10,
+    "blobs": 10,
+    "js_ts": 0,
+    "package_json": 0,
+    "md": 1,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/drive-rest/XL1",
+    "entries": 66,
+    "blobs": 66,
+    "js_ts": 0,
+    "package_json": 0,
+    "md": 1,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/drive-rest/Tx13",
+    "entries": 10,
+    "blobs": 10,
+    "js_ts": 0,
+    "package_json": 0,
+    "md": 1,
+    "truncated": false,
+    "pkg_paths": [],
+    "js_sample": [],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/collink1007-XXX",
+    "entries": 1073,
+    "blobs": 991,
+    "js_ts": 786,
+    "package_json": 4,
+    "md": 4,
+    "truncated": false,
+    "pkg_paths": [
+      "artifacts/api-server/package.json",
+      "artifacts/tess-app/package.json",
+      "tess/package.json",
+      "tess/patches/bigint-buffer/package.json"
+    ],
+    "js_sample": [
+      "artifacts/api-server/src/lib/2da-foundation.ts",
+      "artifacts/api-server/src/lib/2da-grand-conference.ts",
+      "artifacts/api-server/src/lib/2da-infrastructure.ts",
+      "artifacts/api-server/src/lib/2da-vision-document.ts",
+      "artifacts/api-server/src/lib/agi-training.ts",
+      "artifacts/api-server/src/lib/awareness-engine.ts",
+      "artifacts/api-server/src/lib/code-sandbox.ts",
+      "artifacts/api-server/src/lib/consciousness-engine.ts",
+      "artifacts/api-server/src/lib/consensus-engine.ts",
+      "artifacts/api-server/src/lib/db-migrate.ts",
+      "artifacts/api-server/src/lib/ethical-framework.ts",
+      "artifacts/api-server/src/lib/financial-analysis.ts"
+    ],
+    "vault_1T_path_hits": 0,
+    "rea_eligible_local": false,
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/1",
+    "blobs": 5,
+    "js_ts": 5,
+    "package_json": 0,
+    "js_sample": [
+      "1/main/artifacts/api-server/src/__tests__/invention-glb-upload.test.ts",
+      "1/main/artifacts/api-server/src/__tests__/moltbook-sandbox-boundary.test.ts",
+      "1/main/artifacts/api-server/src/lib/safe-fetch.ts",
+      "1/main/artifacts/api-server/src/lib/sovereign-fetch-guard.ts",
+      "1/main/artifacts/api-server/src/routes/inventions.ts"
+    ],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/5t",
+    "blobs": 10,
+    "js_ts": 6,
+    "package_json": 0,
+    "js_sample": [
+      "5t/main/artifacts/api-server/src/app.ts",
+      "5t/main/artifacts/api-server/src/lib/eval-runner.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/pipeline.ts",
+      "5t/main/artifacts/api-server/src/lib/ingestion/scheduler.ts",
+      "5t/main/artifacts/api-server/src/lib/tessera-codex.ts",
+      "5t/main/artifacts/api-server/src/routes/index.ts"
+    ],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/Everything",
+    "blobs": 1,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/T44",
+    "blobs": 57,
+    "js_ts": 52,
+    "package_json": 0,
+    "js_sample": [
+      "T44/main/artifacts/api-server/src/app.ts",
+      "T44/main/artifacts/api-server/src/index.ts",
+      "T44/main/artifacts/api-server/src/lib/consensus-engine.ts",
+      "T44/main/artifacts/api-server/src/lib/father-verify-throttle.ts",
+      "T44/main/artifacts/api-server/src/lib/forum-identity-registry.ts",
+      "T44/main/artifacts/api-server/src/lib/moltbook-bridge.ts",
+      "T44/main/artifacts/api-server/src/lib/sovereign-loop.ts",
+      "T44/main/artifacts/api-server/src/lib/sovereign-society.ts"
+    ],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/TX",
+    "blobs": 2,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/tessera-complete-archives",
+    "blobs": 2,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/tessera-grok-handoff",
+    "blobs": 1,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "TESSERA/sv/tessera-grok-handoff-complete",
+    "blobs": 2,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/drive-rest/8-2",
+    "blobs": 9,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "pkg_paths": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/drive-rest/Tx17-9",
+    "blobs": 11,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "pkg_paths": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/drive-rest/Tesseracxt9",
+    "blobs": 15,
+    "js_ts": 0,
+    "package_json": 0,
+    "js_sample": [],
+    "pkg_paths": [],
+    "mode": "inventory"
+  },
+  {
+    "label": "Gitbook/moved/collink1007-z",
+    "blobs": 29,
+    "js_ts": 11,
+    "package_json": 0,
+    "js_sample": [
+      "data/tools/connect-notes.mjs",
+      "scripts/run-tool.mjs",
+      "scripts/study-step.mjs",
+      "scripts/tessera-worker.mjs",
+      "src/lib/tessera/chat.ts",
+      "src/lib/tessera/ingest.ts",
+      "src/lib/tessera/lab-run.ts",
+      "src/lib/tessera/narrative.ts",
+      "src/lib/tessera/recall.ts",
+      "src/lib/tessera/study.ts"
+    ],
+    "pkg_paths": [],
+    "mode": "inventory"
+  }
+]

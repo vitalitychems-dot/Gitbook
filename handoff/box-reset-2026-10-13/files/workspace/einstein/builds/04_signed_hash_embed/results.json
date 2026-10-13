@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "04 fallback embed: cosine error vs exact bag",
+      "metric": "mean |cos err|",
+      "n_seeds": 20,
+      "higher_is_better": false,
+      "baseline": {
+        "mean": 0.14020969717475146,
+        "lo": 0.13832391414140982,
+        "hi": 0.14232826155133288
+      },
+      "candidate": {
+        "mean": 0.0593258567980343,
+        "lo": 0.05799050539117175,
+        "hi": 0.06063397902732218
+      },
+      "improvement": {
+        "mean": 0.08088384037671718,
+        "lo": 0.07853345210492524,
+        "hi": 0.08343922091519364
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "04 fallback embed: top-1 snippet retrieval",
+      "metric": "top-1 hit rate",
+      "n_seeds": 20,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 0.17625,
+        "lo": 0.16475,
+        "hi": 0.18899999999999997
+      },
+      "candidate": {
+        "mean": 0.67725,
+        "lo": 0.659,
+        "hi": 0.6935
+      },
+      "improvement": {
+        "mean": 0.5010000000000001,
+        "lo": 0.48424374999999986,
+        "hi": 0.5177562500000001
+      },
+      "verdict": "KEEP"
+    }
+  ]
+}

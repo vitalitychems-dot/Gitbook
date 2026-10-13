@@ -1,0 +1,232 @@
+<cursor_untrusted_data_1337 source="CallDynamicTool">
+
+diff --git a/evals/heldout/README.md b/evals/heldout/README.md
+new file mode 100644
+index 00000000..e63e9604
+--- /dev/null
++++ b/evals/heldout/README.md
+@@ -0,0 +1,32 @@
++# Held-out eval runner
++
++Scores agent output on a held-out set that **no agent authored**: fixed subsets of public
++benchmarks plus real TESSERA PR outcomes (merged = pass, closed unmerged = fail).
++
++**The scoring data is not in this repo.** TESSERA is public, so the items and their hash
++manifest live in the private `vitalitychems-dot/Gitbook` repo under `evals/heldout/`
++(`data/*.jsonl`, `MANIFEST.sha256`, `build.py`, licenses). Point the runner at a checkout:
++
++```
++HELDOUT_DIR=/path/to/Gitbook/evals/heldout node evals/heldout/run.mjs --baseline
++HELDOUT_DIR=... node evals/heldout/run.mjs --gold                 # harness check, expect 1.0
++HELDOUT_DIR=... node evals/heldout/run.mjs --predictions p.json   # {"<id>": "<answer|code|pass|fail>"}
++```
++
++The runner checks every data file against `MANIFEST.sha256` and exits 2 on any drift.
++
++## Sandboxing predicted code
++HumanEval/MBPP predictions are untrusted code. `sandbox.mjs` runs each one with:
++- **no network**: a fresh empty network namespace (`unshare -rn`)
++- **timeout**: 10 s wall clock (SIGKILL), plus `ulimit` CPU 10 s, 1 GiB memory, 10 MiB files, 256 procs
++- **temp dir**: a fresh `mkdtemp` dir as cwd/HOME/TMPDIR, deleted afterwards
++- **clean env**: only PATH/HOME/TMPDIR/LANG; `python3 -I -S`
++
++If the namespace can't be created the runner refuses to execute code (fails closed).
++
++## Rules
++- The data directory is a locked path; changes need Father's code-owner review.
++- Scores from this runner are inputs for humans and the before/after bench; the private copy is the source of truth.
++
++## Tests
++`node --test evals/heldout/run.test.mjs` uses a tiny synthetic fixture in a temp dir.
+diff --git a/evals/heldout/run.mjs b/evals/heldout/run.mjs
+new file mode 100644
+index 00000000..dfb80cf2
+--- /dev/null
++++ b/evals/heldout/run.mjs
+@@ -0,0 +1,80 @@
++#!/usr/bin/env node
++// Held-out eval runner. The scoring data is NOT in this public repo; it lives in the
++// private Gitbook repo (evals/heldout/data + MANIFEST.sha256). Point HELDOUT_DIR (or --data)
++// at that directory. The runner verifies every data file against the manifest and fails
++// closed on drift, then scores. Predicted code runs only inside ./sandbox.mjs.
++//   HELDOUT_DIR=/path/to/Gitbook/evals/heldout node evals/heldout/run.mjs --baseline
++//   ... --gold                 harness self-check with reference answers (expect 1.0)
++//   ... --predictions p.json   {"<id>": "<answer | python code | pass|fail>"}
++import { readFileSync, readdirSync, existsSync } from "node:fs";
++import { createHash } from "node:crypto";
++import { join, resolve } from "node:path";
++import { fileURLToPath } from "node:url";
++import { runPySandboxed } from "./sandbox.mjs";
++
++export function resolveDir(argv = process.argv.slice(2), env = process.env) {
++  const i = argv.indexOf("--data");
++  const d = i >= 0 ? argv[i + 1] : env.HELDOUT_DIR;
++  if (!d) throw new Error("set HELDOUT_DIR or --data to the private held-out directory (Gitbook evals/heldout)");
++  return resolve(d);
++}
++export function manifestLines(root) {
++  const dir = join(root, "data");
++  return readdirSync(dir).filter((f) => f.endsWith(".jsonl")).sort()
++    .map((f) => `${createHash("sha256").update(readFileSync(join(dir, f))).digest("hex")}  data/${f}`);
++}
++export function verifyManifest(root) {
++  const mp = join(root, "MANIFEST.sha256");
++  if (!existsSync(mp)) return { ok: false, bad: ["missing MANIFEST.sha256"] };
++  const want = readFileSync(mp, "utf8").trim().split("\n");
++  const got = manifestLines(root);
++  const bad = want.filter((l) => !got.includes(l)).concat(got.filter((l) => !want.includes(l)));
++  return { ok: bad.length === 0, bad };
++}
++const load = (root, f) => {
++  const p = join(root, "data", f);
++  return existsSync(p) ? readFileSync(p, "utf8").split("\n").filter(Boolean).map((l) => JSON.parse(l)) : [];
++};
++export function normNum(s) {
++  const m = String(s ?? "").replace(/,/g, "").match(/-?\d+(\.\d+)?/g);
++  return m ? Number(m[m.length - 1]) : NaN;
++}
++export function score(root, pred, { run = (c) => runPySandboxed(c).ok } = {}) {
++  const suites = {};
++  const add = (s, ok) => { (suites[s] ??= { n: 0, pass: 0 }).n++; if (ok) suites[s].pass++; };
++  for (const it of load(root, "gsm8k.jsonl")) add("gsm8k", it.id in pred && normNum(pred[it.id]) === Number(it.answer));
++  for (const it of load(root, "humaneval.jsonl")) {
++    const c = pred[it.id];
++    add("humaneval", typeof c === "string" && c.length > 0 && run(`${it.prompt}${c}\n\n${it.test}\ncheck(${it.entry_point})\n`));
++  }
++  for (const it of load(root, "mbpp.jsonl")) {
++    const c = pred[it.id];
++    add("mbpp", typeof c === "string" && c.length > 0 && run(`${it.test_setup_code}\n${c}\n${it.test_list.join("\n")}\n`));
++  }
++  for (const it of load(root, "pr-outcomes.jsonl")) add("pr_outcome", pred[it.id] === it.outcome);
++  for (const s of Object.values(suites)) s.score = +(s.pass / s.n).toFixed(4);
++  const keys = Object.keys(suites);
++  return { suites, macro: keys.length ? +(keys.reduce((a, k) => a + suites[k].score, 0) / keys.length).toFixed(4) : 0 };
++}
++export function baselinePreds(root) {
++  const p = {}; // no model: empty answers for benchmarks, majority class for PR outcomes
++  for (const it of load(root, "pr-outcomes.jsonl")) p[it.id] = "pass";
++  return p;
++}
++export function goldPreds(root) {
++  const p = {};
++  for (const it of load(root, "gsm8k.jsonl")) p[it.id] = it.answer;
++  for (const it of load(root, "humaneval.jsonl")) p[it.id] = it.canonical_solution;
++  for (const it of load(root, "mbpp.jsonl")) p[it.id] = it.code;
++  for (const it of load(root, "pr-outcomes.jsonl")) p[it.id] = it.outcome;
++  return p;
++}
++if (process.argv[1] === fileURLToPath(import.meta.url)) {
++  const a = process.argv.slice(2);
++  const root = resolveDir(a);
++  const v = verifyManifest(root);
++  if (!v.ok) { console.error("MANIFEST MISMATCH (held-out set changed):\n" + v.bad.join("\n")); process.exit(2); }
++  const i = a.indexOf("--predictions");
++  const preds = i >= 0 ? JSON.parse(readFileSync(a[i + 1], "utf8")) : a.includes("--gold") ? goldPreds(root) : baselinePreds(root);
++  console.log(JSON.stringify(score(root, preds), null, 2));
++}
+diff --git a/evals/heldout/run.test.mjs b/evals/heldout/run.test.mjs
+new file mode 100644
+index 00000000..83844125
+--- /dev/null
++++ b/evals/heldout/run.test.mjs
+@@ -0,0 +1,59 @@
++// Tests use a tiny synthetic fixture built in a temp dir; the real held-out data never enters this repo.
++import test from "node:test";
++import assert from "node:assert/strict";
++import { mkdtempSync, mkdirSync, writeFileSync, appendFileSync, rmSync } from "node:fs";
++import { join } from "node:path";
++import { tmpdir } from "node:os";
++import { verifyManifest, manifestLines, score, baselinePreds, goldPreds, normNum, resolveDir } from "./run.mjs";
++import { sandboxAvailable, runPySandboxed } from "./sandbox.mjs";
++
++function fixture() {
++  const root = mkdtempSync(join(tmpdir(), "ho-fx-")); mkdirSync(join(root, "data"));
++  const w = (f, rows) => writeFileSync(join(root, "data", f), rows.map((r) => JSON.stringify(r)).join("\n") + "\n");
++  w("gsm8k.jsonl", [{ id: "g1", question: "1+1?", answer: "2" }]);
++  w("humaneval.jsonl", [{ id: "H/0", prompt: "def f(x):\n", canonical_solution: "    return x + 1\n", entry_point: "f", test: "def check(c):\n    assert c(1) == 2\n" }]);
++  w("mbpp.jsonl", [{ id: "m1", text: "double", code: "def d(x): return 2*x", test_list: ["assert d(2) == 4"], test_setup_code: "" }]);
++  w("pr-outcomes.jsonl", [{ id: "p1", outcome: "pass" }, { id: "p2", outcome: "fail" }]);
++  writeFileSync(join(root, "MANIFEST.sha256"), manifestLines(root).join("\n") + "\n");
++  return root;
++}
++const fake = (c) => !c.includes("return None"); // used where sandbox may be missing
++
++test("requires an explicit private data dir", () => assert.throws(() => resolveDir([], {}), /HELDOUT_DIR/));
++test("manifest matches and detects tampering / missing manifest", () => {
++  const r = fixture();
++  try {
++    assert.equal(verifyManifest(r).ok, true);
++    appendFileSync(join(r, "data", "gsm8k.jsonl"), "\n");
++    const v = verifyManifest(r); assert.equal(v.ok, false); assert.ok(v.bad.some((l) => l.includes("gsm8k")));
++    rmSync(join(r, "MANIFEST.sha256")); assert.equal(verifyManifest(r).ok, false);
++  } finally { rmSync(r, { recursive: true, force: true }); }
++});
++test("gold scores 1.0, baseline lower and deterministic", () => {
++  const r = fixture();
++  try {
++    for (const [k, s] of Object.entries(score(r, goldPreds(r), { run: fake }).suites)) assert.equal(s.score, 1, k);
++    const a = score(r, baselinePreds(r), { run: fake });
++    assert.deepEqual(a, score(r, baselinePreds(r), { run: fake })); assert.ok(a.macro < 1);
++  } finally { rmSync(r, { recursive: true, force: true }); }
++});
++test("normNum takes the last number", () => assert.equal(normNum("so 1,234 then 18"), 18));
++
++const sbx = sandboxAvailable() ? {} : { skip: "unshare -rn unavailable here" };
++test("sandbox: correct code passes, wrong code fails", sbx, () => {
++  assert.equal(runPySandboxed("assert 1 + 1 == 2").ok, true);
++  assert.equal(runPySandboxed("assert False").ok, false);
++});
++test("sandbox: no network", sbx, () => {
++  assert.equal(runPySandboxed("import socket\nsocket.create_connection(('1.1.1.1', 80), 2)").ok, false);
++});
++test("sandbox: timeout kills runaway code", sbx, () => {
++  const r = runPySandboxed("while True: pass", { timeoutMs: 1500 });
++  assert.equal(r.ok, false); assert.equal(r.timedOut, true);
++});
++test("sandbox: no env secrets, cwd is a throwaway temp dir", sbx, () => {
++  process.env.GH_TOKEN_TEST_LEAK = "x";
++  try {
++    assert.equal(runPySandboxed("import os\nassert 'GH_TOKEN_TEST_LEAK' not in os.environ\nassert 'heldout-sbx-' in os.getcwd()").ok, true);
++  } finally { delete process.env.GH_TOKEN_TEST_LEAK; }
++});
+diff --git a/evals/heldout/sandbox.mjs b/evals/heldout/sandbox.mjs
+new file mode 100644
+index 00000000..463e6f06
+--- /dev/null
++++ b/evals/heldout/sandbox.mjs
+@@ -0,0 +1,32 @@
++// Sandboxed execution of predicted (untrusted) Python code.
++// - no network: a fresh, empty network namespace (`unshare -rn`, loopback down)
++// - hard wall-clock timeout (SIGKILL), CPU/memory/file-size/process limits via ulimit
++// - fresh temp dir as cwd and HOME, removed afterwards; minimal env (no tokens leak in)
++// Fails closed: if the namespace can't be created, code is NOT run.
++import { spawnSync } from "node:child_process";
++import { mkdtempSync, writeFileSync, rmSync } from "node:fs";
++import { join } from "node:path";
++import { tmpdir } from "node:os";
++
++export const DEFAULT_TIMEOUT_MS = 10_000;
++let _avail;
++export function sandboxAvailable() {
++  if (_avail === undefined) {
++    const r = spawnSync("unshare", ["-rn", "true"], { timeout: 5000 });
++    _avail = r.status === 0;
++  }
++  return _avail;
++}
++export function runPySandboxed(code, { timeoutMs = DEFAULT_TIMEOUT_MS } = {}) {
++  if (!sandboxAvailable()) throw new Error("sandbox unavailable (unshare -rn failed); refusing to run untrusted code");
++  const d = mkdtempSync(join(tmpdir(), "heldout-sbx-"));
++  try {
++    writeFileSync(join(d, "t.py"), code);
++    const limits = "ulimit -t 10 -v 1048576 -f 10240 -u 256 2>/dev/null; exec python3 -I -S t.py";
++    const r = spawnSync("unshare", ["-rn", "sh", "-c", limits], {
++      cwd: d, timeout: timeoutMs, killSignal: "SIGKILL", encoding: "utf8", maxBuffer: 1 << 20,
++      env: { PATH: "/usr/local/bin:/usr/bin:/bin", HOME: d, TMPDIR: d, LANG: "C.UTF-8" },
++    });
++    return { ok: r.status === 0 && !r.error, timedOut: r.error?.code === "ETIMEDOUT" || r.signal === "SIGKILL", stderr: (r.stderr || "").slice(-2000) };
++  } finally { rmSync(d, { recursive: true, force: true }); }
++}
+
+
+</cursor_untrusted_data_1337>

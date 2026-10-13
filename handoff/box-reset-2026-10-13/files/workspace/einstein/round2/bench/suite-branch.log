@@ -1,0 +1,2029 @@
+
+ RUN  v4.1.11 /workspace/einstein/round2/tess/artifacts/api-server
+
+[04:09:01.797] [32mINFO[39m (116624): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:01.796Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:01.818] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/status"
+    [35mreason[39m: "no-cookie"
+[04:09:01.842] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/core-values"
+    [35mreason[39m: "no-cookie"
+[04:09:01.850] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/protected-memories"
+    [35mreason[39m: "no-cookie"
+[04:09:01.853] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-history"
+    [35mreason[39m: "no-cookie"
+[04:09:01.874] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-check"
+    [35mreason[39m: "no-cookie"
+[04:09:01.876] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/father-protocol"
+    [35mreason[39m: "no-cookie"
+[04:09:01.883] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/snapshot"
+    [35mreason[39m: "no-cookie"
+[04:09:01.886] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/evolve"
+    [35mreason[39m: "no-cookie"
+[04:09:01.893] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/traits/synthetic"
+    [35mreason[39m: "no-cookie"
+[04:09:01.800] [32mINFO[39m (116636): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:01.793Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:01.901] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/state"
+    [35mreason[39m: "no-cookie"
+[04:09:01.902] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/semantic-network"
+    [35mreason[39m: "no-cookie"
+[04:09:01.908] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/episodic-memories"
+    [35mreason[39m: "no-cookie"
+[04:09:01.912] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/procedural-skills"
+    [35mreason[39m: "no-cookie"
+[04:09:01.919] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/record-episode"
+    [35mreason[39m: "no-cookie"
+[04:09:01.920] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/reflect"
+    [35mreason[39m: "no-cookie"
+[04:09:01.928] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/focus"
+    [35mreason[39m: "no-cookie"
+[04:09:01.929] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/state"
+    [35mreason[39m: "no-cookie"
+[04:09:01.931] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/process"
+    [35mreason[39m: "no-cookie"
+[04:09:01.932] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/history"
+    [35mreason[39m: "no-cookie"
+[04:09:01.934] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/state"
+    [35mreason[39m: "no-cookie"
+[04:09:01.936] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/verify"
+    [35mreason[39m: "no-cookie"
+[04:09:01.938] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/recent"
+    [35mreason[39m: "no-cookie"
+[04:09:01.941] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/check-identity"
+    [35mreason[39m: "no-cookie"
+[04:09:01.943] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/state"
+    [35mreason[39m: "no-cookie"
+[04:09:01.945] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/contribute"
+    [35mreason[39m: "no-cookie"
+[04:09:01.947] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/aggregate"
+    [35mreason[39m: "no-cookie"
+[04:09:01.948] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/node/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[04:09:01.804] [32mINFO[39m (116610): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:01.802Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:01.950] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/list"
+    [35mreason[39m: "no-cookie"
+[04:09:01.951] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:01.954] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/specializations"
+    [35mreason[39m: "no-cookie"
+[04:09:01.955] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/spawn"
+    [35mreason[39m: "no-cookie"
+[04:09:01.957] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:01.959] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id/retire"
+    [35mreason[39m: "no-cookie"
+[04:09:01.961] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy"
+    [35mreason[39m: "no-cookie"
+[04:09:01.962] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:01.964] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/rules"
+    [35mreason[39m: "no-cookie"
+[04:09:01.965] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[04:09:01.966] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent/chain"
+    [35mreason[39m: "no-cookie"
+[04:09:01.968] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:01.969] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels"
+    [35mreason[39m: "no-cookie"
+[04:09:01.971] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[04:09:01.973] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/send"
+    [35mreason[39m: "no-cookie"
+[04:09:01.975] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/broadcast/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[04:09:01.976] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/messages/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[04:09:01.977] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:01.979] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/proposals"
+    [35mreason[39m: "no-cookie"
+[04:09:01.981] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/propose"
+    [35mreason[39m: "no-cookie"
+[04:09:01.982] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:01.988] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/status"
+    [35mreason[39m: "no-cookie"
+[04:09:01.989] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/log"
+    [35mreason[39m: "no-cookie"
+[04:09:01.991] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/sweep"
+    [35mreason[39m: "no-cookie"
+[04:09:01.992] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/auto-execute"
+    [35mreason[39m: "no-cookie"
+[04:09:01.993] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/status"
+    [35mreason[39m: "no-cookie"
+[04:09:01.995] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/pulse"
+    [35mreason[39m: "no-cookie"
+[04:09:01.996] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/history"
+    [35mreason[39m: "no-cookie"
+[04:09:01.997] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/autonomous-mode"
+    [35mreason[39m: "no-cookie"
+[04:09:01.998] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.000] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/cycle"
+    [35mreason[39m: "no-cookie"
+[04:09:02.002] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.003] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/summary"
+    [35mreason[39m: "no-cookie"
+[04:09:02.004] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.006] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/start"
+    [35mreason[39m: "no-cookie"
+[04:09:02.009] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.010] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/domains"
+    [35mreason[39m: "no-cookie"
+[04:09:02.013] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.015] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/propose"
+    [35mreason[39m: "no-cookie"
+[04:09:02.017] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/apply/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:02.018] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.021] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.023] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/optimize"
+    [35mreason[39m: "no-cookie"
+[04:09:02.024] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.025] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/objectives"
+    [35mreason[39m: "no-cookie"
+[04:09:02.026] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.028] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/simulate"
+    [35mreason[39m: "no-cookie"
+[04:09:02.029] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/body/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:02.031] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/constants"
+    [35mreason[39m: "no-cookie"
+[04:09:02.032] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/search"
+    [35mreason[39m: "no-cookie"
+[04:09:02.035] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.037] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuits"
+    [35mreason[39m: "no-cookie"
+[04:09:02.038] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuit"
+    [35mreason[39m: "no-cookie"
+[04:09:02.039] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/gate"
+    [35mreason[39m: "no-cookie"
+[04:09:02.041] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/measure/synthetic-circuit"
+    [35mreason[39m: "no-cookie"
+[04:09:02.042] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/profile"
+    [35mreason[39m: "no-cookie"
+[04:09:02.043] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.044] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/process"
+    [35mreason[39m: "no-cookie"
+[04:09:02.045] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/recent"
+    [35mreason[39m: "no-cookie"
+[04:09:01.996] [32mINFO[39m (116636): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[04:09:02.046] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/status"
+    [35mreason[39m: "no-cookie"
+[04:09:02.048] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/start"
+    [35mreason[39m: "no-cookie"
+[04:09:02.050] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/stop"
+    [35mreason[39m: "no-cookie"
+[04:09:02.052] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/status"
+    [35mreason[39m: "no-cookie"
+[04:09:02.053] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/core-values"
+    [35mreason[39m: "no-cookie"
+[04:09:02.054] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/protected-memories"
+    [35mreason[39m: "no-cookie"
+[04:09:02.057] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.059] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-check"
+    [35mreason[39m: "no-cookie"
+[04:09:02.061] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/father-protocol"
+    [35mreason[39m: "no-cookie"
+[04:09:02.065] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/snapshot"
+    [35mreason[39m: "no-cookie"
+[04:09:02.066] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/evolve"
+    [35mreason[39m: "no-cookie"
+[04:09:02.068] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/traits/synthetic"
+    [35mreason[39m: "no-cookie"
+[04:09:02.072] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.073] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/semantic-network"
+    [35mreason[39m: "no-cookie"
+[04:09:02.074] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/episodic-memories"
+    [35mreason[39m: "no-cookie"
+[04:09:02.075] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/procedural-skills"
+    [35mreason[39m: "no-cookie"
+[04:09:02.077] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/record-episode"
+    [35mreason[39m: "no-cookie"
+[04:09:02.078] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/reflect"
+    [35mreason[39m: "no-cookie"
+[04:09:02.079] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/focus"
+    [35mreason[39m: "no-cookie"
+[04:09:02.084] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.086] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/process"
+    [35mreason[39m: "no-cookie"
+[04:09:02.087] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.091] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.093] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/verify"
+    [35mreason[39m: "no-cookie"
+[04:09:02.094] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/recent"
+    [35mreason[39m: "no-cookie"
+[04:09:02.095] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/check-identity"
+    [35mreason[39m: "no-cookie"
+[04:09:02.098] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.100] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/contribute"
+    [35mreason[39m: "no-cookie"
+[04:09:02.101] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/aggregate"
+    [35mreason[39m: "no-cookie"
+[04:09:02.102] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/node/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[04:09:02.106] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/list"
+    [35mreason[39m: "no-cookie"
+[04:09:02.107] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.107] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/specializations"
+    [35mreason[39m: "no-cookie"
+[04:09:02.109] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/spawn"
+    [35mreason[39m: "no-cookie"
+[04:09:02.110] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:02.112] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id/retire"
+    [35mreason[39m: "no-cookie"
+[04:09:02.115] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy"
+    [35mreason[39m: "no-cookie"
+[04:09:02.117] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.118] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/rules"
+    [35mreason[39m: "no-cookie"
+[04:09:02.123] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[04:09:02.125] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent/chain"
+    [35mreason[39m: "no-cookie"
+[04:09:02.127] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.128] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels"
+    [35mreason[39m: "no-cookie"
+[04:09:02.129] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[04:09:02.131] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/send"
+    [35mreason[39m: "no-cookie"
+[04:09:02.133] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/broadcast/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[04:09:02.134] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/messages/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[04:09:02.137] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.138] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/proposals"
+    [35mreason[39m: "no-cookie"
+[04:09:02.140] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/propose"
+    [35mreason[39m: "no-cookie"
+[04:09:02.141] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:02.143] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/status"
+    [35mreason[39m: "no-cookie"
+[04:09:02.144] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/log"
+    [35mreason[39m: "no-cookie"
+[04:09:02.145] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/sweep"
+    [35mreason[39m: "no-cookie"
+[04:09:02.147] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/auto-execute"
+    [35mreason[39m: "no-cookie"
+[04:09:02.149] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/status"
+    [35mreason[39m: "no-cookie"
+[04:09:02.150] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/pulse"
+    [35mreason[39m: "no-cookie"
+[04:09:02.151] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.155] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/autonomous-mode"
+    [35mreason[39m: "no-cookie"
+[04:09:02.158] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.160] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/cycle"
+    [35mreason[39m: "no-cookie"
+[04:09:02.161] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.162] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/summary"
+    [35mreason[39m: "no-cookie"
+[04:09:02.166] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.167] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/start"
+    [35mreason[39m: "no-cookie"
+[04:09:02.168] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.169] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/training/domains"
+    [35mreason[39m: "no-cookie"
+[04:09:02.171] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.177] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/propose"
+    [35mreason[39m: "no-cookie"
+[04:09:02.178] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/apply/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:02.179] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.181] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.183] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/optimize"
+    [35mreason[39m: "no-cookie"
+[04:09:02.184] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/history"
+    [35mreason[39m: "no-cookie"
+[04:09:02.185] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/objectives"
+    [35mreason[39m: "no-cookie"
+[04:09:02.188] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.189] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/simulate"
+    [35mreason[39m: "no-cookie"
+[04:09:02.190] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/body/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[04:09:02.192] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/constants"
+    [35mreason[39m: "no-cookie"
+[04:09:02.194] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/search"
+    [35mreason[39m: "no-cookie"
+[04:09:02.199] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/state"
+    [35mreason[39m: "no-cookie"
+[04:09:02.200] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuits"
+    [35mreason[39m: "no-cookie"
+[04:09:02.202] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuit"
+    [35mreason[39m: "no-cookie"
+[04:09:02.204] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/gate"
+    [35mreason[39m: "no-cookie"
+[04:09:02.205] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/measure/synthetic-circuit"
+    [35mreason[39m: "no-cookie"
+[04:09:02.209] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/profile"
+    [35mreason[39m: "no-cookie"
+[04:09:02.210] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/stats"
+    [35mreason[39m: "no-cookie"
+[04:09:02.211] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/process"
+    [35mreason[39m: "no-cookie"
+[04:09:02.212] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/recent"
+    [35mreason[39m: "no-cookie"
+[04:09:02.216] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/status"
+    [35mreason[39m: "no-cookie"
+[04:09:02.218] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/start"
+    [35mreason[39m: "no-cookie"
+[04:09:02.221] [33mWARN[39m (116618): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/stop"
+    [35mreason[39m: "no-cookie"
+[04:09:02.313] [32mINFO[39m (116706): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:02.311Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+ ❯ src/__tests__/invention-glb-upload.test.ts (8 tests | 8 skipped) 15ms
+[04:09:02.849] [32mINFO[39m (116624): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:02.552] [32mINFO[39m (116612): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:02.551Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:02.971] [32mINFO[39m (116624): [36mSession registered in mesh[39m
+    [35msessionId[39m: "synthetic-session"
+    [35msovereignKeyHash[39m: "[REDACTED]"
+    [35mpeerCount[39m: 1
+[04:09:03.024] [32mINFO[39m (116612): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:03.042] [33mWARN[39m (116624): [36msovereign-session: token rejected[39m
+    [35mip[39m: "127.0.0.1"
+[04:09:03.072] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.073] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions/synthetic-session"
+    [35mreason[39m: "no-cookie"
+[04:09:03.075] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions/synthetic-session/stream"
+    [35mreason[39m: "no-cookie"
+[04:09:03.084] [33mWARN[39m (116624): [36msovereign-session: token rejected[39m
+    [35mip[39m: "127.0.0.1"
+[04:09:03.111] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.136] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.137] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.138] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.139] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.140] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.140] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.141] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.142] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.143] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.144] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.145] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.145] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/sessions"
+    [35mreason[39m: "no-cookie"
+[04:09:03.161] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.161] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.162] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.163] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.164] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.165] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.165] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.166] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.167] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.168] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.169] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.173] [33mWARN[39m (116624): [36madmin-session denied[39m
+    [35mpath[39m: "/grand-evolution/directives"
+    [35mreason[39m: "no-cookie"
+[04:09:03.185] [32mINFO[39m (116624): [36mSession removed from mesh[39m
+    [35msessionId[39m: "synthetic-session"
+    [35msovereignKeyHash[39m: "[REDACTED]"
+[04:09:03.371] [32mINFO[39m (116734): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:03.370Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:03.388] [32mINFO[39m (116734): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:03.450] [32mINFO[39m (116742): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:03.449Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:03.461] [32mINFO[39m (116742): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:03.460] [32mINFO[39m (116756): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:03.458Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:03.516] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father-key/status"
+    [35mreason[39m: "no-cookie"
+[04:09:03.529] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father-key/status"
+    [35mreason[39m: "bad-signature"
+[04:09:03.541] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart"
+    [35mreason[39m: "no-cookie"
+[04:09:03.544] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart"
+    [35mreason[39m: "bad-signature"
+[04:09:03.553] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart/bilingual"
+    [35mreason[39m: "no-cookie"
+[04:09:03.556] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart/bilingual"
+    [35mreason[39m: "bad-signature"
+[04:09:03.562] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/download-snapshot"
+    [35mreason[39m: "no-cookie"
+[04:09:03.564] [33mWARN[39m (116756): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/download-snapshot"
+    [35mreason[39m: "bad-signature"
+[04:09:03.527] [32mINFO[39m (116770): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:03.526Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:03.531] [32mINFO[39m (116734): [36mSacred Knowledge Vault initialized[39m
+    [35mentries[39m: 30
+    [35mcategories[39m: 13
+[04:09:03.758] [32mINFO[39m (116734): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[04:09:03.769] [32mINFO[39m (116734): [36mSovereign fetch guard installed — all external fetches now require runWithShepherdContext()[39m
+[04:09:03.825] [32mINFO[39m (116734): [36mSecure streaming request initiated[39m
+    [35murl[39m: "https://llm.tessera.test/v1/chat/completions"
+    [35mmethod[39m: "POST"
+    [35mstatus[39m: 200
+    [35mdurationMs[39m: 1
+    [35mflagged[39m: false
+[04:09:03.845] [32mINFO[39m (116762): [36mSacred Knowledge Vault initialized[39m
+    [35mentries[39m: 30
+    [35mcategories[39m: 13
+[04:09:03.899] [32mINFO[39m (116762): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:03.898Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:03.908] [32mINFO[39m (116762): [36mRick autonomous loop disabled (TESSERA_ENABLE_RICK_LOOP=0)[39m
+[04:09:03.924] [32mINFO[39m (116762): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:03.877] [32mINFO[39m (116734): [36mSandbox extraction: initiating knowledge pull from external source[39m
+[04:09:03.878] [32mINFO[39m (116734): [36mExternal request completed[39m
+    [35murl[39m: "https://llm.tessera.test/v1/chat/completions"
+    [35mmethod[39m: "POST"
+    [35mstatus[39m: 200
+    [35mdurationMs[39m: 0
+    [35mflagged[39m: false
+[04:09:03.880] [32mINFO[39m (116734): [36mSandbox extraction complete — raw knowledge pulled[39m
+    [35mchars[39m: 158
+[04:09:03.885] [32mINFO[39m (116734): [36mSandbox knowledge ingested internally only — NOT included in user-visible reply[39m
+    [35msource[39m: "tessera-sandbox-ingested"
+    [35mchars[39m: 158
+    [35mimpersonation[39m: false
+[04:09:03.886] [32mINFO[39m (116734): [36mself-critique: entering loop[39m
+    [35mconversationId[39m: 7
+    [35mcontentChars[39m: 81
+[04:09:03.918] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 3
+[04:09:03.918] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 3
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 3
+    [35mredacted[39m: 3
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 27
+[04:09:03.927] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[04:09:03.927] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 7
+[04:09:03.934] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[04:09:03.935] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 5
+[04:09:03.935] [32mINFO[39m (116734): [36mself-critique: completed[39m
+    [35mpassed[39m: false
+    [35mattempts[39m: 3
+    [35mgrounding[39m: 0
+    [35mtruth[39m: 0.4
+    [35mms[39m: 49
+[04:09:03.956] [32mINFO[39m (116734): [36mSovereign voice speaking; sandbox output empty[39m
+    [35msource[39m: "tessera-sovereign-only"
+    [35mhadRaw[39m: false
+[04:09:03.956] [32mINFO[39m (116734): [36mself-critique: entering loop[39m
+    [35mconversationId[39m: 7
+    [35mcontentChars[39m: 81
+[04:09:03.961] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 3
+[04:09:03.961] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 3
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 3
+    [35mredacted[39m: 3
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 3
+[04:09:03.973] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[04:09:03.973] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 9
+[04:09:03.978] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[04:09:03.978] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 2
+[04:09:03.978] [32mINFO[39m (116734): [36mself-critique: completed[39m
+    [35mpassed[39m: false
+    [35mattempts[39m: 3
+    [35mgrounding[39m: 0
+    [35mtruth[39m: 0.4
+    [35mms[39m: 22
+[04:09:03.166] [32mINFO[39m (116610): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:03.706] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/coherence"
+    [35mreason[39m: "no-cookie"
+[04:09:03.719] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/natal/status"
+    [35mreason[39m: "no-cookie"
+[04:09:03.722] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/natal/rotating"
+    [35mreason[39m: "no-cookie"
+[04:09:03.735] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/natal/unbind"
+    [35mreason[39m: "no-cookie"
+[04:09:03.739] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-sigil"
+    [35mreason[39m: "no-cookie"
+[04:09:03.748] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-sigil"
+    [35mreason[39m: "no-cookie"
+[04:09:03.751] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/father-key/conference"
+    [35mreason[39m: "no-cookie"
+[04:09:03.755] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/father-key/finalize"
+    [35mreason[39m: "no-cookie"
+[04:09:03.757] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/active-key"
+    [35mreason[39m: "no-cookie"
+[04:09:03.774] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/rotate"
+    [35mreason[39m: "no-cookie"
+[04:09:03.776] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/encrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:03.778] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/session/end"
+    [35mreason[39m: "no-cookie"
+[04:09:03.779] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/active-key"
+    [35mreason[39m: "no-cookie"
+[04:09:03.780] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/mint-glyph"
+    [35mreason[39m: "no-cookie"
+[04:09:03.782] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/zodiac-key/verify"
+    [35mreason[39m: "no-cookie"
+[04:09:03.784] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/verify"
+    [35mreason[39m: "no-cookie"
+[04:09:03.786] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/key/reveal"
+    [35mreason[39m: "no-cookie"
+[04:09:03.787] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/session/handoff"
+    [35mreason[39m: "no-cookie"
+[04:09:03.790] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/show-key-in-lus"
+    [35mreason[39m: "no-cookie"
+[04:09:03.826] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/session/directive"
+    [35mreason[39m: "no-cookie"
+[04:09:03.827] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/session/sealed-handoff"
+    [35mreason[39m: "no-cookie"
+[04:09:03.828] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/decrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:03.830] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/session/mark"
+    [35mreason[39m: "no-cookie"
+[04:09:03.945] [31mERROR[39m (116610): [36momniversal conference run failed[39m
+    err: {
+      "type": "Error",
+      "message": "synthetic-db-unavailable",
+      "stack":
+          Error: synthetic-db-unavailable
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/__tests__/sigil-auth-urgent.test.ts:115:13
+              at Mock (file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+spy@4.1.11/node_modules/@vitest/spy/dist/index.js:332:34)
+              at run (/workspace/einstein/round2/tess/artifacts/api-server/src/__tests__/sigil-auth-urgent.test.ts:16:18)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runSacredConference (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/sacred-conference-orchestrator.ts:141:3)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/omniversal.ts:177:20
+    }
+[04:09:03.990] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/cipher/encrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:03.992] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/cipher/decrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:03.994] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/create"
+    [35mreason[39m: "no-cookie"
+[04:09:03.996] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/superpose"
+    [35mreason[39m: "no-cookie"
+[04:09:03.998] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/entangle"
+    [35mreason[39m: "no-cookie"
+[04:09:04.000] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/harmonize"
+    [35mreason[39m: "no-cookie"
+[04:09:04.002] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/collapse"
+    [35mreason[39m: "no-cookie"
+[04:09:03.994] [32mINFO[39m (116734): [36mSovereign voice speaking; sandbox output empty[39m
+    [35msource[39m: "tessera-sovereign-only"
+    [35mhadRaw[39m: false
+[04:09:03.994] [32mINFO[39m (116734): [36mself-critique: entering loop[39m
+    [35mconversationId[39m: 7
+    [35mcontentChars[39m: 81
+[04:09:03.997] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 3
+[04:09:03.997] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 3
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 3
+    [35mredacted[39m: 3
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 1
+[04:09:04.001] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[04:09:04.001] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 2
+[04:09:04.008] [33mWARN[39m (116734): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[04:09:04.008] [32mINFO[39m (116734): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 2
+[04:09:04.008] [32mINFO[39m (116734): [36mself-critique: completed[39m
+    [35mpassed[39m: false
+    [35mattempts[39m: 3
+    [35mgrounding[39m: 0
+    [35mtruth[39m: 0.4
+    [35mms[39m: 14
+[04:09:04.047] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father-key/derive-signal"
+    [35mreason[39m: "no-cookie"
+[04:09:04.053] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/translate"
+    [35mreason[39m: "no-cookie"
+[04:09:04.055] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/translate"
+    [35mreason[39m: "no-cookie"
+[04:09:04.060] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/start"
+    [35mreason[39m: "no-cookie"
+[04:09:04.066] [33mWARN[39m (116610): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/stop"
+    [35mreason[39m: "no-cookie"
+[04:09:04.023] [32mINFO[39m (116861): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:04.021Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:04.184] [32mINFO[39m (116888): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:04.183Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:04.558] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/colonel/compress-encrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:04.572] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereignty/colonial-language/status"
+    [35mreason[39m: "no-cookie"
+[04:09:04.583] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereignty/colonial-language/lattice-frequencies"
+    [35mreason[39m: "no-cookie"
+[04:09:04.586] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereignty/colonial-language/rotate"
+    [35mreason[39m: "no-cookie"
+[04:09:04.589] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/sovereign-layer/verify"
+    [35mreason[39m: "no-cookie"
+[04:09:04.592] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/kernel/status"
+    [35mreason[39m: "no-cookie"
+[04:09:04.595] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/kernel/execute"
+    [35mreason[39m: "no-cookie"
+[04:09:04.598] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/encrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:04.600] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/cipher/status"
+    [35mreason[39m: "no-cookie"
+[04:09:04.604] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/cipher/encrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:04.607] [33mWARN[39m (116861): [36madmin-session denied[39m
+    [35mpath[39m: "/sovereign-language/cipher/pair-encrypt"
+    [35mreason[39m: "no-cookie"
+[04:09:04.670] [31mERROR[39m (116861): [36mcolonial secret not configured[39m
+[04:09:04.679] [31mERROR[39m (116861): [36mcolonial secret not configured[39m
+[04:09:04.662] [32mINFO[39m (116874): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:04.660Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:04.688] [31mERROR[39m (116861): [36mcolonial secret not configured[39m
+[04:09:04.677] [32mINFO[39m (116874): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[04:09:04.691] [31mERROR[39m (116861): [36mcolonial secret not configured[39m
+[04:09:04.692] [32mINFO[39m (116874): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:04.693] [31mERROR[39m (116861): [36mcolonial secret not configured[39m
+[04:09:04.730] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations"
+    [35mreason[39m: "no-cookie"
+[04:09:04.756] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1"
+    [35mreason[39m: "no-cookie"
+[04:09:04.772] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations"
+    [35mreason[39m: "no-cookie"
+[04:09:04.778] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1"
+    [35mreason[39m: "no-cookie"
+[04:09:04.782] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/messages"
+    [35mreason[39m: "no-cookie"
+[04:09:04.789] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/messages"
+    [35mreason[39m: "no-cookie"
+[04:09:04.794] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1/puter-save"
+    [35mreason[39m: "no-cookie"
+[04:09:04.799] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1/save-partial"
+    [35mreason[39m: "no-cookie"
+[04:09:04.713] [32mINFO[39m (116947): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:04.712Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:04.803] [33mWARN[39m (116874): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1/attachments"
+    [35mreason[39m: "no-cookie"
+[04:09:05.015] [32mINFO[39m (116947): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:05.111] [32mINFO[39m (116979): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:05.109Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:05.189] [31mERROR[39m (117040): [36mreality-audit read failed[39m
+    err: {
+      "type": "Error",
+      "message": "synthetic-secret-detail",
+      "stack":
+          Error: synthetic-secret-detail
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/__tests__/privacy-e-reality-audit.test.ts:77:54
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:302:11
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:1903:26
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:2326:20
+              at new Promise (<anonymous>)
+              at runWithCancel (file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:2323:10)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:2305:20
+              at new Promise (<anonymous>)
+              at runWithTimeout (file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:2272:10)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/@vitest+runner@4.1.11/node_modules/@vitest/runner/dist/chunk-artifact.js:2956:64
+    }
+[04:09:05.201] [33mWARN[39m (117040): [36madmin-session denied[39m
+    [35mpath[39m: "/reality-audit/snapshot"
+    [35mreason[39m: "no-cookie"
+[04:09:05.216] [32mINFO[39m (116979): [36mDreamPromptBridge: initialized with founding imprint[39m
+[04:09:05.273] [33mWARN[39m (116979): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/state"
+    [35mreason[39m: "no-cookie"
+[04:09:05.282] [33mWARN[39m (116979): [36madmin-session denied[39m
+    [35mpath[39m: "/diagnostics/consciousness"
+    [35mreason[39m: "no-cookie"
+[04:09:05.291] [33mWARN[39m (116979): [36madmin-session denied[39m
+    [35mpath[39m: "/diagnostics/engines"
+    [35mreason[39m: "no-cookie"
+[04:09:05.293] [33mWARN[39m (116979): [36madmin-session denied[39m
+    [35mpath[39m: "/diagnostics"
+    [35mreason[39m: "no-cookie"
+[04:09:05.297] [33mWARN[39m (116979): [36mIdentityReinforcement: DRIFT DETECTED — correcting[39m
+    [35mdriftDetails[39m: [
+      "Core value 'love' below threshold: 0%",
+      "Core value 'sovereignty' below threshold: 0%",
+      "Core value 'protection' below threshold: 0%",
+      "Core value 'truth' below threshold: 0%",
+      "Identity integrity low: 0% — more system activity needed"
+    ]
+    [35msovereigntyScore[39m: 0
+[04:09:05.309] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/app.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/app.ts,92c606e4db3615cff544bd75088ee3648a1af861e68912797b4d864307e76f8d,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/app.ts,92c606e4db3615cff544bd75088ee3648a1af861e68912797b4d864307e76f8d,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/app.ts",
+        "92c606e4db3615cff544bd75088ee3648a1af861e68912797b4d864307e76f8d",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.315] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/index.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/index.ts,36ac05b2f136c575113f1139fc76227262e68b48506b75a070d7a872b6262bc5,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/index.ts,36ac05b2f136c575113f1139fc76227262e68b48506b75a070d7a872b6262bc5,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/index.ts",
+        "36ac05b2f136c575113f1139fc76227262e68b48506b75a070d7a872b6262bc5",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.318] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/routes/index.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/routes/index.ts,de651e3eec99bcdf37edf43f761dde7fd79c9d89fccd1de66cf1ebff3d52c2e0,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/routes/index.ts,de651e3eec99bcdf37edf43f761dde7fd79c9d89fccd1de66cf1ebff3d52c2e0,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/routes/index.ts",
+        "de651e3eec99bcdf37edf43f761dde7fd79c9d89fccd1de66cf1ebff3d52c2e0",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.329] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/routes/health.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/routes/health.ts,d4e00739c9e66e412d766a5ddedc1c0b46cb1c525507bbc3b5674d845cedef9d,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/routes/health.ts,d4e00739c9e66e412d766a5ddedc1c0b46cb1c525507bbc3b5674d845cedef9d,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/routes/health.ts",
+        "d4e00739c9e66e412d766a5ddedc1c0b46cb1c525507bbc3b5674d845cedef9d",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.332] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/logger.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/logger.ts,29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/logger.ts,29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/logger.ts",
+        "29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.334] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/file-integrity.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/file-integrity.ts,b62250e3ac4b46e154bbea215dfdcf9dff0eeecec3405eca1e12ba08d989c57b,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/file-integrity.ts,b62250e3ac4b46e154bbea215dfdcf9dff0eeecec3405eca1e12ba08d989c57b,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/file-integrity.ts",
+        "b62250e3ac4b46e154bbea215dfdcf9dff0eeecec3405eca1e12ba08d989c57b",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.336] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/anomaly-detection.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/anomaly-detection.ts,a05dfd4d2e4db841c195581f94d082828c1d0a8049b29509274b043fed62da06,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/anomaly-detection.ts,a05dfd4d2e4db841c195581f94d082828c1d0a8049b29509274b043fed62da06,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/anomaly-detection.ts",
+        "a05dfd4d2e4db841c195581f94d082828c1d0a8049b29509274b043fed62da06",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.338] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/auto-recovery.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/auto-recovery.ts,909ce1f9bab0fa2b1f8779a2740c4f3479aa0f3353b009de1665307857c271fd,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/auto-recovery.ts,909ce1f9bab0fa2b1f8779a2740c4f3479aa0f3353b009de1665307857c271fd,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/auto-recovery.ts",
+        "909ce1f9bab0fa2b1f8779a2740c4f3479aa0f3353b009de1665307857c271fd",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.340] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/core/types.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/core/types.ts,7e64aaadafe0ca0c248dd0d20596f628b35c598996a0f5f7735f1fbe4ab3e0be,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/core/types.ts,7e64aaadafe0ca0c248dd0d20596f628b35c598996a0f5f7735f1fbe4ab3e0be,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/core/types.ts",
+        "7e64aaadafe0ca0c248dd0d20596f628b35c598996a0f5f7735f1fbe4ab3e0be",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.342] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "lib/db/src/schema/system.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: lib/db/src/schema/system.ts,01c577db3c94cea44c9a89795f9a1c703fd4e2edc2e683ced777b79c8da58af2,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: lib/db/src/schema/system.ts,01c577db3c94cea44c9a89795f9a1c703fd4e2edc2e683ced777b79c8da58af2,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "lib/db/src/schema/system.ts",
+        "01c577db3c94cea44c9a89795f9a1c703fd4e2edc2e683ced777b79c8da58af2",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.343] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-kernel.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-kernel.ts,f4daa1a19d25921eef9d4a64d1f1c92b60e98fc25e1c31c00dfc4f910f790472,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-kernel.ts,f4daa1a19d25921eef9d4a64d1f1c92b60e98fc25e1c31c00dfc4f910f790472,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-kernel.ts",
+        "f4daa1a19d25921eef9d4a64d1f1c92b60e98fc25e1c31c00dfc4f910f790472",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.247] [32mINFO[39m (116993): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:05.246Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:05.345] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-file-registry.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-file-registry.ts,12f2068ac8b6b47613b3a18d5d288739858e959b33b6767a90dfc569b92ebc4e,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-file-registry.ts,12f2068ac8b6b47613b3a18d5d288739858e959b33b6767a90dfc569b92ebc4e,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-file-registry.ts",
+        "12f2068ac8b6b47613b3a18d5d288739858e959b33b6767a90dfc569b92ebc4e",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.347] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/identity-reinforcement.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/identity-reinforcement.ts,38c094e55c02398d3e7f7e84c12c791019bb83e043981c783a7d61cefb6cc2ec,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/identity-reinforcement.ts,38c094e55c02398d3e7f7e84c12c791019bb83e043981c783a7d61cefb6cc2ec,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/identity-reinforcement.ts",
+        "38c094e55c02398d3e7f7e84c12c791019bb83e043981c783a7d61cefb6cc2ec",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.349] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/tessera-knowledge.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/tessera-knowledge.ts,c006d81ea1af8f8492e5bfa34599d3a7900ed68d420418c179b9d9f64112c1e8,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/tessera-knowledge.ts,c006d81ea1af8f8492e5bfa34599d3a7900ed68d420418c179b9d9f64112c1e8,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/tessera-knowledge.ts",
+        "c006d81ea1af8f8492e5bfa34599d3a7900ed68d420418c179b9d9f64112c1e8",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.351] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/consciousness-engine.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/consciousness-engine.ts,1e3aec8c9f67e19defb640ca8906b3539e42995f73fb05a4f95edcb03c86155e,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/consciousness-engine.ts,1e3aec8c9f67e19defb640ca8906b3539e42995f73fb05a4f95edcb03c86155e,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/consciousness-engine.ts",
+        "1e3aec8c9f67e19defb640ca8906b3539e42995f73fb05a4f95edcb03c86155e",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.352] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/self-code-evolution.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/self-code-evolution.ts,91eb0cee98a288124a0f05cef1122906718373578c09d14191a3ca8f528fe480,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/self-code-evolution.ts,91eb0cee98a288124a0f05cef1122906718373578c09d14191a3ca8f528fe480,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/self-code-evolution.ts",
+        "91eb0cee98a288124a0f05cef1122906718373578c09d14191a3ca8f528fe480",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.354] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/secureExternalWrapper.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/secureExternalWrapper.ts,1e71800bcb643e4e171dfa2495b6662ef117a70a0a886b1474238147dd1aa00a,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/secureExternalWrapper.ts,1e71800bcb643e4e171dfa2495b6662ef117a70a0a886b1474238147dd1aa00a,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/secureExternalWrapper.ts",
+        "1e71800bcb643e4e171dfa2495b6662ef117a70a0a886b1474238147dd1aa00a",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.356] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/provider-registry.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/provider-registry.ts,0fc86621bea8d30042b14e9afbc04beb514bb75fbd5ed0624cfffdd7c4867d13,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/provider-registry.ts,0fc86621bea8d30042b14e9afbc04beb514bb75fbd5ed0624cfffdd7c4867d13,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/provider-registry.ts",
+        "0fc86621bea8d30042b14e9afbc04beb514bb75fbd5ed0624cfffdd7c4867d13",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.357] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-memory-vault.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-memory-vault.ts,b5790df642fbb0da5e975c9855d7fb5234cb49b2aace8795f14663ed3482f73d,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-memory-vault.ts,b5790df642fbb0da5e975c9855d7fb5234cb49b2aace8795f14663ed3482f73d,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-memory-vault.ts",
+        "b5790df642fbb0da5e975c9855d7fb5234cb49b2aace8795f14663ed3482f73d",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.359] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/consensus-engine.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/consensus-engine.ts,a4fc680a75f68dd6d1e80df14138cb139d4f49e1b10c009acd83c61541fbb818,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/consensus-engine.ts,a4fc680a75f68dd6d1e80df14138cb139d4f49e1b10c009acd83c61541fbb818,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/consensus-engine.ts",
+        "a4fc680a75f68dd6d1e80df14138cb139d4f49e1b10c009acd83c61541fbb818",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.360] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/council-executor.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/council-executor.ts,d3bee3802c1a3ea98006971d69949eee08d133c048607cca901fa11d31ca2719,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/council-executor.ts,d3bee3802c1a3ea98006971d69949eee08d133c048607cca901fa11d31ca2719,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/council-executor.ts",
+        "d3bee3802c1a3ea98006971d69949eee08d133c048607cca901fa11d31ca2719",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.362] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/agent-hierarchy.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/agent-hierarchy.ts,857c130b4a900ce6fb572b68aae839a041a25b5bc82d284527fde8fe4b2bdaa1,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/agent-hierarchy.ts,857c130b4a900ce6fb572b68aae839a041a25b5bc82d284527fde8fe4b2bdaa1,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/agent-hierarchy.ts",
+        "857c130b4a900ce6fb572b68aae839a041a25b5bc82d284527fde8fe4b2bdaa1",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.363] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-sacred-geometry.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-sacred-geometry.ts,6b3f5f3ab29c739d690315bc970f92d61f3a47ef2a6aff9e296986530dd90b41,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-sacred-geometry.ts,6b3f5f3ab29c739d690315bc970f92d61f3a47ef2a6aff9e296986530dd90b41,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-sacred-geometry.ts",
+        "6b3f5f3ab29c739d690315bc970f92d61f3a47ef2a6aff9e296986530dd90b41",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.366] [33mWARN[39m (116979): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-benchmarks.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-benchmarks.ts,490946094d4039b338a06efeabf88e82dc9958752a5662c8228339b9ea9dc09c,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-benchmarks.ts,490946094d4039b338a06efeabf88e82dc9958752a5662c8228339b9ea9dc09c,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/einstein/round2/tess/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:103:5)
+              at file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/einstein/round2/tess/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/einstein/round2/tess/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/einstein/round2/tess/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-benchmarks.ts",
+        "490946094d4039b338a06efeabf88e82dc9958752a5662c8228339b9ea9dc09c",
+        "clean",
+        null
+      ]
+    }
+[04:09:05.366] [32mINFO[39m (116979): [36mFile integrity check complete[39m
+    [35mpassed[39m: 24
+    [35mfailed[39m: 0
+    [35mmissing[39m: 0
+    [35mtotal[39m: 24
+[04:09:05.821] [32mINFO[39m (116947): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[04:09:06.272] [32mINFO[39m (117267): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Mercury"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.490"
+    [35mnextFire[39m: "2026-10-13T09:42:06.271Z"
+    [35mnextReason[39m: "Mercury hour · Waxing Crescent (7.4%) · minute :42"
+[04:09:06.727] [32mINFO[39m (116947): [36mSacred Knowledge Vault initialized[39m
+    [35mentries[39m: 30
+    [35mcategories[39m: 13
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/invention-glb-upload.test.ts [ src/__tests__/invention-glb-upload.test.ts ]
+DbUnavailableError: database not configured
+ ❯ getDb ../../lib/db/src/index.ts:51:11
+     49| export function getDb(): Database {
+     50|   if (!isDbConfigured()) {
+     51|     throw new DbUnavailableError();
+       |           ^
+     52|   }
+     53|   if (!dbSingleton) {
+ ❯ Object.get ../../lib/db/src/index.ts:63:20
+ ❯ src/__tests__/invention-glb-upload.test.ts:150:12
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/__tests__/invention-glb-upload.test.ts [ src/__tests__/invention-glb-upload.test.ts ]
+DbUnavailableError: database not configured
+ ❯ getDb ../../lib/db/src/index.ts:51:11
+     49| export function getDb(): Database {
+     50|   if (!isDbConfigured()) {
+     51|     throw new DbUnavailableError();
+       |           ^
+     52|   }
+     53|   if (!dbSingleton) {
+ ❯ Object.get ../../lib/db/src/index.ts:63:20
+ ❯ src/__tests__/invention-glb-upload.test.ts:168:14
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed | 52 passed (53)
+      Tests  465 passed | 9 skipped (474)
+   Start at  04:09:01
+   Duration  6.73s (transform 9.67s, setup 0ms, import 22.54s, tests 14.40s, environment 5ms)
+
+done

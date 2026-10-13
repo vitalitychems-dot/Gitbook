@@ -1,0 +1,9 @@
+last_ledger_number=16
+checkpoint_sha=efcca741d6c5bf2de6e0f57b7909301ea0b0e618
+checkpoint_short=efcca741
+prior_ledger=15
+prior_checkpoint=243ddd4b
+checked_at_ct=2026-10-13 05:24 AM CT
+board_last_posted_ledger=14
+board_last_posted_comment=6135901156
+note=Local only; Tessera posts to issue #2. Alert Tessera on ungated merge #64.

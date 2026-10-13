@@ -1,0 +1,183 @@
+diff --git a/artifacts/v2/src/brain/bench4.mjs b/artifacts/v2/src/brain/bench4.mjs
+new file mode 100644
+index 00000000..25633219
+--- /dev/null
++++ b/artifacts/v2/src/brain/bench4.mjs
+@@ -0,0 +1,46 @@
++// IDEAS-B4 bench: node src/brain/bench4.mjs <memory.jsonl>
++import { readFileSync } from "node:fs";
++import { loadGraph, predict, hebbian, coMentionEpisodes, decay } from "./synapse.mjs";
++import { createRanker, observeInteraction } from "./context.mjs";
++import { createTimeline } from "./temporal.mjs";
++const pct = (a, p) => { const s = [...a].sort((x, y) => x - y); return +s[Math.min(s.length - 1, Math.floor(p * s.length))].toFixed(3); };
++const time = (f) => { const t = process.hrtime.bigint(); const r = f(); return [r, Number(process.hrtime.bigint() - t) / 1e6]; };
++function split(jsonl) { const held = [], rest = []; jsonl.split("\n").filter(Boolean).forEach((l, i) => { const r = JSON.parse(l); (r.type === "relation" && i % 5 === 0 ? held : rest).push(r); }); return { held, rest }; }
++const build = (rs) => { const g = loadGraph(rs.map((r) => JSON.stringify(r)).join("\n")); for (const e of coMentionEpisodes(g)) hebbian(g, e); decay(g, { factor: 0.95, floor: 0.05 }); return g; };
++const queries = (g, held) => { const L = new Set([...g.edges.keys()].flatMap((k) => k.split("\u0000"))); return held.filter((r) => L.has(r.from) && L.has(r.to)); };
++/** Context recall@5 on the outer held-out relations: old predict vs new ranker, with McNemar discordants. */
++export function benchContext(jsonl) {
++  const { held, rest } = split(jsonl); const g = build(rest); const q = queries(g, held); const R = createRanker(g);
++  const lo = [], ln = []; let b = 0, c = 0, old = 0, neu = 0;
++  for (const r of q) {
++    const [p1, t1] = time(() => predict(g, r.from, 5)); const [p2, t2] = time(() => R(r.from, 5)); lo.push(t1); ln.push(t2);
++    const h1 = p1.includes(r.to), h2 = p2.includes(r.to); old += h1; neu += h2; if (h1 && !h2) b++; if (!h1 && h2) c++;
++  }
++  return { queries: q.length, before: old, after: neu, onlyOld: b, onlyNew: c, latencyMs: { before: { p50: pct(lo, 0.5), p95: pct(lo, 0.95) }, after: { p50: pct(ln, 0.5), p95: pct(ln, 0.95) } } };
++}
++/** Real-time learning: stream the second half of training relations as interactions into a graph
++ * built from the first half. "structure" adds the edge only; "online" also fires Hebbian on it. */
++export function benchOnline(jsonl) {
++  const { held, rest } = split(jsonl); const ents = rest.filter((r) => r.type !== "relation"); const rels = rest.filter((r) => r.type === "relation");
++  const h = Math.floor(rels.length / 2); const out = {};
++  for (const mode of ["frozen", "structure", "online"]) {
++    const g = build([...ents, ...rels.slice(0, h)]);
++    if (mode !== "frozen") for (const r of rels.slice(h)) { if (mode === "online") observeInteraction(g, r.from, r.to); else { for (const n of [r.from, r.to]) if (!g.nodes.has(n)) g.nodes.set(n, { type: "unknown", obs: 0, text: n.toLowerCase() }); const k = r.from < r.to ? `${r.from}\u0000${r.to}` : `${r.to}\u0000${r.from}`; g.edges.set(k, (g.edges.get(k) ?? 0) + 1); } }
++    const q = queries(build(rest), held); out[mode] = { queries: q.length, recall5: q.filter((r) => predict(g, r.from, 5).includes(r.to)).length };
++  }
++  return out;
++}
++/** Temporal: replay the file as a timeline (line index = time); snapshot(t) must equal loadGraph(lines<=t). */
++export function benchTemporal(jsonl) {
++  const lines = jsonl.split("\n").filter(Boolean); const T = createTimeline();
++  lines.forEach((l, t) => { const r = JSON.parse(l); if (r.type === "entity") T.addNode(t, r.name, { type: r.entityType }); else if (r.type === "relation" && r.from && r.to) T.link(t, r.from, r.to, 1); });
++  const checks = [0.25, 0.5, 0.75, 1].map((f) => Math.floor(f * (lines.length - 1))); let ok = 0; const lat = [];
++  for (const t of checks) {
++    const [s, ms] = time(() => T.at(t)); lat.push(ms); const ref = loadGraph(lines.slice(0, t + 1).join("\n"));
++    if (s.nodes.size === ref.nodes.size && s.edges.size === ref.edges.size && [...ref.edges].every(([k, w]) => s.edges.get(k) === w)) ok++;
++  }
++  const [d, dms] = time(() => T.diff(checks[0], checks[2])); const back = T.diff(checks[2], checks[0]);
++  const sym = d.edgesAdded.length === back.edgesRemoved.length && d.nodesAdded.length === back.nodesRemoved.length;
++  return { events: T.events.length, snapshotsCorrect: `${ok}/${checks.length}`, diffSymmetric: sym, edgesAddedQ1toQ3: d.edgesAdded.length, latencyMs: { snapshotP50: pct(lat, 0.5), snapshotMax: pct(lat, 1), diff: +dms.toFixed(2) } };
++}
++if (import.meta.url === `file://${process.argv[1]}`) { const j = readFileSync(process.argv[2], "utf8"); console.log(JSON.stringify({ context: benchContext(j), online: benchOnline(j), temporal: benchTemporal(j) }, null, 1)); }
+diff --git a/artifacts/v2/src/brain/context.mjs b/artifacts/v2/src/brain/context.mjs
+new file mode 100644
+index 00000000..8a069548
+--- /dev/null
++++ b/artifacts/v2/src/brain/context.mjs
+@@ -0,0 +1,43 @@
++/**
++ * IDEAS-B4 context ranker. Same Adamic-Adar + synapse base as synapse.predict, plus
++ * IDF-weighted observation overlap, a 10-step personalized PageRank term, and a
++ * seed-type -> target-type prior learned from the graph's own edges. Variant chosen on an
++ * inner split of the training relations before the outer 87-query held-out set was scored.
++ */
++import { synapse } from "./synapse.mjs";
++const tk = (s) => String(s ?? "").split(/[^a-z0-9]+/).filter((w) => w.length > 2);
++function adjacency(g) {
++  const a = new Map(); const p = (x, y, w) => { if (!a.has(x)) a.set(x, []); a.get(x).push([y, w]); };
++  for (const [k, w] of g.edges) { const [x, y] = k.split("\u0000"); p(x, y, w); p(y, x, w); }
++  return a;
++}
++export function createRanker(g, { idfW = 1, typeW = 1, pprIters = 10, pprW = 1, synW = 2 } = {}) {
++  const A = adjacency(g); const N = [...g.nodes.keys()]; const T = new Map(); const df = new Map();
++  for (const n of N) { const s = new Set(tk(g.nodes.get(n).text)); T.set(n, s); for (const w of s) df.set(w, (df.get(w) ?? 0) + 1); }
++  const idf = (w) => Math.log(N.length / (df.get(w) ?? 1));
++  const tp = new Map(); const tt = new Map();
++  for (const k of g.edges.keys()) { const [x, y] = k.split("\u0000"); for (const [a, b] of [[x, y], [y, x]]) { const ta = g.nodes.get(a).type; const K = `${ta}|${g.nodes.get(b).type}`; tp.set(K, (tp.get(K) ?? 0) + 1); tt.set(ta, (tt.get(ta) ?? 0) + 1); } }
++  const ppr = (seed) => { let p = new Map([[seed, 1]]); for (let i = 0; i < pprIters; i++) { const q = new Map([[seed, 0.15]]); for (const [n, v] of p) { const L = A.get(n) ?? []; const tot = L.reduce((s, [, w]) => s + w, 0) || 1; for (const [m, w] of L) q.set(m, (q.get(m) ?? 0) + (0.85 * v * w) / tot); } p = q; } return p; };
++  return function rank(seed, k = 5) {
++    const nb = new Map(A.get(seed) ?? []); const S = T.get(seed) ?? new Set(); const st = g.nodes.get(seed)?.type;
++    let stot = 0; for (const w of S) stot += idf(w); const P = pprW ? ppr(seed) : new Map(); const out = [];
++    for (const n of N) {
++      if (n === seed || nb.has(n)) continue; let s = 0;
++      for (const [m] of A.get(n) ?? []) if (nb.has(m)) s += 1 / Math.log(1 + (A.get(m) ?? []).length);
++      s += synW * synapse(g, seed, n);
++      let i = 0; for (const w of T.get(n)) if (S.has(w)) i += idf(w); s += idfW * (i / (stot || 1));
++      s += pprW * 10 * (P.get(n) ?? 0);
++      s *= 1 + typeW * ((tp.get(`${st}|${g.nodes.get(n).type}`) ?? 0) / (tt.get(st) || 1));
++      if (s > 0) out.push([n, s]);
++    }
++    return out.sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).slice(0, k).map(([n]) => n);
++  };
++}
++/** Real-time learning: record one interaction (a -> b) into the live graph: add/strengthen the
++ * edge and fire Hebbian on a, b and every entity a's observations mention. */
++import { hebbian } from "./synapse.mjs";
++export function observeInteraction(g, a, b, { minLen = 4 } = {}) {
++  for (const n of [a, b]) if (!g.nodes.has(n)) g.nodes.set(n, { type: "unknown", obs: 0, text: n.toLowerCase() });
++  const k = a < b ? `${a}\u0000${b}` : `${b}\u0000${a}`; g.edges.set(k, (g.edges.get(k) ?? 0) + 1);
++  const t = g.nodes.get(a).text; hebbian(g, [a, b, ...[...g.nodes.keys()].filter((m) => m.length >= minLen && m !== a && m !== b && t.includes(m.toLowerCase()))]);
++}
+diff --git a/artifacts/v2/src/brain/temporal.mjs b/artifacts/v2/src/brain/temporal.mjs
+new file mode 100644
+index 00000000..93a9b7d5
+--- /dev/null
++++ b/artifacts/v2/src/brain/temporal.mjs
+@@ -0,0 +1,44 @@
++/**
++ * IDEAS-B4 time-indexed memory graph ("full picture over time"). Every node/edge change is an
++ * append-only event {t, op, ...}; any past snapshot can be rebuilt, two times can be diffed
++ * forward or back, and edge co-occurrence over time windows can be correlated. Pure, no I/O.
++ */
++export function createTimeline() {
++  const ev = []; // sorted by t (stable for ties)
++  const push = (e) => { let i = ev.length; while (i > 0 && ev[i - 1].t > e.t) i--; ev.splice(i, 0, e); };
++  const key = (a, b) => (a < b ? `${a}\u0000${b}` : `${b}\u0000${a}`);
++  return {
++    events: ev,
++    addNode(t, name, attrs = {}) { push({ t, op: "node+", name, attrs }); },
++    removeNode(t, name) { push({ t, op: "node-", name }); },
++    link(t, a, b, w = 1) { push({ t, op: "edge", k: key(a, b), w }); },
++    unlink(t, a, b) { push({ t, op: "edge-", k: key(a, b) }); },
++    /** State as of time t (inclusive). */
++    at(t) {
++      const nodes = new Map(); const edges = new Map();
++      for (const e of ev) {
++        if (e.t > t) break;
++        if (e.op === "node+") nodes.set(e.name, { ...(nodes.get(e.name) ?? {}), ...e.attrs });
++        else if (e.op === "node-") { nodes.delete(e.name); for (const k of [...edges.keys()]) if (k.split("\u0000").includes(e.name)) edges.delete(k); }
++        else if (e.op === "edge") { for (const n of e.k.split("\u0000")) if (!nodes.has(n)) nodes.set(n, {}); edges.set(e.k, (edges.get(e.k) ?? 0) + e.w); }
++        else if (e.op === "edge-") edges.delete(e.k);
++      }
++      return { nodes, edges, syn: new Map() };
++    },
++    /** What changed between t1 and t2 (works either direction; t2 < t1 gives the reverse diff). */
++    diff(t1, t2) {
++      const A = this.at(t1), B = this.at(t2); const d = (x, y) => [...x.keys()].filter((k) => !y.has(k));
++      const changed = [...B.edges].filter(([k, w]) => A.edges.has(k) && A.edges.get(k) !== w).map(([k]) => k);
++      return { nodesAdded: d(B.nodes, A.nodes), nodesRemoved: d(A.nodes, B.nodes), edgesAdded: d(B.edges, A.edges).map((k) => k.split("\u0000")), edgesRemoved: d(A.edges, B.edges).map((k) => k.split("\u0000")), edgesReweighted: changed.map((k) => k.split("\u0000")) };
++    },
++    /** Pearson correlation of two nodes' activity (edge events touching them) across time bins. */
++    correlate(a, b, bin) {
++      if (!ev.length) return 0; const t0 = ev[0].t, n = Math.floor((ev[ev.length - 1].t - t0) / bin) + 1;
++      const xa = new Array(n).fill(0), xb = new Array(n).fill(0);
++      for (const e of ev) if (e.k) { const p = e.k.split("\u0000"); const i = Math.floor((e.t - t0) / bin); if (p.includes(a)) xa[i]++; if (p.includes(b)) xb[i]++; }
++      const m = (x) => x.reduce((s, v) => s + v, 0) / n; const ma = m(xa), mb = m(xb);
++      let c = 0, va = 0, vb = 0; for (let i = 0; i < n; i++) { c += (xa[i] - ma) * (xb[i] - mb); va += (xa[i] - ma) ** 2; vb += (xb[i] - mb) ** 2; }
++      return va && vb ? c / Math.sqrt(va * vb) : 0;
++    },
++  };
++}
+diff --git a/artifacts/v2/test/v2-078-brain-r4.test.mjs b/artifacts/v2/test/v2-078-brain-r4.test.mjs
+new file mode 100644
+index 00000000..c8ff2e9f
+--- /dev/null
++++ b/artifacts/v2/test/v2-078-brain-r4.test.mjs
+@@ -0,0 +1,26 @@
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { loadGraph } from "../src/brain/synapse.mjs";
++import { createRanker, observeInteraction } from "../src/brain/context.mjs";
++import { createTimeline } from "../src/brain/temporal.mjs";
++const J = [
++  { type: "entity", name: "alpha", entityType: "module", observations: ["uses beta parser"] },
++  { type: "entity", name: "beta", entityType: "module", observations: ["parser"] },
++  { type: "entity", name: "gamma", entityType: "doc", observations: ["notes"] },
++  { type: "relation", from: "alpha", to: "gamma" }, { type: "relation", from: "beta", to: "gamma" },
++].map((x) => JSON.stringify(x)).join("\n");
++test("ranker returns non-neighbours ranked, excludes seed", () => {
++  const g = loadGraph(J); const r = createRanker(g)("alpha", 5);
++  assert.ok(!r.includes("alpha") && !r.includes("gamma")); assert.equal(r[0], "beta");
++});
++test("observeInteraction adds edge and synapse", () => {
++  const g = loadGraph(J); observeInteraction(g, "alpha", "beta");
++  assert.equal(g.edges.size, 3); assert.ok(g.syn.size >= 1);
++});
++test("timeline snapshot, forward/back diff, correlation", () => {
++  const T = createTimeline(); T.addNode(1, "a"); T.link(2, "a", "b"); T.link(5, "b", "c"); T.unlink(7, "a", "b");
++  assert.equal(T.at(3).edges.size, 1); assert.equal(T.at(6).edges.size, 2); assert.equal(T.at(8).edges.size, 1);
++  const f = T.diff(3, 8), b = T.diff(8, 3);
++  assert.deepEqual(f.edgesAdded, [["b", "c"]]); assert.deepEqual(f.edgesRemoved, [["a", "b"]]); assert.deepEqual(b.edgesAdded, [["a", "b"]]);
++  assert.ok(T.correlate("a", "b", 2) > 0);
++});

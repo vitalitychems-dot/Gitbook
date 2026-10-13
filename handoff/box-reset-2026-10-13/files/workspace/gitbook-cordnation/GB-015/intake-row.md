@@ -1,0 +1,1 @@
+| GB-015 | Grok Bot role page | Tessera (Pen) / Cordnation | 2026-10-05 | Tessera Pen proposal | TBD | draft (Tessera-gate fixes) | Branch-push exception + HYB done wording; awaiting Moderator re-review |

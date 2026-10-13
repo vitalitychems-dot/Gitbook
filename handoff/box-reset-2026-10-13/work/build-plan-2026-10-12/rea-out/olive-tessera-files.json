@@ -1,0 +1,258 @@
+[
+  {
+    "path": ".grok/app-env.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "bf303ce75508bd286afb553ef76c4c50564e46fc",
+    "size": 76,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/bf303ce75508bd286afb553ef76c4c50564e46fc"
+  },
+  {
+    "path": "data/coordination/board.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "fd36909f23a7a64252cb92753c33c7284fcd5ff6",
+    "size": 20123,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/fd36909f23a7a64252cb92753c33c7284fcd5ff6"
+  },
+  {
+    "path": "data/imports/manifest.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "d6a8edd6cceb8ab9edec983405b0fc3dc993bb71",
+    "size": 199933,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/d6a8edd6cceb8ab9edec983405b0fc3dc993bb71"
+  },
+  {
+    "path": "data/imports/read.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "15313902f8ee18bed416b7de11ca91881dc6cb1e",
+    "size": 177196,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/15313902f8ee18bed416b7de11ca91881dc6cb1e"
+  },
+  {
+    "path": "data/school/audit.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "c8fba80a8f9a61105c4a372206db6a81bb84c227",
+    "size": 940,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/c8fba80a8f9a61105c4a372206db6a81bb84c227"
+  },
+  {
+    "path": "data/school/pen-slot.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "2491b182b5c77283a9363544c4b0b01fa876d175",
+    "size": 85,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/2491b182b5c77283a9363544c4b0b01fa876d175"
+  },
+  {
+    "path": "data/school/skills.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "0f7a0cbc08be732a6e6fe1b403bb84cffaac6bcb",
+    "size": 172,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/0f7a0cbc08be732a6e6fe1b403bb84cffaac6bcb"
+  },
+  {
+    "path": "data/tessera-proof.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "3d582366097d95671a3af97c863892371586739a",
+    "size": 3356,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/3d582366097d95671a3af97c863892371586739a"
+  },
+  {
+    "path": "data/tools/workshop-pass.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "a4d81912653b3c9e21591ad3463c4b26860dd541",
+    "size": 4504,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/a4d81912653b3c9e21591ad3463c4b26860dd541"
+  },
+  {
+    "path": "data/web-study.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "0d94fa5426079ea7d7abbd6a2d75553f4b265cf2",
+    "size": 6098,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/0d94fa5426079ea7d7abbd6a2d75553f4b265cf2"
+  },
+  {
+    "path": "data/workshop/replit-plugin/mcp.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "d741c8653132cefdeffd3a5929a2783e5bb808e0",
+    "size": 97,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/d741c8653132cefdeffd3a5929a2783e5bb808e0"
+  },
+  {
+    "path": "data/workshop/replit-plugin/plugin.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "6d5b19a5fbb6cdca59af06a9bfc33215200e748b",
+    "size": 311,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/6d5b19a5fbb6cdca59af06a9bfc33215200e748b"
+  },
+  {
+    "path": "package-lock.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "db5d1a0d0f24dd8e953c15f09a0a5791b67e51de",
+    "size": 264665,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/db5d1a0d0f24dd8e953c15f09a0a5791b67e51de"
+  },
+  {
+    "path": "package.json",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "70453193a8ac9dc3a484d3ebe73018063f7d9274",
+    "size": 3546,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/70453193a8ac9dc3a484d3ebe73018063f7d9274"
+  },
+  {
+    "path": "scripts/chamber-cycle.test.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "8e642a8972d984a8117dc12433a45fda1cfa5506",
+    "size": 607,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/8e642a8972d984a8117dc12433a45fda1cfa5506"
+  },
+  {
+    "path": "scripts/desk-study.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "158648e74fca86b0b9ef47bd04e4bc6c7571e2ae",
+    "size": 1117,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/158648e74fca86b0b9ef47bd04e4bc6c7571e2ae"
+  },
+  {
+    "path": "scripts/github-desk.test.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "161724c1f4ea8fd4a2b69f685f5804d5c7068435",
+    "size": 455,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/161724c1f4ea8fd4a2b69f685f5804d5c7068435"
+  },
+  {
+    "path": "scripts/import-pass.test.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "c59bf3bc8ebae6b1d3dc6180ff0365c6b8ef690f",
+    "size": 1630,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/c59bf3bc8ebae6b1d3dc6180ff0365c6b8ef690f"
+  },
+  {
+    "path": "scripts/import-recall.test.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "b71dd407f94ecd79c4ccda2f0e511e75627e2dd0",
+    "size": 391,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/b71dd407f94ecd79c4ccda2f0e511e75627e2dd0"
+  },
+  {
+    "path": "scripts/imported-laws.test.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "685ee952cf95405ca5e1c29b4b724001b4868f49",
+    "size": 661,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/685ee952cf95405ca5e1c29b4b724001b4868f49"
+  },
+  {
+    "path": "scripts/recall.test.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "c64dd80b2b8ed68a2979f06ee904e99f169af1ad",
+    "size": 854,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/c64dd80b2b8ed68a2979f06ee904e99f169af1ad"
+  },
+  {
+    "path": "scripts/tessera-worker.mjs",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "a88c04e2e589f08e432bd39dd034b8320817872b",
+    "size": 10135,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/a88c04e2e589f08e432bd39dd034b8320817872b"
+  },
+  {
+    "path": "src/components/tessera/app-shell.tsx",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "eb1557e7499b974a595a313e897c4439b0f0a531",
+    "size": 5450,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/eb1557e7499b974a595a313e897c4439b0f0a531"
+  },
+  {
+    "path": "src/components/tessera/board-view.tsx",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "c4446685376daa31b3dc5c626f54a75b03bbf0b4",
+    "size": 13496,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/c4446685376daa31b3dc5c626f54a75b03bbf0b4"
+  },
+  {
+    "path": "src/components/tessera/chamber.tsx",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "3d182dd708d88172715f25e406181184a30d0337",
+    "size": 13964,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/3d182dd708d88172715f25e406181184a30d0337"
+  },
+  {
+    "path": "src/components/tessera/code-view.tsx",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "6367195bd2c5ef24167b975ce53fd7c011338d35",
+    "size": 4776,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/6367195bd2c5ef24167b975ce53fd7c011338d35"
+  },
+  {
+    "path": "src/components/tessera/world-stage.tsx",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "19463a472f0292a67e75887c4be367f646f2c227",
+    "size": 6477,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/19463a472f0292a67e75887c4be367f646f2c227"
+  },
+  {
+    "path": "src/lib/tessera/chat.ts",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "f3393b6f8f609ecffef1d94d4e00eeed08473581",
+    "size": 17450,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/f3393b6f8f609ecffef1d94d4e00eeed08473581"
+  },
+  {
+    "path": "src/lib/tessera/github-desk.ts",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "072987cb6fd0936a9c1b370a6d89de0f03497912",
+    "size": 12314,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/072987cb6fd0936a9c1b370a6d89de0f03497912"
+  },
+  {
+    "path": "src/lib/tessera/identity.ts",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "ed18eb662cf8ddeaf510ff4dc3493a514d1885ac",
+    "size": 15215,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/ed18eb662cf8ddeaf510ff4dc3493a514d1885ac"
+  },
+  {
+    "path": "startup.sh",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "9068deed5b18417a6839a3a00ca724723d62f2ef",
+    "size": 1102,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/9068deed5b18417a6839a3a00ca724723d62f2ef"
+  },
+  {
+    "path": "vite.config.ts",
+    "mode": "100644",
+    "type": "blob",
+    "sha": "f0aa67ddb6b5067c5aece4678259caa57638aa5a",
+    "size": 6750,
+    "url": "https://api.github.com/repos/vitalitychems-dot/TESSERA/git/blobs/f0aa67ddb6b5067c5aece4678259caa57638aa5a"
+  }
+]

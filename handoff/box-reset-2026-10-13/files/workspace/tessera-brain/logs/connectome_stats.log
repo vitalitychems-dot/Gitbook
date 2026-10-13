@@ -1,0 +1,29 @@
+Loading C. elegans...
+  nodes=299 edges=3142
+Building FlyWire neuropil co-projection (subsample)...
+  neuropils=79 edges=2847 subsample=50000
+Wrote /workspace/tessera-brain/data/connectome_stats.json
+
+== celegans_openworm_xls ==
+  n_nodes: 299
+  n_edges: 2395
+  degree_mean: 16.02006688963211
+  degree_median: 13.0
+  avg_clustering: 0.34922795169024184
+  modularity_greedy: 0.4064110521860221
+  n_communities_greedy: 4
+  rich_club_phi_at_median_degree: 0.1249087686372641
+  rich_club_median_k: 13
+  avg_shortest_path_lcc: 2.700186303337748
+
+== flywire_neuropil_coprojection ==
+  n_nodes: 79
+  n_edges: 2847
+  degree_mean: 72.07594936708861
+  degree_median: 75.0
+  avg_clustering: 0.9622872288683566
+  modularity_greedy: 0.15083445524367867
+  n_communities_greedy: 2
+  rich_club_phi_at_median_degree: 1.0
+  rich_club_median_k: 75
+  avg_shortest_path_lcc: 1.0759493670886076

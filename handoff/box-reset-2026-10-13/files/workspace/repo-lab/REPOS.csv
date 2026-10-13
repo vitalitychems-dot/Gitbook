@@ -1,0 +1,41 @@
+url,where_listed,license,stars,last_push_utc,private,category,install_status,install_reason,notes
+https://github.com/vitalitychems-dot/TESSERA,INVENTORY.md:19; search_repositories; SOURCE-HEADS dest; package.json@5c1137fa (no git URL deps),,,,,own-active,BLOCKED,PRIVATE; skip clone; exclude from install lab,PRIVATE; skip clone; exclude from install lab
+https://github.com/vitalitychems-dot/Gitbook,INVENTORY.md:20; search; SOURCE-HEADS tip bc6b3287,,,,,own-active,BLOCKED,PRIVATE; skip clone,PRIVATE; skip clone
+https://github.com/vitalitychems-dot/Zz,INVENTORY.md:21; SOURCE-HEADS; CURRENT-REPOSITORY-STATUS; FUNCTIONAL-MERGE-MATRIX,,,,,own-archive,BLOCKED,PRIVATE; NEVER copy wholesale; BLOCKED clone without auth,PRIVATE; NEVER copy wholesale; BLOCKED clone without auth
+https://github.com/vitalitychems-dot/1T,INVENTORY.md:22; source-manifest (not inspected); CURRENT-REPOSITORY-STATUS,,,,,own-vault,BLOCKED,PRIVATE vault — do not open; BLOCKED,PRIVATE vault — do not open; BLOCKED
+https://github.com/vitalitychems-dot/1,INVENTORY.md:23; SOURCE-HEADS; source-manifest.csv; repo-audit.tsv,,,,,own-snapshot,NOT_ATTEMPTED,large historical snapshot; prioritized frameworks first,PUBLIC historical snapshot
+https://github.com/vitalitychems-dot/5t,INVENTORY.md:24; SOURCE-HEADS; source-manifest; repo-audit,,,,,own-snapshot,NOT_ATTEMPTED,large historical snapshot; prioritized frameworks first,PUBLIC historical snapshot
+https://github.com/vitalitychems-dot/T44,INVENTORY.md:25; SOURCE-HEADS; source-manifest; repo-audit,,,,,own-snapshot,NOT_ATTEMPTED,large historical snapshot; prioritized frameworks first,PUBLIC historical snapshot
+https://github.com/vitalitychems-dot/TESS,INVENTORY.md:26; SOURCE-HEADS; source-manifest; repo-audit,,,,,own-snapshot,NOT_ATTEMPTED,large historical snapshot; prioritized frameworks first,PUBLIC historical snapshot
+https://github.com/vitalitychems-dot/Grok-ready,INVENTORY.md:27; SOURCE-HEADS; source-manifest; FUNCTIONAL-MERGE-MATRIX; hyb-006,,,,,own-archive,SKIP,historical monorepo; clone ok; full pnpm install not attempted (5min/size; not framework),PUBLIC consolidation archive
+https://github.com/vitalitychems-dot/olive-giant-ever-glade,INVENTORY.md:28; SOURCE-HEADS; CURRENT-REPOSITORY-STATUS; HYB-008,,,,,own-app,BLOCKED,PRIVATE; NEVER copy wholesale; BLOCKED clone,PRIVATE; NEVER copy wholesale; BLOCKED clone
+https://github.com/vitalitychems-dot/tessera-grok-handoff,INVENTORY.md:29; SOURCE-HEADS; source-manifest; repo-audit,,,,,own-handoff,SKIP,handoff archive parts; no app install path,PUBLIC chunked handoff
+https://github.com/vitalitychems-dot/tessera-grok-handoff-complete,INVENTORY.md:30; SOURCE-HEADS; source-manifest,,,,,own-handoff,NOT_ATTEMPTED,chunked archive sibling; handoff inspected via tessera-grok-handoff,PUBLIC handoff complete
+https://github.com/vitalitychems-dot/tessera-complete-archives,INVENTORY.md:31; SOURCE-HEADS; source-manifest,,,,,own-archive,BLOCKED,PRIVATE; BLOCKED clone,PRIVATE; BLOCKED clone
+https://github.com/vitalitychems-dot/TX,merge/source-manifest.csv; merge/repo-audit.tsv,,,,,own-gone,BLOCKED,API Not Found 2026-10-05,API Not Found 2026-10-05
+https://github.com/vitalitychems-dot/Everything,merge/source-manifest.csv; merge/repo-audit.tsv,,,,,own-gone,BLOCKED,API Not Found,API Not Found
+https://github.com/vitalitychems-dot/tessera-coordination,merge/repo-audit.tsv; local gitbook-cordnation github links,,,,,own-gone,BLOCKED,API Not Found,API Not Found
+https://github.com/vitalitychems-dot/tessera-unified,merge/repo-audit.tsv; FUNCTIONAL-MERGE-MATRIX,,,,,own-gone,BLOCKED,API Not Found (content in TESSERA),API Not Found (content in TESSERA)
+https://github.com/vitalitychems-dot/z,merge/repo-audit.tsv,,,,,own-gone,BLOCKED,API Not Found,API Not Found
+https://github.com/vitalitychems-dot/Tessera-main,merge/repo-audit.tsv,,,,,own-gone,BLOCKED,empty/HEAD 0 in audit,empty/HEAD 0 in audit
+https://github.com/vitalitychems-dot/tessera-gitbook,merge/repo-audit.tsv,,,,,own-gone,BLOCKED,API Not Found,API Not Found
+https://github.com/vitalitychems-dot/tessera-replit,merge/repo-audit.tsv,,,,,own-gone,BLOCKED,API Not Found,API Not Found
+https://github.com/BindsNET/bindsnet,Gitbook brain-consciousness/SNN-SOURCE-MANIFEST.md:11; AGENT-WORKPLAN BC-008,,,,,snn-research,PASS,install+import ok,AGPL-3.0 — reference-only / separate service
+https://github.com/BrainCog-X/Brain-Cog,SNN-SOURCE-MANIFEST.md:12; AGENT-WORKPLAN BC-005,,,,,snn-research,PASS,install+import ok,Apache-2.0
+https://github.com/brian-team/brian2,SNN-SOURCE-MANIFEST.md:13; AGENT-WORKPLAN BC-007,,,,,snn-research,PASS,pypi brian2 install+import (editable clone failed setuptools_scm shallow),CeCILL 2.1 — reference until license review
+https://github.com/jeshraghian/snntorch,SNN-SOURCE-MANIFEST.md:14; AGENT-WORKPLAN BC-006,,,,,snn-research,PASS,install+torch+import ok,MIT preferred SNN
+https://github.com/Cortical-Labs/cl-sdk,intake/CORTICAL-LABS-READINESS.md; cl1-sim/TESSERA-FIT.md; workspace links,,,,,cl1,PASS,install+import ok,CC BY-NC 4.0 — NC flagged
+https://github.com/Cortical-Labs/cl-api-doc,cl1-sim/RUN.md; TESSERA-FIT.md,,,,,cl1,PASS,docs-only clone; no installable package (README present),docs notebooks
+https://github.com/FoundationAgents/OpenManus,"BENCHMARK-PLAN.md:30,75; BASELINE Q21; INVENTORY OpenManus lineage",,,,,agent-framework,PASS,install+import ok,MIT; successor of OpenManus/OpenManus
+https://github.com/OpenManus/OpenManus,BENCHMARK-PLAN.md (old URL),,,,,agent-framework,UNKNOWN,301 → OpenManus-RL; use FoundationAgents/OpenManus,301 → OpenManus-RL; use FoundationAgents/OpenManus
+https://github.com/OpenManus/OpenManus-RL,GitHub redirect from OpenManus/OpenManus,,,,,agent-framework,LISTED,Apache-2.0 RL variant; not primary,Apache-2.0 RL variant; not primary
+https://github.com/Aider-AI/aider,BENCHMARK-PLAN.md:23; TODO CARD-EVAL-003,,,,,eval-harness,PASS,install+import ok,Apache-2.0
+https://github.com/SWE-bench/SWE-bench,BENCHMARK-PLAN.md (princeton-nlp redirect),,,,,eval-harness,PASS,pypi swebench import (editable failed),MIT
+https://github.com/princeton-nlp/SWE-bench,BENCHMARK-PLAN historical,,,,,eval-harness,UNKNOWN,301 → SWE-bench/SWE-bench,301 → SWE-bench/SWE-bench
+https://github.com/mem0ai/mem0,repo-lab priority (RAG/memory for BASELINE §C / IMP-058),,,,,rag-memory,PASS,install+import ok,Apache-2.0
+https://github.com/chroma-core/chroma,repo-lab priority (vector store for Gitbook RAG),,,,,rag-memory,PASS,pypi chromadb import ok,Apache-2.0
+https://github.com/lancedb/lancedb,repo-lab priority (embedded vector alt),,,,,rag-memory,PASS,pypi lancedb import,Apache-2.0
+https://github.com/crewAIInc/crewAI,repo-lab priority (multi-agent mesh patterns),,,,,agent-framework,PASS,pypi crewai import ok,MIT
+https://github.com/microsoft/autogen,repo-lab priority (multi-agent),,,,,agent-framework,PASS,autogen-agentchat pypi import,CC-BY-4.0 content license caution
+https://github.com/browser-use/browser-use,repo-lab priority (tool-using agent),,,,,agent-framework,PASS,pypi browser-use import ok,MIT
+https://github.com/langchain-ai/langchain,repo-lab metadata only (too large; not attempted),,,,,rag-memory,NOT_ATTEMPTED,MIT; NOT ATTEMPTED,MIT; NOT ATTEMPTED

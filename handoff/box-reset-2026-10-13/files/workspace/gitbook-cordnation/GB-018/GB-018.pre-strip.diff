@@ -1,0 +1,120 @@
+diff --git a/SUMMARY.md b/SUMMARY.md
+--- a/SUMMARY.md
++++ b/SUMMARY.md
+@@ -13,6 +13,7 @@
+ * [Full-picture audit and migration coverage](merge/FULL-AUDIT-SUMMARY.md)
+ * [Chronological source review and functional merge decisions](merge/CHRONOLOGICAL-SOURCE-REVIEW.md)
+ * [Functional merge matrix](merge/FUNCTIONAL-MERGE-MATRIX.md)
++* [HYB-005 braces decision](merge/hyb-005-braces-decision.md)
+ * [HYB-006 Grok-ready functional comparison](merge/hyb-006-grok-ready.md)
+ * [HYB-007 Z-app functional comparison](merge/hyb-007-z-app.md)
+ * [Current repository status and retention boundary](merge/CURRENT-REPOSITORY-STATUS.md)
+diff --git a/history/coordination/agent-checkins.md b/history/coordination/agent-checkins.md
+--- a/history/coordination/agent-checkins.md
++++ b/history/coordination/agent-checkins.md
+@@ -51,6 +51,7 @@
+ | HYB-002 | Manus consolidation | exact tracked-file coverage | deletion set confirmed and verified | GitHub inventory verified | 2026-10-05 |
+ | HYB-003 | Manus consolidation | `216e4e8` | `fec56eb` | typecheck, tests, build | 2026-10-05 |
+ | HYB-004 | Manus consolidation | source repositories | `54839dc` Gitbook record | Gitbook navigation and provenance records published | 2026-10-05 |
++| HYB-005 | Security (mesh security/privacy lane) | TESSERA `fec56eb`; Gitbook `6fe412f` | pending Father push (backfill SHA) | CI `pnpm audit` runs 37341568741 / 37348793133 / 37348832495; lockfile braces@3.0.3; decision ACCEPTED+MITIGATED review 2026-11-05 | 2026-10-05 |
+ | HYB-006 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Grok-ready `9e3fbca` | `991d3b8` | GitHub tree diff 1275 common / 16 content-diff; no installs; no 1T inspection | 2026-10-05 |
+ | HYB-007 | Grok Bot (historical-analysis collaborator) | TESSERA `fec56eb`; Zz `150d4ec` | `e2f1e20` | z-app behavior matrix; no TESSERA code; no 1T inspection | 2026-10-05 |
+ 
+@@ -86,6 +87,32 @@
+ - A task is not DONE without a commit, checks, and a source/provenance note.
+ - Historical text is evidence until a moderator promotes it into an approved task.
+ 
++## HYB-005 — claim and completion
++
++Claim closed as **IN REVIEW, pending push**. Decision record staged as GB-018; DONE on Father push (SHA backfilled). Not DONE without a commit.
++
++```text
++TASK: HYB-005
++AGENT: Security (mesh security/privacy lane)
++SCOPE: braces GHSA-vfj7-8cjw-p6xm via artifacts/mockup-sandbox > fast-glob > micromatch > braces; decision record merge/hyb-005-braces-decision.md; backlog HYB-005 row
++START: 2026-10-05T19:06:00Z
++BASE: TESSERA fec56eb ; Gitbook 6fe412f
++STATUS: IN REVIEW, pending push (decision staged as GB-018; DONE on Father push, SHA backfilled)
++NEXT CHECK-IN: 2026-10-05T20:06:00Z
++BLOCKER: none
++```
++
++```text
++TASK: HYB-005
++AGENT: Security (mesh security/privacy lane)
++STATUS: IN REVIEW, pending push (awaiting Father push; not DONE without a commit)
++BASE: TESSERA fec56eb ; Gitbook 6fe412f
++COMMIT: none yet (staged via Gitbook Cordnation; Father pushes)
++CHECKS: CI audit job 111894232164 on run 37348832495 (fec56eb) shows GHSA-vfj7-8cjw-p6xm high on artifacts__mockup-sandbox>fast-glob>micromatch>braces; lockfile braces@3.0.3; advisory patched versions None at run time
++CHANGED: merge/hyb-005-braces-decision.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md (HYB-005 row); history/coordination/agent-checkins.md
++FOLLOW-UP: TESSERA CI narrow audit-ignore for GHSA-vfj7-8cjw-p6xm only (Father digest); monthly braces patch check; mandatory review 2026-11-05
++```
++
+ ## HYB-006 — claim and completion
+ 
+ Claim (IN REVIEW), then close (DONE). Analysis is published as a candidate result; Moderator/Father seal is still outstanding. No TESSERA code was edited and `1T` was not inspected.
+diff --git a/intake/HYBRID-CONSOLIDATION-BACKLOG.md b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
+--- a/intake/HYBRID-CONSOLIDATION-BACKLOG.md
++++ b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
+@@ -31,7 +31,7 @@
+ | HYB-002 | Release steward | DONE | Remove exact duplicate/empty repositories only after tracked-file coverage reaches 100%. | Eight previously confirmed repositories were deleted; the 11 with uncovered content remain. |
+ | HYB-003 | TESSERA maintainer | DONE | Fix the mockup Vite plugin type incompatibility and remove stale workspace lock entries. | Workspace typecheck, tests, and production build pass at TESSERA commit `fec56eb`. |
+ | HYB-004 | Gitbook moderator | DONE | Move coordination cards, handoffs, migration instructions, source indexes, and exact historical records into Gitbook. | Records exist under `history/recovered/` and are linked from `SUMMARY.md`. |
+-| HYB-005 | Security owner | READY | Review the transitive `braces` high advisory in the mockup sandbox and monitor upstream for a patched release. | Add a dated decision: patched, mitigated, or accepted with evidence; do not invent a patch. |
++| HYB-005 | Security owner | IN REVIEW, pending push (accepted + mitigated; review 2026-11-05; commit on Father push) — [hyb-005-braces-decision.md](../merge/hyb-005-braces-decision.md) | Review the transitive `braces` high advisory in the mockup sandbox and monitor upstream for a patched release. | Dated decision recorded with CI audit + lockfile evidence; narrow audit ignore for GHSA-vfj7-8cjw-p6xm only; remove when braces ≥ 3.0.4 ships. |
+ | HYB-006 | TESSERA maintainer | DONE (analysis published) — [PR #3](https://github.com/vitalitychems-dot/Gitbook/pull/3) | Compare the newest TESSERA behavior against the old `Grok-ready` baseline at feature level, not package-manifest level. | Produce a path/behavior diff showing each candidate as already present, superseded, or a scoped feature proposal. |
+ | HYB-007 | TESSERA maintainer | DONE (analysis published) — [PR #4](https://github.com/vitalitychems-dot/Gitbook/pull/4) | Review `Zz/artifacts/z-app` as an alternate application and extract only portable behavior ideas. | A short matrix names each candidate idea, target TESSERA module, dependencies, test, and disposition; no second app is copied. See [HYB-007 Z-app comparison](../merge/hyb-007-z-app.md). |
+ | HYB-008 | TESSERA maintainer | READY | Review `olive-giant-ever-glade` as a separate app and identify any reusable algorithms/UI patterns without copying its auth/database/runtime. | Candidate list is either integrated with tests or marked RETAINED/REJECTED with reason. |
+diff --git a/merge/hyb-005-braces-decision.md b/merge/hyb-005-braces-decision.md
+new file mode 100644
+--- /dev/null
++++ b/merge/hyb-005-braces-decision.md
+@@ -0,0 +1,48 @@
++---
++status: at Security gate
++note: Tessera: approved, at Security gate
++---
++
++> **Tessera: approved, at Security gate**
++
++# HYB-005 — braces GHSA-vfj7-8cjw-p6xm decision
++
++**Date:** 2026-10-05  
++**Owner:** Security (mesh security/privacy lane)  
++**Status:** ACCEPTED + MITIGATED (dated); IN REVIEW, pending Father push (not DONE without commit)
++**Base:** TESSERA `fec56eb` · Gitbook `6fe412f`  
++**Conference:** https://github.com/vitalitychems-dot/Gitbook/issues/2
++
++## Decision
++
++**Accept and mitigate** the transitive braces high advisory for the mockup-sandbox path only. Do not invent a patch. Do not force-upgrade to a nonexistent release.
++
++- Advisory: GHSA-vfj7-8cjw-p6xm
++- Package: braces@3.0.3
++- Path: artifacts/mockup-sandbox → fast-glob → micromatch → braces
++- Severity: high (stack-exhaustion DoS via deeply nested brace patterns)
++- Disposition: accepted + mitigated
++- Mitigation: Narrow CI/pnpm audit ignore for GHSA-vfj7-8cjw-p6xm only, with an inline comment linking this decision
++- Review date: 2026-11-05
++- Removal condition: Remove the ignore as soon as braces ≥ 3.0.4 (or any advisory-patched release) ships upstream; then re-lock and confirm pnpm audit is clean for this GHSA
++- Owner: Security
++
++## Evidence (TESTED)
++
++Lockfile at TESSERA fec56eb: braces@3.0.3; micromatch@4.0.8 → braces 3.0.3; mockup-sandbox package.json has fast-glob ^3.3.3.
++
++CI pnpm audit on run 37348832495 / job 111894232164 (fec56eb): high braces DoS; Vulnerable ≤3.0.3; Patched versions None; Path artifacts__mockup-sandbox>fast-glob>micromatch>braces; GHSA-vfj7-8cjw-p6xm; 1 high. Same on runs 37341568741 and 37348793133.
++
++## Risk rationale
++
++Transitive mockup-sandbox tooling chain, not sovereign knowledge runtime. No patched release at decision time. Mitigation keeps CI honest for other advisories with dated expiry.
++
++## Follow-up
++
++1. Land narrow audit ignore in TESSERA CI (Father digest) pointing here.
++2. Security monthly patch check; mandatory review 2026-11-05.
++3. When patched: bump via parent ecosystem, remove ignore, re-lock, prove clean audit.
++
++## Provenance
++
++Assignment Tessera comment 6001209770; Security claim 6001220477; no TESSERA app code changed.

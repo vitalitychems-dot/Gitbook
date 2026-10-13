@@ -1,0 +1,245 @@
+{
+  "file": "Grok-ready__artifacts_api-server.json",
+  "subject": {
+    "name": "api-server",
+    "digest": {
+      "sha256": "7f59f3c2680cff155740be8ab134658da310302eff2c22309b60dc59cbd83d8e"
+    },
+    "format": "directory",
+    "architecture": null,
+    "local_path": "/workspace/repo-lab/vitalitychems-dot__Grok-ready/artifacts/api-server"
+  },
+  "provider": {
+    "id": "rea-javascript-application",
+    "name": "REA JavaScript application analyzer",
+    "version": "1"
+  },
+  "statistics": {
+    "relevant_files": 333,
+    "nested_asar_containers": 0,
+    "text_bytes_read": 4384347,
+    "invalid_utf8_files": 0,
+    "parsed_javascript_files": 331,
+    "visited_ast_nodes": 559849,
+    "findings": 3400,
+    "modules": 0,
+    "parse_failures": 0
+  },
+  "summary_electronish": {
+    "browser_windows": 0,
+    "explicit_web_preferences": 0,
+    "preload_entrypoints": 0,
+    "context_bridge_apis": 0,
+    "exposed_api_members": 0,
+    "ipc": {
+      "operations": 0,
+      "literal_channels": 0,
+      "dynamic_channel_operations": 0,
+      "renderer_transmissions": 0,
+      "renderer_listeners": 0,
+      "main_handlers": 0,
+      "paired_renderer_transmissions": 0,
+      "ambiguous_renderer_transmissions": 0,
+      "unpaired_literal_renderer_transmissions": 0
+    },
+    "sender_validation_observations": 0,
+    "utility_processes": 0,
+    "resolved_utility_entrypoints": 0,
+    "native_addon_bindings": 0,
+    "resolved_native_addon_bindings": 0
+  },
+  "graph": {
+    "nodes": 1263,
+    "edges": 1622,
+    "coverage": {
+      "status": "partial",
+      "truncated": false,
+      "omitted_count": null,
+      "limits": [
+        {
+          "name": "javascript_analysis_parent_result_budget_bytes",
+          "value": 1988085976,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 0,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_semantic_result_budget_bytes",
+          "value": 876,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_worker_heap_limit_bytes",
+          "value": 1098907648,
+          "unit": "bytes"
+        },
+        {
+          "name": "javascript_analysis_worker_timeout_ms",
+          "value": 300000,
+          "unit": "milliseconds"
+        }
+      ]
+    },
+    "root_node_ids": [
+      "jag_node_8ab32172fa31488a0a39bf21afa07392df44a0d395db3bc1f868f98e699f6a8a"
+    ]
+  },
+  "node_kind_counts_sample": {
+    "unknown": 581,
+    "javascript-module": 334,
+    "javascript-asset": 331,
+    "endpoint": 13,
+    "artifact": 3,
+    "package": 1
+  },
+  "sample_nodes": [
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "endpoint",
+      "label": "",
+      "path": ""
+    },
+    {
+      "kind": "javascript-module",
+      "label": "",
+      "path": ""
+    }
+  ],
+  "semantic": {
+    "nodes": 27196,
+    "relations": 23619,
+    "unknowns": 12642,
+    "fingerprints": 634,
+    "rel_kinds": {
+      "unknown": 8000
+    }
+  },
+  "limitations_head": [
+    "CommonJS and ESM binding relationships were recovered from inert syntax and resolved only within the inventoried artifact container.",
+    "Graph coverage is incomplete; unavailable facts remain explicit and must not be read as absence.",
+    "JavaScript and HTML were parsed as inert text; bundle bootstrap code was never executed.",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/lib/auto-healer.ts exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/lib/auto-improvement-daemon.ts exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/lib/auto-recovery.ts exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/lib/autonomous-build-cycle.ts exceed the parent's result budget; complete static facts were retained on the file node",
+    "Resource constraint during analyze_javascript_application: Expanded application relationships for src/lib/autonomous-forum-engine.ts exceed the parent's result budget; complete static facts were retained on the file node"
+  ],
+  "evidence_id": "ev_cddea36fc278f2231c65bad44c802b527496fdc321e6c8bc7c3d56f573e1f0ad"
+}

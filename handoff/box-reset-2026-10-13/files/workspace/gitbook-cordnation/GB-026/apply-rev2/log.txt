@@ -1,0 +1,19 @@
+GB-022/GB-022-v4.ecd9022.diff: OK
+GB-024/GB-024-v3.ecd9022.diff: OK
+GB-025/GB-025.ecd9022.diff: OK
+GB-023/GB-023.ecd9022.diff: OK
+A solo GB-026 rev2 on ecd9022: rc=1
+C1 check GB-022-v4: rc=0
+C1 apply GB-022-v4: rc=0
+C2 check GB-024-v3: rc=0
+C2 apply GB-024-v3: rc=0
+C3 check GB-025: rc=0
+C3 apply GB-025: rc=0
+C4 check GB-023: rc=0
+C4 apply GB-023: rc=0
+  tree after GB-023: 814dd7a16bd8f271b0f2491871902c188172d8c9 (p23x: 814dd7a16bd8f271b0f2491871902c188172d8c9)
+C5 check GB-026-rev2: rc=0
+C5 apply GB-026-rev2: rc=0
+final tree: e5c867e9dcf4dc2aec303bbbbdee51ae10530db9 ; p26r2 tree: e5c867e9dcf4dc2aec303bbbbdee51ae10530db9
+D reverse-check rev2 on stacked tree: rc=0
+E rev1 (superseded) check on stack: rc=0

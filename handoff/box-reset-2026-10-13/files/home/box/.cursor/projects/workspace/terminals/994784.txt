@@ -1,0 +1,74 @@
+---
+pid: 395201
+cwd: "/workspace/repo-lab"
+command: "tail -40 /workspace/repo-lab/BrainCog-X__Brain-Cog/install-test.log 2>/dev/null\n# Also run remaining installs: crewai (pypi), chromadb (pypi in chroma dir), browser-use, swebench, autogen\nLAB=/workspace/repo-lab\nRESULTS=$LAB/INSTALL-RESULTS.tsv\n\ninstall_pypi_in_dir() {\n  local name=\"$1\"; local pkgs=\"$2\"; local test_py=\"$3\"\n  local dir=\"$LAB/$name\"; local log=\"$dir/install-test.log\"\n  echo \"=== $name (pypi $pkgs) ===\" | tee \"$log\"\n  mkdir -p \"$dir\"\n  rm -rf \"$dir/.venv\"\n  python3 -m venv \"$dir/.venv\"\n  local PIP=\"$dir/.venv/bin/pip\"; local PY=\"$dir/.venv/bin/python\"\n  \"$PIP\" install -U pip -q >>\"$log\" 2>&1\n  if timeout 280 \"$PIP\" install $pkgs >>\"$log\" 2>&1; then\n    if timeout 90 \"$PY\" -c \"$test_py\" >>\"$log\" 2>&1; then\n      echo -e \"${name}\\tPASS\\tpypi $pkgs import ok\" >> \"$RESULTS\"\n      echo PASS\n    else\n      echo -e \"${name}\\tFAIL\\ttest failed\" >> \"$RESULTS\"\n      echo TEST_FAIL; tail -10 \"$log\"\n    fi\n  else\n    echo -e \"${name}\\tFAIL\\tinstall failed\" >> \"$RESULTS\"\n    echo INSTALL_FAIL; tail -15 \"$log\"\n  fi\n}\n\ninstall_pypi_in_dir crewAIInc__crewAI 'crewai' 'import crewai; print(\"crewai\", getattr(crewai,\"__version__\", \"?\"))' &\ninstall_pypi_in_dir chroma-core__chroma 'chromadb' 'import chromadb; print(\"chromadb\", chromadb.__version__)' &\ninstall_pypi_in_dir browser-use__browser-use 'browser-use' 'import browser_use; print(\"browser_use ok\")' &\n\nwait\necho DONE_D\ncat \"$RESULTS\"\n"
+title: "Finish BrainCog check; install crewAI chroma browser-use"
+status: succeeded
+started_at: 2026-10-05T22:51:04.406Z
+running_for_ms: 53021    
+---
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 59.7/59.7 MB 69.2 MB/s  0:00:00
+
+Downloading pooch-1.9.0-py3-none-any.whl (67 kB)
+Using cached platformdirs-4.12.3-py3-none-any.whl (32 kB)
+Using cached requests-2.34.2-py3-none-any.whl (73 kB)
+Using cached charset_normalizer-3.5.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (254 kB)
+Using cached urllib3-2.8.0-py3-none-any.whl (135 kB)
+Using cached certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading soundfile-0.14.0-py2.py3-none-manylinux_2_28_x86_64.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 100.7 MB/s  0:00:00
+
+Using cached cffi-2.1.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (221 kB)
+Downloading soxr-1.1.0-cp312-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (240 kB)
+Using cached pycparser-3.0-py3-none-any.whl (48 kB)
+Downloading torchaudio-2.11.0-cp313-cp313-manylinux_2_28_x86_64.whl (1.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 89.7 MB/s  0:00:00
+
+Using cached torchvision-0.29.1-cp313-cp313-manylinux_2_28_x86_64.whl (7.4 MB)
+Downloading zstd-1.5.7.2-cp313-cp313-manylinux_2_14_x86_64.whl (302 kB)
+Building wheels for collected packages: braincog, dv, expelliarmus
+  Building editable for braincog (pyproject.toml): started
+  Building editable for braincog (pyproject.toml): finished with status 'done'
+  Created wheel for braincog: filename=braincog-0.2.7.19-0.editable-py3-none-any.whl size=10405 sha256=57bc008ec1eed07db11fc285f3988f1c2902759e4c7159528f031aed4d987e64
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ryre4uwb/wheels/3d/0a/6e/91d1fcee468d60ed21267dea70e9d23c2f60c95c049c49a9af
+  Building wheel for dv (pyproject.toml): started
+  Building wheel for dv (pyproject.toml): finished with status 'done'
+  Created wheel for dv: filename=dv-1.0.12-py3-none-any.whl size=34835 sha256=a8fbe24c17dee1e2d833b6a557c77d69e348109cb2021f8a5c7f6919d5024841
+  Stored in directory: /home/box/.cache/pip/wheels/23/e4/99/2a187e96191742614f3d6db2886dbd6266a556e3b76dc5901b
+  Building wheel for expelliarmus (pyproject.toml): started
+  Building wheel for expelliarmus (pyproject.toml): finished with status 'done'
+  Created wheel for expelliarmus: filename=expelliarmus-1.1.12-cp313-cp313-linux_x86_64.whl size=48701 sha256=9d7f583a9ed21fb87a29a525d7771de7e16598f39c7b08b47b5fc226a3fd3745
+  Stored in directory: /home/box/.cache/pip/wheels/a7/64/21/52c2c2612e2e9d04be1c637d8b3a348619cfb1e68216e409d0
+Successfully built braincog dv expelliarmus
+Installing collected packages: zstd, torchaudio, nvidia-cusparselt-cu13, mpmath, flatbuffers, cuda-toolkit, wrapt, urllib3, typing-extensions, truststore, triton, tqdm, threadpoolctl, tensorboard-data-server, sympy, six, pyyaml, pyparsing, pygame, pycparser, protobuf, platformdirs, pillow, nvidia-nvtx, nvidia-nvshmem-cu13, nvidia-nvjitlink, nvidia-nccl-cu13, nvidia-curand, nvidia-cufile, nvidia-cuda-runtime, nvidia-cuda-nvrtc, nvidia-cuda-cupti, numpy, networkx, narwhals, msgpack, MarkupSafe, markdown, lz4, llvmlite, lazy_loader, kiwisolver, idna, hf-xet, h11, fsspec, fonttools, filelock, einops, decorator, cycler, cuda-pathfinder, cloudpickle, click, charset_normalizer, certifi, absl-py, werkzeug, soxr, scipy, requests, python-dateutil, nvidia-cusparse, nvidia-cufft, nvidia-cublas, numba, joblib, jinja2, importRosbag, httpcore2, h5py, grpcio, expelliarmus, deprecated, cuda-bindings, contourpy, cffi, anyio, tensorboard, soundfile, scikit-learn, pooch, pandas, nvidia-cusolver, nvidia-cudnn-cu13, matplotlib, httpx2, dv, seaborn, librosa, huggingface-hub, torch, tonic, torchvision, thop, timm, braincog
+
+
+Successfully installed MarkupSafe-3.0.4 absl-py-2.5.0 anyio-4.15.1 braincog-0.2.7.19 certifi-2026.7.22 cffi-2.1.1 charset_normalizer-3.5.2 click-8.5.0 cloudpickle-3.1.2 contourpy-1.4.0 cuda-bindings-13.4.3 cuda-pathfinder-1.8.3 cuda-toolkit-13.0.3.0 cycler-0.12.1 decorator-5.3.1 deprecated-3.0.0 dv-1.0.12 einops-0.8.2 expelliarmus-1.1.12 filelock-4.0.12 flatbuffers-25.12.19 fonttools-4.66.1 fsspec-2026.9.0 grpcio-1.84.0 h11-0.16.0 h5py-3.16.0 hf-xet-1.6.0 httpcore2-2.13.1 httpx2-2.13.1 huggingface-hub-2.1.1 idna-3.20 importRosbag-1.0.4 jinja2-3.1.6 joblib-1.6.0 kiwisolver-1.5.1 lazy_loader-0.6 librosa-1.0.0 llvmlite-0.50.0 lz4-4.4.5 markdown-3.11 matplotlib-3.11.2 mpmath-1.3.0 msgpack-1.2.3 narwhals-2.26.0 networkx-3.7 numba-0.68.0 numpy-2.5.3 nvidia-cublas-13.1.1.3 nvidia-cuda-cupti-13.0.85 nvidia-cuda-nvrtc-13.0.88 nvidia-cuda-runtime-13.0.96 nvidia-cudnn-cu13-9.24.0.43 nvidia-cufft-12.0.0.61 nvidia-cufile-1.15.1.6 nvidia-curand-10.4.0.35 nvidia-cusolver-12.0.4.66 nvidia-cusparse-12.6.3.3 nvidia-cusparselt-cu13-0.8.1 nvidia-nccl-cu13-2.30.7 nvidia-nvjitlink-13.4.92 nvidia-nvshmem-cu13-3.4.5 nvidia-nvtx-13.0.85 pandas-3.0.6 pillow-12.3.0 platformdirs-4.12.3 pooch-1.9.0 protobuf-7.36.2 pycparser-3.0 pygame-2.6.1 pyparsing-3.3.3 python-dateutil-2.9.0.post0 pyyaml-6.0.3 requests-2.34.2 scikit-learn-1.9.1 scipy-1.18.1 seaborn-0.13.2 six-1.17.0 soundfile-0.14.0 soxr-1.1.0 sympy-1.14.0 tensorboard-2.21.0 tensorboard-data-server-0.7.2 thop-0.1.1.post2209072238 threadpoolctl-3.7.0 timm-0.6.13 tonic-1.7.0 torch-2.14.1 torchaudio-2.11.0 torchvision-0.29.1 tqdm-4.70.1 triton-3.8.0 truststore-0.10.4 typing-extensions-4.16.0 urllib3-2.8.0 werkzeug-3.1.9 wrapt-2.5.0 zstd-1.5.7.2
+INSTALL_OK
+braincog ok
+PASS
+=== chroma-core__chroma (pypi chromadb) ===
+=== crewAIInc__crewAI (pypi crewai) ===
+=== browser-use__browser-use (pypi browser-use) ===
+PASS
+PASS
+PASS
+DONE_D
+repo	status	reason
+Cortical-Labs__cl-sdk	PASS	install+import ok
+jeshraghian__snntorch	PASS	install+torch+import ok
+Aider-AI__aider	PASS	install+import ok
+FoundationAgents__OpenManus	PASS	install+import ok
+mem0ai__mem0	PASS	install+import ok
+BindsNET__bindsnet	PASS	install+import ok
+brian-team__brian2	PASS	pypi brian2 install+import (editable clone failed setuptools_scm shallow)
+BrainCog-X__Brain-Cog	PASS	install+import ok
+browser-use__browser-use	PASS	pypi browser-use import ok
+chroma-core__chroma	PASS	pypi chromadb import ok
+crewAIInc__crewAI	PASS	pypi crewai import ok
+
+---
+exit_code: 0
+elapsed_ms: 53021
+ended_at: 2026-10-05T22:51:57.427Z
+---

@@ -1,0 +1,7 @@
+main re-confirmed 45651521a137c4448673d6abfaa77e1567230f83 via read-only list_commits at 17:03 CT; local intake/log.md blob dec5f592cc44fdec37dd654d5eccaf25d93fb0eb = 4565152 blob dec5f592cc44fdec37dd654d5eccaf25d93fb0eb
+A git apply --check GB-029 rev 2 on clean 4565152: rc=0
+B git apply: rc=0
+  result tree 11c708d7166c749fbec8f719d12d75124678ffcc; drafted p29r2 tree 11c708d7166c749fbec8f719d12d75124678ffcc
+C reverse --check: rc=0
+D rev 1 then rev 2 not stacked: rev 2 is standalone on 4565152 (rev 1 check rc=0, rev 2 check rc=0, alternatives)
+E interdiff --check on rev1 result: rc=0

@@ -1,0 +1,22 @@
+---
+pid: 1502092
+cwd: "/workspace/gitbook-cordnation/GB-066"
+command: "cd /workspace/gitbook-cordnation; cat GB-067/SHA256.txt GB-068/SHA256.txt; sha256sum GB-067/GB-067.diff GB-068/*.diff; rm -rf /tmp/gb && git clone -q https://github.com/vitalitychems-dot/Gitbook /tmp/gb 2>&1|tail -1; cd /tmp/gb && git log -1 --format=%h; for d in GB-067/GB-067.diff GB-068/GB-068.diff; do echo \"== $d\"; /workspace/moderator-tools/gate-check.sh /workspace/gitbook-cordnation/$d $(sha256sum /workspace/gitbook-cordnation/$d|cut -d' ' -f1) /tmp/gb 2>&1; done; git apply GB-0 2>/dev/null; git apply /workspace/gitbook-cordnation/GB-067/GB-067.diff && git apply --check /workspace/gitbook-cordnation/GB-068/GB-068-on-GB-067.diff && echo STACK_OK"
+title: "Gate check GB-067 and GB-068"
+status: failed   
+started_at: 2026-10-13T06:01:05.654Z
+running_for_ms: 63525    
+---
+e4c38a5447b219f653618683fe4af6604500ba080afe8325b3e1721775b9bcf8  GB-067.diff
+1b6f9d2ffcdf1bba92213472f6a5fada7d90265913e5126f258586c7165f464d  GB-068.diff
+eac7f61ac45215a36d75b99bb9c3ada398c8f8cc6940180e0db29b213c169076  GB-068-on-GB-067.diff
+e4c38a5447b219f653618683fe4af6604500ba080afe8325b3e1721775b9bcf8  GB-067/GB-067.diff
+eac7f61ac45215a36d75b99bb9c3ada398c8f8cc6940180e0db29b213c169076  GB-068/GB-068-on-GB-067.diff
+1b6f9d2ffcdf1bba92213472f6a5fada7d90265913e5126f258586c7165f464d  GB-068/GB-068.diff
+
+
+---
+exit_code: unknown
+elapsed_ms: 63525
+ended_at: 2026-10-13T06:02:09.179Z
+---

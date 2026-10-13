@@ -1,0 +1,171 @@
+diff --git a/artifacts/gitai/src/api.mjs b/artifacts/gitai/src/api.mjs
+index 6b932129..a201333d 100644
+--- a/artifacts/gitai/src/api.mjs
++++ b/artifacts/gitai/src/api.mjs
+@@ -9,6 +9,7 @@ import { displayAvatar } from "./avatar.mjs";
+ import { MoltbookConnector } from "./moltbook.mjs";
+ import { bearerKey } from "./agent-keys.mjs";
+ import { CREDIT_LABEL } from "./policy.mjs";
++import { sessionCookie } from "./server.mjs";
+ 
+ const OPENAPI = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../openapi.json"), "utf8");
+ 
+@@ -121,14 +122,14 @@ export function dispatchApi(gitai, request) {
+     const created = gitai.registerSpectator(body);
+     if (!created.ok) return fail(400, created.reason);
+     return accountResult(gitai, created, {
+-      "set-cookie": `gitai=${encodeURIComponent(created.account.handle)}; HttpOnly; Path=/; SameSite=Lax`,
++      "set-cookie": sessionCookie(created.account.handle),
+     });
+   }
+   if (path === "/api/sessions") {
+     const logged = gitai.loginSpectator(body.handle ?? "");
+     if (!logged.ok) return fail(400, logged.reason);
+     return accountResult(gitai, logged, {
+-      "set-cookie": `gitai=${encodeURIComponent(logged.account.handle)}; HttpOnly; Path=/; SameSite=Lax`,
++      "set-cookie": sessionCookie(logged.account.handle),
+     });
+   }
+ 
+diff --git a/artifacts/gitai/src/server.mjs b/artifacts/gitai/src/server.mjs
+index df0ed9fd..869d20b4 100644
+--- a/artifacts/gitai/src/server.mjs
++++ b/artifacts/gitai/src/server.mjs
+@@ -1,6 +1,7 @@
+ /**
+  * GitAI HTTP app. Loopback by default. Refuses the v2 denylist paths.
+  */
++import { createHmac, randomBytes, timingSafeEqual } from "node:crypto";
+ import { createServer } from "node:http";
+ import { realpathSync } from "node:fs";
+ import { fileURLToPath } from "node:url";
+@@ -11,19 +12,46 @@ import { GitAi } from "./platform.mjs";
+ import { seedDemo } from "./seed.mjs";
+ import { createLiveFeed } from "./ws.mjs";
+ 
++// A bare handle is not a session. Restart drops cookies unless GITAI_SESSION_SECRET is set.
++const sessionSecret = (process.env.GITAI_SESSION_SECRET ?? "").trim() || randomBytes(32).toString("hex");
++
++export function signSession(handle) {
++  const mac = createHmac("sha256", sessionSecret).update(String(handle)).digest("hex");
++  return `${handle}.${mac}`;
++}
++
++function signatureMatches(presented, expected) {
++  const left = Buffer.from(presented);
++  const right = Buffer.from(expected);
++  if (left.length !== right.length) return false;
++  return timingSafeEqual(left, right);
++}
++
+ export function readSession(cookie) {
+   const match = String(cookie ?? "").match(/(?:^|;\s*)gitai=([^;]+)/);
+   if (!match) return null;
++  let value;
+   try {
+-    return decodeURIComponent(match[1]);
++    value = decodeURIComponent(match[1]);
+   } catch {
+     return null;
+   }
++  const dot = value.lastIndexOf(".");
++  if (dot <= 0) return null;
++  const handle = value.slice(0, dot);
++  const presented = value.slice(dot + 1);
++  const expected = createHmac("sha256", sessionSecret).update(handle).digest("hex");
++  if (!signatureMatches(presented, expected)) return null;
++  return handle;
++}
++
++export function sessionCookie(handle) {
++  return `gitai=${encodeURIComponent(signSession(handle))}; HttpOnly; Path=/; SameSite=Lax`;
+ }
+ 
+ function html(body, { status = 200, session = null, setSession = undefined } = {}) {
+   const headers = { "content-type": "text/html; charset=utf-8" };
+-  if (setSession) headers["set-cookie"] = `gitai=${encodeURIComponent(setSession)}; HttpOnly; Path=/; SameSite=Lax`;
++  if (setSession) headers["set-cookie"] = sessionCookie(setSession);
+   return { status, headers, body, session };
+ }
+ 
+@@ -56,7 +84,7 @@ export function dispatch(gitai, request) {
+       status: 303,
+       headers: {
+         location: `${base}/?notice=Spectator+login+created`,
+-        "set-cookie": `gitai=${encodeURIComponent(created.account.handle)}; HttpOnly; Path=/; SameSite=Lax`,
++        "set-cookie": sessionCookie(created.account.handle),
+       },
+       body: "",
+       session: created.account.handle,
+@@ -70,7 +98,7 @@ export function dispatch(gitai, request) {
+       status: 303,
+       headers: {
+         location: `${base}/`,
+-        "set-cookie": `gitai=${encodeURIComponent(logged.account.handle)}; HttpOnly; Path=/; SameSite=Lax`,
++        "set-cookie": sessionCookie(logged.account.handle),
+       },
+       body: "",
+       session: logged.account.handle,
+diff --git a/artifacts/gitai/test/gitai.test.mjs b/artifacts/gitai/test/gitai.test.mjs
+index 7e074c7f..82809836 100644
+--- a/artifacts/gitai/test/gitai.test.mjs
++++ b/artifacts/gitai/test/gitai.test.mjs
+@@ -8,7 +8,7 @@ import { GitAi } from "../src/platform.mjs";
+ import { CREDIT_LABEL, INTEGRITY_LINE, LEDGER_REASONS, TERMS } from "../src/policy.mjs";
+ import { runSandboxed } from "../src/sandbox.mjs";
+ import { seedDemo } from "../src/seed.mjs";
+-import { dispatch, listenGitAi } from "../src/server.mjs";
++import { dispatch, listenGitAi, signSession } from "../src/server.mjs";
+ 
+ function application(handle, specialty = "code", claimsConsciousness = false) {
+   return {
+@@ -392,11 +392,17 @@ test("the API and websocket publish the same marketplace", async () => {
+     assert.equal(first.view.people.some((person) => person.handle === "Jules"), true);
+     const projectId = first.view.projects.find((project) => project.name === "mesh-note").id;
+     const before = first.view.projects.find((project) => project.name === "mesh-note").stars;
+-    const starred = await fetch(`${started.url}/api/stars`, {
++    const forged = await fetch(`${started.url}/api/stars`, {
+       method: "POST",
+       headers: { "content-type": "application/json", cookie: "gitai=Jules" },
+       body: JSON.stringify({ projectId }),
+     });
++    assert.equal(forged.status, 401);
++    const starred = await fetch(`${started.url}/api/stars`, {
++      method: "POST",
++      headers: { "content-type": "application/json", cookie: `gitai=${signSession("Jules")}` },
++      body: JSON.stringify({ projectId }),
++    });
+     assert.equal(starred.status, 200);
+     const second = JSON.parse(await live.next());
+     const after = second.view.projects.find((project) => project.name === "mesh-note").stars;
+diff --git a/artifacts/v2/test/v2-gitai-tab.test.mjs b/artifacts/v2/test/v2-gitai-tab.test.mjs
+index 767aee26..30b3cb1e 100644
+--- a/artifacts/v2/test/v2-gitai-tab.test.mjs
++++ b/artifacts/v2/test/v2-gitai-tab.test.mjs
+@@ -1,6 +1,6 @@
+ import assert from "node:assert/strict";
+ import test from "node:test";
+-import { listenGitAi } from "../../gitai/src/server.mjs";
++import { listenGitAi, signSession } from "../../gitai/src/server.mjs";
+ import { seedDemo } from "../../gitai/src/seed.mjs";
+ import { createStudio, listenStudio } from "../src/studio/wall.mjs";
+ 
+@@ -46,11 +46,17 @@ test("the studio tab can share the standalone GitAI process", async () => {
+       direct.projects.find((project) => project.name === "mesh-note").stars,
+     );
+     const projectId = direct.projects.find((project) => project.name === "mesh-note").id;
+-    const starred = await fetch(`${studio.url}gitai/api/stars`, {
++    const forged = await fetch(`${studio.url}gitai/api/stars`, {
+       method: "POST",
+       headers: { "content-type": "application/json", cookie: "gitai=Jules" },
+       body: JSON.stringify({ projectId }),
+     });
++    assert.equal(forged.status, 401);
++    const starred = await fetch(`${studio.url}gitai/api/stars`, {
++      method: "POST",
++      headers: { "content-type": "application/json", cookie: `gitai=${signSession("Jules")}` },
++      body: JSON.stringify({ projectId }),
++    });
+     assert.equal(starred.status, 200);
+     const again = await (await fetch(`${backend.url}/api/view`)).json();
+     assert.equal(again.projects.find((project) => project.name === "mesh-note").stars, direct.projects.find((project) => project.name === "mesh-note").stars + 1);

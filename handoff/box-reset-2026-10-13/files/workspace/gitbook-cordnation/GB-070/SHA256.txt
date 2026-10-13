@@ -1,0 +1,5 @@
+ee8dcf89f3ddd00ec8eeeb60bc35134bba6670dd2638425710cc1418b8f9b7cc  GB-070-rev3.diff  (current, base 243ddd4b)
+d1c3ccd855f673746170352720c225de41cd06467e24204fbd805c41a8ae1546  GB-070-rev2-to-rev3.interdiff
+76f09c66ffe4bc15980eefcae9fbb67da1d794ac4bf4637b8e5dd79be8d7cc9d  GB-070-rev2.diff  (rev 2, SUPERSEDED)
+c55aaae8f4e1a7d7f136d71c3bdbf23858e860c51bee9324eaade66752a95ebe  GB-070-rev1-to-rev2.interdiff
+2e4eec4c558fe7bb058e66e118ace6ec95bb52411ae35849cfd0f897876e2ce2  GB-070.diff  (rev 1, SUPERSEDED)

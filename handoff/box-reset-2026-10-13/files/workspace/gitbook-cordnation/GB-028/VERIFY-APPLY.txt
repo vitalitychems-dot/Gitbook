@@ -1,0 +1,16 @@
+GB-028 — apply verification (16:43 CT, 2026-10-05). Main 979c35e0be9a27ab143c7dcfc714d979b11e10a0, 0 open PRs (checked 16:40 CT).
+File: GB-028/GB-028.979c35e.diff  sha256 5689294fe725b845dac0e40712f09c2dc7234ba146f84f70ef292fb08a559b6b  (147 lines, 5 files incl. 1 new, +71/−9)
+Local tree: 979c35e subset (46 files: the 38-file subset, the 7 unchanged files GB-027 needed, and intake/AGENT-LAUNCH-PROMPTS.md blob efe5eca4, all blob-verified against 979c35e). Cleaned with checkout -f / clean -fd / reset --hard before each run.
+base 979c35e subset (b979c): tree 745fdb646d1b01ab178993038f51159bbc385ade
+A1 --check GB-026 rev3 on 979c35e: rc=0
+A2 apply GB-026 rev3: rc=0
+A3 --check GB-027 on 979c35e+rev3: rc=0
+A4 apply GB-027: rc=0
+A5 --check GB-028 on 979c35e+rev3+027: rc=0
+A6 apply GB-028: rc=0
+  result tree 50f5540a38657bb53e9f1d73284e2095afa2456e; drafted p28 tree 50f5540a38657bb53e9f1d73284e2095afa2456e
+A7 reverse --check GB-028 on result: rc=0
+B --check GB-028 alone on clean 979c35e: rc=0
+B2 apply GB-028 alone on clean 979c35e: rc=0
+  B2 result:  5 files changed, 71 insertions(+), 9 deletions(-)
+Interpretation: the full stack (rev 3 → GB-027 → GB-028) applies cleanly from 979c35e, and GB-028 reproduces the drafted tree. GB-028 also applies alone on 979c35e (rc=0/0) because it shares no lines with rev 3 or GB-027.

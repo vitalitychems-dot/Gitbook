@@ -1,0 +1,258 @@
+Collecting cl-sdk
+  Downloading cl_sdk-1.0.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting dotenv (from cl-sdk)
+  Downloading dotenv-0.9.9-py2.py3-none-any.whl.metadata (279 bytes)
+Collecting ipykernel (from cl-sdk)
+  Downloading ipykernel-7.4.0-py3-none-any.whl.metadata (3.4 kB)
+Collecting matplotlib (from cl-sdk)
+  Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (80 kB)
+Collecting msgpack (from cl-sdk)
+  Downloading msgpack-1.2.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (8.3 kB)
+Collecting msgpack-numpy (from cl-sdk)
+  Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl.metadata (5.0 kB)
+Collecting networkx (from cl-sdk)
+  Downloading networkx-3.7-py3-none-any.whl.metadata (6.7 kB)
+Collecting numpy (from cl-sdk)
+  Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting pandas (from cl-sdk)
+  Downloading pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (79 kB)
+Collecting pydantic (from cl-sdk)
+  Downloading pydantic-2.13.5-py3-none-any.whl.metadata (110 kB)
+Collecting python-louvain (from cl-sdk)
+  Downloading python-louvain-0.16.tar.gz (204 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting scipy (from cl-sdk)
+  Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (62 kB)
+Collecting tables (from cl-sdk)
+  Downloading tables-3.11.1-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.1 kB)
+Collecting websockets (from cl-sdk)
+  Downloading websockets-17.2-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (6.3 kB)
+Collecting python-dotenv (from dotenv->cl-sdk)
+  Downloading python_dotenv-1.2.4-py3-none-any.whl.metadata (29 kB)
+Collecting comm>=0.1.1 (from ipykernel->cl-sdk)
+  Downloading comm-0.2.3-py3-none-any.whl.metadata (3.7 kB)
+Collecting debugpy>=1.6.5 (from ipykernel->cl-sdk)
+  Downloading debugpy-1.8.22-cp313-cp313-manylinux_2_34_x86_64.whl.metadata (1.4 kB)
+Collecting ipython>=7.23.1 (from ipykernel->cl-sdk)
+  Downloading ipython-9.17.1-py3-none-any.whl.metadata (4.6 kB)
+Collecting jupyter-client>=8.9.0 (from ipykernel->cl-sdk)
+  Downloading jupyter_client-8.10.0-py3-none-any.whl.metadata (8.5 kB)
+Collecting jupyter-core!=6.0.*,>=5.1 (from ipykernel->cl-sdk)
+  Downloading jupyter_core-5.9.1-py3-none-any.whl.metadata (1.5 kB)
+Collecting matplotlib-inline>=0.1 (from ipykernel->cl-sdk)
+  Downloading matplotlib_inline-0.2.2-py3-none-any.whl.metadata (2.4 kB)
+Collecting nest-asyncio2>=1.7.0 (from ipykernel->cl-sdk)
+  Downloading nest_asyncio2-1.7.3-py3-none-any.whl.metadata (6.7 kB)
+Collecting packaging>=22 (from ipykernel->cl-sdk)
+  Downloading packaging-26.3-py3-none-any.whl.metadata (3.5 kB)
+Collecting pyzmq>=25 (from ipykernel->cl-sdk)
+  Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting tornado>=6.5.7 (from ipykernel->cl-sdk)
+  Downloading tornado-6.5.10-cp39-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl.metadata (2.8 kB)
+Collecting traitlets>=5.4.0 (from ipykernel->cl-sdk)
+  Downloading traitlets-5.16.1-py3-none-any.whl.metadata (10 kB)
+Collecting ipython-pygments-lexers>=1.0.0 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl.metadata (1.1 kB)
+Collecting jedi>=0.18.2 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading jedi-0.20.0-py2.py3-none-any.whl.metadata (23 kB)
+Collecting pexpect>4.6 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading pexpect-4.9.0-py2.py3-none-any.whl.metadata (2.5 kB)
+Collecting prompt_toolkit<3.1.0,>=3.0.41 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading prompt_toolkit-3.0.53-py3-none-any.whl.metadata (6.4 kB)
+Collecting psutil>=7 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl.metadata (22 kB)
+Collecting pygments>=2.14.0 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading pygments-2.21.0-py3-none-any.whl.metadata (2.5 kB)
+Collecting stack_data>=0.6.0 (from ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading stack_data-0.6.3-py3-none-any.whl.metadata (18 kB)
+Collecting wcwidth>=0.1.4 (from prompt_toolkit<3.1.0,>=3.0.41->ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (23 kB)
+Collecting parso<0.9.0,>=0.8.6 (from jedi>=0.18.2->ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading parso-0.8.7-py2.py3-none-any.whl.metadata (8.2 kB)
+Collecting python-dateutil>=2.8.2 (from jupyter-client>=8.9.0->ipykernel->cl-sdk)
+  Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl.metadata (8.4 kB)
+Collecting typing-extensions>=4.13.0 (from jupyter-client>=8.9.0->ipykernel->cl-sdk)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting platformdirs>=2.5 (from jupyter-core!=6.0.*,>=5.1->ipykernel->cl-sdk)
+  Downloading platformdirs-4.12.3-py3-none-any.whl.metadata (5.5 kB)
+Collecting ptyprocess>=0.5 (from pexpect>4.6->ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading ptyprocess-0.7.0-py2.py3-none-any.whl.metadata (1.3 kB)
+Collecting six>=1.5 (from python-dateutil>=2.8.2->jupyter-client>=8.9.0->ipykernel->cl-sdk)
+  Downloading six-1.17.0-py2.py3-none-any.whl.metadata (1.7 kB)
+Collecting executing>=1.2.0 (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading executing-2.2.1-py2.py3-none-any.whl.metadata (8.9 kB)
+Collecting asttokens>=2.1.0 (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading asttokens-3.0.2-py3-none-any.whl.metadata (5.7 kB)
+Collecting pure-eval (from stack_data>=0.6.0->ipython>=7.23.1->ipykernel->cl-sdk)
+  Downloading pure_eval-0.2.4-py3-none-any.whl.metadata (6.4 kB)
+Collecting contourpy>=1.0.1 (from matplotlib->cl-sdk)
+  Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (3.8 kB)
+Collecting cycler>=0.10 (from matplotlib->cl-sdk)
+  Downloading cycler-0.12.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting fonttools>=4.28.2 (from matplotlib->cl-sdk)
+  Downloading fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (130 kB)
+Collecting kiwisolver>=1.3.1 (from matplotlib->cl-sdk)
+  Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl.metadata (5.2 kB)
+Collecting pillow>=9 (from matplotlib->cl-sdk)
+  Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.1 kB)
+Collecting pyparsing>=3 (from matplotlib->cl-sdk)
+  Downloading pyparsing-3.3.3-py3-none-any.whl.metadata (5.9 kB)
+Collecting annotated-types>=0.6.0 (from pydantic->cl-sdk)
+  Downloading annotated_types-0.8.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.5 (from pydantic->cl-sdk)
+  Downloading pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (6.6 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic->cl-sdk)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl.metadata (2.6 kB)
+Collecting numexpr>=2.6.2 (from tables->cl-sdk)
+  Downloading numexpr-2.14.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (9.0 kB)
+Collecting py-cpuinfo (from tables->cl-sdk)
+  Downloading py_cpuinfo-9.0.0-py3-none-any.whl.metadata (794 bytes)
+Collecting blosc2>=2.3.0 (from tables->cl-sdk)
+  Downloading blosc2-4.14.1-cp311-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.0 kB)
+Collecting ndindex (from blosc2>=2.3.0->tables->cl-sdk)
+  Downloading ndindex-1.10.1-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl.metadata (3.6 kB)
+Collecting httpx[http2] (from blosc2>=2.3.0->tables->cl-sdk)
+  Downloading httpx-0.28.1-py3-none-any.whl.metadata (7.1 kB)
+Collecting rich (from blosc2>=2.3.0->tables->cl-sdk)
+  Downloading rich-15.0.0-py3-none-any.whl.metadata (18 kB)
+Collecting threadpoolctl (from blosc2>=2.3.0->tables->cl-sdk)
+  Downloading threadpoolctl-3.7.0-py3-none-any.whl.metadata (24 kB)
+Collecting anyio (from httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading anyio-4.15.1-py3-none-any.whl.metadata (4.7 kB)
+Collecting certifi (from httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading certifi-2026.7.22-py3-none-any.whl.metadata (2.5 kB)
+Collecting httpcore==1.* (from httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading httpcore-1.0.9-py3-none-any.whl.metadata (21 kB)
+Collecting idna (from httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading idna-3.20-py3-none-any.whl.metadata (7.2 kB)
+Collecting h2<5,>=3 (from httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading h2-4.4.1-py3-none-any.whl.metadata (3.8 kB)
+Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading hyperframe-6.1.0-py3-none-any.whl.metadata (4.3 kB)
+Collecting hpack<5,>=4.2 (from h2<5,>=3->httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading hpack-4.2.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting h11>=0.16 (from httpcore==1.*->httpx[http2]->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading h11-0.16.0-py3-none-any.whl.metadata (8.3 kB)
+Collecting markdown-it-py>=2.2.0 (from rich->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl.metadata (7.4 kB)
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich->blosc2>=2.3.0->tables->cl-sdk)
+  Downloading mdurl-0.1.2-py3-none-any.whl.metadata (1.6 kB)
+Downloading cl_sdk-1.0.0-py3-none-any.whl (514 kB)
+Downloading dotenv-0.9.9-py2.py3-none-any.whl (1.9 kB)
+Downloading ipykernel-7.4.0-py3-none-any.whl (123 kB)
+Downloading comm-0.2.3-py3-none-any.whl (7.3 kB)
+Downloading debugpy-1.8.22-cp313-cp313-manylinux_2_34_x86_64.whl (4.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.0/4.0 MB 78.0 MB/s  0:00:00
+
+Downloading ipython-9.17.1-py3-none-any.whl (639 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 639.0/639.0 kB 117.0 MB/s  0:00:00
+
+Downloading prompt_toolkit-3.0.53-py3-none-any.whl (392 kB)
+Downloading ipython_pygments_lexers-1.1.1-py3-none-any.whl (8.1 kB)
+Downloading jedi-0.20.0-py2.py3-none-any.whl (4.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.9/4.9 MB 128.3 MB/s  0:00:00
+
+Downloading parso-0.8.7-py2.py3-none-any.whl (107 kB)
+Downloading jupyter_client-8.10.0-py3-none-any.whl (110 kB)
+Downloading jupyter_core-5.9.1-py3-none-any.whl (29 kB)
+Downloading matplotlib_inline-0.2.2-py3-none-any.whl (9.5 kB)
+Downloading nest_asyncio2-1.7.3-py3-none-any.whl (8.4 kB)
+Downloading packaging-26.3-py3-none-any.whl (129 kB)
+Downloading pexpect-4.9.0-py2.py3-none-any.whl (63 kB)
+Downloading platformdirs-4.12.3-py3-none-any.whl (32 kB)
+Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Downloading ptyprocess-0.7.0-py2.py3-none-any.whl (13 kB)
+Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 117.3 MB/s  0:00:00
+
+Downloading python_dateutil-2.9.0.post0-py2.py3-none-any.whl (229 kB)
+Downloading pyzmq-27.2.0-cp312-abi3-manylinux_2_26_x86_64.manylinux_2_28_x86_64.whl (872 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 872.3/872.3 kB 78.1 MB/s  0:00:00
+
+Downloading six-1.17.0-py2.py3-none-any.whl (11 kB)
+Downloading stack_data-0.6.3-py3-none-any.whl (24 kB)
+Downloading asttokens-3.0.2-py3-none-any.whl (28 kB)
+Downloading executing-2.2.1-py2.py3-none-any.whl (28 kB)
+Downloading tornado-6.5.10-cp39-abi3-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (467 kB)
+Downloading traitlets-5.16.1-py3-none-any.whl (86 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Downloading wcwidth-0.9.2-cp310-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (769 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 769.8/769.8 kB 98.1 MB/s  0:00:00
+
+Downloading matplotlib-3.11.2-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (9.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 9.9/9.9 MB 152.1 MB/s  0:00:00
+
+Downloading contourpy-1.4.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (384 kB)
+Downloading cycler-0.12.1-py3-none-any.whl (8.3 kB)
+Downloading fonttools-4.66.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (5.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 5.4/5.4 MB 218.5 MB/s  0:00:00
+
+Downloading kiwisolver-1.5.1-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl (1.5 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.5/1.5 MB 155.4 MB/s  0:00:00
+
+Downloading numpy-2.5.3-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (16.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 16.7/16.7 MB 305.4 MB/s  0:00:00
+
+Downloading pillow-12.3.0-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.9 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.9/6.9 MB 271.5 MB/s  0:00:00
+
+Downloading pyparsing-3.3.3-py3-none-any.whl (126 kB)
+Downloading msgpack-1.2.3-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (466 kB)
+Downloading msgpack_numpy-0.4.8-py2.py3-none-any.whl (6.9 kB)
+Downloading networkx-3.7-py3-none-any.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 207.1 MB/s  0:00:00
+
+Downloading pandas-3.0.6-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (10.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.8/10.8 MB 292.6 MB/s  0:00:00
+
+Downloading pure_eval-0.2.4-py3-none-any.whl (11 kB)
+Downloading pydantic-2.13.5-py3-none-any.whl (472 kB)
+Downloading pydantic_core-2.46.5-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 207.2 MB/s  0:00:00
+
+Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Downloading python_dotenv-1.2.4-py3-none-any.whl (23 kB)
+Downloading scipy-1.18.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (35.3 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 35.3/35.3 MB 270.9 MB/s  0:00:00
+
+Downloading tables-3.11.1-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (7.2 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.2/7.2 MB 134.0 MB/s  0:00:00
+
+Downloading blosc2-4.14.1-cp311-abi3-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (6.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 6.7/6.7 MB 85.3 MB/s  0:00:00
+
+Downloading numexpr-2.14.2-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (448 kB)
+Downloading httpx-0.28.1-py3-none-any.whl (73 kB)
+Downloading h2-4.4.1-py3-none-any.whl (62 kB)
+Downloading hpack-4.2.0-py3-none-any.whl (34 kB)
+Downloading httpcore-1.0.9-py3-none-any.whl (78 kB)
+Downloading hyperframe-6.1.0-py3-none-any.whl (13 kB)
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading anyio-4.15.1-py3-none-any.whl (132 kB)
+Downloading idna-3.20-py3-none-any.whl (69 kB)
+Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Downloading ndindex-1.10.1-cp313-cp313-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl (528 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 528.2/528.2 kB 71.2 MB/s  0:00:00
+
+Downloading py_cpuinfo-9.0.0-py3-none-any.whl (22 kB)
+Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Downloading threadpoolctl-3.7.0-py3-none-any.whl (26 kB)
+Downloading websockets-17.2-cp313-cp313-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (225 kB)
+Building wheels for collected packages: python-louvain
+  Building wheel for python-louvain (pyproject.toml): started
+  Building wheel for python-louvain (pyproject.toml): finished with status 'done'
+  Created wheel for python-louvain: filename=python_louvain-0.16-py3-none-any.whl size=9458 sha256=8421325ee7741c69d9b537d0e147d2b80bd0102931fb7e658586fda44bc2df0f
+  Stored in directory: /home/box/.cache/pip/wheels/ee/52/54/7ecd0f1ebf5f5a8466f70a27ed2b94d20b955376879d6159c5
+Successfully built python-louvain
+Installing collected packages: py-cpuinfo, pure-eval, ptyprocess, websockets, wcwidth, typing-extensions, traitlets, tornado, threadpoolctl, six, pyzmq, python-dotenv, pyparsing, pygments, psutil, platformdirs, pillow, pexpect, parso, packaging, numpy, networkx, nest-asyncio2, ndindex, msgpack, mdurl, kiwisolver, idna, hyperframe, hpack, h11, fonttools, executing, debugpy, cycler, comm, certifi, asttokens, annotated-types, typing-inspection, stack_data, scipy, python-louvain, python-dateutil, pydantic-core, prompt_toolkit, numexpr, msgpack-numpy, matplotlib-inline, markdown-it-py, jupyter-core, jedi, ipython-pygments-lexers, httpcore, h2, dotenv, contourpy, anyio, rich, pydantic, pandas, matplotlib, jupyter-client, ipython, httpx, ipykernel, blosc2, tables, cl-sdk
+
+
+Successfully installed annotated-types-0.8.0 anyio-4.15.1 asttokens-3.0.2 blosc2-4.14.1 certifi-2026.7.22 cl-sdk-1.0.0 comm-0.2.3 contourpy-1.4.0 cycler-0.12.1 debugpy-1.8.22 dotenv-0.9.9 executing-2.2.1 fonttools-4.66.1 h11-0.16.0 h2-4.4.1 hpack-4.2.0 httpcore-1.0.9 httpx-0.28.1 hyperframe-6.1.0 idna-3.20 ipykernel-7.4.0 ipython-9.17.1 ipython-pygments-lexers-1.1.1 jedi-0.20.0 jupyter-client-8.10.0 jupyter-core-5.9.1 kiwisolver-1.5.1 markdown-it-py-4.2.0 matplotlib-3.11.2 matplotlib-inline-0.2.2 mdurl-0.1.2 msgpack-1.2.3 msgpack-numpy-0.4.8 ndindex-1.10.1 nest-asyncio2-1.7.3 networkx-3.7 numexpr-2.14.2 numpy-2.5.3 packaging-26.3 pandas-3.0.6 parso-0.8.7 pexpect-4.9.0 pillow-12.3.0 platformdirs-4.12.3 prompt_toolkit-3.0.53 psutil-7.2.2 ptyprocess-0.7.0 pure-eval-0.2.4 py-cpuinfo-9.0.0 pydantic-2.13.5 pydantic-core-2.46.5 pygments-2.21.0 pyparsing-3.3.3 python-dateutil-2.9.0.post0 python-dotenv-1.2.4 python-louvain-0.16 pyzmq-27.2.0 rich-15.0.0 scipy-1.18.1 six-1.17.0 stack_data-0.6.3 tables-3.11.1 threadpoolctl-3.7.0 tornado-6.5.10 traitlets-5.16.1 typing-extensions-4.16.0 typing-inspection-0.4.4 wcwidth-0.9.2 websockets-17.2

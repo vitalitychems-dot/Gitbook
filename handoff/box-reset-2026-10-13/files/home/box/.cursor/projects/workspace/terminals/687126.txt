@@ -1,0 +1,14 @@
+---
+pid: 1224712
+cwd: "/workspace"
+command: "cd /workspace && for d in $(find /workspace /tmp -maxdepth 5 -name .git 2>/dev/null | rg -v -i '/1T|vault'); do r=$(dirname $d); git -C $r cat-file -e af2001fafdcd7ced14891c8df4948b36e0ed7587^{commit} 2>/dev/null && echo \"HAS $r\"; done; echo done"
+status: failed   
+started_at: 2026-10-12T23:43:23.112Z
+running_for_ms: 183137   
+---
+
+---
+exit_code: unknown
+elapsed_ms: 183136
+ended_at: 2026-10-12T23:46:26.248Z
+---

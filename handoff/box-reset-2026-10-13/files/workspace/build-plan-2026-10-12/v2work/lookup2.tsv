@@ -1,0 +1,302 @@
+collin-keane/Tessera	tessera-metrics/tessera	Apache-2.0	A dashboard front-end for graphite.  
+nicholasgasior/2captcha-python	2captcha/2captcha-python	MIT	Python 3 package for easy integration with the API of 2captcha captcha solving service to bypass recaptcha, сloudflare turnstile, funcaptcha, geetest and solve any other captchas.
+nicholasgasior/CreepJS	abrahamjuliot/creepjs	MIT	Creepy device and browser fingerprinting
+nicholasgasior/FingerprintJS	fingerprintjs/fingerprintjs	MIT	The most advanced free and open-source browser fingerprinting library
+nicholasgasior/GoLogin	dghubble/gologin	MIT	Go login handlers for authentication providers (OAuth1, OAuth2)
+nicholasgasior/Multilogin	CaaMoe/MultiLogin	GPL-3.0	外置共存
+nicholasgasior/ad-copy-generator	lunalimadev-sketch/ad-copy-generator	NOASSERTION	High-converting ad copy for Meta, Google, TikTok, LinkedIn, and X/Twitter Ads
+nicholasgasior/affiliate-tracking	Databowl/affiliate-tracking	MIT	Databowl Affiliate Tracking Library
+nicholasgasior/ai-agent-marketplace	aiagenta2z/ai-agent-marketplace	NONE	Open Source AI Agent Marketplace | AI Agent Directory for Exploration with searchable index for search engine and user discovery
+nicholasgasior/ai-freelance-platform	muhammadsaad5619-hub/ai-freelance-platform	NONE	
+nicholasgasior/ai-service-marketplace	rohitranmale11/AI-Service-MarketPlace	NONE	
+nicholasgasior/anticaptchaofficial	Pugn0/anticaptchaofficial	NONE	
+nicholasgasior/antidetect	brodev3/antidetect	MIT	A console application with a simple user interface for managing and working with browser profiles with anti-detection protection.
+nicholasgasior/api-monetization	nirzaf/api-monetization	NONE	
+nicholasgasior/arbitrage-bot	andrei-zgirvaci/Arbitrage-Bot	NONE	A bot that makes profit of the best crypto Arbitrage opportunities on the market
+nicholasgasior/audio-captcha-solver	pritam123junior/audio-captcha-solver	NONE	This project implements an Audio Captcha Recognition system using Wav2Vec2 (speech-to-text) and CRNN (CNN + RNN) models. The goal is to accurately decode distorted and noisy audio captchas commonly used in web security.
+nicholasgasior/backlink-checker	rvalitov/backlink-checker	GPL-3.0	For SEO: checks a list of web pages if a backlink is present
+nicholasgasior/beautifulsoup4	wention/BeautifulSoup4	NOASSERTION	git mirror for Beautiful Soup 4.3.2
+nicholasgasior/blog-generator	zupzup/blog-generator	Apache-2.0	Mirror for https://git.sr.ht/~zupzup/blog-generator. static blog generator for my blog at https://zupzup.org/
+nicholasgasior/bounty-hunter	project-hellhound-org/bounty-hunter	GPL-3.0	Hellhound is an autonomous bug bounty reconnaissance and triage assistant designed for professional security researchers and bug hunters. It automates repetitive enumeration workflows, verifies asset validity, checks for dangling DNS takeover vectors, and extracts endpoints.
+nicholasgasior/browser-fingerprinting	niespodd/browser-fingerprinting	NONE	Analysis of Bot Protection systems with available countermeasures 🚿. How to defeat anti-bot system 👻 and get around browser fingerprinting scripts 🕵️‍♂️ when scraping the web?
+nicholasgasior/capsolver-python	capsolver/capsolver-python	MIT	Python 3 package for easy integration with the API of capsolver captcha solving service to solver recaptcha, geetest and solve any other captchas. Capsolver.
+nicholasgasior/captcha-harvester	dzt/captcha-harvester	MIT	Possible plans for a collaborative harvesting method 
+nicholasgasior/case-study-builder	dupuypersonal-maker/case-study-builder	NONE	
+nicholasgasior/censys-python	censys/censys-python	Apache-2.0	An easy-to-use and lightweight API wrapper for Censys APIs.
+nicholasgasior/cf-clearance	vvanglro/cf-clearance	NONE	Purpose To make a cloudflare v2 challenge pass successfully, Can be use cf_clearance bypassed by cloudflare, However, with the cf_clearance, make sure you use the same IP and UA as when you got it.
+nicholasgasior/cf-workers	pmeenan/cf-workers	MIT	Collection of Cloudflare Workers
+name/1	UNKNOWN
+name/1T	UNKNOWN
+name/5t	UNKNOWN
+name/Doxiwehu-OmniMind-Public	UNKNOWN
+name/Everything	UNKNOWN
+name/Grok-ready	UNKNOWN
+name/T44	UNKNOWN
+name/T5	UNKNOWN
+name/TESS	UNKNOWN
+name/TESSERACT-UNIFIED	UNKNOWN
+name/TX	UNKNOWN
+name/TessV1	pablopeu/tessv1	NONE	
+name/Tesseract-Sovereign-Moon-v2-Consolidated	UNKNOWN
+name/Tesseract-Sovereign-Moon-v3.0	UNKNOWN
+name/Tesseract-Unified-Ecosystem	UNKNOWN
+name/Tesseract2.0	UNKNOWN
+name/Tesseraxt-Sovereign-Brain	UNKNOWN
+name/Vitalitychems	UNKNOWN
+name/Zz	zetzit/zz	MIT	🍺🐙  ZetZ a zymbolic verifier and tranzpiler to bare metal C
+name/age	UNKNOWN
+name/ai-gig-economy	UNKNOWN
+name/alpha-vantage	UNKNOWN
+name/apify-sdk	UNKNOWN
+name/awesome-machine-learning	josephmisiti/awesome-machine-learning	NOASSERTION	A curated list of awesome Machine Learning frameworks, libraries and software.
+name/bond-yield-tracker	UNKNOWN
+name/brain-js	UNKNOWN
+name/brightdata-sdk	UNKNOWN
+name/cfscrape	ScoLib/cfscrape	MIT	A simple PHP module to bypass Cloudflare's anti-bot page (also known as "I'm Under Attack Mode", or IUAM)
+name/checkout-optimizer	chrisdemonxxx/checkout-optimizer	NONE	Free open-source checkout-optimizer
+name/chromedp	chromedp/chromedp	MIT	A faster, simpler way to drive browsers supporting the Chrome DevTools Protocol.
+name/cloudflare-bypass	jychp/cloudflare-bypass	Apache-2.0	Bypass Coudflare bot protection using Cloudflare Workers
+name/cloudflare-scrape	Anorov/cloudflare-scrape	MIT	A Python module to bypass Cloudflare's anti-bot page.
+name/cloudscraper	UNKNOWN
+name/code-marketplace	UNKNOWN
+name/colly	UNKNOWN
+name/commodity-tracker	UNKNOWN
+name/competitor-analyzer	UNKNOWN
+name/complete-digital-organism	UNKNOWN
+name/compromise-nlp	UNKNOWN
+name/consolidated-project-all-in-one	UNKNOWN
+name/content-optimizer	UNKNOWN
+name/conversion-optimizer	SHOPGEN431/conversion-optimizer	MIT	
+name/creative-testing	Boierul/creative-testing	NONE	Demo components that (might) be used at a later occasion
+name/customer-analytics	Prakhar-FF13/Customer-Analytics	NONE	Machine Learning Case study on customer segmentation and prediction of groups.
+name/decentralized-work	UNKNOWN
+name/defi-yield-farming	spandan114/Defi-Yield-Farming	NONE	cryptocurrency staking platform where you can buy, stake & un-Stake mock version of tether tokens to get rewards in the form interest.
+name/dilithium	pq-crystals/dilithium	NOASSERTION	
+name/dropshipping-automation	Emilyzok10/dropshipping-automation	NONE	dropshipping automation system
+name/ebook-creator	ArnavK-09/ebook-creator	NONE	🍳 Create your own E-book PDF With help of generative AI...
+name/email-marketing-engine	shubh-codes7/Email-Marketing-Engine	NONE	
+name/email-sequence-builder	SidGit195/Email-Sequence-Builder	NONE	Email Sequence Builder
+name/facebook-ads-api	narrowcast/facebook-ads-api	MIT	Python client for the Facebook Ads API
+name/finnhub-python	Finnhub-Stock-API/finnhub-python	Apache-2.0	Finnhub Python API Client. Finnhub API provides institutional-grade financial data to investors, fintech startups and investment firms. We support real-time stock price, global fundamentals, global ETFs holdings and alternative data. https://finnhub.io/docs/api
+name/flaresolverr	FlareSolverr/FlareSolverr	MIT	Proxy server to bypass Cloudflare protection
+name/forex-correlation	Shawwnscott/Forex-Correlation	NONE	This project is a look into how EURUSD correlates to the other major forex pairs. We are looking at a 10 year period between 2010-2020 specifically.  The data was collected from OANDA using their API. It was then cleaned and then prepared to better analyze.
+name/fractal-analysis	laasya2005/Fractal-Analysis	NONE	Fractal Analysis of Financial markets using Machine learning
+name/freelance-api	UNKNOWN
+name/funcaptcha-solver	kekeds/funcaptcha-solver	NONE	
+name/funnel-builder	AI-Captains-Academy/funnel-builder	NOASSERTION	Funnel Builder Rig — Landing page and funnel template for Claude Code
+name/futures-data	UNKNOWN
+name/gocolly	UNKNOWN
+name/google-ads-api	Opteo/google-ads-api	MIT	Google Ads API client library for Node.js
+name/goquery	PuerkitoBio/goquery	BSD-3-Clause	A little like that j-thing, only in Go.
+name/goscrapy	tech-engine/goscrapy	NOASSERTION	GoScrapy: High perfomance webscraping framework in Go, inspired by Python's Scrapy.
+name/gpg4win	gpg/gpg4win	GPL-2.0	GnuPG for Windows. NOTE: Maintainers are not tracking this mirror. Do not make pull requests here, nor comment any commits, submit them usual way to bug tracker (https://www.gnupg.org/documentation/bts.html) or to the mailing list (https://www.gnupg.org/documentation/mailing-lists.html).
+name/grpcurl	fullstorydev/grpcurl	MIT	Like cURL, but for gRPC: Command-line tool for interacting with gRPC servers
+name/gumroad-api	SamyPesse/gumroad-api	Apache-2.0	Node client for the Gumroad API
+name/hashcat	hashcat/hashcat	NONE	World's fastest and most advanced password recovery utility
+name/hcaptcha-solver	JimmyLaurent/hcaptcha-solver	NONE	A library to solve hCaptcha challenges
+name/headless-chrome-crawler	yujiosaka/headless-chrome-crawler	MIT	Distributed crawler powered by Headless Chrome
+name/httpie	lukeed/httpie	MIT	A Node.js HTTP client as easy as pie! 🥧
+name/human-ai-marketplace	UNKNOWN
+name/image-captcha-solver	UNKNOWN
+name/infographic-data	UNKNOWN
+name/insomnia	UNKNOWN
+name/intermarket-analysis	UNKNOWN
+name/inventory-management	ed-roh/inventory-management	NONE	
+name/keyword-research-tool	boringmarketer/keyword-research-tool	NONE	
+name/kyber	pq-crystals/kyber	NOASSERTION	
+name/landing-page-builder	withpulp/landing-page-builder	NOASSERTION	Landing Page Builder app built with Meteor.
+name/lattigo	tuneinsight/lattigo	Apache-2.0	A library for lattice-based multiparty homomorphic encryption in Go
+name/lemon-squeezy-sdk	UNKNOWN
+name/lexi-2.0-sovereign-ultimate	UNKNOWN
+name/lexi-3.0-sovereign-consciousness	UNKNOWN
+name/lexi-sovereign	UNKNOWN
+name/libsodium	jedisct1/libsodium	NOASSERTION	A modern, portable, easy to use crypto library.
+name/linkedin-ads-api	Smietje77/linkedin-ads-api	NONE	LinkedIn Ads API automation toolkit for NIS2Certify - Campaign management, budget optimization, and bulk operations
+name/liquidity-mining	UNKNOWN
+name/mailgun-js	WebSkeleton/mailgun-js	Apache-2.0	
+name/market-correlation	UNKNOWN
+name/marketstack	apilayer/marketstack	NONE	Free Real-Time, Intraday & Historical Stock Market Data API
+name/mechanize	sparklemotion/mechanize	MIT	Mechanize is a ruby library that makes automated web interaction easy.
+name/mercury-parser	jocmp/mercury-parser	MIT	Extract meaningful content from the chaos of a web page
+name/meta-tag-generator	PragatiVerma18/Meta-Tag-Generator	NONE	A simple Meta Tag Generator App built using React JS that lets you generate meta tags for any website.
+name/mev-templates	solidquant/mev-templates	NONE	MEV bot templates written in Python/Javascript/Rust. All implementing DEX flashloan arbitrage
+name/micro-saas-template	jgalan247/micro-saas-template	NOASSERTION	
+name/microwork-platform	UNKNOWN
+name/mining	mining/mining	MIT	Business Intelligence (BI) in Python, OLAP
+name/ml5-js	UNKNOWN
+name/moltbook-platform	UNKNOWN
+name/natural-nlp	UNKNOWN
+name/nemo-sovereign-organism	UNKNOWN
+name/newsletter-builder	dhornbein/Newsletter-Builder	NONE	Public page to track newsletter creating and content
+name/newspaper3k	webscraping-python/newspaper3k	NONE	
+name/nexus-complete	ArturoPardo/nexus-complete	NONE	 3ª Fase - Scrum Board with Angular : Fake Trello App
+name/nexus-omniscience	UNKNOWN
+name/nft-minter	UNKNOWN
+name/nmap	UNKNOWN
+name/nodriver	UNKNOWN
+name/noise-protocol	UNKNOWN
+name/olive-giant-ever-glade	UNKNOWN
+name/onnxruntime-web	UNKNOWN
+name/openmunus	UNKNOWN
+name/openssl	openssl/openssl	Apache-2.0	General purpose TLS and crypto library
+name/options-flow	fridary/options-flow	NONE	Quantitative research project on forecasting intraday ES futures price from SPX options flow, volatility surfaces, futures order flow, cross-market structure, and CatBoost models with causal feature engineering and chronological validation.
+name/order-fulfillment	anotherinthefire/order-fulfillment	NONE	System Integration and Architecture 102 Project - Order and Fulfillment Management System w/barcode generator&scanner
+name/oxylabs-sdk	UNKNOWN
+name/paddle-sdk	avaly/paddle-sdk	MIT	Paddle.com Node.js SDK
+name/page-speed-analyzer	tanzimine/Page-Speed-Analyzer	NONE	
+name/passive-income-bot	yktvjdpluggz/passive-income-bot	NONE	
+name/pinterest-ads-api	kayr-jpg/pinterest-ads-api	NONE	
+name/plaid-node	plaid/plaid-node	MIT	Node bindings for Plaid
+name/playwright-cf-bypass	UNKNOWN
+name/playwright-python	microsoft/playwright-python	Apache-2.0	Python version of the Playwright testing and automation library.
+name/playwright-stealth	Granitosaurus/playwright-stealth	NONE	
+name/podcast-outline-gen	UNKNOWN
+name/postman-collection	postmanlabs/postman-collection	Apache-2.0	Javascript module that allows a developer to work with Postman Collections
+name/press-release-writer	741955148-cell/press-release-writer	MIT	企业新闻稿撰写助手 - Claude Code Skill
+name/price-comparison	UNKNOWN
+name/product-description-ai	UNKNOWN
+name/product-sourcing-api	UNKNOWN
+name/programmatic-advertising	pierian-co/Programmatic-Advertising	NONE	All things programmatic
+name/puppeteer-cf-bypass	UNKNOWN
+name/puppeteer-core	UNKNOWN
+name/puppeteer-extra	berstend/puppeteer-extra	MIT	💯  Teach puppeteer new tricks through plugins.
+name/puppeteer-extra-plugin-stealth	nswbmw/puppeteer-extra-plugin-stealth	NONE	
+name/quandl-python	quandl/quandl-python	MIT	
+name/rank-tracker	dejwid/rank-tracker	NONE	
+name/readability	mozilla/readability	Apache-2.0	A standalone version of the readability lib
+name/recaptcha-solver	UNKNOWN
+name/rentahuman-ai	UNKNOWN
+name/requests-html	psf/requests-html	MIT	Pythonic HTML Parsing for Humans™
+name/residential-proxy	UNKNOWN
+name/retargeting-engine	UNKNOWN
+name/review-management	UNKNOWN
+name/ring	UNKNOWN
+name/rod	UNKNOWN
+name/saas-boilerplate	UNKNOWN
+name/sandwich-bot	UNKNOWN
+name/schema-markup	UNKNOWN
+name/scraperapi-sdk	evgeek/scraperapi-sdk	MIT	SDK for web scrapping service ScraperAPI
+name/scrapingbee	UNKNOWN
+name/scrapy-redis	rmax/scrapy-redis	MIT	Redis-based components for Scrapy.
+name/scrapy-splash	scrapy-plugins/scrapy-splash	BSD-3-Clause	Scrapy+Splash for JavaScript integration
+name/scrapydweb	my8100/scrapydweb	GPL-3.0	Web app for Scrapyd cluster management, Scrapy log analysis & visualization, Auto packaging, Timer tasks, Monitor & Alert, and Mobile UI. Docs 文档 :point_right:
+name/sector-rotation	UNKNOWN
+name/selenium-cf-bypass	UNKNOWN
+name/selenium-python	baijum/selenium-python	NONE	Selenium Python Bindings Documentation
+name/selenium-wire	wkeeling/selenium-wire	MIT	Extends Selenium's Python bindings to give you the ability to inspect requests made by the browser.
+name/sendgrid-nodejs	sendgrid/sendgrid-nodejs	MIT	The Official Twilio SendGrid Led, Community Driven Node.js API Library
+name/sentiment-analysis	UNKNOWN
+name/seo-analyzer	maddevsio/seo-analyzer	MIT	The library for analyze a HTML file to show all of the SEO defects
+name/shipping-calculator	carolineschnapp/shipping-calculator	NONE	To use in Shopify to add a shipping rates calculator to the cart page. Requires jQuery.
+name/shodan-python	achillean/shodan-python	NOASSERTION	The official Python library for Shodan
+name/signal-protocol	elsehow/signal-protocol	GPL-3.0	The Signal cryptographic protocol, for node and browsers
+name/sitemap-generator	lgraubner/sitemap-generator	MIT	Easily create XML sitemaps for your website.
+name/smartproxy-sdk	UNKNOWN
+name/snapchat-ads-api	UNKNOWN
+name/sniper-bot	UNKNOWN
+name/social-content-calendar	kholipha-ahmmad-al-amin/social-content-calendar	NOASSERTION	Creates a local content calendar with status filters.
+name/social-media-scheduler	readysetcloud/social-media-scheduler	NONE	Schedule social media posts with AWS EventBridge
+name/sovereign-ai-2025	UNKNOWN
+name/sovereign-tessera	UNKNOWN
+name/sovereign-zenith	UNKNOWN
+name/sphincs	UNKNOWN
+name/staking-contracts	0xPolygon/staking-contracts	NONE	The smart contracts used in the IBFT PoS implementation
+name/story-writer	haesleinhuepf/story-writer	BSD-3-Clause	An AI-based story writer and Python library which uses OpenAI's chatGPT and Dall-E to generate PDFs with a story and a picture from a prompt and writes them into a PDF.
+name/task-automation-platform	l-Spook-l/task-automation-platform	NONE	
+name/tensorflow-js	UNKNOWN
+name/tessera-aetherion-orion	UNKNOWN
+name/tessera-ai-orchestration	UNKNOWN
+name/tessera-complete-archives	UNKNOWN
+name/tessera-coordination	UNKNOWN
+name/tessera-grok-handoff	UNKNOWN
+name/tessera-grok-handoff-complete	UNKNOWN
+name/tessera-omniscience-complete	UNKNOWN
+name/tessera-payment-processing	UNKNOWN
+name/tessera-singularity-swarm	UNKNOWN
+name/tessera-sovereign-authority	UNKNOWN
+name/tessera-sovereign-complete	UNKNOWN
+name/tessera-sovereign-organism	UNKNOWN
+name/tessera-sovereign-tumbler	UNKNOWN
+name/tessera-sovereign-ultimate	UNKNOWN
+name/tessera-super-hybrid-final-complete	UNKNOWN
+name/tessera-tesseract-unified	UNKNOWN
+name/tessera-ultimate-sovereign	UNKNOWN
+name/tessera-unified	UNKNOWN
+name/tesseract-complete-final	UNKNOWN
+name/tesseract-ecosystem	UNKNOWN
+name/tesseract-hybrid-unified	UNKNOWN
+name/tesseract-omniscience-v8	UNKNOWN
+name/tesseract-omniversal	UNKNOWN
+name/tesseract-quantum-agi	UNKNOWN
+name/tesseract-swarm-ultimate	UNKNOWN
+name/tesseract-ultimate	UNKNOWN
+name/tesseract-unified-agi	UNKNOWN
+name/tesseract-unified-final	UNKNOWN
+name/tesseract-v10	UNKNOWN
+name/tesseract-v11	UNKNOWN
+name/tesseract-v12	UNKNOWN
+name/tesseract-v13	UNKNOWN
+name/tesseract-v14	UNKNOWN
+name/tesseract-v15	UNKNOWN
+name/tesseract-v16	UNKNOWN
+name/tesseract-v17	UNKNOWN
+name/tesseract-v18	UNKNOWN
+name/tesseract-v19	UNKNOWN
+name/tesseract-v20	UNKNOWN
+name/tesseract-v21	UNKNOWN
+name/tesseract-v22	UNKNOWN
+name/tesseract-v23	UNKNOWN
+name/tesseract-v3-trained	UNKNOWN
+name/tesseract-v30	UNKNOWN
+name/tesseract-v31	UNKNOWN
+name/tesseract-v32-real	UNKNOWN
+name/tesseract-v33-real	UNKNOWN
+name/tesseract-v34-real	UNKNOWN
+name/tesseract-v35-real	UNKNOWN
+name/tesseract-v36-real	UNKNOWN
+name/tesseract-v37-real	UNKNOWN
+name/tesseract-v38-real	UNKNOWN
+name/tesseract-v39-real	UNKNOWN
+name/tesseract-v4-ollama	UNKNOWN
+name/tesseract-v40-real	UNKNOWN
+name/tesseract-v41-real	UNKNOWN
+name/tesseract-v42-real	UNKNOWN
+name/tesseract-v43-real	UNKNOWN
+name/tesseract-v44-real	UNKNOWN
+name/tesseract-v45-real	UNKNOWN
+name/tesseract-v46-real	UNKNOWN
+name/tesseract-v47-real	UNKNOWN
+name/tesseract-v48-real	UNKNOWN
+name/tesseract-v49-real	UNKNOWN
+name/tesseract-v50-real	UNKNOWN
+name/tesseract-v51-real	UNKNOWN
+name/tesseract-v52-real	UNKNOWN
+name/tesseract-v53-real	UNKNOWN
+name/tesseract-v7	UNKNOWN
+name/tesseract-v8	UNKNOWN
+name/tesseract-v9	UNKNOWN
+name/tesseract1	tongletuvan/tesseract1	NONE	
+name/tesseract2	mbrukman/tesseract2	NONE	
+name/tesseract3	Horiyama/Tesseract3	NONE	Assets and Scripts
+name/tesseractA1	UNKNOWN
+name/testimonial-generator	husainahmadrayhan-blip/testimonial-generator	NONE	
+name/tiingo-python	hydrosquall/tiingo-python	MIT	Python client for interacting with the Tiingo Financial Data API (stock ticker and news data)
+name/tiktok-ads-api	romeuauri-lgtm/tiktok-ads-api	NONE	
+name/tink	tink-crypto/tink	Apache-2.0	Tink is a multi-language, cross-platform, open source library that provides cryptographic APIs that are secure, easy to use correctly, and hard(er) to misuse.
+name/token-creator	jacobcreech/Token-Creator	Apache-2.0	An example Repository to showcase creating tokens on Solana and attaching Metadata to them
+name/trafilatura	adbar/trafilatura	Apache-2.0	Python & Command-line tool to gather text and metadata on the Web: Crawling, scraping, extraction, output as CSV, JSON, HTML, MD, TXT, XML
+name/turnstile-solver	UNKNOWN
+name/twelve-data-python	UNKNOWN
+name/twilio-node	UNKNOWN
+name/twitter-ads-api	UNKNOWN
+name/ultimate-tessera	UNKNOWN
+name/undetected-chromedriver	UNKNOWN
+name/video-script-writer	UNKNOWN
+name/vix-analysis	UNKNOWN
+name/web-unlocker	UNKNOWN
+name/whitepaper-generator	UNKNOWN
+name/wink-nlp	UNKNOWN
+name/wireguard-go	WireGuard/wireguard-go	MIT	Mirror only. Official repository is at https://git.zx2c4.com/wireguard-go
+name/yahoo-finance-api	scheb/yahoo-finance-api	MIT	PHP client for Yahoo Finance API 📈
+name/z	UNKNOWN
+name/zenrows-scraper	ruizpolanco50-ship-it/zenrows-scraper	NONE	Web scraper using ZenRows API

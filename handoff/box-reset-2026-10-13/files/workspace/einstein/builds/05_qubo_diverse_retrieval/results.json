@@ -1,0 +1,49 @@
+{
+  "tessera_commit": "0236c802",
+  "results": [
+    {
+      "name": "05 QUBO-anneal diverse top-5 vs current top-5",
+      "metric": "subtopics covered /3",
+      "n_seeds": 12,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 2.046666666666667,
+        "lo": 1.9800000000000002,
+        "hi": 2.106666666666667
+      },
+      "candidate": {
+        "mean": 2.6200000000000006,
+        "lo": 2.5400000000000005,
+        "hi": 2.69
+      },
+      "improvement": {
+        "mean": 0.5733333333333334,
+        "lo": 0.49999999999999983,
+        "hi": 0.6499999999999999
+      },
+      "verdict": "KEEP"
+    },
+    {
+      "name": "05 QUBO-anneal vs greedy MMR (non-quantum control)",
+      "metric": "subtopics covered /3",
+      "n_seeds": 12,
+      "higher_is_better": true,
+      "baseline": {
+        "mean": 2.6,
+        "lo": 2.533333333333333,
+        "hi": 2.6666666666666665
+      },
+      "candidate": {
+        "mean": 2.6200000000000006,
+        "lo": 2.5400000000000005,
+        "hi": 2.69
+      },
+      "improvement": {
+        "mean": 0.020000000000000018,
+        "lo": -0.07666666666666662,
+        "hi": 0.11666666666666665
+      },
+      "verdict": "DROP"
+    }
+  ]
+}

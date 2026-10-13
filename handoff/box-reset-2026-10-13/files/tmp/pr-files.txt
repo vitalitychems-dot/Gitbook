@@ -1,0 +1,9 @@
+mesh/charter/GATE_RULES.md
+mesh/charter/gate_check.py
+mesh/policy/protected-paths.txt
+mesh/queue/PROMPT-TEMPLATE.md
+mesh/queue/README.md
+mesh/queue/autogate.sh
+mesh/queue/gatecheck.py
+mesh/queue/tests/test_no_self_merge.py
+mesh/queue/tests/test_spawn.py

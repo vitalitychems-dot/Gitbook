@@ -1,0 +1,63 @@
+INFO Tracing config check {"hasTraceEndpoint":false,"hasTraceAuthToken":false,"ghostMode":true,"willInitTracing":false}
+INFO Tracing NOT initialized {"reason":"no trace endpoint provided"}
+INFO Workload cgroup placement resolved {"placement":"direct"}
+INFO Discovered exec-daemon workspaces {"workspacePath":"/workspace","usesReposRoot":false,"workspacePaths":["/workspace"]}
+INFO Starting exec-daemon {"logLevel":"info","workspacePath":"/workspace","projectDir":"/home/box/.cursor/projects/workspace","browserEnabled":false,"cursorSelfControlEnabled":false,"mcpConfigSummary":{"hasMcpConfig":false,"serverNames":[],"stdioServerCount":0,"httpServerCount":0},"cloudRulesEnabled":false,"computerUseEnabled":true,"secretRedactionEnabled":true,"recordScreenEnabled":false,"orbitOperationReportingEnabled":true}
+INFO Resolved exec-daemon workspaces {"workspacePath":"/workspace","workspacePaths":["/workspace"]}
+ERROR Failed to create logs directory /opt/cursor/logs/ - debug subagent logging may not work Error: [object Object]
+    at FilteredLoggerBackend.log (/exec-daemon/index.js:8:1037875)
+    at log (/exec-daemon/index.js:8:2048763)
+    at Object.error (/exec-daemon/index.js:8:2049032)
+    at ensureDirWithDataDirPolicy (/exec-daemon/index.js:8:1310852)
+    at setupDaemon (/exec-daemon/index.js:8:1317494)
+    at async /exec-daemon/index.js:8:1033338
+    at async runStartupStep (/exec-daemon/index.js:8:1032455)
+    at async runServer (/exec-daemon/index.js:8:1033272)
+    at async Command.<anonymous> (/exec-daemon/index.js:8:1030073)
+    at async Command.parseAsync (/exec-daemon/index.js:8:1804636)
+INFO CursorPluginsAgentSkillsService load completed {"durationMs":14,"ruleCount":0,"skillCount":0}
+INFO AgentSkillsCursorRulesService load completed {"durationMs":18,"ruleCount":0,"skillCount":0,"servedFromCache":false}
+INFO LocalCursorRulesService load completed {"durationMs":23,"ruleCount":0}
+INFO computer_use_startup_config {"computerUseEnabled":true,"lazyComputerUseInit":false,"computerUseApiWidth":1280,"computerUseApiHeight":800,"recordScreenEnabled":false,"resolvedDisplay":":2","displayEnv":":2","hasXdpyinfo":true,"xdpyinfoPath":"/usr/bin/xdpyinfo"}
+INFO Waiting for X11 display to become available {"display":":2","xdpyinfoPath":"/usr/bin/xdpyinfo"}
+INFO X11 display is ready {"display":":2","waitDurationMs":8}
+INFO Computer use enabled - X11ComputerUseExecutor created {"display":":2"}
+INFO computer_use_init_result {"outcome":"ready","durationMs":12,"display":":2"}
+INFO loading resource provider {"computerUseEnabled":true,"computerUseRunning":true,"desktopLeaseEnforce":false}
+INFO webp_codec.startup {"registered":true}
+INFO resource provider loaded {"hooksConfig":{"errors":[],"configDirs":{}}}
+INFO Exec-daemon loaded hook executor {"hasUserHooks":false,"hasProjectHooks":false}
+INFO Exec-daemon loaded resources {"resourceCount":34}
+INFO Artifacts: setting up artifact upload manager {"artifactsRootPath":"/opt/cursor/artifacts","rootKind":"local"}
+INFO Artifacts: initializing fresh artifact upload state {"stateFilePath":"/opt/cursor/artifacts/.cursor/exec-daemon-artifacts.json"}
+ERROR Artifacts: Failed to persist state {"stateFilePath":"/opt/cursor/artifacts/.cursor/exec-daemon-artifacts.json"} Error: EACCES: permission denied, mkdir '/opt/cursor'
+    at async Object.mkdir (node:internal/fs/promises:857:10)
+    at async ArtifactUploadManager.ensureArtifactDirectory (/exec-daemon/index.js:8:962804)
+    at async ArtifactUploadManager.persistState (/exec-daemon/index.js:8:973112)
+    at async ArtifactUploadManager.initialize (/exec-daemon/index.js:8:971915)
+    at async ArtifactUploadManagerProvider.getOrCreate (/exec-daemon/index.js:8:975379)
+    at async ArtifactUploadManagerProvider.classifyAndGet (/exec-daemon/index.js:8:974820)
+    at async ArtifactUploadManagerProvider.get (/exec-daemon/index.js:8:974291)
+    at async ArtifactUploadManagerProvider.initialize (/exec-daemon/index.js:8:975544)
+    at async startServer (/exec-daemon/index.js:8:1136529)
+    at async /exec-daemon/index.js:8:1035709 {
+  errno: -13,
+  code: 'EACCES',
+  syscall: 'mkdir',
+  path: '/opt/cursor'
+}
+INFO ExecDaemon server listening {"port":14002}
+INFO PtyHost WebSocket server listening {"port":13602}
+INFO Canvas diagnostics provider ready
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01Bu1PnX7jr8vgcELS4oewvE","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":4,"classifierCommandCount":0,"commandLength":229}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01Bu1PnX7jr8vgcELS4oewvE","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01NJdpEpK99AscgW9eK6DSQ2","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":3,"classifierCommandCount":0,"commandLength":161}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01NJdpEpK99AscgW9eK6DSQ2","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_012Z3rqeEx8qrRR2NhrPw3YU","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":14,"classifierCommandCount":0,"commandLength":701}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_012Z3rqeEx8qrRR2NhrPw3YU","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_019xAvAK87GCESZgWdEhvDTs","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":3,"classifierCommandCount":0,"commandLength":122}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_019xAvAK87GCESZgWdEhvDTs","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_019gxJmJnc6eN7MiRwSYrivS","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":3,"classifierCommandCount":0,"commandLength":47}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_019gxJmJnc6eN7MiRwSYrivS","requestedPolicyType":"insecure_none"}
+INFO Shell stream: approval gate reached {"toolCallId":"toolu_01Ybqaeg9PHNCnBoNUSWcNAm","skipApproval":true,"hasSmartModeApproval":false,"hasSmartModeApprovalReason":false,"hasSmartModeApprovalRequestId":false,"requestedPolicyType":"insecure_none","parserCommandCount":4,"classifierCommandCount":0,"commandLength":417}
+INFO Shell stream: skipped local approval {"toolCallId":"toolu_01Ybqaeg9PHNCnBoNUSWcNAm","requestedPolicyType":"insecure_none"}

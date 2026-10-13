@@ -1,0 +1,58 @@
+---
+pid: 652994
+cwd: "/workspace/learning-rate"
+command: "# Wait for process to finish\nfor i in $(seq 1 20); do\n  if ! ps -p 617778 >/dev/null 2>&1; then echo FINISHED; break; fi\n  echo \"$(date +%H:%M:%S) still running... $(tail -1 /workspace/learning-rate/results/remaining.log)\"\n  sleep 30\ndone\nps -p 617778 >/dev/null 2>&1 && echo STILL || echo DEAD\ngrep -E 'ALL_REMAINING|Traceback|Error' /workspace/learning-rate/results/remaining.log | tail -10\nls /workspace/learning-rate/results/table.json /workspace/learning-rate/results/bm25_llm_rerank_heldout.json 2>&1\ndate\n# Show key summaries\npython3 << 'PY'\nimport json\nfrom pathlib import Path\nR=Path('/workspace/learning-rate/results')\nfor name in ['alone','bm25_baseline','bm25_heading_overlap','multiquery_rrf','hybrid_rrf',\n             'reflexion_lessons','fewshot_memory','reflexion_fewshot','consolidated_lessons','self_study',\n             'bm25_llm_rerank_heldout','bm25_heading_heldout_ref']:\n    p=R/f'{name}.json'\n    if not p.exists():\n        print(f'{name}: MISSING'); continue\n    s=json.loads(p.read_text())['summary']\n    bs=s.get('by_split',{})\n    print(f\"{s['method']:28s} n={s['n']:2d} acc={s['accuracy']:.3f} ({s['correct']}/{s['n']}) wall={s['wall_s']:.0f}s  seen={bs.get('seen',{}).get('accuracy','-')} held={bs.get('heldout',{}).get('accuracy','-')}\")\nif (R/'learning_curve.json').exists():\n    c=json.loads((R/'learning_curve.json').read_text())\n    print('curve train_init', c.get('train_init'))\n    print('n_feedback', c.get('n_feedback_available'))\n    for p in c['points']:\n        print('  fb', p['feedback_events'], 'held', p['heldout'])\nif (R/'consolidation.json').exists():\n    print('consol', json.loads((R/'consolidation.json').read_text()))\nif (R/'selfstudy_lessons.json').exists():\n    print('selfstudy', json.loads((R/'selfstudy_lessons.json').read_text()))\nPY"
+title: "Wait for finish; print all method summaries"
+status: succeeded
+started_at: 2026-10-05T23:52:30.875Z
+running_for_ms: 600945   
+---
+18:52:30 still running... [self_study] H14 ok=False ans="Security's lane is listed as Provisional / not instantiated."
+18:53:01 still running... [bm25_llm_rerank_heldout] H01 ok=True ans='`Ready`'
+18:53:31 still running... [bm25_llm_rerank_heldout] H02 ok=True ans="Only the task's assigned owner or Tessera (admin) can set the BLOCKED "
+18:54:01 still running... [bm25_llm_rerank_heldout] H03 ok=True ans='The HYB-005 braces advisory is about braces@3.0.3.'
+18:54:31 still running... [bm25_llm_rerank_heldout] H04 ok=True ans='When braces ≥ 3.0.4 ships.'
+18:55:01 still running... [bm25_llm_rerank_heldout] H04 ok=True ans='When braces ≥ 3.0.4 ships.'
+18:55:31 still running... [bm25_llm_rerank_heldout] H05 ok=True ans='The target bulk digest cadence while work is active is every 30–45 min'
+18:56:01 still running... [bm25_llm_rerank_heldout] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+18:56:31 still running... [bm25_llm_rerank_heldout] H07 ok=False ans='No'
+18:57:01 still running... [bm25_llm_rerank_heldout] H08 ok=True ans='The GOAL label on the honesty banner means the intended purpose or out'
+18:57:31 still running... [bm25_llm_rerank_heldout] H09 ok=True ans='SOVEREIGN_ORIGIN_7F3A9C'
+18:58:01 still running... [bm25_llm_rerank_heldout] H10 ok=True ans='TESSERA'
+18:58:31 still running... [bm25_llm_rerank_heldout] H11 ok=True ans="Agents must check the Gitbook's latest `main` commit and its open PRs "
+18:59:01 still running... [bm25_llm_rerank_heldout] H12 ok=True ans='IN REVIEW'
+18:59:31 still running... [bm25_llm_rerank_heldout] H12 ok=True ans='IN REVIEW'
+19:00:01 still running... [bm25_llm_rerank_heldout] H13 ok=True ans="HYB-001's single deliverable is to keep `TESSERA` as the only active a"
+19:00:31 still running... [bm25_llm_rerank_heldout] H14 ok=False ans="Security's lane is not listed in the roles overview."
+19:01:01 still running... [bm25_llm_rerank_heldout] H15 ok=True ans='No, Security does not change code when sweeping.'
+19:01:31 still running... [bm25_llm_rerank_heldout] H16 ok=True ans='Gitbook / Cordnation stages docs as Ready after all four gates.'
+19:02:01 still running... [bm25_llm_rerank_heldout] H17 ok=False ans='The three Father responses that change publication state are "done" an'
+STILL
+ls: cannot access '/workspace/learning-rate/results/table.json': No such file or directory
+ls: cannot access '/workspace/learning-rate/results/bm25_llm_rerank_heldout.json': No such file or directory
+Mon Oct  5 19:02:31 CDT 2026
+alone                        n=45 acc=0.356 (16/45) wall=34s  seen=0.44 held=0.25
+bm25_baseline                n=45 acc=0.756 (34/45) wall=167s  seen=0.8 held=0.7
+bm25_heading_overlap         n=45 acc=0.778 (35/45) wall=122s  seen=0.8 held=0.75
+multiquery_rrf               n=45 acc=0.756 (34/45) wall=476s  seen=0.76 held=0.75
+hybrid_rrf                   n=45 acc=0.778 (35/45) wall=131s  seen=0.72 held=0.85
+reflexion_lessons            n=45 acc=0.733 (33/45) wall=96s  seen=0.76 held=0.7
+fewshot_memory               n=45 acc=0.800 (36/45) wall=79s  seen=0.84 held=0.75
+reflexion_fewshot            n=45 acc=0.778 (35/45) wall=105s  seen=0.8 held=0.75
+consolidated_lessons         n=45 acc=0.733 (33/45) wall=56s  seen=0.76 held=0.7
+self_study                   n=45 acc=0.756 (34/45) wall=209s  seen=0.8 held=0.7
+bm25_llm_rerank_heldout: MISSING
+bm25_heading_heldout_ref: MISSING
+curve train_init {'method': 'curve_train0', 'n': 25, 'correct': 20, 'accuracy': 0.8, 'wall_s': 62.43989872932434, 'seed': 42, 'model': 'qwen2.5:3b-instruct', 'by_split': {'seen': {'n': 25, 'correct': 20, 'accuracy': 0.8}}}
+n_feedback 5
+  fb 0 held {'n': 20, 'correct': 15, 'accuracy': 0.75}
+  fb 2 held {'n': 20, 'correct': 15, 'accuracy': 0.75}
+  fb 5 held {'n': 20, 'correct': 14, 'accuracy': 0.7}
+consol {'before': 19, 'after': 2, 'dropped': 17, 'merged': 0}
+selfstudy {'n_verified': 7, 'ids': ['rec-1791244146103-a6b5e727', 'rec-1791244148161-5a3b2561', 'rec-1791244149653-2256b4f1', 'rec-1791244151264-908ea91a', 'rec-1791244154115-51df3d42', 'rec-1791244155901-0187732a', 'rec-1791244158543-6b0a2a54']}
+
+---
+exit_code: 0
+elapsed_ms: 600945
+ended_at: 2026-10-06T00:02:31.820Z
+---

@@ -1,0 +1,2 @@
+7fe2d5f273ac9826b10eb6bec1358986bb608433a681e1cb98da7a25ed1f7730  /workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff
+8fc780410bef373aebf06f9c4ac6ba52a1f24e0569d4851d29d2b6d55a803121  /workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff

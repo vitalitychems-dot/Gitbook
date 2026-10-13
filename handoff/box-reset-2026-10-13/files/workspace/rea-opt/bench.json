@@ -1,0 +1,282 @@
+[
+ {
+  "n": 1,
+  "name": "dedupe-lines",
+  "metric": "tokens (memory rows sent twice)",
+  "before": 4030,
+  "after": 2015,
+  "lowerIsBetter": true,
+  "change": -50,
+  "improved": true
+ },
+ {
+  "n": 2,
+  "name": "cut-filler",
+  "metric": "tokens (polite task ask)",
+  "before": 47,
+  "after": 22,
+  "lowerIsBetter": true,
+  "change": -53.2,
+  "improved": true
+ },
+ {
+  "n": 3,
+  "name": "compact-json",
+  "metric": "tokens (pretty JSON memory row)",
+  "before": 61,
+  "after": 53,
+  "lowerIsBetter": true,
+  "change": -13.1,
+  "improved": true
+ },
+ {
+  "n": 4,
+  "name": "ref-legend",
+  "metric": "tokens (BUILD-LOG with repeated URLs/SHAs)",
+  "before": 1675,
+  "after": 1675,
+  "lowerIsBetter": true,
+  "change": 0,
+  "improved": false
+ },
+ {
+  "n": 5,
+  "name": "exact-prompt-cache",
+  "metric": "model calls per 100 tasks",
+  "before": 100,
+  "after": 60,
+  "lowerIsBetter": true,
+  "change": -40,
+  "improved": true
+ },
+ {
+  "n": 6,
+  "name": "normalized-cache-key",
+  "metric": "model calls per 100 tasks",
+  "before": 60,
+  "after": 20,
+  "lowerIsBetter": true,
+  "change": -66.7,
+  "improved": true
+ },
+ {
+  "n": 7,
+  "name": "fit-budget",
+  "metric": "max context tokens (budget 512, memory file)",
+  "before": 20239,
+  "after": 512,
+  "lowerIsBetter": true,
+  "change": -97.5,
+  "improved": true
+ },
+ {
+  "n": 8,
+  "name": "route-by-size",
+  "metric": "compute units per 50 tasks",
+  "before": 207.5,
+  "after": 171.5,
+  "lowerIsBetter": true,
+  "change": -17.3,
+  "improved": true
+ },
+ {
+  "n": 9,
+  "name": "diff-only-summary",
+  "metric": "tokens over 10 repeat calls",
+  "before": 21876,
+  "after": 20518,
+  "lowerIsBetter": true,
+  "change": -6.2,
+  "improved": true
+ },
+ {
+  "n": 10,
+  "name": "clip-tool-result",
+  "metric": "tokens (200-line tool output)",
+  "before": 12464,
+  "after": 2021,
+  "lowerIsBetter": true,
+  "change": -83.8,
+  "improved": true
+ },
+ {
+  "n": 11,
+  "name": "pack-context chain",
+  "metric": "tokens (V2-051 fixture)",
+  "before": 10,
+  "after": 10,
+  "lowerIsBetter": true,
+  "change": 0,
+  "improved": false
+ },
+ {
+  "n": 11.1,
+  "name": "pack-context chain",
+  "metric": "tokens (BUILD-LOG lossless)",
+  "before": 1672,
+  "after": 1624,
+  "lowerIsBetter": true,
+  "change": -2.9,
+  "improved": true
+ },
+ {
+  "n": 12,
+  "name": "parallel-waves",
+  "metric": "sequential steps for 10-task DAG",
+  "before": 10,
+  "after": 4,
+  "lowerIsBetter": true,
+  "change": -60,
+  "improved": true
+ },
+ {
+  "n": 13,
+  "name": "capped-retry",
+  "metric": "tasks finished of 20 flaky",
+  "before": 7,
+  "after": 20,
+  "lowerIsBetter": false,
+  "change": 185.7,
+  "improved": true
+ },
+ {
+  "n": 14,
+  "name": "idempotent-complete",
+  "metric": "errors from duplicate done event",
+  "before": 1,
+  "after": 0,
+  "lowerIsBetter": true,
+  "change": -100,
+  "improved": true
+ },
+ {
+  "n": 15,
+  "name": "memo-protocol-load",
+  "metric": "ms per 500 message checks",
+  "before": 63.63,
+  "after": 4.81,
+  "lowerIsBetter": true,
+  "change": -92.4,
+  "improved": true
+ },
+ {
+  "n": 16,
+  "name": "handoff-envelope",
+  "metric": "tokens per bot handoff",
+  "before": 85,
+  "after": 39,
+  "lowerIsBetter": true,
+  "change": -54.1,
+  "improved": true
+ },
+ {
+  "n": 17,
+  "name": "capability-route",
+  "metric": "messages per handoff (find 'sync' owner)",
+  "before": 15,
+  "after": 1,
+  "lowerIsBetter": true,
+  "change": -93.3,
+  "improved": true
+ },
+ {
+  "n": 18,
+  "name": "plan-memo",
+  "metric": "pen calls for 10 goals (2 distinct)",
+  "before": 10,
+  "after": 2,
+  "lowerIsBetter": true,
+  "change": -80,
+  "improved": true
+ },
+ {
+  "n": 19,
+  "name": "batch-decisions",
+  "metric": "human round trips for 4 decisions",
+  "before": 4,
+  "after": 1,
+  "lowerIsBetter": true,
+  "change": -75,
+  "improved": true
+ },
+ {
+  "n": 20,
+  "name": "early-quorum",
+  "metric": "votes read (9 voters, 2/3)",
+  "before": 9,
+  "after": 6,
+  "lowerIsBetter": true,
+  "change": -33.3,
+  "improved": true
+ },
+ {
+  "n": 21,
+  "name": "single-owner-claim",
+  "metric": "task runs (3 lanes x 5 tasks)",
+  "before": 15,
+  "after": 5,
+  "lowerIsBetter": true,
+  "change": -66.7,
+  "improved": true
+ },
+ {
+  "n": 22,
+  "name": "fetch-once-relay",
+  "metric": "upstream fetches (12 nodes x 3 sources)",
+  "before": 36,
+  "after": 3,
+  "lowerIsBetter": true,
+  "change": -91.7,
+  "improved": true
+ },
+ {
+  "n": 23,
+  "name": "token-bucket-pacing",
+  "metric": "requests over 5/s limit (30 burst)",
+  "before": 25,
+  "after": 0,
+  "lowerIsBetter": true,
+  "change": -100,
+  "improved": true
+ },
+ {
+  "n": 24,
+  "name": "retry-after-backoff",
+  "metric": "calls sent inside the source's Retry-After window",
+  "before": 2,
+  "after": 0,
+  "lowerIsBetter": true,
+  "change": -100,
+  "improved": true
+ },
+ {
+  "n": 25,
+  "name": "in-flight-coalesce",
+  "metric": "upstream fetches (10 concurrent same ask)",
+  "before": 10,
+  "after": 1,
+  "lowerIsBetter": true,
+  "change": -90,
+  "improved": true
+ },
+ {
+  "n": 26,
+  "name": "hash-store + delta-sync",
+  "metric": "bytes stored (50 pages, 10 unique)",
+  "before": 10765,
+  "after": 2153,
+  "lowerIsBetter": true,
+  "change": -80,
+  "improved": true
+ },
+ {
+  "n": 26.1,
+  "name": "hash-store + delta-sync",
+  "metric": "bytes sent to sync 2 changed pages",
+  "before": 10620,
+  "after": 180,
+  "lowerIsBetter": true,
+  "change": -98.3,
+  "improved": true
+ }
+]

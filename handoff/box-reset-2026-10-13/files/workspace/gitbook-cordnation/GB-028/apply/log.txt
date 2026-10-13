@@ -1,0 +1,12 @@
+base 979c35e subset (b979c): tree 745fdb646d1b01ab178993038f51159bbc385ade
+A1 --check GB-026 rev3 on 979c35e: rc=0
+A2 apply GB-026 rev3: rc=0
+A3 --check GB-027 on 979c35e+rev3: rc=0
+A4 apply GB-027: rc=0
+A5 --check GB-028 on 979c35e+rev3+027: rc=0
+A6 apply GB-028: rc=0
+  result tree 50f5540a38657bb53e9f1d73284e2095afa2456e; drafted p28 tree 50f5540a38657bb53e9f1d73284e2095afa2456e
+A7 reverse --check GB-028 on result: rc=0
+B --check GB-028 alone on clean 979c35e: rc=0
+B2 apply GB-028 alone on clean 979c35e: rc=0
+  B2 result:  5 files changed, 71 insertions(+), 9 deletions(-)

@@ -1,0 +1,16 @@
+---
+pid: 1409423
+cwd: "/workspace"
+command: "cd /workspace && (test -d TESSERA-ro || gh repo clone vitalitychems-dot/TESSERA TESSERA-ro -- -q) 2>&1 | tail -2; cd TESSERA-ro && git fetch -q origin '+refs/pull/*/head:refs/remotes/pr/*' 2>&1|tail -2; git rev-parse origin/main; gh pr list --state open --limit 100 --json number,title,headRefName,headRefOid,baseRefName"
+status: succeeded
+started_at: 2026-10-13T00:22:54.236Z
+running_for_ms: 68121    
+---
+3b3840c3789004a8d175ccf080be12f462ffd672
+[{"baseRefName":"main","headRefName":"desk/consolidation-pointer","headRefOid":"445dbce394f2c68f941352eee1e770bdaa190cca","number":194,"title":"Point the docs at the Gitbook consolidation map"},{"baseRefName":"main","headRefName":"cursor/site-002-diagnostics-gate-7ea3","headRefOid":"352cb5748797c5cdd997c26ec99ac164ff5cc211","number":110,"title":"SITE-002: gate remaining diagnostics behind owner session"},{"baseRefName":"main","headRefName":"security/gate-system-runtime-and-shadow-winners","headRefOid":"9b3a0931f6aac5cc8c6f0ce79a78b1c007aa68ab","number":87,"title":"Gate system-runtime and shadow-winning admin routes"},{"baseRefName":"main","headRefName":"fix/api-server-db-optional-boot","headRefOid":"640bb34a7778eed47f91df16a20f9cba40764ecb","number":82,"title":"Allow api-server to boot without a database"},{"baseRefName":"main","headRefName":"feat/local-pen-adapter","headRefOid":"1ad3ac57552f18a638bd5453551753668b5196ec","number":80,"title":"Add an opt-in loopback pen with deterministic gates"}]
+
+---
+exit_code: 0
+elapsed_ms: 68121
+ended_at: 2026-10-13T00:24:02.357Z
+---

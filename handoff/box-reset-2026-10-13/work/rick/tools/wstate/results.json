@@ -1,0 +1,32 @@
+{
+ "W3": {
+  "negativity_1|rest_after_loss": 0.206,
+  "pair_concurrence_after_loss": 0.6667,
+  "surviving_qubits": 2
+ },
+ "GHZ3": {
+  "negativity_1|rest_after_loss": -0.0,
+  "pair_concurrence_after_loss": 0.0,
+  "surviving_qubits": 2
+ },
+ "W4": {
+  "negativity_1|rest_after_loss": 0.25,
+  "pair_concurrence_after_loss": 0.5,
+  "surviving_qubits": 3
+ },
+ "GHZ4": {
+  "negativity_1|rest_after_loss": -0.0,
+  "pair_concurrence_after_loss": 0.0,
+  "surviving_qubits": 3
+ },
+ "W5": {
+  "negativity_1|rest_after_loss": 0.2606,
+  "pair_concurrence_after_loss": 0.4,
+  "surviving_qubits": 4
+ },
+ "GHZ5": {
+  "negativity_1|rest_after_loss": -0.0,
+  "pair_concurrence_after_loss": 0.0,
+  "surviving_qubits": 4
+ }
+}

@@ -1,0 +1,25 @@
+---
+pid: 363909
+cwd: "/tmp"
+command: "mkdir -p /tmp/qb && cd /tmp/qb && cp /workspace/einstein/i72/d/{pushes.txt,runs.tsv} . && cat > replay.py <<'E'\n#!/usr/bin/env python3\n\"\"\"Replay real TESSERA commit times (data/pushes.txt.zst) through cron policies. Reproduces PR numbers.\nUsage: python3 replay.py   (needs python zstandard or the zstd CLI).\"\"\"\nimport random,statistics as S,subprocess,os\nfrom datetime import datetime as D,timedelta as TD\nH=os.path.dirname(os.path.abspath(__file__))\ndef load(n):\n    raw=subprocess.run([\"zstd\",\"-dc\",f\"{H}/data/{n}.zst\"],capture_output=True,check=True).stdout.decode()\n    return raw.splitlines()\nP=sorted(D.fromisoformat(l.strip().rstrip(\"Z\")) for l in load(\"pushes.txt\") if l.strip())\ndef sim(base=5,cap=5,quiet_h=0,etag=False):\n    \"\"\"returns (wakes/day, full checks/day, latencies). quiet_h: back off only after quiet_h hours with no push.\n    etag: every base-min tick does a conditional GET (304 free, not counted); full check only on change.\"\"\"\n    s,e=P[0],P[-1];now=s;iv=base;pi=0;last=s;wakes=full=0;lat=[]\n    while now<e:\n        now+=TD(minutes=iv);wakes+=1;new=[p for p in P[pi:] if p<=now]\n        if etag: full+=bool(new)\n        else: full+=1\n        if new: lat+=[(now-p).total_seconds()/60 for p in new];pi+=len(new);last=new[-1];iv=base\n        elif (now-last).total_seconds()>=quiet_h*3600: iv=min(iv*2,cap)\n    d=(e-s).total_seconds()/86400;return wakes/d,full/d,lat\ndef ci(x,seed):\n    r=random.Random(seed);b=sorted(S.mean(r.choices(x,k=len(x))) for _ in range(5000));return S.mean(x),b[125],b[4874]\nif __name__==\"__main__\":\n    print(f\"commits={len(P)} span={(P[-1]-P[0])}\")\n    for name,kw in [(\"fixed5\",{}),(\"backoff5-30\",{\"cap\":30}),(\"backoff5-10\",{\"cap\":10}),(\"quiet1h-30\",{\"cap\":30,\"quiet_h\":1}),(\"quiet2h-30\",{\"cap\":30,\"quiet_h\":2}),(\"quiet4h-30\",{\"cap\":30,\"quiet_h\":4}),(\"etag5\",{\"etag\":True})]:\n        w,f,l=sim(**kw);cs=[ci(l,k) for k in range(5)]\n        print(f\"{name:12} wakes/day={w:6.1f} full_checks/day={f:6.1f} lat_mean={cs[0][0]:.2f} CI runs=\" + \" \".join(f\"[{a:.2f},{b:.2f}]\" for _,a,b in cs)+f\" max={max(l):.1f}\")\nE\nmkdir -p data && zstd -19 -q pushes.txt -o data/pushes.txt.zst && cut -f1,3,4 runs.tsv | zstd -19 -q -o data/ci_runs.tsv.zst && ls -l data && python3 replay.py"
+status: succeeded
+started_at: 2026-10-13T12:24:05.996Z
+running_for_ms: 56253    
+---
+total 8
+-rw-r--r-- 1 box box 2265 Oct 13 07:24 ci_runs.tsv.zst
+-rw-r--r-- 1 box box 1349 Oct 13 07:24 pushes.txt.zst
+commits=601 span=7 days, 8:06:16
+fixed5       wakes/day= 288.1 full_checks/day= 288.1 lat_mean=2.51 CI runs=[2.40,2.63] [2.40,2.63] [2.41,2.63] [2.41,2.63] [2.40,2.63] max=5.0
+backoff5-30  wakes/day=  78.2 full_checks/day=  78.2 lat_mean=5.86 CI runs=[5.40,6.34] [5.39,6.32] [5.41,6.33] [5.41,6.34] [5.40,6.34] max=28.4
+backoff5-10  wakes/day= 158.0 full_checks/day= 158.0 lat_mean=3.35 CI runs=[3.17,3.54] [3.17,3.55] [3.17,3.55] [3.17,3.54] [3.16,3.54] max=9.8
+quiet1h-30   wakes/day= 118.8 full_checks/day= 118.8 lat_mean=4.77 CI runs=[4.30,5.26] [4.28,5.27] [4.29,5.27] [4.28,5.27] [4.29,5.28] max=29.1
+quiet2h-30   wakes/day= 143.4 full_checks/day= 143.4 lat_mean=4.66 CI runs=[4.19,5.15] [4.17,5.15] [4.19,5.17] [4.17,5.16] [4.18,5.17] max=29.1
+quiet4h-30   wakes/day= 177.7 full_checks/day= 177.7 lat_mean=4.14 CI runs=[3.74,4.57] [3.74,4.56] [3.75,4.58] [3.74,4.57] [3.73,4.58] max=28.0
+etag5        wakes/day= 288.1 full_checks/day=  31.8 lat_mean=2.51 CI runs=[2.40,2.63] [2.40,2.63] [2.41,2.63] [2.41,2.63] [2.40,2.63] max=5.0
+
+---
+exit_code: 0
+elapsed_ms: 56253
+ended_at: 2026-10-13T12:25:02.249Z
+---

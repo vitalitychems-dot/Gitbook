@@ -1,0 +1,253 @@
+{
+  "api_server": [
+    {
+      "value": "/diagnostics",
+      "kind": "route",
+      "mechanism": "property:path"
+    },
+    {
+      "value": "/healthz",
+      "kind": "route",
+      "mechanism": "property:path"
+    },
+    {
+      "value": "/provider-sovereignty/providers",
+      "kind": "route",
+      "mechanism": "property:path"
+    },
+    {
+      "value": "/tesseract-forum/topics",
+      "kind": "route",
+      "mechanism": "property:path"
+    },
+    {
+      "value": "/tsrt/full-market",
+      "kind": "network",
+      "mechanism": "call:router.get"
+    },
+    {
+      "value": "/world",
+      "kind": "network",
+      "mechanism": "call:router.get"
+    },
+    {
+      "value": "/world/agents",
+      "kind": "network",
+      "mechanism": "call:router.get"
+    },
+    {
+      "value": "/world/moon",
+      "kind": "network",
+      "mechanism": "call:router.get"
+    },
+    {
+      "value": "/world/sovereignty-score",
+      "kind": "network",
+      "mechanism": "call:router.get"
+    },
+    {
+      "value": "/ws",
+      "kind": "route",
+      "mechanism": "property:path"
+    },
+    {
+      "value": "http://127.0.0.1:3000/health",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "https://allowed.example/resource",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "https://untrusted.replit.dev/private",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    }
+  ],
+  "tessera_ui": [
+    {
+      "value": "/api/admin/auth",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/admin/sovereign-archive-token",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/auth/reset-lockout",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/deep-training/status",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/feedback",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/keys/bulk-detect",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/moltbook/chat",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/natal-chart/identity/verify",
+      "kind": "network",
+      "mechanism": "call:api.post"
+    },
+    {
+      "value": "/api/rick/royal-roles",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/tessera-bible/secrets",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/tesseranet/colonel",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/unified-training/state",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/wallets/scan",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/arbitrage",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/code",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/fleet",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/income",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/intelligence",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/life",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/market",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/rules",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/swarm",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "/tesseract",
+      "kind": "route",
+      "mechanism": "property:route"
+    },
+    {
+      "value": "tab",
+      "kind": "network",
+      "mechanism": "call:params.get"
+    }
+  ],
+  "grok_ready_root": [
+    {
+      "value": "/api/2da/awareness",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/2da/consciousness-thread",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/2da/full-state",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/agi/goals/decompose",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/bio-consciousness/bridge-protocols",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/bio-consciousness/species",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/conscious-builder/log",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/conscious-builder/status",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/nexus/recruitment-status",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/provider-sovereignty/analyze",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/provider-sovereignty/dry-run",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    },
+    {
+      "value": "/api/provider-sovereignty/initialize",
+      "kind": "network",
+      "mechanism": "call:fetch"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+{"title":"embedding cache keyed on whole text (TESSERA #263)","repo":"TESSERA","data_source":"fixture",
+ "command":"cd artifacts/api-server && npx vitest run emb-cache-key.bench.test.ts",
+ "metrics":[{"name":"c1_cache_wrong_vectors","kind":"accuracy","before":6,"after":0,"better":"lower"}],
+ "tests":{"failed_before":0,"failed_after":0},"ci":"pass","findings":["32-bit hash of first 500 chars collided"],"notify":["Tessera","Father"]}

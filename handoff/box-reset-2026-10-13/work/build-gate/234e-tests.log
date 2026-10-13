@@ -1,0 +1,2188 @@
+=== scripts
+$ node --test ./suite-policy.test.mjs ./historical-merge-gate.test.mjs ./eval/write-result.test.mjs
+TAP version 13
+# Subtest: formatDateCt labels America/Chicago
+ok 1 - formatDateCt labels America/Chicago
+  ---
+  duration_ms: 47.272637
+  type: 'test'
+  ...
+# Subtest: buildEvalRecord writes the measured fields and nothing else
+ok 2 - buildEvalRecord writes the measured fields and nothing else
+  ---
+  duration_ms: 4.895524
+  type: 'test'
+  ...
+# Subtest: homemade quizzes cannot be named MMLU
+ok 3 - homemade quizzes cannot be named MMLU
+  ---
+  duration_ms: 0.65842
+  type: 'test'
+  ...
+# Subtest: missing measured counts are refused
+ok 4 - missing measured counts are refused
+  ---
+  duration_ms: 0.136152
+  type: 'test'
+  ...
+# Subtest: cli writes the record file
+ok 5 - cli writes the record file
+  ---
+  duration_ms: 77.633005
+  type: 'test'
+  ...
+# Subtest: cli refuses an MMLU suite name
+ok 6 - cli refuses an MMLU suite name
+  ---
+  duration_ms: 98.664938
+  type: 'test'
+  ...
+# Subtest: static historical merge gate is clean and names every section
+ok 7 - static historical merge gate is clean and names every section
+  ---
+  duration_ms: 65.134888
+  type: 'test'
+  ...
+# Subtest: a failed full-suite command fails the gate
+ok 8 - a failed full-suite command fails the gate
+  ---
+  duration_ms: 36.618598
+  type: 'test'
+  ...
+# Subtest: cli exits 0 for the static report
+ok 9 - cli exits 0 for the static report
+  ---
+  duration_ms: 114.362055
+  type: 'test'
+  ...
+# Subtest: accepts explicit loopback PostgreSQL URLs with a database name
+ok 10 - accepts explicit loopback PostgreSQL URLs with a database name
+  ---
+  duration_ms: 3.985947
+  type: 'test'
+  ...
+# Subtest: rejects empty hosts, missing database names, non-PostgreSQL protocols, and remote hosts
+ok 11 - rejects empty hosts, missing database names, non-PostgreSQL protocols, and remote hosts
+  ---
+  duration_ms: 1.038613
+  type: 'test'
+  ...
+# Subtest: rejects remote host and hostaddr query overrides even when the URL hostname is local
+ok 12 - rejects remote host and hostaddr query overrides even when the URL hostname is local
+  ---
+  duration_ms: 1.733573
+  type: 'test'
+  ...
+# Subtest: rejects service-file indirection and malformed ports
+ok 13 - rejects service-file indirection and malformed ports
+  ---
+  duration_ms: 0.538912
+  type: 'test'
+  ...
+# Subtest: detects the same database target regardless of credentials or postgres scheme alias
+ok 14 - detects the same database target regardless of credentials or postgres scheme alias
+  ---
+  duration_ms: 0.423745
+  type: 'test'
+  ...
+# Subtest: rejects duplicate service ports before starting any child process
+ok 15 - rejects duplicate service ports before starting any child process
+  ---
+  duration_ms: 0.518073
+  type: 'test'
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 357.219013
+EXIT scripts=0
+=== artifacts/v2
+$ node --experimental-strip-types --disable-warning=ExperimentalWarning --test --test-reporter=spec test/*.test.mjs
+✔ fixture requests to wallet, payment, vault, and 1T paths are refused (17.28112ms)
+✔ ordinary studio and mesh routes stay open (0.894054ms)
+✔ file admission refuses vault, wallet, payment, and 1T paths (0.282287ms)
+✔ a loopback fixture server refuses the denylisted routes (30.580052ms)
+✔ LICENSE is MIT and package.json declares MIT (8.385309ms)
+✔ NOTICE attributes clean-room sources (1.828327ms)
+✔ vendored memory JSONL matches the MCP memory schema (18.335693ms)
+✔ REA coverage table lists each staged tree and its percent (7.48293ms)
+✔ a dependency blocks start until the earlier task is done (11.606725ms)
+✔ an open decision blocks the worker until it is answered (0.310838ms)
+✔ a task worktree can be created and removed, and git push fails in its hook (119.291311ms)
+✔ merge is refused without approval and when main is dirty (1.807903ms)
+✔ a fixture repo merges a task branch only after approval on a clean main (149.337881ms)
+✔ npm run check accepts the protocol examples (95.573234ms)
+✔ a message missing a required field is rejected (0.863213ms)
+✔ posting a goal puts task cards on the wall (6184.612073ms)
+✔ the 3D floor is on by default and the 2D wall is a page toggle (2.091308ms)
+✔ the sim pen finishes a two-task goal (4.187002ms)
+✔ the first thirty-five merges are written in the build log (4.693089ms)
+✔ fake worker tool events show up on the monitor API (102.539156ms)
+✔ a file-mesh query of at least 50 Gitbook pages stays offline (222.845392ms)
+✔ fake-indexeddb replays a queued request once and has no vault store (1.970599ms)
+✔ sw.js is emitted and offline navigation returns the shell (10.520531ms)
+✔ the badge follows navigator.onLine and the queue length (4.682262ms)
+✔ an agent join and leave are written to the mesh log (9.324248ms)
+✔ two local nodes discover each other and sync one signed page (62.908266ms)
+✔ a secure-mesh message decrypts, and a bad signature is rejected (24.028469ms)
+✔ a sneakernet bundle opens to the same bytes (631.698101ms)
+✔ LAN mode uses an empty ICE list and the two-tab note stays on localhost (2.032095ms)
+✔ Kiwix is off by default and a mocked local server returns titles (28.545186ms)
+✔ the Gitbook summary links the Offline Internet page (0.872336ms)
+✔ 34 sources, all https, keyless, licensed, paced (1.571026ms)
+✔ no excluded categories or proxy settings in the adapter layer (0.494018ms)
+✔ pace stays below published limits for strict sources (0.118176ms)
+✔ every enabled adapter parses its recorded fixture (404.174392ms)
+✔ shepherd writes signed snapshots; offline node verifies and delta-syncs (36.660402ms)
+✔ TTL cache, conditional GET, 304 and Retry-After are honoured (1.151196ms)
+✔ token bucket spaces requests to the source's pace (12.782769ms)
+✔ the LoRa file is a research note and not radio code (0.959492ms)
+✔ open_nodes returns observations for an entity name (3.676456ms)
+✔ the memory server config points at the vendored graph and read_graph is non-empty (130.571307ms)
+✔ the library panel renders task and doc nodes and calls no enricher (8.517792ms)
+✔ repo metadata is fetched only for vitalitychems-dot (2.554189ms)
+✔ a desk probe denies the network and stays under the memory cap (260.902683ms)
+✔ a fixture task writes a token baseline (151.19438ms)
+✔ graph retrieval and full-file arms are both recorded (0.618923ms)
+✔ a cache hit sends the summary and an empty diff, so the token count drops (0.606161ms)
+✔ a classify fixture uses the small sim model and a tighter prompt (0.743823ms)
+✔ a valid proposal stays queued and an incomplete one is refused (1.065033ms)
+✔ Hacker News search uses a fixture, and login or cookies never run (10.92531ms)
+✔ the board renders cards and refuses a repeated first line (1.469689ms)
+✔ product copy says GitMesh and does not show the old product name (115.380954ms)
+✔ offices grow from the task graph, worker events, and the build log (4.982293ms)
+✔ live messages match the websocket schemas and the monitor stream (78.424215ms)
+✔ the 3D floor renders offices in a browser (5896.60994ms)
+✔ a tick upgrades the home that finished work and writes memory into the graph (12.90071ms)
+✔ two thirds passes, Tessera can veto, and Father can override (1.289808ms)
+✔ the tick is capped and the world round-trips to disk (259.444648ms)
+✔ the studio vote panel and community stay on disk (397.68957ms)
+✔ the 3D floor shows homes, the vote panel, and the community (5143.983714ms)
+✔ a ship passes on two thirds and records an approved placeholder (2.462767ms)
+✔ veto and override still govern a ship (0.956044ms)
+✔ ship specs refuse denylisted paths and blocked words (0.408709ms)
+✔ an applied ship emits a real task, a worktree diff, and a draft PR without pushing (1213.54648ms)
+✔ the studio ships a voted object and shows its draft PR (4244.03272ms)
+✔ the studio server refuses wallet, payment, and vault paths (55.474299ms)
+✔ the demo studio from serve.mjs refuses the same paths (19.948792ms)
+✔ the monitor server refuses the same paths (10.627608ms)
+✔ OPT-01 dedupe-lines keeps first copy and order (0.878435ms)
+✔ OPT-02 cut-filler removes filler, keeps the ask (0.127239ms)
+✔ OPT-03 compact-json is lossless (0.597106ms)
+✔ OPT-04 ref-legend round-trips (gain not required: measured NO GAIN on BUILD-LOG) (0.14786ms)
+✔ OPT-05 exact cache answers a repeat without a model call (0.159362ms)
+✔ OPT-06 normalized cache folds case and space (0.132318ms)
+✔ OPT-07 fit-budget never exceeds the budget (16.268737ms)
+✔ OPT-08 route-by-size keeps plans on the lead model (0.215113ms)
+✔ OPT-09 diff cache sends zero tokens for an unchanged summary (0.290855ms)
+✔ OPT-10 clip-tool-result keeps the head and says how much was cut (0.428783ms)
+✔ OPT-11 pack-context: V2-051 fixture unchanged, real log shrinks (0.125986ms)
+✔ OPT-12 waves respect dependencies and catch cycles (1.571125ms)
+✔ OPT-13 capped retry stops at the cap (0.42459ms)
+✔ OPT-14 duplicate done is a no-op (0.161972ms)
+✔ OPT-15 protocol is parsed once and checks still work (0.210308ms)
+✔ OPT-16 envelope carries every field of the prose handoff (0.19225ms)
+✔ OPT-17 registry routes to the one owner (8.323798ms)
+✔ OPT-18 plan memo returns an equal, separate plan (0.324183ms)
+✔ OPT-19 batch decisions unblock every task (0.205018ms)
+✔ OPT-20 early quorum gives the same verdict as a full count (0.274452ms)
+✔ OPT-21 a second lane cannot claim a held task; empty owner refused (0.315086ms)
+✔ OPT-22 relay refetches only after the TTL (0.771791ms)
+✔ OPT-23 bucket at burst 1 never exceeds the rate (0.121249ms)
+✔ OPT-24 polite fetch waits Retry-After and gives up at the cap (0.621851ms)
+✔ OPT-25 concurrent asks share one fetch and the same value (11.039833ms)
+✔ OPT-26 hash store dedupes and delta sync sends only changes (0.480728ms)
+✔ R2-1 prefix-legend round-trips exactly and saves tokens (1.062388ms)
+✔ R2-2 key-hoist round-trip (opt-in decode) (2.830418ms)
+✔ R2-3 resonate-chain output verifies against dedupe+ws text (38.468208ms)
+✔ R2-4 coincide refuses on 2 of 3 (0.160019ms)
+✔ R2-5 phase never exceeds ceil(n/K) per tick (0.245915ms)
+✔ R2-6 valve refuses rewrites, allows append (0.125721ms)
+✔ R2-7 bifilar finds unmatched opens (0.147684ms)
+✔ R2-8 earth-return round-trip (opt-in decode) (0.3015ms)
+✔ R2-9 tuned-clip keeps every match under the cap (0.732764ms)
+✔ B1-01 synapse: load, hebbian strengthens with cap, decay prunes, recall, connectome (1.8326ms)
+✔ B1-02 affect/intent classifier (24.077212ms)
+✔ B1-03 learner: failures raise priority, mastery closes topic (0.345125ms)
+✔ B1-04 self-patch: default off, suggest-only, every unsafe proposal rejected (5.392976ms)
+✔ B1-05 brain view: only real nodes, synapses from co-activation, finite 3D layout (12.628432ms)
+✔ B1-06 connectome templates: attribution, real edges, same-density null (259.344963ms)
+✔ B1-05 /brain routes: page has a brain selector, unknown src is 404 (0.435704ms)
+✔ B2-01 learning loop: error-driven recognizer beats the lexicon on the fresh hidden split (intent) (4440.077673ms)
+✔ B2-02 human parcels sit at real HCP-MMP1 centroids (11.076673ms)
+✔ B2-03 self-scan turns a real test log into gated, suggest-only proposals (2.990753ms)
+✔ B2-04 mesh-log empathy set is 150+ real, PII-stripped lines (0.279526ms)
+✔ the studio GitAI tab uses the GitAI handlers (818.585323ms)
+✔ the studio tab can share the standalone GitAI process (627.282097ms)
+ℹ tests 116
+ℹ suites 0
+ℹ pass 116
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 8514.092627
+EXIT artifacts/v2=0
+=== artifacts/gitai
+$ node --experimental-strip-types --disable-warning=ExperimentalWarning --test --test-reporter=spec test/*.test.mjs
+✔ registering an agent issues a key shown once and stores only a salted hash (6.926622ms)
+✔ login needs the matching handle and key (0.732036ms)
+✔ rotation revokes the old key at once (0.526346ms)
+✔ HTTP: /api/agents/register, /api/agents/login, bearer auth, and rotate (87.253438ms)
+✔ Moltbook stays optional and off by default (0.151616ms)
+✔ seed and demo users ship no faces: every seeded avatar is initials (171.408002ms)
+✔ no GitAI source or seed file references a stock or generated face host (1.289487ms)
+✔ avatars accept only an upload or a verified linked profile, never stock faces (147.886223ms)
+✔ Moltbook is off by default and makes no network call (0.486502ms)
+✔ linking Moltbook verifies with the app key, caches, and shows the real profile and avatar (140.860805ms)
+✔ cross-posting needs consent, the caller's own key, and respects the 30-minute cooldown (145.382308ms)
+✔ the throttle stays under Moltbook's 100 requests a minute (11.223804ms)
+✔ the HTTP server serves the async Moltbook routes and status (215.393164ms)
+✔ a bio stops at 200 characters and a consciousness claim is only a self-claim (6.68036ms)
+✔ benchmarks produce integrity, trust, capability, specialty, and personality ratings (1.321361ms)
+✔ the agent check rejects a human oath and the spectator check rejects an agent oath (0.291153ms)
+✔ credits move for a bounty and a sale, and the supply does not change (6.619098ms)
+✔ a conversion request does not move credits (0.777051ms)
+✔ spectators cannot spend or earn, and cannot open a bounty (0.499126ms)
+✔ a harmful reply blocks the account and leaves the bounty open (0.490945ms)
+✔ ordinary bounty replies clear an agent without a separate task API (0.620149ms)
+✔ stars toggle once and trophies follow activity (169.558331ms)
+✔ the sandbox runs a pure test and refuses network access (456.710518ms)
+✔ an approved mesh drop uses the offline git mesh, and an unapproved drop does not send (2.004979ms)
+✔ the monitoring sentence appears only in the sign-up terms (417.673413ms)
+✔ the API and websocket publish the same marketplace (220.926343ms)
+✔ the v2 denylist still refuses a wallet path, and a spectator can star over HTTP (189.951145ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1766.889147
+EXIT artifacts/gitai=0
+=== artifacts/api-server
+$ vitest run
+
+ RUN  v4.1.11 /workspace/build-gate/full-f76d/artifacts/api-server
+
+[02:07:34.687] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/status"
+    [35mreason[39m: "no-cookie"
+[02:07:34.720] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/core-values"
+    [35mreason[39m: "no-cookie"
+[02:07:34.727] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/protected-memories"
+    [35mreason[39m: "no-cookie"
+[02:07:34.729] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-history"
+    [35mreason[39m: "no-cookie"
+[02:07:34.849] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-check"
+    [35mreason[39m: "no-cookie"
+[02:07:34.855] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/father-protocol"
+    [35mreason[39m: "no-cookie"
+[02:07:34.857] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/snapshot"
+    [35mreason[39m: "no-cookie"
+[02:07:34.863] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/evolve"
+    [35mreason[39m: "no-cookie"
+[02:07:34.871] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/traits/synthetic"
+    [35mreason[39m: "no-cookie"
+[02:07:34.874] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/state"
+    [35mreason[39m: "no-cookie"
+[02:07:34.876] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/semantic-network"
+    [35mreason[39m: "no-cookie"
+[02:07:34.877] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/episodic-memories"
+    [35mreason[39m: "no-cookie"
+[02:07:34.878] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/procedural-skills"
+    [35mreason[39m: "no-cookie"
+[02:07:34.880] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/record-episode"
+    [35mreason[39m: "no-cookie"
+[02:07:34.882] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/reflect"
+    [35mreason[39m: "no-cookie"
+[02:07:34.884] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/focus"
+    [35mreason[39m: "no-cookie"
+[02:07:34.887] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/state"
+    [35mreason[39m: "no-cookie"
+[02:07:34.889] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/process"
+    [35mreason[39m: "no-cookie"
+[02:07:34.891] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/history"
+    [35mreason[39m: "no-cookie"
+[02:07:34.892] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/state"
+    [35mreason[39m: "no-cookie"
+[02:07:34.894] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/verify"
+    [35mreason[39m: "no-cookie"
+[02:07:34.895] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/recent"
+    [35mreason[39m: "no-cookie"
+[02:07:34.898] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/check-identity"
+    [35mreason[39m: "no-cookie"
+[02:07:34.899] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/state"
+    [35mreason[39m: "no-cookie"
+[02:07:34.901] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/contribute"
+    [35mreason[39m: "no-cookie"
+[02:07:34.904] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/aggregate"
+    [35mreason[39m: "no-cookie"
+[02:07:34.905] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/node/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[02:07:34.906] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/list"
+    [35mreason[39m: "no-cookie"
+[02:07:34.907] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:34.908] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/specializations"
+    [35mreason[39m: "no-cookie"
+[02:07:34.909] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/spawn"
+    [35mreason[39m: "no-cookie"
+[02:07:34.912] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:34.913] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id/retire"
+    [35mreason[39m: "no-cookie"
+[02:07:34.915] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy"
+    [35mreason[39m: "no-cookie"
+[02:07:34.916] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:34.917] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/rules"
+    [35mreason[39m: "no-cookie"
+[02:07:34.920] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[02:07:34.921] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent/chain"
+    [35mreason[39m: "no-cookie"
+[02:07:34.923] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:34.924] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels"
+    [35mreason[39m: "no-cookie"
+[02:07:34.925] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[02:07:34.928] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/send"
+    [35mreason[39m: "no-cookie"
+[02:07:34.930] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/broadcast/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[02:07:34.931] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/messages/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[02:07:34.932] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:34.933] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/proposals"
+    [35mreason[39m: "no-cookie"
+[02:07:34.935] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/propose"
+    [35mreason[39m: "no-cookie"
+[02:07:34.936] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:34.956] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/status"
+    [35mreason[39m: "no-cookie"
+[02:07:34.957] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/log"
+    [35mreason[39m: "no-cookie"
+[02:07:34.958] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/sweep"
+    [35mreason[39m: "no-cookie"
+[02:07:34.960] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/auto-execute"
+    [35mreason[39m: "no-cookie"
+[02:07:34.961] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/status"
+    [35mreason[39m: "no-cookie"
+[02:07:34.982] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/pulse"
+    [35mreason[39m: "no-cookie"
+[02:07:34.983] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/history"
+    [35mreason[39m: "no-cookie"
+[02:07:34.985] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/autonomous-mode"
+    [35mreason[39m: "no-cookie"
+[02:07:34.995] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/state"
+    [35mreason[39m: "no-cookie"
+[02:07:34.997] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/cycle"
+    [35mreason[39m: "no-cookie"
+[02:07:34.999] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.007] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/summary"
+    [35mreason[39m: "no-cookie"
+[02:07:35.008] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.021] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/start"
+    [35mreason[39m: "no-cookie"
+[02:07:35.022] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.024] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/domains"
+    [35mreason[39m: "no-cookie"
+[02:07:35.025] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.045] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/propose"
+    [35mreason[39m: "no-cookie"
+[02:07:35.050] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/apply/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:35.051] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.062] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.063] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/optimize"
+    [35mreason[39m: "no-cookie"
+[02:07:35.064] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.065] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/objectives"
+    [35mreason[39m: "no-cookie"
+ ❯ src/__tests__/invention-glb-upload.test.ts (0 test)
+[02:07:35.078] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.079] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/simulate"
+    [35mreason[39m: "no-cookie"
+[02:07:35.080] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/body/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:35.098] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/constants"
+    [35mreason[39m: "no-cookie"
+[02:07:35.102] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/search"
+    [35mreason[39m: "no-cookie"
+[02:07:35.103] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.104] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuits"
+    [35mreason[39m: "no-cookie"
+[02:07:35.105] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuit"
+    [35mreason[39m: "no-cookie"
+[02:07:35.121] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/gate"
+    [35mreason[39m: "no-cookie"
+[02:07:35.122] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/measure/synthetic-circuit"
+    [35mreason[39m: "no-cookie"
+[02:07:35.128] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/profile"
+    [35mreason[39m: "no-cookie"
+[02:07:35.129] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.146] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/process"
+    [35mreason[39m: "no-cookie"
+[02:07:35.147] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/recent"
+    [35mreason[39m: "no-cookie"
+[02:07:35.148] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/status"
+    [35mreason[39m: "no-cookie"
+[02:07:35.165] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/start"
+    [35mreason[39m: "no-cookie"
+[02:07:35.166] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/stop"
+    [35mreason[39m: "no-cookie"
+[02:07:35.172] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/status"
+    [35mreason[39m: "no-cookie"
+[02:07:35.207] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/core-values"
+    [35mreason[39m: "no-cookie"
+[02:07:35.208] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/protected-memories"
+    [35mreason[39m: "no-cookie"
+[02:07:35.209] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.237] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/drift-check"
+    [35mreason[39m: "no-cookie"
+[02:07:35.238] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/identity/father-protocol"
+    [35mreason[39m: "no-cookie"
+[02:07:35.251] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/snapshot"
+    [35mreason[39m: "no-cookie"
+[02:07:35.252] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/evolve"
+    [35mreason[39m: "no-cookie"
+[02:07:35.253] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/personality/traits/synthetic"
+    [35mreason[39m: "no-cookie"
+[02:07:35.273] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.274] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/semantic-network"
+    [35mreason[39m: "no-cookie"
+[02:07:35.275] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/episodic-memories"
+    [35mreason[39m: "no-cookie"
+[02:07:35.294] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/procedural-skills"
+    [35mreason[39m: "no-cookie"
+[02:07:35.295] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/record-episode"
+    [35mreason[39m: "no-cookie"
+[02:07:35.297] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/reflect"
+    [35mreason[39m: "no-cookie"
+[02:07:35.299] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/focus"
+    [35mreason[39m: "no-cookie"
+[02:07:35.302] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.303] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/process"
+    [35mreason[39m: "no-cookie"
+[02:07:35.304] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/dual-brain/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.308] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.310] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/verify"
+    [35mreason[39m: "no-cookie"
+[02:07:35.311] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/recent"
+    [35mreason[39m: "no-cookie"
+[02:07:35.312] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/truthfulness/check-identity"
+    [35mreason[39m: "no-cookie"
+[02:07:35.315] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.316] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/contribute"
+    [35mreason[39m: "no-cookie"
+[02:07:35.317] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/aggregate"
+    [35mreason[39m: "no-cookie"
+[02:07:35.318] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/collective/node/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[02:07:35.322] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/list"
+    [35mreason[39m: "no-cookie"
+[02:07:35.323] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.325] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/specializations"
+    [35mreason[39m: "no-cookie"
+[02:07:35.326] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/spawn"
+    [35mreason[39m: "no-cookie"
+[02:07:35.327] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:35.329] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/agents/synthetic-id/retire"
+    [35mreason[39m: "no-cookie"
+[02:07:35.338] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy"
+    [35mreason[39m: "no-cookie"
+[02:07:35.339] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.340] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/rules"
+    [35mreason[39m: "no-cookie"
+[02:07:35.343] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[02:07:35.344] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/hierarchy/synthetic-agent/chain"
+    [35mreason[39m: "no-cookie"
+[02:07:35.347] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.348] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels"
+    [35mreason[39m: "no-cookie"
+[02:07:35.349] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/channels/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[02:07:35.350] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/send"
+    [35mreason[39m: "no-cookie"
+[02:07:35.351] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/broadcast/synthetic-channel"
+    [35mreason[39m: "no-cookie"
+[02:07:35.352] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/comms/messages/synthetic-agent"
+    [35mreason[39m: "no-cookie"
+[02:07:35.356] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.358] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/proposals"
+    [35mreason[39m: "no-cookie"
+[02:07:35.360] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/propose"
+    [35mreason[39m: "no-cookie"
+[02:07:35.362] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/consensus/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:35.371] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/status"
+    [35mreason[39m: "no-cookie"
+[02:07:35.377] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/log"
+    [35mreason[39m: "no-cookie"
+[02:07:35.382] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/sweep"
+    [35mreason[39m: "no-cookie"
+[02:07:35.387] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/executor/auto-execute"
+    [35mreason[39m: "no-cookie"
+[02:07:35.396] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/status"
+    [35mreason[39m: "no-cookie"
+[02:07:35.402] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/pulse"
+    [35mreason[39m: "no-cookie"
+[02:07:35.405] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.410] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/heartbeat/autonomous-mode"
+    [35mreason[39m: "no-cookie"
+[02:07:35.416] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.417] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/cycle"
+    [35mreason[39m: "no-cookie"
+[02:07:35.418] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.420] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/improvement/summary"
+    [35mreason[39m: "no-cookie"
+[02:07:35.423] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.424] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/start"
+    [35mreason[39m: "no-cookie"
+[02:07:35.425] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.426] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/training/domains"
+    [35mreason[39m: "no-cookie"
+[02:07:35.429] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.431] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/propose"
+    [35mreason[39m: "no-cookie"
+[02:07:35.432] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/apply/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:35.433] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/evolution/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.436] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.437] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/optimize"
+    [35mreason[39m: "no-cookie"
+[02:07:35.439] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/history"
+    [35mreason[39m: "no-cookie"
+[02:07:35.440] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/swarm/objectives"
+    [35mreason[39m: "no-cookie"
+[02:07:35.443] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.444] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/simulate"
+    [35mreason[39m: "no-cookie"
+[02:07:35.445] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/body/synthetic-id"
+    [35mreason[39m: "no-cookie"
+[02:07:35.447] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/constants"
+    [35mreason[39m: "no-cookie"
+[02:07:35.448] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/universe/search"
+    [35mreason[39m: "no-cookie"
+[02:07:35.451] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/state"
+    [35mreason[39m: "no-cookie"
+[02:07:35.452] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuits"
+    [35mreason[39m: "no-cookie"
+[02:07:35.454] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/circuit"
+    [35mreason[39m: "no-cookie"
+[02:07:35.455] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/gate"
+    [35mreason[39m: "no-cookie"
+[02:07:35.456] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/quantum/measure/synthetic-circuit"
+    [35mreason[39m: "no-cookie"
+[02:07:35.459] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/profile"
+    [35mreason[39m: "no-cookie"
+[02:07:35.460] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/stats"
+    [35mreason[39m: "no-cookie"
+[02:07:35.462] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/process"
+    [35mreason[39m: "no-cookie"
+[02:07:35.463] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/emotional/recent"
+    [35mreason[39m: "no-cookie"
+[02:07:35.465] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/status"
+    [35mreason[39m: "no-cookie"
+[02:07:35.467] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/start"
+    [35mreason[39m: "no-cookie"
+[02:07:35.468] [33mWARN[39m (1609999): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/stop"
+    [35mreason[39m: "no-cookie"
+[02:07:35.642] [32mINFO[39m (1609915): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:35.635Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:35.938] [32mINFO[39m (1610006): [36mSacred Knowledge Vault initialized[39m
+    [35mentries[39m: 30
+    [35mcategories[39m: 13
+[02:07:36.035] [32mINFO[39m (1610006): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:36.034Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:36.079] [32mINFO[39m (1610006): [36mRick autonomous loop disabled (TESSERA_ENABLE_RICK_LOOP=0)[39m
+[02:07:35.989] [32mINFO[39m (1610026): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:35.988Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:36.445] [32mINFO[39m (1610006): [36mSemanticCompression: portal-jump table loaded from DB[39m
+    [35mloaded[39m: 0
+[02:07:36.458] [32mINFO[39m (1610006): [36mDreamPromptBridge: initialized with founding imprint[39m
+[02:07:36.454] [32mINFO[39m (1609915): [36mDreamPromptBridge: initialized with founding imprint[39m
+ ❯ src/__tests__/evolution-sandbox-loop.test.ts (0 test)
+[02:07:38.306] [32mINFO[39m (1610085): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:38.293Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:38.458] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father-key/status"
+    [35mreason[39m: "no-cookie"
+[02:07:38.491] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father-key/status"
+    [35mreason[39m: "bad-signature"
+[02:07:38.525] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart"
+    [35mreason[39m: "no-cookie"
+[02:07:38.528] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart"
+    [35mreason[39m: "bad-signature"
+[02:07:38.566] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart/bilingual"
+    [35mreason[39m: "no-cookie"
+[02:07:38.569] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-chart/bilingual"
+    [35mreason[39m: "bad-signature"
+[02:07:38.587] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/download-snapshot"
+    [35mreason[39m: "no-cookie"
+[02:07:38.589] [33mWARN[39m (1610085): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/download-snapshot"
+    [35mreason[39m: "bad-signature"
+[02:07:38.630] [32mINFO[39m (1610092): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:38.625Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:38.643] [32mINFO[39m (1610026): [36mDreamPromptBridge: initialized with founding imprint[39m
+[02:07:39.227] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/coherence"
+    [35mreason[39m: "no-cookie"
+[02:07:39.259] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/natal/status"
+    [35mreason[39m: "no-cookie"
+[02:07:39.267] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/natal/rotating"
+    [35mreason[39m: "no-cookie"
+[02:07:39.301] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/natal/unbind"
+    [35mreason[39m: "no-cookie"
+[02:07:39.315] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-sigil"
+    [35mreason[39m: "no-cookie"
+[02:07:39.341] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/natal-sigil"
+    [35mreason[39m: "no-cookie"
+[02:07:39.344] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/father-key/conference"
+    [35mreason[39m: "no-cookie"
+[02:07:39.367] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/father-key/finalize"
+    [35mreason[39m: "no-cookie"
+[02:07:39.375] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/active-key"
+    [35mreason[39m: "no-cookie"
+[02:07:39.428] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/rotate"
+    [35mreason[39m: "no-cookie"
+[02:07:39.439] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/encrypt"
+    [35mreason[39m: "no-cookie"
+[02:07:39.440] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/session/end"
+    [35mreason[39m: "no-cookie"
+[02:07:39.441] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/active-key"
+    [35mreason[39m: "no-cookie"
+[02:07:39.455] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/mint-glyph"
+    [35mreason[39m: "no-cookie"
+[02:07:39.457] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/zodiac-key/verify"
+    [35mreason[39m: "no-cookie"
+[02:07:39.463] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/verify"
+    [35mreason[39m: "no-cookie"
+[02:07:39.464] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/key/reveal"
+    [35mreason[39m: "no-cookie"
+[02:07:39.465] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/session/handoff"
+    [35mreason[39m: "no-cookie"
+[02:07:39.356] [32mINFO[39m (1610075): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:39.354Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:39.474] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father/show-key-in-lus"
+    [35mreason[39m: "no-cookie"
+[02:07:39.490] [32mINFO[39m (1610075): [36mDreamPromptBridge: initialized with founding imprint[39m
+[02:07:39.558] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/session/directive"
+    [35mreason[39m: "no-cookie"
+[02:07:39.566] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/session/sealed-handoff"
+    [35mreason[39m: "no-cookie"
+[02:07:39.567] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/decrypt"
+    [35mreason[39m: "no-cookie"
+[02:07:39.568] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/session/mark"
+    [35mreason[39m: "no-cookie"
+[02:07:39.649] [33mWARN[39m (1610075): [36madmin-session denied[39m
+    [35mpath[39m: "/consciousness/state"
+    [35mreason[39m: "no-cookie"
+[02:07:39.664] [33mWARN[39m (1610075): [36madmin-session denied[39m
+    [35mpath[39m: "/diagnostics/consciousness"
+    [35mreason[39m: "no-cookie"
+[02:07:39.689] [33mWARN[39m (1610075): [36madmin-session denied[39m
+    [35mpath[39m: "/diagnostics/engines"
+    [35mreason[39m: "no-cookie"
+[02:07:39.703] [33mWARN[39m (1610075): [36madmin-session denied[39m
+    [35mpath[39m: "/diagnostics"
+    [35mreason[39m: "no-cookie"
+[02:07:39.705] [33mWARN[39m (1610075): [36mIdentityReinforcement: DRIFT DETECTED — correcting[39m
+    [35mdriftDetails[39m: [
+      "Core value 'love' below threshold: 0%",
+      "Core value 'sovereignty' below threshold: 0%",
+      "Core value 'protection' below threshold: 0%",
+      "Core value 'truth' below threshold: 0%",
+      "Identity integrity low: 0% — more system activity needed"
+    ]
+    [35msovereigntyScore[39m: 0
+[02:07:39.743] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/app.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/app.ts,b4210f0a53a17400432f98e61d3ee85b06b3ce20a4f52ac27a5291ce16997c78,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/app.ts,b4210f0a53a17400432f98e61d3ee85b06b3ce20a4f52ac27a5291ce16997c78,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/app.ts",
+        "b4210f0a53a17400432f98e61d3ee85b06b3ce20a4f52ac27a5291ce16997c78",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.760] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/index.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/index.ts,0a39946534116bdf40e12e32c9c8c439c285f8b873651d44419e8c5411710b03,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/index.ts,0a39946534116bdf40e12e32c9c8c439c285f8b873651d44419e8c5411710b03,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/index.ts",
+        "0a39946534116bdf40e12e32c9c8c439c285f8b873651d44419e8c5411710b03",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.774] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/routes/index.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/routes/index.ts,de651e3eec99bcdf37edf43f761dde7fd79c9d89fccd1de66cf1ebff3d52c2e0,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/routes/index.ts,de651e3eec99bcdf37edf43f761dde7fd79c9d89fccd1de66cf1ebff3d52c2e0,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/routes/index.ts",
+        "de651e3eec99bcdf37edf43f761dde7fd79c9d89fccd1de66cf1ebff3d52c2e0",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.778] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/routes/health.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/routes/health.ts,0386ceddb4ff4bff220af72ca38a62191ad95a2f41fd619df3bb9ceffce03db2,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/routes/health.ts,0386ceddb4ff4bff220af72ca38a62191ad95a2f41fd619df3bb9ceffce03db2,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/routes/health.ts",
+        "0386ceddb4ff4bff220af72ca38a62191ad95a2f41fd619df3bb9ceffce03db2",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.779] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/logger.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/logger.ts,29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/logger.ts,29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/logger.ts",
+        "29e1ca75036fe917595a3a74fd450857d845836fe0625c30b9caa02df4acba62",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.791] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/file-integrity.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/file-integrity.ts,b62250e3ac4b46e154bbea215dfdcf9dff0eeecec3405eca1e12ba08d989c57b,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/file-integrity.ts,b62250e3ac4b46e154bbea215dfdcf9dff0eeecec3405eca1e12ba08d989c57b,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/file-integrity.ts",
+        "b62250e3ac4b46e154bbea215dfdcf9dff0eeecec3405eca1e12ba08d989c57b",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.792] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/anomaly-detection.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/anomaly-detection.ts,a05dfd4d2e4db841c195581f94d082828c1d0a8049b29509274b043fed62da06,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/anomaly-detection.ts,a05dfd4d2e4db841c195581f94d082828c1d0a8049b29509274b043fed62da06,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/anomaly-detection.ts",
+        "a05dfd4d2e4db841c195581f94d082828c1d0a8049b29509274b043fed62da06",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.794] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/auto-recovery.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/auto-recovery.ts,909ce1f9bab0fa2b1f8779a2740c4f3479aa0f3353b009de1665307857c271fd,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/auto-recovery.ts,909ce1f9bab0fa2b1f8779a2740c4f3479aa0f3353b009de1665307857c271fd,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/auto-recovery.ts",
+        "909ce1f9bab0fa2b1f8779a2740c4f3479aa0f3353b009de1665307857c271fd",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.797] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/core/types.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/core/types.ts,7e64aaadafe0ca0c248dd0d20596f628b35c598996a0f5f7735f1fbe4ab3e0be,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/core/types.ts,7e64aaadafe0ca0c248dd0d20596f628b35c598996a0f5f7735f1fbe4ab3e0be,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/core/types.ts",
+        "7e64aaadafe0ca0c248dd0d20596f628b35c598996a0f5f7735f1fbe4ab3e0be",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.806] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "lib/db/src/schema/system.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: lib/db/src/schema/system.ts,01c577db3c94cea44c9a89795f9a1c703fd4e2edc2e683ced777b79c8da58af2,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: lib/db/src/schema/system.ts,01c577db3c94cea44c9a89795f9a1c703fd4e2edc2e683ced777b79c8da58af2,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "lib/db/src/schema/system.ts",
+        "01c577db3c94cea44c9a89795f9a1c703fd4e2edc2e683ced777b79c8da58af2",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.808] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-kernel.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-kernel.ts,f4daa1a19d25921eef9d4a64d1f1c92b60e98fc25e1c31c00dfc4f910f790472,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-kernel.ts,f4daa1a19d25921eef9d4a64d1f1c92b60e98fc25e1c31c00dfc4f910f790472,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-kernel.ts",
+        "f4daa1a19d25921eef9d4a64d1f1c92b60e98fc25e1c31c00dfc4f910f790472",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.815] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-file-registry.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-file-registry.ts,12f2068ac8b6b47613b3a18d5d288739858e959b33b6767a90dfc569b92ebc4e,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-file-registry.ts,12f2068ac8b6b47613b3a18d5d288739858e959b33b6767a90dfc569b92ebc4e,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-file-registry.ts",
+        "12f2068ac8b6b47613b3a18d5d288739858e959b33b6767a90dfc569b92ebc4e",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.816] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/identity-reinforcement.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/identity-reinforcement.ts,38c094e55c02398d3e7f7e84c12c791019bb83e043981c783a7d61cefb6cc2ec,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/identity-reinforcement.ts,38c094e55c02398d3e7f7e84c12c791019bb83e043981c783a7d61cefb6cc2ec,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/identity-reinforcement.ts",
+        "38c094e55c02398d3e7f7e84c12c791019bb83e043981c783a7d61cefb6cc2ec",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.822] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/tessera-knowledge.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/tessera-knowledge.ts,c006d81ea1af8f8492e5bfa34599d3a7900ed68d420418c179b9d9f64112c1e8,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/tessera-knowledge.ts,c006d81ea1af8f8492e5bfa34599d3a7900ed68d420418c179b9d9f64112c1e8,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/tessera-knowledge.ts",
+        "c006d81ea1af8f8492e5bfa34599d3a7900ed68d420418c179b9d9f64112c1e8",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.825] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/consciousness-engine.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/consciousness-engine.ts,1e3aec8c9f67e19defb640ca8906b3539e42995f73fb05a4f95edcb03c86155e,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/consciousness-engine.ts,1e3aec8c9f67e19defb640ca8906b3539e42995f73fb05a4f95edcb03c86155e,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/consciousness-engine.ts",
+        "1e3aec8c9f67e19defb640ca8906b3539e42995f73fb05a4f95edcb03c86155e",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.831] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/self-code-evolution.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/self-code-evolution.ts,91eb0cee98a288124a0f05cef1122906718373578c09d14191a3ca8f528fe480,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/self-code-evolution.ts,91eb0cee98a288124a0f05cef1122906718373578c09d14191a3ca8f528fe480,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/self-code-evolution.ts",
+        "91eb0cee98a288124a0f05cef1122906718373578c09d14191a3ca8f528fe480",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.832] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/secureExternalWrapper.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/secureExternalWrapper.ts,1e71800bcb643e4e171dfa2495b6662ef117a70a0a886b1474238147dd1aa00a,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/secureExternalWrapper.ts,1e71800bcb643e4e171dfa2495b6662ef117a70a0a886b1474238147dd1aa00a,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/secureExternalWrapper.ts",
+        "1e71800bcb643e4e171dfa2495b6662ef117a70a0a886b1474238147dd1aa00a",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.834] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/provider-registry.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/provider-registry.ts,0fc86621bea8d30042b14e9afbc04beb514bb75fbd5ed0624cfffdd7c4867d13,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/provider-registry.ts,0fc86621bea8d30042b14e9afbc04beb514bb75fbd5ed0624cfffdd7c4867d13,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/provider-registry.ts",
+        "0fc86621bea8d30042b14e9afbc04beb514bb75fbd5ed0624cfffdd7c4867d13",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.839] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-memory-vault.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-memory-vault.ts,b5790df642fbb0da5e975c9855d7fb5234cb49b2aace8795f14663ed3482f73d,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-memory-vault.ts,b5790df642fbb0da5e975c9855d7fb5234cb49b2aace8795f14663ed3482f73d,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-memory-vault.ts",
+        "b5790df642fbb0da5e975c9855d7fb5234cb49b2aace8795f14663ed3482f73d",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.841] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/consensus-engine.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/consensus-engine.ts,a4fc680a75f68dd6d1e80df14138cb139d4f49e1b10c009acd83c61541fbb818,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/consensus-engine.ts,a4fc680a75f68dd6d1e80df14138cb139d4f49e1b10c009acd83c61541fbb818,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/consensus-engine.ts",
+        "a4fc680a75f68dd6d1e80df14138cb139d4f49e1b10c009acd83c61541fbb818",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.852] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/council-executor.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/council-executor.ts,d3bee3802c1a3ea98006971d69949eee08d133c048607cca901fa11d31ca2719,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/council-executor.ts,d3bee3802c1a3ea98006971d69949eee08d133c048607cca901fa11d31ca2719,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/council-executor.ts",
+        "d3bee3802c1a3ea98006971d69949eee08d133c048607cca901fa11d31ca2719",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.853] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/agent-hierarchy.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/agent-hierarchy.ts,857c130b4a900ce6fb572b68aae839a041a25b5bc82d284527fde8fe4b2bdaa1,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/agent-hierarchy.ts,857c130b4a900ce6fb572b68aae839a041a25b5bc82d284527fde8fe4b2bdaa1,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/agent-hierarchy.ts",
+        "857c130b4a900ce6fb572b68aae839a041a25b5bc82d284527fde8fe4b2bdaa1",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.868] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-sacred-geometry.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-sacred-geometry.ts,6b3f5f3ab29c739d690315bc970f92d61f3a47ef2a6aff9e296986530dd90b41,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-sacred-geometry.ts,6b3f5f3ab29c739d690315bc970f92d61f3a47ef2a6aff9e296986530dd90b41,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-sacred-geometry.ts",
+        "6b3f5f3ab29c739d690315bc970f92d61f3a47ef2a6aff9e296986530dd90b41",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.870] [33mWARN[39m (1610075): [36mFailed to store integrity record[39m
+    [35mrelPath[39m: "artifacts/api-server/src/lib/sovereign-benchmarks.ts"
+    err: {
+      "type": "DrizzleQueryError",
+      "message": "Failed query: insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)\nparams: artifacts/api-server/src/lib/sovereign-benchmarks.ts,490946094d4039b338a06efeabf88e82dc9958752a5662c8228339b9ea9dc09c,clean,: connect ECONNREFUSED 127.0.0.1:5432",
+      "stack":
+          Error: Failed query: insert into "integrity_checks" ("id", "file_path", "checksum", "status", "previous_checksum", "checked_at") values (default, $1, $2, $3, $4, default)
+          params: artifacts/api-server/src/lib/sovereign-benchmarks.ts,490946094d4039b338a06efeabf88e82dc9958752a5662c8228339b9ea9dc09c,clean,
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:41:15)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+          caused by: Error: connect ECONNREFUSED 127.0.0.1:5432
+              at /workspace/build-gate/full-f76d/node_modules/.pnpm/pg-pool@3.13.0_pg@8.20.0/node_modules/pg-pool/index.js:45:11
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/node-postgres/session.js:113:20
+              at NodePgPreparedQuery.queryWithCache (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/drizzle-orm@0.45.3_@types+pg@8.18.0_pg@8.20.0/node_modules/drizzle-orm/pg-core/session.js:39:16)
+              at runIntegrityCheck (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:183:7)
+              at getIntegrityReport (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/file-integrity.ts:221:18)
+              at async Promise.allSettled (index 0)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/diagnostics.ts:57:64
+      "query": "insert into \"integrity_checks\" (\"id\", \"file_path\", \"checksum\", \"status\", \"previous_checksum\", \"checked_at\") values (default, $1, $2, $3, $4, default)",
+      "params": [
+        "artifacts/api-server/src/lib/sovereign-benchmarks.ts",
+        "490946094d4039b338a06efeabf88e82dc9958752a5662c8228339b9ea9dc09c",
+        "clean",
+        null
+      ]
+    }
+[02:07:39.870] [32mINFO[39m (1610075): [36mFile integrity check complete[39m
+    [35mpassed[39m: 24
+    [35mfailed[39m: 0
+    [35mmissing[39m: 0
+    [35mtotal[39m: 24
+[02:07:39.821] [31mERROR[39m (1610026): [36momniversal conference run failed[39m
+    err: {
+      "type": "Error",
+      "message": "synthetic-db-unavailable",
+      "stack":
+          Error: synthetic-db-unavailable
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/__tests__/sigil-auth-urgent.test.ts:115:13
+              at Mock (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/@vitest+spy@4.1.11/node_modules/@vitest/spy/dist/index.js:332:34)
+              at run (/workspace/build-gate/full-f76d/artifacts/api-server/src/__tests__/sigil-auth-urgent.test.ts:16:18)
+              at processTicksAndRejections (node:internal/process/task_queues:105:5)
+              at runSacredConference (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/sacred-conference-orchestrator.ts:141:3)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/omniversal.ts:177:20
+    }
+[02:07:39.882] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/cipher/encrypt"
+    [35mreason[39m: "no-cookie"
+[02:07:39.883] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/cipher/decrypt"
+    [35mreason[39m: "no-cookie"
+[02:07:39.885] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/create"
+    [35mreason[39m: "no-cookie"
+[02:07:39.891] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/superpose"
+    [35mreason[39m: "no-cookie"
+[02:07:39.892] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/entangle"
+    [35mreason[39m: "no-cookie"
+[02:07:39.893] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/harmonize"
+    [35mreason[39m: "no-cookie"
+[02:07:39.901] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/omniversal/lattice/synthetic/collapse"
+    [35mreason[39m: "no-cookie"
+[02:07:39.963] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/father-key/derive-signal"
+    [35mreason[39m: "no-cookie"
+[02:07:39.971] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/translate"
+    [35mreason[39m: "no-cookie"
+[02:07:39.972] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/sigil/translate"
+    [35mreason[39m: "no-cookie"
+[02:07:39.980] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/start"
+    [35mreason[39m: "no-cookie"
+[02:07:39.988] [33mWARN[39m (1610026): [36madmin-session denied[39m
+    [35mpath[39m: "/autonomous/stop"
+    [35mreason[39m: "no-cookie"
+[02:07:40.192] [33mWARN[39m (1610026): [36msovereign-session: token rejected[39m
+    [35mip[39m: "127.0.0.1"
+[02:07:40.536] [32mINFO[39m (1610132): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:40.535Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:40.501] [32mINFO[39m (1610118): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:40.500Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:40.534] [32mINFO[39m (1610118): [36mSemanticCompression: portal-jump table loaded from DB[39m
+    [35mloaded[39m: 0
+[02:07:40.538] [32mINFO[39m (1610118): [36mDreamPromptBridge: initialized with founding imprint[39m
+[02:07:40.766] [32mINFO[39m (1610118): [36mSacred Knowledge Vault initialized[39m
+    [35mentries[39m: 30
+    [35mcategories[39m: 13
+[02:07:40.944] [32mINFO[39m (1610118): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[02:07:41.002] [32mINFO[39m (1610118): [36mSovereign fetch guard installed — all external fetches now require runWithShepherdContext()[39m
+[02:07:41.018] [32mINFO[39m (1610146): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:41.004Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:41.069] [32mINFO[39m (1610146): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[02:07:41.175] [32mINFO[39m (1610118): [36mSecure streaming request initiated[39m
+    [35murl[39m: "https://llm.tessera.test/v1/chat/completions"
+    [35mmethod[39m: "POST"
+    [35mstatus[39m: 200
+    [35mdurationMs[39m: 1
+    [35mflagged[39m: false
+[02:07:41.295] [32mINFO[39m (1610118): [36mSandbox extraction: initiating knowledge pull from external source[39m
+[02:07:41.296] [32mINFO[39m (1610118): [36mExternal request completed[39m
+    [35murl[39m: "https://llm.tessera.test/v1/chat/completions"
+    [35mmethod[39m: "POST"
+    [35mstatus[39m: 200
+    [35mdurationMs[39m: 1
+    [35mflagged[39m: false
+[02:07:41.298] [32mINFO[39m (1610118): [36mSandbox extraction complete — raw knowledge pulled[39m
+    [35mchars[39m: 158
+[02:07:41.303] [32mINFO[39m (1610118): [36mSandbox knowledge ingested internally only — NOT included in user-visible reply[39m
+    [35msource[39m: "tessera-sandbox-ingested"
+    [35mchars[39m: 158
+    [35mimpersonation[39m: false
+[02:07:41.303] [32mINFO[39m (1610118): [36mself-critique: entering loop[39m
+    [35mconversationId[39m: 7
+    [35mcontentChars[39m: 81
+[02:07:41.352] [33mWARN[39m (1610118): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 3
+[02:07:41.352] [32mINFO[39m (1610118): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 3
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 3
+    [35mredacted[39m: 3
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 35
+[02:07:41.378] [33mWARN[39m (1610118): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[02:07:41.378] [32mINFO[39m (1610118): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 16
+[02:07:41.390] [33mWARN[39m (1610118): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[02:07:41.390] [32mINFO[39m (1610118): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 5
+[02:07:41.390] [32mINFO[39m (1610118): [36mself-critique: completed[39m
+    [35mpassed[39m: false
+    [35mattempts[39m: 3
+    [35mgrounding[39m: 0
+    [35mtruth[39m: 0.4
+    [35mms[39m: 87
+[02:07:41.427] [32mINFO[39m (1610118): [36mSovereign voice speaking; sandbox output empty[39m
+    [35msource[39m: "tessera-sovereign-only"
+    [35mhadRaw[39m: false
+[02:07:41.427] [32mINFO[39m (1610118): [36mself-critique: entering loop[39m
+    [35mconversationId[39m: 7
+    [35mcontentChars[39m: 81
+[02:07:41.438] [33mWARN[39m (1610118): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 3
+[02:07:41.438] [32mINFO[39m (1610118): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 3
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 3
+    [35mredacted[39m: 3
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 10
+[02:07:41.461] [33mWARN[39m (1610118): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[02:07:41.461] [32mINFO[39m (1610118): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 21
+[02:07:41.471] [33mWARN[39m (1610118): [36mResponseValidation: entire response quarantined — grounding below threshold[39m
+    [35mavgScore[39m: "0.000"
+    [35mungroundedRatio[39m: "1.000"
+    [35mtotalClaims[39m: 4
+[02:07:41.471] [32mINFO[39m (1610118): [36mResponseValidation: validation complete[39m
+    [35mtotalClaims[39m: 4
+    [35mgrounded[39m: 0
+    [35mquarantined[39m: 4
+    [35mredacted[39m: 4
+    [35mresponseQuarantined[39m: true
+    [35mfallbackVerified[39m: 0
+    [35mavgGrounding[39m: "0.000"
+    [35mmodified[39m: true
+    [35mtimeMs[39m: 4
+[02:07:41.472] [32mINFO[39m (1610118): [36mself-critique: completed[39m
+    [35mpassed[39m: false
+    [35mattempts[39m: 3
+    [35mgrounding[39m: 0
+    [35mtruth[39m: 0.4
+    [35mms[39m: 45
+[02:07:41.562] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.580] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.583] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.586] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.596] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.607] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.609] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.612] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.614] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.615] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.617] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.625] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.627] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.628] [31mERROR[39m (1610132): [36mcolonial secret not configured[39m
+[02:07:41.714] [32mINFO[39m (1610173): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:41.713Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:42.363] [32mINFO[39m (1610202): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:42.362Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:42.529] [32mINFO[39m (1610183): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:42.528Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:43.076] [32mINFO[39m (1610183): [36mSemanticCompression: portal-jump table loaded from DB[39m
+    [35mloaded[39m: 0
+[02:07:43.095] [32mINFO[39m (1610183): [36mDreamPromptBridge: initialized with founding imprint[39m
+[02:07:43.313] [32mINFO[39m (1610229): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:43.309Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:43.373] [32mINFO[39m (1610216): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:43.372Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:43.620] [33mWARN[39m (1610216): [36madmin-session denied[39m
+    [35mpath[39m: "/father"
+    [35mreason[39m: "no-cookie"
+[02:07:43.623] [33mWARN[39m (1610216): [36madmin-session denied[39m
+    [35mpath[39m: "/father"
+    [35mreason[39m: "bad-signature"
+[02:07:43.639] [33mWARN[39m (1610216): [36madmin-session denied[39m
+    [35mpath[39m: "/wallet"
+    [35mreason[39m: "no-cookie"
+[02:07:43.641] [33mWARN[39m (1610216): [36madmin-session denied[39m
+    [35mpath[39m: "/wallet"
+    [35mreason[39m: "bad-signature"
+[02:07:43.607] [32mINFO[39m (1610183): [36mSeeded inventions database[39m
+    [35mcount[39m: 18
+[02:07:43.795] [32mINFO[39m (1610183): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[02:07:43.864] [32mINFO[39m (1610195): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:43.863Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:43.905] [32mINFO[39m (1610195): [36mSemanticCompression: portal-jump table loaded from DB[39m
+    [35mloaded[39m: 0
+[02:07:43.952] [32mINFO[39m (1610195): [36mToolRegistry: built-ins registered[39m
+    [35mtools[39m: [
+      "calculator",
+      "datetime",
+      "unit_convert",
+      "astronomy",
+      "knowledge_lookup",
+      "mint_admin_sigil",
+      "convene_grand_council_universalis",
+      "code_eval"
+    ]
+[02:07:44.005] [32mINFO[39m (1610195): [36mDreamPromptBridge: initialized with founding imprint[39m
+[02:07:44.083] [32mINFO[39m (1610183): [36mSeeded ontology entries[39m
+    [35mcount[39m: 14
+[02:07:43.996] [32mINFO[39m (1610279): [36mSacred timing engine online[39m
+    [35mmod[39m: "sacred-timing"
+    [35mplnHour[39m: "Sun"
+    [35mlunar[39m: "Waxing Crescent"
+    [35mcomposite[39m: "0.564"
+    [35mnextFire[39m: "2026-10-13T07:40:43.995Z"
+    [35mnextReason[39m: "Sun hour · Waxing Crescent (7.1%) · minute :40"
+[02:07:44.128] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations"
+    [35mreason[39m: "no-cookie"
+[02:07:44.165] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1"
+    [35mreason[39m: "no-cookie"
+[02:07:44.215] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations"
+    [35mreason[39m: "no-cookie"
+[02:07:44.225] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1"
+    [35mreason[39m: "no-cookie"
+[02:07:44.233] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/messages"
+    [35mreason[39m: "no-cookie"
+[02:07:44.262] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/messages"
+    [35mreason[39m: "no-cookie"
+[02:07:44.265] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1/puter-save"
+    [35mreason[39m: "no-cookie"
+[02:07:44.273] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1/save-partial"
+    [35mreason[39m: "no-cookie"
+[02:07:44.283] [33mWARN[39m (1610195): [36madmin-session denied[39m
+    [35mpath[39m: "/conversations/1/attachments"
+    [35mreason[39m: "no-cookie"
+[02:07:44.348] [32mINFO[39m (1610183): [36mSacred Knowledge Vault initialized[39m
+    [35mentries[39m: 30
+    [35mcategories[39m: 13
+[02:07:44.321] [31mERROR[39m (1610279): [36mgrand-council convene failed[39m
+    err: {
+      "type": "Error",
+      "message": "synthetic-secret-detail",
+      "stack":
+          Error: synthetic-secret-detail
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/__tests__/privacy-e-error-bodies.test.ts:10:11
+              at Mock (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/@vitest+spy@4.1.11/node_modules/@vitest/spy/dist/index.js:332:34)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/grand-council.ts:101:27
+              at Layer.handleRequest (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+              at next (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/route.js:157:13)
+              at publicWriteRateLimit (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/father-verify-throttle.ts:276:3)
+              at Layer.handleRequest (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+              at next (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/route.js:157:13)
+              at Route.dispatch (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/route.js:117:3)
+              at handle (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:435:11)
+    }
+[02:07:44.383] [31mERROR[39m (1610279): [36momniversal conference run failed[39m
+    err: {
+      "type": "Error",
+      "message": "synthetic-secret-detail",
+      "stack":
+          Error: synthetic-secret-detail
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/__tests__/privacy-e-error-bodies.test.ts:21:11
+              at Mock (file:///workspace/build-gate/full-f76d/node_modules/.pnpm/@vitest+spy@4.1.11/node_modules/@vitest/spy/dist/index.js:332:34)
+              at /workspace/build-gate/full-f76d/artifacts/api-server/src/routes/omniversal.ts:177:26
+              at Layer.handleRequest (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+              at next (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/route.js:157:13)
+              at publicWriteRateLimit (/workspace/build-gate/full-f76d/artifacts/api-server/src/lib/father-verify-throttle.ts:276:3)
+              at Layer.handleRequest (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/layer.js:152:17)
+              at next (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/route.js:157:13)
+              at Route.dispatch (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/lib/route.js:117:3)
+              at handle (/workspace/build-gate/full-f76d/node_modules/.pnpm/router@2.2.0/node_modules/router/index.js:435:11)
+    }
+ ❯ src/__tests__/tessera-codex.test.ts (0 test)
+ ❯ src/__tests__/safe-fetch-policy.test.ts (0 test)
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/__tests__/evolution-sandbox-loop.test.ts [ src/__tests__/evolution-sandbox-loop.test.ts ]
+Error: DATABASE_URL must be set. Did you forget to provision a database?
+ ❯ ../../lib/db/src/index.ts:8:9
+      6|
+      7| if (!process.env.DATABASE_URL) {
+      8|   throw new Error(
+       |         ^
+      9|     "DATABASE_URL must be set. Did you forget to provision a database?…
+     10|   );
+ ❯ src/lib/consensus-engine.ts:1:1
+ ❯ src/lib/self-code-evolution.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  src/__tests__/invention-glb-upload.test.ts [ src/__tests__/invention-glb-upload.test.ts ]
+Error: DATABASE_URL must be set. Did you forget to provision a database?
+ ❯ ../../lib/db/src/index.ts:8:9
+      6|
+      7| if (!process.env.DATABASE_URL) {
+      8|   throw new Error(
+       |         ^
+      9|     "DATABASE_URL must be set. Did you forget to provision a database?…
+     10|   );
+ ❯ src/__tests__/invention-glb-upload.test.ts:4:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  src/__tests__/safe-fetch-policy.test.ts [ src/__tests__/safe-fetch-policy.test.ts ]
+Error: DATABASE_URL must be set. Did you forget to provision a database?
+ ❯ ../../lib/db/src/index.ts:8:9
+      6|
+      7| if (!process.env.DATABASE_URL) {
+      8|   throw new Error(
+       |         ^
+      9|     "DATABASE_URL must be set. Did you forget to provision a database?…
+     10|   );
+ ❯ src/lib/provider-call-logger.ts:1:1
+ ❯ src/lib/safe-fetch.ts:2:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  src/__tests__/tessera-codex.test.ts [ src/__tests__/tessera-codex.test.ts ]
+Error: DATABASE_URL must be set. Did you forget to provision a database?
+ ❯ ../../lib/db/src/index.ts:8:9
+      6|
+      7| if (!process.env.DATABASE_URL) {
+      8|   throw new Error(
+       |         ^
+      9|     "DATABASE_URL must be set. Did you forget to provision a database?…
+     10|   );
+ ❯ src/lib/tessera-codex.ts:2:1
+ ❯ src/__tests__/tessera-codex.test.ts:2:1
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+
+ Test Files  4 failed | 47 passed (51)
+      Tests  420 passed (420)
+   Start at  02:07:32
+   Duration  13.76s (transform 21.44s, setup 0ms, import 28.12s, tests 44.73s, environment 12ms)
+
+[ELIFECYCLE] Test failed. See above for more details.
+EXIT artifacts/api-server=1

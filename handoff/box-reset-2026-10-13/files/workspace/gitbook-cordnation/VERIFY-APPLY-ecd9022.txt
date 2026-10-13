@@ -1,0 +1,25 @@
+solo GB-022 on ecd: rc=0
+solo GB-024 on ecd: rc=0
+solo GB-025 on ecd: rc=1
+    error: patch failed: mesh/roles.md:36
+    error: mesh/roles.md: patch does not apply
+solo GB-023 on ecd: rc=1
+    error: patch failed: intake/log.md:12
+    error: intake/log.md: patch does not apply
+GB-025 on ecd+022 (apply 022 rc=0): check rc=0
+GB-023 on ecd+022 (apply 022 rc=0): check rc=0
+stack step GB-022: check rc=0 apply rc=0
+stack step GB-024: check rc=0 apply rc=0
+stack step GB-025: check rc=0 apply rc=0
+stack step GB-023: check rc=0 apply rc=0
+stack tree 35c6c1707732448e793e7b93833a27bf281d7a9e vs built p23 tree 35c6c1707732448e793e7b93833a27bf281d7a9e
+STACK TREE MATCH
+35c6c1707732448e793e7b93833a27bf281d7a9e:intake/how-to-submit.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:mesh/flow.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:mesh/roles/build.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:mesh/roles/gitbook-cordnation.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:mesh/roles/grok-bot.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:mesh/roles/open-helper-agent-2.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:mesh/roles/security.md:1
+35c6c1707732448e793e7b93833a27bf281d7a9e:review/moderator-handoff.md:1
+0

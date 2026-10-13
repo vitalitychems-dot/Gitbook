@@ -1,0 +1,44 @@
+---
+pid: 422271
+cwd: "/workspace/learning-rate"
+command: "export PATH=\"/workspace/ollama-install/bin:$PATH\"\nexport OLLAMA_MODELS=\"/workspace/ollama-home/models\"\n# Unload qwen to free RAM for embedding all chunks\ncurl -s http://127.0.0.1:11434/api/generate -d '{\"model\":\"qwen2.5:3b-instruct\",\"keep_alive\":0}' > /dev/null\nsleep 2\nfree -h | head -2\n# Build dense index\ncd /workspace/learning-rate\npython3 << 'PY'\nimport json, sys, time\nsys.path.insert(0, \"src\")\nfrom retrieval import load_docs, chunk_heading_overlap, ollama_embed\nfrom pathlib import Path\ndocs = load_docs(\"/workspace/evals/data/gitbook-corpus\", chunk_heading_overlap)\nprint(f\"embedding {len(docs)} chunks...\", flush=True)\nt0 = time.time()\nembs = []\nbatch_texts = [d[\"text\"][:2000] for d in docs]\n# embed one-by-one (ollama API)\nfor i, t in enumerate(batch_texts):\n    e = ollama_embed([t])[0]\n    embs.append(e)\n    if (i+1) % 20 == 0:\n        print(f\"  {i+1}/{len(docs)}\", flush=True)\nprint(f\"done in {time.time()-t0:.1f}s dim={len(embs[0])}\", flush=True)\nout = {\"n\": len(docs), \"ids\": [d[\"id\"] for d in docs], \"embeddings\": embs, \"model\": \"nomic-embed-text\"}\nPath(\"results\").mkdir(exist_ok=True)\nPath(\"results/dense_index.json\").write_text(json.dumps(out))\nprint(\"wrote results/dense_index.json\", flush=True)\nPY\nfree -h | head -2\n# Warm qwen back\ncurl -s http://127.0.0.1:11434/api/generate -d '{\"model\":\"qwen2.5:3b-instruct\",\"prompt\":\"hi\",\"stream\":false,\"keep_alive\":\"60m\",\"options\":{\"num_predict\":5}}' | python3 -c \"import sys,json; d=json.load(sys.stdin); print('qwen warm', d.get('response'), 'tok/s', round((d.get('eval_count') or 0)/((d.get('eval_duration') or 1)/1e9),1))\"\nfree -h | head -2"
+title: "Build dense embed index; reload qwen"
+status: succeeded
+started_at: 2026-10-05T23:23:33.759Z
+running_for_ms: 41529    
+---
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       8.2Gi       3.2Gi        97Mi       4.6Gi       7.4Gi
+embedding 391 chunks...
+  20/391
+  40/391
+  60/391
+  80/391
+  100/391
+  120/391
+  140/391
+  160/391
+  180/391
+  200/391
+  220/391
+  240/391
+  260/391
+  280/391
+  300/391
+  320/391
+  340/391
+  360/391
+  380/391
+done in 35.0s dim=768
+wrote results/dense_index.json
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi       8.6Gi       2.8Gi        97Mi       4.6Gi       7.0Gi
+qwen warm Hello! How can I tok/s 23.4
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi        10Gi       568Mi        97Mi       4.6Gi       4.8Gi
+
+---
+exit_code: 0
+elapsed_ms: 41529
+ended_at: 2026-10-05T23:24:15.288Z
+---

@@ -1,0 +1,19 @@
+{
+ "laplacian": {
+  "tp": 315,
+  "fp": 3,
+  "fn": 148,
+  "precision": 0.991,
+  "recall": 0.68,
+  "f1": 0.807
+ },
+ "combined": {
+  "tp": 463,
+  "fp": 11,
+  "fn": 0,
+  "precision": 0.977,
+  "recall": 1.0,
+  "f1": 0.988
+ },
+ "ms_per_256px": 5.0
+}

@@ -1,0 +1,44 @@
+---
+pid: 579001
+cwd: "/workspace/learning-rate"
+command: "# Wait until multiquery finishes (summary printed) or hybrid/rerank starts, then decide\nexport PATH=\"/workspace/ollama-install/bin:$PATH\"\nexport OLLAMA_MODELS=\"/workspace/ollama-home/models\"\nwhile ps -p 424764 >/dev/null 2>&1; do\n  if grep -q 'METHOD bm25_llm_rerank\\|METHOD hybrid_rrf\\|METHOD alone\\|\"method\": \"multiquery' /workspace/learning-rate/results/retrieval.log 2>/dev/null; then\n    # Check if multiquery json written\n    if [ -f /workspace/learning-rate/results/multiquery_rrf.json ]; then\n      echo \"multiquery done at $(date)\"\n      # Kill before expensive rerank if that's next\n      if grep -q 'METHOD bm25_llm_rerank' /workspace/learning-rate/results/retrieval.log; then\n        echo \"rerank started - killing to save time for learning phase\"\n        kill 424764\n        sleep 2\n        break\n      fi\n      # If hybrid started, let it run\n      if grep -q 'METHOD hybrid_rrf\\|METHOD alone' /workspace/learning-rate/results/retrieval.log; then\n        echo \"moved past rerank somehow; waiting\"\n      fi\n    fi\n  fi\n  n=$(grep -c '\\[multiquery_rrf\\]' /workspace/learning-rate/results/retrieval.log 2>/dev/null || echo 0)\n  echo \"$(date +%H:%M:%S) multiquery_lines=$n\"\n  sleep 20\ndone\n# Status\nls /workspace/learning-rate/results/*.json | xargs -I{} basename {}\ntail -15 /workspace/learning-rate/results/retrieval.log\nps -p 424764 >/dev/null 2>&1 && echo STILL_RUNNING || echo STOPPED\ndate"
+title: "Wait for multiquery; kill if rerank starts"
+status: succeeded
+started_at: 2026-10-05T23:35:34.465Z
+running_for_ms: 102308   
+---
+18:35:34 multiquery_lines=36
+18:35:54 multiquery_lines=38
+18:36:14 multiquery_lines=40
+18:36:34 multiquery_lines=42
+18:36:54 multiquery_lines=43
+multiquery done at Mon Oct  5 18:37:14 CDT 2026
+rerank started - killing to save time for learning phase
+bm25_baseline.json
+bm25_heading_overlap.json
+chunk_stats.json
+dense_index.json
+multiquery_rrf.json
+[multiquery_rrf] H08 ok=True ans='The GOAL label on the honesty banner means the intended purpose or out'
+[multiquery_rrf] H09 ok=True ans='SOVEREIGN_ORIGIN_7F3A9C'
+[multiquery_rrf] H10 ok=True ans='The product repository full name is Tessera.'
+[multiquery_rrf] H11 ok=True ans="Agents must check the Gitbook's latest `main` commit and its open PRs "
+[multiquery_rrf] H12 ok=True ans='IN REVIEW'
+[multiquery_rrf] H13 ok=True ans="HYB-001's single deliverable is to keep `TESSERA` as the only active a"
+[multiquery_rrf] H14 ok=False ans="Security's lane is listed as Provisional / not instantiated."
+[multiquery_rrf] H15 ok=True ans='No, Security does not change code when sweeping.'
+[multiquery_rrf] H16 ok=True ans='Gitbook / Cordnation stages docs as Ready after all four gates.'
+[multiquery_rrf] H17 ok=False ans='Ready, Gated-cycle/frame change, and Cross-agent stall.'
+[multiquery_rrf] H18 ok=False ans='No'
+[multiquery_rrf] H19 ok=False ans="HYB-019's topic is not provided in the given excerpts."
+[multiquery_rrf] H20 ok=True ans='No'
+
+======== METHOD bm25_llm_rerank ========
+STOPPED
+Mon Oct  5 18:37:16 CDT 2026
+
+---
+exit_code: 0
+elapsed_ms: 102307
+ended_at: 2026-10-05T23:37:16.772Z
+---

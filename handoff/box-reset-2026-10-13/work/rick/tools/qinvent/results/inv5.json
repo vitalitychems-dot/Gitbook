@@ -1,0 +1,114 @@
+{
+ "pool_chunks": 4358,
+ "vocab": 17276,
+ "sparse_bytes": 4187620,
+ "exact": {
+  "dev": {
+   "top1": 0.211,
+   "recall5": 0.681
+  },
+  "test": {
+   "top1": 0.144,
+   "recall5": 0.851
+  }
+ },
+ "lowrank": {
+  "k64_f16": {
+   "bytes": 2769152,
+   "ratio": 0.661,
+   "dev": {
+    "top1": 0.059,
+    "recall5": 0.205
+   },
+   "test": {
+    "top1": 0.098,
+    "recall5": 0.67
+   }
+  },
+  "k64_i8": {
+   "bytes": 2507672,
+   "ratio": 0.599,
+   "dev": {
+    "top1": 0.059,
+    "recall5": 0.205
+   },
+   "test": {
+    "top1": 0.13,
+    "recall5": 0.67
+   }
+  },
+  "k128_f16": {
+   "bytes": 5538304,
+   "ratio": 1.323,
+   "dev": {
+    "top1": 0.081,
+    "recall5": 0.286
+   },
+   "test": {
+    "top1": 0.121,
+    "recall5": 0.721
+   }
+  },
+  "k128_i8": {
+   "bytes": 4997912,
+   "ratio": 1.193,
+   "dev": {
+    "top1": 0.097,
+    "recall5": 0.297
+   },
+   "test": {
+    "top1": 0.181,
+    "recall5": 0.716
+   }
+  },
+  "k256_f16": {
+   "bytes": 11076608,
+   "ratio": 2.645,
+   "dev": {
+    "top1": 0.135,
+    "recall5": 0.432
+   },
+   "test": {
+    "top1": 0.14,
+    "recall5": 0.758
+   }
+  },
+  "k256_i8": {
+   "bytes": 9978392,
+   "ratio": 2.383,
+   "dev": {
+    "top1": 0.097,
+    "recall5": 0.454
+   },
+   "test": {
+    "top1": 0.13,
+    "recall5": 0.791
+   }
+  },
+  "k512_f16": {
+   "bytes": 22153216,
+   "ratio": 5.29,
+   "dev": {
+    "top1": 0.108,
+    "recall5": 0.584
+   },
+   "test": {
+    "top1": 0.205,
+    "recall5": 0.86
+   }
+  },
+  "k512_i8": {
+   "bytes": 19939352,
+   "ratio": 4.761,
+   "dev": {
+    "top1": 0.135,
+    "recall5": 0.568
+   },
+   "test": {
+    "top1": 0.186,
+    "recall5": 0.842
+   }
+  }
+ },
+ "chosen_on_dev": null
+}

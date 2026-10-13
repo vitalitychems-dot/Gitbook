@@ -1,0 +1,34 @@
+---
+pid: 1505307
+cwd: "/workspace/gitbook-cordnation"
+command: "set -e; R=vitalitychems-dot/Gitbook; gh api repos/$R/commits/main -q .sha; D=$(mktemp -d /tmp/gb.XXXX); cd $D; git init -q .\nfor f in intake/log.md mesh/HANDOFF.md SUMMARY.md intake/HYBRID-CONSOLIDATION-BACKLOG.md; do mkdir -p $(dirname $f); gh api \"repos/$R/contents/$f?ref=0f05d58b\" -H \"Accept: application/vnd.github.raw\" > $f; done\nG=/workspace/gitbook-cordnation; git apply --check $G/GB-067/GB-067.diff && echo 067CHECK_OK; git apply $G/GB-067/GB-067.diff; git apply --check $G/GB-068/GB-068-on-GB-067.diff && echo 068CHECK_OK; git apply $G/GB-068/GB-068-on-GB-067.diff\ncat $G/GB-06[78]/*.diff | grep '^+++' ; cat $G/GB-06[78]/*.diff | grep -niE 'TESSERA_ENABLE|ghp_|github_pat|sk-|BEGIN .*KEY|password' || echo NO_SECRETS\nfor t in intake/log.md mesh/HANDOFF.md; do echo == $t; grep '^| ' $t | awk -F'|' '{print NF}' | sort | uniq -c; grep '^| ' $t | awk -F'|' '{gsub(/ /,\"\",$2);print $2}' | sort | uniq -d; done\ngrep -oE '\\]\\([^)#]+\\.md' SUMMARY.md | sed 's/](//' | sort -u > /tmp/sl; echo SUMLINKS $(wc -l </tmp/sl)\nmiss=0; for l in $(cat /tmp/sl); do [ -f \"$l\" ] || gh api \"repos/$R/contents/$l?ref=0f05d58b\" -q .path >/dev/null 2>&1 || { echo MISSING $l; miss=1; }; done; echo summiss=$miss\nfor f in mesh/HANDOFF.md merge/hyb-024-selffix-design.md intake/HYBRID-CONSOLIDATION-BACKLOG.md; do cat $G/GB-06[78]/*.diff | true; done\ncat $G/GB-06[78]/*.diff | grep '^+' | grep -oE '\\]\\([^)h#][^)#]*' | sed 's/](//' | sort -u > /tmp/rl; cat /tmp/rl\necho $D"
+status: failed   
+started_at: 2026-10-13T06:03:49.467Z
+running_for_ms: 45760    
+---
+0f05d58b7c1eeb2f803f22d259e3eeb9f7ff95e3
+067CHECK_OK
+068CHECK_OK
++++ b/intake/log.md
++++ b/mesh/HANDOFF.md
++++ b/SUMMARY.md
++++ b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
++++ b/intake/log.md
++++ b/merge/hyb-024-selffix-design.md
++++ b/SUMMARY.md
++++ b/intake/HYBRID-CONSOLIDATION-BACKLOG.md
++++ b/intake/log.md
++++ b/merge/hyb-024-selffix-design.md
+NO_SECRETS
+== intake/log.md
+     65 14
+== mesh/HANDOFF.md
+     29 8
+SUMLINKS 122
+MISSING brain-consciousness/OWN-BRAIN-PLAN.md
+
+---
+exit_code: unknown
+elapsed_ms: 45760
+ended_at: 2026-10-13T06:04:35.227Z
+---

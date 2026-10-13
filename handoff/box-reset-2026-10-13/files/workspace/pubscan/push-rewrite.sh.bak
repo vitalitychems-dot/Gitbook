@@ -1,0 +1,11 @@
+#!/bin/bash
+# Run ONLY after cloud agent paused + Security PASS. Redoes scrub on latest remote, then force-pushes branches+tags.
+set -e; export PATH=$HOME/.local/bin:$PATH; cd /workspace/pubscan
+B=/workspace/backups/TESSERA-pre-public-2026-10-12.git
+git -C $B fetch -q origin '+refs/*:refs/*'
+rm -rf final.git && git clone -q --mirror --no-hardlinks $B final.git && cd final.git
+git for-each-ref --format='delete %(refname)' refs/pull | git update-ref --stdin
+git filter-repo --force --invert-paths --paths-from-file ../paths2.txt --replace-text ../priv/expr.txt
+cd .. && ./gitleaks git final.git --config gl.toml --redact --log-opts=--all
+git -C final.git fetch -q ../tree main:refs/heads/crypt-main 2>/dev/null || true
+echo "Then: cherry-pick 43d3d319 onto final main, git push --force --all + --tags to origin"

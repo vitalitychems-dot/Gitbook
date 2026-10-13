@@ -1,0 +1,172 @@
+---
+pid: 100123
+cwd: "/workspace"
+command: "cd /workspace && rm -rf gb-spawn && gh repo clone vitalitychems-dot/Gitbook gb-spawn -- --depth 1 -q && cd gb-spawn && ls mesh mesh/queue && wc -l mesh/queue/* && cat mesh/queue/dispatch.py mesh/queue/autogate.sh && head -c 2500 mesh/queue/TASKS.json && cat mesh/queue/PROMPT-TEMPLATE.md; ls .github CODEOWNERS 2>&1; which gitleaks python3"
+status: failed   
+started_at: 2026-10-13T09:00:49.743Z
+running_for_ms: 80358    
+---
+mesh:
+AGENT-SKILL-MATRIX.md
+CATALOG-PASS.md
+CHAMBER-SEARCH-2026-10-10.md
+CODEBASE-MEMORY-MCP.md
+COLLABORATION-METRICS.md
+COLLABORATION-PLAYBOOK.md
+DELTA-2026-10-10.md
+FATHER-ASKS.md
+FORTY-PASS-2026-10-10.md
+GITHUB-REPOS.txt
+GRAFT-AGENT-PUBLISHING.md
+HANDOFF.md
+IDLE-MODE.md
+NEXT-IMPROVEMENT-WAVE-2026-10-09.md
+ORDER-NOW.md
+PERF-001-RESULT-2026-10-09.md
+PERMANENT-SITE-COORDINATION.md
+PERMANENT-SITE-READINESS-2026-10-09.md
+RICK-SPIN.md
+RICK-WORKSHOP.md
+RICK.md
+SITE-002-2026-10-10.md
+SITE-005-2026-10-09.md
+SITE-006-2026-10-09.md
+SIXTY-PASS-2026-10-10.md
+SYNC-2026-10-11.md
+SYNC-FULL-2026-10-12.md
+TESSERA-GITBOOK-OPERATING-MODE.md
+TESSERA-HYBRID-SKILLS.md
+THREE-WAY-COLLAB-PROTOCOL.md
+TODOS.md
+TRUE-TODAY.md
+checkout-notes
+flow.md
+mentioned-repos.txt
+offline-internet.md
+queue
+replit-agents-start-here.md
+roles
+roles.md
+secure-mesh.md
+
+mesh/queue:
+PROMPT-TEMPLATE.md
+README.md
+TASKS.json
+autogate.sh
+dispatch.py
+   26 mesh/queue/PROMPT-TEMPLATE.md
+    5 mesh/queue/README.md
+   13 mesh/queue/TASKS.json
+   32 mesh/queue/autogate.sh
+   33 mesh/queue/dispatch.py
+  109 total
+#!/usr/bin/env python3
+"""Pick independent queued tasks and render cloud-agent prompts.
+Usage: dispatch.py [--max 6] [--agent NAME] [--claim]
+Prints JSON [{id, repo, branch, prompt}] for the launcher (CloudAgent tool).
+--claim writes claims into TASKS.json (commit that via PR before launching)."""
+import json, subprocess, sys, datetime, pathlib, argparse
+HERE = pathlib.Path(__file__).parent
+ap = argparse.ArgumentParser(); ap.add_argument("--max", type=int, default=6)
+ap.add_argument("--agent", default="Tessera"); ap.add_argument("--claim", action="store_true")
+a = ap.parse_args()
+q = json.loads((HERE / "TASKS.json").read_text())
+sha = subprocess.run(["git", "ls-remote", "https://github.com/vitalitychems-dot/Gitbook", "main"], capture_output=True, text=True).stdout.split()[0]
+def open_pr_files(repo):
+    out = subprocess.run(["gh", "pr", "list", "-R", f"vitalitychems-dot/{repo}", "--state", "open", "--json", "number,files"], capture_output=True, text=True).stdout or "[]"
+    return {(f["path"]): p["number"] for p in json.loads(out) for f in p.get("files", [])}
+busy = {r: open_pr_files(r) for r in {t["repo"] for t in q["tasks"]}}
+def overlaps(t, taken):
+    for s in t["scope"]:
+        if any(path.startswith(s) or s.startswith(path) for path in busy[t["repo"]]): return True
+        if any(r == t["repo"] and (s.startswith(o) or o.startswith(s)) for r, o in taken): return True
+    return False
+tmpl = (HERE / "PROMPT-TEMPLATE.md").read_text()
+picked, taken = [], []
+for t in q["tasks"]:
+    if len(picked) >= a.max: break
+    if t["status"] != "queued" or overlaps(t, taken): continue
+    taken += [(t["repo"], s) for s in t["scope"]]
+    if a.claim:
+        t.update(status="claimed", claimed_by=a.agent, claimed_at=datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds"), claim_lock=f"{a.agent}:{sha}")
+    prompt = tmpl.format(id=t["id"], id_lower=t["id"].lower(), title=t["title"], repo=t["repo"], scope=", ".join(t["scope"]), acceptance="; ".join(t["acceptance"]), gitbook_sha=sha, agent=a.agent)
+    picked.append({"id": t["id"], "repo": t["repo"], "branch": f"cursor/{t['id'].lower()}", "prompt": prompt})
+if a.claim: (HERE / "TASKS.json").write_text(json.dumps(q, indent=2) + "\n")
+json.dump(picked, sys.stdout, indent=1)
+#!/usr/bin/env bash
+# autogate.sh <TESSERA|Gitbook> <pr-number> [--merge]
+# Shallow-clones the PR, runs local tests on Node 22, gitleaks, noreply check, workflow/flag guard.
+set -euo pipefail
+REPO=$1; PR=$2; MERGE=${3:-}
+NOREPLY=332565808+vitalitychems-dot@users.noreply.github.com
+GITLEAKS=${GITLEAKS:-/workspace/pubscan/gitleaks}; GLCONF=${GLCONF:-/workspace/pubscan/gl.toml}
+W=$(mktemp -d /workspace/dispatch/gate-XXXX); trap 'rm -rf "$W"' EXIT
+cd "$W"; git init -q r; cd r; git remote add origin "https://github.com/vitalitychems-dot/$REPO"
+git fetch -q --filter=blob:none --depth 50 origin "main:refs/remotes/origin/main" "pull/$PR/head:pr"
+# Gitbook is ~11G: check out only the files the PR changes; TESSERA needs the full tree for tests.
+if [ "$REPO" = Gitbook ]; then git sparse-checkout init --no-cone -q 2>/dev/null || git sparse-checkout init --no-cone; git diff --name-only origin/main...pr | git sparse-checkout set --no-cone --stdin; fi
+git checkout -q pr
+BASE=origin/main; fail(){ echo "GATE FAIL: $*"; exit 1; }
+git diff --name-only $BASE...HEAD > ../files
+rg -q '^\.github/workflows/' ../files && fail "touches .github/workflows"
+git diff $BASE...HEAD | rg -q '^\+.*TESSERA_ENABLE_[A-Z_]+\s*[:=]\s*["'"'"']?(1|true)' && fail "enables a TESSERA_ENABLE flag"
+BAD=$(git log $BASE..HEAD --format='%ae' | sort -u | rg -v "^($NOREPLY|.*@users\.noreply\.github\.com)$" || true)
+[ -n "$BAD" ] && fail "non-noreply author: $BAD"
+"$GITLEAKS" git --log-opts="$BASE..HEAD" ${GLCONF:+--config "$GLCONF"} . >/dev/null 2>&1 || fail "gitleaks findings"
+node -v | rg -q '^v22' || fail "need Node 22 on PATH"
+if [ "$REPO" = TESSERA ]; then
+  pnpm install --frozen-lockfile >/dev/null
+  (cd artifacts/v2 && npm test >/dev/null) || fail "v2 tests"
+  (cd artifacts/gitai && npm test >/dev/null) || fail "gitai tests"
+  (cd artifacts/api-server && env -u DATABASE_URL npx vitest run --reporter=dot > ../../../api.log 2>&1) || {
+    # tolerate only files that fail at import because DATABASE_URL is unset
+    rg -q 'Tests .*failed' ../api.log && fail "api-server test failures"
+    rg 'FAIL ' ../api.log | rg -v 'DATABASE_URL|database not configured' -q && fail "api-server non-DB failure" || true; }
+fi
+echo "GATE PASS $REPO#$PR $(git rev-parse HEAD)"
+[ "$MERGE" = --merge ] && gh pr merge "$PR" -R "vitalitychems-dot/$REPO" --squash --author-email "$NOREPLY"
+{
+  "schema": "mesh-queue/v1",
+  "rules": "Claim by setting status=claimed, claimed_by, claimed_at and claim_lock=<agent>:<gitbook_main_sha> in ONE commit to main via PR. A claim older than 6h with no PR is stale and may be re-queued. One task per cloud agent, one branch per task. Never two tasks touching the same scope at once (dispatch.py enforces).",
+  "tasks": [
+    {"id":"Q-001","repo":"Gitbook","scope":["review/","merge/","intake/log.md"],"title":"Rebase Gitbook PR #45 (desk/gb-063-hyb-011) onto main","acceptance":["git rebase origin/main succeeds with no conflict markers","mesh/queue/autogate.sh Gitbook <pr> passes"],"lane":"Build","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+    {"id":"Q-002","repo":"Gitbook","scope":["intake/log.md","mesh/HANDOFF.md"],"title":"Land GB-067 + GB-068 (Build PASS 2026-10-13, see GATE-2026-10-13-GB-067-068.md)","acceptance":["intake/log.md rows all 12 columns, no duplicate IDs","mesh/HANDOFF.md 6-column table, all relative links resolve","autogate passes"],"lane":"Build","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null,"depends_on":[]},
+    {"id":"Q-003","repo":"Gitbook","scope":["history/coordination/agent-checkins.md","merge/CONSOLIDATION-MAP-2026-10-12.md","merge/hyb-008-olive.md","mesh/TRUE-TODAY.md","review/wave-6.md"],"title":"Rename leftover GitbookAI references to GitMesh (5 files as of 8138ea2f; keep historical quotes intact)","acceptance":["git grep -i gitbookai only hits quoted history lines, listed in PR body","autogate passes"],"lane":"Moderator","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+    {"id":"Q-004","repo":"TESSERA","scope":["artifacts/v2/src/brain/rea/"],"title":"Retry generative_agents REA ingest (shallow, license kept)","acceptance":["REA record has license + commit SHA","v2 tests pass on Node 22"],"lane":"Tessera","status":"queued","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+    {"id":"Q-005","repo":"TESSERA","scope":["artifacts/v2/src/brain/embed/"],"title":"Embedding recall for brain memory graph (blocked until a small embedding model can be fetched)","acceptance":["recall@k on held-out set beats current 14.9% baseline","v2 tests pass"],"lane":"Tessera","status":"blocked","blocked_reason":"model download failed on box 2026-10-13","claimed_by":null,"claimed_at":null,"claim_lock":null,"pr":null},
+    {"id":"Q-006","repo":"TESSERA","scope":["artifacts/v2/src/brain# Cloud-agent prompt template (filled by dispatch.py)
+
+You are a Cursor cloud agent working ONE task from the mesh queue: **{id} — {title}**
+Repo: vitalitychems-dot/{repo}. Allowed scope (touch nothing else): {scope}
+Branch: `cursor/{id_lower}` from `main`. Open exactly one PR titled `{id}: {title}`.
+
+## 1. Overlap check (do first, abort if it fails)
+- Record `git ls-remote https://github.com/vitalitychems-dot/Gitbook main` — expected `{gitbook_sha}`. If different, re-read `mesh/queue/TASKS.json` on the new main and stop if {id} is no longer `claimed` by `{agent}`.
+- `gh pr list -R vitalitychems-dot/{repo} --state open --json files` — if any open PR touches your scope, stop and report the PR number.
+
+## 2. Hard limits (non-negotiable)
+- No crypto, wallets, tokens-as-money, payments; no [REDACTED-PATH] no deletes of others' files; no history rewrites or force-push to main.
+- Do not change `.github/workflows/**`. Do not set or flip any `TESSERA_ENABLE_*` flag.
+- No secrets in code or PR text. No fake data; label simulations as simulations.
+- Keep only changes that measurably improve on the previous version: put before/after numbers in the PR body.
+
+## 3. Identity
+Commit as `vitalitychems-dot <332565808+vitalitychems-dot@users.noreply.github.com>` (git config user.name/user.email). No other email.
+
+## 4. Tests (Node 22, pnpm)
+- TESSERA: `pnpm install --frozen-lockfile`; `cd artifacts/v2 && npm test`; `cd artifacts/gitai && npm test`; `cd artifacts/api-server && npx vitest run` (DATABASE_URL unset; DB-only files may fail at import — list them).
+- Gitbook: no build; verify every changed markdown table keeps its column count and every relative link resolves.
+Acceptance for this task: {acceptance}
+
+## 5. Finish
+PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge; `mesh/queue/autogate.sh` merges passing PRs.
+ls: cannot access '.github': No such file or directory
+ls: cannot access 'CODEOWNERS': No such file or directory
+/usr/bin/python3
+
+---
+exit_code: 1
+elapsed_ms: 80358
+ended_at: 2026-10-13T09:02:10.101Z
+---

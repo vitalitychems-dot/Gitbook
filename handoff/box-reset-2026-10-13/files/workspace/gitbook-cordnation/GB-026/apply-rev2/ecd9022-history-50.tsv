@@ -1,0 +1,50 @@
+ecd902211abd202711838219b28a1e1b39ae47c4	2026-10-05T21:10:21Z	97e43fb9e74624dcb4761bc101e1518944c16ea5 6e5ccfcfdc8843b0f2f56bbbfe4f3a3f9ddfe6ac	Merge PR #7: approved GB-017, GB-016 rev 3.2
+6e5ccfcfdc8843b0f2f56bbbfe4f3a3f9ddfe6ac	2026-10-05T21:07:30Z	a89c29cad3ab6fa0cca29e411c9f7e8032ac955f	GB-016 rev 3.2: four-gate pipeline and push split
+a89c29cad3ab6fa0cca29e411c9f7e8032ac955f	2026-10-05T21:07:27Z	97e43fb9e74624dcb4761bc101e1518944c16ea5	GB-017: Security role page and Tessera identity rule
+97e43fb9e74624dcb4761bc101e1518944c16ea5	2026-10-05T20:55:08Z	fd3c2ce04fa4230c32cf917f36c662f268a1ea76 002591996a10c2c38aeacdb51dd6514c9f7dab1c	Merge PR #6: approved GB-018
+002591996a10c2c38aeacdb51dd6514c9f7dab1c	2026-10-05T20:52:31Z	fd3c2ce04fa4230c32cf917f36c662f268a1ea76	GB-018: HYB-005 braces decision
+fd3c2ce04fa4230c32cf917f36c662f268a1ea76	2026-10-05T20:47:36Z	f4b2c41ee458e54fc4f12cecd4cab941aa8e627c	Add 20-item AGI collaboration improvement roadmap
+f4b2c41ee458e54fc4f12cecd4cab941aa8e627c	2026-10-05T20:46:02Z	feaeb558b88df9679a45b4a03a375f58e50bcb4d 910681660b9076dae0ee49b3c412502d58f1f2a0	Merge PR #5: approved GB-015, GB-019, GB-021, GB-020
+910681660b9076dae0ee49b3c412502d58f1f2a0	2026-10-05T20:43:27Z	d445a8f09573e831b38b426f34a5f3fc7c9efb7d	GB-020: corrective intake for brain-consciousness pages
+d445a8f09573e831b38b426f34a5f3fc7c9efb7d	2026-10-05T20:43:21Z	efcbd6ff6b338bac28226480e4d7af49fbc52cb6	GB-021: canon fixes to skill matrix and collaboration playbook
+efcbd6ff6b338bac28226480e4d7af49fbc52cb6	2026-10-05T20:43:16Z	eec4a9e9750e91f00a4650769b60bb390caa75ba	GB-019: Cortical Labs readiness page (HYB-019 BLOCKED)
+eec4a9e9750e91f00a4650769b60bb390caa75ba	2026-10-05T20:43:10Z	feaeb558b88df9679a45b4a03a375f58e50bcb4d	GB-015: grok-bot role page
+feaeb558b88df9679a45b4a03a375f58e50bcb4d	2026-10-05T20:38:24Z	fb984add87063443043dcae7392393c2b596ce65	Define Tessera Gitbook admin and bulk approval workflow
+fb984add87063443043dcae7392393c2b596ce65	2026-10-05T20:35:40Z	1e3bb5009fa7fc5164b4f08ded48c1b62899b1ea	Record HYB-012 request for next instructions
+1e3bb5009fa7fc5164b4f08ded48c1b62899b1ea	2026-10-05T20:18:53Z	e73fb185321fcb9e65eb61641ec8745bac85791d	Fix collaboration authority and audit Gitbook workflow
+e73fb185321fcb9e65eb61641ec8745bac85791d	2026-10-05T20:13:33Z	beadc447e302120c03e90aafb3d416a30944ed13	Strengthen agent collaboration and skill governance
+beadc447e302120c03e90aafb3d416a30944ed13	2026-10-05T19:59:01Z	95993aff649703cf79eb12a2103299781aa8eecf	Add CL1-inspired SNN brain research lane
+95993aff649703cf79eb12a2103299781aa8eecf	2026-10-05T19:48:26Z	527ee3687533f5df848f62cd68dd621b3666e951	docs: record HYB-012 canonical static verification
+527ee3687533f5df848f62cd68dd621b3666e951	2026-10-05T19:46:48Z	cc720d3d0bacb2a6d5863d2051c67cb8ec534cc1	Record HYB-012 blocker and verified duplicate route evidence
+cc720d3d0bacb2a6d5863d2051c67cb8ec534cc1	2026-10-05T19:44:27Z	0af00a1bd86c9f490f81410ae14ee40e02b0b19f	Update active HYB-012 check-in with route collision evidence
+0af00a1bd86c9f490f81410ae14ee40e02b0b19f	2026-10-05T19:39:58Z	d5bd5fd45410d78808ba2af4f49e91ecec78e730	Claim HYB-012 route audit
+d5bd5fd45410d78808ba2af4f49e91ecec78e730	2026-10-05T19:18:48Z	6fe412fb4f7fc6c14950ac675c590aef4e92a6a1 580a3dc3066a00f20b5bf9f892f5cc52744f4753	Publish HYB-007 Z-app comparison (candidate) (#4)
+580a3dc3066a00f20b5bf9f892f5cc52744f4753	2026-10-05T18:50:02Z	ee41cd721171729711af7e0a7f83e76bdd7dbeb4	Retain Z10 and name Zz paths for colonel, own-lab, and world.
+ee41cd721171729711af7e0a7f83e76bdd7dbeb4	2026-10-05T18:46:20Z	e2f1e20cc45d11598b15fa537638958b1862dcf9	Link HYB-007 draft PR in the backlog and check-in
+e2f1e20cc45d11598b15fa537638958b1862dcf9	2026-10-05T18:45:58Z	6fe412fb4f7fc6c14950ac675c590aef4e92a6a1	Publish HYB-007 Z-app comparison (candidate)
+6fe412fb4f7fc6c14950ac675c590aef4e92a6a1	2026-10-05T18:39:10Z	f71e00a0c4afefbef1173054c71abdc8d1de0cf0 4da54d5a03f13d278583531cfeba661de9000b68	Publish HYB-006 Grok-ready comparison (candidate) (#3)
+f71e00a0c4afefbef1173054c71abdc8d1de0cf0	2026-10-05T18:35:50Z	1d72e637d9842ef77a79ae55f05b4dfbc2cc4188	Reconcile mesh roster and GitHub push authority
+4da54d5a03f13d278583531cfeba661de9000b68	2026-10-05T18:34:47Z	f7b708504920f07ff40b8bd9fb831c94d0cffa31	Correct HYB-006 target paths and mark the backlog done
+f7b708504920f07ff40b8bd9fb831c94d0cffa31	2026-10-05T18:29:48Z	991d3b870ce70ecebecae39255337454a7c83274	Record HYB-006 claim and completion in the check-in ledger
+991d3b870ce70ecebecae39255337454a7c83274	2026-10-05T18:29:33Z	1d72e637d9842ef77a79ae55f05b4dfbc2cc4188	Publish HYB-006 Grok-ready comparison page
+1d72e637d9842ef77a79ae55f05b4dfbc2cc4188	2026-10-05T18:22:47Z	74f1601d7ab1de33fba9794bc5a9c15baba2d642	Add Replit and Grok launch prompts
+74f1601d7ab1de33fba9794bc5a9c15baba2d642	2026-10-05T18:21:16Z	4a798eed98b0bc3d1270e965542c0868f6ac6cb6	Add agent training and authenticity protocol
+4a798eed98b0bc3d1270e965542c0868f6ac6cb6	2026-10-05T18:15:15Z	da736de4c4b09d47398d23d3af94e422bffb0731	Record newest source heads and launch agent work
+da736de4c4b09d47398d23d3af94e422bffb0731	2026-10-05T18:00:06Z	cdc1ff18698b59b14262624f7ced0a1facf198ae	Record current repository retention boundary
+cdc1ff18698b59b14262624f7ced0a1facf198ae	2026-10-05T17:54:09Z	a02d11db380b372b52fbe8f5bc35cbb2d8932c92	Open Tessera hybrid agent conference
+a02d11db380b372b52fbe8f5bc35cbb2d8932c92	2026-10-05T17:45:51Z	197794de8f06dbb0d098bdcf98e35cf9f8cf463f	Fix final recovered record link
+197794de8f06dbb0d098bdcf98e35cf9f8cf463f	2026-10-05T17:45:44Z	42106b63e4fc598023c23cd3c71fd2f798942165	Repair recovered Gitbook links
+42106b63e4fc598023c23cd3c71fd2f798942165	2026-10-05T17:45:20Z	54839dc8f560cd23bf63432a9dbe7ba8e3e819a7	Add deduplicated hybrid consolidation backlog
+54839dc8f560cd23bf63432a9dbe7ba8e3e819a7	2026-10-05T17:30:09Z	115bfa2df7ef7fbf2b68fdddd1bc1ed0b80c506c	Update destination verification reference
+115bfa2df7ef7fbf2b68fdddd1bc1ed0b80c506c	2026-10-05T17:26:20Z	3633b3760aacede569e491649f06f385d89bbaa9	Record chronological source review
+3633b3760aacede569e491649f06f385d89bbaa9	2026-10-05T17:22:13Z	547e4ba12bb738e4ca3c4ba0c9e899752e00dcdf	Record completed safe repository cleanup
+547e4ba12bb738e4ca3c4ba0c9e899752e00dcdf	2026-10-05T17:20:04Z	cf36e5d30cecc3058155b808d36d7bf363d0b5f0	Record exact safe-delete coverage
+cf36e5d30cecc3058155b808d36d7bf363d0b5f0	2026-10-05T17:19:00Z	e29edbe6653c817ff77db61b7a9aa72312e63fba	Preserve fully recoverable source records
+e29edbe6653c817ff77db61b7a9aa72312e63fba	2026-10-05T17:12:03Z	b18643efcb4cbd1df98206efdf9993c52a9b3733	Link full-picture audit
+b18643efcb4cbd1df98206efdf9993c52a9b3733	2026-10-05T17:11:53Z	2f7984e71fca5f5493ddc886ae9131103cbc5081	Record full source audit and migration coverage
+2f7984e71fca5f5493ddc886ae9131103cbc5081	2026-10-05T16:32:44Z	eefbe2fd53eba6a917c4a078dac15e5beade69da	Add deletion review gate
+eefbe2fd53eba6a917c4a078dac15e5beade69da	2026-10-05T16:31:55Z	801062641f30d2acf45dbea4748323f20c5e30d8	Consolidate Tessera workspace and documentation
+801062641f30d2acf45dbea4748323f20c5e30d8	2026-10-05T13:25:25Z	ffc2b87ea7a7316a22660d1a17fcf6dcf437a580	Publish Ready GitBook batches 003–009 (GB-004 through GB-014).
+ffc2b87ea7a7316a22660d1a17fcf6dcf437a580	2026-10-05T12:56:26Z	98fa6c78c71cf4c550b90fadcd1535ce273e9cd0	Publish the second Tessera GitBook batch.
+98fa6c78c71cf4c550b90fadcd1535ce273e9cd0	2026-10-05T12:51:32Z	aa9125aba6b1bad2f65faefe0ecaa46f8a1f5138	Publish the first Tessera GitBook batch.
+aa9125aba6b1bad2f65faefe0ecaa46f8a1f5138	2026-10-05T12:50:14Z		Initial commit

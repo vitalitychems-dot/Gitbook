@@ -1,0 +1,110 @@
+---
+pid: 618368
+cwd: "/workspace/learning-rate"
+command: "# Poll remaining job for up to ~25 min\nfor i in $(seq 1 30); do\n  if ! ps -p 617778 >/dev/null 2>&1; then echo \"FINISHED at $(date)\"; break; fi\n  n=$(grep -cE 'ok=' /workspace/learning-rate/results/remaining.log 2>/dev/null || echo 0)\n  meth=$(grep -E '=======|LEARNING|ALL_REMAINING|Traceback|Error' /workspace/learning-rate/results/remaining.log | tail -1)\n  echo \"$(date +%H:%M:%S) answers≈$n | $meth\"\n  # early exit if done marker\n  if grep -q ALL_REMAINING_DONE /workspace/learning-rate/results/remaining.log 2>/dev/null; then echo DONE_MARKER; break; fi\n  sleep 60\ndone\ntail -40 /workspace/learning-rate/results/remaining.log\nls /workspace/learning-rate/results/*.json | xargs -n1 basename\nps -p 617778 >/dev/null 2>&1 && echo STILL_RUNNING || echo EXITED\ndate\nfree -h | head -2"
+title: "Poll remaining experiments up to 30 min"
+status: succeeded
+started_at: 2026-10-05T23:37:44.469Z
+running_for_ms: 1801840  
+---
+18:37:44 answers≈3 | ======== hybrid_rrf ========
+18:38:44 answers≈24 | ======== hybrid_rrf ========
+18:39:44 answers≈46 | ======== alone ========
+18:40:44 answers≈100 | ======== LEARNING CURVE ========
+18:41:44 answers≈126 | ======== LEARNING CURVE ========
+18:42:44 answers≈166 | ======== LEARNING CURVE ========
+18:43:44 answers≈212 | ======== reflexion_lessons ========
+18:44:45 answers≈238 | ======== reflexion_lessons ========
+18:45:45 answers≈273 | ======== fewshot_memory ========
+18:46:45 answers≈301 | ======== reflexion_fewshot ========
+18:47:45 answers≈326 | ======== reflexion_fewshot ========
+18:48:45 answers≈370 | ======== consolidated_lessons ========
+18:49:45 answers≈384 | ======== self_study ========
+18:50:45 answers≈403 | ======== self_study ========
+18:51:45 answers≈416 | ======== self_study ========
+18:52:45 answers≈424 | ======== self_study ========
+18:53:45 answers≈427 | ======== bm25_llm_rerank_heldout_only ========
+18:54:45 answers≈429 | ======== bm25_llm_rerank_heldout_only ========
+18:55:45 answers≈431 | ======== bm25_llm_rerank_heldout_only ========
+18:56:45 answers≈432 | ======== bm25_llm_rerank_heldout_only ========
+18:57:45 answers≈434 | ======== bm25_llm_rerank_heldout_only ========
+18:58:45 answers≈436 | ======== bm25_llm_rerank_heldout_only ========
+18:59:45 answers≈438 | ======== bm25_llm_rerank_heldout_only ========
+19:00:45 answers≈440 | ======== bm25_llm_rerank_heldout_only ========
+19:01:46 answers≈441 | ======== bm25_llm_rerank_heldout_only ========
+19:02:46 answers≈443 | ======== bm25_llm_rerank_heldout_only ========
+19:03:46 answers≈444 | ======== bm25_llm_rerank_heldout_only ========
+19:04:46 answers≈446 | ======== bm25_llm_rerank_heldout_only ========
+19:05:46 answers≈449 | ======== bm25_llm_rerank_heldout_only ========
+19:06:46 answers≈452 | ======== bm25_llm_rerank_heldout_only ========
+[self_study] H10 ok=True ans='TESSERA'
+[self_study] H11 ok=True ans="Agents must check the Gitbook's latest `main` commit and its open PRs "
+[self_study] H12 ok=False ans='READY'
+[self_study] H13 ok=True ans="HYB-001's single deliverable is to keep `TESSERA` as the only active a"
+[self_study] H14 ok=False ans="Security's lane is listed as Provisional / not instantiated."
+[self_study] H15 ok=True ans='No, Security does not change code when sweeping.'
+[self_study] H16 ok=True ans='Gitbook / Cordnation stages docs as Ready after all four gates.'
+[self_study] H17 ok=False ans='The three Father responses that change publication state are "done" an'
+[self_study] H18 ok=False ans='No'
+[self_study] H19 ok=False ans="HYB-019's topic is not provided in the given excerpts."
+[self_study] H20 ok=True ans='No, Tessera Pen is not a separate lane or gate.'
+======== bm25_llm_rerank_heldout_only ========
+[bm25_llm_rerank_heldout] H01 ok=True ans='`Ready`'
+[bm25_llm_rerank_heldout] H02 ok=True ans="Only the task's assigned owner or Tessera (admin) can set the BLOCKED "
+[bm25_llm_rerank_heldout] H03 ok=True ans='The HYB-005 braces advisory is about braces@3.0.3.'
+[bm25_llm_rerank_heldout] H04 ok=True ans='When braces ≥ 3.0.4 ships.'
+[bm25_llm_rerank_heldout] H05 ok=True ans='The target bulk digest cadence while work is active is every 30–45 min'
+[bm25_llm_rerank_heldout] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+[bm25_llm_rerank_heldout] H07 ok=False ans='No'
+[bm25_llm_rerank_heldout] H08 ok=True ans='The GOAL label on the honesty banner means the intended purpose or out'
+[bm25_llm_rerank_heldout] H09 ok=True ans='SOVEREIGN_ORIGIN_7F3A9C'
+[bm25_llm_rerank_heldout] H10 ok=True ans='TESSERA'
+[bm25_llm_rerank_heldout] H11 ok=True ans="Agents must check the Gitbook's latest `main` commit and its open PRs "
+[bm25_llm_rerank_heldout] H12 ok=True ans='IN REVIEW'
+[bm25_llm_rerank_heldout] H13 ok=True ans="HYB-001's single deliverable is to keep `TESSERA` as the only active a"
+[bm25_llm_rerank_heldout] H14 ok=False ans="Security's lane is not listed in the roles overview."
+[bm25_llm_rerank_heldout] H15 ok=True ans='No, Security does not change code when sweeping.'
+[bm25_llm_rerank_heldout] H16 ok=True ans='Gitbook / Cordnation stages docs as Ready after all four gates.'
+[bm25_llm_rerank_heldout] H17 ok=False ans='The three Father responses that change publication state are "done" an'
+[bm25_llm_rerank_heldout] H18 ok=False ans='No'
+[bm25_llm_rerank_heldout] H19 ok=False ans="HYB-019's topic is Product / mesh prep."
+[bm25_llm_rerank_heldout] H20 ok=True ans='No, Tessera Pen is not a separate lane or gate.'
+[bm25_heading_heldout_ref] H01 ok=True ans='Ready'
+[bm25_heading_heldout_ref] H02 ok=True ans="Only the task's assigned owner or Tessera (admin) can set the BLOCKED "
+[bm25_heading_heldout_ref] H03 ok=True ans='braces@3.0.3'
+[bm25_heading_heldout_ref] H04 ok=True ans='The narrow audit ignore for GHSA-vfj7-8cjw-p6xm only should be removed'
+[bm25_heading_heldout_ref] H05 ok=True ans='30–45 minutes'
+[bm25_heading_heldout_ref] H06 ok=True ans='"28", "Run Z", "29", "29 (1)", "1"'
+[bm25_heading_heldout_ref] H07 ok=False ans='No'
+[bm25_heading_heldout_ref] H08 ok=True ans='The GOAL label on the honesty banner means the intended purpose or out'
+alone.json
+bm25_baseline.json
+bm25_heading_overlap.json
+bm25_llm_rerank_heldout.json
+chunk_stats.json
+consolidated_lessons.json
+consolidation.json
+curve_fb0.json
+curve_fb2.json
+curve_fb5.json
+dense_index.json
+fewshot_memory.json
+hybrid_rrf.json
+learning_curve.json
+multiquery_rrf.json
+reflexion_fewshot.json
+reflexion_lessons.json
+reflexion_train_probe.json
+self_study.json
+selfstudy_lessons.json
+table.json
+EXITED
+Mon Oct  5 19:07:46 CDT 2026
+               total        used        free      shared  buff/cache   available
+Mem:            15Gi        10Gi       688Mi        97Mi       4.9Gi       5.2Gi
+
+---
+exit_code: 0
+elapsed_ms: 1801839
+ended_at: 2026-10-06T00:07:46.308Z
+---

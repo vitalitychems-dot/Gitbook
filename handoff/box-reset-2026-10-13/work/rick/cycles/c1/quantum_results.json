@@ -1,0 +1,153 @@
+{
+ "Q1_CHSH": {
+  "classical_max": 2,
+  "quantum": 2.8284271247461894,
+  "tsirelson": 2.8284271247461903,
+  "random_search_max": 2.784014907055557,
+  "verdict": "CONFIRMED"
+ },
+ "Q2_no_cloning": {
+  "isometry_ok": true,
+  "BH_fidelity": 0.8333333333333335,
+  "bound": 0.8333333333333334,
+  "cnot_copier": 0.6561813052059888,
+  "random_isometry_best": 0.8005530716315467,
+  "verdict": "CONFIRMED"
+ },
+ "Q3_grover": {
+  "table": [
+   {
+    "N": 4,
+    "iters": 1,
+    "p": 1.0
+   },
+   {
+    "N": 8,
+    "iters": 2,
+    "p": 0.9453
+   },
+   {
+    "N": 16,
+    "iters": 3,
+    "p": 0.9613
+   },
+   {
+    "N": 32,
+    "iters": 4,
+    "p": 0.9992
+   },
+   {
+    "N": 64,
+    "iters": 6,
+    "p": 0.9966
+   },
+   {
+    "N": 128,
+    "iters": 8,
+    "p": 0.9956
+   },
+   {
+    "N": 256,
+    "iters": 12,
+    "p": 0.9999
+   },
+   {
+    "N": 512,
+    "iters": 17,
+    "p": 0.9994
+   },
+   {
+    "N": 1024,
+    "iters": 25,
+    "p": 0.9995
+   }
+  ],
+  "loglog_slope": 0.5231926991766376,
+  "verdict": "CONFIRMED"
+ },
+ "Q4_aqft_bound": {
+  "table": [
+   {
+    "n": 4,
+    "m": 1,
+    "err": 1.99572,
+    "bound": 6.28319
+   },
+   {
+    "n": 4,
+    "m": 2,
+    "err": 1.66294,
+    "bound": 3.14159
+   },
+   {
+    "n": 4,
+    "m": 3,
+    "err": 0.39018,
+    "bound": 1.5708
+   },
+   {
+    "n": 5,
+    "m": 1,
+    "err": 1.99835,
+    "bound": 7.85398
+   },
+   {
+    "n": 5,
+    "m": 2,
+    "err": 1.99958,
+    "bound": 3.92699
+   },
+   {
+    "n": 5,
+    "m": 3,
+    "err": 0.94279,
+    "bound": 1.9635
+   },
+   {
+    "n": 5,
+    "m": 4,
+    "err": 0.19603,
+    "bound": 0.98175
+   },
+   {
+    "n": 6,
+    "m": 1,
+    "err": 1.99961,
+    "bound": 9.42478
+   },
+   {
+    "n": 6,
+    "m": 2,
+    "err": 1.99958,
+    "bound": 4.71239
+   },
+   {
+    "n": 6,
+    "m": 3,
+    "err": 1.4819,
+    "bound": 2.35619
+   },
+   {
+    "n": 6,
+    "m": 4,
+    "err": 0.48596,
+    "bound": 1.1781
+   },
+   {
+    "n": 6,
+    "m": 5,
+    "err": 0.09814,
+    "bound": 0.58905
+   }
+  ],
+  "verdict": "CONFIRMED (bound holds)"
+ },
+ "Q5_vqe_h2": {
+  "vqe": -1.8572750302023802,
+  "exact": -1.8572750302023795,
+  "abs_err": 6.661338147750939e-16,
+  "chem_acc": 0.0016,
+  "note": "electronic energy, Hartree; nuclear repulsion ~+0.7199 gives total ~ -1.137",
+  "verdict": "CONFIRMED"
+ }
+}

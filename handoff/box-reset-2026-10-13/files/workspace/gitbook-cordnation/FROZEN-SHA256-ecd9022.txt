@@ -1,0 +1,12 @@
+# Base ecd902211abd202711838219b28a1e1b39ae47c4 (PR #7 merged GB-017 a89c29c + GB-016 rev 3.2 6e5ccfc on 97e43fb). Packages are rebased/prepared for the four gates; NOT Ready.
+# Stack order: GB-022 v4 -> GB-024 v3 -> GB-025 -> GB-023. Each is its own diff. Verified with git apply --check on clean ecd9022 (2026-10-05 ~16:17 CT).
+ae288a5400a422f2c8f579369c46bae1fef6b7d5be3d2ca5379f5fd24632a1d4  GB-022/GB-022-v4.ecd9022.diff
+3fc1fc11e594d79ad05a2f4a71dba2581d86792b5bdc2cc3731bd3477f74e1c6  GB-024/GB-024-v3.ecd9022.diff
+0a590a0cf7c07b26c2fae523c4302222bc766a60fb03dbbd2ac1a85c92e55443  GB-025/GB-025.ecd9022.diff
+684227c61477395edc75a50c10925899e6513f4e2f78a14b243155b82c38106c  GB-023/GB-023.ecd9022.diff
+# GB-026 (Tessera rulings 16:22 CT + Father's 3:59 PM CT Tessera-push rule), drafted 2026-10-05 16:27 CT. Stacks after GB-023 (022 v4 -> 024 v3 -> 025 -> 023 -> 026). DRAFT, prepared for the four gates; NOT Ready. Apply checks in GB-026/VERIFY-APPLY.txt.
+6b730f73a9aec2a93a52dba44edeeeb504cf623ce54d88eddc5f562f08a1ee3f  GB-026/GB-026.ecd9022.diff
+# GB-026 rev 1 (6b730f73, above) SUPERSEDED by rev 2 (Tessera rulings 16:29 CT), 2026-10-05 16:31 CT. Rev 1 file kept unmodified. Rev 1 stats corrected: +60/-87 (not +60/-58).
+# GB-026 rev 2: stacks after GB-023 (022 v4 -> 024 v3 -> 025 -> 023 -> 026 rev 2). DRAFT, prepared for the four gates; NOT Ready. Apply checks in GB-026/VERIFY-APPLY-rev2.txt.
+1a5949a8191b4b06ca4fc918535a3e91e273048ded51bdfc40210a40805b8ee1  GB-026/GB-026-rev2.ecd9022.diff
+# 2026-10-05 16:31 CT: main moved to 979c35e (PR #8 merged GB-022/024/025/023). GB-026 rev 2 rebased by name to GB-026-rev2.979c35e.diff (byte-identical, same sha); frozen in FROZEN-SHA256-979c35e.txt.

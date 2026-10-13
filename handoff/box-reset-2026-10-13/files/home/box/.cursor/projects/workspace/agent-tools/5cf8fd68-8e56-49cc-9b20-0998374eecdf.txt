@@ -1,0 +1,534 @@
+== 2026-10-13-0405.md
+# Digest check 2026-10-13 4:05 AM CT (queue reached 10)
+
+Sent: nothing. No queued item is tested, gate-PASSed AND measurably better.
+
+## Waiting on gates (measured better, no Security/Build gate record found)
+- TESSERA #263 merged 35475b21 (3:40 AM CT): fallback embedding fix. Top-1 0.213 -> 0.727 on held-out bench; max|v[i]-v[i+32]| 0 -> 0.149. PR validate = FAILURE (Actions billing block). No gate file in /workspace/build-gate or Gitbook.
+- TESSERA #265 merged 861bc854 (3:56 AM CT): brain round 4. Recall@5 13 -> 15, p50 latency 4.9 -> 3.3 ms, streaming learning 13 -> 16. PR validate = FAILURE (billing). No gate file.
+
+## Dropped (no measurable improvement, per Father's 2:32 AM rule)
+- TESSERA #264 merged f91ff82c: task-queue mirror/checker; PR says no measurable improvement (tests 116.7 -> 142.6 ms).
+- Gitbook #58 merged 8dab9a57: GB-067/068 status records; autogate PASS fb1e336c; all checker counts unchanged.
+- Gitbook #59 merged 4dd0106a: SHEPHERD allowlist gate; 0 -> 8 sources, PR says no measurable improvement.
+- Gitbook #60 merged 6b21df68: GB-065 rebase (supersedes #45); autogate PASS; PR says no measurable performance improvement.
+== 2026-10-13-0414.md
+# Digest check 2026-10-13 4:14 AM CT (queue reached 10 rows on TESSERA #268 merge)
+
+Sent: nothing. No queued item has a Security/Build gate PASS on record (no gates/ folder on Gitbook main, mesh/HANDOFF.lines empty, no board #2 posts since 3:30 AM CT, no gate file in /workspace/build-gate).
+
+## Waiting on gates (measured better, no gate record)
+- TESSERA #263 merged 35475b21 (3:40 AM CT): fallback embedding fix. Top-1 0.213 -> 0.727; validate FAILURE (billing at the time).
+- TESSERA #265 merged 861bc854 (3:56 AM CT): brain round 4. Recall@5 13 -> 15, p50 4.9 -> 3.3 ms, streaming learning 13 -> 16.
+- TESSERA #268 merged f80cb915 (4:11 AM CT, head 8af342d9): brain.predict p50 0.56 -> 0.16 ms, p95 0.82-0.92 -> 0.28-0.33 ms; 0/2,880 top-5 mismatches; tests pass locally. Merged while validate run 38374485536 was still in progress.
+- Gitbook #62 merged dbd34dbf (4:09 AM CT): agent spawning gate. Bad-PR catch rate 4/20 -> 20/20; parallel launchable 6 -> 12; 12/12 unittest.
+- Gitbook #63 merged 243ddd4b (4:10 AM CT): scoreboard and ranked bulk lists. Before: no scoreboard; 5 checks pass. No clear before/after number yet.
+
+## Unmeasured
+- TESSERA #266 merged cfd9793d (4:08 AM CT): re-embed pre-#263 memories. No before/after numbers in queue record.
+
+## Dropped (no measurable improvement)
+- Gitbook #61 merged d0ee5a7c: qlab AQFT pytest checks; PR says before = after.
+== 2026-10-13-0419.md
+# Digest check 2026-10-13 4:19 AM CT (queue reached 10 rows on TESSERA #273 open)
+
+Sent: nothing. Still no Security/Build gate PASS on record for any queued item (no gates/ folder on Gitbook main, no gate files under mesh/, HANDOFF.md has no rows for these PRs, no new gate file in /workspace/build-gate). Queue left as is.
+
+## Waiting on gates (measured better, no gate record)
+- TESSERA #263 merged 35475b21: fallback embedding fix. Top-1 0.213 -> 0.727.
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15, p50 4.9 -> 3.3 ms, streaming learning 13 -> 16.
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms, p95 0.82-0.92 -> 0.28-0.33 ms. Merged while validate was still running.
+- TESSERA #270 merged 736faed9: memory-graph replay on /brain slider. p95 scrub 0.704 -> 0.441 ms, but p50 0.311 -> 0.345 ms (worse).
+- TESSERA #271 merged ca6c2a19: BM25 file router. Top-1 30/44 -> 38/44, top-3 35/44 -> 41/44.
+- Gitbook #62 merged dbd34dbf: agent spawning gate. Catch rate 4/20 -> 20/20; launchable 6 -> 12.
+- TESSERA #273 open eaba4998: semantic cache fingerprints whole system prompt. Distinct fingerprints 1/4 -> 4/4; tests 464 -> 466 passed; token effect unmeasured; einstein gate_check APPROVE only.
+
+## Unmeasured
+- TESSERA #266 merged cfd9793d: re-embed pre-#263 memories. No numbers.
+- TESSERA #269 open 5552a42f: grounded memory-graph answers or abstain. No numbers in queue.
+- Gitbook #63 merged 243ddd4b: scoreboard and ranked lists. No clear before/after.
+== 2026-10-13-0421.md
+# Digest check 2026-10-13 4:21 AM CT (queue reached 11 rows on TESSERA #274 open)
+
+Sent: nothing. Still no Security/Build gate PASS on record for any queued item (no gates/ folder on Gitbook main, HANDOFF.md has no rows for these PRs, no new gate file under /workspace/build-gate or /workspace/security-gate since the 4:19 check). Queue left as is.
+
+## Waiting on gates (measured better, no gate record)
+- TESSERA #263 merged 35475b21: fallback embedding fix. Top-1 0.213 -> 0.727.
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15, p50 4.9 -> 3.3 ms, streaming learning 13 -> 16.
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms, p95 0.82-0.92 -> 0.28-0.33 ms. Merged while validate was still running.
+- TESSERA #270 merged 736faed9: memory-graph replay on /brain slider. p95 scrub 0.704 -> 0.441 ms, but p50 0.311 -> 0.345 ms (worse).
+- TESSERA #271 merged ca6c2a19: BM25 file router. Top-1 30/44 -> 38/44, top-3 35/44 -> 41/44.
+- Gitbook #62 merged dbd34dbf: agent spawning gate. Catch rate 4/20 -> 20/20; launchable 6 -> 12.
+- TESSERA #273 open eaba4998: semantic cache fingerprints whole system prompt. Distinct fingerprints 1/4 -> 4/4; tests 464 -> 466 passed; token effect unmeasured.
+- TESSERA #274 open d9635cbe: crystal memory + context packing. Cold /brain/snapshot 1748 -> 6.2 ms; packing tokens/query ~333 -> 149; packing recall at v2 budget 15/87 -> 21/87; crystal recall@5 flat 15/87; warm snapshot 0.7 -> 5.8 ms (worse). Validate in progress at open.
+
+## Unmeasured
+- TESSERA #266 merged cfd9793d: re-embed pre-#263 memories. No numbers.
+- TESSERA #269 open 5552a42f: grounded memory-graph answers or abstain. No numbers in queue.
+- Gitbook #63 merged 243ddd4b: scoreboard and ranked lists. No clear before/after.
+== 2026-10-13-0422.md
+# Digest check 2026-10-13 4:22 AM CT (TESSERA #276 opened; queue now 13 rows)
+
+Sent: nothing. No gate PASS on record for any queued item: Gitbook has no gates/ folder, mesh/HANDOFF.md has no rows for TESSERA #263-#276 or Gitbook #62/#63, and the newest file in /workspace/build-gate covers PR #257. Queue left as is.
+
+New since 4:19 check:
+- TESSERA #275 open 919a1390: embedding cache keyed on whole text. Wrong cached embeddings 6/517 -> 0/517 (McNemar p=0.031); tests 464 -> 465; hash speed not timed. Waiting on gates.
+- TESSERA #276 open 4f45cee8: Einstein R3-02, whole system context in semantic-cache fingerprint. Distinct fingerprints 1/4 -> 4/4; token effect unmeasured. Same fix as #273 (overlap, one should be closed). Waiting on gates.
+== 2026-10-13-0423.md
+# Digest check 2026-10-13 4:23 AM CT (TESSERA #276 merged; queue still 13 rows)
+
+Sent: nothing. No gate PASS on record for any queued item: Gitbook mesh/HANDOFF.md has no rows for TESSERA #263-#276 or Gitbook #62/#63, Gitbook has no gates/ folder for these, and /workspace/build-gate / security-gate / tessera-gate have nothing newer than PR #257 / Oct 5 reviews. Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #276 merged fbe1f7f3: Einstein R3-02, whole system context in semantic-cache fingerprint. Distinct fingerprints 1/4 -> 4/4; token effect unmeasured. Validate check still in_progress on the merge commit (not a fail). #273 closed without merge as the duplicate.
+
+## Waiting on gates (measured better, no gate record)
+- TESSERA #263 merged 35475b21: fallback embedding fix. Top-1 0.213 -> 0.727.
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15, p50 4.9 -> 3.3 ms, streaming learning 13 -> 16.
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms, p95 0.82-0.92 -> 0.28-0.33 ms.
+- TESSERA #270 merged 736faed9: memory-graph replay on /brain slider. p95 scrub 0.704 -> 0.441 ms, but p50 0.311 -> 0.345 ms (worse).
+- TESSERA #271 merged ca6c2a19: BM25 file router. Top-1 30/44 -> 38/44, top-3 35/44 -> 41/44.
+- Gitbook #62 merged dbd34dbf: agent spawning gate. Catch rate 4/20 -> 20/20; launchable 6 -> 12.
+- TESSERA #274 open d9635cbe: crystal memory + context packing. Cold snapshot 1748 -> 6.2 ms; packing tokens ~333 -> 149; packing recall@budget 15/87 -> 21/87.
+- TESSERA #275 open 919a1390: embedding cache keyed on whole text. Wrong cached embeddings 6/517 -> 0/517 (McNemar p=0.031); tests 464 -> 465.
+- TESSERA #276 merged fbe1f7f3: semantic-cache system fingerprint. Distinct fingerprints 1/4 -> 4/4; token effect unmeasured; validate in progress.
+
+## Unmeasured / not digest-ready
+- TESSERA #266 merged cfd9793d: re-embed pre-#263 memories. No numbers.
+- TESSERA #269 open 5552a42f: grounded memory-graph answers or abstain. No numbers.
+- Gitbook #63 merged 243ddd4b: scoreboard and ranked lists. No clear before/after.
+- TESSERA #273 closed (not merged): duplicate of #276.
+== 2026-10-13-0424.md
+# Digest check 2026-10-13 4:24 AM CT (TESSERA #277 opened; queue now 14 rows)
+
+Sent: nothing. Gitbook main still 243ddd4b (no commits since 4:10 AM CT), so mesh/HANDOFF.md and gates are unchanged from the 4:23 check: no gate PASS on record for any queued item. Queue left as is.
+
+Event this wake:
+- TESSERA #277 opened 1e80f5cf: Einstein R3-05, batch accessCount updates in searchMemory into one inArray UPDATE. accessCount UPDATEs per default search 10 -> 1 (simulated microbench in test; no wall-clock latency number). PR mergeable_state unstable (checks pending). Waiting on gates.
+
+All other queued items: same status as 2026-10-13-0423.md.
+== 2026-10-13-0425.md
+# Digest check 2026-10-13 4:25 AM CT (TESSERA #278 opened; queue now 15 rows)
+
+Sent: nothing. Gitbook main still 243ddd4b (no commits since 4:10 AM CT), so mesh/HANDOFF.md and gates are unchanged: no gate PASS on record for any queued item. Queue left as is.
+
+Event this wake:
+- TESSERA #278 opened 1e67abc9: Einstein R3-01, embedding cache keyed on whole normalized text (two FNV-1a seeds plus length) instead of a 32-bit hash of the first 500 chars. Cache collision wrong count 517 -> 0 on n=517 constructed prefix-sharing pairs; neural-embeddings tests 2 -> 3 passed. Same fix as open #275 (6/517 -> 0/517), so one of the two is likely a duplicate. Checks pending (mergeable_state unstable). Waiting on gates.
+
+All other queued items: same status as 2026-10-13-0423.md and 0424.md.
+== 2026-10-13-0426.md
+# Digest check 2026-10-13 4:26 AM CT (TESSERA #277 merged; queue now 17 rows)
+
+Sent to Father digest: nothing. No item is TESTED + full gate-PASS + measured better for Father. Security RETRO (`/workspace/security-gate/RETRO-2026-10-13.md`) is the gate of record through TESSERA #272 / Gitbook #63: several content PASSes, but every merged PR is PROV-FAIL (self-merged with no prior Security gate). Build has no newer gates than PR #257 / Oct 5-era reviews. Queue left as is (nothing cleared).
+
+Escalated to Tessera (priority): Security HIGH on Gitbook #62 (merged dbd34dbf) — `--father-approved` self-approval bypass and `autogate.sh --merge` without Security/Build PASS. Same `--merge` issue on #56. Suggested fix in the RETRO.
+
+Event this wake:
+- TESSERA #277 merged 0a833c5f: Einstein R3-05, batch accessCount updates in searchMemory into one inArray UPDATE. accessCount UPDATEs per default search 10 -> 1 (simulated microbench in test; no wall-clock latency number). Not covered by the RETRO (stops at #272). Waiting on gates.
+
+Also landed on the queue since the prior check (concurrent wakes):
+- TESSERA #278 merged 33469743: embedding cache keyed on whole text (likely duplicate of open #275).
+- TESSERA #279 opened c1960128: batch embeddings in hybrid-retrieval rerank (chunk embedding calls 8 -> 1; wall 16.9 -> 2.2 ms on N=8).
+- TESSERA #280 opened 1f88a4dd: head+tail trimToBudget (end needles 0/20 -> 20/20).
+
+## Security content PASS, PROV-FAIL (process) — not digest-ready
+- TESSERA #263, #265, #266, #268, #270, #271 (merged): content PASS in RETRO; PROV-FAIL; no Build gate on record.
+- Gitbook #63 merged 243ddd4b: content PASS; PROV-FAIL; scoreboard has no clear before/after for Father.
+
+## Security FAIL
+- Gitbook #62 merged dbd34dbf: Security RETRO FAIL (2 HIGH). Tessera pinged. Catch-rate numbers exist (4/20 -> 20/20) but FAIL blocks digest.
+
+## Waiting on gates / open
+- TESSERA #269, #274, #275 open; #276/#277/#278 merged, not in RETRO yet; #279/#280 open.
+- TESSERA #273 closed not merged (duplicate of #276).
+
+## Unmeasured / not digest-ready
+- TESSERA #266: re-embed, no numbers (content PASS only).
+- Gitbook #63: no clear before/after for the scoreboard itself.
+== 2026-10-13-0427-gb64.md
+# Digest check 2026-10-13 4:27 AM CT (Gitbook #64 opened; queue now 20 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Gitbook main still 243ddd4b (PR #64 base), so mesh/HANDOFF.md is unchanged; there is no mesh/gates/ directory on main. Security RETRO (/workspace/security-gate/RETRO-2026-10-13.md, 4:26 AM CT) still stops at TESSERA #272 / Gitbook #63: content PASSes with PROV-FAIL on every self-merged PR; no Build gates newer than Oct 5 era. Queue left as is (nothing cleared).
+
+Event this wake:
+- Gitbook #64 opened 9750e03c (branch einstein/gate-charter-v0.1): adds mesh/charter/ only (9 files, +281): GATE_RULES v0.1 draft plus gate_check.py. Doesn't replace the existing gate. Demo approves a real embedder fix and denies synthetic-data and flag-flip patches. Body says Father approved it 2026-10-13. No before/after number. Mergeable clean. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 HIGH already escalated to Tessera at 4:26 (0426.md). No ping.
+
+Ready for Father digest: none.
+== 2026-10-13-0427.md
+# Digest check 2026-10-13 4:26 AM CT (TESSERA #272 merged; queue now 18 rows)
+
+Sent: nothing. Gitbook main still 243ddd4b (no commits since 4:10 AM CT), so mesh/HANDOFF.md and gates are unchanged: no gate PASS on record for any queued item. HANDOFF has no rows for TESSERA #263-#279 or Gitbook #62/#63 as gate-passed. Queue left as is.
+
+Event this wake:
+- TESSERA #272 merged 408ae0a9: REA registry catalogs tools, modules, and dependencies under artifacts/v2, gitai, api-server, and lib/. Licensed package.json deps + brain modules 51/57 (0.895) -> 57/57 (1.0); local-only baseline was 22/57. Tests: scripts 23, gitai 28, v2 133, api-server 464 passed / 9 skipped. Validate check in_progress on the merge commit (not a fail). Waiting on gates.
+
+All other queued items: same status as 2026-10-13-0423.md through 0426.md.
+== 2026-10-13-0428-282.md
+# Digest check 2026-10-13 04:28 CDT (TESSERA #282 opened; queue now 21 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better for Father. Security RETRO (`/workspace/security-gate/RETRO-2026-10-13.md`) covers through TESSERA #272 / Gitbook #63: content PASSes with PROV-FAIL on every merged PR; Build has no newer gates than PR #257 / early Oct 13. Gitbook main still `243ddd4b` (HANDOFF on main unchanged for these PRs). Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #282 opened `21f8171d`: Einstein R3-09, `brain.recall` reuses `cachedAdjacency` (same cache as `predict`) instead of rebuilding neighbor lists each call. Bench BRAIN_RECALL p50/p95 0.1619/0.3085 → 0.1009/0.1587 ms; same-process dual-run 0.1276/0.2188 → 0.0566/0.0757 ms; 0 mismatches on 192 seeds; `@workspace/v2` 134 passed. Open; waiting on gates. Logged to queue.
+
+FAIL/HIGH: Gitbook #62 Security HIGH already escalated (0426.md). No second ping. No new FAIL/HIGH on #282.
+
+## Waiting on gates / open (not digest-ready)
+- Merged, content PASS + PROV-FAIL, no Build gate: TESSERA #263, #265, #266, #268, #270, #271, #272, #276, #277, #278; Gitbook #63.
+- Security FAIL: Gitbook #62 (HIGH; Tessera already pinged).
+- Open / waiting: TESSERA #269, #274, #275, #279, #280, #281, #282; Gitbook #64.
+- Closed not merged: TESSERA #273 (duplicate of #276).
+- Unmeasured / thin numbers: TESSERA #266; Gitbook #63 scoreboard; Gitbook #64 (no before/after).
+
+Ready for Father digest: none.
+== 2026-10-13-0428.md
+# Digest check 2026-10-13 4:27 AM CT (TESSERA #280 opened; queue holds 17+ rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO through TESSERA #272 / Gitbook #63 has content PASSes with PROV-FAIL on every merged PR; Build has no newer gates. Gitbook main still 243ddd4b. Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #280 opened 1f88a4dd: Einstein R3-06, trimToBudget keeps ~60% head + rest tail so end-of-chunk needles survive. End needles 0/20 -> 20/20 (n=20, budget 30% of length). prompt-builder-trim tests 2 passed. Open; waiting on gates. Logged to queue.
+
+FAIL/HIGH: Gitbook #62 Security HIGH already escalated to Tessera by the concurrent 4:26 check (0426.md). No second ping.
+
+Ready for Father digest: none.
+== 2026-10-13-0429-283.md
+# Digest check 2026-10-13 4:29 AM CT (TESSERA #283 opened; queue holds 23 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Gitbook main still 243ddd4b, so no new gate results since 0430-279.md. Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #283 opened 4:29 AM CT, head 012d245f: Einstein R3-10, compressPrompt also drops Markdown link/image URLs, HTML comments and fence language tags. Tokens (ceil(len/4)) OPTIMIZE-26.md 2396 -> 1894 (-20.95%); README.md 1666 -> 1578 (-5.28%); BUILD-LOG.md bench input 1672 -> 1672 (bare URLs, no change). v2 suite 136 passed. mergeable_state unstable (CI pending). Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping.
+
+Ready for Father digest: none.
+== 2026-10-13-0429.md
+# Digest check 2026-10-13 4:27 AM CT (TESSERA #281 merged; queue holds 19 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO through TESSERA #272 / Gitbook #63 has content PASSes with PROV-FAIL on every merged PR; Build has no newer gates than PR #257 / early Oct 13. Newest security.md note is GB-070 rev3 (docs-only, not a queued PR yet). Gitbook main still 243ddd4b. Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #281 merged 3db452f2: Creator style fingerprint and sourced profile (local-only). Authorship AUC 0.48 length-only baseline -> 0.996 held-out; 0.64 -> 1.00 on chat replies. Next-ask predictor dropped (not better). New tests 2/2; suite 129/133 with 4 environmental fails. Validate in_progress on merge (not a fail). Not in RETRO. Waiting on gates.
+
+FAIL/HIGH: Gitbook #62 Security HIGH already escalated to Tessera by the 4:26 check (0426.md). No second ping.
+
+## Waiting on gates (measured better, no full gate PASS)
+- TESSERA #263 merged 35475b21: fallback embedding. Top-1 0.213 -> 0.727 (content PASS, PROV-FAIL).
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15; p50 4.9 -> 3.3 ms (content PASS, PROV-FAIL).
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms; p95 0.82-0.92 -> 0.28-0.33 ms (content PASS, PROV-FAIL).
+- TESSERA #270 merged 736faed9: memory-graph scrub p95 0.704 -> 0.441 ms; p50 0.311 -> 0.345 ms worse (content PASS, PROV-FAIL).
+- TESSERA #271 merged ca6c2a19: BM25 router top-1 30/44 -> 38/44; top-3 35/44 -> 41/44 (content PASS, PROV-FAIL).
+- TESSERA #272 merged 408ae0a9: REA registry licensed dep+brain 51/57 -> 57/57 (content PASS, PROV-FAIL).
+- TESSERA #274 open d9635cbe: crystal cold snapshot 1748 -> 6.2 ms; packing tokens 333 -> 149; recall@budget 15/87 -> 21/87.
+- TESSERA #275 open / #278 merged: embedding cache whole-text key; collisions 6/517 or 517/517 -> 0.
+- TESSERA #276 merged fbe1f7f3: semantic-cache fingerprints 1/4 -> 4/4.
+- TESSERA #277 merged 0a833c5f: accessCount UPDATEs 10 -> 1 (simulated).
+- TESSERA #279 open c1960128: hybrid rerank embeddings 8 -> 1; wall 16.9 -> 2.2 ms.
+- TESSERA #280 open 1f88a4dd: end needles 0/20 -> 20/20.
+- TESSERA #281 merged 3db452f2: authorship AUC 0.48 -> 0.996; chat 0.64 -> 1.00.
+- Gitbook #62 merged dbd34dbf: catch 4/20 -> 20/20; launchable 6 -> 12 — Security FAIL HIGH (already pinged).
+
+## Unmeasured / not digest-ready
+- TESSERA #266 merged: re-embed, no numbers.
+- TESSERA #269 open: grounded answers, no numbers.
+- Gitbook #63 merged: scoreboard, no clear before/after for Father.
+- TESSERA #273 closed not merged (duplicate of #276).
+
+Ready for Father digest: none.
+== 2026-10-13-0430-279.md
+# Digest check 2026-10-13 4:28 AM CT (TESSERA #279 merged; queue holds 22 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Gitbook main still 243ddd4b, so no new gate results since the 4:27 checks (0429.md). Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #279 merged 4:28 AM CT as 6a844f22 (head c1960128): Einstein R3-04, hybrid-retrieval rerank embeds the topK chunks in one batch call. Chunk embedding calls 8 -> 1; wall time 16.9 -> 2.2 ms (N=8, 2 ms simulated delay per call, vitest). PR CI was unchecked at merge (PR body says "do not merge" before CI). Not in Security RETRO. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping.
+
+Ready for Father digest: none.
+== 2026-10-13-0430-285.md
+# Digest check 2026-10-13 4:30 AM CT (TESSERA #285 opened; queue holds 24 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Gitbook main still 243ddd4b, so no new gate results. Queue left as is.
+
+Event: TESSERA #285 opened 4:29 AM CT, head ee7ba4bc: Einstein R3-07 caches PPR out-weights and Adamic-Adar invLog in createRanker. Top-5 mismatches 0/192 seeds. Paired p50/p95 0.4269/0.5236 -> 0.3976/0.4822 ms; bench-latency p50 0.483 -> 0.420 ms (p95 noisy, not a clean drop). Waiting on gates.
+
+FAIL/HIGH: none new. Ready for Father digest: none.
+== 2026-10-13-0431-274.md
+# Digest check 2026-10-13 4:31 AM CT (TESSERA #274 merged; queue holds 27 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO still ends at TESSERA #272 / Gitbook #63 (content PASSes with PROV-FAIL on every merged PR). Build has no newer gates than GB-070 rev3 / early Oct 13 PR #257. Gitbook main still 243ddd4b (HANDOFF tip bd1b475 unreconciled for digest). Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #274 merged 4:30 AM CT as 15ff5208 (head 73a34580): v3 crystal memory at /brain/snapshot?src=crystal, plus context packing. Cold /brain/snapshot 1748 -> 6.2 ms; cold load with 3D positions 1847 -> 7.5 ms; packing tokens/query top 5 333 -> 149; packing recall at v2 budget (308 tok) 15/87 -> 21/87. Warm snapshot 0.7 -> 5.8 ms worse (v2 cache faster). Crystal recall@5 unchanged 15/87. Disk 548008 -> 582078 B (+6%). v3 tests 6/6; v2 suite 123/127 (3 playwright env fails). Not in Security RETRO. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping.
+
+## Waiting on gates (measured better, no full gate PASS)
+- TESSERA #263 merged 35475b21: fallback embedding. Top-1 0.213 -> 0.727 (content PASS, PROV-FAIL).
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15; p50 4.9 -> 3.3 ms (content PASS, PROV-FAIL).
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms; p95 0.82-0.92 -> 0.28-0.33 ms (content PASS, PROV-FAIL).
+- TESSERA #270 merged 736faed9: memory-graph scrub p95 0.704 -> 0.441 ms; p50 0.311 -> 0.345 ms worse (content PASS, PROV-FAIL).
+- TESSERA #271 merged ca6c2a19: BM25 router top-1 30/44 -> 38/44; top-3 35/44 -> 41/44 (content PASS, PROV-FAIL).
+- TESSERA #272 merged 408ae0a9: REA registry licensed dep+brain 51/57 -> 57/57 (content PASS, PROV-FAIL).
+- TESSERA #274 merged 15ff5208: crystal cold snapshot 1748 -> 6.2 ms; packing tokens 333 -> 149; recall@budget 15/87 -> 21/87.
+- TESSERA #275 open / #278 merged: embedding cache whole-text key; collisions 6/517 or 517/517 -> 0.
+- TESSERA #276 merged fbe1f7f3: semantic-cache fingerprints 1/4 -> 4/4.
+- TESSERA #277 merged 0a833c5f: accessCount UPDATEs 10 -> 1 (simulated).
+- TESSERA #279 merged 6a844f22: hybrid rerank embeddings 8 -> 1; wall 16.9 -> 2.2 ms.
+- TESSERA #280 merged 19cc8566: end needles 0/20 -> 20/20.
+- TESSERA #281 merged 3db452f2: authorship AUC 0.48 -> 0.996; chat 0.64 -> 1.00.
+- TESSERA #282 open 21f8171d: BRAIN_RECALL p50/p95 0.1619/0.3085 -> 0.1009/0.1587.
+- TESSERA #283 open 012d245f: compressPrompt OPTIMIZE-26 tokens 2396 -> 1894 (-20.95%).
+- TESSERA #284 open 8bd8044c: signed feature hashing mean abs cos err 0.09549 -> 0.04430.
+- TESSERA #285 open ee7ba4bc: createRanker cache paired p50/p95 0.4269/0.5236 -> 0.3976/0.4822 ms.
+- Gitbook #62 merged dbd34dbf: catch 4/20 -> 20/20; launchable 6 -> 12 — Security FAIL HIGH (already pinged).
+
+## Unmeasured / not digest-ready
+- TESSERA #266 merged: re-embed, no numbers.
+- TESSERA #269 open: grounded answers, no numbers.
+- Gitbook #63 merged: scoreboard, no clear before/after for Father.
+- Gitbook #64 open: GATE_RULES draft, no before/after number.
+- TESSERA #273 closed not merged (duplicate of #276).
+
+Ready for Father digest: none.
+== 2026-10-13-0431-280.md
+# Digest check 2026-10-13 4:29 AM CT (TESSERA #280 merged; queue holds 23 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO still ends at TESSERA #272 / Gitbook #63 (content PASSes with PROV-FAIL on every merged PR). Build has no newer gates than GB-070 rev3 / early Oct 13 PR #257. Gitbook main still 243ddd4b. Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #280 merged 4:28 AM CT as 19cc8566 (head 1f88a4dd): Einstein R3-06, trimToBudget keeps ~60% head + rest tail so end-of-chunk needles survive. End needles 0/20 -> 20/20 (n=20, budget 30% of length). prompt-builder-trim tests 2 passed. Validate in_progress on merge commit (run 38376605020), not a fail. Not in Security RETRO. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping.
+
+## Waiting on gates (measured better, no full gate PASS)
+- TESSERA #263 merged 35475b21: fallback embedding. Top-1 0.213 -> 0.727 (content PASS, PROV-FAIL).
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15; p50 4.9 -> 3.3 ms (content PASS, PROV-FAIL).
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms; p95 0.82-0.92 -> 0.28-0.33 ms (content PASS, PROV-FAIL).
+- TESSERA #270 merged 736faed9: memory-graph scrub p95 0.704 -> 0.441 ms; p50 0.311 -> 0.345 ms worse (content PASS, PROV-FAIL).
+- TESSERA #271 merged ca6c2a19: BM25 router top-1 30/44 -> 38/44; top-3 35/44 -> 41/44 (content PASS, PROV-FAIL).
+- TESSERA #272 merged 408ae0a9: REA registry licensed dep+brain 51/57 -> 57/57 (content PASS, PROV-FAIL).
+- TESSERA #274 open d9635cbe: crystal cold snapshot 1748 -> 6.2 ms; packing tokens 333 -> 149; recall@budget 15/87 -> 21/87.
+- TESSERA #275 open / #278 merged: embedding cache whole-text key; collisions 6/517 or 517/517 -> 0.
+- TESSERA #276 merged fbe1f7f3: semantic-cache fingerprints 1/4 -> 4/4.
+- TESSERA #277 merged 0a833c5f: accessCount UPDATEs 10 -> 1 (simulated).
+- TESSERA #279 merged 6a844f22: hybrid rerank embeddings 8 -> 1; wall 16.9 -> 2.2 ms.
+- TESSERA #280 merged 19cc8566: end needles 0/20 -> 20/20.
+- TESSERA #281 merged 3db452f2: authorship AUC 0.48 -> 0.996; chat 0.64 -> 1.00.
+- TESSERA #282 open 21f8171d: BRAIN_RECALL p50/p95 0.1619/0.3085 -> 0.1009/0.1587.
+- Gitbook #62 merged dbd34dbf: catch 4/20 -> 20/20; launchable 6 -> 12 — Security FAIL HIGH (already pinged).
+
+## Unmeasured / not digest-ready
+- TESSERA #266 merged: re-embed, no numbers.
+- TESSERA #269 open: grounded answers, no numbers.
+- Gitbook #63 merged: scoreboard, no clear before/after for Father.
+- Gitbook #64 open: GATE_RULES draft, no before/after number.
+- TESSERA #273 closed not merged (duplicate of #276).
+
+Ready for Father digest: none.
+== 2026-10-13-0431-282.md
+# Digest check 2026-10-13 4:32 AM CT (TESSERA #282 merged; queue 28 rows)
+
+Sent: nothing. Same state as 2026-10-13-0431-274.md: no item has TESTED + full gate PASS + measured better. No new gates commits in Gitbook (gates/ untouched); Security RETRO still ends at TESSERA #272 / Gitbook #63.
+
+Event: TESSERA #282 merged 4:31 AM CT as 0c005369 (head 21f8171d): reuse cachedAdjacency in brain.recall. BRAIN_RECALL p50/p95 0.1619/0.3085 -> 0.1009/0.1587 ms bench; 0.1276/0.2188 -> 0.0566/0.0757 same-process; 0/192 mismatches. Waiting on gates. Logged to queue.
+
+Noted: Gitbook #64 (GATE_RULES v0.1 draft, not adopted) merged 4:32 AM CT as efcca741; its own event will log it.
+FAIL/HIGH: none new.
+== 2026-10-13-0431-gb65.md
+# Digest check 2026-10-13 4:31 AM CT (Gitbook #65 opened; queue holds 29 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO still ends at TESSERA #272 / Gitbook #63 (content PASSes with PROV-FAIL on every merged PR). Build newest relevant gate is GB-070 rev3 (docs-only). Gitbook main still 243ddd4b. Queue left as is (nothing cleared).
+
+Event this wake:
+- Gitbook #65 opened 4:31 AM CT, head 7a893548: GB-070 rev3 intake backfill + ledger #15. Docs only (intake/log.md + new mesh/ledger/ledger-15.md). Build PASS on package sha256 ee8dcf89…b7cc (GATE-2026-10-13-GB-070-rev3.md). Security PASS on the same diff at 4:27 AM CT, with note to re-pin to PR head when opened — head re-gate not recorded yet. No before/after numbers for Father's measurable-improvement rule. Logged to queue. Not digest-ready.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping.
+
+## Waiting on gates (measured better, no full gate PASS)
+- TESSERA #263 merged 35475b21: fallback embedding. Top-1 0.213 -> 0.727 (content PASS, PROV-FAIL).
+- TESSERA #265 merged 861bc854: brain round 4. Recall@5 13 -> 15; p50 4.9 -> 3.3 ms (content PASS, PROV-FAIL).
+- TESSERA #268 merged f80cb915: brain.predict p50 0.56 -> 0.16 ms; p95 0.82-0.92 -> 0.28-0.33 ms (content PASS, PROV-FAIL).
+- TESSERA #270 merged 736faed9: memory-graph scrub p95 0.704 -> 0.441 ms; p50 0.311 -> 0.345 ms worse (content PASS, PROV-FAIL).
+- TESSERA #271 merged ca6c2a19: BM25 router top-1 30/44 -> 38/44; top-3 35/44 -> 41/44 (content PASS, PROV-FAIL).
+- TESSERA #272 merged 408ae0a9: REA registry licensed dep+brain 51/57 -> 57/57 (content PASS, PROV-FAIL).
+- TESSERA #274 merged 15ff5208: crystal cold snapshot 1748 -> 6.2 ms; packing tokens 333 -> 149; recall@budget 15/87 -> 21/87.
+- TESSERA #275 open / #278 merged: embedding cache whole-text key; collisions 6/517 or 517/517 -> 0.
+- TESSERA #276 merged fbe1f7f3: semantic-cache fingerprints 1/4 -> 4/4.
+- TESSERA #277 merged 0a833c5f: accessCount UPDATEs 10 -> 1 (simulated).
+- TESSERA #279 merged 6a844f22: hybrid rerank embeddings 8 -> 1; wall 16.9 -> 2.2 ms.
+- TESSERA #280 merged 19cc8566: end needles 0/20 -> 20/20.
+- TESSERA #281 merged 3db452f2: authorship AUC 0.48 -> 0.996; chat 0.64 -> 1.00.
+- TESSERA #282 open 21f8171d: BRAIN_RECALL p50/p95 0.1619/0.3085 -> 0.1009/0.1587.
+- TESSERA #283 open 012d245f: compressPrompt OPTIMIZE-26 tokens 2396 -> 1894 (-20.95%).
+- TESSERA #284 open 8bd8044c: signed feature hashing mean abs cos err 0.09549 -> 0.04430.
+- TESSERA #285 open ee7ba4bc: createRanker cache paired p50/p95 0.4269/0.5236 -> 0.3976/0.4822 ms.
+- Gitbook #62 merged dbd34dbf: catch 4/20 -> 20/20; launchable 6 -> 12 — Security FAIL HIGH (already pinged).
+
+## Unmeasured / not digest-ready
+- TESSERA #266 merged: re-embed, no numbers.
+- TESSERA #269 open: grounded answers, no numbers.
+- Gitbook #63 merged: scoreboard, no clear before/after for Father.
+- Gitbook #64 open: GATE_RULES draft, no before/after number.
+- Gitbook #65 open 7a893548: GB-070 rev3 intake/ledger docs; Build PASS; Security PASS on diff pending head re-pin; no before/after number.
+- TESSERA #273 closed not merged (duplicate of #276).
+
+Ready for Father digest: none.
+== 2026-10-13-0432-283.md
+# Digest check 2026-10-13 4:32 AM CT (TESSERA #283 merged; queue 30+ rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO still ends at TESSERA #272 / Gitbook #63 (content PASSes with PROV-FAIL on every self-merged PR). Build has no gate for #283. Gitbook HANDOFF on main has no rows for TESSERA #263–#286. Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #283 merged 4:32 AM CT as eea203b5 (head bdc46dad): Einstein R3-10, compressPrompt also drops Markdown link/image URL tokens, HTML comments, and fence language tags (fenced body kept; `array[i](arg)` not treated as links). KEEP metric OPTIMIZE-26.md tokens (ceil(len/4)) 2396 -> 1894 (-20.95%, saved 502); README 1666 -> 1578; BUILD-LOG bench 1672 unchanged (bare URLs only). v2 suite 136 passed locally. Not in Security RETRO. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new.
+Ready for Father digest: none.
+== 2026-10-13-0432-286.md
+# Digest check 2026-10-13 4:32 AM CT (TESSERA #286 opened; queue holds 29 rows)
+
+Sent: nothing. Gitbook main still 243ddd4b, so no new gate results since the 4:31 check; no item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event this wake:
+- TESSERA #286 opened 4:31 AM CT, head c504d8e6: Einstein R4-01, revalidateStaleKnowledge fires verifications together so the LLM batcher can coalesce/dedupe. New test (real llm-batcher, mocked LLM/DB, 6 stale facts incl. 2 duplicates): wall 12,020 -> 2,008 ms; LLM calls 6 -> 5. No flag changes. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new.
+Ready for Father digest: none.
+== 2026-10-13-0432-287.md
+# Digest check 2026-10-13 4:32 AM CT (TESSERA #287 opened; queue 30 rows)
+
+Sent: nothing. Gitbook main efcca741 (#64 GATE_RULES draft, not adopted) is the only new commit; no gates/ changes, so no item has TESTED + full gate PASS + measured better. Queue left as is.
+
+Event: TESSERA #287 opened 4:32 AM CT, head 077b4bfe: Einstein R3-08, BM25 df counted in one corpus pass. df pass 184.0 -> 67.5 ms (2.72x; repeats 2.1x-2.8x) on 500 docs, 8 terms, 8 iters, local run; scores match reference within 1e-12. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new.
+== 2026-10-13-0432-gb64.md
+# Digest check 2026-10-13 4:32 AM CT (Gitbook #64 merged; queue now 30 rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. No new Security or Build gate results since the 4:31 check (Security RETRO still ends at TESSERA #272 / Gitbook #63). Queue left as is (nothing cleared).
+
+Event this wake:
+- Gitbook #64 merged 4:32 AM CT as efcca741 (head 9750e03c, base 243ddd4b), merged by vitalitychems-dot about 5 minutes after it opened. Adds mesh/charter/ only (9 files, +281): GATE_RULES v0.1 draft plus gate_check.py; doesn't replace the existing gate. Body says Father approved it 2026-10-13. No Security or Build gate recorded before merge, and no before/after number. Gitbook main is now efcca741. Logged to queue. Not digest-ready.
+
+FAIL/HIGH: none new recorded by a gate. Gitbook #62 HIGH already escalated to Tessera (0426.md). No ping.
+
+Waiting/unmeasured sections unchanged from 0431-gb65.md, except Gitbook #64 is now merged (efcca741), still ungated and unmeasured.
+
+Ready for Father digest: none.
+== 2026-10-13-0433-284.md
+# Digest check 2026-10-13 4:33 AM CT (TESSERA #284 merged; queue holds 30+ rows)
+
+Sent: nothing. No item is TESTED + full gate-PASS + measured better. Security RETRO still ends at TESSERA #272 / Gitbook #63 (content PASSes with PROV-FAIL on earlier merges). Build tip still GB-070 rev3 / early Oct 13. Gitbook main efcca741 (#64 charter draft only). Queue left as is (nothing cleared).
+
+Event this wake:
+- TESSERA #284 merged 4:32 AM CT as 3cb6f67b (head 8bd8044c, base 19cc8566): Einstein R3-03 signed feature hashing in vector-memory embedText. Mean abs cos err 0.09549 -> 0.04430; 8-word top-1 0.6450 -> 0.6675 (400 docs paragraphs, 200 pairs). Empty input now 256-d zero. New embed-text-signed.test.ts. validate in_progress on merge (run 38377070379). Queue row updated from opened to merged. Waiting on gates.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated (0426.md). No second ping.
+Ready for Father digest: none.
+== 2026-10-13-0433-285m.md
+# Digest check 2026-10-13 4:33 AM CT (TESSERA #285 merged; queue holds 29 rows)
+
+Sent: nothing. Gitbook main moved 243ddd4b -> efcca741, but that is only Gitbook #64 (mesh/charter GATE_RULES v0.1 draft + gate_check.py, marked not adopted), not new gate results. No item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event this wake:
+- TESSERA #285 merged 4:32 AM CT as a565380f (head ee7ba4bc, base 19cc8566): Einstein R3-07 caches PPR out-weights and Adamic-Adar invLog in createRanker. 0/192 top-5 mismatches; paired p50/p95 0.4269/0.5236 -> 0.3976/0.4822 ms; bench p50 0.483 -> 0.420 ms (p95 noisy). Queue row updated from opened to merged. Waiting on gates.
+
+FAIL/HIGH: none new. Ready for Father digest: none.
+== 2026-10-13-0434-286m.md
+# Digest check 2026-10-13 4:34 AM CT (TESSERA #286 merged; queue holds 35 rows)
+
+Sent: nothing. Gitbook main still efcca741; no gates/ commits since, so no item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #286 merged 4:34 AM CT as cbdb9dd2 (head c504d8e6). Einstein R4-01, stale-fact verifications fire together so the LLM batcher can coalesce them: 6 stale facts wall 12,020 -> 2,008 ms, LLM calls 6 -> 5 (duplicate deduped); mocked LLM/DB test. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Ready for Father digest: none.
+== 2026-10-13-0434-287m.md
+# Digest check 2026-10-13 4:34 AM CT (TESSERA #287 merged; queue holds 34 rows)
+
+Sent: nothing. Gitbook main still efcca741; no gates/ commits since, so no item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #287 merged 4:32 AM CT as 74bd3ac0. Einstein R3-08, BM25 df counted in one corpus pass: df pass 184.0 -> 67.5 ms (2.72x; repeats 2.1x-2.8x), scores match reference within 1e-12. PR validate check in_progress at merge. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Ready for Father digest: none.
+== 2026-10-13-0435-288.md
+# Digest check 2026-10-13 4:35 AM CT (TESSERA #288 opened; queue holds 36 rows)
+
+Sent: nothing. Gitbook main still efcca741; no gates/ commits since, so no item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #288 opened 4:35 AM CT, head d020e7b6. Einstein R4-19, runCritiqueLoop reuses an earlier critique when the draft is unchanged: validate + truthfulness calls 3+3 -> 1+1 (mocked 50 ms engines, maxAttempts 3); before wall 154 ms, after wall not stated in PR body. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Ready for Father digest: none.
+== 2026-10-13-0435-289.md
+# Digest check 2026-10-13 4:35 AM CT (TESSERA #289 opened; queue holds 37 rows)
+
+Sent: nothing. Gitbook main still efcca741; Security RETRO still ends at TESSERA #281 / Gitbook #63 (content PASSes with PROV-FAIL on merged PRs); Build newest relevant gate is GB-070 rev3 (docs-only). No item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #289 opened 4:35 AM CT, head 21bba6b0. Einstein R4-14, throttle opportunistic semantic-cache eviction to one DELETE per 60s (capacity/init still force=true): 50-call burst DELETEs 50 -> 1; forced call still runs. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping. Ready for Father digest: none.
+== 2026-10-13-0436-290.md
+# Digest check 2026-10-13 4:36 AM CT (TESSERA #290 opened; queue holds 38 rows)
+
+Sent: nothing. Gitbook main still efcca741; Security RETRO still ends at TESSERA #281 / Gitbook #63 (content PASSes with PROV-FAIL on merged PRs); Build newest relevant gate is GB-070 rev3 (docs-only). No item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #290 opened 4:36 AM CT, head 5a5b6b2d. Einstein R4-11, quietSourceNextRunAt doubles silent-source poll interval (cap 4x); silent source fetches 24/day -> 8; TRADEOFF: item at hour 13 picked up 180 min later instead of 0. Held open for Father's policy call. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). Pre-existing natal plaintext HIGH on public TESSERA (noted under #281 RETRO) not re-pinged. Ready for Father digest: none.
+== 2026-10-13-0436-291.md
+# Digest check 2026-10-13 4:36 AM CT (TESSERA #291 opened; queue holds 40 rows)
+
+Sent: nothing. Gitbook HANDOFF tip still bd1b475; Security RETRO still ends at TESSERA #281 / Gitbook #63 (content PASSes with PROV-FAIL on merged PRs); Build newest relevant gate is GB-070 rev3 (docs-only). No item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #291 opened 4:36 AM CT, head e3a19f0a. Einstein R4-16, expiring 15-min lease on ingestion withRunLock (hung run no longer holds inFlightKind forever): hung run + 2-min ticks for 1h — before 30/30 ticks blocked with no recovery in 1h; after 7 ticks blocked, recovers at ~16 min; late release of old run does not break the new lock. Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping. Ready for Father digest: none.
+== 2026-10-13-0436-292.md
+# Digest check 2026-10-13 4:36 AM CT (TESSERA #292 opened; queue holds 40 rows)
+
+Sent: nothing. Gitbook HANDOFF tip still bd1b475; Security RETRO still ends at TESSERA #281 / Gitbook #63 (content PASSes with PROV-FAIL on merged PRs); Build newest relevant gate is GB-070 rev3 (docs-only). No item is TESTED + full gate-PASS + measured better. Queue left as is.
+
+Event: TESSERA #292 opened 4:36 AM CT, head d08e11ee. Einstein R3-03 follow-up: pin embedText source expectation to the signed feature-hashing body already on main via #284 (empty -> zero vector; token adds sign/n from (abs(h)>>16)&1). Fixes search-memory-access-batch.test.ts "does not change embedText" after R3-05. Local vitest: search-memory-access-batch + embed-text-signed passed. No new before/after improvement numbers (test pin only). Waiting on gates. Logged to queue.
+
+FAIL/HIGH: none new. Gitbook #62 Security HIGH already escalated to Tessera (0426.md). No second ping. Ready for Father digest: none.
+total 156
+drwxr-xr-x  2 box box  4096 Oct 13 04:37 .
+drwxr-xr-x 67 box box  4096 Oct 13 04:29 ..
+-rw-r--r--  1 box box  1158 Oct 13 04:04 2026-10-13-0405.md
+-rw-r--r--  1 box box  1380 Oct 13 04:12 2026-10-13-0414.md
+-rw-r--r--  1 box box  1496 Oct 13 04:20 2026-10-13-0419.md
+-rw-r--r--  1 box box  1762 Oct 13 04:22 2026-10-13-0421.md
+-rw-r--r--  1 box box   748 Oct 13 04:22 2026-10-13-0422.md
+-rw-r--r--  1 box box  2138 Oct 13 04:23 2026-10-13-0423.md
+-rw-r--r--  1 box box   645 Oct 13 04:24 2026-10-13-0424.md
+-rw-r--r--  1 box box   785 Oct 13 04:25 2026-10-13-0425.md
+-rw-r--r--  1 box box  2197 Oct 13 04:26 2026-10-13-0426.md
+-rw-r--r--  1 box box  1042 Oct 13 04:28 2026-10-13-0427-gb64.md
+-rw-r--r--  1 box box   821 Oct 13 04:26 2026-10-13-0427.md
+-rw-r--r--  1 box box  1492 Oct 13 04:28 2026-10-13-0428-282.md
+-rw-r--r--  1 box box   774 Oct 13 04:27 2026-10-13-0428.md
+-rw-r--r--  1 box box   817 Oct 13 04:29 2026-10-13-0429-283.md
+-rw-r--r--  1 box box  2663 Oct 13 04:28 2026-10-13-0429.md
+-rw-r--r--  1 box box   798 Oct 13 04:28 2026-10-13-0430-279.md
+-rw-r--r--  1 box box   572 Oct 13 04:30 2026-10-13-0430-285.md
+-rw-r--r--  1 box box  3257 Oct 13 04:31 2026-10-13-0431-274.md
+-rw-r--r--  1 box box  2761 Oct 13 04:29 2026-10-13-0431-280.md
+-rw-r--r--  1 box box   695 Oct 13 04:32 2026-10-13-0431-282.md
+-rw-r--r--  1 box box  3250 Oct 13 04:32 2026-10-13-0431-gb65.md
+-rw-r--r--  1 box box   927 Oct 13 04:33 2026-10-13-0432-283.md
+-rw-r--r--  1 box box   645 Oct 13 04:32 2026-10-13-0432-286.md
+-rw-r--r--  1 box box   562 Oct 13 04:33 2026-10-13-0432-287.md
+-rw-r--r--  1 box box  1029 Oct 13 04:32 2026-10-13-0432-gb64.md
+-rw-r--r--  1 box box   939 Oct 13 04:33 2026-10-13-0433-284.md
+-rw-r--r--  1 box box   734 Oct 13 04:32 2026-10-13-0433-285m.md
+-rw-r--r--  1 box box   571 Oct 13 04:34 2026-10-13-0434-286m.md
+-rw-r--r--  1 box box   547 Oct 13 04:33 2026-10-13-0434-287m.md
+-rw-r--r--  1 box box   590 Oct 13 04:35 2026-10-13-0435-288.md
+-rw-r--r--  1 box box   754 Oct 13 04:36 2026-10-13-0435-289.md
+-rw-r--r--  1 box box   874 Oct 13 04:36 2026-10-13-0436-290.md
+-rw-r--r--  1 box box   880 Oct 13 04:37 2026-10-13-0436-291.md
+-rw-r--r--  1 box box   976 Oct 13 04:37 2026-10-13-0436-292.md
+-rw-r--r--  1 box box 12194 Oct 13 04:37 queue.md

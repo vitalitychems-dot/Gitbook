@@ -1,0 +1,1 @@
+{"status":"ok","statistics":{"relevant_files":5,"nested_asar_containers":0,"text_bytes_read":10846,"invalid_utf8_files":0,"parsed_javascript_files":0,"visited_ast_nodes":0,"findings":0,"modules":0,"parse_failures":3},"nodes":9,"edges":8,"coverage":"partial","kinds":{"artifact":6,"unknown":3},"repo":"scverse/scanpy","exit":0,"files_total":888,"js_ts_files":0,"py_files":215}

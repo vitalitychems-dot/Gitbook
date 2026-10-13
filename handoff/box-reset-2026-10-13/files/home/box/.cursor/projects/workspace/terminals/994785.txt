@@ -1,0 +1,109 @@
+---
+pid: 396256
+cwd: "/workspace/repo-lab"
+command: "LAB=/workspace/repo-lab\nRESULTS=$LAB/INSTALL-RESULTS.tsv\n\n# SWE-bench from pypi or -e .\n(\n  name=SWE-bench__SWE-bench\n  dir=$LAB/$name\n  log=$dir/install-test.log\n  echo \"=== $name ===\" | tee \"$log\"\n  rm -rf \"$dir/.venv\"; python3 -m venv \"$dir/.venv\"\n  PIP=$dir/.venv/bin/pip; PY=$dir/.venv/bin/python\n  \"$PIP\" install -U pip -q\n  if timeout 280 \"$PIP\" install -e . >>\"$log\" 2>&1; then\n    if timeout 60 \"$PY\" -c 'import swebench; print(\"swebench ok\")' >>\"$log\" 2>&1; then\n      echo -e \"$name\\tPASS\\teditable+import (full bench needs API/\\$ — not run)\" >> \"$RESULTS\"; echo SWE_PASS\n    else\n      # try alternate\n      if timeout 60 \"$PY\" -c 'from swebench import __version__; print(__version__)' >>\"$log\" 2>&1; then\n        echo -e \"$name\\tPASS\\timport alt\" >> \"$RESULTS\"; echo SWE_PASS2\n      else\n        echo -e \"$name\\tFAIL\\timport failed after install\" >> \"$RESULTS\"; echo SWE_TEST_FAIL; tail -15 \"$log\"\n      fi\n    fi\n  else\n    # pypi fallback\n    if timeout 280 \"$PIP\" install swebench >>\"$log\" 2>&1 && timeout 60 \"$PY\" -c 'import swebench; print(\"ok\")' >>\"$log\" 2>&1; then\n      echo -e \"$name\\tPASS\\tpypi swebench import (editable failed)\" >> \"$RESULTS\"; echo SWE_PYPI\n    else\n      echo -e \"$name\\tFAIL\\tinstall failed\" >> \"$RESULTS\"; echo SWE_FAIL; tail -20 \"$log\"\n    fi\n  fi\n) &\n\n# autogen — modern package is autogen-agentchat; try pip install -e python/packages or pyautogen\n(\n  name=microsoft__autogen\n  dir=$LAB/$name\n  log=$dir/install-test.log\n  echo \"=== $name ===\" | tee \"$log\"\n  ls \"$dir\" | head\n  # look for python package path\n  find \"$dir\" -maxdepth 3 -name 'pyproject.toml' | head -20\n  rm -rf \"$dir/.venv\"; python3 -m venv \"$dir/.venv\"\n  PIP=$dir/.venv/bin/pip; PY=$dir/.venv/bin/python\n  \"$PIP\" install -U pip -q\n  # Prefer published packages matching README\n  if timeout 280 \"$PIP\" install autogen-agentchat autogen-ext >>\"$log\" 2>&1; then\n    if timeout 60 \"$PY\" -c 'import autogen_agentchat; print(\"autogen_agentchat ok\")' >>\"$log\" 2>&1; then\n      echo -e \"$name\\tPASS\\tautogen-agentchat pypi import\" >> \"$RESULTS\"; echo AUTO_PASS\n    else\n      echo -e \"$name\\tFAIL\\tautogen import failed\" >> \"$RESULTS\"; echo AUTO_TEST_FAIL; tail -10 \"$log\"\n    fi\n  else\n    echo -e \"$name\\tFAIL\\tautogen install failed\" >> \"$RESULTS\"; echo AUTO_FAIL; tail -15 \"$log\"\n  fi\n) &\n\n# cl-api-doc — docs only\n(\n  name=Cortical-Labs__cl-api-doc\n  dir=$LAB/$name\n  echo -e \"$name\\tPASS\\tdocs-only clone; no installable package (README present)\" >> \"$RESULTS\"\n  ls \"$dir\" | head -10\n  echo CL_DOC_OK\n) &\n\n# Grok-ready — account public historical; inspect only (no wholesale; skip full pnpm)\n(\n  name=vitalitychems-dot__Grok-ready\n  dir=$LAB/$name\n  log=$dir/inspect.log\n  {\n    echo \"=== inspect Grok-ready ===\"\n    ls \"$dir\" | head -20\n    test -f \"$dir/package.json\" && head -40 \"$dir/package.json\"\n    # count size\n    du -sh \"$dir\" 2>/dev/null\n    # try node -e require? skip heavy install — mark NOT_ATTEMPTED_FULL_INSTALL with reason\n  } | tee \"$log\"\n  echo -e \"$name\\tSKIP\\thistorical monorepo; clone ok; full pnpm install not attempted (5min/size; not framework)\" >> \"$RESULTS\"\n) &\n\n# tessera-grok-handoff — chunked archives\n(\n  name=vitalitychems-dot__tessera-grok-handoff\n  dir=$LAB/$name\n  ls \"$dir\" | head -15\n  echo -e \"$name\\tSKIP\\thandoff archive parts; no app install path\" >> \"$RESULTS\"\n) &\n\n# lancedb — python package\n(\n  name=lancedb__lancedb\n  dir=$LAB/$name\n  log=$dir/install-test.log\n  echo \"=== $name ===\" | tee \"$log\"\n  rm -rf \"$dir/.venv\"; python3 -m venv \"$dir/.venv\"\n  PIP=$dir/.venv/bin/pip; PY=$dir/.venv/bin/python\n  \"$PIP\" install -U pip -q\n  if timeout 280 \"$PIP\" install lancedb >>\"$log\" 2>&1; then\n    if timeout 60 \"$PY\" -c 'import lancedb; print(\"lancedb\", getattr(lancedb,\"__version__\",\"?\"))' >>\"$log\" 2>&1; then\n      echo -e \"$name\\tPASS\\tpypi lancedb import\" >> \"$RESULTS\"; echo LANCE_PASS\n    else\n      echo -e \"$name\\tFAIL\\timport failed\" >> \"$RESULTS\"; echo LANCE_TEST_FAIL\n    fi\n  else\n    echo -e \"$name\\tFAIL\\tinstall failed\" >> \"$RESULTS\"; echo LANCE_FAIL; tail -15 \"$log\"\n  fi\n) &\n\nwait\necho FINAL\ncat \"$RESULTS\"\n"
+title: "Install SWE-bench autogen lancedb; inspect account repos"
+status: succeeded
+started_at: 2026-10-05T22:52:07.774Z
+running_for_ms: 30634    
+---
+=== SWE-bench__SWE-bench ===
+CL-00. Hello, Neurons.ipynb
+CL-01. Detecting and Reacting to Spikes.ipynb
+CL-01A. Detecting and Reacting to Spikes. Appendix A. UDP Spike Receiver.ipynb
+CL-02. Recording.ipynb
+CL-03. Data Streams.ipynb
+CL-04. Example Visualiser.html
+CL-04. Example Visualiser.mjs
+CL-04. Real-Time Visualisation.ipynb
+CL-05. Reading Raw Data.ipynb
+CL-06. Stimulation.ipynb
+=== lancedb__lancedb ===
+=== microsoft__autogen ===
+MIGRATION_TO_GROK_READY.md
+README.md
+grok-workspace_1789591148371.zip.part-000
+grok-workspace_1789591148371.zip.part-001
+grok-workspace_1789591148371.zip.part-002
+grok-workspace_1789591148371.zip.part-003
+grok-workspace_1789591148371.zip.part-004
+grok-workspace_1789591148371.zip.part-005
+grok-workspace_1789591148371.zip.part-006
+grok-workspace_1789591148371.zip.part-007
+grok-workspace_1789591148371.zip.part-008
+grok-workspace_1789591148371.zip.part-009
+grok-workspace_1789591148371.zip.part-010
+grok-workspace_1789591148371.zip.part-011
+grok-workspace_1789591148371.zip.part-012
+CL_DOC_OK
+=== inspect Grok-ready ===
+README.md
+archives
+artifacts
+docs
+inspect.log
+lib
+modal
+package.json
+pnpm-lock.yaml
+pnpm-workspace.yaml
+scripts
+skills-lock.json
+tsconfig.base.json
+tsconfig.json
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+FAQ.md
+LICENSE
+LICENSE-CODE
+README.md
+SECURITY.md
+SUPPORT.md
+TRANSPARENCY_FAQS.md
+autogen-landing.jpg
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "sh -c 'rm -f package-lock.json yarn.lock; case \"$npm_config_user_agent\" in pnpm/*) ;; *) echo \"Use pnpm instead\" >&2; exit 1 ;; esac'",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck"
+  },
+  "private": true,
+  "devDependencies": {
+    "typescript": "~5.9.2",
+    "prettier": "^3.8.1"
+  }
+}
+/workspace/repo-lab/microsoft__autogen/python/pyproject.toml
+28M	/workspace/repo-lab/vitalitychems-dot__Grok-ready
+AUTO_PASS
+LANCE_PASS
+SWE_PYPI
+FINAL
+repo	status	reason
+Cortical-Labs__cl-sdk	PASS	install+import ok
+jeshraghian__snntorch	PASS	install+torch+import ok
+Aider-AI__aider	PASS	install+import ok
+FoundationAgents__OpenManus	PASS	install+import ok
+mem0ai__mem0	PASS	install+import ok
+BindsNET__bindsnet	PASS	install+import ok
+brian-team__brian2	PASS	pypi brian2 install+import (editable clone failed setuptools_scm shallow)
+BrainCog-X__Brain-Cog	PASS	install+import ok
+browser-use__browser-use	PASS	pypi browser-use import ok
+chroma-core__chroma	PASS	pypi chromadb import ok
+crewAIInc__crewAI	PASS	pypi crewai import ok
+Cortical-Labs__cl-api-doc	PASS	docs-only clone; no installable package (README present)
+vitalitychems-dot__tessera-grok-handoff	SKIP	handoff archive parts; no app install path
+vitalitychems-dot__Grok-ready	SKIP	historical monorepo; clone ok; full pnpm install not attempted (5min/size; not framework)
+microsoft__autogen	PASS	autogen-agentchat pypi import
+lancedb__lancedb	PASS	pypi lancedb import
+SWE-bench__SWE-bench	PASS	pypi swebench import (editable failed)
+
+---
+exit_code: 0
+elapsed_ms: 30634
+ended_at: 2026-10-05T22:52:38.408Z
+---

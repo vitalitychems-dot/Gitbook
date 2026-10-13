@@ -1,0 +1,80 @@
+From 01be57c9eb965ca003a2d8b681de0926bb4b71c2 Mon Sep 17 00:00:00 2001
+From: vitalitychems-dot <332565808+vitalitychems-dot@users.noreply.github.com>
+Date: Tue, 13 Oct 2026 04:19:06 -0500
+Subject: [PATCH] fix(semantic-cache): fingerprint the whole system prompt, not
+ its first 500 chars
+
+withCodexDirective() prepends a >500-char directive, so every codex-wrapped system prompt
+got the same fingerprint and a semantic hit could return another agent's answer.
+Fixture: the 4 real DOMAIN_SYSTEM_PROMPTS wrapped by withCodexDirective: distinct fingerprints 1/4 -> 4/4.
+api-server 464->466 passed (+2 new), same 1 env-only failing file as main; v2 124/3 and gitai 28/0 unchanged.
+---
+ .../__tests__/semantic-cache-sysfp.test.ts    | 35 +++++++++++++++++++
+ .../api-server/src/lib/semantic-cache.ts      |  7 ++--
+ 2 files changed, 40 insertions(+), 2 deletions(-)
+ create mode 100644 artifacts/api-server/src/__tests__/semantic-cache-sysfp.test.ts
+
+diff --git a/artifacts/api-server/src/__tests__/semantic-cache-sysfp.test.ts b/artifacts/api-server/src/__tests__/semantic-cache-sysfp.test.ts
+new file mode 100644
+index 00000000..a68bc504
+--- /dev/null
++++ b/artifacts/api-server/src/__tests__/semantic-cache-sysfp.test.ts
+@@ -0,0 +1,35 @@
++import { describe, it, expect, vi } from "vitest";
++import { readFileSync } from "fs";
++import { join } from "path";
++
++vi.mock("@workspace/db", () => ({ db: {} }));
++vi.mock("@workspace/db/schema", () => ({ semanticCacheTable: {} }));
++vi.mock("../lib/neural-embeddings", () => ({ generateEmbedding: async () => [], cosineSimilarity: () => 0 }));
++vi.mock("../lib/tessera-codex", () => ({ getAllCodexEntries: async () => [], ensureCodexSeeded: async () => {} }));
++
++import { fingerprintSystemContext } from "../lib/semantic-cache";
++import { withCodexDirective } from "../lib/codex-startup-directive";
++
++// Real fixture: the domain system prompts in sovereign-engine-router.ts, each wrapped by the
++// real withCodexDirective() exactly as routeToEngine() sends them.
++function domainPrompts(): string[] {
++  const src = readFileSync(join(__dirname, "../lib/sovereign-engine-router.ts"), "utf8");
++  const block = src.slice(src.indexOf("const DOMAIN_SYSTEM_PROMPTS"), src.indexOf("};", src.indexOf("const DOMAIN_SYSTEM_PROMPTS")));
++  return [...block.matchAll(/^\s*[a-z_]+:\s*`([^`]+)`/gm)].map((m) => m[1]);
++}
++
++describe("semantic cache system fingerprint", () => {
++  it("gives each distinct codex-wrapped system prompt its own fingerprint", () => {
++    const prompts = domainPrompts();
++    expect(prompts.length).toBeGreaterThan(3);
++    const fps = new Set(prompts.map((p) => fingerprintSystemContext([{ role: "system", content: withCodexDirective(p) }, { role: "user", content: "q" }], "m")));
++    console.log(`SYSFP distinct=${fps.size} of ${prompts.length}`);
++    expect(fps.size).toBe(prompts.length);
++  });
++  it("is stable and model-scoped", () => {
++    const m = [{ role: "system", content: "x".repeat(900) }];
++    expect(fingerprintSystemContext(m, "a")).toBe(fingerprintSystemContext(m, "a"));
++    expect(fingerprintSystemContext(m, "a")).not.toBe(fingerprintSystemContext(m, "b"));
++    expect(fingerprintSystemContext([{ role: "user", content: "u" }], "a")).toBe("");
++  });
++});
+diff --git a/artifacts/api-server/src/lib/semantic-cache.ts b/artifacts/api-server/src/lib/semantic-cache.ts
+index a713f448..6fa129f4 100644
+--- a/artifacts/api-server/src/lib/semantic-cache.ts
++++ b/artifacts/api-server/src/lib/semantic-cache.ts
+@@ -35,10 +35,13 @@ function hashPrompt(messages: Array<{ role: string; content: string }>, model: s
+ 
+ const SYSTEM_FP_PREFIX = "@@sysfp:";
+ 
+-function fingerprintSystemContext(messages: Array<{ role: string; content: string }>, model: string): string {
++// Hash the whole system context. A 500-char prefix made every prompt built with
++// withCodexDirective() (directive > 500 chars) share one fingerprint, so a semantic
++// hit could return an answer written under a different agent's system prompt.
++export function fingerprintSystemContext(messages: Array<{ role: string; content: string }>, model: string): string {
+   const systemContent = messages.filter(m => m.role === "system").map(m => m.content).join("|");
+   if (systemContent.length === 0) return "";
+-  return crypto.createHash("sha256").update(model + "|sys:" + systemContent.slice(0, 500)).digest("hex").slice(0, 16);
++  return crypto.createHash("sha256").update(model + "|sys:" + systemContent).digest("hex").slice(0, 16);
+ }
+ 
+ function extractStoredFingerprint(promptText: string): string {
+-- 
+2.47.3
+

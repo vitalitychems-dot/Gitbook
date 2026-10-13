@@ -1,0 +1,23 @@
+GB-026 rev 2 on 979c35e — verification 2026-10-05 16:31 CT
+Main HEAD: 979c35e0be9a27ab143c7dcfc714d979b11e10a0. Merge PR #8 (GB-022, 024, 025, 023), 2026-10-05T21:30:33Z = 4:30:33 PM CT.
+Parents: ecd902211abd202711838219b28a1e1b39ae47c4 (first) and cba4140d43956795d6afa7eb2b5c9d4574a6c38b. Open PRs: 0. Rechecked at 16:31 CT.
+
+1) PR #8 tree check: PASS.
+   PR #8 changed 21 files against its first parent ecd9022 (GitHub get_commit; +100/−78).
+   - That set of 21 paths is identical to the set of files touched by GB-022 v4 (ae288a54), GB-024 v3 (3fc1fc11), GB-025 (0a590a0c) and GB-023 (684227c6).
+   - All 21 979c35e blobs are byte-identical to ecd9022 + 022 → 024 → 025 → 023: 0 mismatches. Blob list: apply-979c35e/pr8-979c35e-blobs.tsv
+   - Clean 979c35e subset = ecd9022 subset + the 21 PR #8 blobs. Tree 814dd7a1 = the local stacked tree (rev 2 drafting base).
+   - Unwind check: reverse-applying 023 → 025 → 024 → 022 on 979c35e gives rc=0 four times, and the result is the ecd9022 tree (a455b50e).
+
+2) GB-026-rev2.979c35e.diff is byte-identical to GB-026-rev2.ecd9022.diff.
+   sha256 1a5949a8191b4b06ca4fc918535a3e91e273048ded51bdfc40210a40805b8ee1; 563 lines; 23 files; +60/−87.
+
+3) Apply checks (cmd > file 2>&1; r=$?):
+A git apply --check GB-026-rev2.979c35e.diff on clean 979c35e: rc=0
+B git apply GB-026-rev2.979c35e.diff on clean 979c35e: rc=0
+  result tree e5c867e9dcf4dc2aec303bbbbdee51ae10530db9 ; expected p26r2 tree e5c867e9dcf4dc2aec303bbbbdee51ae10530db9
+C reverse-check on result: rc=0
+E rev2 alone on clean ecd9022 (expected fail): rc=1
+   E fails on: intake/how-to-submit.md, mesh/TESSERA-GITBOOK-OPERATING-MODE.md, mesh/flow.md, mesh/roles.md, review/moderator-handoff.md. These need text from GB-022, which is now on main.
+
+4) 8010626 ancestry vs 979c35e: PASS. See PUBLISH-SHA-EVIDENCE.md, addendum.

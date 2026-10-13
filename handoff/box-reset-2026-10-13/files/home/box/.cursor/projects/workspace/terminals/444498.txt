@@ -1,0 +1,37 @@
+---
+pid: 261709
+cwd: "/workspace/build-gate/tessera"
+command: "cd /workspace/build-gate/tessera && for b in pr65 pr298 pr269; do mb=$(git merge-base origin/main $b); echo \"== $b base=${mb:0:8} commits=$(git rev-list --count $mb..$b)\"; git log --format='%ae' $mb..$b | sort | uniq -c; git merge-tree --write-tree origin/main $b >/dev/null 2>&1 && echo merge=clean || echo merge=CONFLICT; git diff $mb $b | grep -E '^\\+.*TESSERA_ENABLE_[A-Z_]+' | head -5; git diff --stat $mb $b | tail -1; done"
+status: succeeded
+started_at: 2026-10-13T11:49:21.990Z
+running_for_ms: 118229   
+---
+== pr65 base= commits=191
+      2 206951365+cursor[bot]@users.noreply.github.com
+      7 3.32565808e+08+vitalitychems-dot@users.noreply.github.com
+     66 cursoragent@cursor.com
+      3 manus@users.noreply.github.com
+    113 vitalitychems@gmail.com
+merge=CONFLICT
++    const hadBypass = Object.prototype.hasOwnProperty.call(process.env, "TESSERA_ENABLE_COLONIAL_FALLBACK");
++    const previousBypass = process.env.TESSERA_ENABLE_COLONIAL_FALLBACK;
++      process.env.TESSERA_ENABLE_COLONIAL_FALLBACK = "1";
++      if (hadBypass) process.env.TESSERA_ENABLE_COLONIAL_FALLBACK = previousBypass;
++      else delete process.env.TESSERA_ENABLE_COLONIAL_FALLBACK;
+warning: exhaustive rename detection was skipped due to too many files.
+warning: you may want to set your diff.renameLimit variable to at least 4693 and retry the command.
+ 5672 files changed, 167787 insertions(+), 768914 deletions(-)
+== pr298 base=47983dda commits=1
+      1 vitalitychems-dot@users.noreply.github.com
+merge=clean
+ 6 files changed, 178 insertions(+), 56 deletions(-)
+== pr269 base=f91ff82c commits=1
+      1 332565808+vitalitychems-dot@users.noreply.github.com
+merge=clean
+ 2 files changed, 302 insertions(+)
+
+---
+exit_code: 0
+elapsed_ms: 118229
+ended_at: 2026-10-13T11:51:20.219Z
+---

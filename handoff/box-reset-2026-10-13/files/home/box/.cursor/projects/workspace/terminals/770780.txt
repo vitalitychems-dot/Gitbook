@@ -1,0 +1,57 @@
+---
+pid: 1048874
+cwd: "/workspace/rea-batch/vitality-q/vitality"
+command: "cd /workspace/rea-batch && mv vitality-q/vitality vitality && rmdir vitality-q; cd vitality; cat README.md | head -30; ls artifacts archive scripts; echo ---SECRETS; rg -l -i --hidden -g '!.git' -g '!*.lock' -g '!pnpm-lock.yaml' -e '(api[_-]?key|secret|private[_-]?key|mnemonic|seed phrase|BEGIN (RSA|EC|OPENSSH) PRIVATE|sk_live|sk_test|ghp_|xox[bp]-|AKIA[0-9A-Z]{16})' | head -40; echo ---PAY; rg -l -i -g '!.git' -g '!pnpm-lock.yaml' -e '(stripe|paypal|checkout|square|venmo|cashapp|zelle|bitcoin|ethereum|wallet|web3|ethers|solana|usdt)' | head -40; echo ---ENV; find . -name '.env*' -not -path './.git/*'; echo ---VAULT; find . -ipath '*vault*' -o -ipath '*1T*' | grep -v .git | head"
+status: succeeded
+started_at: 2026-10-12T21:53:27.620Z
+running_for_ms: 195461   
+---
+# Vitality
+
+Vitality Supply, Vitalitychems, and the store photos live here. They were taken out of TESSERA and Gitbook.
+
+- `archive/drive-sections/Vitalitychem` and `Vitalitychems-2` are the two Drive zips, cut into 45 MB parts. They are not unpacked.
+- `archive/drive-sections/Fleet-Moss-Monarch-Website` is the website zip, also in parts, not unpacked.
+- `archive/moved/collink1007-fleet-moss-monarch-rapid` is the historical Vitalitychems.com site checkout from collink1007/fleet-moss-monarch-rapid. Its full tree, attachments, and screenshots are preserved here. It is not Tessera.
+- `archive/drive-rest/price-list.xlsx` is the shared price sheet.
+- `legacy-ui-VitalityPage.tsx` and the two files under `archive/moved/collink1007-XXX` are the old vitality pages.
+
+This repository is private. It is not part of Tessera. Vitality-Supply 2.zip is still on Drive behind a Google sign-in, so it is not in this repository.
+
+## Current Replit storefront workspace
+
+The current Vitality Chems storefront source is at the repository root in `artifacts/vitality-supply/`, with its pnpm workspace configuration and supporting packages. Build from the repository root with:
+
+```sh
+pnpm install --frozen-lockfile
+pnpm --filter @workspace/vitality-supply run build
+```
+
+Runtime product images are in `artifacts/vitality-supply/public/`; the image-validation fixture is in `attached_assets/`. This source update excludes Replit runtime settings, local agent data, bulk uploaded source files, and the separate Tessera service. The existing archived attachments and screenshots above were not changed.
+archive:
+drive-rest
+drive-sections
+moved
+
+artifacts:
+mockup-sandbox
+vitality-supply
+
+scripts:
+check-artifact-health.mjs
+check-artifact-health.test.mjs
+check-test-image-footprint.mjs
+check-test-image-footprint.test.mjs
+inventory-workspace-archive.py
+post-merge.sh
+---SECRETS
+---PAY
+---ENV
+./artifacts/vitality-supply/.env.example
+---VAULT
+
+---
+exit_code: 0
+elapsed_ms: 195461
+ended_at: 2026-10-12T21:56:43.081Z
+---

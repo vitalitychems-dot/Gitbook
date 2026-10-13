@@ -1,0 +1,15 @@
+=== PR8 redaction coverage ===
+redacted visible:
+bot [REDACTED] user [REDACTED]
+db [REDACTED] key [REDACTED]
+[REDACTED]
+[REDACTED]
+[REDACTED]
+contains "[REDACTED]"? OK redacted
+contains "[REDACTED]"? OK redacted
+contains "postgres://[REDACTED]@127.0.0.1/tessera"? OK redacted
+contains "[REDACTED]"? OK redacted
+contains "example-secret"? OK redacted
+contains "example-only"? OK redacted
+contains "example-only-not-real"? OK redacted
+has [REDACTED]? true

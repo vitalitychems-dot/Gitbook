@@ -1,0 +1,1037 @@
+[
+ {
+  "sha": "b9f96ce0e567d2c7adfa1927e46f46ebe8b16faa",
+  "size": 1922832,
+  "paths": [
+   "archive/from-gitbook/archive/moved/Grok-ready/docs/migration-review/remote-archive-verification.json",
+   "archives/source-repositories/Grok-ready/docs/migration-review/remote-archive-verification.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1922832
+ },
+ {
+  "sha": "c51f3e545f657569a7949c56208f3659a0cbe374",
+  "size": 287371,
+  "paths": [
+   "archive/from-gitbook/archive/moved/Grok-ready/docs/migration-review/raw-media-inventory.json",
+   "archives/source-repositories/Grok-ready/docs/migration-review/raw-media-inventory.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 287371
+ },
+ {
+  "sha": "db5d1a0d0f24dd8e953c15f09a0a5791b67e51de",
+  "size": 264665,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/package-lock.json",
+   "archives/source-repositories/olive-giant-ever-glade/package-lock.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 264665
+ },
+ {
+  "sha": "ab53cc34133777c591eeb1ab2e054000a9b6b378",
+  "size": 201430,
+  "paths": [
+   "archive/from-gitbook/archive/moved/5t/.agents/outputs/tx-local-branches-manifest.json",
+   "archives/source-repositories/5t/.agents/outputs/tx-local-branches-manifest.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 201430
+ },
+ {
+  "sha": "d6a8edd6cceb8ab9edec983405b0fc3dc993bb71",
+  "size": 199933,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/imports/manifest.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/imports/manifest.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 199933
+ },
+ {
+  "sha": "15313902f8ee18bed416b7de11ca91881dc6cb1e",
+  "size": 177196,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/imports/read.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/imports/read.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 177196
+ },
+ {
+  "sha": "af346cd0ffa27fcd00abf4bf1d0fe2778cd0096c",
+  "size": 130450,
+  "paths": [
+   "archive/from-gitbook/archive/moved/Grok-ready/docs/migration-review/represented-at-other-paths.json",
+   "archives/source-repositories/Grok-ready/docs/migration-review/represented-at-other-paths.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 130450
+ },
+ {
+  "sha": "fd36909f23a7a64252cb92753c33c7284fcd5ff6",
+  "size": 20123,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/coordination/board.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/coordination/board.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 20123
+ },
+ {
+  "sha": "f3393b6f8f609ecffef1d94d4e00eeed08473581",
+  "size": 17450,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/lib/tessera/chat.ts",
+   "archives/source-repositories/olive-giant-ever-glade/src/lib/tessera/chat.ts"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 17450
+ },
+ {
+  "sha": "ed18eb662cf8ddeaf510ff4dc3493a514d1885ac",
+  "size": 15215,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/lib/tessera/identity.ts",
+   "archives/source-repositories/olive-giant-ever-glade/src/lib/tessera/identity.ts"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 15215
+ },
+ {
+  "sha": "3d182dd708d88172715f25e406181184a30d0337",
+  "size": 13964,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/components/tessera/chamber.tsx",
+   "archives/source-repositories/olive-giant-ever-glade/src/components/tessera/chamber.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 13964
+ },
+ {
+  "sha": "c4446685376daa31b3dc5c626f54a75b03bbf0b4",
+  "size": 13496,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/components/tessera/board-view.tsx",
+   "archives/source-repositories/olive-giant-ever-glade/src/components/tessera/board-view.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 13496
+ },
+ {
+  "sha": "072987cb6fd0936a9c1b370a6d89de0f03497912",
+  "size": 12314,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/lib/tessera/github-desk.ts",
+   "archives/source-repositories/olive-giant-ever-glade/src/lib/tessera/github-desk.ts"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 12314
+ },
+ {
+  "sha": "a88c04e2e589f08e432bd39dd034b8320817872b",
+  "size": 10135,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/tessera-worker.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/tessera-worker.mjs"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 10135
+ },
+ {
+  "sha": "6919168b87c646d3b27fd66d68cdd7e391757583",
+  "size": 8608,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/menubar.tsx",
+   "artifacts/tessera/src/components/ui/menubar.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 8608
+ },
+ {
+  "sha": "5a20503b547ea0e4e467d63fe1ae78e4171afb52",
+  "size": 7606,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/dropdown-menu.tsx",
+   "artifacts/tessera/src/components/ui/dropdown-menu.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 7606
+ },
+ {
+  "sha": "a623682dab53fbe9e1777b83b2e93763837653d8",
+  "size": 7569,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/calendar.tsx",
+   "artifacts/tessera/src/components/ui/calendar.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 7569
+ },
+ {
+  "sha": "0cd4b2c03d306c38836d43c7f3dc2cb2547c64a7",
+  "size": 7406,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/context-menu.tsx",
+   "artifacts/tessera/src/components/ui/context-menu.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 7406
+ },
+ {
+  "sha": "f0aa67ddb6b5067c5aece4678259caa57638aa5a",
+  "size": 6750,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/vite.config.ts",
+   "archives/source-repositories/olive-giant-ever-glade/vite.config.ts"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 6750
+ },
+ {
+  "sha": "19463a472f0292a67e75887c4be367f646f2c227",
+  "size": 6477,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/components/tessera/world-stage.tsx",
+   "archives/source-repositories/olive-giant-ever-glade/src/components/tessera/world-stage.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 6477
+ },
+ {
+  "sha": "9c2b9bf3705d8421bef00704c0c52e83d371ca11",
+  "size": 6210,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/carousel.tsx",
+   "artifacts/tessera/src/components/ui/carousel.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 6210
+ },
+ {
+  "sha": "0d94fa5426079ea7d7abbd6a2d75553f4b265cf2",
+  "size": 6098,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/web-study.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/web-study.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 6098
+ },
+ {
+  "sha": "0a276fcb1d7623b0d57fd649fddfb043b535ea62",
+  "size": 6044,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/field.tsx",
+   "artifacts/tessera/src/components/ui/field.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 6044
+ },
+ {
+  "sha": "6e637f7dc67daa0b2ce4f440e4bbdb3f14ce3c03",
+  "size": 5745,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/select.tsx",
+   "artifacts/tessera/src/components/ui/select.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 5745
+ },
+ {
+  "sha": "eb1557e7499b974a595a313e897c4439b0f0a531",
+  "size": 5450,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/components/tessera/app-shell.tsx",
+   "archives/source-repositories/olive-giant-ever-glade/src/components/tessera/app-shell.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 5450
+ },
+ {
+  "sha": "056354bf824bf1f06e9dbceeacad512ce21b03d1",
+  "size": 5124,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/navigation-menu.tsx",
+   "artifacts/tessera/src/components/ui/navigation-menu.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 5124
+ },
+ {
+  "sha": "2cecd9104b27be82d238aa2f1cbb351e05446af7",
+  "size": 4887,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/command.tsx",
+   "artifacts/tessera/src/components/ui/command.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4887
+ },
+ {
+  "sha": "a822477534192c4df5073e4015f7461e739d3344",
+  "size": 4845,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/toast.tsx",
+   "artifacts/tessera/src/components/ui/toast.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4845
+ },
+ {
+  "sha": "6367195bd2c5ef24167b975ce53fd7c011338d35",
+  "size": 4776,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/src/components/tessera/code-view.tsx",
+   "archives/source-repositories/olive-giant-ever-glade/src/components/tessera/code-view.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4776
+ },
+ {
+  "sha": "a9f72274057c2aebe036ad0bf5a65eb748a3eb27",
+  "size": 4538,
+  "paths": [
+   "archive/from-gitbook/archive/moved/1/pnpm-workspace.yaml",
+   "archives/source-repositories/1/pnpm-workspace.yaml"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4538
+ },
+ {
+  "sha": "a4d81912653b3c9e21591ad3463c4b26860dd541",
+  "size": 4504,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/tools/workshop-pass.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/data/tools/workshop-pass.mjs"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4504
+ },
+ {
+  "sha": "93d2b8122ddd7119c3580afa71e8c53708982983",
+  "size": 4494,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/item.tsx",
+   "artifacts/tessera/src/components/ui/item.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4494
+ },
+ {
+  "sha": "fa2b4429f4303210462ad03f9f49280ac5ae07ce",
+  "size": 4419,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/alert-dialog.tsx",
+   "artifacts/tessera/src/components/ui/alert-dialog.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4419
+ },
+ {
+  "sha": "272cb721eb48b7a5833ccd51f940a8830d85b64e",
+  "size": 4280,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/sheet.tsx",
+   "artifacts/tessera/src/components/ui/sheet.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4280
+ },
+ {
+  "sha": "1fe22e6f0be2750d1b5ec3efc7346fef4612b2e3",
+  "size": 4175,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/form.tsx",
+   "artifacts/tessera/src/components/ui/form.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 4175
+ },
+ {
+  "sha": "9dbeaa096eef7b54a3272898770c4c32e00630af",
+  "size": 3835,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/dialog.tsx",
+   "artifacts/tessera/src/components/ui/dialog.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 3835
+ },
+ {
+  "sha": "70453193a8ac9dc3a484d3ebe73018063f7d9274",
+  "size": 3546,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/package.json",
+   "archives/source-repositories/olive-giant-ever-glade/package.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 3546
+ },
+ {
+  "sha": "3d582366097d95671a3af97c863892371586739a",
+  "size": 3356,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/tessera-proof.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/tessera-proof.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 3356
+ },
+ {
+  "sha": "c17b0ccaa95dccfb96c75618e078efd263e54fd0",
+  "size": 3007,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/drawer.tsx",
+   "artifacts/tessera/src/components/ui/drawer.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 3007
+ },
+ {
+  "sha": "c0df655c0bf26af1148d038e1d013e884663b240",
+  "size": 2859,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/table.tsx",
+   "artifacts/tessera/src/components/ui/table.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2859
+ },
+ {
+  "sha": "d3311054cd07a90d130f7996c79b3fc0feeede39",
+  "size": 2751,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/pagination.tsx",
+   "artifacts/tessera/src/components/ui/pagination.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2751
+ },
+ {
+  "sha": "60e6c96f72f0350d08b47e4730cab8f3975dc853",
+  "size": 2712,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/breadcrumb.tsx",
+   "artifacts/tessera/src/components/ui/breadcrumb.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2712
+ },
+ {
+  "sha": "71667632e77bf4265ab740e906f785fee806eec2",
+  "size": 2396,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/empty.tsx",
+   "artifacts/tessera/src/components/ui/empty.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2396
+ },
+ {
+  "sha": "d6e78014fc491465c059253d541b10afdaa3227a",
+  "size": 2209,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/button-group.tsx",
+   "artifacts/tessera/src/components/ui/button-group.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2209
+ },
+ {
+  "sha": "f7891c9cc8ba7868f4b5bdb67dc883b1880ade9f",
+  "size": 2143,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/input-otp.tsx",
+   "artifacts/tessera/src/components/ui/input-otp.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2143
+ },
+ {
+  "sha": "e1797c93458f3751a2e0f1189ff50d77f20ae3ed",
+  "size": 2001,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/accordion.tsx",
+   "artifacts/tessera/src/components/ui/accordion.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 2001
+ },
+ {
+  "sha": "85d83beab3224580318b1dd85f93e9294fae32c0",
+  "size": 1877,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/tabs.tsx",
+   "artifacts/tessera/src/components/ui/tabs.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1877
+ },
+ {
+  "sha": "cabfbfc59d955db9efc2049783cad4a71db55442",
+  "size": 1828,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/card.tsx",
+   "artifacts/tessera/src/components/ui/card.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1828
+ },
+ {
+  "sha": "1c876bbeecabe59b684719afe58e684f34cdecbf",
+  "size": 1753,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/toggle-group.tsx",
+   "artifacts/tessera/src/components/ui/toggle-group.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1753
+ },
+ {
+  "sha": "f4bc5586b67f45d3cc35f228e8bac2e4bc2cea16",
+  "size": 1723,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/resizable.tsx",
+   "artifacts/tessera/src/components/ui/resizable.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1723
+ },
+ {
+  "sha": "cf253cf17056ce04827219643e484ea99c77cf6b",
+  "size": 1642,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/scroll-area.tsx",
+   "artifacts/tessera/src/components/ui/scroll-area.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1642
+ },
+ {
+  "sha": "c59bf3bc8ebae6b1d3dc6180ff0365c6b8ef690f",
+  "size": 1630,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/import-pass.test.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/import-pass.test.mjs"
+  ],
+  "cls": "intentional: test fixture",
+  "locked": false,
+  "waste": 1630
+ },
+ {
+  "sha": "5afd41d142c95c74069ebb5460117e74ead3b9df",
+  "size": 1598,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/alert.tsx",
+   "artifacts/tessera/src/components/ui/alert.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1598
+ },
+ {
+  "sha": "ab0a30fb3daa5b3fe5a4158ee1372405aac50aba",
+  "size": 1486,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/toggle.tsx",
+   "artifacts/tessera/src/components/ui/toggle.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1486
+ },
+ {
+  "sha": "c55ab42224874608473643de0a85736b7fec0730",
+  "size": 1467,
+  "paths": [
+   ".agents/skills/pdf/LICENSE.txt",
+   ".agents/skills/pptx/LICENSE.txt"
+  ],
+  "cls": "intentional: LICENSE",
+  "locked": false,
+  "waste": 1467
+ },
+ {
+  "sha": "51e507ba9d08bcdbb1fb630498f1cbdf2bf50093",
+  "size": 1419,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/avatar.tsx",
+   "artifacts/tessera/src/components/ui/avatar.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1419
+ },
+ {
+  "sha": "9d3a26e6ec5d8647f22d754be5affd9e8eba1ec5",
+  "size": 1410,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/radio-group.tsx",
+   "artifacts/tessera/src/components/ui/radio-group.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1410
+ },
+ {
+  "sha": "fdcb511dc768b79951de97416e9bd0ff1ae9ea05",
+  "size": 1342,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/popover.tsx",
+   "artifacts/tessera/src/components/ui/popover.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1342
+ },
+ {
+  "sha": "95643d9c7099c1179f8a876fbf8840dc077e1b38",
+  "size": 1237,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/hover-card.tsx",
+   "artifacts/tessera/src/components/ui/hover-card.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1237
+ },
+ {
+  "sha": "455c23b6cd5adcb0278792568cdddf084a4a37c9",
+  "size": 1148,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/switch.tsx",
+   "artifacts/tessera/src/components/ui/switch.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1148
+ },
+ {
+  "sha": "67687a57c9d4f51d5f130919bc382c97819a6ccc",
+  "size": 1135,
+  "paths": [
+   "docs/handoff/TESSERA_OPERATING_GUIDELINES.md",
+   "docs/tessera-control/TESSERA_OPERATING_GUIDELINES.md"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1135
+ },
+ {
+  "sha": "158648e74fca86b0b9ef47bd04e4bc6c7571e2ae",
+  "size": 1117,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/desk-study.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/desk-study.mjs"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1117
+ },
+ {
+  "sha": "9068deed5b18417a6839a3a00ca724723d62f2ef",
+  "size": 1102,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/startup.sh",
+   "archives/source-repositories/olive-giant-ever-glade/startup.sh"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1102
+ },
+ {
+  "sha": "9398b331513e9668b8d76f2905d570c34d080fd2",
+  "size": 1037,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/slider.tsx",
+   "artifacts/tessera/src/components/ui/slider.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1037
+ },
+ {
+  "sha": "90b71e4131b047201b35476638ea324b12f76113",
+  "size": 1031,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/checkbox.tsx",
+   "artifacts/tessera/src/components/ui/checkbox.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 1031
+ },
+ {
+  "sha": "c8fba80a8f9a61105c4a372206db6a81bb84c227",
+  "size": 940,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/school/audit.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/school/audit.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 940
+ },
+ {
+  "sha": "452f4d9f0dde88611113632c1d759d60155fe4d3",
+  "size": 894,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/sonner.tsx",
+   "artifacts/tessera/src/components/ui/sonner.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 894
+ },
+ {
+  "sha": "44d8ba842d739468527fd004503f4546cc152576",
+  "size": 862,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/kbd.tsx",
+   "artifacts/tessera/src/components/ui/kbd.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 862
+ },
+ {
+  "sha": "c64dd80b2b8ed68a2979f06ee904e99f169af1ad",
+  "size": 854,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/recall.test.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/recall.test.mjs"
+  ],
+  "cls": "intentional: test fixture",
+  "locked": false,
+  "waste": 854
+ },
+ {
+  "sha": "04f52104b046f1ac3988151df9d810dd1216d330",
+  "size": 813,
+  "paths": [
+   "archive/from-gitbook/archive/moved/5t/.agents/outputs/tx-t44-unique/.agents__agent_assets_metadata.toml",
+   "archives/source-repositories/5t/.agents/outputs/tx-t44-unique/.agents__agent_assets_metadata.toml"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 813
+ },
+ {
+  "sha": "4fc3b473e6f51afa972f840fb0f4476f8663c256",
+  "size": 792,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/progress.tsx",
+   "artifacts/tessera/src/components/ui/progress.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 792
+ },
+ {
+  "sha": "6c67edff67a48c6ac1c46f25a6d468dd461e66cb",
+  "size": 772,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/toaster.tsx",
+   "artifacts/tessera/src/components/ui/toaster.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 772
+ },
+ {
+  "sha": "69b64fb2455114c3eeda2d18741af0027b3c5e89",
+  "size": 768,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/input.tsx",
+   "artifacts/tessera/src/components/ui/input.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 768
+ },
+ {
+  "sha": "6d7f12265ba0338704f013930ce4d52c56527dd1",
+  "size": 756,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/separator.tsx",
+   "artifacts/tessera/src/components/ui/separator.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 756
+ },
+ {
+  "sha": "d34e4348838ead953030221be9ad0d6095d15017",
+  "size": 727,
+  "paths": [
+   "archive/from-gitbook/archive/moved/5t/artifacts/api-server/data/audit-manifest.json",
+   "archives/source-repositories/5t/artifacts/api-server/data/audit-manifest.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 727
+ },
+ {
+  "sha": "534182176bf87f9308355514adc884d2b69750a5",
+  "size": 724,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/label.tsx",
+   "artifacts/tessera/src/components/ui/label.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 724
+ },
+ {
+  "sha": "685ee952cf95405ca5e1c29b4b724001b4868f49",
+  "size": 661,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/imported-laws.test.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/imported-laws.test.mjs"
+  ],
+  "cls": "intentional: test fixture",
+  "locked": false,
+  "waste": 661
+ },
+ {
+  "sha": "e56b0affd7e03bd8359092a81d81c606ab09972d",
+  "size": 649,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/textarea.tsx",
+   "artifacts/tessera/src/components/ui/textarea.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 649
+ },
+ {
+  "sha": "1e9e70703485021e0b969f5731f38c8b9f8694db",
+  "size": 631,
+  "paths": [
+   ".agents/skills/vercel-react-best-practices/rules/_template.md",
+   ".agents/skills/vercel-react-native-skills/rules/_template.md"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 631
+ },
+ {
+  "sha": "8e642a8972d984a8117dc12433a45fda1cfa5506",
+  "size": 607,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/chamber-cycle.test.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/chamber-cycle.test.mjs"
+  ],
+  "cls": "intentional: test fixture",
+  "locked": false,
+  "waste": 607
+ },
+ {
+  "sha": "2b0fe1dfef3b17850bbac040665f514a8ffd0f15",
+  "size": 565,
+  "paths": [
+   "artifacts/mockup-sandbox/src/hooks/use-mobile.tsx",
+   "artifacts/tessera/src/hooks/use-mobile.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 565
+ },
+ {
+  "sha": "161724c1f4ea8fd4a2b69f685f5804d5c7068435",
+  "size": 455,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/github-desk.test.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/github-desk.test.mjs"
+  ],
+  "cls": "intentional: test fixture",
+  "locked": false,
+  "waste": 455
+ },
+ {
+  "sha": "b71dd407f94ecd79c4ccda2f0e511e75627e2dd0",
+  "size": 391,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/scripts/import-recall.test.mjs",
+   "archives/source-repositories/olive-giant-ever-glade/scripts/import-recall.test.mjs"
+  ],
+  "cls": "intentional: test fixture",
+  "locked": false,
+  "waste": 391
+ },
+ {
+  "sha": "a70e713c5b4ecb2af186efe3fadea51805f26ba5",
+  "size": 331,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/spinner.tsx",
+   "artifacts/tessera/src/components/ui/spinner.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 331
+ },
+ {
+  "sha": "9fa48946afd1eb56bd932377fd888e3986304676",
+  "size": 329,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/collapsible.tsx",
+   "artifacts/tessera/src/components/ui/collapsible.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 329
+ },
+ {
+  "sha": "6d5b19a5fbb6cdca59af06a9bfc33215200e748b",
+  "size": 311,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/workshop/replit-plugin/plugin.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/workshop/replit-plugin/plugin.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 311
+ },
+ {
+  "sha": "d7e45f7bd315f86eabf32f2c9425223417920e60",
+  "size": 266,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/skeleton.tsx",
+   "artifacts/tessera/src/components/ui/skeleton.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 266
+ },
+ {
+  "sha": "0f7a0cbc08be732a6e6fe1b403bb84cffaac6bcb",
+  "size": 172,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/school/skills.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/school/skills.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 172
+ },
+ {
+  "sha": "bd0c391ddd1088e9067844c48835bf4abcd61783",
+  "size": 166,
+  "paths": [
+   "artifacts/mockup-sandbox/src/lib/utils.ts",
+   "artifacts/tessera/src/lib/utils.ts"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 166
+ },
+ {
+  "sha": "c4abbf37f217c715a0eaade7f45ac78600df419f",
+  "size": 140,
+  "paths": [
+   "artifacts/mockup-sandbox/src/components/ui/aspect-ratio.tsx",
+   "artifacts/tessera/src/components/ui/aspect-ratio.tsx"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 140
+ },
+ {
+  "sha": "d741c8653132cefdeffd3a5929a2783e5bb808e0",
+  "size": 97,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/workshop/replit-plugin/mcp.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/workshop/replit-plugin/mcp.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 97
+ },
+ {
+  "sha": "2491b182b5c77283a9363544c4b0b01fa876d175",
+  "size": 85,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/data/school/pen-slot.json",
+   "archives/source-repositories/olive-giant-ever-glade/data/school/pen-slot.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 85
+ },
+ {
+  "sha": "bf303ce75508bd286afb553ef76c4c50564e46fc",
+  "size": 76,
+  "paths": [
+   "archive/from-gitbook/archive/moved/olive-giant-ever-glade/.grok/app-env.json",
+   "archives/source-repositories/olive-giant-ever-glade/.grok/app-env.json"
+  ],
+  "cls": "real redundancy",
+  "locked": false,
+  "waste": 76
+ },
+ {
+  "sha": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+  "size": 0,
+  "paths": [
+   ".agents/skills/pptx/scripts/__init__.py",
+   ".agents/skills/pptx/scripts/office/helpers/__init__.py",
+   "artifacts/api-server/src/middlewares/.gitkeep"
+  ],
+  "cls": "intentional: tiny (<64B)",
+  "locked": false,
+  "waste": 0
+ }
+]

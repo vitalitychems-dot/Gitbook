@@ -1,0 +1,24 @@
+flowchart TD
+  A[Discover] --> OC[Overlap check<br/>main SHA + open PRs]
+  OC --> AS[Tessera assigns task<br/>claim only after assignment]
+  AS --> B[Agents produce scoped work]
+  B --> C[GitBook intake<br/>Gitbook / Cordnation]
+  C --> D[Gitbook Moderator<br/>scope / provenance review]
+  R0[CC stages Replit app-set item<br/>not a GitBook path] --> D
+  D -->|approved| T[Tessera admin review<br/>state: at Tessera gate]
+  D -->|needs work| C
+  T --> SEC[Security sweep<br/>read-only]
+  SEC --> CI[CI / Build<br/>independent verification]
+  CI -->|fail| C
+  CI -->|pass: docs| S[Cordnation stages docs Ready<br/>all four gates cleared]
+  CI -->|pass: Replit| RR[CC marks Replit item Ready<br/>all four gates cleared]
+  S --> F[Tessera bulk update — CC feeds it<br/>numbered items 30–45 min]
+  RR --> F
+  F --> G{Father: yes / no / revise?}
+  G -->|no + notes| H0[Hold named items<br/>record decision; do not publish]
+  G -->|revise| C
+  G -->|yes — listed docs item| H[Tessera opens PR → Build verifies<br/>→ Tessera merges + posts on issue #2<br/>Father may push himself; Replit outside]
+  G -->|yes — listed Replit item| R[CC private push<br/>Replit app set only<br/>not a GitBook path]
+  H --> I{"Origin / TESSERA merge:<br/>Father's explicit yes (the word 'merge')?"}
+  I -->|no| J[Stays unmerged]
+  I -->|yes| K[Merge]

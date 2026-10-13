@@ -1,0 +1,390 @@
+{
+ "base": {
+  "recall5": 0.9628,
+  "acc": 0.1953,
+  "p50_ms": 51.27,
+  "p95_ms": 91.38,
+  "tokens_brief": 2295.7,
+  "index_bytes": 235220992,
+  "disk_free": 17159151616
+ },
+ "log": [
+  {
+   "round": 0,
+   "bench": {
+    "recall5": 0.9628,
+    "acc": 0.1953,
+    "p50_ms": 51.27,
+    "p95_ms": 91.38,
+    "tokens_brief": 2295.7,
+    "index_bytes": 235220992,
+    "disk_free": 17159151616
+   }
+  },
+  {
+   "round": 1,
+   "version": "v4",
+   "tried": [
+    {
+     "change": "chunk-level dedup (identical chunks stored once across clones)",
+     "kept": true,
+     "why": "recall5 0.9628->0.9674; p50_ms 51.27->43.04; index_bytes 235220992->211062784",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 43.04,
+      "p95_ms": 80.0,
+      "tokens_brief": 2329.6,
+      "index_bytes": 211062784,
+      "disk_free": 17183305728
+     }
+    },
+    {
+     "change": "FTS5 segment optimize + vacuum",
+     "kept": true,
+     "why": "p50_ms 43.04->40.51",
+     "info": "fts optimize + vacuum",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 40.51,
+      "p95_ms": 75.36,
+      "tokens_brief": 2329.6,
+      "index_bytes": 206753792,
+      "disk_free": 16975904768
+     }
+    },
+    {
+     "change": "brief compression: only query-matching lines per hit",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->41.57",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 41.57,
+      "p95_ms": 75.54,
+      "tokens_brief": 1723.6,
+      "index_bytes": 206753792,
+      "disk_free": 17418194944
+     }
+    },
+    {
+     "change": "TF-IDF cosine rerank (weight 0.5)",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->44.55",
+     "info": "",
+     "bench": {
+      "recall5": 0.9767,
+      "acc": 0.1953,
+      "p50_ms": 44.55,
+      "p95_ms": 79.3,
+      "tokens_brief": 2264.0,
+      "index_bytes": 206753792,
+      "disk_free": 17417179136
+     }
+    }
+   ],
+   "kept": [
+    {
+     "change": "chunk-level dedup (identical chunks stored once across clones)",
+     "gain": "recall5 0.9628->0.9674; p50_ms 51.27->43.04; index_bytes 235220992->211062784",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 43.04,
+      "p95_ms": 80.0,
+      "tokens_brief": 2329.6,
+      "index_bytes": 211062784,
+      "disk_free": 17183305728
+     }
+    },
+    {
+     "change": "FTS5 segment optimize + vacuum",
+     "gain": "p50_ms 43.04->40.51",
+     "info": "fts optimize + vacuum",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 40.51,
+      "p95_ms": 75.36,
+      "tokens_brief": 2329.6,
+      "index_bytes": 206753792,
+      "disk_free": 16975904768
+     }
+    }
+   ],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 40.51,
+    "p95_ms": 75.36,
+    "tokens_brief": 2329.6,
+    "index_bytes": 206753792,
+    "disk_free": 16975904768
+   }
+  },
+  {
+   "round": 2,
+   "version": "v5",
+   "tried": [
+    {
+     "change": "candidate pool 30->60",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->43.17",
+     "info": "",
+     "bench": {
+      "recall5": 0.9721,
+      "acc": 0.1953,
+      "p50_ms": 43.17,
+      "p95_ms": 78.24,
+      "tokens_brief": 2431.4,
+      "index_bytes": 206753792,
+      "disk_free": 17417756672
+     }
+    },
+    {
+     "change": "synapses: TF-IDF cosine links + spreading activation 0.2",
+     "kept": false,
+     "why": "regressed recall5 0.9674->0.9349",
+     "info": 18003,
+     "bench": {
+      "recall5": 0.9349,
+      "acc": 0.1814,
+      "p50_ms": 44.06,
+      "p95_ms": 77.89,
+      "tokens_brief": 2446.0,
+      "index_bytes": 208674816,
+      "disk_free": 17199099904
+     }
+    },
+    {
+     "change": "synapses: same-folder co-location links",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->43.87",
+     "info": 9360,
+     "bench": {
+      "recall5": 0.9581,
+      "acc": 0.1953,
+      "p50_ms": 43.87,
+      "p95_ms": 78.53,
+      "tokens_brief": 2466.0,
+      "index_bytes": 207171584,
+      "disk_free": 17198592000
+     }
+    },
+    {
+     "change": "synapses: fullpicture graph edges mapped to files",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->43.56",
+     "info": 410,
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 43.56,
+      "p95_ms": 78.99,
+      "tokens_brief": 2333.8,
+      "index_bytes": 206778368,
+      "disk_free": 17198710784
+     }
+    }
+   ],
+   "kept": [],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 40.51,
+    "p95_ms": 75.36,
+    "tokens_brief": 2329.6,
+    "index_bytes": 206753792,
+    "disk_free": 16975904768
+   }
+  },
+  {
+   "round": 3,
+   "version": "v6",
+   "tried": [
+    {
+     "change": "synapses: Hebbian strengthen/prune on dev split",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->43.97",
+     "info": {
+      "used": 0,
+      "strengthened": 0,
+      "pruned": 0
+     },
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 43.97,
+      "p95_ms": 79.78,
+      "tokens_brief": 2329.6,
+      "index_bytes": 206753792,
+      "disk_free": 16992055296
+     }
+    },
+    {
+     "change": "multi-chunk evidence aggregation",
+     "kept": false,
+     "why": "regressed recall5 0.9674->0.907",
+     "info": "",
+     "bench": {
+      "recall5": 0.907,
+      "acc": 0.1721,
+      "p50_ms": 44.78,
+      "p95_ms": 79.86,
+      "tokens_brief": 2350.7,
+      "index_bytes": 206753792,
+      "disk_free": 16991059968
+     }
+    },
+    {
+     "change": "FTS5 detail=column (smaller postings)",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->270.74",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 270.74,
+      "p95_ms": 473.61,
+      "tokens_brief": 2327.8,
+      "index_bytes": 216817664,
+      "disk_free": 16774201344
+     }
+    },
+    {
+     "change": "porter stemming tokenizer",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->54.39",
+     "info": "",
+     "bench": {
+      "recall5": 0.9628,
+      "acc": 0.1953,
+      "p50_ms": 54.39,
+      "p95_ms": 92.33,
+      "tokens_brief": 2349.2,
+      "index_bytes": 230174720,
+      "disk_free": 15217664000
+     }
+    }
+   ],
+   "kept": [],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 40.51,
+    "p95_ms": 75.36,
+    "tokens_brief": 2329.6,
+    "index_bytes": 206753792,
+    "disk_free": 16975904768
+   }
+  },
+  {
+   "round": 4,
+   "version": "v7",
+   "tried": [
+    {
+     "change": "15-line chunks",
+     "kept": false,
+     "why": "regressed recall5 0.9674->0.9395",
+     "info": "",
+     "bench": {
+      "recall5": 0.9395,
+      "acc": 0.186,
+      "p50_ms": 55.53,
+      "p95_ms": 102.38,
+      "tokens_brief": 1314.1,
+      "index_bytes": 233570304,
+      "disk_free": 14937309184
+     }
+    },
+    {
+     "change": "candidate pool ->15 (latency)",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->45.97",
+     "info": "",
+     "bench": {
+      "recall5": 0.9628,
+      "acc": 0.1953,
+      "p50_ms": 45.97,
+      "p95_ms": 82.89,
+      "tokens_brief": 2300.4,
+      "index_bytes": 206753792,
+      "disk_free": 14937309184
+     }
+    },
+    {
+     "change": "TF-IDF rerank weight 1.0",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->48.8",
+     "info": "",
+     "bench": {
+      "recall5": 0.9767,
+      "acc": 0.1953,
+      "p50_ms": 48.8,
+      "p95_ms": 85.86,
+      "tokens_brief": 2271.7,
+      "index_bytes": 206753792,
+      "disk_free": 14937288704
+     }
+    },
+    {
+     "change": "spreading activation 0.05",
+     "kept": false,
+     "why": "regressed p50_ms 40.51->45.62",
+     "info": "",
+     "bench": {
+      "recall5": 0.9674,
+      "acc": 0.1953,
+      "p50_ms": 45.62,
+      "p95_ms": 81.75,
+      "tokens_brief": 2329.6,
+      "index_bytes": 206753792,
+      "disk_free": 14937280512
+     }
+    }
+   ],
+   "kept": [],
+   "bench": {
+    "recall5": 0.9674,
+    "acc": 0.1953,
+    "p50_ms": 40.51,
+    "p95_ms": 75.36,
+    "tokens_brief": 2329.6,
+    "index_bytes": 206753792,
+    "disk_free": 16975904768
+   }
+  }
+ ],
+ "kept": [
+  {
+   "version": "v4",
+   "change": "chunk-level dedup (identical chunks stored once across clones)",
+   "gain": "recall5 0.9628->0.9674; p50_ms 51.27->43.04; index_bytes 235220992->211062784",
+   "info": ""
+  },
+  {
+   "version": "v4",
+   "change": "FTS5 segment optimize + vacuum",
+   "gain": "p50_ms 43.04->40.51",
+   "info": "fts optimize + vacuum"
+  }
+ ],
+ "cfg": {
+  "ncand": 30,
+  "agg": "max",
+  "tfidf": 0.0,
+  "spread": 0.0,
+  "prior": 0.0,
+  "compress": false,
+  "pathw": 0.0,
+  "dedupfile": true
+ },
+ "env": {
+  "ALLSEE_CHUNKDEDUP": "1"
+ },
+ "links": []
+}

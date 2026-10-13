@@ -1,0 +1,362 @@
+/workspace/build-gate:
+total 476
+drwxr-xr-x 23 box box  4096 Oct 12 16:55 .
+drwxr-xr-x  1 box box  4096 Oct 12 17:10 ..
+-rw-r--r--  1 box box 12109 Oct  6 18:20 GATE-2026-10-05-FIVE-beadc44-final.md
+-rw-r--r--  1 box box  9963 Oct  6 18:20 GATE-2026-10-05-GB015-018-019-1e3bb50.md
+-rw-r--r--  1 box box  6779 Oct  6 18:20 GATE-2026-10-05-GB015-018-019-beadc44.md
+-rw-r--r--  1 box box  9912 Oct  6 18:20 GATE-2026-10-05-GB015-018-019-e73fb185.md
+-rw-r--r--  1 box box  9207 Oct  6 18:20 GATE-2026-10-05-GB015-018-019.md
+-rw-r--r--  1 box box 13843 Oct  6 18:20 GATE-2026-10-05-GB016-rev3.1-1e3bb50.md
+-rw-r--r--  1 box box  4505 Oct  6 18:20 GATE-2026-10-05-GB017-016-97e43fb.md
+-rw-r--r--  1 box box  7433 Oct  6 18:20 GATE-2026-10-05-GB017-016-f4b2c41.md
+-rw-r--r--  1 box box 12450 Oct  6 18:20 GATE-2026-10-05-GB017-021-1e3bb50.md
+-rw-r--r--  1 box box  7112 Oct  6 18:20 GATE-2026-10-05-GB018-f4b2c41.md
+-rw-r--r--  1 box box  5876 Oct  6 18:20 GATE-2026-10-05-GB020-v3.md
+-rw-r--r--  1 box box  6038 Oct  6 18:20 GATE-2026-10-05-GB022-024-025-023-ecd9022.md
+-rw-r--r--  1 box box  9861 Oct  6 18:20 GATE-2026-10-05-GB026-027-979c35e.md
+-rw-r--r--  1 box box  6330 Oct  6 18:20 GATE-2026-10-05-GB028-rev3-979c35e.md
+-rw-r--r--  1 box box  3202 Oct  6 18:20 GATE-2026-10-05-GB029-rev3-4565152.md
+-rw-r--r--  1 box box  1826 Oct  6 18:20 GATE-2026-10-05-IMP-batch1-001-050.md
+-rw-r--r--  1 box box  3817 Oct  6 18:20 GATE-2026-10-05-IMP-batch1-051-064.md
+-rw-r--r--  1 box box  3657 Oct  6 18:20 GATE-2026-10-05-IMP-batch1-065-084.md
+-rw-r--r--  1 box box  3329 Oct  6 18:20 GATE-2026-10-05-PR10-c507f0c2.md
+-rw-r--r--  1 box box  4701 Oct  6 18:20 GATE-2026-10-05-PR11-baa0daeb.md
+-rw-r--r--  1 box box  1450 Oct  6 18:20 GATE-2026-10-05-PR11-postmerge-bc6b3287.md
+-rw-r--r--  1 box box  8134 Oct  6 18:19 GATE-2026-10-05-PR12-64778b33.md
+-rw-r--r--  1 box box  2387 Oct  6 18:19 GATE-2026-10-05-PR12-postmerge-cdc95b76.md
+-rw-r--r--  1 box box  5142 Oct  6 18:20 GATE-2026-10-05-PR5-91068166.md
+-rw-r--r--  1 box box  2531 Oct  6 18:20 GATE-2026-10-05-PR5-postmerge-f4b2c41.md
+-rw-r--r--  1 box box  5423 Oct  6 18:20 GATE-2026-10-05-PR6-00259199.md
+-rw-r--r--  1 box box  2426 Oct  6 18:20 GATE-2026-10-05-PR6-postmerge-97e43fb.md
+-rw-r--r--  1 box box  7505 Oct  6 18:20 GATE-2026-10-05-PR7-6e5ccfcf.md
+-rw-r--r--  1 box box  1946 Oct  6 18:20 GATE-2026-10-05-PR7-postmerge-ecd9022.md
+-rw-r--r--  1 box box  5163 Oct  6 18:20 GATE-2026-10-05-PR8-cba4140d.md
+-rw-r--r--  1 box box  2649 Oct  6 18:20 GATE-2026-10-05-PR8-postmerge-979c35e.md
+-rw-r--r--  1 box box  5368 Oct  6 18:20 GATE-2026-10-05-PR9-PR10-postmerge-4565152.md
+-rw-r--r--  1 box box  5346 Oct  6 18:20 GATE-2026-10-05-PR9-b23d9eb.md
+-rw-r--r--  1 box box  6818 Oct  6 18:19 GATE-2026-10-05-REPLIT-guidance-Zz-5t-1.md
+-rw-r--r--  1 box box   433 Oct  6 18:20 GATE-2026-10-05-STACK-fb984ad.md
+-rw-r--r--  1 box box  8729 Oct  6 18:20 GATE-2026-10-05-STACK-feaeb55.md
+-rw-r--r--  1 box box  3447 Oct  6 18:20 GATE-2026-10-05-TESSERA-PR1-76716c22.md
+-rw-r--r--  1 box box  9038 Oct  6 18:20 GATE-2026-10-05-TESSERA-PR1-postmerge-5c1137fa.md
+-rw-r--r--  1 box box  6837 Oct  6 18:20 GATE-2026-10-05-TESSERA-PR2-cb19f210.md
+-rw-r--r--  1 box box 10677 Oct  6 18:20 GATE-2026-10-05-TESSERA-PR2-postmerge-50876d40.md
+-rw-r--r--  1 box box  9931 Oct  6 18:19 GATE-2026-10-05-TESSERA-PR3-4-5-premerge.md
+-rw-r--r--  1 box box  5275 Oct  6 18:19 GATE-2026-10-05-TESSERA-PR6-7-premerge.md
+-rw-r--r--  1 box box  5355 Oct  6 18:19 GATE-2026-10-05-TESSERA-PR6-8-premerge.md
+-rw-r--r--  1 box box  3306 Oct  6 18:19 GATE-2026-10-05-TESSERA-postmerge-004b692e.md
+-rw-r--r--  1 box box  3828 Oct  6 18:19 GATE-2026-10-05-TESSERA-postmerge-9c0fa1cd.md
+-rw-r--r--  1 box box  2943 Oct  6 18:19 GATE-2026-10-05-TESSERA-postmerge-b1679659.md
+-rw-r--r--  1 box box  8757 Oct  6 18:20 GATE-2026-10-05-fd3c2ce.md
+-rw-r--r--  1 box box  1933 Oct 12 15:55 GATE-2026-10-12-GB-062-rev2.md
+-rw-r--r--  1 box box  1896 Oct 12 16:02 GATE-2026-10-12-GB-063-rev2.md
+-rw-r--r--  1 box box  1043 Oct 12 16:55 GATE-2026-10-12-GB-063-rev3.md
+-rw-r--r--  1 box box  1250 Oct  6 18:20 PR-VERIFY-tessera-gb-015-021.md
+drwxr-xr-x  7 box box  4096 Oct  6 18:20 work-GB017-016-97e43fb-155659
+drwxr-xr-x 12 box box  4096 Oct  6 18:20 work-GB017-016-f4b2c41-1554
+drwxr-xr-x  9 box box  4096 Oct  6 18:20 work-GB018-f4b2c41-155010
+drwxr-xr-x 13 box box  4096 Oct  6 18:20 work-GB022-024-025-023-ecd9022-162510
+drwxr-xr-x  8 box box  4096 Oct  6 18:19 work-GB026-027-979c35e-164348
+drwxr-xr-x  6 box box  4096 Oct  6 18:19 work-GB028-rev3-979c35e-165202
+drwxr-xr-x  3 box box  4096 Oct  6 18:20 work-GB029-rev3-4565152-1712
+drwxr-xr-x  4 box box  4096 Oct  6 18:19 work-PR10-c507f0c2-165705
+drwxr-xr-x  7 box box  4096 Oct  6 18:20 work-PR11-baa0daeb
+drwxr-xr-x  2 box box  4096 Oct  6 18:20 work-PR11-postmerge-bc6b3287
+drwxr-xr-x  3 box box  4096 Oct  6 18:19 work-PR12-64778b33
+drwxr-xr-x  2 box box  4096 Oct  6 18:20 work-PR12-postmerge-cdc95b76
+drwxr-xr-x  5 box box  4096 Oct  6 18:20 work-PR6-00259199-223328
+drwxr-xr-x  6 box box  4096 Oct  6 18:20 work-PR7-6e5ccfcf-160917
+drwxr-xr-x  5 box box  4096 Oct  6 18:20 work-PR8-cba4140d-162934
+drwxr-xr-x  5 box box  4096 Oct  6 18:19 work-PR9-PR10-postmerge-4565152-1707
+drwxr-xr-x  7 box box  4096 Oct  6 18:20 work-PR9-b23d9eb-1652
+drwxr-xr-x  2 box box  4096 Oct  6 18:20 work-TESSERA-PR1-postmerge-5c1137fa
+drwxr-xr-x  2 box box  4096 Oct  6 18:20 work-TESSERA-PR2-cb19f210
+drwxr-xr-x  3 box box  4096 Oct  6 18:20 work-TESSERA-PR2-postmerge-50876d40
+drwxr-xr-x  5 box box  4096 Oct  6 18:20 work-fd3c2ce
+
+/workspace/improvements/gates:
+total 44
+drwxr-xr-x 2 box box  4096 Oct  6 18:20 .
+drwxr-xr-x 3 box box  4096 Oct  6 18:20 ..
+-rw-r--r-- 1 box box 18360 Oct 12 16:55 build.md
+-rw-r--r-- 1 box box  7038 Oct  6 18:20 moderator.md
+-rw-r--r-- 1 box box  8075 Oct 12 16:28 security.md
+
+/workspace/security-gate:
+total 440
+drwxr-xr-x 7 box box  4096 Oct 12 12:14 .
+drwxr-xr-x 1 box box  4096 Oct 12 17:10 ..
+-rw-r--r-- 1 box box  7311 Oct  6 18:20 FINAL-CONFIRM-STATUS-1506.md
+-rw-r--r-- 1 box box  2848 Oct  6 18:19 GATE-1-PR1-71a8876.md
+-rw-r--r-- 1 box box  8196 Oct  6 18:20 GATE-2026-10-05-FINALS-beadc44.md
+-rw-r--r-- 1 box box  6461 Oct  6 18:20 GATE-2026-10-05-GB015-018-019-beadc44.md
+-rw-r--r-- 1 box box  8946 Oct  6 18:20 GATE-2026-10-05-GB015-018-019.md
+-rw-r--r-- 1 box box  8877 Oct  6 18:20 GATE-2026-10-05-GB016-rev3.1-1e3bb50.md
+-rw-r--r-- 1 box box 13498 Oct  6 18:20 GATE-2026-10-05-GB017-016-beadc44.md
+-rw-r--r-- 1 box box  9643 Oct  6 18:20 GATE-2026-10-05-GB017-021-1e3bb50.md
+-rw-r--r-- 1 box box  3745 Oct  6 18:20 GATE-2026-10-05-GB020-e73.md
+-rw-r--r-- 1 box box  2336 Oct  6 18:20 GATE-2026-10-05-gb017-016-f4b2c41-summary.md
+-rw-r--r-- 1 box box  3457 Oct  6 18:20 GATE-2026-10-05-gb022-024-025-023-ecd9022-summary.md
+-rw-r--r-- 1 box box  2691 Oct  6 18:20 GATE-2026-10-05-gb026-027-979c35e-summary.md
+-rw-r--r-- 1 box box  2912 Oct  6 18:19 GATE-5T-PR1-a267efa.md
+-rw-r--r-- 1 box box  7950 Oct  6 18:20 GATE-GB-016-rev3.2-f4b2c41.md
+-rw-r--r-- 1 box box  6558 Oct  6 18:20 GATE-GB-017-f4b2c41.md
+-rw-r--r-- 1 box box  7675 Oct  6 18:20 GATE-GB-022-v4-ecd9022.md
+-rw-r--r-- 1 box box  3544 Oct  6 18:20 GATE-GB-023-ecd9022.md
+-rw-r--r-- 1 box box  3057 Oct  6 18:20 GATE-GB-024-v3-ecd9022.md
+-rw-r--r-- 1 box box  3559 Oct  6 18:20 GATE-GB-025-ecd9022.md
+-rw-r--r-- 1 box box  8066 Oct  6 18:20 GATE-GB-026-rev3-979c35e.md
+-rw-r--r-- 1 box box  7025 Oct  6 18:20 GATE-GB-027-979c35e.md
+-rw-r--r-- 1 box box  7234 Oct  6 18:20 GATE-GB-028-rev3-979c35e.md
+-rw-r--r-- 1 box box  6126 Oct  6 18:20 GATE-GB-029-rev3-4565152.md
+-rw-r--r-- 1 box box  3371 Oct  6 18:20 GATE-GB-PR12-64778b33.md
+-rw-r--r-- 1 box box  2935 Oct  6 18:20 GATE-IMP-BATCH-051-064.md
+-rw-r--r-- 1 box box  1036 Oct  6 18:20 GATE-IMP-BATCH-065-084.md
+-rw-r--r-- 1 box box  2712 Oct  6 18:20 GATE-IMP-BATCH1-001-050.md
+-rw-r--r-- 1 box box  7497 Oct  6 18:20 GATE-TESSERA-PR1-HYB005-76716c22.md
+-rw-r--r-- 1 box box  5270 Oct  6 18:20 GATE-TESSERA-PR2-HYB012-cb19f210.md
+-rw-r--r-- 1 box box  2039 Oct  6 18:19 GATE-TESSERA-PR3-a01b50e9.md
+-rw-r--r-- 1 box box  6766 Oct  6 18:19 GATE-TESSERA-PR4-39db6a6e.md
+-rw-r--r-- 1 box box  3128 Oct  6 18:19 GATE-TESSERA-PR5-820d0be5.md
+-rw-r--r-- 1 box box  4977 Oct  6 18:19 GATE-TESSERA-PR6-d9c4f1e0.md
+-rw-r--r-- 1 box box  4587 Oct  6 18:19 GATE-TESSERA-PR6-e898111a.md
+-rw-r--r-- 1 box box  3562 Oct  6 18:19 GATE-TESSERA-PR7-f57c40aa.md
+-rw-r--r-- 1 box box  3421 Oct  6 18:19 GATE-TESSERA-PR8-25183afb.md
+-rw-r--r-- 1 box box  2575 Oct  6 18:19 GATE-ZZ-PR1-7935a4c.md
+-rw-r--r-- 1 box box  8683 Oct  6 18:20 INV-2026-10-05-command-center-md-empty.md
+-rw-r--r-- 1 box box  9962 Oct  6 18:20 PROV-2026-10-05-1e3bb50.md
+-rw-r--r-- 1 box box 12110 Oct  6 18:20 PROV-2026-10-05-979c35e0-pr8.md
+-rw-r--r-- 1 box box 11115 Oct  6 18:20 PROV-2026-10-05-97e43fb-pr6.md
+-rw-r--r-- 1 box box 13016 Oct  6 18:20 PROV-2026-10-05-beadc44.md
+-rw-r--r-- 1 box box  2057 Oct  6 18:20 PROV-2026-10-05-e73-1e3bb50-pair.md
+-rw-r--r-- 1 box box  8047 Oct  6 18:20 PROV-2026-10-05-e73fb185.md
+-rw-r--r-- 1 box box 10700 Oct  6 18:20 PROV-2026-10-05-ecd90221-pr7.md
+-rw-r--r-- 1 box box 10508 Oct  6 18:20 PROV-2026-10-05-fb984ad.md
+-rw-r--r-- 1 box box  8287 Oct  6 18:20 PROV-2026-10-05-fd3c2ce.md
+-rw-r--r-- 1 box box 13678 Oct  6 18:20 PROV-2026-10-05-feaeb55.md
+-rw-r--r-- 1 box box 13483 Oct  6 18:20 PROV-2026-10-05-pr9-pr10-merges.md
+-rw-r--r-- 1 box box  1346 Oct 12 12:15 PROV-TESSERA-PR146-a0c0f77.md
+-rw-r--r-- 1 box box  2729 Oct  6 18:20 RECONFIRM-GB015-018-019-e73.md
+-rw-r--r-- 1 box box  3867 Oct  6 18:20 WATCH-2026-10-05-replit-1630-final.md
+-rw-r--r-- 1 box box  4583 Oct  6 18:20 WATCH-2026-10-05-replit-1630-immediate.md
+drwxr-xr-x 3 box box  4096 Oct  6 18:20 work-PROV-979c35e-163256
+drwxr-xr-x 2 box box  4096 Oct  6 18:19 work-tessera-pr4
+drwxr-xr-x 2 box box  4096 Oct  6 18:19 work-tessera-pr6-7
+drwxr-xr-x 2 box box  4096 Oct  6 18:19 work-tessera-pr6-e898
+drwxr-xr-x 2 box box  4096 Oct  6 18:19 work-tessera-pr8-2518
+/workspace/build-gate/GATE-2026-10-12-GB-063-rev2.md
+/workspace/build-gate/GATE-2026-10-12-GB-063-rev3.md
+/workspace/build-gate/GATE-2026-10-12-GB-062-rev2.md
+/workspace/security-gate/PROV-TESSERA-PR146-a0c0f77.md
+/workspace/improvements/gates/build.md
+/workspace/improvements/gates/security.md
+/workspace/build-o/O7/mesh-status.ts
+/workspace/build-o/O7/mesh-status.test.ts
+/workspace/build-o/I12/hyb011-exclusions.ts
+/workspace/build-o/I12/hyb011-exclusions.test.ts
+/workspace/build-o/O2/queue.test.ts
+/workspace/build-o/O2/queue.ts
+/workspace/build-o/O4/kiwix.ts
+/workspace/build-o/O4/kiwix.test.ts
+/workspace/build-o/receipts.txt
+/workspace/build-o/O1/gen-offline-index.mjs
+/workspace/build-o/O1/offline-index.test.ts
+/workspace/build-o/O1/offline-index.ts
+/workspace/build-o/O5/mesh-bundle.mjs
+/workspace/build-o/O5/mesh-bundle.test.ts
+/workspace/build-o/PUSH-WHEN-APPROVED.sh
+/workspace/build-o/linkcheck.py
+/workspace/build-o/O10/on-demand.ts
+/workspace/build-o/O10/mesh-node.ts
+/workspace/build-o/O10/mesh-node.test.ts
+/workspace/build-o/O10/mesh-toggle.tsx
+/workspace/build-o/O10/on-demand.test.ts
+/workspace/build-o/O3/sw.js
+/workspace/build-o/O3/register-sw.ts
+/workspace/build-o/O3/sw-strategy.ts
+/workspace/build-o/O3/sw-strategy.test.ts
+/workspace/build-o/O6/lan-mode.ts
+/workspace/build-o/O6/lan-mode.test.ts
+/workspace/gitbook-cordnation/GB-063/GB-063-rev2-to-rev3.interdiff
+/workspace/gitbook-cordnation/GB-063/SHA256.txt
+/workspace/gitbook-cordnation/GB-063/GB-063-on-GB-062rev2.diff
+/workspace/gitbook-cordnation/GB-063/GB-063.diff
+/workspace/gitbook-cordnation/GB-063/proposed/intake/log.md
+/workspace/gitbook-cordnation/GB-063/GB-063-rev3.56a7a48.diff
+/workspace/gitbook-cordnation/GB-063/stacked-on-062/intake/log.md
+/workspace/gitbook-cordnation/GB-063/GB-063-d939b37b-to-rev2.interdiff
+/workspace/gitbook-cordnation/GB-063/main-d27e3e6.log.md
+/workspace/gitbook-cordnation/GB-063/NOTES.md
+/workspace/gitbook-cordnation/GB-063/rev2/intake/log.md
+/workspace/gitbook-cordnation/GB-063/GB-063-rev2.d27e3e6.diff
+/workspace/gitbook-cordnation/review-record.md
+/workspace/gitbook-cordnation/OPEN-ITEMS-2026-10-12.md
+/workspace/gitbook-cordnation/READY.md
+/workspace/gitbook-cordnation/_HANDOFF.md
+/workspace/gitbook-cordnation/GB-062/GB-062-rev1-to-rev2.interdiff
+/workspace/gitbook-cordnation/GB-062/SHA256.txt
+/workspace/gitbook-cordnation/GB-062/GB-062-rev2.diff
+/workspace/gitbook-cordnation/GB-062/proposed-rev1/merge/CONSOLIDATION-MAP-2026-10-12.md
+/workspace/gitbook-cordnation/GB-062/proposed-rev1/intake/log.md
+/workspace/gitbook-cordnation/GB-062/proposed-rev1/SUMMARY.md
+/workspace/gitbook-cordnation/GB-062/GB-062.diff
+/workspace/gitbook-cordnation/GB-062/proposed-rev2/merge/CONSOLIDATION-MAP-2026-10-12.md
+/workspace/gitbook-cordnation/GB-062/proposed-rev2/intake/log.md
+/workspace/gitbook-cordnation/GB-062/proposed-rev2/SUMMARY.md
+/workspace/gitbook-cordnation/GB-062/clean/merge/CONSOLIDATION-MAP-2026-10-12.md
+/workspace/gitbook-cordnation/GB-062/clean/.git/description
+/workspace/gitbook-cordnation/GB-062/clean/.git/objects/25/38c47789404aa8ea1ed5ef3dbda915c12150e1
+/workspace/gitbook-cordnation/GB-062/clean/.git/objects/1d/8bc67d57c2e2ca02fc4832e7d4327f48ac0b57
+/workspace/gitbook-cordnation/GB-062/clean/.git/objects/7e/c4539deda74371d5aa967ada1ef3c17796b645
+/workspace/gitbook-cordnation/GB-062/clean/.git/objects/7e/f4e961b5da26ccc58705648bac922f29033d3d
+/workspace/gitbook-cordnation/GB-062/clean/.git/objects/ea/9cb3d01a5abbae3211e89423e6e7fe80d7ad7f
+/workspace/gitbook-cordnation/GB-062/clean/.git/config
+/workspace/gitbook-cordnation/GB-062/clean/.git/logs/refs/heads/master
+/workspace/gitbook-cordnation/GB-062/clean/.git/logs/HEAD
+/workspace/gitbook-cordnation/GB-062/clean/.git/info/exclude
+/workspace/gitbook-cordnation/GB-062/clean/.git/refs/heads/master
+/workspace/gitbook-cordnation/GB-062/clean/.git/HEAD
+/workspace/gitbook-cordnation/GB-062/clean/.git/index
+/workspace/gitbook-cordnation/GB-062/clean/.git/COMMIT_EDITMSG
+/workspace/gitbook-cordnation/GB-062/clean/.git/hooks/pre-push.sample
+/workspace/gitbook-cordnation/GB-062/clean/.git/hooks/prepare-commit-msg.sample
+/workspace/gitbook-cordnation/GB-062/clean/.git/hooks/push-to-checkout.sample
+/workspace/gitbook-cordnation/GB-062/clean/.git/hooks/pre-rebase.sample
+/workspace/gitbook-cordnation/GB-062/clean/.git/hooks/sendemail-validate.sample
+/workspace/gitbook-cordnation/GB-062/clean/.git/hooks/pre-merge-commit.sample
+total 86992
+-rw-r--r-- 1 box box   99311 Oct 12 17:12 7c98c64f-dd1d-449d-accf-12405eaa60bd.txt
+-rw-r--r-- 1 box box   69797 Oct 12 17:12 1b7d5873-1b6d-4bc6-b06a-b9a2a2aed1f7.txt
+-rw-r--r-- 1 box box   56921 Oct 12 17:12 6db394b7-3182-40e0-bf78-b3b60a1e7b85.txt
+-rw-r--r-- 1 box box   53385 Oct 12 16:59 0121d99c-e9b9-4de8-af65-d65176893a3f.txt
+-rw-r--r-- 1 box box   77192 Oct 12 16:59 9e4691dc-d0d8-450c-a3e5-2543901b0333.txt
+-rw-r--r-- 1 box box    9022 Oct 12 16:52 e6cd76ac-39e1-4dc5-9fb7-1105cb13c54e.txt
+-rw-r--r-- 1 box box   24762 Oct 12 16:52 84371808-038b-4ba1-87b4-ac45a0edbf4b.txt
+-rw-r--r-- 1 box box   53385 Oct 12 16:52 d7fd4d48-b8ad-42cd-b3ae-ddc490416baf.txt
+-rw-r--r-- 1 box box    6745 Oct 12 16:52 5d9c8a3d-8d09-4519-b7e9-e24712623731.txt
+-rw-r--r-- 1 box box   20119 Oct 12 16:52 176b4587-8fc5-4ad2-8708-e311248e66ce.txt
+-rw-r--r-- 1 box box   33079 Oct 12 16:38 0c20c8b5-f8e4-496c-adcc-1c3a61e7f784.txt
+-rw-r--r-- 1 box box    6745 Oct 12 16:38 644db552-70b1-41a9-86c9-4508fc3f3ed3.txt
+-rw-r--r-- 1 box box   39992 Oct 12 16:38 9060ea33-154a-4acc-8899-53008d43b679.txt
+-rw-r--r-- 1 box box   99311 Oct 12 16:38 a17a1ff1-c03f-4e1b-99dd-83a25efb3cc6.txt
+-rw-r--r-- 1 box box   53385 Oct 12 16:38 e3c7ad06-4089-45a3-8db9-714ecbb9539d.txt
+-rw-r--r-- 1 box box   18184 Oct 12 16:38 2cee715b-379e-41c4-92bc-3d225cd54ac3.txt
+-rw-r--r-- 1 box box   20301 Oct 12 16:38 b4b428cc-309b-4130-a090-3e2cc9154c57.txt
+-rw-r--r-- 1 box box   11302 Oct 12 16:27 cd0ccd41-6ceb-43bf-8ee0-bb21554d9cfd.txt
+-rw-r--r-- 1 box box   23662 Oct 12 16:26 7224c638-3115-4d57-b6d2-1411997de5e7.txt
+total 92
+drwxr-xr-x  5 box box 4096 Oct 12 17:11 b2-GitbookAI
+drwxr-xr-x 15 box box 4096 Oct 12 17:09 b2-Gitbook
+drwxr-xr-x  2 box box 4096 Oct 12 16:56 b2-out
+-rw-r--r--  1 box box   83 Oct 12 16:56 b3-run.log
+-rw-r--r--  1 box box  198 Oct 12 16:55 b2-run.log
+drwxr-xr-x  5 box box 4096 Oct 12 16:54 GitbookAI
+drwxr-xr-x 16 box box 4096 Oct 12 16:53 Gitbook
+drwxr-xr-x  8 box box 4096 Oct 12 16:53 vitality
+drwxr-xr-x 13 box box 4096 Oct 12 16:52 fleet-moss-monarch-rapid
+drwxr-xr-x 14 box box 4096 Oct 12 16:52 amber-flame-tiger-sand
+-rw-r--r--  1 box box  503 Oct 12 16:52 summ.py
+-rw-r--r--  1 box box  284 Oct 12 16:52 b3-run.sh
+drwxr-xr-x 16 box box 4096 Oct 12 16:52 b3-TheTesseractAI_18
+drwxr-xr-x 14 box box 4096 Oct 12 16:52 b3-collink1007_amber-flame-tiger-sand
+drwxr-xr-x  9 box box 4096 Oct 12 16:52 b3-collink1007_XXX
+drwxr-xr-x 13 box box 4096 Oct 12 16:52 b3-collink1007_fleet-moss-monarch-rapid
+drwxr-xr-x 14 box box 4096 Oct 12 16:52 b3-collink1007_z
+-rw-r--r--  1 box box  530 Oct 12 16:50 b2-run.sh
+drwxr-xr-x 17 box box 4096 Oct 12 16:50 b2-TESSERA
+total 160
+-rw-r--r-- 1 box box 17270 Oct 12 16:58 REA-RUN-LOG.md
+-rw-r--r-- 1 box box  5350 Oct 12 16:58 OFFLINE-INTERNET.md
+drwxr-xr-x 2 box box  4096 Oct 12 16:57 rea-shards
+-rw-r--r-- 1 box box 39799 Oct 12 16:52 REPO-INVENTORY.csv
+drwxr-xr-x 3 box box  4096 Oct 12 16:01 rea-out
+-rw-r--r-- 1 box box  6447 Oct 12 15:55 NESTED-REPO-MAP.md
+-rw-r--r-- 1 box box  9493 Oct 12 15:55 IMPROVE-TESSERA-PLAN.md
+-rw-r--r-- 1 box box 41642 Oct 12 15:55 REPO-NAMES-FROM-LOGS.md
+-rw-r--r-- 1 box box  2290 Oct 12 15:50 PLAN.md
+-rw-r--r-- 1 box box  1431 Oct 12 15:50 REPO-INVENTORY.md
+-rw-r--r-- 1 box box  1265 Oct 12 15:50 TOOLS-AGENTCRAFT.md
+-rw-r--r-- 1 box box  1330 Oct 12 15:50 TOOLS-API-ANYTHING.md
+-rw-r--r-- 1 box box  1357 Oct 12 15:50 TOOLS-REA.md
+Mon Oct 12 17:13:00 CDT 2026
+| IMP-018 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/index.ts` | Gate `startWalletObserver` / income / bounty / free-stuff starters behind explicit boot, not import | Route index import side-effects start scrapers/timers | TESTED: `routes/index.ts` calls `startWalletObserver()`, `startAutonomousBuildCycleTimer()`, `startFreeStuffScraper()`, `startBountyRefresher()`, `startIncomeExecutor()`, `initShepherdPersistence()` at module scope (no wallet keys touched; boot hygiene only) | PASS | FAIL | FAIL | PASS | REJECTED (wallet-related, permanent) |
+| IMP-019 | Tessera (seed) | TESSERA | `README.md` | Add "Agent / mesh" pointer to Gitbook HYBRID backlog + issue #2 | Onboarding gap for mesh agents landing in code repo | TESTED: README has no Gitbook backlog link; Gitbook README points to TESSERA but not reciprocal | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-020 | Tessera (seed) | TESSERA | `package.json` | Document `pnpm audit` in README scripts table (script stays root CLI; no new npm script required) | Local "Workspace checks" already lists audit; ensure parity with CI step name | TESTED: README Workspace checks includes `pnpm audit`; root `package.json` scripts omit `audit` (CI runs bare `pnpm audit`) | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-021 | Tessera (seed) | TESSERA | `artifacts/api-server/src/__tests__/route-inventory.test.ts` | After each duplicate removal, shrink `DUPLICATE_ROUTE_ALLOW_LIST` and fail on regressions | Keep inventory honest as duplicates are cleared | TESTED: comment in test: "The list is exact: a new collision fails…"; presently 10 allow-listed collisions | PASS | PASS | PASS | PASS | APPROVED (deferred: needs route removals) |
+| IMP-022 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/system-runtime.ts`; `legacy-engines.ts` | Document (comment) that quantum duplicates remain allow-listed per Gitbook ruling until a product decision | Clarity for agents; do not silently delete ruling-named routes | TESTED: RULING_NAMED_DUPLICATES cites Gitbook issue #2 comment 6003995168; quantum still dual-registered | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #3 93a526fd) |
+| IMP-023 | Tessera (seed) | TESSERA | `archives/README.md` | Add one-line pointer to Gitbook `merge/CURRENT-REPOSITORY-STATUS.md` for retention boundary | Archives README only cites local source-manifest | TESTED: archives/README.md single paragraph; Gitbook CURRENT-REPOSITORY-STATUS is the retention board | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-024 | Tessera (seed) | TESSERA | `docs/migration-review/VALIDATION.md` | Reconcile any pre-HYB-005 audit wording with main ignore + green run 37382015797 | Validation docs may predate ignore | TESTED: green run 37382015797; VALIDATION-STATUS still advisory-open tone; migration-review/VALIDATION.md present | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-025 | Tessera (seed) | TESSERA | `artifacts/api-server/src/__tests__/*` | Add a tiny smoke that importing `routes/index` does not require live wallet/network (mock starters) | Import side-effects make isolated tests fragile | TESTED: index.ts module-scope starters; route-inventory already mocks autonomous-wiring only | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-026 | Tessera (seed) | Gitbook | `SUMMARY.md`; `intake/CORTICAL-LABS-READINESS.md` | Add SUMMARY link under Brain & Consciousness (or Start here) for Cortical Labs readiness | File exists but is not in nav | TESTED: tree has `intake/CORTICAL-LABS-READINESS.md`; SUMMARY.md has no link; backlog HYB-019 points to it | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-027 | Tessera (seed) | Gitbook | `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | Mark HYB-012 DONE with TESSERA commits `50876d40` (test) / note quantum allow-list retained | Backlog still says IN REVIEW after merge | TESTED: backlog HYB-012 row Status IN REVIEW; TESSERA main carries route-inventory test (commit message HYB-012 on 50876d40) and green main 5c1137fa | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-028 | Tessera (seed) | Gitbook | `history/coordination/agent-checkins.md` | Close Active claims for HYB-012; move to Completed with commit evidence | Stale IN REVIEW locks the board | TESTED: agent-checkins.md "Active claims" still HYB-012 IN REVIEW; TESSERA has merged inventory | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-029 | Tessera (seed) | Gitbook | `intake/consolidated-todo.md` | Update HYB-012–014 bullet: HYB-012 inventory landed; remaining = resolve 8 non-quantum dups | Stale "open work" wording | TESTED: consolidated-todo "Current open work" lists HYB-012–014 audit routes as open | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-030 | Tessera (seed) | Gitbook | `merge/hyb-005-braces-decision.md` | Mark Follow-up #1 done: TESSERA PR #1 / `5c1137fa` landed the ignore | Follow-up still says "Land narrow audit ignore" | TESTED: hyb-005 Follow-up item 1; TESSERA PR #1 diff +8 pnpm-workspace.yaml; main@5c1137fa | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-031 | Tessera (seed) | Gitbook | `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | Add HYB-SELFFIX (or IMP track) row pointing to phase-0 design / dryrun ledger | Self-fix loop approved phase 0 but absent from board | TESTED: Father phase-0 approval 5:28 PM CT; `/workspace/hyb-selffix/DESIGN.md`; backlog table ends HYB-019 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-032 | Tessera (seed) | Gitbook | `mesh/flow.md` | Document phase-0 selffix dry-run poll (read-only; no PR) under standing fix rules | Mesh flow lacks selffix procedure | TESTED: DESIGN.md phase 0; dryrun/POLL.md written locally; flow.md not yet updated (goal) | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-033 | Tessera (seed) | Gitbook | `mesh/roles/tessera.md` | Mention admin coordination of selffix phase-0 ledger paths | Role page should name new duty | TESTED: roles/tessera.md exists as Active admin; DESIGN identity Tessera Admin coordinator | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-034 | Tessera (seed) | Gitbook | `mesh/AGENT-SKILL-MATRIX.md` | Add row for CI log diagnosis / allow-list classification skill | Skill matrix gap for selffix | TESTED: AGENT-SKILL-MATRIX.md present in SUMMARY Mesh section; selffix allow-list classes in DESIGN §3 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-035 | Tessera (seed) | Gitbook | `README.md` | Add Start-here step linking HYB-005 decision + note ignore is on TESSERA main | Home onboarding omits live advisory state | TESTED: Gitbook README Start here 5 steps; no HYB-005 link; hyb-005 page exists under SUMMARY | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-036 | Tessera (seed) | Gitbook | `history/coordination/agent-checkins.md` | Collapse superseded "Communication audit" vs later REPORTED note into one clear status | Conflicting paragraphs confuse newcomers | TESTED: section claims "no replies" then immediately "superseded" with reply examples | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-037 | Tessera (seed) | Gitbook | `merge/SOURCE-HEADS-2026-10-05.md` | Refresh listed TESSERA/Gitbook SHAs to current mains | Dated heads file likely pins older SHAs | TESTED: file exists in SUMMARY; current mains 5c1137fa / bc6b3287 (re-read file before edit) | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-038 | Tessera (seed) | Gitbook | `review/validation.md` | Align validation narrative with green TESSERA CI after HYB-005 | Review page may still describe red audit | TESTED: review/validation.md linked from SUMMARY; CI green 37382015797 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-039 | Tessera (seed) | Gitbook | `intake/status-definitions.md` | Add PROPOSED/IN LIST statuses for the improvements batch loop | Status vocab lacks batch-list states | TESTED: Father: 50–100 improvements lists; status-definitions.md is the status authority page | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-040 | Tessera (seed) | Gitbook | `mesh/COLLABORATION-PLAYBOOK.md` | Describe batched improvements ledger + Gitbook coordination path | Playbook missing batch yes/no loop | TESTED: COLLABORATION-PLAYBOOK in SUMMARY; Father instruction for batched lists | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-041 | Tessera (seed) | Gitbook | `mesh/roles.md` | Ensure Grok Bot vs Command Center lines match live instantiation (no duplicate "Tessera Grok bot" ambiguity) | Table says Command Center / Tessera Grok bot and separate Grok Bot Active | TESTED: roles.md table rows for command-center and grok-bot | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-042 | Tessera (seed) | Gitbook | `forum/IDEA-FORUM.md` | Confirm SUMMARY placement under Historical is intentional or move to top-level Forum | Nav taxonomy smell | TESTED: SUMMARY lists Idea forum under Historical coordination; path is `forum/IDEA-FORUM.md` | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-043 | Tessera (seed) | Gitbook | `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | HYB-005 row: note TESSERA ignore commit `5c1137fa` / PR #1 in addition to Gitbook decision | Decision DONE but code-landing evidence incomplete in backlog cell | TESTED: HYB-005 backlog cites Gitbook PR #6 decision; TESSERA PR #1 merged separately | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-044 | Tessera (seed) | Gitbook | `brain-consciousness/AGENT-WORKPLAN.md` | Cross-link CORTICAL readiness + HYB-019 blocker questions | Workplan may not cite readiness page | TESTED: both pages exist; HYB-019 BLOCKED on Father answers in readiness §d | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-045 | Tessera (seed) | Gitbook | `operations/tessera-operating-guidelines.md` | Add standing fix rule timestamp (5:21 PM CT) + selffix phase-0 bound | Ops guide should carry Father standing rules | TESTED: DESIGN cites standing fix rule 5:21 PM CT; ops guidelines page in SUMMARY | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-046 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/governance-consensus.ts`; `legacy-engines.ts` | After IMP-002/006, assert response JSON shape for proposals/propose matches governance module | Prevent silent contract drift when removing legacy | TESTED: duplicate owners differ; legacy uses `listProposals`/`createProposal` from consensus-engine | PASS | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-047 | Tessera (seed) | TESSERA | `artifacts/api-server/src/routes/improvement.ts`; `legacy-engines.ts` | After IMP-007, assert `POST /improvement/cycle` body/response matches `improvement` router | Dual implementations (`runImprovementCycle` vs improvement module) | TESTED: allow-list modules `improvement.ts`,`legacy-engines.ts` for POST /improvement/cycle | PASS | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-048 | Tessera (seed) | TESSERA | `docs/CONSOLIDATION.md` | Append one dated note that HYB-005 ignore + HYB-012 inventory are on main | Consolidation record should track today's merges | TESTED: CONSOLIDATION.md exists; merges PR #1 and HYB-012 commit on main today | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-049 | Tessera (seed) | Gitbook | `merge/FUNCTIONAL-MERGE-MATRIX.md` | Add see-also line to HYB-012 inventory + 8 non-quantum dups remaining | Matrix should track route-audit outcome | TESTED: matrix linked from SUMMARY; HYB-006/007 already see-also'd; HYB-012 done in code | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-050 | Tessera (seed) | Gitbook | `review/COLLABORATION-AUDIT-2026-10-05.md` | Footnote that later same-day traffic superseded early "no multi-agent" findings | Audit may freeze an early snapshot | TESTED: collaboration audit page in SUMMARY; agent-checkins already notes superseded communication audit | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-051 | Build + TESSERA | TESSERA | `scripts/eval/` or `artifacts/api-server/src/eval/`; eval README | Add repeatable eval harness writing JSON {sha,date_ct,model,suite,n,pass,cost_usd}; forbid calling homemade quizzes MMLU | Enable measured improvement vs competition without inventing scores | TESTED: no in-repo industry harness; `evaluation.ts` has homemade MMLU_STYLE_QUESTIONS; `/workspace/full-picture/TODO.md` CARD-EVAL-001 | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-052 | Mesh Cloud / Build | TESSERA | `artifacts/api-server/src/routes/local-models.ts`; eval runbook | Wire eval harness to Ollama / `POST /local-models/chat` after local install | NEEDS FATHER YES — install Ollama + pull small model on designated host | TESTED: Ollama reference adapter exists; box has no ollama binary; CARD-EVAL-002 | PASS | PASS | FAIL | PASS | APPROVED (Father yes, separate) |
+| IMP-053 | TESSERA + Build | TESSERA | `docs/eval/` | Run one paid industry suite (Aider polyglot OR SWE-bench Lite N=10 OR HumanEval) and record dated score+cost | NEEDS FATHER YES — which suite/model and spend (~$1–5 smoke / ~$30 Aider / $50–500+ SWE-Lite) | TESTED: BASELINE industry_bench_score BLOCKED; BENCHMARK-PLAN.md cites public boards; CARD-EVAL-003 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-054 | Security | Gitbook | `operations/tessera-operating-guidelines.md` or SECRETS decision note; secrets manager only (never commit values) | Decide whether to set `AI_INTEGRATIONS_OPENAI_BASE_URL`/`_API_KEY` and eval-only `SOVEREIGN_NO_EXTERNAL_LLM=0` (no TESSERA_ENABLE_* flips) | NEEDS FATHER YES — provider keys / external LLM opt-in | TESTED: llm-client defaults external LLM off; box keys UNSET; CARD-EVAL-004 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-055 | Product / mesh prep | Gitbook | `intake/CORTICAL-LABS-READINESS.md`; `intake/HYBRID-CONSOLIDATION-BACKLOG.md` HYB-019 | Answer Cortical Labs readiness §d so HYB-019 can leave BLOCKED | NEEDS FATHER YES — product answers (no accounts/spend without separate yes) | TESTED: HYB-019 BLOCKED on Father decisions; distinct from IMP-026/044 nav/cross-link; CARD-EVAL-005 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-056 | Product | Gitbook | decision page for HYB-017 / HYB-008 | Write storefront vs olive-giant retention boundary (DONE/RETAINED/REJECTED) | NEEDS FATHER YES — product boundary | TESTED: backlog HYB-017/HYB-008 READY awaiting owner; CARD-EVAL-006 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-057 | TESSERA | TESSERA | quantum routes in `system-runtime.ts` / `legacy-engines.ts`; Gitbook issue #2 ruling | Father product ruling: keep or remove ruling-named quantum dual routes (do not silently delete) | NEEDS FATHER YES — product decision (IMP-022 is comment-only pending this) | TESTED: RULING_NAMED_DUPLICATES in route-inventory.test.ts; IMP-022 documents only; CARD-EVAL-007 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-058 | TESSERA | TESSERA | knowledge/RAG route + index over Gitbook markdown subset; BASELINE 25-Q set | Add read-only Gitbook retrieval path scoring the 25-question docs quiz with citations | Build on ingested-knowledge code; measure RAG quality (baseline BLOCKED) | TESTED: no Gitbook→runtime RAG; ingested-recall/distillation are DB-only; CARD-EVAL-008; `/workspace/full-picture/BASELINE.md` §C | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-059 | TESSERA | TESSERA | `artifacts/api-server/src/routes/evaluation.ts` (+ UI strings if any) | Rename/relabel `MMLU_STYLE_QUESTIONS` to internal quiz naming; strip misleading industry MMLU claims | Honesty: homemade MCQs are not MMLU/MMLU-Pro | TESTED: evaluation.ts embeds MMLU_STYLE_QUESTIONS; CARD-EVAL-009 | PASS | PASS | PASS | PASS | APPROVED (skipped: rename would change API strings) |
+| IMP-060 | Build | TESSERA | `artifacts/api-server/src/__tests__/route-inventory.test.ts` | Log or assert Express registration total so ~925 becomes TESTED or is corrected | CI never prints registration count (Build gate C3) | TESTED: GATE-2026-10-05-TESSERA-PR1-postmerge notes 925 NOT TESTED; CARD-EVAL-014 | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-061 | Test steward / Build | TESSERA | `scripts/` merge-gate command (no `.github/workflows/*` edit without separate yes) | Add HYB-014 historical merge-gate check (duplicate roots, stale refs, secret-shaped paths, typecheck/tests/build/audit) | Repeatable consolidation gate from backlog HYB-014 READY | TESTED: backlog HYB-014 READY; CARD-EVAL-016 | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-062 | Grok Bot / Tessera Pen | Gitbook | new `review/` or `intake/` competitor score card + SUMMARY link | Publish docs page of cited competitor scores (URL+date) stating Tessera has no industry score yet | Father asked competition comparison; keep claims honest | TESTED: `/workspace/full-picture/BENCHMARK-PLAN.md`; CARD-EVAL-018 | PASS | PASS | PASS | PASS | APPROVED (list 1, Father yes 5:54 PM CT) |
+| IMP-063 | Mesh Cloud | (Origin / connector) | Origin MCP access / written out-of-mesh decision | Restore Origin connector inventory for `collin-keane/Tessera` or document Origin out of mesh | NEEDS FATHER YES — reconnect Origin / grant namespace | TESTED: cursor-origin list_namespaces returned []; CARD-EVAL-019 | PASS | HOLD | FAIL | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-064 | Security / Privacy steward | archives (not 1T) | HYB-011 exclusion manifest | Privacy recheck remaining archive repos for secrets/private records without opening 1T | Finish HYB-011 READY sweep | TESTED: backlog HYB-011 READY; 1T forbidden; CARD-EVAL-020 | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-065 | Tessera (seed) | Gitbook | `review/validation.md` | Update braces bullet: note tip `pnpm-workspace.yaml` `auditConfig.ignoreGhsas` for GHSA-vfj7-8cjw-p6xm and review date 2026-11-05 (still no braces ≥3.0.4) | Docs accuracy: staged validation still frames braces as open TODO only; distinct from IMP-038 CI narrative | TESTED: L8 "...the advisory remains a TODO for dependency replacement or upstream remediation."; tip `pnpm-workspace.yaml` L14–20 HYB-005 comments + `ignoreGhsas: [GHSA-vfj7-8cjw-p6xm]` | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-066 | Tessera (seed) | TESSERA | `docs/migration-review/VALIDATION.md` | Reconcile 2026-10-02 claim of 0 high advisories and active Vitality Supply/storefront test totals with tip (1 ignored braces GHSA; no storefront apps; API tests 99/1) | Docs accuracy: pre-staging validation still describes deleted/inactive apps | TESTED: L9 "0 ... high ... advisories"; L15–16 claim Vitality Supply/storefront builds and 437 passed; tip README apps table has no storefront; CI 99 passed/1 skipped | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-067 | Tessera (seed) | TESSERA | `docs/CONSOLIDATION.md` | Correct "Public consolidated repository" / `tessera-unified` URL to match private destination `vitalitychems-dot/TESSERA` (or mark historical) | Docs accuracy: publication status/URL outdated | TESTED: L3 "**Status:** Public consolidated repository"; L41 "public at `https://github.com/vitalitychems-dot/tessera-unified`"; tip repo private named TESSERA | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-068 | Tessera (seed) | Gitbook | `review/COLLABORATION-AUDIT-2026-10-05.md` | Fix "Father alone performs the GitBook → GitHub push" to match Tessera-pushes-after-yes rule in `mesh/flow.md` / `mesh/roles/command-center.md` | Docs accuracy: audit contradicts live push authority | TESTED: audit L11 "Father alone performs the GitBook → GitHub push"; flow.md Push authority (1) and command-center Does-not-do say Tessera opens PR/merges after Father yes | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-069 | Tessera (seed) | TESSERA | `docs/TESSERA_SYSTEM.md` | Prepend honesty labels (TESTED/REPORTED/GOAL) and pointer to Gitbook who-tessera-is / honesty-banner; mark AGI-named sections as GOAL not present fact | Docs accuracy: architecture doc frames AGI/sovereign agents without honesty labels | TESTED: tip L5–6 Overview "sovereign AI agents" and "envisions a future where AI agents…"; L73 "**AGI Training & Evaluation System:** Features 27 training categories…"; no TESTED/GOAL labels in file head | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-070 | Build | TESSERA | `artifacts/api-server/src/__tests__/healthz.test.ts` (new); `artifacts/api-server/src/routes/health.ts` | Add vitest that GET `/healthz` returns Zod-parsed `{ status: "ok" }` | Test coverage for existing health route; no production behavior change | TESTED: `health.ts` L6–8 `router.get("/healthz"` + `HealthCheckResponse.parse({ status: "ok" })`; tree has no `*health*test*` under api-server | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-071 | Build + TESSERA | TESSERA | `docs/eval/README.md` (new) | Document existing offline-vs-live eval entrypoints: `api-server` script `eval` → `dist/cli/run-eval.mjs` (needs build/DB) vs `scripts/eval-chatbot.ts` (needs live API); list OS-metric tests in `eval-runner.ts` as candidates for DB-free unit coverage | Offline eval harness piece without new paid keys or runtime changes | TESTED: tip `artifacts/api-server/package.json` L11 `"eval": "node --enable-source-maps ./dist/cli/run-eval.mjs"`; `scripts/eval-chatbot.ts` L5 Usage; `eval-runner.ts` L7 `import os` + L275 "Process Heap Usage" / L298 "CPU Load Average" / L321 "OS Free Memory" / L343 "Process Uptime Stability" | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-072 | Tessera (seed) | TESSERA | `README.md` | Under Workspace checks, mention `pnpm --filter @workspace/api-server run eval` (post-build) and `pnpm tsx artifacts/api-server/scripts/eval-chatbot.ts` | Onboarding: eval scripts exist but root README omits them | TESTED: README Workspace checks lists typecheck/test/build/audit only; api-server package.json defines `eval`; eval-chatbot.ts header documents tsx usage | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+| IMP-073 | Build | TESSERA | `artifacts/api-server/scripts/eval-chatbot.ts`; new `__tests__/eval-chatbot-cases.test.ts` | Export `CASES` and add offline vitest asserting unique ids and non-empty mustInclude/mustNotInclude rules (no network) | Offline eval harness quality; no API/runtime change beyond export | TESTED: eval-chatbot.ts defines `const CASES: EvalCase[]` with 10 cases (identity-1…complex-1); currently unexported; no unit test covers the table | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-074 | Tessera (seed) | Gitbook | `SUMMARY.md`; `history/source-index/z-catalog.md`; `history/source-index/z-walk.md` | Add SUMMARY links for orphan `z-catalog.md` and `z-walk.md` under Historical/source index | Nav: files exist but only `z-repository-index.md` is linked | TESTED: tip tree has both orphans; SUMMARY Historical links `history/source-index/z-repository-index.md` only; prior orphan audit listed z-catalog/z-walk | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-075 | Tessera (seed) | Gitbook | `SUMMARY.md`; `history/handoffs/legacy-handoff-notes.md`; `history/handoffs/complete-archive-notes.md` | Add SUMMARY links for orphan handoff notes beside existing handoff summaries | Nav: two handoff markdown files are not in SUMMARY | TESTED: tree has both files; SUMMARY lists privacy-screened and complete-source-archives summaries only | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-076 | Tessera (seed) | Gitbook | `merge/hyb-005-braces-decision.md` | Update **Base:** TESSERA SHA from `fec56eb` to tip `5c1137fa` (ignore landed) | Docs accuracy after HYB-005 code landing; distinct from IMP-030 Follow-up #1 checkbox | TESTED: hyb-005 L7 `**Base:** TESSERA \`fec56eb\` · Gitbook \`6fe412f\``; tip main is 5c1137fa with auditConfig ignoreGhsas | FAIL | HOLD | PASS | PASS | PROPOSED (held: gate fail or needs Father yes) |
+| IMP-077 | Tessera (seed) | Gitbook | `intake/consolidated-todo.md` | Rewrite HYB-005 open-work bullet to note narrow ignore is on TESSERA main and review date 2026-11-05 remains | Docs accuracy: still reads as open unmitigated track | TESTED: consolidated-todo L15 `**HYB-005:** track the unpatched transitive \`braces\` advisory.`; pnpm-workspace.yaml auditConfig ignoreGhsas includes GHSA-vfj7-8cjw-p6xm | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-078 | Tessera (seed) | Gitbook | `README.md` | Add Start-here step linking `intake/HYBRID-CONSOLIDATION-BACKLOG.md` | Onboarding gap: Start here points at consolidated-todo but not authoritative HYB board | TESTED: Gitbook README L13–18 Start here steps 1–5; no HYBRID-CONSOLIDATION-BACKLOG link; consolidated-todo itself says backlog is authoritative | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-079 | Tessera (seed) | Gitbook | `brain-consciousness/SNN-SOURCE-MANIFEST.md`; `intake/CORTICAL-LABS-READINESS.md` | Add see-also to Cortical Labs readiness page from SNN Purpose section | Orphan Cortical page remains hard to discover from Brain docs (SUMMARY link is IMP-026) | TESTED: SNN L5–7 Purpose discusses Cortical Labs CL1 but links no readiness page; `intake/CORTICAL-LABS-READINESS.md` exists and is absent from SUMMARY | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-080 | Tessera (seed) | TESSERA | `.gitignore` | Deduplicate the repeated "Credentials and populated environment files" block | Lint/hygiene: identical ignore rules appear twice | TESTED: `.gitignore` L75 and L85 both start `# Credentials and populated environment files (keep .env.example trackable)` with the same `.env` / `!.env.example` / `*.pem` list | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #3 93a526fd) |
+| IMP-081 | Tessera (seed) | Gitbook | `mesh/COLLABORATION-METRICS.md` | Append one dated filled dashboard example (PERIOD 2026-10-05) using the existing template fields | Collaboration audit remaining item #2 asks for periodic metrics publication | TESTED: COLLABORATION-METRICS.md L25–38 Dashboard update template (`PERIOD:` … `REVIEWER:`); COLLAB-AUDIT L25 item 2 "publish the metrics dashboard using the template in `mesh/COLLABORATION-METRICS.md`"; no filled example below template | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-082 | Tessera (seed) | Gitbook | `history/recovered/README.md` | List links to notable recovered orphans (coordination STATUS/notes, legacy readmes, source-index copies) | Recovered index is a stub; many recovered pages are SUMMARY orphans | TESTED: tip recovered README is one short paragraph with no child links; tip tree has `history/recovered/coordination/STATUS.md` plus `legacy/` and `source-index/` dirs; SUMMARY Recovered section links only the README | PASS | PASS | PASS | PASS | MERGED (Gitbook PR #12, cdc95b76) |
+| IMP-083 | Build | TESSERA | `artifacts/api-server/src/__tests__/eval-runner-os-metrics.test.ts` (new) | Add offline vitest covering Process Heap / CPU Load / OS Free Memory / Uptime Stability scoring branches extracted or invoked without DB | Offline eval harness piece; no route/boot/flag changes | TESTED: tip `eval-runner.ts` L275/L298/L321/L343 name those four System Health tests (`import os` L7); `__tests__/` listing has no eval-runner/os-metrics test; runEvalSuite also runs DB-backed System Health tests | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #4 bf2d8a16) |
+| IMP-084 | Tessera (seed) | TESSERA | `docs/migration-review/VALIDATION.md` | Replace L10 claim that GitHub-hosted CI has not yet run with tip Actions run `37382015797` on `5c1137fa` (keep dated 2026-10-02 historical context) | Docs accuracy on pre-staging validation copy; distinct from Gitbook IMP-038 | TESTED: tip L10 "GitHub-hosted CI has been configured but has not yet run on GitHub."; CI run 37382015797 success on tip | PASS | PASS | PASS | PASS | MERGED (TESSERA PR #5 b1679659) |
+
+## Seed summary (TESTED)
+
+- Total seeded: **50** (`IMP-001`–`IMP-050`), all `PROPOSED`, Lane `Tessera (seed)`.
+- By repo: TESSERA **28**; Gitbook **22**.
+- By type (approx): duplicate-route cleanup **8**; test gaps **5**; doc/stale wording **20**; nav/onboarding **6**; boot/side-effect hygiene **3**; backlog/coordination board updates **8**.
+- Not implemented; no GitHub writes.
+
+## Dedup notes (TESTED)
+
+- No open PRs on either repo at seed time.
+- Did not seed workflow edits, flag flips, secrets, wallets, payments, blockchain, or `1T`.
+- Quantum ruling duplicates kept as document-only (IMP-022), not deletion, pending product decision.

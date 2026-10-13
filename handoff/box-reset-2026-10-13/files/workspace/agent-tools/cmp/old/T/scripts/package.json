@@ -1,0 +1,15 @@
+{
+  "name": "@workspace/scripts",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "hello": "tsx ./src/hello.ts",
+    "test": "node --test ./suite-policy.test.mjs ./historical-merge-gate.test.mjs ./eval/write-result.test.mjs ./check-task-mirror.test.mjs ./rea-registry.test.mjs ./loop/loop.test.mjs ../gate/moderator-lock.test.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "tsx": "catalog:"
+  }
+}

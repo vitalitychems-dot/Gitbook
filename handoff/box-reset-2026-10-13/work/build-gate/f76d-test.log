@@ -1,0 +1,109 @@
+$ node --experimental-strip-types --disable-warning=ExperimentalWarning --test --test-reporter=spec test/*.test.mjs
+✔ fixture requests to wallet, payment, vault, and 1T paths are refused (8.83193ms)
+✔ ordinary studio and mesh routes stay open (0.588308ms)
+✔ file admission refuses vault, wallet, payment, and 1T paths (0.339257ms)
+✔ a loopback fixture server refuses the denylisted routes (29.238853ms)
+✔ LICENSE is MIT and package.json declares MIT (5.686215ms)
+✔ NOTICE attributes clean-room sources (0.278582ms)
+✔ vendored memory JSONL matches the MCP memory schema (8.207181ms)
+✔ REA coverage table lists each staged tree and its percent (9.841764ms)
+✔ a dependency blocks start until the earlier task is done (1.417785ms)
+✔ an open decision blocks the worker until it is answered (0.335185ms)
+✔ a task worktree can be created and removed, and git push fails in its hook (82.972815ms)
+✔ merge is refused without approval and when main is dirty (1.01963ms)
+✔ a fixture repo merges a task branch only after approval on a clean main (74.104583ms)
+✔ npm run check accepts the protocol examples (42.909823ms)
+✔ a message missing a required field is rejected (0.712863ms)
+✔ posting a goal puts task cards on the wall (2444.130467ms)
+✔ the 3D floor is on by default and the 2D wall is a page toggle (1.124296ms)
+✔ the sim pen finishes a two-task goal (1.278567ms)
+✔ the first thirty-five merges are written in the build log (2.423441ms)
+✔ fake worker tool events show up on the monitor API (28.665317ms)
+✖ a file-mesh query of at least 50 Gitbook pages stays offline (0.734874ms)
+✔ fake-indexeddb replays a queued request once and has no vault store (1.600463ms)
+✔ sw.js is emitted and offline navigation returns the shell (1.317251ms)
+✔ the badge follows navigator.onLine and the queue length (0.64117ms)
+✔ an agent join and leave are written to the mesh log (8.16851ms)
+✔ two local nodes discover each other and sync one signed page (53.469428ms)
+✔ a secure-mesh message decrypts, and a bad signature is rejected (6.871785ms)
+✔ a sneakernet bundle opens to the same bytes (334.237328ms)
+✔ LAN mode uses an empty ICE list and the two-tab note stays on localhost (1.40364ms)
+✔ Kiwix is off by default and a mocked local server returns titles (37.995298ms)
+✖ the Gitbook summary links the Offline Internet page (0.595383ms)
+✔ the LoRa file is a research note and not radio code (1.338403ms)
+✔ open_nodes returns observations for an entity name (6.998903ms)
+✔ the memory server config points at the vendored graph and read_graph is non-empty (4.781867ms)
+✔ the library panel renders task and doc nodes and calls no enricher (9.964669ms)
+✔ repo metadata is fetched only for vitalitychems-dot (2.421865ms)
+✔ a desk probe denies the network and stays under the memory cap (92.143353ms)
+✔ a fixture task writes a token baseline (1.188654ms)
+✔ graph retrieval and full-file arms are both recorded (0.608043ms)
+✔ a cache hit sends the summary and an empty diff, so the token count drops (4.864381ms)
+✔ a classify fixture uses the small sim model and a tighter prompt (0.681885ms)
+✔ a valid proposal stays queued and an incomplete one is refused (0.694144ms)
+✔ Hacker News search uses a fixture, and login or cookies never run (1.759359ms)
+✔ the board renders cards and refuses a repeated first line (1.282325ms)
+✔ product copy says GitMesh and does not show the old product name (60.369532ms)
+✔ offices grow from the task graph, worker events, and the build log (1.382726ms)
+✔ live messages match the websocket schemas and the monitor stream (58.007811ms)
+✖ the 3D floor renders offices in a browser (1812.66757ms)
+ℹ tests 48
+ℹ suites 0
+ℹ pass 45
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3076.541442
+
+✖ failing tests:
+
+test at test/v2-020-file-mesh.test.mjs:5:1
+✖ a file-mesh query of at least 50 Gitbook pages stays offline (0.734874ms)
+  Error: ENOENT: no such file or directory, scandir '/workspace/build-gate/wt-f76d/archive/from-gitbook'
+      at readdirSync (node:fs:1583:26)
+      at walk (file:///workspace/build-gate/wt-f76d/artifacts/v2/src/offline/file-mesh.mjs:19:24)
+      at loadGitbookPages (file:///workspace/build-gate/wt-f76d/artifacts/v2/src/offline/file-mesh.mjs:31:3)
+      at queryFileMesh (file:///workspace/build-gate/wt-f76d/artifacts/v2/src/offline/file-mesh.mjs:36:17)
+      at TestContext.<anonymous> (file:///workspace/build-gate/wt-f76d/artifacts/v2/test/v2-020-file-mesh.test.mjs:6:17)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.start (node:internal/test_runner/test:944:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'scandir',
+    path: '/workspace/build-gate/wt-f76d/archive/from-gitbook'
+  }
+
+test at test/v2-029-offline-internet.test.mjs:5:1
+✖ the Gitbook summary links the Offline Internet page (0.595383ms)
+  Error: ENOENT: no such file or directory, open '/workspace/build-gate/wt-f76d/archive/from-gitbook/SUMMARY.md'
+      at readFileSync (node:fs:441:20)
+      at TestContext.<anonymous> (file:///workspace/build-gate/wt-f76d/artifacts/v2/test/v2-029-offline-internet.test.mjs:6:19)
+      at Test.runInAsyncScope (node:async_hooks:214:14)
+      at Test.run (node:internal/test_runner/test:1047:25)
+      at Test.start (node:internal/test_runner/test:944:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17) {
+    errno: -2,
+    code: 'ENOENT',
+    syscall: 'open',
+    path: '/workspace/build-gate/wt-f76d/archive/from-gitbook/SUMMARY.md'
+  }
+
+test at test/v2-063-floor-world.test.mjs:66:1
+✖ the 3D floor renders offices in a browser (1812.66757ms)
+  Error: EACCES: permission denied, mkdir '/opt/cursor/artifacts'
+      at mkdirSync (node:fs:1363:26)
+      at TestContext.<anonymous> (file:///workspace/build-gate/wt-f76d/artifacts/v2/test/v2-063-floor-world.test.mjs:80:5)
+      at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7) {
+    errno: -13,
+    code: 'EACCES',
+    syscall: 'mkdir',
+    path: '/opt/cursor/artifacts'
+  }
+/workspace/build-gate/wt-f76d/artifacts/v2:
+[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @workspace/v2@0.0.0 test: `node --experimental-strip-types --disable-warning=ExperimentalWarning --test --test-reporter=spec test/*.test.mjs`
+Exit status 1

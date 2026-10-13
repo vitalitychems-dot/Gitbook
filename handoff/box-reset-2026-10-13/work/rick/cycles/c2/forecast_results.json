@@ -1,0 +1,39 @@
+{
+ "source": "USGS 2.5_month.csv (public domain)",
+ "days": 29,
+ "first": "2026-09-14",
+ "last": "2026-10-12",
+ "mean": 62.2,
+ "std": 13.5,
+ "start_index": 7,
+ "models": {
+  "persistence": {
+   "MAE": 9.77,
+   "hit20": 0.591,
+   "busy_day_acc": 0.773
+  },
+  "mean7": {
+   "MAE": 11.34,
+   "hit20": 0.591,
+   "busy_day_acc": 0.682
+  },
+  "median7": {
+   "MAE": 10.23,
+   "hit20": 0.5,
+   "busy_day_acc": 0.773
+  },
+  "ewma0.3": {
+   "MAE": 10.52,
+   "hit20": 0.636,
+   "busy_day_acc": 0.727
+  },
+  "climatology": {
+   "MAE": 12.74,
+   "hit20": 0.455,
+   "busy_day_acc": 0.682
+  }
+ },
+ "best": "persistence",
+ "skill_vs_persistence": 0.0,
+ "caveat": "n\u224822 test days, so the uncertainty is large; aftershock sequences dominate the variance; forecast skill \u2260 causation."
+}

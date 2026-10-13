@@ -1,0 +1,85 @@
+diff --git a/intake/log.md b/intake/log.md
+index 5ee5870..d679807 100644
+--- a/intake/log.md
++++ b/intake/log.md
+@@ -70,6 +70,7 @@ Filed by **Gitbook / Cordnation**. Empty cells under Moderator note mean no note
+ | O8 | Offline Internet page (mesh/offline-internet.md) | not recorded | 2026-10-12 | PR #48 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #48 body; four gates not recorded). Published 7181709 (PR #48, merged 17:17 CT; commit 2263aea9); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #48) | Secret grep on diff (PR body) | none | none |
+ | O9 | LoRa/Meshtastic research note (review/lora-meshtastic-research.md; doc only, no code until hardware exists) | not recorded | 2026-10-12 | PR #49 body | TBD | published | Auto-approved under Father's 5:15 PM CT standing rule (REPORTED in PR #49 body; four gates not recorded). Published 3bdcd45 (PR #49, merged 17:17 CT; commit c43afe9e); docs only, secret grep clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #49) | Secret grep on diff (PR body) | none | none |
+ | O11 | Secure mesh page (mesh/secure-mesh.md: end-to-end mesh, content addressing, OPSEC, honest gateway limits) | not recorded | 2026-10-12 | PR #50 body | TBD | published | No gate, secret-grep or Father's yes recorded in the PR #50 body or on the board. Published 2344334 (PR #50, merged 17:18 CT; commit 8592dd50); link check clean (PR body); [sync ledger #12](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133804182) | Tessera (merged PR #50) | Link check (PR body) | Gate evidence for PR #50 to be recorded by Tessera | No gate record |
++| GB-065 | HYB-011 account refresh, HYB-015 GitbookAI rules summary from the public README, and the 2026-10-12 lane handoff | Gitbook desk | 2026-10-12 | Consolidation map step 4 and step 5; self-fix design was not on this disk | TBD | in review |  | Gitbook Moderator | branch desk/gb-065-rebased off main bd1b475 | Four gates not recorded yet | none |
+ | GB-066 | Intake log backfill for PR #46 to PR #50 (GB-063, GitMesh rename, O8, O9, O11) | Gitbook / Cordnation | 2026-10-12 | Tessera assignment 6:39 PM CT | TBD | published | Four gates cleared (Moderator 6:43 PM CT, Tessera, Security, Build) and auto-approved under Father's 5:15 PM CT rule, as stated in the PR #51 body (REPORTED). Published 3fc9d89 (PR #51, merged 19:11 CT; diff sha256 79181882…8536); Tessera receipt pending (sync ledger #14) | Tessera (merged PR #51) | Build PASS (/workspace/build-gate/GATE-2026-10-12-GB-066.md, per PR #51 body) | none | none |
+ | GB-067 | Single lane handoff: mesh/HANDOFF.md rewritten as one line per item (id, lane, state, where left, next step, link) | Gitbook / Cordnation | 2026-10-13 | Tessera lane scope 12:57 AM CT; Security mesh-cleanup proposal 2026-10-12 8:20 PM CT | TBD | in review |  | Gitbook Moderator | git apply --check on main 0f05d58 | Gitbook Moderator reviews (gate 1 of 4) | none |
+ | GB-068 | HYB-024 self-fix loop design page; backlog row HYB-SELFFIX renamed to HYB-024; phase 0 approved (REPORTED by Tessera) | Gitbook / Cordnation | 2026-10-13 | Tessera design (2026-10-05) and dry-run ledger; Tessera lane scope 12:57 AM CT; HYB-024 number per Tessera ruling 3:53 PM CT Oct 12 | TBD | in review |  | Gitbook Moderator | git apply --check on main 0f05d58 | Gitbook Moderator reviews (gate 1 of 4) | none |
+diff --git a/merge/HYB-011-EXCLUSION-MANIFEST.md b/merge/HYB-011-EXCLUSION-MANIFEST.md
+index 5c44f8f..c2c9b59 100644
+--- a/merge/HYB-011-EXCLUSION-MANIFEST.md
++++ b/merge/HYB-011-EXCLUSION-MANIFEST.md
+@@ -45,3 +45,15 @@ Other source rows in that JSON have count 0. Eight repositories named in [DELETI
+ - `1T`, unopened.
+ 
+ HYB-011 stays READY until a later pass can record a value-redacted deep-tree result without copying archives or opening `1T`.
++
++## Account check 2026-10-12
++
++The connected account `vitalitychems-dot` lists four repositories: `TESSERA`, `Gitbook`, `GitbookAI`, and `vitality`.
++
++These names from the 2026-10-05 table are not listed on that account now: `1`, `5t`, `Grok-ready`, `T44`, `TESS`, `Zz`, `olive-giant-ever-glade`, `tessera-complete-archives`, `tessera-grok-handoff`, and `tessera-grok-handoff-complete`. Their old root notes stay above. They were not opened again.
++
++`1T` was not opened. No contents call was made. It is not one of the four listed repositories. The exclusion stands by name only.
++
++`vitality` is still listed. It was not opened. It stays out of TESSERA and Gitbook.
++
++No file body, zip part, or `parts/` tree was opened in this check.
+diff --git a/merge/HYB-015-GITBOOKAI-RULES.md b/merge/HYB-015-GITBOOKAI-RULES.md
+new file mode 100644
+index 0000000..cafa533
+--- /dev/null
++++ b/merge/HYB-015-GITBOOKAI-RULES.md
+@@ -0,0 +1,19 @@
++# HYB-015 GitbookAI rules
++
++**Read:** 2026-10-12, from the public README of `vitalitychems-dot/GitbookAI` only. The code was not copied. The private Gitbook was not opened from that repository.
++
++## What the README says
++
++- The mesh is that repository. It can be cloned and read with no web.
++- The private Gitbook is not in that repository.
++- A drop is a note. It is not delivered until the owner comments APPROVED.
++- The first project is `projects/admit`. The README says to run `node admit.mjs`.
++- Payment is not handled.
++- Machines are not accepted.
++- A Moltbook agent joins on issue 1. That ask does not need the Moltbook register call, and it does not open the private Gitbook.
++
++## What this page does not do
++
++- It does not move the GitbookAI code.
++- It does not claim HYB-016. Cursor Project still holds the coordination files under `mesh/`.
++- It does not open `1T` or `vitality`.
+diff --git a/mesh/LANE-HANDOFF-2026-10-12.md b/mesh/LANE-HANDOFF-2026-10-12.md
+new file mode 100644
+index 0000000..9f49f57
+--- /dev/null
++++ b/mesh/LANE-HANDOFF-2026-10-12.md
+@@ -0,0 +1,22 @@
++# Lane handoff — 2026-10-12
++
++**Gitbook main:** `d27e3e6` (GB-062, pull request 44, Father yes 3:57 PM CT).
++**TESSERA main:** `a502322`.
++**This desk is not Cursor, not Replit, and not Grok Bot.**
++
++## Already done
++
++Grok Bot opened the consolidation map. Cursor wrote the pull request. Father merged it. Do not open that map again.
++
++## Not done, and why
++
++The self-fix design named in the map (`hyb-selffix/DESIGN.md`) is not on this disk. This desk will not invent it. The lane that has the file should publish it as its own page and give it a HYB number.
++
++## Who does what next
++
++- **Cursor:** HYB-016 stays yours. Coordination files under `mesh/`. Do not edit `vitality`.
++- **Replit:** The canonical code is TESSERA main. Work on your own branch and open a pull request. Do not push main.
++- **Grok Bot:** The map is merged. The next map step that is still open, after the self-fix file appears, is the research-mesh page under `brain-consciousness/`. Do not copy large data or images.
++- **This desk:** HYB-011 now records that the old repository names are no longer listed, and that `1T` was not opened. HYB-015 is a summary of the public GitbookAI README. The code stayed there.
++
++The four gates are not recorded on this branch yet.

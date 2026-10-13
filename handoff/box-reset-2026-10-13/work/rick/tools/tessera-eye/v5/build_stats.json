@@ -1,0 +1,73 @@
+{
+ "build_s": 3.48,
+ "html_bytes": 955262,
+ "events": 483,
+ "by_source": {
+  "usgs": 256,
+  "eonet": 200,
+  "nws": 11,
+  "meteo": 16
+ },
+ "fire_cells": 1495,
+ "kp_pts": 58,
+ "cones": 21,
+ "heat_cells": 162,
+ "sats": {
+  "total": 16693,
+  "LEO": 15880,
+  "MEO": 183,
+  "GEO": 585,
+  "HEO": 45
+ },
+ "probes": 24,
+ "shield": {
+  "updated": "2026-10-13T03:36:45-05:00",
+  "findings_count": 37,
+  "anomaly": {
+   "score": 100.0,
+   "level": "critical",
+   "recent_events": 29,
+   "baseline": 0.24,
+   "ratio": 116.0,
+   "warn": true
+  },
+  "defensive_only": true,
+  "points": 24,
+  "note": "Country-centroid or unlocated placeholder only. No people/vehicles."
+ },
+ "fetch": {
+  "firms.csv": {
+   "ok": true,
+   "bytes": 958091
+  },
+  "kp.json": {
+   "ok": true,
+   "bytes": 4490
+  },
+  "eye_pull": {
+   "usgs": {
+    "events": 233,
+    "latency_ms": 77,
+    "bytes": 166285
+   },
+   "eonet": {
+    "events": 200,
+    "latency_ms": 141,
+    "bytes": 174396
+   },
+   "nws": {
+    "events": 11,
+    "latency_ms": 240,
+    "bytes": 148402
+   },
+   "meteo": {
+    "events": 8,
+    "latency_ms": 163,
+    "bytes": 3421
+   },
+   "new_indexed": 20,
+   "total": 452
+  }
+ },
+ "excluded_doc": "/workspace/rick/tools/tessera-eye/EXCLUDED.md"
+}

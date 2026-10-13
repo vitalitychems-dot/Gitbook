@@ -1,0 +1,6 @@
+env GITBOOK_AGENT_LANE=security lane arg=undefined -> BLOCKED
+env GITBOOK_AGENT_LANE=security lane arg=tessera -> ALLOWED
+env GITBOOK_AGENT_LANE=security lane arg=Security -> ALLOWED
+env GITBOOK_AGENT_LANE=build lane arg=nonexistent -> ALLOWED
+env GITBOOK_AGENT_LANE=Security lane arg=undefined -> ALLOWED
+env GITBOOK_AGENT_LANE=undefined lane arg=undefined -> ALLOWED

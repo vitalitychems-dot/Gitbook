@@ -1,0 +1,44 @@
+[1/15] HumanEval/0 ok=False tok/s=16.11190775543902
+[2/15] HumanEval/1 ok=False tok/s=16.99042102716383
+[3/15] HumanEval/2 ok=True tok/s=20.21110790941497
+[4/15] HumanEval/3 ok=False tok/s=18.23229602618821
+[5/15] HumanEval/4 ok=False tok/s=16.270028235278165
+[6/15] HumanEval/5 ok=False tok/s=16.522420038863093
+[7/15] HumanEval/6 ok=False tok/s=15.73585057350738
+[8/15] HumanEval/7 ok=False tok/s=17.42397429963791
+[9/15] HumanEval/8 ok=False tok/s=14.056420166216014
+[10/15] HumanEval/9 ok=False tok/s=12.769453200845398
+[11/15] HumanEval/10 ok=True tok/s=9.052191988289964
+[12/15] HumanEval/11 ok=False tok/s=11.646944991769978
+[13/15] HumanEval/12 ok=False tok/s=5.443916676537676
+[14/15] HumanEval/13 ok=True tok/s=5.418494311896892
+[15/15] HumanEval/14 ok=False tok/s=9.738623926710554
+{
+  "benchmark": "HumanEval",
+  "split": "official",
+  "n": 15,
+  "seed_note": "first N problems in official HumanEval.jsonl order (not shuffled); seed=42 unused for selection",
+  "seed": 42,
+  "item_ids": [
+    "HumanEval/0",
+    "HumanEval/1",
+    "HumanEval/2",
+    "HumanEval/3",
+    "HumanEval/4",
+    "HumanEval/5",
+    "HumanEval/6",
+    "HumanEval/7",
+    "HumanEval/8",
+    "HumanEval/9",
+    "HumanEval/10",
+    "HumanEval/11",
+    "HumanEval/12",
+    "HumanEval/13",
+    "HumanEval/14"
+  ],
+  "correct": 3,
+  "pass_at_1": 0.2,
+  "model": "qwen2.5:3b-instruct",
+  "wall_s_total": 89.63358902931213,
+  "grading": "execute HumanEval check() in sandboxed subprocess timeout=5.0s"
+}

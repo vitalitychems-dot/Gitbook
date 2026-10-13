@@ -1,0 +1,4 @@
+ping
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/vdb        125G  117G  8.5G  94% /
+done

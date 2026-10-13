@@ -1,0 +1,321 @@
+--: line 1: cats.tsv: cannot overwrite existing file
+--: line 24: s_consciousness-cognitive-arch.json: cannot overwrite existing file
+FAIL consciousness-cognitive-arch
+--: line 24: s_agi-frameworks.json: cannot overwrite existing file
+FAIL agi-frameworks
+--: line 24: s_memory-recall.json: cannot overwrite existing file
+FAIL memory-recall
+--: line 24: s_brain-scans-connectomics.json: cannot overwrite existing file
+FAIL brain-scans-connectomics
+--: line 24: s_brain-synapse-simulation.json: cannot overwrite existing file
+FAIL brain-synapse-simulation
+--: line 24: s_reasoning-thinking.json: cannot overwrite existing file
+FAIL reasoning-thinking
+--: line 24: s_agent-skills.json: cannot overwrite existing file
+FAIL agent-skills
+--: line 24: s_llms-open-inference.json: cannot overwrite existing file
+FAIL llms-open-inference
+--: line 24: s_machine-learning.json: cannot overwrite existing file
+FAIL machine-learning
+--: line 24: s_token-saving-compression.json: cannot overwrite existing file
+FAIL token-saving-compression
+--: line 24: s_anti-hallucination-grounding.json: cannot overwrite existing file
+FAIL anti-hallucination-grounding
+--: line 24: s_recursive-self-improvement.json: cannot overwrite existing file
+FAIL recursive-self-improvement
+--: line 24: s_multi-agent-orchestration.json: cannot overwrite existing file
+FAIL multi-agent-orchestration
+--: line 24: s_knowledge-graphs.json: cannot overwrite existing file
+FAIL knowledge-graphs
+--: line 24: s_evals.json: cannot overwrite existing file
+FAIL evals
+--: line 24: s_sandboxed-code-exec.json: cannot overwrite existing file
+FAIL sandboxed-code-exec
+--: line 24: s_local-offline-inference.json: cannot overwrite existing file
+FAIL local-offline-inference
+--: line 24: s_rag.json: cannot overwrite existing file
+FAIL rag
+--: line 24: s_world-simulation.json: cannot overwrite existing file
+FAIL world-simulation
+--: line 24: s_continual-learning.json: cannot overwrite existing file
+FAIL continual-learning
+--: line 24: s_tool-use-mcp.json: cannot overwrite existing file
+FAIL tool-use-mcp
+== s_agent-skills.json
+298186	obra/superpowers	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	An agentic skills framework & software development
+180728	anthropics/skills	{"key":"","name":"","url":""}	null	null	Public repository for Agent Skills
+141421	Shubhamsaboo/awesome-llm-apps	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	100+ AI Agents, Agent Skills and RAG Apps - Free a
+105610	addyosmani/agent-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Production-grade engineering skills for AI coding 
+82532	tt-a1i/archify	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Turn any idea, plan, or codebase into a beautiful 
+67538	calesthio/OpenMontage	{"key":"agpl-3.0","name":"GNU Affero General Public License v3.0","url":"https://api.github.com/licenses/agpl-3.0"}	null	null	World's first open-source, agentic video productio
+64082	mvanhorn/last30days-skill	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	AI agent skill that researches any topic across Re
+56195	blader/humanizer	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Agent skill that removes signs of AI-generated wri
+49457	kepano/obsidian-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Agent skills for Obsidian. Teach your agent to use
+48560	K-Dense-AI/scientific-agent-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Turn any AI agent into an AI Scientist. The #1 Age
+47516	sickn33/agentic-awesome-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	AAS Core is the local, agent-first control plane f
+39954	github/awesome-copilot	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Community-contributed instructions, agents, skills
+35589	VoltAgent/awesome-agent-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A curated collection of 1000+ agent skills from of
+34024	vercel-labs/skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	The open agent skills tool - npx skills
+32297	vercel-labs/agent-skills	{"key":"","name":"","url":""}	null	null	Vercel's official collection of agent skills
+31412	googleworkspace/cli	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Google Workspace CLI — one command-line tool for D
+28787	cloudflare/security-audit-skill	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A coding-agent skill for multi-phase security audi
+28073	alirezarezvani/claude-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	380 Claude Code skills & agent skills & plugins (3
+27729	op7418/guizang-ppt-skill	{"key":"agpl-3.0","name":"GNU Affero General Public License v3.0","url":"https://api.github.com/licenses/agpl-3.0"}	null	null	AI-agent Skill for generating polished HTML slide 
+26923	phuryn/pm-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	PM Skills Marketplace: 100+ agentic skills, comman
+26078	agentskills/agentskills	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Specification and documentation for Agent Skills
+21336	KKKKhazix/khazix-skills	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	数字生命卡兹克开源的 AI Skills 合集 | Agent Skills: leader（帮你定
+21217	google/skills	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Agent Skills for Google products and technologies
+21041	liyupi/ai-guide	{"key":"other","name":"Other","url":""}	null	null	程序员鱼皮的 AI 资源大全 + Vibe Coding 零基础教程，分享 OpenClaw 保姆级
+20061	NVIDIA/SkillSpector	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Security scanner for AI agent skills. Detect vulne
+== s_agi-frameworks.json
+== s_anti-hallucination-grounding.json
+== s_brain-scans-connectomics.json
+== s_brain-synapse-simulation.json
+== s_consciousness-cognitive-arch.json
+== s_continual-learning.json
+2106	ContinualAI/avalanche	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Avalanche: an End-to-End Library for Continual Lea
+1884	GMvandeVen/continual-learning	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	PyTorch implementation of various methods for cont
+1236	volotat/mini-AGI	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Continual learning model trained from scratch on 8
+843	aimagelab/mammoth	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	An Extendible (General) Continual Learning Framewo
+744	optimass/continual_learning_papers	{"key":"","name":"","url":""}	null	null	Relevant papers in Continual Learning
+740	ContinualAI/continual-learning-papers	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Continual Learning papers list, curated by Continu
+709	perpetual-ml/perpetual	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Perpetual is a high-performance gradient boosting 
+628	Western-OC2-Lab/AutoML-Implementation-for-Static-and-Dynamic-Data-Analytics	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Implementation/Tutorial of using Automated Machine
+615	Vision-Intelligence-and-Robots-Group/Best-Incremental-Learning	{"key":"","name":"","url":""}	null	null	An Incremental Learning, Continual Learning, and L
+607	LAMDA-CL/LAMDA-PILOT	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	🎉 PILOT: A Pre-trained Model-Based Continual Learn
+567	Wang-ML-Lab/llm-continual-learning-survey	{"key":"","name":"","url":""}	null	null	[CSUR 2025] Continual Learning of Large Language M
+531	GT-RIPL/Continual-Learning-Benchmark	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Evaluate three types of task shifting with popular
+478	google-research/l2p	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Learning to Prompt (L2P) for Continual Learning @ 
+450	Continvvm/continuum	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A clean and simple data loading library for Contin
+427	RaptorMai/online-continual-learning	{"key":"","name":"","url":""}	null	null	A collection of online continual learning paper im
+381	haddock-development/claude-reflect-system	{"key":"","name":"","url":""}	null	null	Continual Learning & Self-improving skills system 
+369	EnnengYang/Awesome-Forgetting-in-Deep-Learning	{"key":"","name":"","url":""}	null	null	A Comprehensive Survey of Forgetting in Deep Learn
+363	clam004/intro_continual_learning	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	This is a tutorial to connect the fundamental math
+359	ContinualAI/colab	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Continual Learning tutorials and demo running on G
+356	ContinualAI/continual-learning-baselines	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Continual learning baselines and strategies from p
+350	ZinYY/TreeLoRA	{"key":"","name":"","url":""}	null	null	[ICML 2025] A pytorch implementation of the paper 
+323	ZixuanKe/PyContinual	{"key":"","name":"","url":""}	null	null	PyContinual (An Easy and Extendible Framework for 
+299	awslabs/Renate	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Library for automatic retraining and continual lea
+297	prprbr/awesome-lifelong-continual-learning	{"key":"","name":"","url":""}	null	null	A list of papers, blogs, datasets and software in 
+296	UIC-Liu-Lab/ContinualLM	{"key":"","name":"","url":""}	null	null	An Extensible Continual Learning Framework Focused
+== s_evals.json
+18773	confident-ai/deepeval	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	The LLM Evaluation Framework
+149	kieranklaassen/leva	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM Evaluation Framework for Rails apps to be used
+117	ai-twinkle/Eval	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	High-performance LLM evaluation framework with par
+117	georgeguimaraes/tribunal	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM evaluation framework for Elixir: evaluate and 
+72	grigio/llm-eval-simple	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	llm-eval-simple is a simple LLM evaluation framewo
+71	Alqemist-labs/ruby_llm-tribunal	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM evaluation framework for Ruby, powered by Ruby
+71	ellydee/acceptance-bench	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A robust LLM evaluation framework measuring accept
+52	viteval/viteval	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Next generation LLM evaluation framework powered b
+33	stellarlinkco/ai-eval	{"key":"agpl-3.0","name":"GNU Affero General Public License v3.0","url":"https://api.github.com/licenses/agpl-3.0"}	null	null	The LLM Evaluation Framework
+29	dpaluy/rubric_llm	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Lightweight LLM evaluation framework for Ruby
+23	aiverify-foundation/LLM-Evals-Catalogue	{"key":"","name":"","url":""}	null	null	This repository stems from our paper, “Cataloguing
+18	cornell-brg/pyhdl-eval	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM Evaluation Framework for Hardware Design Using
+17	AnSwati/llm_eval_toolkit	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM Evaluation Framework
+17	mrconter1/BenchmarkAggregator	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Comprehensive LLM evaluation framework: GPQA Diamo
+15	vignesh2027/LLM-Evaluation-Framework	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	 Production-grade LLM Evaluation & Benchmarking Fr
+10	aglio-lab/ai-evaluation-tools	{"key":"cc0-1.0","name":"Creative Commons Zero v1.0 Universal","url":"https://api.github.com/licenses/cc0-1.0"}	null	null	The comprehensive list of AI evaluation tools: 300
+8	Legalcomplex/S3-Framework	{"key":"other","name":"Other","url":""}	null	null	Legal LLM Evaluation Framework
+5	harlev/eva-l	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM Evaluation Framework
+5	bassrehab/spark-llm-eval	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Spark-native LLM evaluation framework with confide
+4	holsee/deep_eval_ex	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	LLM evaluation framework for Elixir
+4	mmjerge/LLM-Evaluation-Framework	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Evaluation of Inference-time Methods
+4	deep-analysis-research/simple-evals	{"key":"","name":"","url":""}	null	null	simple-evals is a lightweight, easy-to-deploy larg
+4	blake-hamm/beyond-vibes	{"key":"bsd-3-clause","name":"BSD 3-Clause \"New\" or \"Revised\" License","url":"https://api.github.com/licenses/bsd-3-clause"}	null	null	LLM evaluation framework for testing self-hosted, 
+3	FreakyAdy/llm-eval-harness	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Lightweight LLM evaluation framework for custom be
+3	AarushSah/eris-eval	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM evaluation framework that assesses model perfo
+== s_knowledge-graphs.json
+746	thu-vu92/knowledge-graph-llms	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	In this project, I explored how to extract knowled
+117	thu-pacman/Tree-KG	{"key":"","name":"","url":""}	null	null	knowledge graph, llm, knowledge-intensive domains
+62	projectwilsen/KnowledgeGraphLLM	{"key":"","name":"","url":""}	null	null	
+27	ericblue/knowledge-graph-llm-links	{"key":"","name":"","url":""}	null	null	A collection of interesting links, articles, resea
+11	ashishpatel26/KnowledgeGraphLLM	{"key":"","name":"","url":""}	null	null	KnowledgeGraphLLM
+10	ryang420/Knowledge-Graph-LLM	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	
+8	bayu-siddhi/graph-rag-arangodb	{"key":"","name":"","url":""}	null	null	Next-Gen Indonesia IT Law Q&A: Knowledge Graphs & 
+7	linafaik08/knowledge_graphs_llm	{"key":"","name":"","url":""}	null	null	This repository contains code examples from the ar
+5	KawHimmy/knowledge_graph_llm	{"key":"","name":"","url":""}	null	null	大模型与知识图谱结合的旅游智慧服务系统
+5	dsivov/investigator	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	OSINT cross-event analysis: news + open sources → 
+3	TaqiyEddine-B/BuildKnowledgeGraphLLM	{"key":"","name":"","url":""}	null	null	Use of LLM to generate a knowledge graph
+2	Weiyuan305/KnowledgeGraph_LLMs_EV	{"key":"","name":"","url":""}	null	null	EV Q&A system, Based on KnowledgeGraph and LLMs
+2	TraceOnSnow/HearthstoneCardGenerator	{"key":"","name":"","url":""}	null	null	Knowledge graph + LLM + diffusion pipeline for AI-
+2	hanjiang-215/cognitive-exoskeleton-mcp	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Personal Cognitive Exoskeleton - MCP Server powere
+1	ArjunPimpale/KnowledgeGraphLLM	{"key":"","name":"","url":""}	null	null	The models we used in our project 
+1	helmikhalifa/knowledge_graph_llm	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	
+1	alfiensukma/knowledge-graph-llm-rag	{"key":"","name":"","url":""}	null	null	Building knowledge graph and extraction topics wit
+1	dooa-ansari/personal-knowledge-graph-LLM	{"key":"other","name":"Other","url":""}	null	null	AI based personal knowledge graph system, that can
+1	avishkarborkar/Knowledge-Graph-LLM-Reasoning	{"key":"","name":"","url":""}	null	null	
+1	sabedu/knowledge_graph_llm_synergy	{"key":"","name":"","url":""}	null	null	
+1	IconicAnik/Knowledge-Graph-LLM-Question-Answering-System	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Knowledge Graph + LLM Question Answering System is
+1	maminglei7-lab/Healthcare_KG-RAG	{"key":"","name":"","url":""}	null	null	MIMIC-IV healthcare data lineage tracking - ETL, K
+1	akash-dj/ship-digital-twin	{"key":"","name":"","url":""}	null	null	Research prototype: Knowledge Graph + LLM-based Di
+1	OrFrederick/Lumen	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Science YouTube → explorable knowledge graph. LLM 
+1	Kris-Nale314/context-ai	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Conceptual decision intelligence platform to guide
+== s_llms-open-inference.json
+973	patchy631/time-to-first-token	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	A 10-week, 30-minutes-a-day roadmap for LLM infere
+458	NLPOptimize/flash-tokenizer	{"key":"","name":"","url":""}	null	null	EFFICIENT AND OPTIMIZED TOKENIZER ENGINE FOR LLM I
+290	beehive-lab/jitllm	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Java Inference Tornado toolkit: High performance L
+54	zenrran4nlp/Awesome-LLM-Inference-Serving	{"key":"","name":"","url":""}	null	null	
+41	hsy23/CLIF-Co-Orchestrating-LLM-Inference-Serving-and-Fine-tuning	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	CLIF: Continuous Learning and Inference Framework 
+24	jiahongsigma/Efficient-LLM-Inference-Serving-Systems	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Why is LLM inference slow — and how do you make it
+9	mddunlap924/LLM-Inference-Serving	{"key":"","name":"","url":""}	null	null	This repository demonstrates LLM execution on CPUs
+8	chunhuizhang/llm_inference_serving	{"key":"","name":"","url":""}	null	null	
+5	anon-iiswc24/LLMServingSim	{"key":"","name":"","url":""}	null	null	LLMServingSim: A HW/SW Co-Simulation Infrastructur
+4	CentML/llm-inference-bench	{"key":"","name":"","url":""}	null	null	Lightweight and extensible LLM Inference serving b
+3	aruanurag/llm-inference-lab	{"key":"","name":"","url":""}	null	null	A hands-on repository documenting my journey into 
+2	Akshatha-22/LLM-Inference-Serving-System	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A minimal but production-aware LLM inference serve
+2	vikrant-project/inferno-engine	{"key":"","name":"","url":""}	null	null	High-Performance LLM Inference & Serving Engine in
+2	rdpatilds/inference-optimization	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	LLM inference serving-layer study: a control plane
+2	ericleee/GPU-LLM-Telemetry-Benchmark	{"key":"","name":"","url":""}	null	null	GPU observability + LLM inference-serving stack on
+2	ykt147/vLLM-Prefill-Decode-Scheduler-Playground	{"key":"","name":"","url":""}	null	null	一个面向 LLM Inference / Serving 学习的 vLLM 调度器开源项目。本项目从
+1	BangProx/llm-inference-serving-course	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	한국어로 배우는 LLM inference & serving systems course. K
+1	7QiC/ccInfer	{"key":"","name":"","url":""}	null	null	C++ LLM Inference Serving Engine
+1	sonephyo/llm-routing-bench	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Testbed for measuring routing strategies that redu
+1	hari-vasudevan/llm-serving-control	{"key":"","name":"","url":""}	null	null	Discrete-time integral state-feedback controller f
+1	fankserver/llm-glossary	{"key":"cc0-1.0","name":"Creative Commons Zero v1.0 Universal","url":"https://api.github.com/licenses/cc0-1.0"}	null	null	Plain-language glossary of LLM & inference-serving
+1	giannisp09/llm-inference	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Production-ready LLM inference serving with vLLM —
+1	romit-98/wukong-serve	{"key":"","name":"","url":""}	null	null	Production-realistic LLM inference serving layer i
+1	divya0795/distributed-llm-serving-companion	{"key":"cc-by-4.0","name":"Creative Commons Attribution 4.0 International","url":"https://api.github.com/licenses/cc-by-4.0"}	null	null	Machine-readable companion to the ACM CSUR survey 
+0	DO-FDE/inference-benchmarking	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Tools for benchmarking and characterizing LLM infe
+== s_local-offline-inference.json
+77	liekzejaws/rushlight	{"key":"other","name":"Other","url":""}	null	null	Rushlight — Offline survival computer. OsmAnd fork
+40	maruakshay/miii-cli	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	🇮🇳 Free, open-source AI coding agent for your term
+22	mahmutsalman/book-reader	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Context-aware AI dictionary for books, manga & com
+1	celadondragon/local_llm	{"key":"","name":"","url":""}	null	null	Files necessary to create your own local LLM - OFF
+1	twixinator/SerialSavant	{"key":"other","name":"Other","url":""}	null	null	Cross-platform Native AOT C# CLI for embedded UART
+0	arthurpeace123-jpg/-LocalLLM-Offline-	{"key":"","name":"","url":""}	null	null	
+0	Rai567245/StudyPYBot-Localized-LLM-Offline-Chatbot-Asssitant	{"key":"","name":"","url":""}	null	null	StudyPYBot is a locally hosted AI chatbot designed
+0	MU-Ali99/AI-NPC-peripheral	{"key":"","name":"","url":""}	null	null	AI-powered NPC gaming peripheral — local LLM, offl
+0	AldythNahak/python_LLM_gmaps_place_to_go_eat_etc	{"key":"","name":"","url":""}	null	null	Demonstrates integrating a local LLM (offline/open
+0	oluwasemilorebello7-design/offline-research	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Offline AI research app for Android. Local LLM + o
+0	g-battaglia/ai-epub-translator	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Translate EPUB books with a local LLM — offline, p
+0	veskog/motivator-ai-neuro-entrainment	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A Morning Neuro-Optimizer for Android. Uses Local 
+0	Sachin0496/punargati	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	PunarGati: on-device AI physiotherapy coach for Sn
+0	Abhijith0422/Trail-Bot	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Hybrid AI Flutter package that provides a single, 
+0	josbujos/josmitty	{"key":"","name":"","url":""}	null	null	Offline Windows toolkit for building and experimen
+0	DeepakGhengat/LUMIS-Library-Understanding-Matrix-for-Intelligent-Search	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Library Understanding Matrix: LUMIS builds a vecto
+0	akashrey09/grasspass	{"key":"","name":"","url":""}	null	null	Offline-first field cards that get you off the scr
+== s_machine-learning.json
+6032	Swift-AI/Swift-AI	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	The Swift machine learning library.
+5714	mlpack/mlpack	{"key":"other","name":"Other","url":""}	null	null	mlpack: a fast, header-only C++ machine learning l
+5186	rasbt/mlxtend	{"key":"other","name":"Other","url":""}	null	null	A library of extension and helper modules for Pyth
+2272	ermig1979/Simd	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	C++ image processing and machine learning library 
+2265	vaaaaanquish/Awesome-Rust-MachineLearning	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	This repository is a list of machine learning libr
+1804	symisc/sod	{"key":"other","name":"Other","url":""}	null	null	An Embedded Computer Vision & Machine Learning Lib
+1691	Anemll/Anemll	{"key":"","name":"","url":""}	null	null	Artificial Neural Engine Machine Learning Library
+1418	oracle/tribuo	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Tribuo - A Java machine learning library
+1264	AtheMathmo/rusty-machine	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Machine Learning library for Rust
+1198	AlgRUC/JittorGeometric	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	JittorGeometric is a Jittor-based graph machine le
+1016	mni-ml/framework	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A machine learning library with a TypeScript API a
+918	BIDData/BIDMach	{"key":"bsd-3-clause","name":"BSD 3-Clause \"New\" or \"Revised\" License","url":"https://api.github.com/licenses/bsd-3-clause"}	null	null	CPU and GPU-accelerated Machine Learning Library
+918	yoshoku/rumale	{"key":"bsd-3-clause","name":"BSD 3-Clause \"New\" or \"Revised\" License","url":"https://api.github.com/licenses/bsd-3-clause"}	null	null	Rumale is a machine learning library in Ruby
+857	node-tensorflow/node-tensorflow	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Node-tensorflow is a NodeJS API for utilizing Goog
+846	imageprocessor/cv4j	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	The target is to set up a high quality and real-ti
+795	linkedin/photon-ml	{"key":"other","name":"Other","url":""}	null	null	A scalable machine learning library on Apache Spar
+732	junku901/machine_learning	{"key":"","name":"","url":""}	null	null	Machine learning library for Node.js
+677	TalkingData/Fregata	{"key":"other","name":"Other","url":""}	null	null	A light weight, super fast, large scale machine le
+652	melisgl/mgl	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Common Lisp machine learning library.
+572	salesforce/PyRCA	{"key":"bsd-3-clause","name":"BSD 3-Clause \"New\" or \"Revised\" License","url":"https://api.github.com/licenses/bsd-3-clause"}	null	null	PyRCA: A Python Machine Learning Library for Root 
+540	machinelearnjs/machinelearnjs	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Machine Learning library for the web and Node.
+502	rodmarkun/SmolML	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A fully functional and simple Machine Learning lib
+499	myui/hivemall	{"key":"","name":"","url":""}	null	null	Scalable machine learning library for Apache Hive/
+464	FidoProject/Fido	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A lightweight C++ machine learning library for emb
+461	memoakten/ofxMSATensorFlow	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	C++ openframeworks addon and examples integrating 
+== s_memory-recall.json
+== s_multi-agent-orchestration.json
+7249	kyegomez/swarms	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	The Enterprise-Grade Multi-Agent Orchestration Fra
+4598	VRSEN/agency-swarm	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Reliable Multi-Agent Orchestration Framework
+2283	Kocoro-lab/Shannon	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A production-oriented multi-agent orchestration fr
+420	dsifry/metaswarm	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A self-improving multi-agent orchestration framewo
+295	foreveryh/mentis	{"key":"","name":"","url":""}	null	null	Mentis: A powerful multi-agent orchestration frame
+183	The-Swarm-Corporation/swarms-rs	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	The Enterprise-Grade Production-Ready Multi-Agent 
+145	doiito/gliding_horse	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Gliding Horse is a multi-agent orchestration frame
+141	jwangkun/Pi-Multi-Agent	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Production-Grade Multi-Agent Orchestration Framewo
+112	martymcenroe/AssemblyZero	{"key":"other","name":"Other","url":""}	null	null	Parameterized multi-agent orchestration framework 
+86	bijutharakan/multi-agent-squad	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Production-ready multi-agent orchestration framewo
+52	Zaious/ChronicleCore-Architecture	{"key":"other","name":"Other","url":""}	null	null	The conceptual architecture and governance whitepa
+50	nshkrdotcom/synapse	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Headless, declarative multi-agent orchestration fr
+39	Yeachan-Heo/oh-my-claudecode-website	{"key":"","name":"","url":""}	null	null	Website for oh-my-claudecode - A multi-agent orche
+34	zeynepyorulmaz/openclaw-orchestrator	{"key":"other","name":"Other","url":""}	null	null	Adaptive multi-agent orchestration framework — bre
+33	bsamud/openfoundry-agentic-framework	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Multi-agent orchestration framework for AI applica
+33	Unfold-Security/pydantic-collab	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Multi-agent orchestration framework powered by Pyd
+30	jonnyzzz/run-agent	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	A multi-agent orchestration framework for AI-power
+28	yx-fan/multi-agent-orchestration-framework	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Modular multi-agent orchestration framework powere
+27	Recon-Fuzz/recon-magic-framework	{"key":"","name":"","url":""}	null	null	Autonomous Solidity Fuzzing via a Multi Agent Orch
+22	NicolaiLassen/orxhestra	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Multi-agent orchestration framework for Python — t
+15	jerry1993-tech/Cornucopia-Multi-Agent	{"key":"","name":"","url":""}	null	null	🏭 Production-grade multi-agent orchestration frame
+14	Sheetaa/flowchestra	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A Markdown-based multi-agent orchestration framewo
+13	TurnaboutHero/oh-my-antigravity	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Multi-agent orchestration framework for Google Ant
+12	Esaadatmand/Photon_orchestrator	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A lightweight, Windows-native Multi-Agent Orchestr
+12	BjornMelin/dev-pro-agents	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	🤖 Advanced multi-agent orchestration framework bui
+== s_rag.json
+92075	infiniflow/ragflow	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	RAGFlow is a leading open-source Retrieval-Augment
+40090	HKUDS/LightRAG	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	[EMNLP2025] LightRAG: Simple and Fast Retrieval-Au
+36301	microsoft/graphrag	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A modular graph-based Retrieval-Augmented Generati
+29831	NirDiamant/RAG_Techniques	{"key":"other","name":"Other","url":""}	null	null	This repository showcases various advanced techniq
+8017	SciPhi-AI/R2R	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	SoTA production-ready AI retrieval system. Agentic
+7779	Azure-Samples/azure-search-openai-demo	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A sample app for the Retrieval-Augmented Generatio
+7697	weaviate/Verba	{"key":"bsd-3-clause","name":"BSD 3-Clause \"New\" or \"Revised\" License","url":"https://api.github.com/licenses/bsd-3-clause"}	null	null	Retrieval Augmented Generation (RAG) chatbot power
+4635	langflow-ai/openrag	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	OpenRAG is a comprehensive, single package Retriev
+4414	truefoundry/cognita	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	RAG (Retrieval Augmented Generation) Framework for
+4265	mongodb-developer/GenAI-Showcase	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	MongoDB's Generative AI Showcase: an exhaustive co
+4245	GiovanniPasq/agentic-rag-for-dummies	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A modular Agentic RAG built with LangGraph — learn
+3299	rag-web-ui/rag-web-ui	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	RAG Web UI is an intelligent dialogue system based
+3113	NVIDIA/ChatRTX	{"key":"other","name":"Other","url":""}	null	null	A developer reference project for creating Retriev
+2674	DEEP-PolyU/Awesome-GraphRAG	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Awesome-GraphRAG: A curated list of resources (sur
+2575	athina-ai/rag-cookbooks	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	This repository contains various advanced techniqu
+2011	Andrew-Jang/RAGHub	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A community-driven collection of RAG (Retrieval-Au
+1789	hymie122/RAG-Survey	{"key":"","name":"","url":""}	null	null	Collecting awesome papers of RAG for AIGC.  We pro
+1741	asinghcsu/AgenticRAG-Survey	{"key":"","name":"","url":""}	null	null	Agentic-RAG explores advanced Retrieval-Augmented 
+1629	NirDiamant/Controllable-RAG-Agent	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	This repository provides an advanced Retrieval-Aug
+1391	Danielskry/Awesome-RAG	{"key":"cc0-1.0","name":"Creative Commons Zero v1.0 Universal","url":"https://api.github.com/licenses/cc0-1.0"}	null	null	😎 Awesome list of Retrieval-Augmented Generation (
+1367	jxzhangjhu/Awesome-LLM-RAG	{"key":"","name":"","url":""}	null	null	Awesome-LLM-RAG: a curated list of advanced retrie
+1208	superlinear-ai/raglite	{"key":"mpl-2.0","name":"Mozilla Public License 2.0","url":"https://api.github.com/licenses/mpl-2.0"}	null	null	🥤 RAGLite is a Python toolkit for Retrieval-Augmen
+1175	jerry-ai-dev/MODULAR-RAG-MCP-SERVER	{"key":"","name":"","url":""}	null	null	A modular RAG (Retrieval-Augmented Generation) sys
+1033	pinecone-io/canopy	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Retrieval Augmented Generation (RAG) framework and
+1020	mrdbourke/simple-local-rag	{"key":"","name":"","url":""}	null	null	Build a RAG (Retrieval Augmented Generation) pipel
+== s_reasoning-thinking.json
+0	JohnScheuer/inference-time-scaling-bench	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Benchmark of inference-time scaling strategies for
+== s_recursive-self-improvement.json
+== s_sandboxed-code-exec.json
+== s_token-saving-compression.json
+== s_tool-use-mcp.json
+91183	modelcontextprotocol/servers	{"key":"other","name":"Other","url":""}	null	null	Model Context Protocol Servers
+24552	modelcontextprotocol/python-sdk	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	The official Python SDK for Model Context Protocol
+13561	modelcontextprotocol/typescript-sdk	{"key":"other","name":"Other","url":""}	null	null	The official TypeScript SDK for Model Context Prot
+9054	mobile-next/mobile-mcp	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	Model Context Protocol Server for Mobile Automatio
+5795	appcypher/awesome-mcp-servers	{"key":"","name":"","url":""}	null	null	Awesome MCP Servers - A curated list of Model Cont
+5664	executeautomation/mcp-playwright	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Playwright Model Context Protocol Server - Tool to
+5374	nanbingxyz/5ire	{"key":"other","name":"Other","url":""}	null	null	5ire is a cross-platform desktop AI assistant, MCP
+5206	modelcontextprotocol/go-sdk	{"key":"other","name":"Other","url":""}	null	null	The official Go SDK for Model Context Protocol ser
+4577	modelcontextprotocol/csharp-sdk	{"key":"other","name":"Other","url":""}	null	null	The official C# SDK for Model Context Protocol ser
+3766	microsoft/mcp	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Catalog of official Microsoft MCP (Model Context P
+3730	modelcontextprotocol/java-sdk	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	The official Java SDK for Model Context Protocol s
+2999	zcaceres/markdownify-mcp	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A Model Context Protocol server for converting alm
+2824	neka-nat/freecad-mcp	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	FreeCAD MCP(Model Context Protocol) server
+2155	benborla/mcp-server-mysql	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A Model Context Protocol server that provides read
+1855	GongRzhe/Office-PowerPoint-MCP-Server	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A MCP (Model Context Protocol) server for PowerPoi
+1629	f/mcptools	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A command-line interface for interacting with MCP 
+1623	modelcontextprotocol/php-sdk	{"key":"other","name":"Other","url":""}	null	null	The official PHP SDK for Model Context Protocol se
+1509	modelcontextprotocol/swift-sdk	{"key":"other","name":"Other","url":""}	null	null	The official Swift SDK for Model Context Protocol 
+1467	modelcontextprotocol/kotlin-sdk	{"key":"other","name":"Other","url":""}	null	null	The official Kotlin SDK for Model Context Protocol
+1228	metoro-io/mcp-golang	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Write Model Context Protocol servers in few lines 
+1142	mongodb-js/mongodb-mcp-server	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	A Model Context Protocol server to connect to Mong
+988	neo4j-contrib/mcp-neo4j	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Neo4j Labs Model Context Protocol servers
+962	JetBrains/mcp-jetbrains	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	A model context protocol server to work with JetBr
+924	modelcontextprotocol/ruby-sdk	{"key":"other","name":"Other","url":""}	null	null	The official Ruby SDK for the Model Context Protoc
+920	suekou/mcp-notion-server	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	A Model Context Protocol server for connecting Not
+== s_world-simulation.json
+1	sseanliu/ClawTown	{"key":"","name":"","url":""}	null	null	A generative agents simulation inspired by Stanfor
+1	jibraaan/sim0	{"key":"","name":"","url":""}	null	null	Generative agent simulation: turn interviews into 
+1	hellobs/provenance	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	A generative agent simulation platform built on th
+0	YashvardhanATRgithub/IntelligentAgent	{"key":"","name":"","url":""}	null	null	ISRO Chandrayaan-5 Generative Agents Simulation
+0	CrazyDubya/generative-agents-simulation	{"key":"apache-2.0","name":"Apache License 2.0","url":"https://api.github.com/licenses/apache-2.0"}	null	null	
+0	cewa-stack/RPG-Generative-Agents-simulation	{"key":"","name":"","url":""}	null	null	RPG Generative Agents Simulation A 2D sandbox envi
+0	Sssssimonk/DSC180_B16_Generative_Agents	{"key":"","name":"","url":""}	null	null	A simplified version of generative agents simulati
+0	Xarangi/mastodon-sim	{"key":"other","name":"Other","url":""}	null	null	Generative Agent simulation of a Mastodon social n
+0	jonghhhh/generative_abm_jsapp	{"key":"","name":"","url":""}	null	null	Generative Agent Simulation — React + Vite + Gemin
+0	pollyang707/museum-fatigue-GABM-simulation	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Source code for the LLM-based generative agent sim
+0	JDerekLomas/philosophers-library	{"key":"","name":"","url":""}	null	null	A generative agents simulation for philosophical d
+0	GowriSankarTatipathi/PolicySim	{"key":"","name":"","url":""}	null	null	Generative agent simulations for public-interest p
+0	baker-jr-john/educ5919-triangle-simulation	{"key":"mit","name":"MIT License","url":"https://api.github.com/licenses/mit"}	null	null	Triangle Shirtwaist Factory (NYC, Mar 25, 1911) ge
+0	arrudafranco/panel-twin-modeller	{"key":"","name":"","url":""}	null	null	Feasibility simulator for interview-based generati

@@ -1,0 +1,15 @@
+---
+pid: 384233
+cwd: "/workspace/evals"
+command: "RESULT_DIR=/workspace/evals/results/20261005-174126\nexport PATH=\"/workspace/ollama-install/bin:$PATH\"\nexport OLLAMA_HOST=\"127.0.0.1:11434\"\ncd /workspace/evals\npython3 -u harness/run_gsm8k.py --n 50 --seed 42 --out \"$RESULT_DIR/gsm8k.json\" > \"$RESULT_DIR/gsm8k.log\" 2>&1\necho GSM8K_EXIT=$?\ntail -30 \"$RESULT_DIR/gsm8k.log\""
+title: "Run GSM8K 50-question subset eval"
+status: failed   
+started_at: 2026-10-05T22:43:09.753Z
+running_for_ms: 233478   
+---
+
+---
+exit_code: unknown
+elapsed_ms: 233478
+ended_at: 2026-10-05T22:47:03.231Z
+---

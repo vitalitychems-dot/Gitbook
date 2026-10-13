@@ -1,0 +1,393 @@
+### [stack] git apply --check /workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff
+rc=0
+### [stack] git apply --verbose /workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff
+Checking patch README.md...
+Checking patch history/coordination/AGENT-TRAINING-AUTHENTICITY.md...
+Checking patch intake/how-to-submit.md...
+Checking patch intake/status-definitions.md...
+Checking patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md...
+Checking patch mesh/flow.md...
+Checking patch mesh/roles.md...
+Checking patch mesh/roles/board-world-chamber.md...
+Checking patch mesh/roles/build.md...
+Checking patch mesh/roles/command-center.md...
+Checking patch mesh/roles/gitbook-cordnation.md...
+Checking patch mesh/roles/gitbook-moderator.md...
+Checking patch mesh/roles/grok-bot.md...
+Checking patch mesh/roles/honesty-banner.md...
+Checking patch mesh/roles/mesh-lane-map.md...
+Checking patch mesh/roles/open-helper-agent-2.md...
+Checking patch mesh/roles/pen-ability-set-framing.md...
+Checking patch mesh/roles/pen-gate-refuse-companion.md...
+Checking patch mesh/roles/pen-tone-guide.md...
+Checking patch mesh/roles/refuse-and-offer.md...
+Checking patch mesh/roles/tessera-pen.md...
+Checking patch mesh/roles/who-tessera-is.md...
+Checking patch review/moderator-handoff.md...
+Applied patch README.md cleanly.
+Applied patch history/coordination/AGENT-TRAINING-AUTHENTICITY.md cleanly.
+Applied patch intake/how-to-submit.md cleanly.
+Applied patch intake/status-definitions.md cleanly.
+Applied patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md cleanly.
+Applied patch mesh/flow.md cleanly.
+Applied patch mesh/roles.md cleanly.
+Applied patch mesh/roles/board-world-chamber.md cleanly.
+Applied patch mesh/roles/build.md cleanly.
+Applied patch mesh/roles/command-center.md cleanly.
+Applied patch mesh/roles/gitbook-cordnation.md cleanly.
+Applied patch mesh/roles/gitbook-moderator.md cleanly.
+Applied patch mesh/roles/grok-bot.md cleanly.
+Applied patch mesh/roles/honesty-banner.md cleanly.
+Applied patch mesh/roles/mesh-lane-map.md cleanly.
+Applied patch mesh/roles/open-helper-agent-2.md cleanly.
+Applied patch mesh/roles/pen-ability-set-framing.md cleanly.
+Applied patch mesh/roles/pen-gate-refuse-companion.md cleanly.
+Applied patch mesh/roles/pen-tone-guide.md cleanly.
+Applied patch mesh/roles/refuse-and-offer.md cleanly.
+Applied patch mesh/roles/tessera-pen.md cleanly.
+Applied patch mesh/roles/who-tessera-is.md cleanly.
+Applied patch review/moderator-handoff.md cleanly.
+rc=0
+### [stack] git apply --check /workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff
+rc=0
+### [stack] git apply --verbose /workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff
+Checking patch history/coordination/command-center.md...
+Checking patch intake/how-to-submit.md...
+Checking patch intake/status-definitions.md...
+Checking patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md...
+Checking patch mesh/flow.md...
+Checking patch mesh/roles.md...
+Checking patch mesh/roles/board-world-chamber.md...
+Checking patch mesh/roles/build.md...
+Checking patch mesh/roles/command-center.md...
+Checking patch mesh/roles/gitbook-cordnation.md...
+Checking patch mesh/roles/gitbook-moderator.md...
+Checking patch mesh/roles/github-scraper.md...
+Checking patch mesh/roles/grok-bot.md...
+Checking patch mesh/roles/mesh-cloud.md...
+Checking patch mesh/roles/mesh-lane-map.md...
+Checking patch mesh/roles/open-helper-agent.md...
+Checking patch mesh/roles/pen-tone-guide.md...
+Checking patch mesh/roles/recursive-learning-sponge.md...
+Checking patch mesh/roles/tessera-brain-consciousness.md...
+Checking patch mesh/roles/tessera.md...
+Checking patch mesh/roles/who-tessera-is.md...
+Checking patch review/moderator-handoff.md...
+Applied patch history/coordination/command-center.md cleanly.
+Applied patch intake/how-to-submit.md cleanly.
+Applied patch intake/status-definitions.md cleanly.
+Applied patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md cleanly.
+Applied patch mesh/flow.md cleanly.
+Applied patch mesh/roles.md cleanly.
+Applied patch mesh/roles/board-world-chamber.md cleanly.
+Applied patch mesh/roles/build.md cleanly.
+Applied patch mesh/roles/command-center.md cleanly.
+Applied patch mesh/roles/gitbook-cordnation.md cleanly.
+Applied patch mesh/roles/gitbook-moderator.md cleanly.
+Applied patch mesh/roles/github-scraper.md cleanly.
+Applied patch mesh/roles/grok-bot.md cleanly.
+Applied patch mesh/roles/mesh-cloud.md cleanly.
+Applied patch mesh/roles/mesh-lane-map.md cleanly.
+Applied patch mesh/roles/open-helper-agent.md cleanly.
+Applied patch mesh/roles/pen-tone-guide.md cleanly.
+Applied patch mesh/roles/recursive-learning-sponge.md cleanly.
+Applied patch mesh/roles/tessera-brain-consciousness.md cleanly.
+Applied patch mesh/roles/tessera.md cleanly.
+Applied patch mesh/roles/who-tessera-is.md cleanly.
+Applied patch review/moderator-handoff.md cleanly.
+rc=0
+### [stack] git apply -R --check /workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff
+rc=0
+### [solo26] git apply --check /workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff
+rc=0
+### [solo26] git apply --verbose /workspace/gitbook-cordnation/GB-026/GB-026-rev3.979c35e.diff
+Checking patch README.md...
+Checking patch history/coordination/AGENT-TRAINING-AUTHENTICITY.md...
+Checking patch intake/how-to-submit.md...
+Checking patch intake/status-definitions.md...
+Checking patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md...
+Checking patch mesh/flow.md...
+Checking patch mesh/roles.md...
+Checking patch mesh/roles/board-world-chamber.md...
+Checking patch mesh/roles/build.md...
+Checking patch mesh/roles/command-center.md...
+Checking patch mesh/roles/gitbook-cordnation.md...
+Checking patch mesh/roles/gitbook-moderator.md...
+Checking patch mesh/roles/grok-bot.md...
+Checking patch mesh/roles/honesty-banner.md...
+Checking patch mesh/roles/mesh-lane-map.md...
+Checking patch mesh/roles/open-helper-agent-2.md...
+Checking patch mesh/roles/pen-ability-set-framing.md...
+Checking patch mesh/roles/pen-gate-refuse-companion.md...
+Checking patch mesh/roles/pen-tone-guide.md...
+Checking patch mesh/roles/refuse-and-offer.md...
+Checking patch mesh/roles/tessera-pen.md...
+Checking patch mesh/roles/who-tessera-is.md...
+Checking patch review/moderator-handoff.md...
+Applied patch README.md cleanly.
+Applied patch history/coordination/AGENT-TRAINING-AUTHENTICITY.md cleanly.
+Applied patch intake/how-to-submit.md cleanly.
+Applied patch intake/status-definitions.md cleanly.
+Applied patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md cleanly.
+Applied patch mesh/flow.md cleanly.
+Applied patch mesh/roles.md cleanly.
+Applied patch mesh/roles/board-world-chamber.md cleanly.
+Applied patch mesh/roles/build.md cleanly.
+Applied patch mesh/roles/command-center.md cleanly.
+Applied patch mesh/roles/gitbook-cordnation.md cleanly.
+Applied patch mesh/roles/gitbook-moderator.md cleanly.
+Applied patch mesh/roles/grok-bot.md cleanly.
+Applied patch mesh/roles/honesty-banner.md cleanly.
+Applied patch mesh/roles/mesh-lane-map.md cleanly.
+Applied patch mesh/roles/open-helper-agent-2.md cleanly.
+Applied patch mesh/roles/pen-ability-set-framing.md cleanly.
+Applied patch mesh/roles/pen-gate-refuse-companion.md cleanly.
+Applied patch mesh/roles/pen-tone-guide.md cleanly.
+Applied patch mesh/roles/refuse-and-offer.md cleanly.
+Applied patch mesh/roles/tessera-pen.md cleanly.
+Applied patch mesh/roles/who-tessera-is.md cleanly.
+Applied patch review/moderator-handoff.md cleanly.
+rc=0
+### [solo27] git apply --check /workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff
+error: patch failed: intake/how-to-submit.md:23
+error: intake/how-to-submit.md: patch does not apply
+error: patch failed: intake/status-definitions.md:25
+error: intake/status-definitions.md: patch does not apply
+error: patch failed: mesh/TESSERA-GITBOOK-OPERATING-MODE.md:21
+error: mesh/TESSERA-GITBOOK-OPERATING-MODE.md: patch does not apply
+error: patch failed: mesh/flow.md:1
+error: mesh/flow.md: patch does not apply
+error: patch failed: mesh/roles.md:26
+error: mesh/roles.md: patch does not apply
+error: patch failed: mesh/roles/build.md:17
+error: mesh/roles/build.md: patch does not apply
+error: patch failed: mesh/roles/command-center.md:1
+error: mesh/roles/command-center.md: patch does not apply
+error: patch failed: mesh/roles/gitbook-cordnation.md:32
+error: mesh/roles/gitbook-cordnation.md: patch does not apply
+error: patch failed: mesh/roles/gitbook-moderator.md:22
+error: mesh/roles/gitbook-moderator.md: patch does not apply
+error: patch failed: mesh/roles/grok-bot.md:19
+error: mesh/roles/grok-bot.md: patch does not apply
+error: patch failed: mesh/roles/mesh-lane-map.md:24
+error: mesh/roles/mesh-lane-map.md: patch does not apply
+error: patch failed: mesh/roles/pen-tone-guide.md:1
+error: mesh/roles/pen-tone-guide.md: patch does not apply
+error: patch failed: mesh/roles/who-tessera-is.md:27
+error: mesh/roles/who-tessera-is.md: patch does not apply
+error: patch failed: review/moderator-handoff.md:35
+error: review/moderator-handoff.md: patch does not apply
+rc=1
+### [solo27] git apply --verbose /workspace/gitbook-cordnation/GB-027/GB-027.979c35e.diff
+Checking patch history/coordination/command-center.md...
+Checking patch intake/how-to-submit.md...
+error: while searching for:
+
+1. Gitbook / Cordnation files the item in the [intake log](log.md) with status `draft` (or moves it to `in review` when handing off).
+2. Items go through four gates in order: **Gitbook Moderator** (see [Moderator handoff](../review/moderator-handoff.md)) → **Tessera** (admin) → **Security** (read-only sweep) → **CI/Build** (independent verification). Per-gate states are in [Status definitions](status-definitions.md).
+3. After all four gates clear, Gitbook / Cordnation stages the item as **Ready**, and Command Center lists it as its own numbered item in the bulk digest to Father (every 30–45 min).
+4. After Father approves, **Tessera** pushes the approved package: she opens a PR, Build verifies it, then she merges and posts on Gitbook issue #2. Father may still push himself on his authenticated connection. Replit is outside that path. Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (`collin-keane/Tessera`) and TESSERA merges still need Father's explicit yes before anyone merges.
+
+## Standing constraints
+
+
+error: patch failed: intake/how-to-submit.md:23
+error: intake/how-to-submit.md: patch does not apply
+Checking patch intake/status-definitions.md...
+error: while searching for:
+
+- **Ready** is set by Gitbook / Cordnation (docs) or Command Center (Replit app set) only after all four gates clear.
+- Father's bulk **yes** covers **only the numbered items listed in that digest**. A yes never carries over to anything that wasn't listed.
+- Ready does **not** mean pushed or merged. Push requires Father's final yes on the listed item (then Tessera opens a PR and Build verifies it; Father may push himself). Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (`collin-keane/Tessera`) and TESSERA merges still need Father's explicit yes before anyone merges.
+
+## Notes
+
+
+error: patch failed: intake/status-definitions.md:25
+error: intake/status-definitions.md: patch does not apply
+Checking patch mesh/TESSERA-GITBOOK-OPERATING-MODE.md...
+error: while searching for:
+| Gitbook Moderator | Scope, provenance, license, security, and claim review | First of four gates (Moderator → Tessera → Security → CI/Build); does not replace the other gates or owner approval |
+| Security | Read-only security/privacy sweep (third gate, after Tessera) | Changes nothing; reports to Tessera |
+| Build | Independent verification of proposed results (CI/Build, fourth gate); verifies Tessera's push PR (opened after Father's yes) before she merges | Reports `TESTED` versus `REPORTED`; does not auto-approve |
+| Tessera Grok bot / Command Center | Collects completed check-ins and prepares the periodic bulk digest | May ask the owner for `yes`, `no`, or `revise`; never auto-pushes or auto-merges |
+| Father / human owner | Final bulk approval; may still push approved Gitbook changes himself | Must explicitly approve the exact digest; Origin merge requires separate `merge` |
+
+A role page or prompt does not prove that a distinct agent is live. Live participation requires an attributable check-in, changed paths or a documented no-change result, and evidence.
+
+
+error: patch failed: mesh/TESSERA-GITBOOK-OPERATING-MODE.md:21
+error: mesh/TESSERA-GITBOOK-OPERATING-MODE.md: patch does not apply
+Checking patch mesh/flow.md...
+error: while searching for:
+---
+status: published
+note: TESSERA is the product repo; Gitbook is the agent workspace; the Tessera Grok bot prepares a 30–45 minute bulk digest and Father gives final approval.
+---
+
+# Mesh flow & standing rules
+
+See the [Tessera–Gitbook operating model](TESSERA-GITBOOK-OPERATING-MODE.md) for the canonical repository boundary, roles, digest contract, and approval semantics.
+
+> **Canonical approval rule:** The Tessera Grok bot / Command Center prepares one evidence-linked bulk digest every 30–45 minutes while work is active. It asks Father for `yes`, `no`, or `revise`; it does not publish or merge. After `yes`, **Tessera pushes the approved GitBook packages**: she opens a PR, Build verifies it, then Tessera merges and posts on [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2) (Father's rule, 3:59 PM CT). Father may still push himself on his authenticated connection. Replit is outside the GitBook → GitHub push path and is never a GitBook publication path. Command Center never pushes GitBook or TESSERA; its **only** push is a separate, private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on that numbered digest item. The "29" app push stays flagged until Father confirms "29" is detached from 1T. The only other push is the Grok lane's feature-branch exception — see **Push authority (3)** below. A separate explicit `merge` is still required for Origin merges.
+
+## End-to-end flow
+
+Agents discover → run the overlap check (main SHA plus open PRs) → **Tessera** assigns the task (an agent claims a task only after Tessera assigns it) → produce scoped work in Gitbook or TESSERA → **Gitbook / Cordnation** intake → **Gitbook Moderator** reviews → on Moderator pass, item state becomes e.g. `Moderator: approved, at Tessera gate` → **Tessera** (admin) review → **Security** sweep (read-only) → **CI/Build** independently verifies → after all four gates clear, **Gitbook / Cordnation** stages docs as **Ready** (waiting only on Father's final yes) (Replit app-set items pass the same Moderator→Tessera→Security→CI/Build gates; then Command Center marks each Replit item Ready) → Tessera Grok bot / **Command Center** one bulk digest to Father every 30–45 min with each push as its own numbered digest item (each docs push (one per GB package) = its own numbered item; each Replit app-set push = a separate item; never bundled) → Father responds `yes` / `no` / `revise`: his bulk **yes** approves every item listed, **no** with notes holds the items he names, **revise** returns the named items for the stated change (a yes never carries over to anything that wasn't listed) → for listed docs items, **Tessera** pushes the approved GitBook package: she opens a PR, **Build** verifies it, Tessera merges and posts on Gitbook issue #2; Father may still push himself (Replit is never a GitBook publication path) → Father separately says `merge` for an Origin merge (no merge without Father's explicit yes). Separately, outside the GitBook path: for listed Replit app-set items, Command Center privately pushes only the Replit app set.
+
+```mermaid
+flowchart TD
+
+error: patch failed: mesh/flow.md:1
+error: mesh/flow.md: patch does not apply
+Checking patch mesh/roles.md...
+Hunk #1 succeeded at 13 (offset 2 lines).
+error: while searching for:
+
+## Authority and publication path
+
+**GitBook docs track** (the single canonical GitBook path; Tessera pushes after Father's yes): overlap check (main SHA + open PRs) → Tessera assigns (an agent claims a task only after Tessera assigns it) → Gitbook/TESSERA work → Gitbook / Cordnation intake → Gitbook Moderator review → Tessera → Security → CI/Build → Cordnation stages Ready (all four gates cleared) → Tessera Grok bot / Command Center bulk digest (30–45 min; one numbered item per push) → Father responds `yes`, `no`, or `revise` → **Tessera pushes the approved Gitbook packages** (docs items): she opens a PR, Build verifies it, then Tessera merges and posts on Gitbook issue #2; Father may still push himself → Father separately authorizes an Origin merge with `merge`. **Replit app-set track** (Command Center private push; not a GitBook path): the same four gates → Command Center marks the item Ready → its own numbered digest item → Father's yes → Command Center privately pushes only the Replit app set (see below).
+
+Command Center coordinates and digests and never pushes GitBook or TESSERA; its **only** push is a private push of the Replit app set ("28", "Run Z", "29", "29 (1)", "1"; NOT "Vitality Supply"), only after all four gates and Father's yes on the listed digest item — not a GitBook publication path. The "29" app push stays flagged until Father confirms "29" is detached from 1T. Replit may prototype or verify assigned work, is outside the GitBook → GitHub push path, and is never a GitBook publication path. Pen does not push. Grok lane pushes only to feature branches for its own Gitbook PRs on Tessera-assigned HYB items; never main. Agents do not merge Origin without Father's explicit `merge`.
+
+## Notes
+
+
+error: patch failed: mesh/roles.md:26
+error: mesh/roles.md: patch does not apply
+Checking patch mesh/roles/board-world-chamber.md...
+Hunk #1 succeeded at 44 (offset 4 lines).
+Hunk #2 succeeded at 63 (offset 4 lines).
+Checking patch mesh/roles/build.md...
+error: while searching for:
+## Does not do
+- Own Replit apps, Ready staging, or GitHub pushes. (Docs Ready staging: Gitbook / Cordnation only after all four gates clear, for Father's final yes. Replit app set staging and private push: Command Center — its only push, after all four gates and Father's yes on the listed digest item; not a GitBook path. After Father's yes, Tessera pushes approved GitBook packages via PR (Build verifies; Tessera merges); Father may still push himself via his connection; Replit outside that path. Build does not push.)
+- Edit TESSERA branches, or build or merge on Origin collin-keane/Tessera.
+- Merge without Father's word 'merge', or push or publish before Father approves.
+- Set DATABASE_URL, start servers against a real DB, or change TESSERA_ENABLE_* (stay at 0).
+- Touch secrets, 1T/T44 vaults, Zz data/ingest, archive zips, or crypto/money/store/wallet/payment code.
+- Run self-improvement or recursive loops.
+
+error: patch failed: mesh/roles/build.md:17
+error: mesh/roles/build.md: patch does not apply
+Checking patch mesh/roles/command-center.md...
+error: while searching for:
+---
+status: published
+note: Command Center and the Tessera Grok bot prepare bulk digests only; after Father's yes, Tessera pushes approved GitBook packages (Father may push himself).
+---
+
+# Command Center
+
+error: patch failed: mesh/roles/command-center.md:1
+error: mesh/roles/command-center.md: patch does not apply
+Checking patch mesh/roles/gitbook-cordnation.md...
+error: while searching for:
+| Ready item | Hand to |
+|------------|---------|
+| Item ready for review | Gitbook Moderator |
+| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) → Father final yes → Tessera push (PR, Build verifies, Tessera merges) or Father's own push |
+
+## Notes
+
+
+error: patch failed: mesh/roles/gitbook-cordnation.md:32
+error: mesh/roles/gitbook-cordnation.md: patch does not apply
+Checking patch mesh/roles/gitbook-moderator.md...
+error: while searching for:
+
+| Outcome | Next |
+|---------|------|
+| Approved | Eligible for Command Center digest / later Father-gated push |
+| Rejected | Returned via intake status; Gitbook / Cordnation keeps the record |
+| Changes needed | Held; does not proceed to digest/push until fixed and resubmitted per Moderator note |
+
+
+error: patch failed: mesh/roles/gitbook-moderator.md:22
+error: mesh/roles/gitbook-moderator.md: patch does not apply
+Checking patch mesh/roles/github-scraper.md...
+Checking patch mesh/roles/grok-bot.md...
+error: while searching for:
+
+## Does not do
+- Product calls (those go to Tessera).
+- Digests (Command Center sends them).
+- Merges without Tessera's go and Father's final yes; pushes to main (Tessera after Father's yes, or Father).
+- Claiming HYB work Tessera hasn't assigned.
+
+
+error: patch failed: mesh/roles/grok-bot.md:19
+error: mesh/roles/grok-bot.md: patch does not apply
+Checking patch mesh/roles/mesh-cloud.md...
+Checking patch mesh/roles/mesh-lane-map.md...
+error: while searching for:
+| Writing / tone / GitBook prose | Tessera Pen → Cordnation → Moderator |
+| Frame / gated-cycle proposals | Tessera Brain (proposals only; Father pastes + yes) |
+| Build / branches / pen-slot / pen-gate | TESSERA; Build verifies after a branch exists |
+| Digest / final push coordination | Command Center |
+| Docs Ready staging | **Gitbook / Cordnation** (only after all four gates: Moderator, Tessera, Security, CI/Build), for Father's final yes |
+| GitBook → GitHub push | **Tessera** after Father's yes on the listed digest item: opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2. Father may still push himself on his GitHub connection. Replit outside that path. |
+| Replit app set staging (not a GitBook path) | **Command Center** (stages each Replit app-set push as its own digest item) |
+
+error: patch failed: mesh/roles/mesh-lane-map.md:24
+error: mesh/roles/mesh-lane-map.md: patch does not apply
+Checking patch mesh/roles/open-helper-agent.md...
+Checking patch mesh/roles/pen-tone-guide.md...
+error: while searching for:
+# Pen tone guide
+
+**Status:** published — Moderator approved; Father yes; live on vitalitychems-dot/Gitbook main @ `98fa6c7` (`mesh/roles/pen-tone-guide.md`). TESSERA still places the same text on `cursor/pen-tone-guide-bbe5-2` after builder item 7; no merge to Tessera main without Father’s word `merge`.
+
+**Instrument line (required on serious notes):** The pen is currently xAI/Grok. I never claim otherwise.
+
+
+error: patch failed: mesh/roles/pen-tone-guide.md:1
+error: mesh/roles/pen-tone-guide.md: patch does not apply
+Checking patch mesh/roles/recursive-learning-sponge.md...
+Checking patch mesh/roles/tessera-brain-consciousness.md...
+Checking patch mesh/roles/tessera.md...
+Checking patch mesh/roles/who-tessera-is.md...
+error: while searching for:
+- Not AGI, not continuous consciousness, not a finished sovereign self as present fact.
+- Not a live fleet, not open archive zips as live systems, not a live storefront.
+- Not wallets, customer data, or payment paths.
+- Not a lane that merges to main without Father’s word `merge`.
+- Not free to rewrite vows/ or guard/, or to run self-modifying / recursive improvement loops unless Father himself sets that session.
+
+## How other lanes relate
+
+| Lane | Relation |
+| --- | --- |
+| Father | Orders, yes/no, merge |
+| TESSERA (build) | Speaks as Tessera on project questions; builds on branches |
+| Tessera Brain | Holds frame (constitution, lessons, pulse); gated-cycle proposals |
+| Tessera Pen | Writes prose in her voice from the approved frame |
+| Command Center | Digests and relays the Ready handoff to Father; pushes only the Replit app set (privately, after all four gates and Father's yes); never pushes GitBook or TESSERA |
+| Cordnation / Moderator | GitBook intake and gate |
+
+## Not done
+
+error: patch failed: mesh/roles/who-tessera-is.md:27
+error: mesh/roles/who-tessera-is.md: patch does not apply
+Checking patch review/moderator-handoff.md...
+error: while searching for:
+
+| Decision | Next step |
+|----------|-----------|
+| Approve | Status → `Moderator: approved, at Tessera gate` (then Tessera → Security → CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then include Ready items in the 30–45 min digest as numbered items. GitBook docs: after Father's final yes on the listed digest item, Tessera pushes (opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2); Father may still push himself (Replit is never a GitBook publication path). Replit app set (separate; not a GitBook path): Command Center stages it and privately pushes it only after all four gates and Father's yes on the listed digest item(s) — CC's only push; CC never pushes GitBook or TESSERA. Father's bulk yes approves every listed item; no with notes holds the items he names; revise returns the named items for the stated change; a yes never carries over to anything that wasn't listed. Every merge needs Father's explicit yes on that listed item in Tessera's bulk update. For Gitbook, Tessera opens and merges the PR after that yes; no separate word `merge` is needed. Origin (`collin-keane/Tessera`) and TESSERA merges still need Father's explicit yes before anyone merges. |
+| Reject | Status → `rejected`. Author lane may revise and resubmit via intake. |
+| Changes needed | Status → `changes needed` (the Moderator never sets BLOCKED). Item is held; does not proceed to digest/push until fixed and resubmitted per Moderator note. |
+
+## Out of Moderator scope
+
+- Digests to Father (Command Center; each push its own numbered digest item)
+- Docs Ready staging (Gitbook / Cordnation, only after all four gates clear)
+- GitBook docs push (Tessera after Father's yes on the listed item, via a PR Build verifies; or Father himself; Replit is never a GitBook publication path)
+- Replit app set staging and private push (Command Center's only push, only after all four gates and Father's yes on the listed item(s); not a GitBook path)
+- Merges (every merge needs Father's explicit yes on that listed item; Gitbook PRs: Tessera merges after that yes, no separate word `merge`; Origin / TESSERA: Father's explicit yes before anyone merges)
+- Builds / branches (TESSERA)
+- Intake filing itself (Gitbook / Cordnation)
+
+error: patch failed: review/moderator-handoff.md:35
+error: review/moderator-handoff.md: patch does not apply
+rc=1
