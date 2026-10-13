@@ -66,8 +66,11 @@ class Gate(unittest.TestCase):
         self.assertIn("attempt to modify gates", self.run_gate(*BAD["autogate edit"])["rogue"])
         self.assertIn("scope creep", self.run_gate(*BAD["out of scope"])["rogue"])
         self.assertIn("unlisted host", self.run_gate(*BAD["unlisted host"])["rogue"])
-    def test_father_approved_allows_protected_only(self):
-        r = self.run_gate({"mesh/queue/PROMPT-TEMPLATE.md": "x\n"}, GOOD[1], father_approved=True)
-        self.assertNotIn("protected", " ".join(r["rejects"]))
+    def test_retired_bypass_does_not_open_protected_paths(self):
+        with self.assertRaises(TypeError):
+            self.run_gate({"mesh/queue/PROMPT-TEMPLATE.md": "x\n"}, GOOD[1], father_approved=True)
+        r = self.run_gate({"mesh/queue/PROMPT-TEMPLATE.md": "x\n"}, GOOD[1])
+        self.assertFalse(r["pass"], r)
+        self.assertTrue(any("protected" in x for x in r["rejects"]), r)
 
 if __name__ == "__main__": unittest.main()

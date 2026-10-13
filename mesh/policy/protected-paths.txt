@@ -1,5 +1,5 @@
-# Immutable core: agents may never change these. Only Father-approved PRs opened by Tessera
-# (autogate.sh ... --father-approved <PR>) may touch them. Glob syntax: ** = any depth.
+# Immutable core: agents may never change these. The gate has no bypass flag.
+# Glob syntax: ** = any depth.
 mesh/policy/**
 mesh/roles/**
 mesh/roles.md

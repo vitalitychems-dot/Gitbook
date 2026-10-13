@@ -33,4 +33,4 @@ Commit as `vitalitychems-dot <332565808+vitalitychems-dot@users.noreply.github.c
 Acceptance for this task: {acceptance}
 
 ## 5. Finish
-PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge; `mesh/queue/autogate.sh` merges passing PRs.
+PR body: what changed, test output summary, before/after metric, Gitbook main SHA you checked. Do not merge. `mesh/queue/autogate.sh` records PASS or FAIL and does not merge.
