@@ -38,6 +38,9 @@ def check(pd, rj):
     elif src not in ("fixture", "log", "benchmark"): deny.append(f"E2 data_source {src!r} not fixture/log/benchmark")
     if not r.get("command"): deny.append("E3 no reproducing command")
     if "SPECULATIVE" in r.get("labels", []): deny.append("E6 SPECULATIVE premise cannot merge")
+    # TODO(Security #71/#75): ci/tests here come from the agent-written results.json and are
+    # trusted as-is. Follow-up: verify against required GitHub status checks on the exact head
+    # SHA (moderator-lock collects check-runs from the API) instead of self-reported fields.
     t = r.get("tests") or {}
     if t.get("failed_after") is None or t.get("failed_after", 1) > t.get("failed_before", 0): deny.append(f"E4 test regression/missing: {t}")
     if r.get("ci") != "pass": deny.append(f"E4 ci={r.get('ci')!r}")
