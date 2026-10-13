@@ -14,7 +14,7 @@ Labels: REPORTED means a PR body or board note says so and it was not re-checked
 
 | Id | Lane | State | Where it was left | Next step (owner) | Link |
 |---|---|---|---|---|---|
-| GB-061 | Ready lane | in review | PR #39 head `71a8c78f`, open since Oct 9. Moderator PASS, Security FAIL (REPORTED, sync ledger #14) | Fix the Security finding and re-gate at the new head (Ready lane) | [PR #39](https://github.com/vitalitychems-dot/Gitbook/pull/39) |
+| GB-061 | Ready lane | published: merged without passing gates | PR #39 merged to main in merge commit `c62d45b3` (c62d45b36f4a2fe82dc8fad50a88f476aafb032c, 2026-10-13 15:08 CT) | none | [PR #39](https://github.com/vitalitychems-dot/Gitbook/pull/39) |
 | GB-064 | Cordnation | held | Repo-scan package staged locally on `56a7a48` | Rev 2 when code-analysis batch 2/3 and the second-account scan finish (Cordnation) | [ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133318944) |
 | GB-065 | Gitbook desk | in review | PR #45 head `9004959b`, still titled GB-063 in places. Moderator FAIL (REPORTED). Its log hunk no longer applies to main | Fix the Moderator finding, rebase on main, then the four gates (Gitbook desk) | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
 | GB-066 | Cordnation | published | PR #51 merged as `3fc9d89`, Oct 12 7:11 PM CT | none | [PR #51](https://github.com/vitalitychems-dot/Gitbook/pull/51) |
