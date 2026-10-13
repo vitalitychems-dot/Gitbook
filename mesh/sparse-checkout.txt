@@ -1,0 +1,4 @@
+/mesh/
+/intake/
+!/.codebase-memory/
+!/archive/
