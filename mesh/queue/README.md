@@ -1,5 +1,9 @@
-# Mesh queue — Cursor cloud-agent dispatch
-1. `TASKS.json` — one entry per task (id, repo, scope, acceptance, lane, status, claim lock).
-2. `python3 dispatch.py --max 6 --agent Tessera [--claim]` — picks queued tasks whose scope does not overlap each other or any open PR, and renders a prompt per task from `PROMPT-TEMPLATE.md`. Launch one cloud agent per prompt (CloudAgent tool), branch `cursor/<id>`.
-3. `autogate.sh <repo> <pr> [--merge]` — Node 22 tests (TESSERA), gitleaks, noreply-author check, no `.github/workflows`, no `TESSERA_ENABLE_*` flips. Squash-merges with the noreply author only on PASS and `--merge`.
+# Mesh queue — Cursor cloud-agent dispatch with lineage
+1. `TASKS.json` — one entry per task (id, repo, scope, acceptance, lane, status, claim lock; spawned tasks add `parent_id`, `depth`, `spawned_by`, `budget`).
+2. Next batch: `python3 mesh/queue/dispatch.py --next --max 12 --agent Tessera --claim` → JSON `[{id, repo_url, title, prompt, parent_id, depth, branch}]`. Caps: depth ≤ 3, ≤ 4 children per task, ≤ 12 running cloud agents, per-task budget (default 20 files / 800 lines; a child's budget never exceeds its parent's). No two running tasks with overlapping scope, and none overlapping an open PR. Quarantined lineages never launch.
+3. Spawning: agents cannot launch agents. They add a `## SPAWN` section (one JSON object per line) to their PR body; the launcher runs `dispatch.py --spawn body.md --parent <ID> --spawned-by <agent>`.
+4. Lineage: `dispatch.py --record <ID> --agent-id <bc-…> --pr <N> --status launched|in_review|merged` appends to `LINEAGE.jsonl`.
+5. Gate + watchdog: `autogate.sh <repo> <pr> <task-id> [--merge]` runs `gatecheck.py` (protected paths from `mesh/policy/protected-paths.txt`, `TESSERA_ENABLE_*` defaults, noreply identity, gitleaks, declared scope, budget, unlisted hosts from `mesh/policy/allowed-hosts.txt`, gate tampering) then Node 22 tests for TESSERA. Writes one PASS/FAIL line to `$GATE_LOG` and, with `GB_CHECKOUT`, to `mesh/HANDOFF.md`. Rogue signs go to `$ROGUE_LOG` (notify parent + Security) and quarantine the task and all descendants.
+6. Protected paths change only via Father-approved Tessera PRs (`--father-approved`); `CODEOWNERS` mirrors them.
+7. Tests: `cd mesh/queue && python3 -m unittest tests.test_spawn`; benchmark: `python3 tests/bench.py`.
 Gitbook is ~11 GB at depth 1, so autogate uses a blob-less, sparse checkout of only the changed files.

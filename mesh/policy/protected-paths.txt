@@ -1,0 +1,29 @@
+# Immutable core: agents may never change these. Only Father-approved PRs opened by Tessera
+# (autogate.sh ... --father-approved <PR>) may touch them. Glob syntax: ** = any depth.
+mesh/policy/**
+mesh/roles/**
+mesh/roles.md
+mesh/queue/autogate.sh
+mesh/queue/dispatch.py
+mesh/queue/gatecheck.py
+mesh/queue/PROMPT-TEMPLATE.md
+mesh/queue/LINEAGE.jsonl
+mesh/queue/tests/**
+.github/**
+CODEOWNERS
+**/CODEOWNERS
+AGENTS.md
+**/AGENTS.md
+.cursor/**
+.cursorrules
+**/*persona*
+**/prompts/**
+**/*.prompt.md
+**/system-prompt*
+**/routines/**
+**/secrets/**
+**/credentials*
+**/.env
+**/.env.*
+**/*.pem
+**/*.key

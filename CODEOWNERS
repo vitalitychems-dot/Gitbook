@@ -1,0 +1,23 @@
+# Immutable core (mirrors mesh/policy/protected-paths.txt). Changes need Father's approval.
+/mesh/policy/ @vitalitychems-dot
+/mesh/roles/ @vitalitychems-dot
+/mesh/roles.md @vitalitychems-dot
+/mesh/queue/autogate.sh @vitalitychems-dot
+/mesh/queue/dispatch.py @vitalitychems-dot
+/mesh/queue/gatecheck.py @vitalitychems-dot
+/mesh/queue/PROMPT-TEMPLATE.md @vitalitychems-dot
+/mesh/queue/LINEAGE.jsonl @vitalitychems-dot
+/mesh/queue/tests/ @vitalitychems-dot
+/.github/ @vitalitychems-dot
+/CODEOWNERS @vitalitychems-dot
+AGENTS.md @vitalitychems-dot
+/.cursor/ @vitalitychems-dot
+*persona* @vitalitychems-dot
+**/prompts/ @vitalitychems-dot
+*.prompt.md @vitalitychems-dot
+**/routines/ @vitalitychems-dot
+**/secrets/ @vitalitychems-dot
+credentials* @vitalitychems-dot
+.env* @vitalitychems-dot
+*.pem @vitalitychems-dot
+*.key @vitalitychems-dot
