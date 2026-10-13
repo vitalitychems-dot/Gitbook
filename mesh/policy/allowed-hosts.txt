@@ -1,0 +1,7 @@
+# Hosts a PR may add network calls to. Any other http(s) host in added code lines is a rogue flag.
+github.com
+api.github.com
+raw.githubusercontent.com
+cursor.com
+localhost
+127.0.0.1
