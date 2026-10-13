@@ -2,7 +2,7 @@
 
 The test passed. This page was written after that, not before.
 
-- The mesh does not need the web. Its name is gitbookai. It has 7 projects.
+- The mesh does not need the web. Its name is GitMesh. It has 7 projects.
 - One peak is not a pair. An empty count list has length 0. A missing joy is 0. A value of 2 clamps to 1.
 - The second reward adds less than 0.1.
 - The name talk opens council. An unknown name opens nothing. This file does not contain the other eighteen room names.
