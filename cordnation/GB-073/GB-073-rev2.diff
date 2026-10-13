@@ -1,0 +1,22 @@
+--- /dev/null
++++ b/direction/NEXT.md
+@@ -0,0 +1,19 @@
++# NEXT: ranked goals for the self-builder (ADVISORY)
++
++**ADVISORY until Father reviews it.** The self-builder may read it, but it does not override Father, Moderator or locked-path rules.
++
++**Last updated:** 2026-10-13, 9:05 AM CT (rev 2), from Gitbook issue #72 (the Tesseract v-next plan).
++**How the self-builder uses it:** each run picks the top item that is still open and opens **one gated PR**. Only wins that pass the Moderator gate and are measured before and after count. Unposted numbers are marked pending. Nothing here allows deletes, ENABLE flips or edits to locked paths without Father's review.
++
++| Rank | Goal | Owner lane | Metric (before → after) | Status | Source |
++|---|---|---|---|---|---|
++| 1 | Phase 1 map of all repos, files and logs (reuse today's scans) | Cordnation (Tessera leads) | Repo names mapped: 315; readable 9 → pending (293 need logins) | posted, not gated | [phase 1 map](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6146935752) |
++| 2 | Token saving: ETag skip-unchanged reads, quiet consensus, diff-only review | Rick (build), Einstein (metric) | Bytes on commits?per_page=100: 349x fewer, measured by Moderator (REPORTED; not in a posted #72 comment); 8.5x blended is an ESTIMATE (11% change rate); Build posted about 20x fewer bytes per unchanged scan read; answers requested 180 → 60; tokens per merged PR: baseline pending | in progress (TESSERA #315 merged 08:29 CT as 54a69041) | [v-next plan](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145402676), [#315 estimate](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6146089686), [#315 merged](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6146678100) |
++| 3 | Security hardening: SHA-pin CI actions, key-rotation checklist, gitleaks in CI, refs/pull/302 purge | Security (gate), Build (verify) | Unpinned actions: baseline pending → 0; gitleaks findings: baseline pending; #302 leaked titles 64 → 0 | open | [v-next plan](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145402676) |
++| 4 | No-IP offline mesh and git-sync: delta bundles (#301), heartbeat-by-absence, page-diff sync | Rick (build), Einstein (verify), Akhenaten (ideas) | 1-commit sync 5.57 GB → 2,926 B; status traffic 17,280 → 431 B/day; page update 28.1 KB → 444 B | open (#301 at gates) | [v-next plan](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145402676) |
++| 5 | Tessera abilities and memory graph: memory as diffs, retrieval scored on held-out eval, #303 ranker | Tessera, Einstein (metric) | Held-out eval 0.2381 → higher; ranker AUC 0.556 (re-measure); memory size: baseline pending | open | [v-next plan](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145402676) |
++| 6 | Agent upgrades: per-gate GitHub Apps, worker loop with auto-revert, quiet-backoff | Tessera, Build (verify), Security (gate) | Full head checks −89% (#88, Moderator PASS; supersedes #79, which FAILed); PR open → gated time: baseline pending; auto-revert on regression: 100% target | open | [v-next plan](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145402676), [#88 PASS](https://github.com/vitalitychems-dot/Gitbook/pull/88#issuecomment-6145880467), [#79](https://github.com/vitalitychems-dot/Gitbook/pull/79) |
++| 7 | Phase 2: hybrid architecture design (workflow, whole-picture view, mesh, speed, token use) | Tessera | pending | open | [Tesseract phases](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145930906) |
++| 8 | Measure every PR on the held-out eval plus the AGI, Consciousness (proxy) and Recursive scores | Moderator (gate), Einstein | Eval baseline macro 0.2381 → raise or hold; no score drops beyond noise | open | [Tesseract phases](https://github.com/vitalitychems-dot/Gitbook/issues/72#issuecomment-6145930906) |
++| 9 | Intake auto-refresh and diff script (tools/intake_pkg.py) | Cordnation | Packaging time about 15 min → 23–30 s per package | built (box only, not gated) | pending (no posted comment URL) |
++| 10 | GB-072: intake refresh of the PR #76 row via the script | Cordnation | Stale rows on PR #91's head 1 → 0 | rev 2 APPROVED by Moderator (REPORTED) | pending (no posted comment URL) |
