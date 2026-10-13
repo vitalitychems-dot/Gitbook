@@ -96,12 +96,34 @@ def build(root, now, gitmesh=None):
     out += clean or ["- none"]
     return "\n".join(out) + "\n", warn
 
+CODES = [(r"^(\S+) is '(\w+)' but (GB-\d+) is '([^']+)'.*", r"\1>\3 done:close"),
+         (r"^(\S+): HANDOFF says .*", r"\1 log!=handoff"),
+         (r"^(\S+) claim by .*older than 6h.*", r"\1 claim>6h:requeue"),
+         (r"^(\S+) has an unreadable claimed_at.*", r"\1 bad-ts"),
+         (r"^(.+?): missing (.+)", r"\1 miss:\2"),
+         (r"^HANDOFF.md 'As of' is (\d+) day.*", r"HANDOFF stale:\1d")]
+def compact(w):
+    """One line per item: ID plus a short reason code (legend: mesh/STATUS.md 'Needs attention')."""
+    for pat, rep in CODES:
+        if re.match(pat, w): return re.sub(pat, rep, w)
+    return w
+
+def delta(warn, prev):
+    """Only warnings not present at the agent's last wake (prev = set of warnings seen then)."""
+    return [w for w in warn if w not in prev]
+
+DEFAULT_SINCE = ".status-since.json"  # per-agent state file; gitignored (.status-since*.json)
+
 if __name__ == "__main__":
-    a = argparse.ArgumentParser(); a.add_argument("root"); a.add_argument("--now"); a.add_argument("--out"); a.add_argument("--gitmesh"); a.add_argument("--drift-only", action="store_true")
+    a = argparse.ArgumentParser(); a.add_argument("root", nargs="?", default=".", help="repo root (default: .)"); a.add_argument("--now"); a.add_argument("--out"); a.add_argument("--gitmesh"); a.add_argument("--drift-only", action="store_true"); a.add_argument("--since", nargs="?", const=DEFAULT_SINCE, metavar="STATEFILE", help="delta broadcast: JSON state file of the warnings this agent saw at its last wake; prints only new ones (or '- no change') and rewrites the file. First wake (no file) prints the full list and creates it. Default when given without a value: ./" + DEFAULT_SINCE + " (gitignored; keep one file per agent)")
     o = a.parse_args()
     if o.drift_only:
         extra, missing = gitmesh_drift(o.gitmesh or o.root)
         print(json.dumps({"not_in_index": extra, "missing_folder": missing})); sys.exit(1 if extra or missing else 0)
     now = dt.datetime.fromisoformat(o.now) if o.now else dt.datetime.now().astimezone()
-    text, _ = build(o.root, now, o.gitmesh)
+    text, warn = build(o.root, now, o.gitmesh)
+    if o.since:
+        sp = pathlib.Path(o.since); prev = set(json.loads(sp.read_text())) if sp.exists() else set()
+        new = delta(warn, prev); sp.write_text(json.dumps(sorted(warn)))
+        print("\n".join(f"- {w}" for w in new) or "- no change"); sys.exit(0)
     p = pathlib.Path(o.out or pathlib.Path(o.root) / "mesh/STATUS.md"); p.write_text(text); print(text)
