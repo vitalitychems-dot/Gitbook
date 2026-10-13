@@ -21,3 +21,5 @@ credentials* @vitalitychems-dot
 .env* @vitalitychems-dot
 *.pem @vitalitychems-dot
 *.key @vitalitychems-dot
+
+/direction/ @collink1007
