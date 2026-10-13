@@ -26,7 +26,6 @@ Built 2026-10-13 15:45 CT by status.py from files only (0 model tokens). Source:
 | Media steward | HYB-010 | unclaimed | Claim on issue #2 (any lane Tessera assigns) |
 | Moderator, Security | SITE-003, SITE-004 | unclaimed | Claim, then Father approves the release payload |
 | Product / mesh prep | HYB-019 | blocked | Father's decisions |
-| Ready lane | GB-061 | in review | Fix the Security finding and re-gate at the new head (Ready lane) |
 | Release steward | HYB-018 | blocked | Father's confirmation |
 | Replit | SITE-001 | open | Record health-path evidence and the exact release payload (Replit) |
 | UI maintainer | HYB-013 | stale | Reassign (Tessera) |
@@ -48,6 +47,7 @@ Built 2026-10-13 15:45 CT by status.py from files only (0 model tokens). Source:
 
 ## Done
 
+- GB-061 (Ready lane): PR #39 merged to main in merge commit `c62d45b3` (c62d45b36f4a2fe82dc8fad50a88f476aafb032c, 2026-10-
 - GB-066 (Cordnation): PR #51 merged as `3fc9d89`, Oct 12 7:11 PM CT
 - GB-067 (Cordnation): PR #53 merged as `17bac6d`, 2026-10-13 01:08 CT. One handoff file, one line per item
 - GB-068 (Cordnation): PR #54 merged as `8138ea2`, 2026-10-13 01:08 CT. HYB-024 design page and backlog rename
@@ -58,6 +58,7 @@ Built 2026-10-13 15:45 CT by status.py from files only (0 model tokens). Source:
 
 ## Can be cleaned up
 
+- GB-061: done with next step 'none' -> move line to archive
 - GB-066: done with next step 'none' -> move line to archive
 - GB-067: done with next step 'none' -> move line to archive
 - GB-068: done with next step 'none' -> move line to archive
