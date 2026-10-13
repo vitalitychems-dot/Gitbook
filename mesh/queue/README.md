@@ -4,7 +4,7 @@
 3. Spawning: agents cannot launch agents. They add a `## SPAWN` section (one JSON object per line) to their PR body; the launcher runs `dispatch.py --spawn body.md --parent <ID> --spawned-by <agent>`.
 4. Lineage: `dispatch.py --record <ID> --agent-id <bc-…> --pr <N> --status launched|in_review|merged` appends to `LINEAGE.jsonl`.
 5. Gate + watchdog: `autogate.sh <repo> <pr> <task-id>` runs `gatecheck.py` (protected paths from `mesh/policy/protected-paths.txt`, `TESSERA_ENABLE_*` defaults, noreply identity, gitleaks, declared scope, budget, unlisted hosts from `mesh/policy/allowed-hosts.txt`, gate tampering) then Node 22 tests for TESSERA. It reports only and never merges (self-merge removed, Security #71/#75). Writes one PASS/FAIL line to `$GATE_LOG` and, with `GB_CHECKOUT`, to `mesh/HANDOFF.md`. Rogue signs go to `$ROGUE_LOG` (notify parent + Security) and quarantine the task and all descendants.
-6. Protected paths change only via Father-approved Tessera PRs (`--father-approved`); `CODEOWNERS` mirrors them.
+6. Protected paths change only via Tessera PRs that Father reviews as code owner; `CODEOWNERS` mirrors them.
 7. Tests: `cd mesh/queue && python3 -m unittest tests.test_spawn`; benchmark: `python3 tests/bench.py`.
    - **Benchmark note: SYNTHETIC-ONLY.** The catch-rate gain (4/20 → 20/20) and spawn gain (6 → 12) come from made-up test cases only and are not counted as a win; on the real queue, old and new rules pick the same tasks.
 Gitbook is ~11 GB at depth 1, so autogate uses a blob-less, sparse checkout of only the changed files.

@@ -7,7 +7,7 @@ Why: every agent pushes and comments as `vitalitychems-dot`, so CODEOWNERS revie
 2. Repo **Settings → Secrets and variables → Actions → Variables** on TESSERA and Gitbook:
    - `FATHER_LOGIN` = that account's login. It must be different from `vitalitychems-dot`; otherwise the lock stays closed.
    - `AGENT_LOGINS` = `vitalitychems-dot` (comma-separated if there are more).
-3. Change `@vitalitychems-dot` to the Father-only login in `.github/CODEOWNERS` (both repos), from the Father account.
+3. Change `@vitalitychems-dot` to the Father-only login in `/CODEOWNERS` (Gitbook) and `/.github/CODEOWNERS` (TESSERA), from the Father account.
 4. Downgrade `vitalitychems-dot` to **Write** (not Admin) on both repos, or move the agents to the Apps in step 2 and revoke the PAT on the box.
 5. **Keep the owner token off the box.** Don't run `gh auth login` as the Father account on the shared box. Revoke any owner PAT already stored there (Settings → Developer settings → Tokens).
 
