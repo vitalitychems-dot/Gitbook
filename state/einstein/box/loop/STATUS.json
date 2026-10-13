@@ -1,0 +1,23 @@
+{
+ "routine": "einstein-improvement-loop",
+ "round": 4,
+ "state": "STOPPED",
+ "startedAt": "2026-10-13T08:30:56-05:00",
+ "firedAt": "2026-10-13T13:30:49.152Z",
+ "previousRound": 3,
+ "previousRoundNote": "R3 DONE 10/10 merged. Informal R4 patches already on main: #286 R4-01, #288 R4-19, #289 R4-14, #291 R4-16, #290 R4-11. Formal round 4 invents R4-21..R4-30 (avoid those numbers).",
+ "resultPath": "/workspace/einstein/round4/RESULT.md",
+ "note": "Father/Tessera 8:39 AM CT: STOP. Ungated merges #319 #321. Do NOT merge or open anything; exit now.",
+ "finishedAt": "2026-10-13T08:44:30-05:00",
+ "mergedCount": 4,
+ "mergedPRs": [
+  319,
+  320,
+  321,
+  322
+ ],
+ "builtNotShipped": [
+  "R4-26"
+ ],
+ "executorNote": "Executor halted on STOP; 4 merges happened before STOP (ungated per original brief). Nothing opened/merged after STOP."
+}
