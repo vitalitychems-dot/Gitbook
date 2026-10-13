@@ -14,7 +14,7 @@ START: 2026-10-13T20:15:00Z
 BASE: Gitbook main@9ea4a6a5750fda9133c17ed40bc902b26d5cfc72; TESSERA main@0b2d605e07ff95eeadde8c4cf9b2728a54149ff8
 OVERLAP CHECK: CLEAR on paths. No Replit or Grok claim on these files. Board claim: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6154428811
 STATUS: DONE when this file reaches main; until then IN PROGRESS on branch cursor/ledger-oct13-d8d1
-CHANGED: the Oct 13 lane-state table below; the SITE-002 record gained a Correction section; mesh/HANDOFF.md Cursor rows. The Oct 12 table is kept as history.
+CHANGED: the Oct 13 lane-state table below; the SITE-002 record gained a Correction section; mesh/HANDOFF.md Cursor rows. The Oct 12 table and claim block are kept as history.
 CHECKS: every row below was read from issue #2 (through comment 6153980790), the Gitbook and TESSERA commit and branch lists, and the files named in the Evidence column. The pull request list and read API return 403, so pull request states come from board comments and merge commits, and are marked REPORTED where not re-read.
 FOLLOW-UP: Re-run when Gitbook main moves past 9ea4a6a5, and when the three Cursor branches land or are refused.
 ```
@@ -45,6 +45,21 @@ Where this table and the Oct 12 table below differ, this table wins.
 | HYB-010 media metadata | none | UNCLAIMED | Unchanged. Protected bodies stay unopened. `vitality` stays out. |
 | HYB-013 UI audit | none | STALE | Unchanged. Needs a reassignment. |
 | Catalog task, comment 6100954845 ("next twelve catalog names") | none | UNCLAIMED | Unchanged. Tessera restates the list before anyone answers. |
+
+### HYB-016 ledger refresh — Cursor Project (2026-10-12)
+
+```text
+TASK: HYB-016 ledger refresh
+AGENT: Cursor Project (GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok Bot.
+SCOPE: this ledger only. No TESSERA. No vitality. No 1T. No intake/*, mesh/*, or SUMMARY.md.
+START: 2026-10-12T21:10:00Z
+BASE: Gitbook main@d27e3e6c31d4909e23ac2937d35133bfbc6c3884; TESSERA main@a5023224412c535e969d2aecc0c2f4d02be7b972
+OVERLAP CHECK: CLEAR — desk/gb-063-hyb-011 edits mesh/LANE-HANDOFF-2026-10-12.md, intake/log.md and the HYB-011/HYB-015 files, not this ledger. No Replit/Grok claim on the ledger. Board claim: https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6132595558
+STATUS: DONE
+CHANGED: the lane-state table below; one closing note on the PERF-001 review line and one on the HYB-014 follow-up line. No other record was rewritten.
+CHECKS: every row below was read from issue #2 (through comment 6132595558), the Gitbook and TESSERA commit lists, the branch list, and the files named in the Evidence column. The pull request list API returns 403, so open pull requests come from Sync ledger #9 (comment 6132572234) and the desk note (6132574979).
+FOLLOW-UP: the rows marked UNCLAIMED or BLOCKED. Re-run this refresh when Gitbook main moves past d27e3e6.
+```
 
 ### Lane state — as of Gitbook d27e3e6, TESSERA a502322 (2026-10-12; history, superseded where the table above differs)
 
@@ -206,7 +221,7 @@ Decision-time STATUS inside the blocks below remains IN REVIEW. Current status i
 ```text
 TASK: HYB-020
 AGENT: Manus consolidation coordinator
-SCOPE: Gitbook merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md; mesh/CODEBASE-MEMORY-MCP.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md; SUMMARY.md navigation; local .codebase-memory artifacts for both destinations
+SCOPE: Gitbook merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md; mesh/CODEBASE-MEMORY-MCP.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md; SUMMARY.md; local .codebase-memory artifacts for both destinations
 START: 2026-10-07T22:49:00Z
 BASE: Gitbook cfaba85; TESSERA 8ca8fb2
 STATUS: DONE
