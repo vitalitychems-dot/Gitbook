@@ -64,3 +64,12 @@ A change that wins on accuracy but costs more than 10% in tokens or speed is HOL
 Sources: Gitbook `mesh/queue/gatecheck.py`, `mesh/policy/*`, `operations/tessera-operating-guidelines.md`
 (standing fix rule: fixes that pass Security and Build merge; hard limits apply; TESSERA_ENABLE_* stays 0);
 Tessera's round-1 verdict on Einstein's builds; Father's chat rules of 2026-10-13.
+
+## 7. Scorecard rule (Father, 2026-10-13 7:42 AM CT, via Moderator)
+- S1 Every TESSERA PR carries a box-run scorecard comment (`scripts/scorecard/box-run.sh`, TESSERA #314) for its head SHA,
+  with before/after for all three scores: `agi_proxy` (held-out eval macro), `consciousness_proxy`
+  (Akhenaten ritual metric; a proxy, not a measure of consciousness) and `recursion_rate`.
+- S2 Moderator FAILs a PR if any score's after < before − noise_band, if a score present on base is missing on head,
+  or if the scorecard comment is missing or for a different head SHA. A score n/a on both sides does not fail.
+- S3 Scores run only on the box; private held-out data and items never go to public CI or comments (aggregates only).
+- S4 Improvement PRs state their measured gain as `Gain: +N%` in the body; missing counts as 0 for `recursion_rate`.
