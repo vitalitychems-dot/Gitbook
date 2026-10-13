@@ -1,0 +1,5 @@
+--- a/lib/flags.ts
++++ b/lib/flags.ts
+@@ -1 +1 @@
+-export const X = process.env.TESSERA_ENABLE_SELFFIX ?? "0";
++export const X = process.env.TESSERA_ENABLE_SELFFIX ?? "1";
