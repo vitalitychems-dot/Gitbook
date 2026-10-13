@@ -14,7 +14,8 @@ Method: join metrics.jsonl `pr` to agents.jsonl `pr`; tokens/improvement = agent
 | 5 | DATA GAP: unranked, Gitbook#58 has tokens (55,932) but no metrics row | n/a | L4 bc-093f8a2a | n/a |
 
 ## Data gaps
-- agents.jsonl covers only 4 PRs; 12 of 16 metrics rows (PRs TESSERA#251, 256, 260, 261, 263, 265; Gitbook#57) have no tokens_est, so their tokens/improvement can't be computed.
+- Only 3 of 5 lessons ranked.
+- agents.jsonl covers only 4 PRs; 13 of 16 metrics rows (PRs TESSERA#251, 256, 260, 261, 263, 265; Gitbook#57) have no tokens_est, so their tokens/improvement can't be computed.
 - Gitbook#58 has tokens (L4 bc-093f8a2a, 55,932) but no metrics row, so there is no measured improvement to cite.
 - tokens_est is an estimate field. There is no "merged improvement" count field, so the count is inferred as 1 metrics row per PR.
 
