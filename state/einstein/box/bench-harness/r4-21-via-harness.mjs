@@ -1,0 +1,10 @@
+import { readFileSync } from "node:fs";
+import { compare } from "./tools/bench/harness.mjs";
+const t0 = performance.now();
+const NEW = await import("/workspace/einstein/bench-harness/fx/new_router.mjs"), OLD = await import("/workspace/einstein/bench-harness/fx/old_router.mjs");
+const qs = JSON.parse(readFileSync("/workspace/einstein/bench-harness/fx/old_router-eval.json", "utf8")).items.map((i) => i.query);
+const root = "/workspace/einstein/r4/";
+const rn = NEW.buildRouter(root), ro = OLD.buildRouter(root);
+const run = (r) => () => qs.map((q) => [r.rank(q, 3), r.rank(q, 10), r.rank(q, 0)]);
+const res = compare({ before: run(ro), after: run(rn), benchFile: new URL(import.meta.url).pathname, runs: +(process.env.RUNS || 7), sha: process.env.MAIN_SHA || "b2adc4f59177" });
+console.log(JSON.stringify({ ...res, wallMs: +(performance.now() - t0).toFixed(1) }));
