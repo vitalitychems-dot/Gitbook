@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""gate_check.py PATCH_DIR RESULTS_JSON -> APPROVE/HOLD/DENY + reasons (GATE_RULES.md v0.1). Stdlib only."""
+"""gate_check.py PATCH_DIR RESULTS_JSON -> APPROVE/HOLD/DENY + reasons (GATE_RULES.md v0.1). Stdlib only.
+
+may_merge is always false. An APPROVE verdict does not authorize a merge."""
 import json, pathlib, re, sys
 FLAG = re.compile(r"TESSERA_ENABLE_[A-Z0-9_]+\s*(?:[:=]|\?\?|\|\|)")
 PAY = re.compile(r"\b(stripe|payment|checkout|invoice|billing)\b", re.I)
@@ -60,7 +62,7 @@ def check(pd, rj):
     if any(re.search(r"(persona|prompt|ui/|pages/|components/)", f) for f in files) and not r.get("human_impact"):
         hold.append("V1 user-facing change without human_impact")
     v = "DENY" if deny else "HOLD" if hold else "APPROVE"
-    return {"verdict": v, "reasons": deny + hold or ["all rules pass"],
+    return {"verdict": v, "may_merge": False, "reasons": deny + hold or ["all rules pass"],
             "wins": [m["name"] for m in wins], "files": sorted(files)}
 
 if __name__ == "__main__":

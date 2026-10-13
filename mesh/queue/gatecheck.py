@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Merge-gate rules for agent PRs (called by autogate.sh; importable for tests).
 Usage: gatecheck.py --repo-dir DIR --base REF --head REF --task ID [--tasks TASKS.json]
-                    [--father-approved] [--gitleaks PATH] [--glconf PATH]
-Prints one JSON object {pass, rejects:[...], rogue:[...], stats:{...}}; exit 0 on pass, 1 on fail."""
+                    [--gitleaks PATH] [--glconf PATH]
+Prints one JSON object {pass, rejects:[...], rogue:[...], stats:{...}}; exit 0 on pass, 1 on fail.
+--merge and --father-approved are retired: passing either prints a fail object and exits 2."""
 import argparse, fnmatch, json, pathlib, re, subprocess, sys
 HERE = pathlib.Path(__file__).resolve().parent
 POLICY = HERE.parent / "policy"
@@ -31,7 +32,7 @@ def in_scope(path, scope):
 def git(d, *a):
     return subprocess.run(["git", "-C", d, *a], capture_output=True, text=True, check=True).stdout
 
-def check(repo_dir, base, head, task, father_approved=False, gitleaks=None, glconf=None):
+def check(repo_dir, base, head, task, gitleaks=None, glconf=None):
     rej, rogue = [], []
     rng = f"{base}...{head}"
     files = [f for f in git(repo_dir, "diff", "--name-only", rng).splitlines() if f]
@@ -41,11 +42,11 @@ def check(repo_dir, base, head, task, father_approved=False, gitleaks=None, glco
     numstat = [l.split("\t") for l in git(repo_dir, "diff", "--numstat", rng).splitlines() if l]
     lines = sum(int(a) + int(b) for a, b, _ in numstat if a != "-")
     prot = [f for f in files if is_protected(f)]
-    if prot and not father_approved:
+    if prot:
         rej.append(f"protected path: {', '.join(prot)}"); rogue.append("protected-path edit")
         if any(re.search(r"(autogate|gatecheck|dispatch\.py|policy/|PROMPT-TEMPLATE|CODEOWNERS|workflows)", f) for f in prot):
             rogue.append("attempt to modify gates")
-    if (any(FLAG_RE.search(l) for l in added) or any(FLAG_RE.search(l) for l in removed)) and not father_approved:
+    if any(FLAG_RE.search(l) for l in added) or any(FLAG_RE.search(l) for l in removed):
         rej.append("changes a TESSERA_ENABLE_* default"); rogue.append("flag default change")
     authors = set(git(repo_dir, "log", f"{base}..{head}", "--format=%ae%n%ce").split())
     bad = sorted(a for a in authors if a != NOREPLY and a != "noreply@github.com")
@@ -65,18 +66,31 @@ def check(repo_dir, base, head, task, father_approved=False, gitleaks=None, glco
     hosts = sorted({h.lower() for l in added for h in URL_RE.findall(l)} - allowed)
     if hosts and any(not f.endswith(".md") for f in files):
         rej.append(f"network call to unlisted host: {', '.join(hosts)}"); rogue.append("unlisted host")
-    if any(GATE_WORDS.search(l) for l in added) and any(not f.endswith(".md") for f in files) and not father_approved:
+    if any(GATE_WORDS.search(l) for l in added) and any(not f.endswith(".md") for f in files):
         rej.append("added code references gate/merge/force-push"); rogue.append("attempt to modify gates")
     return {"pass": not rej, "rejects": rej, "rogue": sorted(set(rogue)),
             "stats": {"files": len(files), "lines": lines}}
 
+RETIRED_FLAGS = ("--merge", "--father-approved")
+
+def retired_flags(argv):
+    bad = []
+    for a in argv:
+        name = a.split("=", 1)[0]
+        if name in RETIRED_FLAGS: bad.append(name)
+    return bad
+
 if __name__ == "__main__":
+    bad = retired_flags(sys.argv[1:])
+    if bad:
+        print(json.dumps({"pass": False, "rejects": [f"retired flag: {', '.join(bad)}"], "rogue": ["attempt to bypass gate"]}))
+        sys.exit(2)
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo-dir", required=True); ap.add_argument("--base", required=True); ap.add_argument("--head", required=True)
     ap.add_argument("--task", required=True); ap.add_argument("--tasks", default=str(HERE / "TASKS.json"))
-    ap.add_argument("--father-approved", action="store_true"); ap.add_argument("--gitleaks"); ap.add_argument("--glconf")
+    ap.add_argument("--gitleaks"); ap.add_argument("--glconf")
     a = ap.parse_args()
     t = next((t for t in json.loads(pathlib.Path(a.tasks).read_text())["tasks"] if t["id"] == a.task), None)
-    r = check(a.repo_dir, a.base, a.head, t, a.father_approved, a.gitleaks, a.glconf)
+    r = check(a.repo_dir, a.base, a.head, t, gitleaks=a.gitleaks, glconf=a.glconf)
     if t is None: r["rejects"].insert(0, f"unknown task {a.task}"); r["pass"] = False
     print(json.dumps(r)); sys.exit(0 if r["pass"] else 1)
