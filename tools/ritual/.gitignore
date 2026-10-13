@@ -1,0 +1,4 @@
+__pycache__/
+*.key
+answers*.json
+truth*.json
