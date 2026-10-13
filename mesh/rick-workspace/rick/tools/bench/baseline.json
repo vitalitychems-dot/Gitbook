@@ -1,0 +1,70 @@
+{
+ "ts": "2026-10-13T06:01:03-0500",
+ "system": "raw",
+ "qa": "/workspace/rick/cycles/c1/qa_set.json",
+ "k": 5,
+ "n": 215,
+ "timing_repeats": 3,
+ "n_boot": 1000,
+ "leak": [
+  "qa_set",
+  "/cycles/",
+  "/tools/fraction/",
+  "/tools/bench/",
+  "allsee/rounds",
+  "synapse"
+ ],
+ "metrics": {
+  "hit@1": {
+   "value": 0.3813953488372093,
+   "lo": 0.31627906976744186,
+   "hi": 0.44651162790697674,
+   "higher_better": true,
+   "n": 215
+  },
+  "hit@5": {
+   "value": 0.9674418604651163,
+   "lo": 0.9441860465116279,
+   "hi": 0.9906976744186047,
+   "higher_better": true,
+   "n": 215
+  },
+  "accuracy": {
+   "value": 0.19534883720930232,
+   "lo": 0.14418604651162792,
+   "hi": 0.25116279069767444,
+   "higher_better": true,
+   "n": 215
+  },
+  "tokens/query": {
+   "value": 2172.967441860465,
+   "lo": 2095.211976744186,
+   "hi": 2247.8373255813954,
+   "higher_better": false,
+   "n": 215
+  },
+  "latency_p50_ms": {
+   "value": 45.41252199999235,
+   "lo": 44.04341366663781,
+   "hi": 47.303093333349956,
+   "higher_better": false,
+   "n": 215
+  },
+  "latency_p95_ms": {
+   "value": 83.57061139995872,
+   "lo": 78.1539286666657,
+   "hi": 89.99966866666298,
+   "higher_better": false,
+   "n": 215
+  },
+  "disk_bytes": {
+   "value": 1873720.0,
+   "lo": 1873720.0,
+   "hi": 1873720.0,
+   "higher_better": false,
+   "n": 1,
+   "note": "sum of brief UTF-8 bytes (+ artifact dir if set); CI degenerate"
+  }
+ },
+ "note": "Regression guard reference. Candidates must not significantly regress vs these values."
+}
