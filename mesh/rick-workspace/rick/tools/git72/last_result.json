@@ -1,0 +1,86 @@
+{
+ "gitweb": {
+  "pages": 20,
+  "bytes": {
+   "site.tar": 40960,
+   "site.bundle": 3830,
+   "site.bundle.zst": 2967
+  },
+  "bytes_per_page": {
+   "site.tar": 2048,
+   "site.bundle": 192,
+   "site.bundle.zst": 148
+  },
+  "sync_ms": {
+   "site.tar": 7.52,
+   "site.bundle": 26.57,
+   "site.bundle.zst": 35.66
+  },
+  "delta_bundle_bytes": 374,
+  "delta_fetch_ms": 16.39,
+  "delta_ok": true,
+  "tokens": 0
+ },
+ "offline_queue": {
+  "jobs": 20,
+  "completed": 20,
+  "verified_results": 20,
+  "verified_lines": 20,
+  "offline_s": 4.47,
+  "offline_jobs_per_s": 4.5,
+  "offline_tokens": 0,
+  "online_stub_s": 10.0,
+  "online_stub_tokens": 10000,
+  "online_assumption": "0.5s + 500 tok per job (stub, not measured LLM)"
+ },
+ "disk": {
+  "old_packs_only": {
+   "before": 888832,
+   "after": 888832,
+   "saved": 0
+  },
+  "new_hardlink_objects": {
+   "before": 888832,
+   "after": 831488,
+   "saved": 57344
+  },
+  "fsck_ok_after_new": true,
+  "archive": {
+   "dir_bytes": 94208,
+   "tar": 40960,
+   "tar_zst19": 1583
+  }
+ },
+ "speed": {
+  "A_full_clone": {
+   "ms": 44.16,
+   "bytes_landed": 53812,
+   "ok": true,
+   "tokens": 0
+  },
+  "B_blobless_sparse": {
+   "ms": 68.09,
+   "bytes_landed": 33975,
+   "ok": true,
+   "tokens": 0
+  },
+  "C_git_archive_path": {
+   "ms": 7.63,
+   "bytes_landed": 806,
+   "ok": true,
+   "tokens": 0
+  },
+  "C2_cat_file": {
+   "ms": 4.0,
+   "bytes_landed": 806,
+   "ok": true,
+   "tokens": 0
+  },
+  "D_cat_worktree": {
+   "ms": 0.01,
+   "bytes_landed": 0,
+   "ok": true,
+   "tokens": 0
+  }
+ }
+}
