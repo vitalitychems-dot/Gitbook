@@ -46,6 +46,7 @@
 * [Own-brain Phase 1 tested result](brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md)
 * [TESSERA V2 build roadmap](brain-consciousness/TESSERA-V2-ROADMAP.md)
 * [Brain & SNN research charter](brain-consciousness/TESSERA-PEN-RESEARCH-CHARTER.md)
+* [Fraction-agent charter (draft)](mesh/charter/FRACTION-AGENTS.md)
 * [Non-overlapping agent workplan](brain-consciousness/AGENT-WORKPLAN.md)
 * [Cortical Labs readiness](intake/CORTICAL-LABS-READINESS.md)
 * [20-item AGI collaboration improvement roadmap](brain-consciousness/AGI-COLLABORATION-IMPROVEMENT-ROADMAP.md)
