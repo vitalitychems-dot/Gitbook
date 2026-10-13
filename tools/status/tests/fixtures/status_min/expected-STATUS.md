@@ -12,10 +12,10 @@ Built 2026-10-13 15:00 CT by status.py from files only (0 model tokens). Source:
 
 ## By lane: doing and next
 
-| Lane | Item | State | Next |
-|---|---|---|---|
-| Build | GB-002 | in review | Re-gate (Build) |
-| Moderator | GB-003 | stale | Reassign (Tessera) |
+| Lane | Item | State | Next | Link |
+|---|---|---|---|---|
+| Build | GB-002 | in review | Re-gate (Build) | — |
+| Moderator | GB-003 | stale | Reassign (Tessera) | [l](u) |
 
 ## Queue (mesh/queue/TASKS.json)
 
@@ -26,7 +26,7 @@ Built 2026-10-13 15:00 CT by status.py from files only (0 model tokens). Source:
 
 ## Done
 
-- GB-001 (Build): merged `abc1234`
+- GB-001 (Build): merged `abc1234` ([PR #1](u))
 
 ## Can be cleaned up
 

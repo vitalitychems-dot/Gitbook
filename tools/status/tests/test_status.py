@@ -19,6 +19,12 @@ class T(unittest.TestCase):
         exp = (FIX / "expected-STATUS.md").read_text()
         d = list(difflib.unified_diff(exp.splitlines(), got.splitlines(), "expected", "got", lineterm=""))
         self.assertEqual(d, [], "\n".join(d))
+    def test_qualified_done_state(self):
+        self.assertIn("published: merged without passing gates", status.DONE)
+        self.assertNotIn("in review", status.DONE)
+    def test_links_in_status(self):
+        got, _ = status.build(FIX, NOW)
+        self.assertIn("| Link |", got); self.assertIn("[PR #1](u)", got)
     def test_table_skips_separator(self):
         self.assertEqual(len(status.table("| Id | A |\n|---|---|\n| x | y |", "Id")), 1)
     def test_strip_links(self):

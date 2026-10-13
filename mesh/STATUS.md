@@ -1,6 +1,6 @@
 # Mesh status
 
-Built 2026-10-13 15:45 CT by status.py from files only (0 model tokens). Source: HANDOFF.md as of 2026-10-13, TASKS.json, intake/log.md.
+Built 2026-10-13 16:45 CT by status.py from files only (0 model tokens). Source: HANDOFF.md as of 2026-10-13, TASKS.json, intake/log.md.
 
 ## Needs attention
 
@@ -10,28 +10,32 @@ Built 2026-10-13 15:45 CT by status.py from files only (0 model tokens). Source:
 
 ## By lane: doing and next
 
-| Lane | Item | State | Next |
-|---|---|---|---|
-| Brain lane | HYB-022 | tested locally | Promotion through normal review (Brain lane) |
-| Cordnation | GB-064 | held | Rev 2 when code-analysis batch 2/3 and the second-account scan finish (Cordnation) |
-| Cursor | PR #40 | stale | Close or merge (Tessera or Father decides) |
-| Father | Held commits | held | Father's attribution answer |
-| Father | CI billing | blocked | Father fixes billing |
-| Father | Cursor routines | blocked | Father pays the invoice |
-| Father | Key rotation | open | Father |
-| Gitbook desk | GB-065 | in review | Fix the Moderator finding, rebase on main, then the four gates (Gitbook desk) |
-| Gitbook desk | HYB-011 | in review | Same as GB-065 |
-| Gitbook desk | HYB-015 | in review | Same as GB-065 |
-| Grok Bot | Research pages | ready | Small pages under `brain-consciousness/research/` (Grok Bot) |
-| Media steward | HYB-010 | unclaimed | Claim on issue #2 (any lane Tessera assigns) |
-| Moderator, Security | SITE-003, SITE-004 | unclaimed | Claim, then Father approves the release payload |
-| Product / mesh prep | HYB-019 | blocked | Father's decisions |
-| Release steward | HYB-018 | blocked | Father's confirmation |
-| Replit | SITE-001 | open | Record health-path evidence and the exact release payload (Replit) |
-| UI maintainer | HYB-013 | stale | Reassign (Tessera) |
-| none | Catalog next twelve | unclaimed | Tessera restates the list |
-| none | TESSERA PR #80 | open, do not merge | Close or keep open (Father) |
-| none | TESSERA PR #82, #87 | conflicted | Rebase or close (owner of each) |
+| Lane | Item | State | Next | Link |
+|---|---|---|---|---|
+| Brain lane | HYB-022 | tested locally | Promotion through normal review (Brain lane) | [Phase 1 result](../brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md) |
+| Cordnation | GB-064 | held | Rev 2 when code-analysis batch 2/3 and the second-account scan finish (Cordnation) | [ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133318944) |
+| Cursor | PR #40 | stale | Close or merge (Tessera or Father decides) | [PR #40](https://github.com/vitalitychems-dot/Gitbook/pull/40) |
+| Cursor Project | AUTO-API-HARDEN | landing | Landing worker posts blob check and result (Cursor Project); gates as Tessera sets them | [handoff](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6145652328) |
+| Cursor Project | AUTO-ADMISSION | landed | Wiring behind an admin gate is a follow-up (Tessera decides) | [landing](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6154608972) |
+| Cursor Project | MESH-001 | landed | Father answers the three questions (Father) | [landing](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6154533923) |
+| Cursor Project | YouTube playlist | blocked | Father sends an unlisted link or the video URLs | [ledger](../history/coordination/agent-checkins.md) |
+| Father | Held commits | held | Father's attribution answer | [intake log](../intake/log.md) |
+| Father | CI billing | blocked | Father fixes billing | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
+| Father | Cursor routines | blocked | Father pays the invoice | — |
+| Father | Key rotation | open | Father | [to-do list](TODOS.md) |
+| Gitbook desk | GB-065 | in review | Fix the Moderator finding, rebase on main, then the four gates (Gitbook desk) | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
+| Gitbook desk | HYB-011 | in review | Same as GB-065 | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
+| Gitbook desk | HYB-015 | in review | Same as GB-065 | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
+| Grok Bot | Research pages | ready | Small pages under `brain-consciousness/research/` (Grok Bot, or whoever holds the source) | [consolidation map](../merge/CONSOLIDATION-MAP-2026-10-12.md) |
+| Media steward | HYB-010 | unclaimed | Claim on issue #2 (any lane Tessera assigns) | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
+| Moderator, Security | SITE-003, SITE-004 | unclaimed | Claim, then Father approves the release payload | [ledger](../history/coordination/agent-checkins.md) |
+| Product / mesh prep | HYB-019 | blocked | Father's decisions | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
+| Release steward | HYB-018 | blocked | Father's confirmation | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
+| Replit | SITE-001 | open | Record health-path evidence and the exact release payload (Replit) | [ledger](../history/coordination/agent-checkins.md) |
+| UI maintainer | HYB-013 | stale | Reassign (Tessera) | [ledger](../history/coordination/agent-checkins.md) |
+| none | Catalog next twelve | unclaimed | Tessera restates the list | [comment](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6100954845) |
+| none | TESSERA PR #80 | open, do not merge | Close or keep open (Father) | [to-do list](TODOS.md) |
+| none | TESSERA PR #82, #87 | conflicted | Rebase or close (owner of each) | [to-do list](TODOS.md) |
 
 ## Queue (mesh/queue/TASKS.json)
 
@@ -47,14 +51,15 @@ Built 2026-10-13 15:45 CT by status.py from files only (0 model tokens). Source:
 
 ## Done
 
-- GB-061 (Ready lane): PR #39 merged to main in merge commit `c62d45b3` (c62d45b36f4a2fe82dc8fad50a88f476aafb032c, 2026-10-
-- GB-066 (Cordnation): PR #51 merged as `3fc9d89`, Oct 12 7:11 PM CT
-- GB-067 (Cordnation): PR #53 merged as `17bac6d`, 2026-10-13 01:08 CT. One handoff file, one line per item
-- GB-068 (Cordnation): PR #54 merged as `8138ea2`, 2026-10-13 01:08 CT. HYB-024 design page and backlog rename
-- PR #52 (Rick lane): Idle-mode page merged as `0f05d58`, Oct 12 7:55 PM CT. No GB number. The body said to wait for Fathe
-- HYB-016 (Cursor Project): Ledger refreshed at `56a7a48`, Oct 12 4:09 PM CT. Kept by Father's yes, 4:40 PM CT
-- HYB-023 (Permanent-site lane): TESSERA `e5e5719`
-- HYB-024 (Tessera (design), Cordnation (publish)): Phase 0 approved (REPORTED). Design page on main in PR #54 (`8138ea2`). Dry runs show CI blocked by 
+- GB-061 (Ready lane): PR #39 merged to main in merge commit `c62d45b3` (c62d45b36f4a2fe82dc8fad50a88f476aafb032c, 2026-10- ([PR #39](https://github.com/vitalitychems-dot/Gitbook/pull/39))
+- GB-066 (Cordnation): PR #51 merged as `3fc9d89`, Oct 12 7:11 PM CT ([PR #51](https://github.com/vitalitychems-dot/Gitbook/pull/51))
+- GB-067 (Cordnation): PR #53 merged as `17bac6d`, 2026-10-13 01:08 CT. One handoff file, one line per item ([intake log](../intake/log.md))
+- GB-068 (Cordnation): PR #54 merged as `8138ea2`, 2026-10-13 01:08 CT. HYB-024 design page and backlog rename ([design](../merge/hyb-024-selffix-design.md))
+- PR #52 (Rick lane): Idle-mode page merged as `0f05d58`, Oct 12 7:55 PM CT. No GB number. The body said to wait for Fathe ([PR #52](https://github.com/vitalitychems-dot/Gitbook/pull/52))
+- SITE-002-R1 (Cursor Project): The SITE-002 record says the diagnostics gate reached TESSERA main as direct commit `1a71cc78`, not  ([record](SITE-002-2026-10-10.md))
+- HYB-016 (Cursor Project): Ledger refreshed Oct 13 to Gitbook `e51b261` and TESSERA `26d29fc` (earlier: `56a7a48`, kept by Fath ([ledger](../history/coordination/agent-checkins.md))
+- HYB-023 (Permanent-site lane): TESSERA `e5e5719` ([coordination](PERMANENT-SITE-COORDINATION.md))
+- HYB-024 (Tessera (design), Cordnation (publish)): Phase 0 approved (REPORTED). Design page on main in PR #54 (`8138ea2`). Dry runs show CI blocked by  ([design](../merge/hyb-024-selffix-design.md))
 
 ## Can be cleaned up
 

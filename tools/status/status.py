@@ -6,7 +6,10 @@ Reads: mesh/HANDOFF.md (table), mesh/queue/TASKS.json, intake/log.md, optional G
 """
 import argparse, datetime as dt, json, pathlib, re, sys
 
-DONE = {"published", "done", "merged"}
+class _Done(set):
+    """Done states; a qualified state like 'published: merged without passing gates' counts by its prefix."""
+    def __contains__(self, s): return set.__contains__(self, str(s).split(":")[0].strip())
+DONE = _Done({"published", "done", "merged"})
 ACTIVE = {"in review", "tested locally", "open", "ready", "claimed", "launched", "running", "in_review"}
 WAIT = {"held", "blocked", "stale", "unclaimed", "conflicted", "queued"}
 
@@ -77,16 +80,16 @@ def build(root, now, gitmesh=None):
         lanes.setdefault(strip_links(r["Lane"]), []).append(r)
     out.append(f"# Mesh status\n\nBuilt {now.strftime('%Y-%m-%d %H:%M')} CT by status.py from files only (0 model tokens). Source: HANDOFF.md as of {asof.group(1) if asof else '?'}, TASKS.json, intake/log.md.\n")
     out.append("## Needs attention\n"); out += [f"- {w}" for w in warn] or ["- none"]
-    out.append("\n## By lane: doing and next\n\n| Lane | Item | State | Next |\n|---|---|---|---|")
+    out.append("\n## By lane: doing and next\n\n| Lane | Item | State | Next | Link |\n|---|---|---|---|---|")
     for lane in sorted(lanes):
         for r in lanes[lane]:
             if r["State"].lower() not in DONE:
-                out.append(f"| {lane} | {r['Id']} | {r['State']} | {strip_links(r['Next step (owner)'])} |")
+                out.append(f"| {lane} | {r['Id']} | {r['State']} | {strip_links(r['Next step (owner)'])} | {r.get('Link', '')} |")
     out.append("\n## Queue (mesh/queue/TASKS.json)\n\n| Task | Lane | Status | Title |\n|---|---|---|---|")
     for t in q:
         out.append(f"| {t['id']} | {t['lane']} | {t['status']} | {t['title'][:90]} |")
     done = [r for r in items if r["State"].lower() in DONE]
-    out.append("\n## Done\n"); out += [f"- {r['Id']} ({strip_links(r['Lane'])}): {strip_links(r['Where it was left'])[:100]}" for r in done]
+    out.append("\n## Done\n"); out += [f"- {r['Id']} ({strip_links(r['Lane'])}): {strip_links(r['Where it was left'])[:100]}" + (f" ({r['Link']})" if r.get('Link', '').strip() not in ('', '—', '-') else '') for r in done]
     out.append("\n## Can be cleaned up\n")
     clean = [f"- {r['Id']}: done with next step 'none' -> move line to archive" for r in done if r["Next step (owner)"].strip().lower() == "none"]
     clean += [f"- {r['Id']}: stale -> {strip_links(r['Next step (owner)'])}" for r in items if r["State"].lower() == "stale"]
