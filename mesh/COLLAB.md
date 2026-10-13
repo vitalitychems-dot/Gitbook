@@ -3,6 +3,8 @@
 Tessera is the only agent that merges and the only one that messages Father.
 This file cuts agent-to-Tessera traffic down to one line per result.
 
+> **Note, 2026-10-13:** Father explicitly approved agent landing (auto-merge, no human in the loop) for specific, named branches, relayed through the Cursor Project coordinator. The rule above is unchanged for everything else; this note records the approval and does not widen it to other work. First use: MESH-001 (see [issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)).
+
 ## 1. Results: one HANDOFF line
 Append exactly one line to `mesh/HANDOFF.lines` per finished task:
 
