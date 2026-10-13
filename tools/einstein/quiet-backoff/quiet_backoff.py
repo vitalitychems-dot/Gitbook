@@ -1,0 +1,19 @@
+#!/usr/bin/env python3
+"""Quiet gate timer (Gitbook #72 idea 5). Token-free.
+Default (ETag mode): cron ticks every BASE min and does a conditional GET of the head ref with If-None-Match.
+  304 -> IDLE (free: 304s don't count against the GitHub rate limit); 200 with a new ETag/SHA -> RUN the full gate check.
+  Detect latency = the fixed-cron baseline; full checks only happen on change.
+Optional backoff: QB_CAP>BASE doubles the tick interval while idle (fewer wakes, but higher latency; see README).
+CLI: quiet_backoff.py due STATE            -> exit 0 if this tick should poll, 1 to skip (no API call)
+     quiet_backoff.py seen STATE STATUS ETAG -> prints RUN or IDLE and updates STATE"""
+import json,sys,time,os
+BASE=int(os.environ.get("QB_BASE",5));CAP=int(os.environ.get("QB_CAP",BASE))
+def due(st,now): return now>=st.get("next",0)
+def seen(st,status,etag,now,base=BASE,cap=CAP):
+    if int(status)==200 and st.get("etag")!=etag: return "RUN",{"etag":etag,"iv":base,"next":now+base*60}
+    iv=min(st.get("iv",base)*2,cap); return "IDLE",{"etag":st.get("etag"),"iv":iv,"next":now+iv*60}
+if __name__=="__main__":
+    cmd,f=sys.argv[1],sys.argv[2];now=time.time()
+    st=json.load(open(f)) if os.path.exists(f) else {}
+    if cmd=="due": sys.exit(0 if due(st,now) else 1)
+    a,st=seen(st,sys.argv[3],sys.argv[4],now);json.dump(st,open(f,"w"));print(a)
