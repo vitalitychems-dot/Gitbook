@@ -1,0 +1,102 @@
+[
+ {
+  "id": 1,
+  "q": "Height of Great Pyramid of Giza as built, metres",
+  "type": "num"
+ },
+ {
+  "id": 2,
+  "q": "Year Akhenaten's reign began (BCE, conventional chronology)",
+  "type": "num"
+ },
+ {
+  "id": 3,
+  "q": "Number of bones in adult human body",
+  "type": "num"
+ },
+ {
+  "id": 4,
+  "q": "Speed of sound in dry air at 20 C, m/s",
+  "type": "num"
+ },
+ {
+  "id": 5,
+  "q": "Approximate neurons in human brain, billions",
+  "type": "num"
+ },
+ {
+  "id": 6,
+  "q": "Average Earth-Moon distance, thousand km",
+  "type": "num"
+ },
+ {
+  "id": 7,
+  "q": "Capital of Australia? A=Sydney B=Canberra C=Melbourne",
+  "type": "cat"
+ },
+ {
+  "id": 8,
+  "q": "Which lobe holds primary visual cortex? A=frontal B=temporal C=occipital",
+  "type": "cat"
+ },
+ {
+  "id": 9,
+  "q": "Is 391 prime? A=yes B=no",
+  "type": "cat"
+ },
+ {
+  "id": 10,
+  "q": "Bat and ball cost 1.10 total, bat costs 1.00 more than ball; ball costs? A=0.10 B=0.05",
+  "type": "cat"
+ },
+ {
+  "id": 11,
+  "q": "Boiling point of water at sea level, degrees Fahrenheit",
+  "type": "num"
+ },
+ {
+  "id": 12,
+  "q": "Year the Rosetta Stone was found",
+  "type": "num"
+ },
+ {
+  "id": 13,
+  "q": "Height of Mount Everest, metres (2020 survey)",
+  "type": "num"
+ },
+ {
+  "id": 14,
+  "q": "Number of chromosomes in a typical human body cell",
+  "type": "num"
+ },
+ {
+  "id": 15,
+  "q": "Light travel time Sun to Earth, minutes",
+  "type": "num"
+ },
+ {
+  "id": 16,
+  "q": "Length of a Mars year, Earth days",
+  "type": "num"
+ },
+ {
+  "id": 17,
+  "q": "Largest planet in the Solar System? A=Saturn B=Jupiter C=Neptune",
+  "type": "cat"
+ },
+ {
+  "id": 18,
+  "q": "Hippocampus is most associated with? A=forming new memories B=vision C=motor control",
+  "type": "cat"
+ },
+ {
+  "id": 19,
+  "q": "Chemical symbol for gold? A=Ag B=Au C=Gd",
+  "type": "cat"
+ },
+ {
+  "id": 20,
+  "q": "Broca's area is usually in which hemisphere? A=left B=right",
+  "type": "cat"
+ }
+]
