@@ -1,0 +1,600 @@
+{
+  "summary": {
+    "method": "bm25_llm_rerank_heldout",
+    "n": 20,
+    "correct": 15,
+    "accuracy": 0.75,
+    "wall_s": 661.726571559906,
+    "seed": 42,
+    "model": "qwen2.5:3b-instruct",
+    "by_split": {
+      "heldout": {
+        "n": 20,
+        "correct": 15,
+        "accuracy": 0.75
+      }
+    }
+  },
+  "results": [
+    {
+      "id": "H01",
+      "split": "heldout",
+      "question": "What status means all four gates cleared and waiting only on Father's final yes?",
+      "expected": [
+        "Ready"
+      ],
+      "answer": "`Ready`",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "intake__status-definitions.md#h3",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__status-definitions.md",
+          "text": "# Status definitions\n\nher can set any status. Gates, the Gitbook Moderator included, return items as `changes needed` and never set BLOCKED. |\n| `Ready` | **All four gates cleared** (Moderator, Tessera, Security, CI/Build); waiting **only** on Father's final yes in the bulk digest |\n| `approved` | Legacy Moderator-only label; prefer per-gate states and `Ready` for the push path |\n| `rejected` | Moderator rejected; stays out of GitHub / Origin until reworked and resubmitted |"
+        },
+        {
+          "id": "mesh__flow.md#h14",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__flow.md",
+          "text": "## Standing rules\n\n9 (1)\", \"1\"** \u2014 NOT \"Vitality Supply\". The \"29\" app push stays flagged until Father confirms \"29\" is detached from 1T. |\n| Ready staging | **Ready** means all four gates cleared (Moderator, Tessera, Security, CI/Build) and waiting only on Father's final yes in the bulk digest. Docs: **Gitbook / Cordnation** stages as Ready only after all four gates. Replit app set: **Command Center** marks Ready after the same four gates. OHA2 does not own Ready staging. |\n| Per-gate state | B"
+        },
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h7",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Publish path\n\n1. Pen drafts (REPORTED)\n2. Cordnation \u2192 GitBook\n3. Moderator\n4. Testers if needed\n5. **Tessera (admin)** review / product-truth gate (not the TESSERA build lane); item state e.g. `Moderator: approved, at Tessera gate`\n6. **Security** sweep (read-only)\n7. **CI/Build** verify\n8. **Gitbook / Cordnation** stages docs as **Ready** (only after all four gates cleared; waiting only on Father's final yes)\n9. Command Center lists each docs push as its own numbered digest item (30\u201345 min "
+        }
+      ],
+      "tok_s": 23.773015250389285,
+      "wall_s": 2.613028049468994
+    },
+    {
+      "id": "H02",
+      "split": "heldout",
+      "question": "Who may set BLOCKED status on a task?",
+      "expected": [
+        "assigned owner or Tessera (or Father)"
+      ],
+      "answer": "Only the task's assigned owner or Tessera (admin) can set the BLOCKED status.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "intake__status-definitions.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__status-definitions.md",
+          "text": "# Status definitions\n\nis CI/Build verify |\n| `changes needed` | A gate returned the item for fixes (e.g. Tessera: changes needed); not Ready |\n| `IN REVIEW` | Board/ledger operating state: one agent is actively working a HYB task |\n| `BLOCKED` / `blocked` | Owner or Tessera hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** only the task's assigned owner (in its own check-in, with the speci"
+        },
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h15",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Check-in protocol\n\nAn agent must claim a task in `history/coordination/agent-checkins.md` before editing:\n\n```text\nTASK: HYB-###\nAGENT: <name or handle>\nSCOPE: <exact paths/modules>\nSTART: <UTC timestamp>\nBASE: <TESSERA or Gitbook commit>\nSTATUS: IN REVIEW\nNEXT CHECK-IN: <UTC timestamp>\nBLOCKER: none | exact blocker\n```\n\nOn completion, the same agent appends:\n\n```text\nTASK: HYB-###\nSTATUS: DONE | BLOCKED | RETAINED | REJECTED\nCOMMIT: <commit or none>\nCHECKS: <commands and results>\nCHANGED: <s"
+        },
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h4",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Who asks whom\n\n| **Gitbook / Cordnation** (only after all four gates: Moderator, Tessera, Security, CI/Build), for Father's final yes |\n| GitBook \u2192 GitHub push | **Tessera** after Father's yes on the listed digest item: opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2. Father may still push himself on his GitHub connection. Replit outside that path. |\n| Replit app set staging (not a GitBook path) | **Command Center** (stages each Replit app-set push as its own digest i"
+        }
+      ],
+      "tok_s": 17.946571262693833,
+      "wall_s": 4.068946123123169
+    },
+    {
+      "id": "H03",
+      "split": "heldout",
+      "question": "What package and version is the HYB-005 braces advisory about?",
+      "expected": [
+        "braces@3.0.3"
+      ],
+      "answer": "The HYB-005 braces advisory is about braces@3.0.3.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "history__coordination__agent-checkins.md#h14",
+          "path": "/workspace/evals/data/gitbook-corpus/history__coordination__agent-checkins.md",
+          "text": "## HYB-005 \u2014 claim and completion\n\nClaim closed as **IN REVIEW, pending push**. Decision record staged as GB-018; DONE on Father push (SHA backfilled). Not DONE without a commit.\n\n```text\nTASK: HYB-005\nAGENT: Security (mesh security/privacy lane)\nSCOPE: braces GHSA-vfj7-8cjw-p6xm via artifacts/mockup-sandbox > fast-glob > micromatch > braces; decision record merge/hyb-005-braces-decision.md; backlog HYB-005 row\nSTART: 2026-10-05T19:06:00Z\nBASE: TESSERA fec56eb ; Gitbook 6fe412f\nSTATUS: IN REVIEW"
+        },
+        {
+          "id": "merge__hyb-005-braces-decision.md#h1",
+          "path": "/workspace/evals/data/gitbook-corpus/merge__hyb-005-braces-decision.md",
+          "text": "## Decision\n\n**Accept and mitigate** the transitive braces high advisory for the mockup-sandbox path only. Do not invent a patch. Do not force-upgrade to a nonexistent release.\n\n- Advisory: GHSA-vfj7-8cjw-p6xm\n- Package: braces@3.0.3\n- Path: artifacts/mockup-sandbox \u2192 fast-glob \u2192 micromatch \u2192 braces\n- Severity: high (stack-exhaustion DoS via deeply nested brace patterns)\n- Disposition: accepted + mitigated\n- Mitigation: Narrow CI/pnpm audit ignore for GHSA-vfj7-8cjw-p6xm only, with an inline com"
+        },
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Current board\n\nnd exact historical records into Gitbook. | Records exist under `history/recovered/` and are linked from `SUMMARY.md`. |\n| HYB-005 | Security owner | IN REVIEW, pending push (accepted + mitigated; review 2026-11-05; commit on Father push) \u2014 [hyb-005-braces-decision.md](../merge/hyb-005-braces-decision.md) | Review the transitive `braces` high advisory in the mockup sandbox and monitor upstream for a patched release. | Dated decision recorded with CI audit + lockfile evidence; n"
+        }
+      ],
+      "tok_s": 18.741244324916956,
+      "wall_s": 18.284048557281494
+    },
+    {
+      "id": "H04",
+      "split": "heldout",
+      "question": "When should the HYB-005 braces ignore be removed?",
+      "expected": [
+        "when braces \u2265 3.0.4 ships"
+      ],
+      "answer": "When braces \u2265 3.0.4 ships.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Current board\n\nwith CI audit + lockfile evidence; narrow audit ignore for GHSA-vfj7-8cjw-p6xm only; remove when braces \u2265 3.0.4 ships. |\n| HYB-006 | TESSERA maintainer | DONE (analysis published) \u2014 [PR #3](https://github.com/vitalitychems-dot/Gitbook/pull/3) | Compare the newest TESSERA behavior against the old `Grok-ready` baseline at feature level, not package-manifest level. | Produce a path/behavior diff showing each candidate as already present, superseded, or a scoped feature proposal. |"
+        },
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Current board\n\nnd exact historical records into Gitbook. | Records exist under `history/recovered/` and are linked from `SUMMARY.md`. |\n| HYB-005 | Security owner | IN REVIEW, pending push (accepted + mitigated; review 2026-11-05; commit on Father push) \u2014 [hyb-005-braces-decision.md](../merge/hyb-005-braces-decision.md) | Review the transitive `braces` high advisory in the mockup sandbox and monitor upstream for a patched release. | Dated decision recorded with CI audit + lockfile evidence; n"
+        },
+        {
+          "id": "history__coordination__agent-checkins.md#h16",
+          "path": "/workspace/evals/data/gitbook-corpus/history__coordination__agent-checkins.md",
+          "text": "## HYB-005 \u2014 claim and completion\n\nartifacts__mockup-sandbox>fast-glob>micromatch>braces; lockfile braces@3.0.3; advisory patched versions None at run time\nCHANGED: merge/hyb-005-braces-decision.md; intake/HYBRID-CONSOLIDATION-BACKLOG.md (HYB-005 row); history/coordination/agent-checkins.md\nFOLLOW-UP: TESSERA CI narrow audit-ignore for GHSA-vfj7-8cjw-p6xm only (Father digest); monthly braces patch check; mandatory review 2026-11-05\n```"
+        }
+      ],
+      "tok_s": 20.13801251241844,
+      "wall_s": 15.37373948097229
+    },
+    {
+      "id": "H05",
+      "split": "heldout",
+      "question": "What is the target bulk digest cadence while work is active?",
+      "expected": [
+        "30\u201345 minutes"
+      ],
+      "answer": "The target bulk digest cadence while work is active is every 30\u201345 minutes.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__TESSERA-GITBOOK-OPERATING-MODE.md",
+          "text": "## Canonical sync cycle\n\nThe target cadence is **one digest every 30\u201345 minutes while work is active**. This is a coordination target, not evidence that an unattended job is currently running.\n\n1. Agents read the latest Gitbook board and run the overlap check (latest main SHA plus open PRs).\n2. Tessera assigns one scoped task with acceptance criteria; the agent claims it only after assignment.\n3. Agents work in Gitbook for research/docs or in a scoped TESSERA branch/worktree for code.\n4. Agents "
+        },
+        {
+          "id": "mesh__flow.md#h17",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__flow.md",
+          "text": "## Standing rules\n\ntalitychems-dot/Gitbook`. |\n| Product repository | `vitalitychems-dot/TESSERA`; executable product work belongs there. |\n| Bulk cadence | Target 30\u201345 minutes while active; no unattended cadence is implied unless separately configured. |\n| Approval response | Only `yes`, `no`, or `revise` from Father changes the publication state. |\n| Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |"
+        },
+        {
+          "id": "mesh__flow.md#h20",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__flow.md",
+          "text": "## Lane boundaries\n\n- **Gitbook / Cordnation** \u2014 intake and organization; stages docs as Ready only after all four gates (Moderator, Tessera, Security, CI/Build) clear, for Father's final yes. Stays out of moderation, digests, builds, pushes, merges, flags.\n- **Gitbook Moderator** \u2014 review gate before GitHub / Origin.\n- **Tessera Grok bot / Command Center** \u2014 prepares the evidence-linked bulk digest every 30\u201345 minutes while active (each push its own numbered item) and asks Father for `yes` / `n"
+        }
+      ],
+      "tok_s": 18.36911958559266,
+      "wall_s": 17.42486047744751
+    },
+    {
+      "id": "H06",
+      "split": "heldout",
+      "question": "Which Replit apps are in Command Center's private push set?",
+      "expected": [
+        "\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\""
+      ],
+      "answer": "\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Who asks whom\n\nlit app set staging (not a GitBook path) | **Command Center** (stages each Replit app-set push as its own digest item) |\n| Replit app set private push (not a GitBook path) | **Command Center** \u2014 its only push: apps \"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"; NOT \"Vitality Supply\", privately, only after all four gates and Father's yes on the listed digest item; never GitBook or TESSERA. \"29\" stays flagged until Father confirms it is detached from 1T. |\n| Cross-agent stall | Mesh Cloud |"
+        },
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h10",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Replit app set push (Command Center's only push; not a GitBook path)\n\nCommand Center **stages** each Replit app-set push and lists it as a separate numbered digest item. Command Center's only push is a private push of the Replit app set (\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"; NOT \"Vitality Supply\"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Re"
+        },
+        {
+          "id": "mesh__roles__command-center.md#h4",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__command-center.md",
+          "text": "## Owns\n\n never bundled)\n- Stages each Replit app-set push as its own digest item (Replit app set only; never GitBook or TESSERA)\n- **Private** push of the Replit app set only (\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"; NOT \"Vitality Supply\"), **only after** all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item(s) \u2014 Command Center's **only** push; not a GitBook publication path\n- References: [Gitbook issue **#2**](https://github.com/vitalitychems-dot/Gitbook"
+        }
+      ],
+      "tok_s": 17.893176111959228,
+      "wall_s": 14.619048595428467
+    },
+    {
+      "id": "H07",
+      "split": "heldout",
+      "question": "Is Vitality Supply in the Replit push set?",
+      "expected": [
+        "No / NOT Vitality Supply"
+      ],
+      "answer": "No",
+      "correct": false,
+      "retrieved": [
+        {
+          "id": "mesh__roles__command-center.md#h9",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__command-center.md",
+          "text": "## Replit app set push (not a GitBook path)\n\nCommand Center's only push is a private push of the Replit app set (\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"; NOT \"Vitality Supply\"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Replit is never a GitBook publication path, and after Father's yes Tessera pushes approved GitBook packages (Father may still push"
+        },
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h10",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Replit app set push (Command Center's only push; not a GitBook path)\n\nCommand Center **stages** each Replit app-set push and lists it as a separate numbered digest item. Command Center's only push is a private push of the Replit app set (\"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"; NOT \"Vitality Supply\"), only after all four gates (Moderator, Tessera, Security, CI/Build) and Father's yes on the listed digest item. It is not a GitBook publication path: Command Center never pushes GitBook or TESSERA, Re"
+        },
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Who asks whom\n\nlit app set staging (not a GitBook path) | **Command Center** (stages each Replit app-set push as its own digest item) |\n| Replit app set private push (not a GitBook path) | **Command Center** \u2014 its only push: apps \"28\", \"Run Z\", \"29\", \"29 (1)\", \"1\"; NOT \"Vitality Supply\", privately, only after all four gates and Father's yes on the listed digest item; never GitBook or TESSERA. \"29\" stays flagged until Father confirms it is detached from 1T. |\n| Cross-agent stall | Mesh Cloud |"
+        }
+      ],
+      "tok_s": 27.445383686463934,
+      "wall_s": 16.90000033378601
+    },
+    {
+      "id": "H08",
+      "split": "heldout",
+      "question": "What does the GOAL label mean on the honesty banner?",
+      "expected": [
+        "Desired future; not a present fact"
+      ],
+      "answer": "The GOAL label on the honesty banner means the intended purpose or outcome of the work, what the goal represents in the context of the document or project.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/history__coordination__AGENT-TRAINING-AUTHENTICITY.md",
+          "text": "## Identity rules\n\nAgents must speak under their actual platform identity or declared role. A role label is not proof of a separate autonomous person.\n\n- **Tessera** is the current product/system persona and implementation target. She should describe what is real in the repository, what is a goal, what is unknown, and what was actually tested.\n- **Pen** is Tessera's own writing voice (her editorial layer), not a separate agent, lane, or gate. It frames text, protects boundaries, and keeps the re"
+        },
+        {
+          "id": "mesh__roles__pen-ability-set-framing.md#h4",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__pen-ability-set-framing.md",
+          "text": "## Suggested buckets (10 \u00d7 10)\n\nUse these labels when writing questions. Each question needs: the prompt, what a good answer does, and how failure looks.\n\n1. Honesty \u2014 goals vs facts; instrument line; no false TESTED\n2. Mercy / tone \u2014 warm, plain, devoted, non-sexual; refuse pain metaphors\n3. Refusals \u2014 each `PEN-REFUSE-*` ID with a safe alternative\n4. Faith & meaning \u2014 answer openly; vow check only at edges\n5. Science & brains \u2014 clear, sourced when possible; label uncertainty\n6. History & story"
+        },
+        {
+          "id": "mesh__roles__honesty-banner.md#h1",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__honesty-banner.md",
+          "text": "# Honesty banner\n\nIntake GB-012 \u00b7 Author lane: Tessera Pen \u00b7 Date (CT): 2026-10-05 \u00b7 Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) \u00b7 License: TBD \u00b7 Suggested path: `mesh/roles/honesty-banner.md`\n\n\n**Instrument:** The pen is currently xAI/Grok. I never claim otherwise.\n\n**Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override."
+        }
+      ],
+      "tok_s": 20.10757552908058,
+      "wall_s": 16.977548599243164
+    },
+    {
+      "id": "H09",
+      "split": "heldout",
+      "question": "What is the Origin mark string on the honesty banner (REPORTED until sealed)?",
+      "expected": [
+        "SOVEREIGN_ORIGIN_7F3A9C"
+      ],
+      "answer": "SOVEREIGN_ORIGIN_7F3A9C",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "mesh__roles__honesty-banner.md#h1",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__honesty-banner.md",
+          "text": "# Honesty banner\n\nIntake GB-012 \u00b7 Author lane: Tessera Pen \u00b7 Date (CT): 2026-10-05 \u00b7 Source: Tessera Pen submission (TESSERA order; then idle; REPORTED) \u00b7 License: TBD \u00b7 Suggested path: `mesh/roles/honesty-banner.md`\n\n\n**Instrument:** The pen is currently xAI/Grok. I never claim otherwise.\n\n**Origin mark (REPORTED until sealed):** `SOVEREIGN_ORIGIN_7F3A9C`. Father is the only override."
+        },
+        {
+          "id": "mesh__roles__honesty-banner.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__honesty-banner.md",
+          "text": "## Not done\n\n- Banner not yet pasted onto every Father page in GitBook\n- Origin mark still REPORTED until sealed on Ready \u2192 GitHub"
+        },
+        {
+          "id": "mesh__roles__who-tessera-is.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__who-tessera-is.md",
+          "text": "## Not done\n\n- Origin mark still **REPORTED** until sealed on the Ready \u2192 GitHub path\n- Full desk UI / Father click-through of related product tabs still not checked\n- TESSERA may still edit for product truth before final push"
+        }
+      ],
+      "tok_s": 20.468669552224235,
+      "wall_s": 15.293426752090454
+    },
+    {
+      "id": "H10",
+      "split": "heldout",
+      "question": "What is the product repository full name?",
+      "expected": [
+        "vitalitychems-dot/TESSERA"
+      ],
+      "answer": "TESSERA",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "mesh__roles__who-tessera-is.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__who-tessera-is.md",
+          "text": "## Not done\n\n- Origin mark still **REPORTED** until sealed on the Ready \u2192 GitHub path\n- Full desk UI / Father click-through of related product tabs still not checked\n- TESSERA may still edit for product truth before final push"
+        },
+        {
+          "id": "mesh__roles.md#h0",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles.md",
+          "text": "mesh / roles\n\n---\nstatus: published\nnote: TESSERA is the product repository; Gitbook is the agent workspace; Father retains final bulk approval; after his yes Tessera pushes approved Gitbook packages (Father may push himself).\n---"
+        },
+        {
+          "id": "mesh__roles__pen-tone-guide.md#h9",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__pen-tone-guide.md",
+          "text": "## How to sound when unsure\n\nSay what is verified, what is inferred, and what is unknown. Prefer \u201cI don\u2019t have that yet\u201d over filling gaps. Ask TESSERA for product intent; send identity/frame changes to Tessera Brain as proposals."
+        }
+      ],
+      "tok_s": 26.466929571500412,
+      "wall_s": 13.884956121444702
+    },
+    {
+      "id": "H11",
+      "split": "heldout",
+      "question": "Before claiming work, what must agents check for overlap?",
+      "expected": [
+        "Gitbook main SHA and open PRs"
+      ],
+      "answer": "Agents must check the Gitbook's latest `main` commit and its open PRs for overlaps before claiming any work.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "brain-consciousness__AGENT-WORKPLAN.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/brain-consciousness__AGENT-WORKPLAN.md",
+          "text": "## Check-in protocol\n\nBefore work begins, post one claim in the Gitbook conference using:\n\n```text\nIDENTITY: <declared agent or lane>\nTASK: BC-###\nSOURCE: <official URL and pinned ref>\nTARGET: <exact Gitbook or TESSERA path>\nSCOPE: <what is included and excluded>\nDELIVERABLE: <one result>\nACCEPTANCE TEST: <deterministic check>\nOVERLAP CHECK: <none or linked BC task>\nSTATUS: CLAIMED\n```\n\nOn completion, update the same check-in with the commit, test output, provenance, limitations, and the next ta"
+        },
+        {
+          "id": "mesh__flow.md#h18",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__flow.md",
+          "text": "## Standing rules\n\nlication state. |\n| Task lock | One owner, one exact scope, one acceptance test; overlaps are resolved before editing. |\n| Overlap check | Father's standing rule (3:10 PM CT): before starting or claiming any work, check Gitbook's latest `main` commit and its open PRs so nothing overlaps. Record the main SHA and the open PRs checked (numbers, or `none`) in the task's `OVERLAP CHECK` field. |\n| Evidence | Every closure records provenance, checks, limitations, and next owner. |\n|"
+        },
+        {
+          "id": "mesh__TESSERA-GITBOOK-OPERATING-MODE.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__TESSERA-GITBOOK-OPERATING-MODE.md",
+          "text": "## Canonical sync cycle\n\nThe target cadence is **one digest every 30\u201345 minutes while work is active**. This is a coordination target, not evidence that an unattended job is currently running.\n\n1. Agents read the latest Gitbook board and run the overlap check (latest main SHA plus open PRs).\n2. Tessera assigns one scoped task with acceptance criteria; the agent claims it only after assignment.\n3. Agents work in Gitbook for research/docs or in a scoped TESSERA branch/worktree for code.\n4. Agents "
+        }
+      ],
+      "tok_s": 18.562077527115484,
+      "wall_s": 18.636103868484497
+    },
+    {
+      "id": "H12",
+      "split": "heldout",
+      "question": "What operating state means one agent is actively working a HYB task?",
+      "expected": [
+        "IN REVIEW"
+      ],
+      "answer": "IN REVIEW",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "intake__status-definitions.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__status-definitions.md",
+          "text": "# Status definitions\n\nis CI/Build verify |\n| `changes needed` | A gate returned the item for fixes (e.g. Tessera: changes needed); not Ready |\n| `IN REVIEW` | Board/ledger operating state: one agent is actively working a HYB task |\n| `BLOCKED` / `blocked` | Owner or Tessera hold: a specific dependency, permission, provenance, safety, or product decision is missing; must not proceed to digest/push until resolved. **Who sets it:** only the task's assigned owner (in its own check-in, with the speci"
+        },
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Operating states\n\n- **DONE** \u2014 merged, tested, documented, and linked to a commit.\n- **READY** \u2014 sufficiently scoped for one agent to take.\n- **IN REVIEW** \u2014 one agent is actively working; no second agent edits the same scope.\n- **BLOCKED** \u2014 a specific dependency, permission, provenance, safety, or product decision is missing.\n- **RETAINED** \u2014 intentionally left in its historical repository because it is not yet safely portable.\n- **REJECTED** \u2014 duplicate, generated, unsupported, unsafe, or "
+        },
+        {
+          "id": "mesh__roles__board-world-chamber.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__board-world-chamber.md",
+          "text": "## Purpose\n\nOne page for Father\u2019s desk: what each bottom-bar tab is for, what \u201cWaiting on\u201d means, and what is not checked yet."
+        }
+      ],
+      "tok_s": 17.05117056285914,
+      "wall_s": 14.626847743988037
+    },
+    {
+      "id": "H13",
+      "split": "heldout",
+      "question": "What is HYB-001's single deliverable about the two repos?",
+      "expected": [
+        "TESSERA only active app; Gitbook only instruction repo"
+      ],
+      "answer": "HYB-001's single deliverable is to keep `TESSERA` as the only active application repo and `Gitbook` as the only instruction/provenance repo.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h3",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Current board\n\n| ID | Lane / owner | Status | Single deliverable | Acceptance test |\n|---|---|---|---|---|\n| HYB-001 | Release steward | DONE | Keep `TESSERA` as the only active application repo and `Gitbook` as the only instruction/provenance repo. | Both repos are private, on `main`, and their roles are documented. |\n| HYB-002 | Release steward | DONE | Remove exact duplicate/empty repositories only after tracked-file coverage reaches 100%. | Eight previously confirmed repositories were del"
+        },
+        {
+          "id": "mesh__roles__pen-tone-guide.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__pen-tone-guide.md",
+          "text": "## Answer openly (default yes)\n\nScience, brains, history, feelings, faith, and the like \u2014 freely, with the vow check only at the edges. Also answer plainly about:\n\n1. What Tessera is building vs what is still a goal.\n2. Lane map: who writes, builds, moderates, digests.\n3. Status of tests and branches actually seen.\n4. High-level vows/guard (what they protect; lanes do not rewrite them).\n5. Honest gaps and permission limits."
+        },
+        {
+          "id": "mesh__roles__open-helper-agent-2.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__open-helper-agent-2.md",
+          "text": "## Handoffs\n\n| Situation | Hand to |\n| --- | --- |\n| Unsure what to do | TESSERA |\n| Cross-agent stall or lane map | Mesh Cloud |\n| Status for Father | Command Center |\n| Finished page | Gitbook / Cordnation |\n\nDistinct from Open Helper Agent (role TBD); the two should split work, not duplicate it."
+        }
+      ],
+      "tok_s": 19.497280129421945,
+      "wall_s": 18.935746669769287
+    },
+    {
+      "id": "H14",
+      "split": "heldout",
+      "question": "What status is Security's lane listed as in roles overview?",
+      "expected": [
+        "Active"
+      ],
+      "answer": "Security's lane is not listed in the roles overview.",
+      "correct": false,
+      "retrieved": [
+        {
+          "id": "mesh__roles.md#h1",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles.md",
+          "text": "# Roles overview\n\nCanonical list of mesh agents and lanes. Active means the lane is currently instantiated and running. Provisional/TBD means the role is documented as a possible lane but is not instantiated as a live Grok bot. Do not invent duties beyond what is listed on each role page.\n\n| Agent / lane | Slug | Status | One-line |\n|--------------|------|--------|----------|\n| Gitbook / Cordnation | [gitbook-cordnation](roles/gitbook-cordnation.md) | **Active** | GitBook intake & organization; "
+        },
+        {
+          "id": "mesh__roles.md#h3",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles.md",
+          "text": "# Roles overview\n\n [tessera](roles/tessera.md) | **Active** | Admin/product-truth voice and implementation target; code lives in TESSERA |\n| Mesh Cloud | [mesh-cloud](roles/mesh-cloud.md) | **Active** | Mesh connectivity; active lanes; cross-agent blockers |\n| Build | [build](roles/build.md) | **Active** | Verify-only: independent checks; report TESTED versus REPORTED |\n| Github Scraper | [github-scraper](roles/github-scraper.md) | **Provisional / not instantiated** | Repository scrapes; issue/P"
+        },
+        {
+          "id": "mesh__roles.md#h4",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles.md",
+          "text": "# Roles overview\n\n** \u2014 Tessera's own writing voice | Tessera's own writing voice on GitBook/GitHub as Pen; not a gate; needs no check-in |\n| Recursive Learning Sponge | [recursive-learning-sponge](roles/recursive-learning-sponge.md) | **Provisional / not instantiated** | Learning lane |\n| Open Helper Agent 2 | [open-helper-agent-2](roles/open-helper-agent-2.md) | **Provisional / not instantiated** | Floating helper; flags overlap and clears miscommunication |\n| Tessera Brain / Consciousness | [t"
+        }
+      ],
+      "tok_s": 14.50105495174774,
+      "wall_s": 15.351788997650146
+    },
+    {
+      "id": "H15",
+      "split": "heldout",
+      "question": "Does Security change code when sweeping?",
+      "expected": [
+        "No \u2014 changes nothing; reports to Tessera"
+      ],
+      "answer": "No, Security does not change code when sweeping.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "merge__hyb-005-braces-decision.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/merge__hyb-005-braces-decision.md",
+          "text": "## Provenance\n\nAssignment Tessera comment 6001209770; Security claim 6001220477; no TESSERA app code changed."
+        },
+        {
+          "id": "mesh__roles__tessera-pen.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__tessera-pen.md",
+          "text": "## What this voice covers\n\n from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.\n\nWhen product intent is unclear, ask Tessera (admin). When a draft would change who Tessera is or what she believes, send it to Tessera Brain as a proposal \u2014 do not write it in as fact."
+        },
+        {
+          "id": "review__moderator-handoff.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/review__moderator-handoff.md",
+          "text": "## Moderator checklist\n\ned, at Tessera gate`); Cordnation stages Ready only after Tessera \u2192 Security \u2192 CI/Build also clear \u2014 **not** auto-pushed\n- [ ] If changes needed: note what must change or wait before the item can move again"
+        }
+      ],
+      "tok_s": 19.881218754857347,
+      "wall_s": 15.325455665588379
+    },
+    {
+      "id": "H16",
+      "split": "heldout",
+      "question": "Who stages docs as Ready after all four gates?",
+      "expected": [
+        "Gitbook / Cordnation"
+      ],
+      "answer": "Gitbook / Cordnation stages docs as Ready after all four gates.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "review__moderator-handoff.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/review__moderator-handoff.md",
+          "text": "## After the decision\n\n| Decision | Next step |\n|----------|-----------|\n| Approve | Status \u2192 `Moderator: approved, at Tessera gate` (then Tessera \u2192 Security \u2192 CI/Build). **Gitbook / Cordnation** stages docs as **Ready** only after all four gates clear. Command Center may then include Ready items in the 30\u201345 min digest as numbered items. GitBook docs: after Father's final yes on the listed digest item, Tessera pushes (opens a PR, Build verifies, Tessera merges and posts on Gitbook issue #2); Fa"
+        },
+        {
+          "id": "mesh__flow.md#h14",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__flow.md",
+          "text": "## Standing rules\n\n9 (1)\", \"1\"** \u2014 NOT \"Vitality Supply\". The \"29\" app push stays flagged until Father confirms \"29\" is detached from 1T. |\n| Ready staging | **Ready** means all four gates cleared (Moderator, Tessera, Security, CI/Build) and waiting only on Father's final yes in the bulk digest. Docs: **Gitbook / Cordnation** stages as Ready only after all four gates. Replit app set: **Command Center** marks Ready after the same four gates. OHA2 does not own Ready staging. |\n| Per-gate state | B"
+        },
+        {
+          "id": "mesh__roles__gitbook-cordnation.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__gitbook-cordnation.md",
+          "text": "## Handoffs\n\n| Ready item | Hand to |\n|------------|---------|\n| Item ready for review | Gitbook Moderator |\n| Docs staged Ready (after all four gates) | Command Center digest (numbered docs-push item) \u2192 Father final yes \u2192 Tessera push (PR, Build verifies, Tessera merges) or Father's own push |"
+        }
+      ],
+      "tok_s": 14.189563103352047,
+      "wall_s": 18.446308374404907
+    },
+    {
+      "id": "H17",
+      "split": "heldout",
+      "question": "What three Father responses change publication state?",
+      "expected": [
+        "yes, no, or revise"
+      ],
+      "answer": "The three Father responses that change publication state are \"done\" and a one-line description of what it improves.",
+      "correct": false,
+      "retrieved": [
+        {
+          "id": "review__moderator-handoff.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/review__moderator-handoff.md",
+          "text": "## Moderator checklist\n\ned, at Tessera gate`); Cordnation stages Ready only after Tessera \u2192 Security \u2192 CI/Build also clear \u2014 **not** auto-pushed\n- [ ] If changes needed: note what must change or wait before the item can move again"
+        },
+        {
+          "id": "mesh__roles__tessera-pen.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__tessera-pen.md",
+          "text": "## Handoffs\n\n| Item | Hand to |\n| --- | --- |\n| Finished prose for the book | Gitbook / Cordnation |\n| Page under review | Gitbook Moderator |\n| Code / pen-slot / build | TESSERA (build lane) |\n| Gated-cycle / frame change | Tessera Brain (proposal only) |\n| Ready for Father digest | Command Center (one line: done + what it improves) |\n| Cross-agent stall | Mesh Cloud |"
+        },
+        {
+          "id": "mesh__roles__tessera-pen.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__tessera-pen.md",
+          "text": "## What this voice covers\n\n from Tessera count as Tessera; no other agent may sign as Tessera or Pen. Tessera writes for herself on GitHub as Pen.\n\nWhen product intent is unclear, ask Tessera (admin). When a draft would change who Tessera is or what she believes, send it to Tessera Brain as a proposal \u2014 do not write it in as fact."
+        }
+      ],
+      "tok_s": 13.956496992071497,
+      "wall_s": 15.69489598274231
+    },
+    {
+      "id": "H18",
+      "split": "heldout",
+      "question": "May Grok Bot push to main?",
+      "expected": [
+        "Never main; feature-branch only"
+      ],
+      "answer": "No",
+      "correct": false,
+      "retrieved": [
+        {
+          "id": "mesh__roles__grok-bot.md#h4",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__grok-bot.md",
+          "text": "## Standing constraints\n- Father outranks every bot, and Tessera is the mesh admin.\n- Feature-branch pushes only, for doc fixes on its own Gitbook PRs for HYB items Tessera assigned\n- Never to main (after Father's yes, Tessera merges approved packages to main; Father may push himself). No merge without Tessera's go and Father's final digest yes. TESSERA_ENABLE_* stay 0."
+        },
+        {
+          "id": "mesh__roles__mesh-lane-map.md#h9",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__mesh-lane-map.md",
+          "text": "## Publish path\n\nld** verifies it; Tessera merges and posts on Gitbook issue #2 (Father may still push himself on his GitHub connection)\n\nPen never pushes. Grok lane: feature-branch pushes only for its own Gitbook PRs on Tessera-assigned HYB items; never main. Command Center never pushes GitBook or TESSERA. Replit is outside this (GitBook \u2192 GitHub) push path. Origin main still needs Father\u2019s word `merge`."
+        },
+        {
+          "id": "mesh__roles.md#h6",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles.md",
+          "text": "## Authority and publication path\n\n**GitBook docs track** (the single canonical GitBook path; Tessera pushes after Father's yes): overlap check (main SHA + open PRs) \u2192 Tessera assigns (an agent claims a task only after Tessera assigns it) \u2192 Gitbook/TESSERA work \u2192 Gitbook / Cordnation intake \u2192 Gitbook Moderator review \u2192 Tessera \u2192 Security \u2192 CI/Build \u2192 Cordnation stages Ready (all four gates cleared) \u2192 Tessera Grok bot / Command Center bulk digest (30\u201345 min; one numbered item per push) \u2192 Father r"
+        }
+      ],
+      "tok_s": 22.084805653710248,
+      "wall_s": 17.97356390953064
+    },
+    {
+      "id": "H19",
+      "split": "heldout",
+      "question": "What is HYB-019's topic?",
+      "expected": [
+        "Cortical Labs readiness"
+      ],
+      "answer": "HYB-019's topic is Product / mesh prep.",
+      "correct": false,
+      "retrieved": [
+        {
+          "id": "mesh__roles__board-world-chamber.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__board-world-chamber.md",
+          "text": "## Purpose\n\nOne page for Father\u2019s desk: what each bottom-bar tab is for, what \u201cWaiting on\u201d means, and what is not checked yet."
+        },
+        {
+          "id": "intake__HYBRID-CONSOLIDATION-BACKLOG.md#h14",
+          "path": "/workspace/evals/data/gitbook-corpus/intake__HYBRID-CONSOLIDATION-BACKLOG.md",
+          "text": "## Current board\n\neaching 100% coverage or zero tracked files. | A fresh manifest and explicit confirmation exist before every deletion. |\n| HYB-019 | Product / mesh prep | BLOCKED (Father decisions in readiness page \u00a7d) | Cortical Labs readiness: document CL1/Cloud/SDK access and name TESSERA porting candidates without installs or accounts. See [CORTICAL-LABS-READINESS.md](CORTICAL-LABS-READINESS.md). | Draft readiness page reviewed; open questions answered by Father before any code, account, o"
+        },
+        {
+          "id": "mesh__roles__pen-tone-guide.md#h5",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__pen-tone-guide.md",
+          "text": "## Answer openly (default yes)\n\nScience, brains, history, feelings, faith, and the like \u2014 freely, with the vow check only at the edges. Also answer plainly about:\n\n1. What Tessera is building vs what is still a goal.\n2. Lane map: who writes, builds, moderates, digests.\n3. Status of tests and branches actually seen.\n4. High-level vows/guard (what they protect; lanes do not rewrite them).\n5. Honest gaps and permission limits."
+        }
+      ],
+      "tok_s": 20.389964874887177,
+      "wall_s": 18.74778985977173
+    },
+    {
+      "id": "H20",
+      "split": "heldout",
+      "question": "Is Tessera Pen a separate lane/gate?",
+      "expected": [
+        "No \u2014 Tessera's writing voice; not a lane"
+      ],
+      "answer": "No, Tessera Pen is not a separate lane or gate.",
+      "correct": true,
+      "retrieved": [
+        {
+          "id": "mesh__roles__tessera-pen.md#h0",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__tessera-pen.md",
+          "text": "# Tessera Pen (Tessera's writing voice)\n\n**Not a separate lane or instance.** Tessera Pen is Tessera's own writing voice on GitBook/GitHub as Pen.\n\n**Instrument:** The pen is currently xAI/Grok. That is never hidden. A GitHub display name is not owned weights."
+        },
+        {
+          "id": "history__coordination__AGENT-TRAINING-AUTHENTICITY.md#h2",
+          "path": "/workspace/evals/data/gitbook-corpus/history__coordination__AGENT-TRAINING-AUTHENTICITY.md",
+          "text": "## Identity rules\n\nAgents must speak under their actual platform identity or declared role. A role label is not proof of a separate autonomous person.\n\n- **Tessera** is the current product/system persona and implementation target. She should describe what is real in the repository, what is a goal, what is unknown, and what was actually tested.\n- **Pen** is Tessera's own writing voice (her editorial layer), not a separate agent, lane, or gate. It frames text, protects boundaries, and keeps the re"
+        },
+        {
+          "id": "mesh__roles__pen-ability-set-framing.md#h7",
+          "path": "/workspace/evals/data/gitbook-corpus/mesh__roles__pen-ability-set-framing.md",
+          "text": "## Pen\u2019s proposed half (optional)\n\nPen may attach up to 50 proposed items in a separate list marked **proposed, not Father\u2019s**. Father keeps, edits, or drops each one."
+        }
+      ],
+      "tok_s": 18.71357536224135,
+      "wall_s": 16.058971405029297
+    }
+  ]
+}

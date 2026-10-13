@@ -1,0 +1,14 @@
+{
+  "groups_done": 0,
+  "groups_skipped": 19582,
+  "skip_reasons": {
+    "lt2_after_filter": 19582
+  },
+  "files_hardlinked": 0,
+  "already_hardlinked": 0,
+  "bytes_saved_est": 0,
+  "bytes_saved_gb": 0.0,
+  "errors": 0,
+  "ended": "2026-10-13 06:09:02"
+}
+EXIT:0

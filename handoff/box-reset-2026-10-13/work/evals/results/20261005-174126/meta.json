@@ -1,0 +1,44 @@
+{
+  "date_ct": "2026-10-05 17:41 CDT",
+  "ollama_version": "0.35.1",
+  "model": "qwen2.5:3b-instruct",
+  "quantization": "Q4_K_M",
+  "parameter_size": "3.1B",
+  "hardware": {
+    "cpu": "Intel Xeon Processor 8 cores",
+    "ram_total_gib": 15,
+    "gpu": "none (CPU inference)",
+    "disk_avail_gib": 118
+  },
+  "smoke_tok_s": 13.547,
+  "install": "static binary extracted to /workspace/ollama-install (no systemd); ollama serve background",
+  "seed": 42,
+  "scores": {
+    "arc_challenge": {
+      "n": 50,
+      "correct": 35,
+      "accuracy": 0.7
+    },
+    "gsm8k": {
+      "n": 25,
+      "correct": 8,
+      "accuracy": 0.32
+    },
+    "humaneval": {
+      "n": 15,
+      "correct": 3,
+      "pass_at_1": 0.2
+    },
+    "gitbook_quiz_alone_strict": {
+      "n": 25,
+      "correct": 7,
+      "accuracy": 0.28
+    },
+    "gitbook_quiz_rag_strict": {
+      "n": 25,
+      "correct": 18,
+      "accuracy": 0.72
+    }
+  },
+  "report": "/workspace/evals/BASELINE-LOCAL.md"
+}

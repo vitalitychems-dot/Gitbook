@@ -1,0 +1,3431 @@
+{
+  "Zz": {
+    "count": 7876,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:archive/paths",
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "collink1007-XXX": {
+    "count": 983,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "tessera-complete-archives": {
+    "count": 328,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "tessera-grok-handoff-complete": {
+    "count": 328,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "5t": {
+    "count": 323,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "olive-giant-ever-glade": {
+    "count": 231,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:archive/paths",
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "Gitbook": {
+    "count": 104,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md",
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "TESSERA": {
+    "count": 94,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md",
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md",
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "T44": {
+    "count": 84,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "Grok-ready": {
+    "count": 66,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "XL1": {
+    "count": 66,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "collink1007-amber-flame-tiger-sand": {
+    "count": 49,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "tessera-grok-handoff": {
+    "count": 40,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-staging/archive-map.md",
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "collink1007-z": {
+    "count": 29,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "TESS": {
+    "count": 20,
+    "sources": [
+      "Gitbook:archive/paths",
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "Gitbook:posts/2026-10-07-consolidation-audit.md",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-repo-map.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "Tesseracxt9": {
+    "count": 15,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "Everything": {
+    "count": 12,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "TX": {
+    "count": 12,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:archive/paths",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "Tx17-9": {
+    "count": 11,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "Tesseract-AI-5": {
+    "count": 10,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "Tx13": {
+    "count": 10,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "8-2": {
+    "count": 9,
+    "sources": [
+      "Gitbook:archive/paths"
+    ]
+  },
+  "tessera-unified": {
+    "count": 9,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "vitality": {
+    "count": 9,
+    "sources": [
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "vitalitychems-dot/TESSERA": {
+    "count": 9,
+    "sources": [
+      "Gitbook:history/source-index/z-repository-index.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "tessera-coordination": {
+    "count": 7,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "Tessera-main": {
+    "count": 7,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "tessera-replit": {
+    "count": 7,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "archive/moved": {
+    "count": 6,
+    "sources": [
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "artifacts/api-server": {
+    "count": 6,
+    "sources": [
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "tessera-gitbook": {
+    "count": 6,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/repo-audit.tsv",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "vitalitychems-dot/Gitbook": {
+    "count": 6,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "GitbookAI": {
+    "count": 5,
+    "sources": [
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md",
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "TESSERA/Gitbook": {
+    "count": 4,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "local:consolidation/REPOS.md",
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "vitalitychems-dot/Zz": {
+    "count": 4,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "Archive/handoff": {
+    "count": 3,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "archive/preserved": {
+    "count": 3,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "archives/source-repositories": {
+    "count": 3,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "artifacts/tessera": {
+    "count": 3,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "audit/runtime": {
+    "count": 3,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "auth/database": {
+    "count": 3,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "collin-keane/Tessera": {
+    "count": 3,
+    "sources": [
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "collink1007/fleet-moss-monarch-rapid": {
+    "count": 3,
+    "sources": [
+      "Gitbook:archive/.../github___search_repositories-....json",
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "collink1007/Vitalitychems": {
+    "count": 3,
+    "sources": [
+      "Gitbook:archive/.../github___search_repositories-....json",
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "collink1007/XXX": {
+    "count": 3,
+    "sources": [
+      "Gitbook:archive/.../github___search_repositories-....json",
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "data/ingest": {
+    "count": 3,
+    "sources": [
+      "Gitbook:history/source-index/z-repository-index.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "Empty/placeholder": {
+    "count": 3,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md",
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "Gitbook/pull": {
+    "count": 3,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "personal/secret-class": {
+    "count": 3,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "review/image-text": {
+    "count": 3,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/1T": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/5t": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/Grok-ready": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/T44": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/TESS": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/tessera-complete-archives": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/tessera-grok-handoff": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vitalitychems-dot/tessera-grok-handoff-complete": {
+    "count": 3,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "0x0funky/agent-sprite-forge": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "269652/artificial-consciousness-ai": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "269652/artificial-consciousness-blueprint": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "5t/T44": {
+    "count": 2,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "adamgallas/FireFly-v1": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "adamgallas/FireFly-v2": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "adamgallas/firefly_v1_cifar_test": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "adamgallas/SpinalDLA": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "agents/memory": {
+    "count": 2,
+    "sources": [
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "alexander-turner/attainable-utility-preservation": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "androoAGI/starnet": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "archives/source-variants": {
+    "count": 2,
+    "sources": [
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "artifacts/mockup-sandbox": {
+    "count": 2,
+    "sources": [
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "artifacts/z-app": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "BabylonJS/Documentation": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "BindsNET/bindsnet": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/Brain-Cog": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/CACE-Net": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/casc": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/ETC": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/msg": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/PSU": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/sgad": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/TKS": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Brain-Cog-Lab/Transfer-for-DVS": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "BrainCog-X/Brain-Cog": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "braincog-X/Brain-Cog": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "BrainCog-X/tonic_braincog": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "brian-team/brian2": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "browser/runtime": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "bryc/code": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "cognitivecomputations/agi-memory": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "colbymchenry/codegraph": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "collink1007-XXX/tess": {
+    "count": 2,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "collink1007/amber-flame-tiger-sand": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "commonsense/conceptnet5": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "conan-io/cmake-conan": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Coordination/source": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "Cortical-Labs/cl-sdk": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "cycle/chamber-text": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "deepmind/deepmind-research": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "DeepVoltaire/AutoAugment": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "donmccurdy/three-pathfinding": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "EfekanSalman/NeuroConscious": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "empty/HEAD": {
+    "count": 2,
+    "sources": [
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "enricoros/big-AGI": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "ericjang/gumbel-softmax": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "facebookresearch/tribev2": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "fangwei123456/spikingjelly": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "FloyedShen/tonic": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "FoundationAgents/OpenManus": {
+    "count": 2,
+    "sources": [
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "future-agi/future-agi": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "FutureAIGuru/BrainSimII": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "generated/archive": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "ggerganov/llama.cpp": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "HandingWang/RF-CMOCO": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "heygen-com/hyperframes": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "history/coordination": {
+    "count": 2,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "history/recovered": {
+    "count": 2,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "hmans/miniplex": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "huggingface/text-generation-inference": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "HYB-006/007": {
+    "count": 2,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "hyperspaceai/agi": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "ikostrikov/pytorch-ddpg-naf": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "ildoonet/pytorch-gradual-warmup-lr": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "imports/trees": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "isaac-mason/recast-navigation-js": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "jacobgil/pytorch-grad-cam": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "jakearchibald/idb": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "jbhinky/Theophilus-UDC": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "jeshraghian/snntorch": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "JuliusBrussee/caveman": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "ku2482/fqf-iqn-qrdqn.pytorch": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "lib/tessera": {
+    "count": 2,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "lichess-org/chessground": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "localForage/localForage": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "lyh983012/ES-imagenet-master": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "maximecb/gym-minigrid": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "mesh/roles": {
+    "count": 2,
+    "sources": [
+      "local:full-picture/INVENTORY.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "migration-review/content-disposition-manifest.jsonl": {
+    "count": 2,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "mit-han-lab/once-for-all": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "mksglu/context-mode": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "moved/summarized": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "msu-coinlab/pymoo": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "mvschwarz/openrig": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "mxgmn/WaveFunctionCollapse": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "NateTheGreatt/bitECS": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "NVIDIA/OpenShell": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "obra/superpowers": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "open-jarvis/OpenJarvis": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "openai/baselines": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "openai/gym": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "openai/gym-http-api": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "OpenCausaLab/Awesome-LLM-Consciousness": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "OpenManus/OpenManus": {
+    "count": 2,
+    "sources": [
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "oxwhirl/smac": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Panniantong/Agent-Reach": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "PGlite/Postgres": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md",
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "phaserjs/phaser": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "PIX2NVS/NVS2Graph": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pkuxmq/OTTT-SNN": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pmndrs/cannon-es": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pmndrs/drei": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pmndrs/react-three-rapier": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pybind/pybind11": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "python-lsp/python-lsp-server": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pytorch/examples": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pytorch/pytorch": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "pytorch/vision": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "quantum/gate": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "quantum/state": {
+    "count": 2,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "quark0/darts": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "QuixiAI/Hexis": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "recastnavigation/recastnavigation": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "replit/replit-cursor-plugin": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "repos/vitalitychems-dot": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "rgeirhos/texture-vs-shape": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "rohansx/agidb": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "rust-lang/crates.io-index": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "rust-lang/rust-analyzer": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "safety/privacy": {
+    "count": 2,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "Sairamg18814/shvayambhu": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "SanderMertens/ecs-faq": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "screenpipe/screenpipe": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "seba-1511/dist_tuto.pth": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "siddhant-rajhans/cortexlab": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "singnet/das": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "singnet/das-toolbox": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "songrotek/DDPG": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "spacejack/carphysics2d": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "sponsors/ai": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "src/lib": {
+    "count": 2,
+    "sources": [
+      "local:consolidation/REPOS.md",
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "starry-sky6688/MADDPG": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Steake/GodelOS": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "SWE-bench/SWE-bench": {
+    "count": 2,
+    "sources": [
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "SYNTAEXIST-AI/TPIS-AGI-Architecture": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "tensorflow/tpu": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Tessera/Grok": {
+    "count": 2,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "TESSERA/pull": {
+    "count": 2,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "theelderemo/Project-Aura": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "TheTesseractAI/18": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "three-types/three-ts-types": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "thu-ml/tianshou": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "tlcdv/the_consciousness_ai": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "tomgoldstein/loss-landscape": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "topics/agi": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "topics/cognitive-architecture": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "topics/consciousness": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "topics/emergent-systems": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "topics/global-workspace-theory": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "trailhq/Graft": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "TransformerOptimus/SuperAGI": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "trueagi-io/hyperon-experimental": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "trueagi-io/jetta": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "trueagi-io/metta-examples": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "trueagi-io/protobuf-metta": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "user-attachments/assets": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "venturaEffect/the_consciousness_ai": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "vercel/ai": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Vercel/Nitro": {
+    "count": 2,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "vitalitychems-dot/Everything": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "vitalitychems-dot/tessera-coordination": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "vitalitychems-dot/tessera-unified": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "vitalitychems-dot/TX": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "vitejs/vite": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "vllm-project/vllm": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "wayou/t-rex-runner": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "web/API": {
+    "count": 2,
+    "sources": [
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md",
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "WingedGuardian/GENesis-AGI": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "xxx/Brain-Cog": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "YangyulinAi/Neurotech-Controls-for-AGI-Motivational-Framework": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/CORTEXIA-Framework": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/Drugs-Simulato-R": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/HumanBrain": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "yatrogenesis/HumanBrain": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/iatrogene-sys": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/lirs-lab": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/Materials-Simulato-R": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Yatrogenesis/Simulato-R_v2.0": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "yn-sun/e2epp": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "yoannmoinet/nipplejs": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "youngbryan97/aura": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "yourusername/godelOS": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Zae-Project/brain-emulation": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "zai-org/GLM-5": {
+    "count": 2,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt",
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Zz/artifacts": {
+    "count": 2,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md",
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "008/017": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "06_SAFE_SOURCE_FILES/owner-history": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "06_SAFE_SOURCE_FILES/user-provided-text": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "1/5t": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "1inch/1inch-v2-contracts": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "26/312": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "5min/size": {
+    "count": 1,
+    "sources": [
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "aave/aave-v3-core": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "ACCEPTED/RETAINED": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "accounts/orgs": {
+    "count": 1,
+    "sources": [
+      "local:build-plan-2026-10-12/REPO-INVENTORY.md"
+    ]
+  },
+  "activepieces/activepieces": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "agents/outputs": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "AGI/consciousness": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "AI/DB": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "algorithms/UI": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "alpacahq/alpaca-trade-api-js": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "amber-flame-tiger-sand": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "app/data": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "app/document": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "app/runtime": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "application/archive": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "application/source": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "approval-gate/admission": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "appwrite/appwrite": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "archive/drive-rest": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "archive/from-gitbook": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "archive/generated": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "archive/sections": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "archives/drive-export": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "archives/migration-review": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "artifacts/vitality-supply": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "attribution/provenance": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "AudiusProject/audius-protocol": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "auth/payment": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "AUTOMATIC1111/stable-diffusion-webui": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "balancer/balancer-v2-monorepo": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "BerriAI/litellm": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "bharanidharanrangaraj/interfacing_rtc_with_raspberrypi_pico": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "binance/binance-connector-node": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "brain-consciousness/reports": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "branch/media": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "branch/PR": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "branch/runtime": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md"
+    ]
+  },
+  "branches/PRs": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "browser-use/browser-use": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Build/Security": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "build/test": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "CanastaWiki/Canasta-CLI": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "catalog/metadata": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "ccxt/ccxt": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "chamber/desk": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "CL1/Cloud": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "ClickHouse/ClickHouse": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Code/config": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "code/data": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "coinbase/coinbase-pro-node": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "collink1007/slate-dove-coral-hazel": {
+    "count": 1,
+    "sources": [
+      "Gitbook:archive/.../github___search_repositories-....json"
+    ]
+  },
+  "compound-finance/compound-protocol": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "continue-dev/continue": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "coordination/handoff": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "copied/moved": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "coral-xyz/anchor": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "CryptoSignal/Crypto-Signal": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "curvefi/curve-contract": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "customer/archive": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "data/drive": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "data/ingress-audit.jsonl": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "data/media": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md"
+    ]
+  },
+  "data/school": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "deepseek-ai/DeepSeek-V3": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "dexaai/dexter": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "distilled/ingested": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "Documentation/other": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "Drakkar-Software/OctoBot": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "drive-rest/price-list.xlsx": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "duplicate/candidate": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "duplicate/empty": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "duplicate/superseded": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "empty/100": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "empty/placeholder": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "EMPTY/TRIVIAL": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "engineering/product": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "explosion/spaCy": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "fastai/fastai": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "file/hash": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "filecoin-project/lotus": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Flag/route": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "flashbots/mev-boost": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "forum/conversation": {
+    "count": 1,
+    "sources": [
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md"
+    ]
+  },
+  "freqtrade/freqtrade": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "gadicc/node-yahoo-finance2": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "geekan/MetaGPT": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "generated/static": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "Gil-ADDA/Piezoelectric-Energy-Generation-HarvestWalk": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Gitbook/history": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md"
+    ]
+  },
+  "Gitbook/vitality": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "github/workflows": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "google/mediapipe": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Handoff/archive": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "handoff/archive": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "health/security": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "history/handoffs": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "huggingface/transformers": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "human/model": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "humans/agents": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "hummingbot/hummingbot": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "HYB-002/HYB-018": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "HYB-005/012": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "HYB-006/HYB-014": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "HYB-008/011": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "HYB-008/017": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "HYB-008/HYB-017": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "HYB-009/012": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "image/archive": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md"
+    ]
+  },
+  "image/text": {
+    "count": 1,
+    "sources": [
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md"
+    ]
+  },
+  "Images/fonts": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "infiniflow/ragflow": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "instruction/provenance": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "jesse-ai/jesse": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "joaomdmoura/crewAI": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "jupyterhub/outreachy": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "kortix-ai/suna": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "kyegomez/swarms": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "langchain-ai/langchain": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "langchain-ai/langgraph": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "langflow-ai/langflow": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "langgenius/dify": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "lib/ingestion": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "license/privacy": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "line/item": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "links/refs": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "LLM/cache": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "lqnankai/Music-Dataset": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/mentioned-repos.txt"
+    ]
+  },
+  "Manus/OpenManus": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "media/data": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md"
+    ]
+  },
+  "mem0ai/mem0": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "mementum/backtrader": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "memory/audit": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "microsoft/autogen": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "microsoft/semantic-kernel": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "migration/deployment": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "Mintplex-Labs/anything-llm": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "mockup/Tessera": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "Moderator/Father": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "modules/routes": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "monero-project/monero": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "moved/collink1007-fleet-moss-monarch-rapid": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "n8n-io/n8n": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "numpy/numpy": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "OCR/transcript": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "OCR/transcripts": {
+    "count": 1,
+    "sources": [
+      "TESSERA:CONSOLIDATION_TWO_REPOS.md"
+    ]
+  },
+  "ollama/ollama": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "open-webui/open-webui": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "opencv/opencv": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "OpenHands/OpenHands": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "operating/handoff": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "owner/agent": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "owner/repository": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "owner/staff": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "Owner/task": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "package/directory": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "pandas-dev/pandas": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "path/behavior": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "paths/modules": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "ports/base": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "ports/DB": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "PR/branch-only": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "preview/src": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "Product/runtime": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "product/storefront": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "protected/uninspected": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "provenance/disposition": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "provenance/license": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "Provisional/TBD": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "public-apis/public-apis": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "public/separate": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "RAG/memory": {
+    "count": 1,
+    "sources": [
+      "local:repo-lab/REPOS.csv"
+    ]
+  },
+  "ranaroussi/yfinance": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "ref-count/sign-off": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "retention/expiry": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "rights/terms": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "run-llama/llama_index": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "runs/37382015797": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "runs/37898916804": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "runtime/data": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "runtime/media": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/CURRENT-REPOSITORY-STATUS.md"
+    ]
+  },
+  "scrapy/scrapy": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "screen/component": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "Secrets/Credentials": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "secrets/private": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "Security/dependency": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "sensitive/personal": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "Significant-Gravitas/AutoGPT": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "smoke/test": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "solana-labs/solana-program-library": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Source-index/archive": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/DELETION-MANIFEST.md"
+    ]
+  },
+  "source-index/import": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "source-versions/tessera-unified": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "source/data": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "source/document": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "source/license": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "sovereign-archive/T5": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "sovereign-origin/tessera-sovereign-complete": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "sovereign-origin/tessera-sovereign-ultimate": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "sovereign-origin/tesseract-quantum-agi": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "sovereign-origin/tesseract-v4-ollama": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "sovereign-origin/TessV1": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "src/routes": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "Start/router": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "StockSharp/StockSharp": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "storefront/ABC-store": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "storefront/product": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FUNCTIONAL-MERGE-MATRIX.md"
+    ]
+  },
+  "storefront/UI": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "stripe/stripe-node": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "summaries/indexes": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "Superalgos/Superalgos": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "SushiSwap/sushiswap": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "SWE-agent/SWE-agent": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TA-Lib/ta-lib-python": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TabbyML/tabby": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "tensorflow/tensorflow": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "tesseract-swarm/node-runtime": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "test/typecheck": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "tests/configuration": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/ALL-REPOSITORIES-ROUTING-2026-10-07.md"
+    ]
+  },
+  "text/provenance": {
+    "count": 1,
+    "sources": [
+      "TESSERA:docs/CONSOLIDATION.md"
+    ]
+  },
+  "theme/runtime": {
+    "count": 1,
+    "sources": [
+      "Gitbook:merge/FULL-AUDIT-SUMMARY.md"
+    ]
+  },
+  "therealdreg/pico-freq-meter-tcxo-ref": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TheTesseractAI/consolidated-project-all-in-one": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TheTesseractAI/Tesseract-Sovereign-Moon-v2-Consolidated": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TheTesseractAI/Tesseract-Sovereign-Moon-v3.0": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TheTesseractAI/Tesseract-Unified-Ecosystem": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TheTesseractAI/Tesseract2.0": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "TheTesseractAI/Tesseraxt-Sovereign-Brain": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "title/content": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "twopirllc/pandas-ta": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "Uniswap/v3-core": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "unset/false": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "vector/decision": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "vercel/output": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "vitality/Gitbook": {
+    "count": 1,
+    "sources": [
+      "local:hyb-repo-map.md"
+    ]
+  },
+  "vitalitychems-dot/olive-giant-ever-glade": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "VRSEN/agency-swarm": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "wallet/customer": {
+    "count": 1,
+    "sources": [
+      "Gitbook:intake/HYBRID-CONSOLIDATION-BACKLOG.md"
+    ]
+  },
+  "Wallet/payments": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "workspace/build-gate": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/consolidation": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "workspace/full-picture": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "workspace/gitbook-cordnation": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/gitbookai": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/hyb-selffix": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/hyb012": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/improvements": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/repo-lab": {
+    "count": 1,
+    "sources": [
+      "local:consolidation/REPOS.md"
+    ]
+  },
+  "workspace/security-gate": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "workspace/tessera-gate": {
+    "count": 1,
+    "sources": [
+      "local:full-picture/INVENTORY.md"
+    ]
+  },
+  "xai-org/grok-1": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "xAI/Grok": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  },
+  "xmrig/xmrig": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "yearn/yearn-vaults-v3": {
+    "count": 1,
+    "sources": [
+      "Gitbook:mesh/GITHUB-REPOS.txt"
+    ]
+  },
+  "z-app/imports": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "z-app/src": {
+    "count": 1,
+    "sources": [
+      "local:hyb-staging/archive-map.md"
+    ]
+  },
+  "ZIP/Deflate": {
+    "count": 1,
+    "sources": [
+      "Gitbook:history/handoffs/legacy-handoff-notes.md"
+    ]
+  }
+}

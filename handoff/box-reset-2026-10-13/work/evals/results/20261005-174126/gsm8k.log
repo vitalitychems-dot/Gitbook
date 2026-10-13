@@ -1,0 +1,117 @@
+[1/25] idx=588 ok=True gold=52 pred=52 tok/s=3.4260710958696268
+[2/25] idx=1214 ok=True gold=5 pred=5 tok/s=3.7312232022383607
+[3/25] idx=57 ok=False gold=83 pred=. tok/s=4.114700623062113
+[4/25] idx=906 ok=False gold=10 pred=. tok/s=11.602754675252948
+[5/25] idx=1252 ok=True gold=70 pred=70 tok/s=3.4293463680261893
+[6/25] idx=618 ok=False gold=36 pred=3. tok/s=6.296887212517582
+[7/25] idx=599 ok=False gold=48 pred=20 tok/s=6.154445916436184
+[8/25] idx=289 ok=False gold=16 pred=. tok/s=4.674288800568364
+[9/25] idx=608 ok=False gold=8 pred=35 tok/s=4.864758571533576
+[10/25] idx=400 ok=True gold=48 pred=48 tok/s=2.5380342487293786
+[11/25] idx=237 ok=True gold=90 pred=90 tok/s=5.783952039469689
+[12/25] idx=616 ok=True gold=10 pred=10 tok/s=16.700825881665867
+[13/25] idx=672 ok=False gold=2 pred=8 tok/s=3.831974618916112
+[14/25] idx=1132 ok=False gold=45000 pred=5000 tok/s=12.942673562010826
+[15/25] idx=463 ok=False gold=18 pred=3 tok/s=12.595634526805899
+[16/25] idx=222 ok=False gold=140 pred=50 tok/s=16.760369791371367
+[17/25] idx=945 ok=False gold=17 pred=6 tok/s=17.1834222933425
+[18/25] idx=238 ok=False gold=68 pred=2 tok/s=16.504288536224333
+[19/25] idx=730 ok=False gold=8 pred=. tok/s=15.896154397360641
+[20/25] idx=55 ok=True gold=14 pred=14 tok/s=15.430391312970244
+[21/25] idx=772 ok=False gold=50 pred=6 tok/s=15.885911356118198
+[22/25] idx=176 ok=True gold=100 pred=100 tok/s=15.883415728552427
+[23/25] idx=15 ok=False gold=125 pred=2. tok/s=16.91656933031267
+[24/25] idx=66 ok=False gold=48 pred=4 tok/s=12.315504363681463
+[25/25] idx=479 ok=False gold=15400 pred=3. tok/s=16.948472538773935
+{
+  "benchmark": "GSM8K",
+  "split": "test",
+  "n": 25,
+  "seed": 42,
+  "item_ids": [
+    "gsm8k_test_588",
+    "gsm8k_test_1214",
+    "gsm8k_test_57",
+    "gsm8k_test_906",
+    "gsm8k_test_1252",
+    "gsm8k_test_618",
+    "gsm8k_test_599",
+    "gsm8k_test_289",
+    "gsm8k_test_608",
+    "gsm8k_test_400",
+    "gsm8k_test_237",
+    "gsm8k_test_616",
+    "gsm8k_test_672",
+    "gsm8k_test_1132",
+    "gsm8k_test_463",
+    "gsm8k_test_222",
+    "gsm8k_test_945",
+    "gsm8k_test_238",
+    "gsm8k_test_730",
+    "gsm8k_test_55",
+    "gsm8k_test_772",
+    "gsm8k_test_176",
+    "gsm8k_test_15",
+    "gsm8k_test_66",
+    "gsm8k_test_479"
+  ],
+  "indices": [
+    588,
+    1214,
+    57,
+    906,
+    1252,
+    618,
+    599,
+    289,
+    608,
+    400,
+    237,
+    616,
+    672,
+    1132,
+    463,
+    222,
+    945,
+    238,
+    730,
+    55,
+    772,
+    176,
+    15,
+    66,
+    479
+  ],
+  "indices_sorted": [
+    15,
+    55,
+    57,
+    66,
+    176,
+    222,
+    237,
+    238,
+    289,
+    400,
+    463,
+    479,
+    588,
+    599,
+    608,
+    616,
+    618,
+    672,
+    730,
+    772,
+    906,
+    945,
+    1132,
+    1214,
+    1252
+  ],
+  "correct": 8,
+  "accuracy": 0.32,
+  "model": "qwen2.5:3b-instruct",
+  "wall_s_total": 435.6847994327545,
+  "grading": "numeric equality after extracting #### or last number; commas stripped"
+}

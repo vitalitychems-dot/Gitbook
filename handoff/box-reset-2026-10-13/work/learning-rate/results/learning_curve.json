@@ -1,0 +1,102 @@
+{
+  "train_init": {
+    "method": "curve_train0",
+    "n": 25,
+    "correct": 20,
+    "accuracy": 0.8,
+    "wall_s": 62.43989872932434,
+    "seed": 42,
+    "model": "qwen2.5:3b-instruct",
+    "by_split": {
+      "seen": {
+        "n": 25,
+        "correct": 20,
+        "accuracy": 0.8
+      }
+    }
+  },
+  "n_feedback_available": 5,
+  "points": [
+    {
+      "feedback_events": 0,
+      "feedback_frac": 0,
+      "n_train_wrong": 5,
+      "heldout": {
+        "n": 20,
+        "correct": 15,
+        "accuracy": 0.75
+      },
+      "wall_s": 42.52845883369446,
+      "summary": {
+        "method": "curve_fb0",
+        "n": 20,
+        "correct": 15,
+        "accuracy": 0.75,
+        "wall_s": 42.52845883369446,
+        "seed": 42,
+        "model": "qwen2.5:3b-instruct",
+        "by_split": {
+          "heldout": {
+            "n": 20,
+            "correct": 15,
+            "accuracy": 0.75
+          }
+        }
+      }
+    },
+    {
+      "feedback_events": 2,
+      "feedback_frac": 0.5,
+      "n_train_wrong": 5,
+      "heldout": {
+        "n": 20,
+        "correct": 15,
+        "accuracy": 0.75
+      },
+      "wall_s": 26.671308755874634,
+      "summary": {
+        "method": "curve_fb2",
+        "n": 20,
+        "correct": 15,
+        "accuracy": 0.75,
+        "wall_s": 26.671308755874634,
+        "seed": 42,
+        "model": "qwen2.5:3b-instruct",
+        "by_split": {
+          "heldout": {
+            "n": 20,
+            "correct": 15,
+            "accuracy": 0.75
+          }
+        }
+      }
+    },
+    {
+      "feedback_events": 5,
+      "feedback_frac": 1.0,
+      "n_train_wrong": 5,
+      "heldout": {
+        "n": 20,
+        "correct": 14,
+        "accuracy": 0.7
+      },
+      "wall_s": 27.077620029449463,
+      "summary": {
+        "method": "curve_fb5",
+        "n": 20,
+        "correct": 14,
+        "accuracy": 0.7,
+        "wall_s": 27.077620029449463,
+        "seed": 42,
+        "model": "qwen2.5:3b-instruct",
+        "by_split": {
+          "heldout": {
+            "n": 20,
+            "correct": 14,
+            "accuracy": 0.7
+          }
+        }
+      }
+    }
+  ]
+}

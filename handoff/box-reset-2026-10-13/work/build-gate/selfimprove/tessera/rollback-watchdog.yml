@@ -1,0 +1,122 @@
+# Target: TESSERA .github/workflows/rollback-watchdog.yml
+# Needs: repo secret AUTOMERGE_ADMIN_TOKEN (fine-grained PAT, this repo only, "Variables: read/write").
+#   GITHUB_TOKEN cannot write repository variables, so `gh variable set` needs that PAT.
+# Needs: label "auto-rollback" to exist (gh pr create fails otherwise).
+name: rollback-watchdog
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_run:
+    workflows: [required-gate]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+concurrency:
+  group: rollback-watchdog
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    # Schedule/dispatch: rerun the full gate (tests, hygiene incl. gitleaks, score-drop vs previous main baseline) on main tip.
+    if: github.event_name != 'workflow_run'
+    uses: ./.github/workflows/required-gate.yml
+    permissions:
+      contents: read
+      actions: read
+
+  decide:
+    needs: verify
+    if: always()
+    runs-on: ubuntu-latest
+    outputs:
+      bad: ${{ steps.d.outputs.bad }}
+      sha: ${{ steps.d.outputs.sha }}
+      reason: ${{ steps.d.outputs.reason }}
+    steps:
+      - id: d
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = workflow_run ]; then
+            sha="${{ github.event.workflow_run.head_sha }}"; concl="${{ github.event.workflow_run.conclusion }}"
+            ev="${{ github.event.workflow_run.event }}"
+            # Only judge push-to-main gate runs; PR runs don't describe main.
+            if [ "$ev" != push ]; then echo "bad=0" >> "$GITHUB_OUTPUT"; exit 0; fi
+          else
+            sha="${{ github.sha }}"; concl="${{ needs.verify.result }}"
+          fi
+          echo "sha=$sha" >> "$GITHUB_OUTPUT"
+          case "$concl" in
+            success|skipped) echo "bad=0" >> "$GITHUB_OUTPUT" ;;
+            cancelled) echo "bad=0" >> "$GITHUB_OUTPUT"; echo "::warning::gate cancelled; not judging" ;;
+            *) echo "bad=1" >> "$GITHUB_OUTPUT"; echo "reason=required-gate $concl on $sha (red check, score drop, or gitleaks hit)" >> "$GITHUB_OUTPUT" ;;
+          esac
+
+  rollback:
+    needs: decide
+    if: needs.decide.outputs.bad == '1'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write        # push the revert-<sha> branch (never main, never force)
+      pull-requests: write   # open the auto-rollback PR
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with: { ref: main, fetch-depth: 50 }
+      - name: Freeze automerge first
+        env: { GH_TOKEN: "${{ secrets.AUTOMERGE_ADMIN_TOKEN }}" }
+        run: gh variable set AUTOMERGE --body 0 -R "$GITHUB_REPOSITORY"
+      - name: Create revert branch and PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SHA: ${{ needs.decide.outputs.sha }}
+          REASON: ${{ needs.decide.outputs.reason }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          short=${SHA:0:12}; branch="revert-$short"
+          if git ls-remote --exit-code --heads origin "$branch" >/dev/null; then echo "$branch already exists; not duplicating."; exit 0; fi
+          git config user.name "vitalitychems-dot"
+          git config user.email "332565808+vitalitychems-dot@users.noreply.github.com"
+          git checkout -b "$branch" origin/main
+          # Squash merges have one parent; true merge commits need -m 1 (mainline = previous main).
+          if [ "$(git rev-list --parents -n1 "$SHA" | wc -w)" -gt 2 ]; then
+            git revert --no-edit -m 1 "$SHA"
+          else
+            git revert --no-edit "$SHA"
+          fi
+          git push origin "$branch"     # plain push of a new branch; never --force
+          gh pr create --base main --head "$branch" --label auto-rollback \
+            --title "Auto-rollback: revert $short" \
+            --body "$(printf 'Automatic revert by rollback-watchdog.\n\nReason: %s\nRun: %s/%s/actions/runs/%s\n\nAUTOMERGE has been set to 0. A human or the mesh must review before merging.' "$REASON" "$GITHUB_SERVER_URL" "$GITHUB_REPOSITORY" "$GITHUB_RUN_ID")"
+          echo "Opened revert PR for $SHA" >> "$GITHUB_STEP_SUMMARY"
+
+  dead-man:
+    # If the last 2 scheduled cycles did not produce a successful watchdog run, freeze automerge.
+    # Note: this runs inside the watchdog itself, so it catches failing/flaky cycles; if Actions stops
+    # scheduling entirely nothing here runs, so the automerge side must also treat a stale
+    # last-success as AUTOMERGE=0 (see README open questions).
+    if: github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          ADMIN_TOKEN: ${{ secrets.AUTOMERGE_ADMIN_TOKEN }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          last=$(gh run list -R "$GITHUB_REPOSITORY" --workflow rollback-watchdog.yml --event schedule \
+                 --status success --limit 1 --json createdAt --jq '.[0].createdAt // empty')
+          now=$(date -u +%s)
+          age=$(( now - $( [ -n "$last" ] && date -u -d "$last" +%s || echo 0 ) ))
+          echo "Last successful scheduled watchdog: ${last:-never} (${age}s ago)" >> "$GITHUB_STEP_SUMMARY"
+          if [ "$age" -gt 1800 ]; then   # 2 cycles x 15 min
+            GH_TOKEN="$ADMIN_TOKEN" gh variable set AUTOMERGE --body 0 -R "$GITHUB_REPOSITORY"
+            echo "Dead-man: no watchdog success in 2 cycles -> AUTOMERGE=0" >> "$GITHUB_STEP_SUMMARY"
+          fi
