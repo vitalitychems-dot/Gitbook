@@ -1,0 +1,5 @@
+props_manila.json, props_nairobi.json, props_guadalupe.json are unmodified copies of IBM backend-property
+snapshots from Qiskit/qiskit-ibm-runtime (Copyright IBM and contributors), licensed under the Apache License 2.0
+(https://www.apache.org/licenses/LICENSE-2.0). Source (fetched 2026-10-13):
+https://raw.githubusercontent.com/Qiskit/qiskit-ibm-runtime/main/qiskit_ibm_runtime/fake_provider/backends/{manila,nairobi,guadalupe}/props_{name}.json
+They are used only as noise-model inputs for simulation.
