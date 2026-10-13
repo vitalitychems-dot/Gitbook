@@ -1,0 +1,3 @@
+# tools/status --since per-agent state files (default ./.status-since.json)
+.status-since*.json
+*.status-since.json
