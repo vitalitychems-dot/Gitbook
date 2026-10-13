@@ -28,7 +28,7 @@ FOLLOW-UP: the rows marked UNCLAIMED or BLOCKED. Re-run this refresh when Gitboo
 | HYB-012, HYB-014, HYB-017, HYB-020, HYB-021 | Replit / Manus / Tessera | DONE or REJECTED | HYB-012 `50876d40`. HYB-014 `5628e422`. HYB-017 rejected for Tessera. HYB-020 routing record. HYB-021 `9e218bc` and Gitbook `39e892e`. |
 | SITE-001 managed health-path evidence and exact release payload | Replit | OPEN | No SITE-001 evidence is recorded in this ledger or on issue #2. Sync Repl `1` from TESSERA main first. Never overwrite main from a behind Repl. |
 | SITE-003 provenance, SITE-004 security review | Moderator, Security | UNCLAIMED | Publication still needs Father's exact release-payload approval. |
-| HYB-011 account refresh and HYB-015 GitbookAI rules summary | Gitbook desk | IN REVIEW | Branch `desk/gb-063-hyb-011` (GB-063). The desk says the four gates are not recorded on the diff. The GB-062 map still lists HYB-015 as unclaimed; this pull request is the claim. |
+| HYB-011 account refresh and HYB-015 GitMesh rules summary | Gitbook desk | IN REVIEW | Branch `desk/gb-063-hyb-011` (GB-063). The desk says the four gates are not recorded on the diff. The GB-062 map still lists HYB-015 as unclaimed; this pull request is the claim. |
 | TESSERA docs pointer at the consolidation map | Gitbook desk | IN REVIEW | Desk pull request on TESSERA. No product code. Gates not recorded. |
 | GB-061 rev 2, Gitbook pull request 39 | Ready lane | IN REVIEW | `ready/gb-061-rev2-archive-preserved` @ `71a8c78f`. Open since Oct 9. |
 | Gitbook pull request 40 (`cursor/father-yes-record-b14e`) | Cursor branch, draft | STALE | Draft since Oct 9. Edits `mesh/TODOS.md`. Not touched on this pass. Tessera or Father decides close or merge. |

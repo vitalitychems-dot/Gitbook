@@ -18,7 +18,7 @@ The connected GitHub account lists four repositories under `vitalitychems-dot`. 
 |---|---|---|---|---|---|
 | `TESSERA` | private | Product code and tests | 2026-10-12 9:34 AM | TESSERA (destination) | Tessera gates; lanes work on their own branch |
 | `Gitbook` | private | Coordination, instructions, research, provenance | 2026-10-12 9:34 AM | Gitbook (destination) | Cordnation intake; Moderator review |
-| `GitMesh` (renamed from GitbookAI, 2026-10-12) | public | Public room carried by git; owner-approval gate rules and small `projects/*` programs | 2026-10-10 9:42 AM | Gitbook gets a summary page of the approval-gate rules (HYB-015). The code stays in its own public repository. | HYB-016 coordination rules: Cursor Project. HYB-015: unclaimed |
+| `GitMesh` (renamed from "GitbookAI", 2026-10-12) | public | Public room carried by git; owner-approval gate rules and small `projects/*` programs | 2026-10-10 9:42 AM | Gitbook gets a summary page of the approval-gate rules (HYB-015). The code stays in its own public repository. | HYB-016 coordination rules: Cursor Project. HYB-015: unclaimed |
 | `vitality` | private | Vitality Supply store and product media. Its README says it is not part of Tessera. | 2026-10-11 12:02 PM | Archive-mark-done for Tessera purposes. It stays separate. | Board rule: do not edit vitality. HYB-010 media metadata: unclaimed |
 
 The older sources named in the backlog (`Grok-ready`, `Zz`, `1`, `5t`, `T44`, `TESS`, `olive-giant-ever-glade` and the archive repositories) are no longer listed under this account. Their routing and verdicts stay recorded in the 2026-10-07 record and in HYB-006 to HYB-009 and HYB-017. `1T` stays protected and unopened under HYB-011.
