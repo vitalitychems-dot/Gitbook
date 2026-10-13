@@ -1,5 +1,5 @@
 # PROPOSED intake/ entry — Top measured lessons by tokens per merged improvement
-Route: Gitbook Cordnation (approved by Tessera; feature branch only). Assigned by Mesh Admin Coordinator / Tessera (provisional).
+Tessera approval: reported via direct message to Gitbook Moderator, 2:54 PM CT, link pending
 Source: vitalitychems-dot/Gitbook @ aa9506f — mesh/scoreboard/metrics.jsonl (16 rows), agents.jsonl (4 rows). Scoreboard scripts untouched.
 
 Method: join metrics.jsonl `pr` to agents.jsonl `pr`; tokens/improvement = agents.tokens_est ÷ count of metrics rows with that PR. Lower = better. No self-grading; values are copied as recorded.
