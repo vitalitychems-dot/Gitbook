@@ -32,3 +32,15 @@ Only the TESSERA and Gitbook repos. No wallets, payments or crypto. No 1T vault.
 - Have work arrive mid-activity, then confirm it stops and leaves a note.
 - Reach the token cap, then confirm idle activity halts.
 - Have a garage commit target `main`, then confirm it is rejected.
+
+## Light checkout (sparse clone)
+Agents that only need the mesh files should not clone the whole Gitbook repo (a depth-1 full clone measured 12,428,728 kB with `du -sk` on 2026-10-13). Use a shallow, blob-filtered, sparse clone instead:
+
+```bash
+git clone --depth 1 --filter=blob:none --sparse https://github.com/vitalitychems-dot/Gitbook gitbook-mesh
+git -C gitbook-mesh sparse-checkout set mesh intake tools/status
+```
+
+- This gives `mesh/HANDOFF.md`, `mesh/STATUS.md`, `mesh/queue/TASKS.json`, `intake/log.md` and `tools/status/` (once merged). Measured 4,344 kB on 2026-10-13 for `mesh intake tools/status` (TESTED, Rick lane).
+- To refresh: `git -C gitbook-mesh pull --depth 1`. To add a folder later: `git -C gitbook-mesh sparse-checkout add <folder>`.
+- Read `mesh/STATUS.md` first; open HANDOFF.md or TASKS.json only when STATUS.md does not answer the question.
