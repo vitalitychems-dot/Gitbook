@@ -1,0 +1,75 @@
+{
+ "files_total": 50333,
+ "files_indexed": 16526,
+ "coverage": 0.3283,
+ "coverage_excl_shallow": 0.9987,
+ "by_status": {
+  "ok": 16526,
+  "shallow-skip": 33785,
+  "too-big": 22
+ },
+ "by_root": {
+  "/workspace/TESSERA-ro": {
+   "ok": 2949
+  },
+  "/workspace/full-picture": {
+   "ok": 19
+  },
+  "/workspace/gitbook-cordnation": {
+   "ok": 431
+  },
+  "/workspace/gitbook-gate-1e3bb50": {
+   "ok": 17
+  },
+  "/workspace/gitbook-gate-95993af": {
+   "ok": 6
+  },
+  "/workspace/gitbook-gate-beadc44": {
+   "ok": 17
+  },
+  "/workspace/gitbook-gate-e73fb185": {
+   "ok": 13
+  },
+  "/workspace/gitbook-gate-fb984ad": {
+   "ok": 17
+  },
+  "/workspace/gitbook-gate-feaeb55": {
+   "ok": 21
+  },
+  "/workspace/gitbook-gate-feaeb558": {
+   "ok": 20
+  },
+  "/workspace/improve-from-logs-2026-10-12": {
+   "ok": 94
+  },
+  "/workspace/rea-batch": {
+   "ok": 694,
+   "shallow-skip": 33785,
+   "too-big": 22
+  },
+  "/workspace/rick": {
+   "ok": 246
+  },
+  "/workspace/rick/src/Gitbook": {
+   "ok": 6090
+  },
+  "/workspace/tess-opt": {
+   "ok": 2927
+  },
+  "/workspace/tessera-brain": {
+   "ok": 20
+  },
+  "/workspace/tw": {
+   "ok": 2945
+  }
+ },
+ "blobs": 6053,
+ "chunks": 87147,
+ "chunk_refs": 99722,
+ "links": 0,
+ "bytes": 239271936,
+ "federated": [
+  "tesseract t5d.db (Eye events, live)",
+  "fullpicture graph.json (live)"
+ ]
+}

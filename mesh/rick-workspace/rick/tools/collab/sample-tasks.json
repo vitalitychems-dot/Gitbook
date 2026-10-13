@@ -1,0 +1,12 @@
+{"gate_cost": {"moderator": 1, "tessera": 1, "security": 2, "build": 2, "father": 1},
+ "tasks": [
+  {"id": "IDLE-MODE-r2", "lane": "rick", "cost": 1},
+  {"id": "PR55-qlab", "lane": "rick", "cost": 1, "code": true, "prio": 2},
+  {"id": "collab-bus", "lane": "rick", "cost": 3, "code": true},
+  {"id": "collab-sched", "lane": "rick", "cost": 3, "code": true, "needs": ["collab-bus"]},
+  {"id": "sanchez-fixes", "lane": "tessera", "cost": 4, "code": true},
+  {"id": "disk-cleanup", "lane": "mesh-cloud", "cost": 2, "prio": 3},
+  {"id": "GB-intake-backfill", "lane": "cordnation", "cost": 1},
+  {"id": "v3-graph-load", "lane": "rick", "cost": 2, "needs": ["collab-bus"]},
+  {"id": "v3-plan", "lane": "tessera", "cost": 2, "needs": ["v3-graph-load"]}
+ ]}

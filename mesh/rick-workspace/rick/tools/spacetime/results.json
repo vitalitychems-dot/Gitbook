@@ -1,0 +1,8 @@
+{
+ "frames": 48,
+ "res": "640x360",
+ "trail_ms": 886.0,
+ "mean_baseline_ms": 1078.5,
+ "contrast_std_trail": 34.0,
+ "contrast_std_mean": 5.3
+}

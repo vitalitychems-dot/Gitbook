@@ -1,0 +1,213 @@
+{
+ "checks": [
+  [
+   "all safe layers embedded (events/fires/heat/sats/probes/kp/cones)",
+   true,
+   {
+    "events": 452,
+    "fires": 1495,
+    "heat": 18,
+    "sats": 16693,
+    "probes": 24,
+    "kp": 58,
+    "cones": 21,
+    "census": {
+     "total": 16693,
+     "LEO": 15880,
+     "MEO": 183,
+     "GEO": 585,
+     "HEO": 45
+    }
+   }
+  ],
+  [
+   "drag moves map by pointer delta (300,200)",
+   true,
+   [
+    300,
+    200.00000000000023
+   ]
+  ],
+  [
+   "wheel zooms 4->19, keeps cursor point",
+   true,
+   {
+    "z": 19,
+    "center": [
+     41.8827,
+     -87.6233
+    ]
+   }
+  ],
+  [
+   "click marker expands details",
+   true,
+   {
+    "px": 640,
+    "py": 400,
+    "la": 64.941,
+    "lo": -150.836,
+    "hit": "M 1.4 - 11 km SW of Manley Hot Springs, Alaska",
+    "kind": "event"
+   }
+  ],
+  [
+   "click-to-zoom expand raises zoom by ~4",
+   true,
+   10
+  ],
+  [
+   "empty click reports coordinates",
+   true,
+   "64.76593, -151.57758\n\nHeat window: 2026-"
+  ],
+  [
+   "probe click shows Eye Shield defensive info (no people)",
+   true,
+   "Eye Shield probe (defensive)\nbruteforce \u00b7 high\nIP 203.0.113.50\nASN 0 \u00b7 CC ZZ\ngeo: unlocated_placeholder\n6 failed passwor"
+  ],
+  [
+   "refresh interval 5 min",
+   true,
+   300000
+  ],
+  [
+   "no remote scripts; no excluded tracking/malware terms in page code",
+   true,
+   []
+  ],
+  [
+   "EXCLUDED.md exists for Father",
+   true,
+   "/workspace/rick/tools/tessera-eye/v5/../EXCLUDED.md"
+  ],
+  [
+   "esri z19 tiles stream",
+   true,
+   {
+    "tiles": 24,
+    "fail": 0,
+    "median_ms": 358,
+    "p95_ms": 522,
+    "screen_full_s": 0.61
+   }
+  ],
+  [
+   "usgs z16 tiles stream",
+   true,
+   {
+    "tiles": 24,
+    "fail": 0,
+    "median_ms": 105,
+    "p95_ms": 108,
+    "screen_full_s": 0.2
+   }
+  ],
+  [
+   "gibs z8 tiles stream",
+   true,
+   {
+    "tiles": 24,
+    "fail": 0,
+    "median_ms": 203,
+    "p95_ms": 218,
+    "screen_full_s": 0.41
+   }
+  ],
+  [
+   "live refresh pulled multi-source events",
+   true,
+   {
+    "at": "2026-10-13T08:50:43.807Z",
+    "n": 452,
+    "ms": 1262.2999999998137,
+    "meta": {
+     "usgs": 233,
+     "eonet": 200,
+     "nws": 11,
+     "meteo": 8,
+     "kp": 58
+    }
+   }
+  ],
+  [
+   "KartaView keyless near click",
+   true,
+   {
+    "photos": 6,
+    "ms": 21938.899999999907,
+    "fields": [
+     "la",
+     "lo",
+     "dt",
+     "th",
+     "img"
+    ]
+   }
+  ]
+ ],
+ "metrics": {
+  "layers": {
+   "events": 452,
+   "fires": 1495,
+   "heat": 18,
+   "sats": 16693,
+   "probes": 24,
+   "kp": 58,
+   "cones": 21,
+   "census": {
+    "total": 16693,
+    "LEO": 15880,
+    "MEO": 183,
+    "GEO": 585,
+    "HEO": 45
+   }
+  },
+  "z19_m_per_px": 0.22229833354674633,
+  "esri_z19": {
+   "tiles": 24,
+   "fail": 0,
+   "median_ms": 358,
+   "p95_ms": 522,
+   "screen_full_s": 0.61
+  },
+  "usgs_z16": {
+   "tiles": 24,
+   "fail": 0,
+   "median_ms": 105,
+   "p95_ms": 108,
+   "screen_full_s": 0.2
+  },
+  "gibs_z8": {
+   "tiles": 24,
+   "fail": 0,
+   "median_ms": 203,
+   "p95_ms": 218,
+   "screen_full_s": 0.41
+  },
+  "refresh": {
+   "at": "2026-10-13T08:50:43.807Z",
+   "n": 452,
+   "ms": 1262.2999999998137,
+   "meta": {
+    "usgs": 233,
+    "eonet": 200,
+    "nws": 11,
+    "meteo": 8,
+    "kp": 58
+   }
+  },
+  "shot_bytes": 1588138,
+  "kartaview": {
+   "photos": 6,
+   "ms": 21938.899999999907,
+   "fields": [
+    "la",
+    "lo",
+    "dt",
+    "th",
+    "img"
+   ]
+  }
+ }
+}

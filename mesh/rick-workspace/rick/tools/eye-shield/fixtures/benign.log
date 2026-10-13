@@ -1,0 +1,4 @@
+Oct 12 14:00:01 box systemd[1]: Started Session 42 of user box.
+Oct 12 14:00:02 box cron[1]: (box) CMD (/usr/bin/true)
+Oct 12 14:00:03 box sshd[500]: Accepted publickey for box from 10.0.0.8 port 22 ssh2
+10.0.0.8 - - [12/Oct/2026:14:00:04 -0500] "GET /health HTTP/1.1" 200 2 "-" "curl/8.0"

@@ -1,0 +1,17 @@
+{
+ "model": "softmax LR, tfidf word1-2+char4 hashed 2^18, class-balanced",
+ "dev_macro_f1": 0.534,
+ "lam": 1e-05,
+ "epochs": 6,
+ "test_n": 4590,
+ "acc": 0.566,
+ "macro_f1": 0.546,
+ "per_class": {
+  "pos": 0.698,
+  "neg": 0.541,
+  "amb": 0.45,
+  "neu": 0.495
+ },
+ "c1_nb_macro_f1": 0.509,
+ "c1_nb_acc": 0.59
+}

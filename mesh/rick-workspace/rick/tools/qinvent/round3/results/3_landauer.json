@@ -1,0 +1,55 @@
+{
+ "dev_sweep": {
+  "2": {
+   "recall5": 0.3135,
+   "acc": 0.3081,
+   "tokens_brief": 169.0
+  },
+  "3": {
+   "recall5": 0.4378,
+   "acc": 0.373,
+   "tokens_brief": 228.5
+  },
+  "4": {
+   "recall5": 0.6216,
+   "acc": 0.5135,
+   "tokens_brief": 360.3
+  },
+  "5": {
+   "recall5": 0.6811,
+   "acc": 0.5568,
+   "tokens_brief": 435.4
+  },
+  "6": {
+   "recall5": 0.7568,
+   "acc": 0.6,
+   "tokens_brief": 485.0
+  },
+  "8": {
+   "recall5": 0.8162,
+   "acc": 0.6108,
+   "tokens_brief": 618.6
+  },
+  "10": {
+   "recall5": 0.8703,
+   "acc": 0.6108,
+   "tokens_brief": 750.6
+  }
+ },
+ "B": 99,
+ "base_test": {
+  "recall5": 0.9674,
+  "acc": 0.1953,
+  "tokens_brief": 2326.2
+ },
+ "test": {
+  "recall5": 0.9907,
+  "acc": 0.1953,
+  "tokens_brief": 2315.1
+ },
+ "valve_k5": {
+  "recall5": 0.9674,
+  "acc": 0.1953,
+  "tokens_brief": 1725.3
+ }
+}

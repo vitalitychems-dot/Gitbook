@@ -1,0 +1,12 @@
+{
+ "n_scanned": 336,
+ "n_unique": 281,
+ "bytes_raw": 282418811,
+ "bytes_unique": 246344866,
+ "save_ratio": 0.128,
+ "ms": 12058,
+ "thr_bits": 5,
+ "sha1_unique": 317,
+ "sha1_bytes": 275032769,
+ "perceptual_extra_saved": 28687903
+}

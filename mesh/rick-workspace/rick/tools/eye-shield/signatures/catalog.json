@@ -1,0 +1,196 @@
+{
+  "version": 1,
+  "defensive_only": true,
+  "purpose": "Recognize publicly documented probe/scanner/OSINT/surveillance-tool fingerprints in OUR logs. No exploit payloads. No outbound scanning.",
+  "citations": [
+    "SigmaHQ detection-rule concepts (DRL 1.1)",
+    "fail2ban filter patterns (GPL-2)",
+    "FLOCK_SCAN public README fingerprint list (github.com/ekomsSavior/FLOCK_SCAN) — used only to recognize those probes hitting us",
+    "Camoufox/CamoFox Browser public README (github.com/daijro/camoufox, github.com/redf0x1/camofox-browser) — UA/automation markers",
+    "Red Sparrow C2 public README (github.com/Iankulani/red-sparrow) — messaging-platform C2 channel names",
+    "Argos Atlas public site (argosatlas.com) — camera-URL aggregation patterns commonly scraped",
+    "OWASP / common web scanner UAs (nikto, sqlmap, nuclei, nmap, masscan, zgrab, censys, shodan)"
+  ],
+  "signatures": [
+    {
+      "id": "scan.nmap_ua",
+      "family": "scanner",
+      "tool": "nmap",
+      "severity": "high",
+      "regex": "(?i)\\bNmap(?: Scripting Engine|/)|\\bnmap(?:/|\\s)",
+      "where": "any",
+      "cite": "Nmap default User-Agent and script engine banner"
+    },
+    {
+      "id": "scan.masscan_ua",
+      "family": "scanner",
+      "tool": "masscan",
+      "severity": "high",
+      "regex": "(?i)\\bmasscan(?:/|\\s|\\b)",
+      "where": "any",
+      "cite": "masscan default User-Agent"
+    },
+    {
+      "id": "scan.zmap_zgrab",
+      "family": "scanner",
+      "tool": "zmap/zgrab",
+      "severity": "high",
+      "regex": "(?i)\\b(?:zgrab|zmap)(?:/|\\s|\\b)|Mozilla/5\\.0 zgrab",
+      "where": "any",
+      "cite": "ZMap/zgrab User-Agent"
+    },
+    {
+      "id": "scan.shodan_censys",
+      "family": "scanner",
+      "tool": "shodan/censys",
+      "severity": "high",
+      "regex": "(?i)\\b(?:Shodan|Censys(?:Inspect)?|InternetMeasurement|l9scan|Stretchoid|BinaryEdge|ShadowServer)\\b",
+      "where": "any",
+      "cite": "Public internet-scanner User-Agents"
+    },
+    {
+      "id": "scan.nuclei",
+      "family": "scanner",
+      "tool": "nuclei",
+      "severity": "high",
+      "regex": "(?i)\\bnuclei(?:/|\\s)|ProjectDiscovery",
+      "where": "any",
+      "cite": "ProjectDiscovery nuclei User-Agent"
+    },
+    {
+      "id": "scan.nikto_sqlmap",
+      "family": "scanner",
+      "tool": "nikto/sqlmap",
+      "severity": "high",
+      "regex": "(?i)\\b(?:nikto|sqlmap|wpscan|dirbuster|gobuster|ffuf|feroxbuster|dirsearch)\\b",
+      "where": "any",
+      "cite": "Common web-scanner UAs already partially covered; expanded list"
+    },
+    {
+      "id": "scan.python_requests_probe",
+      "family": "scanner",
+      "tool": "python-requests",
+      "severity": "medium",
+      "regex": "(?i)\\bpython-requests/\\d|\\bGo-http-client/\\d|\\blibwww-perl\\b|\\bJava/\\d",
+      "where": "http",
+      "cite": "Non-browser clients often used by scanners (context + path required in detector)"
+    },
+    {
+      "id": "flock.onvif_probe",
+      "family": "surveillance_scanner",
+      "tool": "flock_scan_style",
+      "severity": "critical",
+      "regex": "(?i)/onvif/device_service|GetDeviceInformation|GetSystemDateAndTime|xmlns:tds=\\\"http://www\\.onvif\\.org",
+      "where": "http",
+      "cite": "FLOCK_SCAN README: ONVIF GetDeviceInformation probe against cameras"
+    },
+    {
+      "id": "flock.admin_template",
+      "family": "surveillance_scanner",
+      "tool": "flock_scan_style",
+      "severity": "critical",
+      "regex": "(?i)admin_page_template\\.html|/admin_page_template|GainSec",
+      "where": "http",
+      "cite": "FLOCK_SCAN README: admin_page_template.html fingerprint"
+    },
+    {
+      "id": "flock.api_hosts",
+      "family": "surveillance_scanner",
+      "tool": "flock_scan_style",
+      "severity": "high",
+      "regex": "(?i)flocksafety\\.com|api\\.flocksafety\\.com|falcon.*sparrow|SpeedPourer",
+      "where": "any",
+      "cite": "FLOCK_SCAN README cloud DNS / FTP banner strings used in discovery"
+    },
+    {
+      "id": "flock.port_probe_adb_frp",
+      "family": "surveillance_scanner",
+      "tool": "flock_scan_style",
+      "severity": "high",
+      "regex": "(?i)(?:UFW BLOCK|IPTABLES|DROP).*DPT=(?:5555|7000|7001|7500|8899)\\b",
+      "where": "syslog",
+      "cite": "FLOCK_SCAN README ports: ADB 5555, FRP 7000-7500, ONVIF 8899 — firewall blocks of probes to us"
+    },
+    {
+      "id": "camofox.ua",
+      "family": "stealth_browser",
+      "tool": "camofox/camoufox",
+      "severity": "high",
+      "regex": "(?i)\\b(?:Camoufox|CamoFox|camofox-browser)\\b",
+      "where": "http",
+      "cite": "Camoufox/CamoFox Browser public project names in UA or headers"
+    },
+    {
+      "id": "camofox.headless_automation",
+      "family": "stealth_browser",
+      "tool": "headless_automation",
+      "severity": "medium",
+      "regex": "(?i)\\bHeadlessChrome\\b|HeadlessFirefox|Playwright/|Puppeteer|selenium/|webdriver",
+      "where": "http",
+      "cite": "Common headless/automation markers; Camoufox aims to hide these — leftover leaks still detectable"
+    },
+    {
+      "id": "argos.camera_path_scrape",
+      "family": "osint_scraper",
+      "tool": "argos_style_camera_scrape",
+      "severity": "high",
+      "regex": "(?i)/(?:mjpg/video\\.mjpg|axis-cgi/(?:mjpg|jpg)/|SnapshotJPEG|cgi-bin/guestimage\\.html|onvif/device_service|webcamXP|control/faststream)",
+      "where": "http",
+      "cite": "Public camera URL patterns aggregated by Argos Atlas–class OSINT maps; detect scrapers hitting OUR endpoints"
+    },
+    {
+      "id": "argos.insecam_style",
+      "family": "osint_scraper",
+      "tool": "camera_directory_scrape",
+      "severity": "high",
+      "regex": "(?i)\\b(?:insecam|earthcam|opentopia|webcam-server)\\b|/(?:live\\.(?:mjpg|jpg)|img/video\\.mjpg)",
+      "where": "any",
+      "cite": "Known public-camera directory/scraper markers"
+    },
+    {
+      "id": "redsparrow.messaging_c2",
+      "family": "c2_framework",
+      "tool": "red_sparrow_style",
+      "severity": "critical",
+      "regex": "(?i)(?:discord(?:app)?\\.com/api/(?:webhooks|v\\d+/)|api\\.telegram\\.org/bot|hooks\\.slack\\.com/services/)\\S+",
+      "where": "any",
+      "cite": "Red Sparrow README: C2 via Discord/Slack/Telegram/Signal messaging APIs — detect beacon URLs in OUR process/cron/web logs"
+    },
+    {
+      "id": "redsparrow.name_ioc",
+      "family": "c2_framework",
+      "tool": "red_sparrow_style",
+      "severity": "critical",
+      "regex": "(?i)\\bred[-_ ]?sparrow\\b|Iankulani/red-sparrow",
+      "where": "any",
+      "cite": "Tool name / repo string in command lines or downloads"
+    },
+    {
+      "id": "redsparrow.payload_pipe",
+      "family": "c2_framework",
+      "tool": "red_sparrow_style",
+      "severity": "critical",
+      "regex": "(?i)(?:curl|wget).*(?:discord(?:app)?\\.com/api/webhooks|api\\.telegram\\.org/bot).*(?:\\|\\s*(?:bash|sh)|-O-|--output)",
+      "where": "any",
+      "cite": "Messaging-C2 fetch piped to shell (defensive Sigma-style)"
+    },
+    {
+      "id": "probe.path_traversal_admin",
+      "family": "web_probe",
+      "tool": "generic_probe",
+      "severity": "high",
+      "regex": "(?i)(?:GET|POST|HEAD) [^\\\"]*(?:/\\.git/|/\\.env|/wp-login\\.php|/phpmyadmin|/etc/passwd|\\$\\{jndi:|union(?:\\s|%20)+select)",
+      "where": "http",
+      "cite": "Sigma web generic + fail2ban apache-badbots"
+    },
+    {
+      "id": "probe.honeypot_paths",
+      "family": "web_probe",
+      "tool": "generic_probe",
+      "severity": "medium",
+      "regex": "(?i)(?:GET|POST) (?:/admin|/manager/html|/actuator/|/server-status|/HNAP1|/sdk|/cgi-bin/luci)",
+      "where": "http",
+      "cite": "Common admin/IoT probe paths"
+    }
+  ]
+}

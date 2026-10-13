@@ -1,0 +1,5 @@
+{"id":"m1","ts":"2026-10-13T02:00-05:00","from":"rick","to":"tessera","kind":"claim","ref":"collab-bus","body":"Rick takes the bus prototype","paths":["tools/collab"]}
+{"id":"m2","ts":"2026-10-13T02:01-05:00","from":"moderator","to":"rick","kind":"gate","ref":"collab-bus","gate":"moderator","verdict":"PASS","body":"rules ok","needs":["m1"]}
+{"id":"m3","ts":"2026-10-13T02:02-05:00","from":"rick","to":"father","kind":"note","ref":"collab-bus","body":"done"}
+{"id":"m4","ts":"2026-10-13T02:03","from":"security","to":"rick","kind":"block","ref":"collab-bus","body":"35% faster"}
+{"id":"m5","ts":"2026-10-13T02:04-05:00","from":"tessera","to":"all","kind":"ask","ref":"v3","body":"who has graph?"}

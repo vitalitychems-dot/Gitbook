@@ -1,0 +1,10 @@
+Oct 12 10:00:01 box sshd[100]: Failed password for root from 203.0.113.50 port 51234 ssh2
+Oct 12 10:00:02 box sshd[101]: Failed password for root from 203.0.113.50 port 51235 ssh2
+Oct 12 10:00:03 box sshd[102]: Failed password for admin from 203.0.113.50 port 51236 ssh2
+Oct 12 10:00:04 box sshd[103]: Failed password for root from 203.0.113.50 port 51237 ssh2
+Oct 12 10:00:05 box sshd[104]: Failed password for ubuntu from 203.0.113.50 port 51238 ssh2
+Oct 12 10:00:06 box sshd[105]: Failed password for root from 203.0.113.50 port 51239 ssh2
+Oct 12 10:00:10 box sshd[106]: Accepted publickey for box from 198.51.100.10 port 22 ssh2
+Oct 12 10:01:01 box sshd[200]: Invalid user oracle from 198.51.100.200 port 40000
+Oct 12 10:01:02 box sshd[201]: Invalid user postgres from 198.51.100.200 port 40001
+Oct 12 10:01:03 box sshd[202]: Invalid user mysql from 198.51.100.200 port 40002
