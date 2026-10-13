@@ -1,0 +1,6 @@
+Proposed backlog row (base `cd8faa0`):
+
+```diff
+-| HYB-011 | Privacy steward | READY (root-name recheck recorded 2026-10-05; bodies not opened) — [HYB-011-EXCLUSION-MANIFEST.md](../merge/HYB-011-EXCLUSION-MANIFEST.md) | ...
++| HYB-011 | Privacy steward | READY (root-name refresh 2026-10-12: 4 live repos; 1T name-only; bodies not opened; deep pass pending) — [HYB-011-EXCLUSION-MANIFEST.md](../merge/HYB-011-EXCLUSION-MANIFEST.md) | ...
+```
