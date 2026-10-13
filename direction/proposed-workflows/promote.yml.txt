@@ -1,0 +1,21 @@
+# PROPOSAL ONLY - Father reviews before install
+name: promote-to-tessera
+on:
+  schedule: [{cron: "*/30 * * * *"}]
+  workflow_dispatch: {}
+concurrency: {group: selfassembly, cancel-in-progress: false}
+permissions: {contents: read, pull-requests: read}
+jobs:
+  promote:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {sparse-checkout: "direction\nscripts/selfbuild"}
+      - name: Kill switch
+        run: if [ -f STOP ] || [ -f direction/STOP ]; then echo stopped; exit 0; fi
+      - name: Open mirror PRs (no merge)
+        env: {GH_TOKEN: "${{ secrets.TESSERA_PR_TOKEN }}"}
+        run: |
+          # for each Gitbook PR merged >=30 min ago, label promote:tessera, no 'veto' label,
+          # open a PR on TESSERA with the same diff. Branch protection does the merging.
+          node scripts/selfbuild/promote.mjs --min-age-min 30 --veto-label veto --max-prs 1

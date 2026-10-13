@@ -1,0 +1,15 @@
+# PROPOSAL ONLY - Father reviews before install
+name: selfbuild-offline
+on:
+  schedule: [{cron: "15,45 * * * *"}]
+concurrency: {group: selfassembly, cancel-in-progress: false}
+permissions: {contents: write, pull-requests: write}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: if [ -f STOP ] || [ -f direction/STOP ]; then exit 0; fi
+      - name: Deterministic self-build (no LLM)
+        run: node scripts/selfbuild/run.mjs --next direction/NEXT.md --max-prs 1 --min-n 7 --ci 0.95
