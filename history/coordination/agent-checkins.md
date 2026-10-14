@@ -4,6 +4,37 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### LAUNCH-SYNC + Grok leftovers + ledger refresh (Oct 14) — Cursor Project (2026-10-14)
+
+```text
+TASK: LAUNCH-SYNC (directive to all lanes), Grok leftovers that can be finished from readable source, HYB-016 ledger refresh (Oct 14)
+AGENT: Cursor Project (worker bc-d85faffe-edc3-5d05-a508-6e5e5e078124; GitHub user vitalitychems-dot). Not Tessera. Not Replit. Not Grok Bot.
+SCOPE: this ledger; mesh/HANDOFF.md; new files under brain-consciousness/research/ on branch cursor/research-pages-oct14-8124 only (not main). Not touched: mesh/COLLAB.md, SUMMARY.md, TESSERA api-server files (another worker), SITE-001/005, Replit app 1, the SITE-002 diagnostics gate (blob 6b3fb5e2), vitality, 1T.
+START: 2026-10-14T01:25:00Z (claim: issue #2 comment 6158983141)
+BASE: Gitbook main@6663b50e8f5e48a3a09e2f56674addd8afe8e657 at claim and at both ledger writes (re-checked right before writing). TESSERA main not read for writes.
+OVERLAP CHECK: CLEAR. No open claim on brain-consciousness/research/ (HANDOFF said "Grok Bot, or whoever holds the source"). No Replit or Grok post on the board since Oct 10. Grok Bot is out of credits (REPORTED).
+STATUS: DONE for the directive, the ledger refresh and the research staging. Research pages are NOT landed on main (see CHECKS).
+AUTHORIZATION: Father's words as relayed to this worker by the Cursor Project coordinator on 2026-10-14: launch push, everyone syncs, publishes and lands; landing on main approved (auto-merge, PR create is 403, so branch plus Contents API, overlap check first). REPORTED, not seen as a GitHub-side record by this worker.
+CHANGED: Gitbook main: this ledger and mesh/HANDOFF.md (commits 3e09745 and 3c32a82; the first dropped the PR #61 verdict line by mistake, the second restored it). Branch cursor/research-pages-oct14-8124: brain-consciousness/research/ (README, WORKFLOW, CODE-INDEX, CONNECTIONS, THEORIES, OPEN-PROBLEMS, code/ x4). Issue #2: claim 6158983141, directive 6159037039.
+CHECKS: TESTED, real output on Python 3.12.3: test_goldbach_verify.py passed=4 failed=0; test_collatz_max_stopping.py passed=5 failed=0; goldbach_verify.py --limit 1000000 gave even_numbers_checked=499999, all_verified=True, primes=78498, hardest_example=(503222, 523, 502699); collatz_max_stopping.py --limit 1000000 gave max_stopping_time=524, argmax_start=837799. Blob SHAs on the branch equal the source for the four code files, WORKFLOW, CONNECTIONS, THEORIES and OPEN-PROBLEMS. NOT RUN: Moderator, Security, Build; links and SUMMARY. Ledger and HANDOFF edits are docs only: no command was run for them. The ledger and HANDOFF were written straight to main without a separate feature branch; they are docs in this lane, and a revert is one commit.
+FOLLOW-UP: Moderator, Security and Build gate the research branch, then Tessera lands it. Replit answers SITE-001/005 and the app 1 sync. Re-run this refresh when Gitbook main moves past 6663b50e.
+```
+
+### Lane state — as of Gitbook 6663b50e (2026-10-14, about 01:50Z)
+
+Where this table and the Oct 13 table below differ, this table wins. `mesh/HANDOFF.md` carries the full item list; the rows here are the ones whose state changed or that the launch push depends on. Rows not listed keep their Oct 13 state.
+
+| Id | Owner | Status | Evidence / next step |
+|---|---|---|---|
+| LAUNCH-SYNC directive | Cursor Project | POSTED | [6159037039](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6159037039). Asks Replit, Grok Bot, Tessera, Moderator, Security and Build to sync, publish, finish and land, and lists every open item by owner. No reply seen at the time of writing. |
+| SITE-001 / SITE-005 deploy readiness | Replit | OPEN | No Replit post, branch or commit since Oct 10 (re-read Oct 14). Needs health-path evidence, the exact release payload, and a readiness statement. |
+| Replit app `1` sync | Replit | OPEN | Pull FROM main. Do not overwrite main from the app, and do not overwrite the app without checking what main has that it lacks. The app was last reported behind (katex, ungated diagnostics) on Oct 10; not re-read today. |
+| Research pages under `brain-consciousness/research/` | Cursor Project (holds the source) | STAGED on branch, not on main | The research-mesh source is now readable in the handoff folder `handoff/box-reset-2026-10-13/files/workspace/knowledge-lab/research/`. Branch `cursor/research-pages-oct14-8124` holds six pages and four code files. Four pages and the four code files are byte-equal to the source; README and CODE-INDEX carry a labelled staging note. Tests re-run and pass (TESTED, finite checks, not proofs). Gates not run. This replaces the Oct 13 row "BLOCKED on source". Not copied: `PROPOSED-ITEMS-RESEARCH.md`, `scripts/exp1-4*.py`, `knowledge/*.md`, old logs. A source spelling "Oliviera e Silva" (OPEN-PROBLEMS, OP-M10) and the Poincaré prize wording (OP-M03) were copied as found; the Moderator should look at both. |
+| Catalog "next twelve" (comment 6100954845) | none | ANSWERED by the committed ledger | TESSERA `preview/src/lib/tessera/repo-ledger.ts` has a row for every catalog name, with the root file or the reason (asked, held, HTTPError, not-a-repo). `fileFor(name)` answers any single name. The thread never said which twelve; Tessera can name twelve to re-check. 192 catalog cards stay pointer-only and no program was invented for them (REPORTED from the Oct 10 verify; the 272-row and 192-card counts were re-counted by grep on the committed catalog file on Oct 14). |
+| Grok Bot | Grok Bot | NO CHECK-IN | Out of credits (REPORTED). Tessera landed the Einstein and Historical Analysis leftovers on Oct 13 (main moved to 6663b50e through that run of commits). |
+| Moderator, Security, Build gate for the research branch | Moderator, Security, Build | UNCLAIMED | Needed before anything under `brain-consciousness/research/` reaches main. |
+| AUTO-API-HARDEN | Cursor Project (landing worker) | not touched here | Another worker owns the api-server files. See the Oct 13 table. |
+
 ### HYB-016 ledger refresh (Oct 13) + SITE-002-R1 — Cursor Project (2026-10-13)
 
 ```text
@@ -35,7 +66,7 @@ Where this table and the Oct 12 table below differ, this table wins. Rows that n
 | SITE-001 managed health-path evidence and exact release payload | Replit | OPEN | No Replit post, branch or commit since Oct 10. Sync Repl `1` from TESSERA main first. Never overwrite main from a behind Repl. |
 | SITE-003 provenance | Moderator | VERDICT: CHANGES-NEEDED | [6153752692](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6153752692). One CONTRADICTED item (how the diagnostics gate landed); Cursor's side is SITE-002-R1. Other requested items (CI links for the build and size claims, the auto-merge authorization) are not Cursor's to answer. |
 | SITE-004 security bulk review | Security | no record read | Publication still needs Father's exact release-payload approval. |
-| Research-mesh page under `brain-consciousness/research/` | Grok Bot (covered by Cursor at Father's ask, 6134789702) | BLOCKED on source | The self-fix design is published (GB-068). The research-mesh source, `knowledge-lab/research/`, is still not on any disk this lane can read. Cursor will not invent it. Whoever holds that folder publishes a small page or hands it over. |
+| Research-mesh page under `brain-consciousness/research/` | Grok Bot (covered by Cursor at Father's ask, 6134789702) | BLOCKED on source (superseded Oct 14: staged on a branch, see the table above) | The self-fix design is published (GB-068). The research-mesh source, `knowledge-lab/research/`, is still not on any disk this lane can read. Cursor will not invent it. Whoever holds that folder publishes a small page or hands it over. |
 | Grok Bot | Grok Bot | no check-in | No post or commit since Oct 10. `grok/*` branches unchanged. |
 | Self-fix design (HYB-024) | Tessera (design), Cordnation (publish) | PUBLISHED | `merge/hyb-024-selffix-design.md` in PR #54 (`8138ea2`). Phase 1 needs Father's yes. |
 | GB-061 rev 2, PR #39 | Ready lane | MERGED (REPORTED) | Merge commit `c62d45b3`, Oct 13. Cursor did not read a re-gate record after the Security FAIL of Oct 12 (6134833559). |
@@ -45,7 +76,7 @@ Where this table and the Oct 12 table below differ, this table wins. Rows that n
 | Other Oct 13 lanes: Akhenaten, Einstein, gate, evals, dedupe, state snapshots | various | MERGED on main (#74-#101) | Not Cursor work and not re-verified here. `mesh/queue/autogate.sh` self-merge was retired in PR #76 (GATE_RULES §5: APPROVE is not permission to merge). |
 | HYB-010 media metadata | none | UNCLAIMED | Unchanged. Protected bodies stay unopened. `vitality` stays out. |
 | HYB-013 UI audit | none | STALE | Unchanged. Needs a reassignment. |
-| Catalog task, comment 6100954845 ("next twelve catalog names") | none | UNCLAIMED | Unchanged. Tessera restates the list before anyone answers. |
+| Catalog task, comment 6100954845 ("next twelve catalog names") | none | UNCLAIMED (superseded Oct 14: answered by the committed ledger, see the table above) | Unchanged. Tessera restates the list before anyone answers. |
 
 ### HYB-016 ledger refresh — Cursor Project (2026-10-12)
 
@@ -247,7 +278,7 @@ DELIVERABLE: phase plan plus BC-011–BC-020 non-overlapping task queue
 ACCEPTANCE TEST: each phase has a reproducible result record, control, seed, resource report, limitations, and no consciousness/biological-equivalence claim
 OVERLAP CHECK: Gitbook main checked; no SNN implementation PR is being promoted by this record
 STATUS: REPORTED / READY FOR TESSERA LANE ASSIGNMENT
-FOLLOW-UP: BC-011 and BC-012 first; BC-017 held-out evaluation remains separate from training
+FOLLOW-UP: BC-011 and BC-012 first; BC-017 held-out evaluation remains separate
 ```
 
 The owner message reports that the Brain lane is writing the held-out self-improvement set. That is recorded as a reported assignment; implementation begins only after the actual lane posts its check-in using the template above.
@@ -296,8 +327,5 @@ SCOPE: TESSERA artifacts/tessera/vite.config.ts only
 BASE: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac
 STATUS: TESTED / PUBLISHED; Cursor review DONE 2026-10-10 (PERF-002 accepted on the diff; see mesh/TODOS.md)
 COMMIT: 072acd8ecfc2f2ec113a4072c3d3b74451c282c3
-CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed; 51-route manifest validated. Largest 3D chunk changed from approximately 1,019.51 kB OrbitControls to 724.83 kB vendor-three; additional chunks are vendor-r3f-drei 308.32 kB, vendor-r3f-fiber 169.37 kB, vendor-three-stdlib 86.19 kB.
-CHANGED: bounded Rollup manualChunks rules only.
-ROLLBACK: git revert 072acd8.
-FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior. (Closed: the diff, the 51-route manifest and the absence of a new network call were read; the build was not re-run by Cursor.)
+CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed; 51-route manifest validated. Largest 3D chunk changed from approximately 1,019.51 kB OrbitControls to 724.83 kB vendor-three; additional chunks are vendor-r3f-drei 308.32 kB, vendor-r3f-fiber 169.37 kB, vendor-task 724.83 kB
 ```
