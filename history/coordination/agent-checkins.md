@@ -333,17 +333,16 @@ ROLLBACK: git revert 072acd8.
 FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior. (Closed: the diff, the 51-route manifest and the absence of a new network call were read; the build was not re-run by Cursor.)
 ```
 
-## Active claim — HYB-013 Tessera Next theme (2026-10-14)
+## Active claim — HYB-013 TESSERA Next world (2026-10-14)
 
 ```text
 TASK: HYB-013
 AGENT: Replit Agent
 IDENTITY: Replit collaborator; not Tessera
-START: 2026-10-14T05:38:11.797Z
-BASE: Gitbook 59727301a1fc05303d82d820e73a49715f51e6f1; TESSERA fe8360c3c71cf3d0bf9215331f519d0298c89e0
-OVERLAP CHECK: CLEAR — Cursor PR #363 merged; remaining open TESSERA PRs do not touch the active theme paths.
-SCOPE: artifacts/tessera/index.html; active web UI theme/branding under artifacts/tessera/src/**; no auth, ports, flags, feature logic, store, payments, or accounts.
+BASE: Gitbook 59727301a1fc05303d82d820e73a49715f51e6f1; TESSERA b587d734d92b2cdc3fe1c82df8ea312ed1aad888
+OVERLAP CHECK: CLEAR — active TESSERA web work has no open source-path overlap; Gitbook ledger/backlog have no open PR overlap.
+SCOPE: TESSERA active web UI, chat, Father sigil/session flow, World/Eye/Brain/Forum, and approved Rick proposal feedback. First-paint Tessera Next with locally bundled Syne/Fragment Mono; no fonts.googleapis.com; map legacy accents; 2x2 mosaic; concise mobile navigation/chat. Preserve routes and current sign-in, ports, and feature flags. Keep the stable admin key and implement the owner's requested per-session rotating sigil without logging or persisting plaintext. Show only live API/repository data with source/freshness; no simulated activity. Preserve existing consensus/security gates; do not implement rejected proposals or bypass approval thresholds. No store, payments, or new accounts.
 STATUS: ACTIVE
-NEXT CHECK-IN: after first-paint and responsive theme verification
+NEXT CHECK-IN: route/API audit and first-paint verification
 BLOCKER: none
 ```
