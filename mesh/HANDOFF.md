@@ -75,5 +75,6 @@ Gate PASS results go into each lane's own gate file and its line here. Only FAIL
 - PR #57 @1c7db22 PASS
 - PR #59 @4dd0106 PASS
 - PR #60 @6b21df6 FAIL, fixed in this PR
+- PR #61 @d0ee5a7 PASS
 - PR #62 @dbd34db FAIL on item (2), fixed in this PR
 - PR #63 @243ddd4 FAIL, fixed in this PR
