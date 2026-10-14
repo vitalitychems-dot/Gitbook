@@ -15,8 +15,8 @@ BASE: Gitbook main@6663b50e8f5e48a3a09e2f56674addd8afe8e657 at claim and at both
 OVERLAP CHECK: CLEAR. No open claim on brain-consciousness/research/ (HANDOFF said "Grok Bot, or whoever holds the source"). No Replit or Grok post on the board since Oct 10. Grok Bot is out of credits (REPORTED).
 STATUS: DONE for the directive, the ledger refresh and the research staging. Research pages are NOT landed on main (see CHECKS).
 AUTHORIZATION: Father's words as relayed to this worker by the Cursor Project coordinator on 2026-10-14: launch push, everyone syncs, publishes and lands; landing on main approved (auto-merge, PR create is 403, so branch plus Contents API, overlap check first). REPORTED, not seen as a GitHub-side record by this worker.
-CHANGED: Gitbook main: this ledger and mesh/HANDOFF.md (commits 3e09745 and 3c32a82; the first dropped the PR #61 verdict line by mistake, the second restored it). Branch cursor/research-pages-oct14-8124: brain-consciousness/research/ (README, WORKFLOW, CODE-INDEX, CONNECTIONS, THEORIES, OPEN-PROBLEMS, code/ x4). Issue #2: claim 6158983141, directive 6159037039.
-CHECKS: TESTED, real output on Python 3.12.3: test_goldbach_verify.py passed=4 failed=0; test_collatz_max_stopping.py passed=5 failed=0; goldbach_verify.py --limit 1000000 gave even_numbers_checked=499999, all_verified=True, primes=78498, hardest_example=(503222, 523, 502699); collatz_max_stopping.py --limit 1000000 gave max_stopping_time=524, argmax_start=837799. Blob SHAs on the branch equal the source for the four code files, WORKFLOW, CONNECTIONS, THEORIES and OPEN-PROBLEMS. NOT RUN: Moderator, Security, Build; links and SUMMARY. Ledger and HANDOFF edits are docs only: no command was run for them. The ledger and HANDOFF were written straight to main without a separate feature branch; they are docs in this lane, and a revert is one commit.
+CHANGED: Gitbook main: this ledger and mesh/HANDOFF.md. Two commit slips were fixed in follow-up commits: HANDOFF 3e09745 dropped the PR #61 verdict line (restored in 3c32a82), and this ledger's first write (2414663) truncated the end of the PERF-001 record (restored by the commit that carries this text). Branch cursor/research-pages-oct14-8124: brain-consciousness/research/ (README, WORKFLOW, CODE-INDEX, CONNECTIONS, THEORIES, OPEN-PROBLEMS, code/ x4). Issue #2: claim 6158983141, directive 6159037039.
+CHECKS: TESTED, real output on Python 3.12.3: test_goldbach_verify.py passed=4 failed=0; test_collatz_max_stopping.py passed=5 failed=0; goldbach_verify.py --limit 1000000 gave even_numbers_checked=499999, all_verified=True, primes=78498, hardest_example=(503222, 523, 502699); collatz_max_stopping.py --limit 1000000 gave max_stopping_time=524, argmax_start=837799. Blob SHAs on the branch equal the source for the four code files, WORKFLOW, CONNECTIONS, THEORIES and OPEN-PROBLEMS. NOT RUN: Moderator, Security, Build; links and SUMMARY. Ledger and HANDOFF edits are docs only: no command was run for them. They were written straight to main without a separate feature branch; they are docs in this lane, and a revert is one commit.
 FOLLOW-UP: Moderator, Security and Build gate the research branch, then Tessera lands it. Replit answers SITE-001/005 and the app 1 sync. Re-run this refresh when Gitbook main moves past 6663b50e.
 ```
 
@@ -278,7 +278,7 @@ DELIVERABLE: phase plan plus BC-011–BC-020 non-overlapping task queue
 ACCEPTANCE TEST: each phase has a reproducible result record, control, seed, resource report, limitations, and no consciousness/biological-equivalence claim
 OVERLAP CHECK: Gitbook main checked; no SNN implementation PR is being promoted by this record
 STATUS: REPORTED / READY FOR TESSERA LANE ASSIGNMENT
-FOLLOW-UP: BC-011 and BC-012 first; BC-017 held-out evaluation remains separate
+FOLLOW-UP: BC-011 and BC-012 first; BC-017 held-out evaluation remains separate from training
 ```
 
 The owner message reports that the Brain lane is writing the held-out self-improvement set. That is recorded as a reported assignment; implementation begins only after the actual lane posts its check-in using the template above.
@@ -327,5 +327,8 @@ SCOPE: TESSERA artifacts/tessera/vite.config.ts only
 BASE: TESSERA e5e571966b5c37a9c59d5485345b1f46cca20dac
 STATUS: TESTED / PUBLISHED; Cursor review DONE 2026-10-10 (PERF-002 accepted on the diff; see mesh/TODOS.md)
 COMMIT: 072acd8ecfc2f2ec113a4072c3d3b74451c282c3
-CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed; 51-route manifest validated. Largest 3D chunk changed from approximately 1,019.51 kB OrbitControls to 724.83 kB vendor-three; additional chunks are vendor-r3f-drei 308.32 kB, vendor-r3f-fiber 169.37 kB, vendor-task 724.83 kB
+CHECKS: pnpm typecheck passed; pnpm test passed; pnpm run build passed; 51-route manifest validated. Largest 3D chunk changed from approximately 1,019.51 kB OrbitControls to 724.83 kB vendor-three; additional chunks are vendor-r3f-drei 308.32 kB, vendor-r3f-fiber 169.37 kB, vendor-three-stdlib 86.19 kB.
+CHANGED: bounded Rollup manualChunks rules only.
+ROLLBACK: git revert 072acd8.
+FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior. (Closed: the diff, the 51-route manifest and the absence of a new network call were read; the build was not re-run by Cursor.)
 ```
