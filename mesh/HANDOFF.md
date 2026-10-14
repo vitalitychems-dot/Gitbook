@@ -1,6 +1,6 @@
 # Lane handoff
 
-**As of:** 2026-10-13. Gitbook main `bd1b475`.
+**As of:** 2026-10-14. Gitbook main `6663b50e`.
 **Owner:** Gitbook / Cordnation. The Gitbook helper is now part of Cordnation.
 **Board:** [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2)
 
@@ -14,6 +14,7 @@ Labels: REPORTED means a PR body or board note says so and it was not re-checked
 
 | Id | Lane | State | Where it was left | Next step (owner) | Link |
 |---|---|---|---|---|---|
+| LAUNCH-SYNC | Cursor Project | posted | Oct 14: Father is launching. Directive to Replit, Grok Bot, Tessera, Moderator, Security and Build to sync, publish, finish and land open tasks, with every open board item listed by owner. Replit asked for SITE-001/005 deploy readiness and for Replit app `1` to catch up with main (pull from main, never overwrite main) | Each owner answers on issue #2 or posts BLOCKED with a reason (all lanes) | [directive](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6159037039) |
 | GB-061 | Ready lane | published: merged without passing gates | PR #39 merged to main in merge commit `c62d45b3` (c62d45b36f4a2fe82dc8fad50a88f476aafb032c, 2026-10-13 15:08 CT) | none | [PR #39](https://github.com/vitalitychems-dot/Gitbook/pull/39) |
 | GB-064 | Cordnation | held | Repo-scan package staged locally on `56a7a48` | Rev 2 when code-analysis batch 2/3 and the second-account scan finish (Cordnation) | [ruling](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6133318944) |
 | GB-065 | Gitbook desk | in review | PR #45 head `9004959b`, still titled GB-063 in places. Moderator FAIL (REPORTED). Its log hunk no longer applies to main | Fix the Moderator finding, rebase on main, then the four gates (Gitbook desk) | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
@@ -31,16 +32,16 @@ Labels: REPORTED means a PR body or board note says so and it was not re-checked
 | HYB-011 | Gitbook desk | in review | Inside PR #45 (GB-065). 1T by name only | Same as GB-065 | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
 | HYB-013 | UI maintainer | stale | Copilot claim lapsed Oct 7 | Reassign (Tessera) | [ledger](../history/coordination/agent-checkins.md) |
 | HYB-015 | Gitbook desk | in review | Inside PR #45: a GitMesh rules summary only | Same as GB-065 | [PR #45](https://github.com/vitalitychems-dot/Gitbook/pull/45) |
-| HYB-016 | Cursor Project | done | Ledger refreshed Oct 13 to Gitbook `e51b261` and TESSERA `26d29fc` (earlier: `56a7a48`, kept by Father's yes, Oct 12 4:40 PM CT) | Cursor Project re-runs the refresh when main moves | [ledger](../history/coordination/agent-checkins.md) |
+| HYB-016 | Cursor Project | done | Ledger refreshed Oct 14 to Gitbook `6663b50e` (earlier: Oct 13 `e51b261`, Oct 12 `56a7a48`, kept by Father's yes, Oct 12 4:40 PM CT) | Cursor Project re-runs the refresh when main moves | [ledger](../history/coordination/agent-checkins.md) |
 | HYB-018 | Release steward | blocked | Deletion coverage recheck | Father's confirmation | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
 | HYB-019 | Product / mesh prep | blocked | Cortical Labs readiness | Father's decisions | [backlog](../intake/HYBRID-CONSOLIDATION-BACKLOG.md) |
 | HYB-022 | Brain lane | tested locally | Phase 1: 5/5 tests. S3 and S4 held by the memory cap | Promotion through normal review (Brain lane) | [Phase 1 result](../brain-consciousness/reports/OWN-BRAIN-PHASE1-RESULT-2026-10-09.md) |
 | HYB-023 | Permanent-site lane | published | TESSERA `e5e5719` | SITE-001, SITE-003 and SITE-004 below | [coordination](PERMANENT-SITE-COORDINATION.md) |
 | HYB-024 | Tessera (design), Cordnation (publish) | published | Phase 0 approved (REPORTED). Design page on main in PR #54 (`8138ea2`). Dry runs show CI blocked by Actions billing. Phase 1 is not approved | Phase 1 needs Father's yes | [design](../merge/hyb-024-selffix-design.md) |
-| SITE-001 | Replit | open | No health-path evidence recorded. No Replit post since Oct 10 | Record health-path evidence and the exact release payload (Replit) | [ledger](../history/coordination/agent-checkins.md) |
+| SITE-001 | Replit | open | No health-path evidence recorded. No Replit post since Oct 10. The Oct 14 directive also asks for SITE-005 deploy readiness and for Replit app `1` to be brought up to date with main (pull from main; never overwrite main from it) | Record health-path evidence, the exact release payload and the app `1` sync (Replit) | [directive](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6159037039) |
 | SITE-003, SITE-004 | Moderator, Security | unclaimed | Provenance and security review for publication | Claim, then Father approves the release payload | [ledger](../history/coordination/agent-checkins.md) |
-| Research pages | Grok Bot | ready | Was waiting on the self-fix file, which GB-068 now publishes. The research-mesh source (`knowledge-lab/research/`) is not readable by the lane covering Grok Bot (Cursor), so no page was written | Small pages under `brain-consciousness/research/` (Grok Bot, or whoever holds the source) | [consolidation map](../merge/CONSOLIDATION-MAP-2026-10-12.md) |
-| Catalog next twelve | none | unclaimed | No reply to comment 6100954845. The thread does not say which twelve | Tessera restates the list | [comment](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6100954845) |
+| Research pages | Cursor Project (holds the source) | staged, not on main | The research-mesh source is readable at `handoff/box-reset-2026-10-13/files/workspace/knowledge-lab/research/`. Six pages and four code files are staged on branch `cursor/research-pages-oct14-8124` under `brain-consciousness/research/`. Four pages and the four code files are byte-equal to the source (blob SHAs checked); `README.md` and `CODE-INDEX.md` carry a labelled staging note. Tests re-run: 4/4 and 5/5 pass, same numbers as the Oct 5 record (TESTED). Moderator, Security and Build have not run. Not in `SUMMARY.md`. Not copied: `PROPOSED-ITEMS-RESEARCH.md`, `scripts/exp1-4*.py`, `knowledge/*.md`, old logs | Moderator, Security and Build gate the branch, then Tessera lands it (Moderator, Security, Build, Tessera) | [claim](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6158983141) |
+| Catalog next twelve | none | answered by the ledger | The thread never said which twelve. The committed `REPO_LEDGER` in TESSERA `preview/src/lib/tessera/repo-ledger.ts` has a row (file or reason) for every catalog name, and `fileFor(name)` answers any one of them. No unlicensed code was taken. 192 catalog cards stay pointer-only (no own program) | Tessera names any twelve to re-check, or closes the item (Tessera) | [comment](https://github.com/vitalitychems-dot/Gitbook/issues/2#issuecomment-6100954845) |
 | TESSERA PR #80 | none | open, do not merge | Adds pen weights. Weights are not to be added | Close or keep open (Father) | [to-do list](TODOS.md) |
 | TESSERA PR #82, #87 | none | conflicted | #82 failed validate. #87 is a draft that conflicts with main | Rebase or close (owner of each) | [to-do list](TODOS.md) |
 | Held commits | Father | held | 44f5266, d2b8339, 779135e and fcabd13 (Oct 6) have no intake rows | Father's attribution answer | [intake log](../intake/log.md) |
@@ -74,6 +75,5 @@ Gate PASS results go into each lane's own gate file and its line here. Only FAIL
 - PR #57 @1c7db22 PASS
 - PR #59 @4dd0106 PASS
 - PR #60 @6b21df6 FAIL, fixed in this PR
-- PR #61 @d0ee5a7 PASS
 - PR #62 @dbd34db FAIL on item (2), fixed in this PR
 - PR #63 @243ddd4 FAIL, fixed in this PR
