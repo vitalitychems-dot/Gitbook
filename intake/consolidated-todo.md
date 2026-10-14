@@ -10,17 +10,22 @@ The authoritative, deduplicated work board is now [HYBRID-CONSOLIDATION-BACKLOG.
 - Safe coordination, handoff, migration, and historical records were moved into Gitbook.
 - TESSERA typecheck, tests, and production build pass after the Vite compatibility repair.
 
-## Current open work
+## Current open work — reconciled 2026-10-14
 
+- **TESSERA #369 / HYB-025:** candidate fix is in [PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372), head `56c54a7150c1f4dcd5a041947302c40e6225b91e`. The two stale REA assertions pass locally; the full applicable workspace suite, typechecks, build, and responsive production gate smoke also pass. State remains **IN REVIEW** until required final-head checks/review and merge. API integration tests need a dedicated test database and were skipped by the repository runner.
+- **HYB-013:** production Next theme candidate is in the same PR #372 on a clean current-main implementation branch. PRs [#361](https://github.com/vitalitychems-dot/TESSERA/pull/361) and [#367](https://github.com/vitalitychems-dot/TESSERA/pull/367) remain conflicting; neither was merged or altered. The old console, preview, mockup, archives, routes, redirects, and key gate were retained. No production publication is claimed.
+- **HYB-026:** Gitbook queue gate is **BLOCKED for owner review**: `python3 -m unittest test_spawn -v` produced 5 failing assertions across enabled/changed flags, unlisted-host detection, gate-tamper detection, and rogue-flag reporting. The affected `mesh/queue/` is CODEOWNERS-protected; no code was changed. Full Gitbook CI also stops in this sparse checkout because tracked `.codebase-memory/artifact.json` is absent; it was not fabricated or opened.
 - **HYB-005:** the narrow ignore for GHSA-vfj7-8cjw-p6xm is on TESSERA main `5c1137fa` (`pnpm-workspace.yaml` `auditConfig.ignoreGhsas`). Review date 2026-11-05 remains. braces ≥ 3.0.4 is still the removal condition.
 - **HYB-008:** rejected. The olive-giant archive has its own auth and database. Nothing was copied. See [hyb-008-olive.md](../merge/hyb-008-olive.md).
-- **HYB-009:** the two archive families are preserved. Chunks inside them were not re-read. See [hyb-009-archives.md](../merge/hyb-009-archives.md).
-- **HYB-010–HYB-011:** media review, and the privacy recheck. Protected bodies stay unopened.
-- **HYB-012:** the eight non-quantum duplicates are triaged. The first module answers. None were deleted. See [hyb-012-eight.md](../merge/hyb-012-eight.md).
-- **HYB-013:** the UI audit is still open. One missing flow has not been chosen.
-- **HYB-015–HYB-016:** topic pages and the check-in ledger are still open.
+- **HYB-009:** the two archive families are preserved; historical archive chunks were not re-read in this pass. See [hyb-009-archives.md](../merge/hyb-009-archives.md).
+- **HYB-010–HYB-011:** media/provenance and privacy/exclusion review remain open because the named source repositories are unavailable locally. Protected bodies remain unopened.
+- **HYB-012:** the eight non-quantum duplicates are triaged and intentionally retained. See [hyb-012-eight.md](../merge/hyb-012-eight.md).
+- **HYB-015–HYB-016:** compact topic pages and coordination-state reconciliation remain open. Preserve historic rows; keep one current owner/scope per active task.
 - **HYB-017:** rejected for Tessera. The storefront stays out. See [hyb-017-storefront.md](../merge/hyb-017-storefront.md).
-- **HYB-018:** rerun exact coverage before any future repository deletion.
+- **HYB-018:** blocked until fresh exact file-coverage evidence and explicit approval exist for each named repository; no repositories were deleted.
+- **HYB-023:** managed publication remains in review. A local build/temporary sandbox preview is not a publication receipt; health/security evidence, exact release payload, and owner approval are still required.
+- **Box backup:** historical, partial recovery evidence only; preserve it. Do not apply bundles/patches, revive WIP, or infer completeness. The safe audit found current history supersedes indexed PR 342/343/344 and Gitbook PR-104.
+- **GitMesh:** remain a standalone public room/manual proposal surface. No trusted-lane, auth/admission, runtime, or automated TESSERA bridge was added.
 
 ### GLM-5 Pen integration follow-ups
 
@@ -32,6 +37,12 @@ Track these in [GLM5-AUDIT-FOLLOWUPS.md](../brain-consciousness/GLM5-AUDIT-FOLLO
 - **GLM5-005 / GLM5-006:** compare against the current instrument and document compute/context/timeout/cost limits.
 - **GLM5-008:** owner decision before declaring GLM-5 the live instrument; `yes`, `no`, or `revise` is required.
 
+### Pen / product-identity status
+
+- **PEN-SCOPE:** deferred. No separate Pen brief, data contract, production route, or evidence-backed own-identity capability was authorized or implemented. Do not simulate repository authorship, approvals, external actions, or personhood.
+
 ## Coordination rule
 
 Every agent must claim one HYB task in [agent-checkins.md](../history/coordination/agent-checkins.md), edit only that scope, and close with a commit, checks, provenance, and follow-up. Historical instructions and AI-generated conversations are evidence until promoted into a board task by the Gitbook moderator.
+
+For current branch evidence and the exact 2026-10-14 scope, see the Gitbook #2 check-in comment and [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372). Do not mark it DONE before actual merge and current-head checks.

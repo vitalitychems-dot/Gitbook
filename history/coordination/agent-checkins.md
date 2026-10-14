@@ -4,6 +4,21 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### TESSERA #369 repair + HYB-013 production Next theme (2026-10-14)
+
+```text
+TASK: TESSERA #369 + HYB-013 (HYB-025 board row for exact-head test repair)
+AGENT: Manus implementation collaborator (GitHub user vitalitychems-dot)
+SCOPE: TESSERA scripts/rea-registry.*, production artifacts/tessera theme and route manifest; Gitbook authoritative backlog/check-in reconciliation only
+START: 2026-10-14T20:53:13Z (claim comment on Gitbook issue #2)
+BASE: TESSERA main@0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2; Gitbook main@17cdbdbae3e98001cca1b2365b834ab10431ac54
+OVERLAP CHECK: #361 and #367 were found open/conflicting; neither branch was merged or edited. New branch is from current TESSERA main; no deletions, symlinks, Vitality files, or second product surface.
+STATUS: IN REVIEW — TESSERA PR #372, head 56c54a7150c1f4dcd5a041947302c40e6225b91e. Not merged; not published.
+CHANGED: TESSERA current production theme/first paint, theme control behavior tests, REA lockfile assertions/registry, source-derived route manifest; Gitbook backlog and consolidated TODO proposed for this ledger update.
+CHECKS: full applicable TESSERA workspace suite passed (scripts 148; console 3; Gitbook MCP 30; v2 157; GitAI 28; API optional boot 4; learning memory 5); scripts/web typechecks pass; full workspace build pass (existing large-chunk warning); local + public preview HTTP 200 for app/route manifest and fonts; desktop 1440x1000 and mobile 390x844 production key-gate screenshots reviewed. API integration tests skipped because no dedicated TESSERA_TEST_DATABASE_URL was configured. Gitbook shepherd tests 13/13 and scoreboard tests 5/5 passed; queue test `test_spawn` failed 5 assertions in protected gate cases. Full Gitbook CI JSON scan was blocked by absent tracked `.codebase-memory/artifact.json` in the sparse checkout; no file was fabricated/opened.
+FOLLOW-UP: obtain required exact-head CI/review; merge only after gates pass; record actual merge SHA; then mark T-369/HYB-013 done if acceptance remains met. Route HYB-026 to its CODEOWNERS owner; no protected gate code changed. Managed publication, archive deletion, retirement of other UI surfaces, and Pen identity are not completed.
+```
+
 ### LAUNCH-SYNC + Grok leftovers + ledger refresh + research landing (Oct 14) — Cursor Project (2026-10-14)
 
 ```text
