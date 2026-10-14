@@ -55,3 +55,6 @@ done
 if [ "$old" != '{}' ]; then printf '%s' "$events" | sed '/^$/d' >> "$CHANGES"; fi
 tmp=$(mktemp "$DIR/.state.XXXX"); echo "$new" > "$tmp"; mv -f "$tmp" "$STATE"
 echo "mesh-watch: api_calls=$(wc -l < "$CALLF")" >&2
+
+# (b) refresh the review queue when something changed (cached by head SHA)
+if [ -n "$(printf %s "$events" | tr -d "\n")" ] && [ -f "$(dirname "$0")/mesh-queue.sh" ]; then bash "$(dirname "$0")/mesh-queue.sh" || true; fi
