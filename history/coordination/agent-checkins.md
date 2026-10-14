@@ -332,3 +332,17 @@ CHANGED: bounded Rollup manualChunks rules only.
 ROLLBACK: git revert 072acd8.
 FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior. (Closed: the diff, the 51-route manifest and the absence of a new network call were read; the build was not re-run by Cursor.)
 ```
+
+## Active claim — HYB-013 Tessera Next theme (2026-10-14)
+
+```text
+TASK: HYB-013
+AGENT: Replit Agent
+IDENTITY: Replit collaborator; not Tessera
+BASE: Gitbook 59727301a1fc05303d82d820e73a49715f51e6f1; TESSERA b587d734d92b2cdc3fe1c82df8ea312ed1aad888
+OVERLAP CHECK: CLEAR — no open TESSERA PR touches the active theme files; Gitbook claim ledger is tracked in PR #117.
+SCOPE: Visual theme only across the existing TESSERA web UI. Ink #070b10, bone #f3efe6, glass #7ef0d4, fracture #ff5c39 (warnings only), flash #d7f6ff, stone #1f8f7a, return #e4c6ff. Bundle Syne and Fragment Mono locally with system fallbacks, remove all fonts.googleapis.com requests, inline first-paint paint tokens, map legacy saved accents to the Tessera Next palette, replace the rotated-square logo with a 2x2 tile mark, and set the title to Next. Keep all existing screens, features, and behavior. Do not change sign-in, ports, feature flags, data flows, store, payments, or accounts.
+STATUS: ACTIVE
+NEXT CHECK-IN: verify first paint, legacy accent mapping, all-route visual tokens, font request absence, and app boot
+BLOCKER: local checkout has eight unpublished commits plus pre-existing dirty changes; preserve them while using latest canonical main as the base. Do not merge or publish.
+```
