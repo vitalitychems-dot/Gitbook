@@ -332,3 +332,18 @@ CHANGED: bounded Rollup manualChunks rules only.
 ROLLBACK: git revert 072acd8.
 FOLLOW-UP: PERF-002 Cursor review of exact diff, route integrity, circular dependencies, and production loading behavior. (Closed: the diff, the 51-route manifest and the absence of a new network call were read; the build was not re-run by Cursor.)
 ```
+
+## Active claim — HYB-013 Tessera Next theme (2026-10-14)
+
+```text
+TASK: HYB-013
+AGENT: Replit Agent
+IDENTITY: Replit collaborator; not Tessera
+START: 2026-10-14T05:38:11.797Z
+BASE: Gitbook 59727301a1fc05303d82d820e73a49715f51e6f1; TESSERA fe8360c3c71cf3d0bf9215331f519d0298c89e0
+OVERLAP CHECK: CLEAR — Cursor PR #363 merged; remaining open TESSERA PRs do not touch the active theme paths.
+SCOPE: artifacts/tessera/index.html; active web UI theme/branding under artifacts/tessera/src/**; no auth, ports, flags, feature logic, store, payments, or accounts.
+STATUS: ACTIVE
+NEXT CHECK-IN: after first-paint and responsive theme verification
+BLOCKER: none
+```
