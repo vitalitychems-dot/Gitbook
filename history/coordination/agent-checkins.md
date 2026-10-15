@@ -388,3 +388,14 @@ The immediately preceding 2026-10-14 HYB-013 block below is historical. Its Repl
 - **Gitbook PR #123:** last exact remote check before this docs-only correction was head `0f5abca9ac753d1b849f8e6d785e29f2be57af12`; run [38695168036](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38695168036) failed JSON validity on the already documented historical excluded artifact. It was not opened or changed, and the scan was not weakened. Follow-up path redaction will have a new exact head/run.
 - **Box:** metadata-only comparison found six exact-byte matches to current main trees, not six confirmed moves; five destination commits predate the Box file-tree snapshot and one postdates it with separate-branch attribution. Twelve ambiguous migration/provenance path rows are being removed from the public TSV, leaving 455 rows and 21 withheld. No Box files or refs were altered or deleted.
 - **Still blocked:** Gitbook protected JSON-scan owner decision; independent TESSERA review; exact already-authorized host target for publication; exact Vitality destination/scope if any such material is to be handled.
+
+
+## 2026-10-15 10:40 UTC — consolidation follow-up (Manus coordinator)
+
+- **TESSERA PR #372:** GitHub records the PR merged by `vitalitychems-dot` at 10:25:58 UTC to `564811dc5f74073802e38c701ec98b4c32402bc3`. Six PR checks and post-merge CI, secret-scan, and provenance succeeded. The merge was not performed by this session; the PR review-decision field was empty. Permanent hosting and DB integration acceptance remain open.
+- **TESSERA PR #367:** closed unmerged at 10:26:01 UTC, no merge commit. No Replit source was imported.
+- **UI retirement:** TESSERA PR #361 remains open/conflicting with 201 reported changed files and 60,774 deletions; path metadata shows active UI deletions and a broad historical deletion surface. Do not merge as-is; scope conflicts with keeping a usable full-stack app until a replacement is ready.
+- **Replit access:** the first supplied invitation URL redirected to login; the user reports the login did not work. Other invitation URLs were not tested. No invite was accepted and no Replit source/session was accessed. Request a read-only export or accessible repository snapshot; do not request credentials.
+- **Gitbook:** issue #124 was refreshed with the post-merge status. PR #123 was last checked at `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4` and its exact-head run 38698025357 failed on the protected historical JSON scan. A redacted path-only UI assessment/manifest and handoff refresh are prepared as a docs-only proposal; the new PR head/check remains pending.
+- **Box / Vitality:** Box ref remains `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`; no source file/ref was altered or deleted. No Vitality or identity-training content was added to TESSERA/Gitbook.
+- **No action by this session merged code, deleted files, or deployed TESSERA.**

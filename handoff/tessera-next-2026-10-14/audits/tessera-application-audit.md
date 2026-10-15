@@ -228,7 +228,7 @@ A second test-infrastructure blocker is also real: V2 tests require a Chromium e
 - It cannot claim a deployed application, an authenticated inner-screen browser pass, a successful full root test suite, a successful root build, or a complete responsive/accessibility/e2e validation.
 - It cannot claim that preview is production-ready: its standalone theme regression passes, but its declared typecheck fails materially.
 - It cannot claim that `artifacts/nextgen` is a functioning Next UI; it lacks an application entrypoint and route.
-- It cannot claim PR #361 or PR #367 is approved, green, mergeable, or safe to merge. Both are open/conflicting/unreviewed; #367 has failed CI and author gate; #361's only visible successful checks are moderator-lock collection checks.
+- At the original audit snapshot, PR #361 and PR #367 were open/conflicting/unreviewed; #367 had failed CI and author gate, and #361's only visible successful checks were moderator-lock collection checks. Current status is appended below: #367 is closed unmerged, #361 remains conflicting and unsafe to merge, and #372 has since merged but does not prove product acceptance or deployment.
 - It cannot claim that historical/archive files are safe to delete simply because they are excluded from the workspace build. Historical provenance explicitly requires a new scoped decision rather than treating archive text as deletion authority.
 - It cannot claim all visual behaviors are equivalent between production web, preview, console, mockup sandbox, or v2 studio. They have different entrypoints, state sources, dependencies, and test coverage.
 
@@ -242,15 +242,24 @@ A second test-infrastructure blocker is also real: V2 tests require a Chromium e
 - Issue/PR records: local `github-records/TESSERA-issue-369*`, `TESSERA-issue-361*`, `TESSERA-issue-367*`, plus read-only `gh` state/check data.
 
 
-## Current remote candidate addendum — 2026-10-15
+## Pre-merge remote candidate snapshot — 2026-10-15 07:07 UTC (superseded below)
 
-The verified remote receipt is [`../REMOTE-STATE-2026-10-15.md`](../REMOTE-STATE-2026-10-15.md). TESSERA PR #372 remains open at exact head `56c54a7150c1f4dcd5a041947302c40e6225b91e`, based on `main` `0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2`. GitHub reports all six checks SUCCESS and MERGEABLE, but there are no submitted reviews or review decision and no merge SHA. TESSERA issue #369 remains open. The previously recorded local focused/full applicable suite, typecheck, production build, and entry-gate smoke are candidate-commit evidence; the API database integration suite remains skipped without a dedicated disposable DB.
+At this point-in-time snapshot, TESSERA PR #372 was open at head `56c54a7150c1f4dcd5a041947302c40e6225b91e`, based on `main` `0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2`. GitHub reported all six checks SUCCESS and MERGEABLE, but no submitted review/review decision or merge SHA. Issue #369 remained open. Previously recorded local focused/full applicable suite, typecheck, production build, and entry-gate smoke were candidate-commit evidence; the API database integration suite remained skipped without a dedicated disposable DB. See the later post-merge update below for current status.
 
 GitHub currently reports no TESSERA deployment, release, or Pages site. The `.replit` file is a checked-in declaration only; no authenticated Replit project or permanent runtime was verified. No public deployment, session-gate production test, server-side secret-store setup, monitoring, or rollback target is claimed. Keep the candidate in review and do not treat it as a released application.
 
 
 ## Remote follow-up — 2026-10-15 07:07 UTC
 
+This is a historical snapshot; the 10:34 UTC post-merge update below supersedes it.
+
 - TESSERA PR #372 remains OPEN/MERGEABLE at `56c54a7150c1f4dcd5a041947302c40e6225b91e`; GitHub reports six successful checks and no review decision. It is not merged.
 - Replit-named PR #367 is OPEN at `b6b2a94d3acd2aac09990bc82566f8fa5f2acc52`, base `6439a3c4439acf5de62ef8385df557aa50aaaaca`; GitHub reports `DIRTY`/`CONFLICTING`, no review decision, two failing checks, three successful checks, and one skipped check. Its author is the connected `vitalitychems-dot` account; no live Replit session identity was verified. Do not merge or use its branch label as proof of external-session provenance.
 - No release, deployment, public URL, or permanent host was verified. No PR was merged or modified in TESSERA during this refresh.
+
+
+## Remote post-merge update — 2026-10-15 10:34 UTC
+
+GitHub records TESSERA PR #372 merged by `vitalitychems-dot` at 2026-10-15 10:25:58 UTC to `564811dc5f74073802e38c701ec98b4c32402bc3`. Its six PR checks succeeded, as did merge-SHA [CI 38720223367](https://github.com/vitalitychems-dot/TESSERA/actions/runs/38720223367), [secret scan 38720223533](https://github.com/vitalitychems-dot/TESSERA/actions/runs/38720223533), and [provenance 38720223390](https://github.com/vitalitychems-dot/TESSERA/actions/runs/38720223390). The `reviewDecision` field was empty. This session did not merge the PR. No permanent host, public production URL, or deployment receipt is established.
+
+PR #367 is closed unmerged with no merge commit. PR #361 remains open/conflicting, with no review decision; GitHub reports 201 changed files and 60,774 deletions. Path metadata shows active app/preview UI deletions, including the font-color picker, theme constants, preview theme view, and preview theme source/tests. Its diff exceeds GitHub's 20,000-line limit; this audit does not treat it as a fully reviewed deletion manifest. No deletion or source transfer was performed in this update.

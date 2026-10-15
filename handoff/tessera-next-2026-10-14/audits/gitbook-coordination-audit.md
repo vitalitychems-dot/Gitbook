@@ -161,3 +161,10 @@ GitHub metadata currently reports no Gitbook release, deployment, Pages site, cl
 ## Remote follow-up — 2026-10-15 06:56 UTC
 
 Gitbook PR #123 was verified at exact head `0f5abca9ac753d1b849f8e6d785e29f2be57af12`, base `17cdbdbae3e98001cca1b2365b834ab10431ac54`. Workflow [run 38695168036](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38695168036) completed with failure on JSON validity (`Expecting property name enclosed in double quotes`, line 36, column 2) at the same previously documented protected historical artifact. PR remained open, unreviewed, and `UNSTABLE`; no merge occurred. Do not alter that artifact or weaken the scan. The protected JSON-scan owner decision remains required. A separate docs-only path-metadata correction is being prepared; its new head must receive its own remote CI result.
+
+
+## Remote state refresh — 2026-10-15 10:34 UTC
+
+Gitbook PR #123 was last verified open at head `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4`; exact-head run [38698025357](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38698025357) failed the historical JSON validation step. This handoff update adds a redacted path-only UI assessment/manifest and refreshes the cross-agent status; the new PR head requires a fresh check and review. The historical protected artifact and validator remain untouched.
+
+Gitbook issue [#124](https://github.com/vitalitychems-dot/Gitbook/issues/124) was refreshed with the verified TESSERA merge, closed Replit-named PR, conflicting PR #361, current path-census counts, Replit login limitation, and open release gates. No identity-training material, invite tokens, or Replit source contents were added.
