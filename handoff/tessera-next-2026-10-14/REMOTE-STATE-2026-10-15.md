@@ -31,3 +31,15 @@ TESSERA's `.replit` declaration exists at blob `3ed9dce21e0780a0f88eb074d190afc5
 - **Gitbook coordination record:** candidate only; wait for the protected JSON-scan owner to decide a provenance-safe policy for the excluded historical artifact, then rerun CI on the final head and obtain review.
 - **Publication:** blocked. No selected/authorized full-stack host or project is connected, and no release or deployment evidence exists.
 - **No protected artifact was changed, no branch-protection bypass was attempted, and no PR was merged.**
+
+
+## Remote follow-up — 2026-10-15 06:56–07:07 UTC
+
+This is a second, timestamped snapshot after the documentation-only push to Gitbook PR #123 and before the current Box-index correction.
+
+- **Gitbook PR #123:** exact head `0f5abca9ac753d1b849f8e6d785e29f2be57af12`, base `17cdbdbae3e98001cca1b2365b834ab10431ac54`, OPEN, no review decision, merge state `UNSTABLE`. Exact-head run [38695168036](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38695168036) completed FAILURE. The JSON-validity step reported `Expecting property name enclosed in double quotes: line 36 column 2` for the historical excluded JSON path already recorded above. That artifact was not opened, altered, copied, deleted, or transferred; the validator was not suppressed. The PR discussion records the same-head status at [comment 6186384167](https://github.com/vitalitychems-dot/Gitbook/pull/123#issuecomment-6186384167).
+- **TESSERA PR #372:** exact head remains `56c54a7150c1f4dcd5a041947302c40e6225b91e`; OPEN/MERGEABLE, six successful checks, no review decision, no merge.
+- **TESSERA PR #367:** Replit-named branch `replit/next-live-theme-20261014`, head `b6b2a94d3acd2aac09990bc82566f8fa5f2acc52`, base `6439a3c4439acf5de62ef8385df557aa50aaaaca`; OPEN, `DIRTY`/`CONFLICTING`, unreviewed, two failing checks, three successful, one skipped. No Replit project/session access was found.
+- **Box metadata:** six path-safe Box blobs have exact Git blob matches in current TESSERA/Gitbook main trees; five destination file commits predate the Box file-tree capture, and one postdates it with separate-branch attribution. This does not prove movement or justify deletion. Twelve ambiguous migration/provenance path rows are being removed from the public metadata TSV; after that correction it will have 455 rows with 21 path names withheld. No Box blob or ref was changed and no file was deleted.
+
+The current Gitbook follow-up commit changes the PR head, so its result must be independently rechecked. No merge, publication, deployment, or Box deletion is evidenced by this snapshot.

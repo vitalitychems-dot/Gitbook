@@ -379,3 +379,12 @@ LIMITATION: Box TSV is path/hash metadata, not item-level content safety approva
 ```
 
 The immediately preceding 2026-10-14 HYB-013 block below is historical. Its Replit identity/branch claims are not treated as proof of a live Replit workspace or current authorization; the current candidate is the exact GitHub PR #372 head above.
+
+
+## 2026-10-15 07:15 UTC — consolidation follow-up (Manus coordinator)
+
+- **TESSERA PR #372:** exact head `56c54a7150c1f4dcd5a041947302c40e6225b91e`; six checks pass; still open and unreviewed. No merge or release.
+- **Replit intake:** no Replit connector/project/session was available. The only visible Replit-named GitHub candidate is TESSERA PR #367, head `b6b2a94d3acd2aac09990bc82566f8fa5f2acc52`; at 07:07 UTC it was open, conflicting/dirty, unreviewed, with two failing checks. Branch label is not evidence of a live Replit identity. Do not merge; obtain read-only session/project export before any merge proposal.
+- **Gitbook PR #123:** last exact remote check before this docs-only correction was head `0f5abca9ac753d1b849f8e6d785e29f2be57af12`; run [38695168036](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38695168036) failed JSON validity on the already documented historical excluded artifact. It was not opened or changed, and the scan was not weakened. Follow-up path redaction will have a new exact head/run.
+- **Box:** metadata-only comparison found six exact-byte matches to current main trees, not six confirmed moves; five destination commits predate the Box file-tree snapshot and one postdates it with separate-branch attribution. Twelve ambiguous migration/provenance path rows are being removed from the public TSV, leaving 455 rows and 21 withheld. No Box files or refs were altered or deleted.
+- **Still blocked:** Gitbook protected JSON-scan owner decision; independent TESSERA review; exact already-authorized host target for publication; exact Vitality destination/scope if any such material is to be handled.

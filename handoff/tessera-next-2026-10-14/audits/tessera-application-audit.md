@@ -247,3 +247,10 @@ A second test-infrastructure blocker is also real: V2 tests require a Chromium e
 The verified remote receipt is [`../REMOTE-STATE-2026-10-15.md`](../REMOTE-STATE-2026-10-15.md). TESSERA PR #372 remains open at exact head `56c54a7150c1f4dcd5a041947302c40e6225b91e`, based on `main` `0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2`. GitHub reports all six checks SUCCESS and MERGEABLE, but there are no submitted reviews or review decision and no merge SHA. TESSERA issue #369 remains open. The previously recorded local focused/full applicable suite, typecheck, production build, and entry-gate smoke are candidate-commit evidence; the API database integration suite remains skipped without a dedicated disposable DB.
 
 GitHub currently reports no TESSERA deployment, release, or Pages site. The `.replit` file is a checked-in declaration only; no authenticated Replit project or permanent runtime was verified. No public deployment, session-gate production test, server-side secret-store setup, monitoring, or rollback target is claimed. Keep the candidate in review and do not treat it as a released application.
+
+
+## Remote follow-up — 2026-10-15 07:07 UTC
+
+- TESSERA PR #372 remains OPEN/MERGEABLE at `56c54a7150c1f4dcd5a041947302c40e6225b91e`; GitHub reports six successful checks and no review decision. It is not merged.
+- Replit-named PR #367 is OPEN at `b6b2a94d3acd2aac09990bc82566f8fa5f2acc52`, base `6439a3c4439acf5de62ef8385df557aa50aaaaca`; GitHub reports `DIRTY`/`CONFLICTING`, no review decision, two failing checks, three successful checks, and one skipped check. Its author is the connected `vitalitychems-dot` account; no live Replit session identity was verified. Do not merge or use its branch label as proof of external-session provenance.
+- No release, deployment, public URL, or permanent host was verified. No PR was merged or modified in TESSERA during this refresh.
