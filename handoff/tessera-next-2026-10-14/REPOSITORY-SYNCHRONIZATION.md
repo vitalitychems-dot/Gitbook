@@ -1,0 +1,19 @@
+# Repository synchronization matrix
+
+**Snapshot:** 2026-10-15; exact remote heads and candidate refs are in [`REMOTE-STATE-2026-10-15.md`](REMOTE-STATE-2026-10-15.md). Repositories synchronize through commits, reviews, checks, merge SHAs and issue links—not by bulk copying.
+
+| Repository / source | Purpose boundary | Current exact state | Synchronization status | Next action / owner |
+|---|---|---|---|---|
+| [TESSERA](https://github.com/vitalitychems-dot/TESSERA) | Application code and tests | `main` `0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2`; PR #372 head `56c54a7150c1f4dcd5a041947302c40e6225b91e` | Candidate checks all pass; PR open, mergeable, no reviews; issue #369 open. No release/deployment. | Independent TESSERA maintainer/owner review, normal merge; then retest exact merge SHA and record it. No branch-protection bypass. |
+| [Gitbook](https://github.com/vitalitychems-dot/Gitbook) | Cross-agent source of truth: tasks, decisions, provenance, check-ins, release evidence | `main` `17cdbdbae3e98001cca1b2365b834ab10431ac54`; PR #123 head `f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6` | Candidate docs and CI evidence remain open/unmerged; current CI run 38653862921 fails on the excluded historical JSON artifact; no review decision. Issue #2 open. | Protected `.github` / JSON-scan owner decides provenance-safe handling; then run full CI on final head, obtain review, and merge normally. Keep backlog/check-in/handoff synchronized in this PR. |
+| [GitMesh](https://github.com/vitalitychems-dot/GitMesh) | Public, low-trust proposal/manual intake surface only | `main` `951acb79a7825fff181617fa48d5d37270418ea3`; PRs #2–#5 merged; all fetched refs ancestral; issue #1 open | Separate and readable; no trusted Tessera bridge. New local-vault source sync is reviewed but not run and currently commits directly to `main` through the API. | Keep isolated. Any further change needs its own reviewed PR and security/governance review; do not add a trusted lane, auth/admission path, or automated bridge to TESSERA. |
+| Box backup (private) | Dated recovery evidence, not an implementation source of truth | `files` at `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`; metadata tree 536 entries, 476 blobs | Inventory metadata recorded; no source content was transferred. Previously audited subset and unresolved individual rows are in Box ledger. | Continue only candidate-by-candidate, nonprotected, provenance-first review; no bundles/patches replayed. |
+| Vitality repository | Vitality-only destination | Existence was visible in repository listing, but no content or destination authority was used | **Excluded.** No approved exact destination and scope were provided. | User must name exact authorized repository and scope before any content transfer. Do not inspect or infer. |
+| Grok / Replit / Cursor / bots | External-agent source intake | No authenticated workspace/connector or complete account/project identity verified; see external inventory | **Blocked or historical evidence only.** | Obtain the listed read-only access/export; then inventory source/ref, hashes, logs, ownership, license, secrets risk, and runtime owner before proposal. |
+
+## Synchronization invariants
+
+1. Product code belongs in TESSERA; coordination and source-of-truth records belong in Gitbook; public proposals remain in GitMesh; Vitality-only content goes only to the exact authorized Vitality repository.
+2. A GitHub check is attached to a specific head SHA. Any new commit invalidates assumptions about exact-head status until checks run again.
+3. An open PR is not a merge; a merge is not a deployment; a temporary HTTP response is not a permanent release.
+4. No direct write to protected/default branches, owner bypass, credential transfer, archive replay, or cross-repository trusted bridge is authorized by this matrix.

@@ -1,16 +1,17 @@
 # Tessera consolidation — status and evidence
 
-**Date:** 2026-10-14
-**Current result:** Candidate implementation submitted for review; not merged or published.
-**Scope audited:** TESSERA, Gitbook, GitMesh, and the supplied Box backup snapshot. No separate Vitality repository was read or changed.
+**Date:** 2026-10-15
+**Current result:** TESSERA implementation and Gitbook evidence remain open PR candidates; neither is merged, and Tessera is not published.
+**Remote snapshot:** GitHub state rechecked 2026-10-15 06:40 UTC; exact heads and receipts are in [REMOTE-STATE-2026-10-15.md](REMOTE-STATE-2026-10-15.md).
+**Scope audited:** TESSERA, Gitbook, GitMesh, Box backup metadata, and the supplied directive. Grok/Replit/Cursor/bot workspaces remain unavailable; no separate Vitality repository content was read or changed.
 
 ## Executive summary
 
-- Fixed the two reproducible REA-registry test failures on a fresh TESSERA branch and implemented a real incremental Next theme update in the production React/Vite app (`artifacts/tessera`). Added current-source route manifest generation and executable theme behavior tests.
-- Opened [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372) at head `56c54a7150c1f4dcd5a041947302c40e6225b91e`. The PR was mergeable; required GitHub CI was still pending when last checked. It must stay **IN REVIEW** until exact-head gates/review complete and the PR is actually merged.
-- Updated the Gitbook task board, consolidated TODO and active check-in on a branch; opened [Gitbook PR #123](https://github.com/vitalitychems-dot/Gitbook/pull/123) at head `f7e3d225de250dd999a8872d54c10eac65900538`. It is documentation proposed for review, not merged.
-- Local TESSERA tests, typechecks, production build and entry-gate UI smoke passed. API database integration tests were not run because the test runner requires a dedicated `TESSERA_TEST_DATABASE_URL` that was not configured.
-- No production publication, protected-gate bypass, repo deletion, legacy UI deletion, archive replay, or Vitality-content transfer was performed.
+- TESSERA PR #372 remains OPEN/MERGEABLE at `56c54a7150c1f4dcd5a041947302c40e6225b91e`; all six current GitHub checks pass, but no review or merge is recorded. Keep it **IN REVIEW**.
+- Gitbook PR #123 remains OPEN/MERGEABLE at `f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6`; current CI run [38653862921](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38653862921) fails on the excluded historical Vitality-bearing JSON path at line 36, column 2. The file and JSON scan were not changed; owner decision and review remain required.
+- The Gitbook proposal now includes a timestamped remote-state receipt, Box path/hash metadata ledger, external-source inventory, duplicate-resolution ledger, repository synchronization matrix, deployment and rollback runbooks, and blockers/owner matrix. These records do not imply CI success, review, merge, or publication.
+- Prior local TESSERA focused/full applicable tests, typechecks, production build, and desktop/mobile entry-gate smoke passed on the candidate commit. The database integration suite was not run because no dedicated disposable `TESSERA_TEST_DATABASE_URL` was configured. Remote exact-head checks are separately recorded above.
+- No production deployment/release, protected-path edit, branch-protection bypass, repository/file deletion, archive replay, or Vitality-content transfer was performed.
 
 ## Implemented in TESSERA PR #372
 
@@ -33,36 +34,36 @@
 | API DB integration suite | Skipped by the repository runner: no dedicated test DB URL was configured |
 | Deployment | **Not performed**; the temporary sandbox preview is not the managed production site |
 
-The screenshots are [desktop](/home/ubuntu/tessera-consolidation/evidence/tessera-next-desktop.png) and [mobile](/home/ubuntu/tessera-consolidation/evidence/tessera-next-mobile.png). The key gate was intentionally preserved; no fake credential or route bypass was used.
+The screenshots are [desktop](evidence/tessera-next-desktop.png) and [mobile](evidence/tessera-next-mobile.png). The key gate was intentionally preserved; no fake credential or route bypass was used.
 
 ## Gitbook checklist and audit outcomes
 
 The proposed Gitbook PR adds a new blocked follow-up (**HYB-026**) after the local Gitbook queue gate test exposed five failures: cases for enabled/changed gate flags, unlisted-host detection, code-tamper detection and rogue-flag reporting. These tests exercise CODEOWNERS-protected `mesh/queue/` paths. No protected implementation was changed; the owner must review and authorize any fix.
 
-The Gitbook checkout was sparse. Its full local CI script stops at an absent tracked `.codebase-memory/artifact.json`. That file was not fabricated or opened. The independently runnable shepherd suite passed 13/13 and scoreboard tests passed 5/5; `test_spawn` failed five assertions. Changed Markdown passes whitespace and relative-link checks. Gitbook PR CI was still pending when last checked.
+The Gitbook checkout was sparse. Its full local CI script stops at an absent tracked `.codebase-memory/artifact.json`. That file was not fabricated or opened. The independently runnable shepherd suite passed 13/13 and scoreboard tests passed 5/5; `test_spawn` failed five assertions. Changed Markdown passes whitespace and relative-link checks. GitHub CI was pending at that earlier local-audit snapshot; the 2026-10-15 exact remote result is recorded in the linked state receipt.
 
 Cross-repository dispositions from the audits:
 
 - **Box backup:** partial, dated provenance—not an implementation source. Do not replay bundles, patches or WIP. Indexed TESSERA PRs 342/343/344 and Gitbook PR-104 are already ancestors of the audited current heads. The audit screened 355 safe eligible text/log/patch/plan/verification files; protected/secret-adjacent and Vitality-labelled material was excluded.
-- **GitMesh:** retain as a standalone public proposal room/manual intake surface. No trusted runtime, admission/auth source, or automated TESSERA bridge is implemented or added. All 22 current files and 44 available ref-reachable commits were reviewed by the audit; the available work refs were already ancestors of main.
+- **GitMesh:** retain as a standalone public proposal room/manual intake surface. No trusted runtime, admission/auth source, or automated TESSERA bridge is implemented or added. The 22-file/44-commit count describes the 2026-10-14 audit snapshot; the new local-vault and source-sync proposal was reviewed separately in its dated addendum and is not approved for integration.
 - **Legacy UI/theme PRs:** TESSERA #361 remains a broad conflicting deletion/symlink change; #367 remains conflicting, and neither was merged or changed by this work. Preview, console, mockup, archives, production routes, and the current key gate were preserved because replacement/consumer/rollback evidence is not complete.
-- **Other Gitbook tasks:** media provenance and privacy/exclusion work remain open because source repositories are unavailable locally; repository deletion remains blocked pending fresh exact-coverage evidence and explicit approval; permanent-site publication still needs health/security evidence, exact release payload, and owner approval.
+- **Other Gitbook tasks:** media provenance and privacy/exclusion work remain open because source repositories are unavailable locally; repository deletion remains blocked pending fresh exact-coverage evidence and explicit approval; permanent-site publication is blocked, with no current release, deployment, Pages site, host/project, URL, or rollback target verified.
 - **Pen / claimed independent identity:** deferred. There is no approved product brief/data contract or evidence-backed independent identity, authorship, external action, or authorization capability. The UI must not simulate any of those claims.
 
 ## Current remote status and next steps
 
-1. Review and let exact-head checks finish on [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372). Merge only through normal required governance; then record the actual merge SHA and close TESSERA #369 only when the acceptance conditions still pass.
-2. Review [Gitbook PR #123](https://github.com/vitalitychems-dot/Gitbook/pull/123). Do not mark HYB-025/HYB-013 done before TESSERA merge. Route HYB-026 to the protected queue-gate owner.
+1. Obtain independent review of [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372); at the 2026-10-15 06:40 UTC receipt its exact head had six successful checks but no review/merge. Merge only through normal governance; record the actual merge SHA and close TESSERA #369 only when acceptance conditions still pass.
+2. Keep [Gitbook PR #123](https://github.com/vitalitychems-dot/Gitbook/pull/123) unmerged until its protected JSON-scan owner decides HYB-027 and the final head passes CI and review. At the 06:40 UTC receipt, run 38653862921 failed on the historical JSON artifact. Do not mark HYB-025/HYB-013 done before TESSERA merge; route HYB-026 to the protected queue-gate owner and HYB-028 to the user for exact destination/scope.
 3. Run the DB integration suite only with a dedicated disposable test database.
 4. Publish through the managed-site release path only after its release checklist, security review, and owner approval. Local build/HTTP evidence is not publication.
 5. Do not delete the Gitbook repository or old UI/archive surfaces based on this local test pass. The repository records Gitbook as the coordination/provenance source of truth, and the user-specified “after proven” condition is not satisfied until reviewed/merged exact-head work and successful release validation exist.
 
 ## Audit reports
 
-- [TESSERA application audit](/home/ubuntu/tessera-consolidation/audits/tessera-application-audit.md)
-- [Gitbook coordination audit](/home/ubuntu/tessera-consolidation/audits/gitbook-coordination-audit.md)
-- [GitMesh integration audit](/home/ubuntu/tessera-consolidation/audits/gitmesh-integration-audit.md)
-- [Box recovery audit](/home/ubuntu/tessera-consolidation/audits/box-recovery-audit.md)
+- [TESSERA application audit](audits/tessera-application-audit.md)
+- [Gitbook coordination audit](audits/gitbook-coordination-audit.md)
+- [GitMesh integration audit](audits/gitmesh-integration-audit.md)
+- [Box recovery audit](audits/box-recovery-audit.md)
 
 The audits preserve their evidence limitations; they do not claim every past conversation, unavailable repository, excluded protected artifact, or separate external log was accessible or reviewed.
 
@@ -86,3 +87,13 @@ TESSERA PR #372 has six successful required checks but still has no recorded rev
 The new Gitbook PR #123 head `4dccca895e296776ba4aa5f459b3d42abe04be1f` failed CI run [38644541275](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38644541275). The raw-preserving `runs.json` correction got past the earlier JSON error, and the validator then stopped on `handoff/box-reset-2026-10-13/work/build-plan-2026-10-12/FULLPICTURE-LOADED.json` at line 36, column 2 (`Expecting property name enclosed in double quotes`). The manifest contains Vitality repository metadata; the user-directed destination is not identified among the authorized selected repositories, so I did not edit, copy, or move it. HYB-027 and HYB-028 record the blocked decisions; HYB-026's five protected queue tests remain separate.
 
 TESSERA PR #372 remains open/unmerged with all six checks successful and no review decision. No permanent website, external hosting account, or server secret is configured. The repository has a `.replit` launch/deployment declaration, but this task has no Replit connector or authenticated project, and the GitHub Pages endpoint is not enabled. A proposed connection to hosting services was not approved, so no hosting changes were applied. `TESSERACT_ADMIN_KEY` was not provided or stored; it belongs in the chosen host's server-side secret store, after which the same credential can be entered in the session gate. Do not ask for it in chat.
+
+
+## Remote reconciliation — 2026-10-15 06:40 UTC
+
+- **TESSERA PR #372** is still OPEN/MERGEABLE at exact head `56c54a7150c1f4dcd5a041947302c40e6225b91e`; the six checks `validate`, `diff-scan`, `gitleaks`, `collect`, `author-check`, and `ready-for-gate` are SUCCESS. There is no submitted review/review decision, merge SHA, release tag, or deployment. TESSERA issue #369 remains open.
+- **Gitbook PR #123** is still OPEN/MERGEABLE at exact head `f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6`, with no review decision. Current run [38653862921](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38653862921) fails JSON validity on the historical `FULLPICTURE-LOADED.json` path at line 36, column 2. The file contains Vitality metadata; this refresh did not open, alter, copy, delete, or transfer it. HYB-027 remains blocked on the protected JSON-scan owner; HYB-028 remains blocked on the user's exact authorized destination and scope.
+- GitHub reports no TESSERA/Gitbook deployments, releases, Pages site or repository rulesets; the classic branch-protection endpoint returns 404. These API results do not waive the instructed human/owner review. No production host/project or URL exists.
+- GitMesh `main` is `951acb79a7825fff181617fa48d5d37270418ea3`; every fetched work ref is ancestral. Its local-vault CLI was reviewed as a separate proposal, not run or copied. Its GitHub source-sync script writes allowlisted files directly to `main`, so it is not approved as a synchronization path under this governance.
+- Box branch `files` is `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`; its tree is catalogued as metadata in the Box intake TSV. The prior 355-file safe-screened review is retained as prior evidence but not presented as a per-file current certification; no remaining candidate is approved for replay.
+- New handoff artifacts include the remote-state receipt, external-source inventory, Box ledger/index, duplicate ledger, repository sync matrix, deployment and rollback runbooks, and blocker/owner matrix. This documentation remains a PR proposal and is not merged or CI-green.

@@ -11,10 +11,10 @@
 
 The evidence is unusually consistent:
 
-- GitMesh `main` explicitly calls itself “the public room” and says the block house is on TESSERA, while the private Gitbook is absent ([`README.md`](../GitMesh/README.md#L12-L28)).
-- Gitbook names itself the single coordination location and TESSERA the single active product codebase; it prohibits splitting implementation across historical repositories ([`intake/AGENT-COLLABORATION-HUB.md`](../Gitbook/intake/AGENT-COLLABORATION-HUB.md#L3-L10)).
-- TESSERA’s consolidation pointer assigns product code/tests to TESSERA and instructions/decisions to Gitbook, while preserving the public GitbookAI/GitMesh concept as its own public repository ([`docs/CONSOLIDATION-POINTER.md`](../TESSERA/docs/CONSOLIDATION-POINTER.md#L3-L8)).
-- GitMesh contains **22 small files**, no dependency manifest, no tests/CI, no database, no GitHub API client, no credential handling, and no code path to TESSERA. Its executable programs are local demonstrations and consistency checks, not integration adapters.
+- GitMesh `main` at the audited 2026-10-14 SHA explicitly calls itself “the public room” and says the block house is on TESSERA, while the private Gitbook is absent ([`README.md`](https://github.com/vitalitychems-dot/GitMesh/blob/94efa710ac5263a465b2ab32a8b856f396840fe5/README.md#L12-L28)).
+- Gitbook names itself the single coordination location and TESSERA the single active product codebase; it prohibits splitting implementation across historical repositories ([`intake/AGENT-COLLABORATION-HUB.md`](https://github.com/vitalitychems-dot/Gitbook/blob/17cdbdbae3e98001cca1b2365b834ab10431ac54/intake/AGENT-COLLABORATION-HUB.md#L3-L10)).
+- TESSERA’s consolidation pointer assigns product code/tests to TESSERA and instructions/decisions to Gitbook, while preserving the public GitbookAI/GitMesh concept as its own public repository ([`docs/CONSOLIDATION-POINTER.md`](https://github.com/vitalitychems-dot/TESSERA/blob/0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2/docs/CONSOLIDATION-POINTER.md#L3-L8)).
+- At the 2026-10-14 audited head, GitMesh contained **22 small files** with no dependency manifest, tests/CI, database, or API client. The current 2026-10-15 `main` adds a local-vault proposal and source-sync API client; their separate, non-integrated disposition is in the dated addendum below.
 
 There is a **semantic snapshot**, not a live integration: TESSERA preview code independently contains a `MESH` object and a `pass` function with the same legacy machine identifier (`gitbookai`), `git` carriage, local checksum style, and public-room framing. TESSERA’s `v2-062-gitmesh` test asserts the visible label “GitMesh.” Those files do **not** import GitMesh, read its checkout, fetch its repository, or create an authenticated bridge. This is a reason to control drift, not a reason to copy either codebase wholesale.
 
@@ -198,3 +198,10 @@ These actions intentionally avoid copying code wholesale and avoid the currently
 ## Bottom line
 
 GitMesh’s **real present role is a public room with local illustrative programs**, not a mesh service. Its strongest implemented property is the privacy boundary by omission: it has no private Gitbook content, credentials, remote client, or product-control path. Preserve that boundary. Use Gitbook for coordination, TESSERA for code and trusted mesh behavior, and GitMesh only for public, manually reviewed proposals.
+
+
+## Current GitMesh addendum — 2026-10-15
+
+Current `main` is `951acb79a7825fff181617fa48d5d37270418ea3`; fetched refs `cursor/outer-door`, `desk/house-live`, `einstein/improvements-2026-10-13`, and `gitmesh-rename` are all ancestors. PRs #2–#5 are merged; issue #1 remains open. New `projects/local-vault/` code was reviewed as a separate proposal; no tests were run and the CLI was not executed.
+
+The local vault describes offline local records and Git bundles; the core constrains imported paths to checksummed JSON records and does not execute bundle content. The README correctly warns that bundles are unencrypted, checksums are not signatures, and scrypt is not device encryption/account authentication. The separate `sync-public-source.mjs` is more sensitive: it reads `GITHUB_TOKEN` and uses the GitHub Git Data API to update three fixed paths by advancing `main` directly (non-force), not by creating a pull request. It was not run; no token was requested or used. Under the user's normal-governance requirement, do not use this helper to synchronize changes until its workflow is owner-reviewed and made PR/check/review based. No trusted bridge or code transfer to TESSERA is recommended.

@@ -361,3 +361,21 @@ STATUS: ACTIVE
 NEXT CHECK-IN: verify first paint, legacy accent mapping, all-route visual tokens, font request absence, and app boot
 BLOCKER: local checkout has eight unpublished commits plus pre-existing dirty changes; preserve them while using latest canonical main as the base. Do not merge or publish.
 ```
+
+
+## Remote reconciliation — 2026-10-15
+
+```text
+IDENTITY: Manus consolidation session; not Replit, Cursor, Grok, or Tessera
+TASK: HYB-013 / HYB-025 / HYB-027 status and handoff refresh
+SCOPE: Gitbook coordination records and handoff only; no TESSERA product code, protected Gitbook paths, or Vitality-bearing file content
+START: 2026-10-15T06:40:00Z
+BASE: Gitbook PR #123 branch at f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6; base main 17cdbdbae3e98001cca1b2365b834ab10431ac54
+STATUS: IN REVIEW / BLOCKED on independent review and protected-owner decisions
+CHECKS: remote read-only verification: TESSERA PR #372 six checks SUCCESS, open/unreviewed/unmerged; Gitbook PR #123 CI run 38653862921 FAILURE on excluded historical JSON at line 36 column 2; no release/deploy/Pages records; exact evidence linked in handoff/REMOTE-STATE-2026-10-15.md
+CHANGED: backlog, consolidated TODO, final status, handoff index, current implementation TODO/plan, audits/addenda, external-source inventory, Box metadata intake, duplicate ledger, repository synchronization matrix, deployment/rollback runbooks, blockers/owner matrix
+FOLLOW-UP: independent TESSERA review; Gitbook `.github`/JSON-scan owner decision; user exact authorized Vitality destination/scope; authorized host/project details
+LIMITATION: Box TSV is path/hash metadata, not item-level content safety approval. No external workspace access was obtained.
+```
+
+The immediately preceding 2026-10-14 HYB-013 block below is historical. Its Replit identity/branch claims are not treated as proof of a live Replit workspace or current authorization; the current candidate is the exact GitHub PR #372 head above.

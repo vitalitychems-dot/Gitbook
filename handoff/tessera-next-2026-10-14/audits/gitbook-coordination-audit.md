@@ -149,3 +149,10 @@ Keep **one** current table in `intake/HYBRID-CONSOLIDATION-BACKLOG.md`; link to,
 - This was deliberately read-only and does **not** verify TESSERA source code, deployment state, actual GitHub Actions, or GitHub configuration. `TESSERA` was not modified or checked out for product testing.
 - The supplied discussion archive has a timing/coverage inconsistency: Gitbook #122 cites TESSERA PR #370, while the provided TESSERA issue/PR lists only expose records through #369. That is a documentation/provenance gap, not evidence that PR #370 did or did not merge.
 - Historical handoffs and owner-relayed approvals may explain why something happened, but they are not substitutes for the current exact-head gate/evidence rules above.
+
+
+## Current remote-state addendum — 2026-10-15
+
+The read-only GitHub snapshot is recorded in [`../REMOTE-STATE-2026-10-15.md`](../REMOTE-STATE-2026-10-15.md). Gitbook main remains `17cdbdbae3e98001cca1b2365b834ab10431ac54`; PR #123 is open at `f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6`, mergeable but without a review decision. Its latest check [run 38653862921](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38653862921) fails at the historical Vitality-bearing JSON path recorded in HYB-027. No change to that file, the JSON validator, or protected `.github` paths was made. HYB-027 remains owner-blocked; HYB-028 remains blocked until the user names the exact authorized destination and scope. The PR is not CI-green, reviewed, merged, or complete.
+
+GitHub metadata currently reports no Gitbook release, deployment, Pages site, classic branch protection, or repository ruleset. These results do not waive the ordinary human/owner review stated in the task. A sparse local checkout missing `.codebase-memory/artifact.json` is still not evidence of successful full local CI.

@@ -1,30 +1,46 @@
-# Tessera Next handoff — 2026-10-14
+# Tessera consolidation handoff — 2026-10-15
 
-**Status:** TESSERA PR #372 has six green checks but remains unmerged. Gitbook PR #123's new head `4dccca895e296776ba4aa5f459b3d42abe04be1f` failed again after the byte-preserving fix passed the first JSON error; the next failing historical artifact contains Vitality metadata and cannot be moved without an exact authorized destination. No permanent publication has occurred.
+**Status:** TESSERA PR #372 is open, unreviewed and unmerged despite six passing checks. Gitbook PR #123 is open and unreviewed; its current CI run fails on a historical Vitality-bearing JSON artifact. No release, deployment, permanent URL, or production secret-store evidence exists. This index is a handoff, not a completion declaration.
 
-This directory collects the sanitized audit documents and artifacts for the next agent. Treat the linked repository state, PR checks and exact SHAs as authoritative; do not mark a task complete until it is merged and the acceptance conditions are verified on that merge commit.
+The latest timestamped source is [REMOTE-STATE-2026-10-15.md](REMOTE-STATE-2026-10-15.md). Use exact remote refs and SHA evidence from that receipt; do not infer merge, synchronization, permanence, or publication from local state.
 
 ## Current GitHub records
 
-- [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372) — all six required checks passed at head `56c54a7150c1f4dcd5a041947302c40e6225b91e`; still open and unmerged. Review and merge only through the repository's normal governance. [TESSERA issue #369](https://github.com/vitalitychems-dot/TESSERA/issues/369) stays open.
-- [Gitbook PR #123](https://github.com/vitalitychems-dot/Gitbook/pull/123) — carries this directory plus the backlog/TODO/check-in changes. CI run [38644541275](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38644541275) passed the earlier `runs.json` parse failure after the raw-preserving fix, then stopped on `handoff/box-reset-2026-10-13/work/build-plan-2026-10-12/FULLPICTURE-LOADED.json` (`Expecting property name enclosed in double quotes`, line 36, column 2). The latter is Vitality-related; its exact destination is not authorized. Do not edit or transfer it. The `.github/scripts/ci-check.sh` scope is protected and requires its code owner. The sparse local checkout cannot scan the absent `.codebase-memory/artifact.json`.
-- [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2) — current coordination updates. [HYBRID-CONSOLIDATION-BACKLOG.md](../../intake/HYBRID-CONSOLIDATION-BACKLOG.md) is the authoritative work queue; [consolidated-todo.md](../../intake/consolidated-todo.md) is its current summary; [agent-checkins.md](../../history/coordination/agent-checkins.md) records the active claim and boundaries.
+- [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372) — head `56c54a7150c1f4dcd5a041947302c40e6225b91e`; GitHub reports OPEN/MERGEABLE, all six checks SUCCESS, no review decision, no merge. [TESSERA issue #369](https://github.com/vitalitychems-dot/TESSERA/issues/369) remains open.
+- [Gitbook PR #123](https://github.com/vitalitychems-dot/Gitbook/pull/123) — head `f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6`; OPEN/MERGEABLE, no review decision; CI [run 38653862921](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38653862921) fails in JSON validation on `handoff/box-reset-2026-10-13/work/build-plan-2026-10-12/FULLPICTURE-LOADED.json`, line 36, column 2. The file contains Vitality metadata. **Do not open, alter, copy, delete, or transfer it; do not suppress the scan.** Owner decision is required.
+- [Gitbook issue #2](https://github.com/vitalitychems-dot/Gitbook/issues/2) remains open. The authoritative board is [`intake/HYBRID-CONSOLIDATION-BACKLOG.md`](../../intake/HYBRID-CONSOLIDATION-BACKLOG.md); its summary is [`intake/consolidated-todo.md`](../../intake/consolidated-todo.md); coordination history is [`history/coordination/agent-checkins.md`](../../history/coordination/agent-checkins.md).
 
-## Attached implementation and evidence
+## Handoff contents
 
-- [Full status report](FINAL-STATUS.md) — outcome, scope, limitations, exact tests and remaining decisions.
-- [Tessera Next implementation plan](TESSERA-PLAN.md) and [Tessera delivery TODO](TESSERA-TODO.md).
-- Read-only repository audits: [TESSERA application](audits/tessera-application-audit.md), [Gitbook coordination](audits/gitbook-coordination-audit.md), [GitMesh integration](audits/gitmesh-integration-audit.md), and [Box recovery](audits/box-recovery-audit.md).
-- Reviewed production entry-gate screenshots: [desktop](evidence/tessera-next-desktop.png) and [mobile](evidence/tessera-next-mobile.png).
+### Current state and decisions
 
-## Unfinished actions for the next agent
+- [Final status report](FINAL-STATUS.md) — scope, tests, exact blockers, and prior dated status history.
+- [Remote-state receipt](REMOTE-STATE-2026-10-15.md) — current exact heads, PR reviews/checks, run links, release/deployment/Pages/rules evidence.
+- [Blockers/owner matrix](BLOCKERS-OWNER-MATRIX.md) — named and unknown owners, exact dependencies and acceptance evidence.
+- [Repository synchronization matrix](REPOSITORY-SYNCHRONIZATION.md) — purpose boundaries and per-repository state.
+- [External-source inventory](EXTERNAL-SOURCE-INVENTORY.md) — Grok, Replit, Cursor, bots, GitMesh, Box, and exact access/export needs.
 
-1. Review/merge PR #372 through ordinary required reviews; record the actual merge SHA. Do not deploy before release architecture, backend/API origin, key scope, and hosting configuration are resolved.
-2. Resolve HYB-027 with the code owner: the historical JSON scan currently stops at the Vitality-bearing file above. Resolve HYB-028 only after the owner identifies the exact destination Vitality repo; preserve the source until then. Then rerun full Gitbook CI and obtain ordinary review/merge for PR #123. The five protected queue-gate test failures remain a separate HYB-026 owner blocker.
-3. Select a permanent host. No existing Manus Webdev resource is attached; Vercel, Netlify, Render and Cloudflare integrations are currently disabled. This app requires the API server as well as the frontend, and `TESSERACT_ADMIN_KEY` must be stored as a server secret.
-4. Never put the admin secret in a GitHub commit, frontend build variable, issue, PR, report, or chat. A secure secret-entry flow may be offered once the host/service is selected and a server-side destination exists.
-5. Keep the prior theme/UI, preview, console, mockup, archives, and Gitbook repository intact until replacements are independently verified and deletion has an explicit reviewed basis. Do not assert an independent Tessera identity or simulated external action.
+### Tessera implementation and audit
+
+- [Current implementation plan](TESSERA-PLAN.md) and [delivery TODO](TESSERA-TODO.md).
+- Read-only audits: [TESSERA application](audits/tessera-application-audit.md), [Gitbook coordination](audits/gitbook-coordination-audit.md), [GitMesh integration](audits/gitmesh-integration-audit.md), and [Box recovery](audits/box-recovery-audit.md).
+- Production entry-gate screenshots: [desktop](evidence/tessera-next-desktop.png) and [mobile](evidence/tessera-next-mobile.png). These are visual evidence only, not a route/API/deployment pass.
+
+### Intake, duplicate decisions and release operations
+
+- [Box intake ledger](BOX-INTAKE-LEDGER.md) and [metadata-only Box path/hash index](box-intake-files.tsv). Individual content review remains incomplete; the TSV does not certify safety.
+- [Duplicate-resolution ledger](DUPLICATE-RESOLUTION-LEDGER.md), cross-linked to [`merge/exact-duplicates.tsv`](../../merge/exact-duplicates.tsv) and [`merge/duplicate-disposition.md`](../../merge/duplicate-disposition.md). No deletions are approved.
+- [Deployment runbook](DEPLOYMENT-RUNBOOK.md) and [rollback runbook](ROLLBACK-RUNBOOK.md). Both are gated templates; there is no current host/project, deployed release, public URL, or rollback target.
+- Historical `runs.json` pagination evidence remains at [`runs-evidence.md`](../box-reset-2026-10-13/files/workspace/build-gate/work-TESSERA-PR2-postmerge-50876d40/runs-evidence.md), with exact original bytes preserved in [`runs.json.raw.txt`](../box-reset-2026-10-13/files/workspace/build-gate/work-TESSERA-PR2-postmerge-50876d40/runs.json.raw.txt). That is separate from the current Gitbook CI failure.
+
+## Next safe sequence
+
+1. Obtain independent TESSERA review of exact head `56c54a7150c1f4dcd5a041947302c40e6225b91e`; merge only through normal governance. Then record the actual merge SHA and run release validation on that SHA.
+2. Obtain the protected Gitbook JSON-scan owner's provenance-safe policy decision for HYB-027. Do not touch the Vitality-bearing artifact or weaken validation. Rerun Gitbook CI at the final reviewed head and merge only after checks/review.
+3. Obtain the user's exact authorized Vitality destination repository and approved transfer scope before any Vitality content change (HYB-028). Until then, metadata-only blocker record.
+4. Treat Box candidate content review and live Grok/Replit/Cursor/bot inventories as open/blocked per their ledgers. No archive replay.
+5. Obtain explicit authorization for an exact full-stack hosting project/runtime/domain/database and host-native secret-store procedure. Do not repeat the previously refused connector activation request. Deploy only after merge and all release gates pass.
 
 ## Evidence limits
 
-The attached audit reports state their scope, excluded protected material, and unknown source repositories. They are not a claim that every private past conversation, repository, or external log was accessible.
+The handoff does not claim access to every historical conversation, private workspace, unavailable repository, excluded protected artifact, or external log. GitMesh is a separate public/manual intake surface, not a trusted bridge. Vitality-related content remains excluded from Tessera and general Gitbook implementation; no authorized Vitality destination was supplied.

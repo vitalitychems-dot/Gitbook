@@ -69,3 +69,8 @@ Three intentionally low-probability directions were considered because no visual
 - PR #367 is evidence of a bounded first-paint idea, not a merge source. Its useful behavior must be reviewed and recreated against current files.
 - “Legacy” means behavior is proven replaced and preserved in a documented restoration/provenance location; it does not mean “not in the root build.”
 - A “Pen” capability, if later requested as a product feature, requires a separate data source, authorization model, UI contract, and tests. A local visual label or generated text is not proof that Tessera performed external work or owns other repositories.
+
+
+## Current release track — updated 2026-10-15
+
+The candidate implementation is PR #372 at `56c54a7150c1f4dcd5a041947302c40e6225b91e`; current GitHub checks pass, but no review or merge exists. Do not mark this plan complete or begin publication. After an independent review and normal merge, rerun the release checklist on the actual merge SHA: unit/integration suites (database suite only against a disposable test DB), typechecks, production build, dependency/secret scans, route-manifest validation, session-gate and browser-storage fallback, and desktop/mobile smoke. Capture the command, environment class, timestamp, SHA, result and limitations. The deployment and rollback procedures are in the linked handoff runbooks. Host/project, domain, database and server-side secret-store authorization remain unresolved; no credential value is requested or retained.

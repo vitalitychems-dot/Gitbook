@@ -43,3 +43,11 @@ Do not copy, import, or reintroduce Vitality/storefront material into Tessera or
 If a “Pen” capability is retained as a product requirement, define it as a scoped, local, reviewable feature: a visible provenance/identity record with explicit data sources, authorisation boundary, error/empty state, and deterministic tests. It must never represent that Tessera has an independent identity, external account, completed action, approval, or private repository authority that is not evidenced in the product.
 
 **Completion evidence:** an approved product brief, implemented production route/component, documented data contract, deterministic tests, and clear UI state labels. Until then this item remains open.
+
+
+## Current remote gate — 2026-10-15
+
+- [ ] **Review/merge gate:** PR #372 head `56c54a7150c1f4dcd5a041947302c40e6225b91e` has six successful GitHub checks but remains open/unreviewed/unmerged. Wait for an independent TESSERA maintainer review; then use normal merge governance and record the actual merge SHA.
+- [ ] **Release-validation gate:** rerun every required suite on the merge SHA, including API database integration only with a dedicated disposable test database. The pre-merge local suite/build/smoke evidence is not release certification.
+- [ ] **Managed-host gate:** no host/project, public URL, release artifact, secret-store configuration, database migration receipt, health/logging/monitoring evidence, or rollback target is verified. Obtain explicit authorization for the exact provider/account/project/runtime/domain/database and use the host-native secret interface; do not send the admin key in chat or repository records.
+- [ ] **Gitbook gate:** PR #123 is open and its current exact-head CI fails at the protected historical JSON scan. HYB-027/HYB-028 remain blocked; do not weaken the scan or touch the Vitality-bearing artifact without the named approvals.

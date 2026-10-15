@@ -107,3 +107,13 @@ A safe-path scan found **26 otherwise-readable evidence files** that contain a V
 Primary evidence was retained in the backup under these safe names: `README.md`, `tessera/HANDOFF-2026-10-13-1732.md`, `files/tessera-flow.md`, `bundles/INDEX.tsv`, `files/handoff-filed/2026-10-13.md`, `files/verify/`, `files/nextgen/`, `files/rick/`, `files/einstein/`, `files/brain-consciousness/BC-017-heldout-evaluator-spec.md`, `files/vmove/pre.tsv`, and `photos-2026-10-13/SHA256SUMS`.
 
 No private values, credentials, or private-source content are reproduced in this report.
+
+
+## Remote Box metadata addendum — 2026-10-15
+
+Read-only GitHub metadata recheck found the supplied private Box repository `vitalitychems-dot/box-backup-2026-10-13`, branch `files`, at commit `46baaf7d87e41ee89555c61617a8e31c1d35bdc9` (2026-10-13 23:07:53Z). Its recursive tree returned 536 entries / 476 blobs without truncation. The new [`../BOX-INTAKE-LEDGER.md`](../BOX-INTAKE-LEDGER.md) and [`../box-intake-files.tsv`](../box-intake-files.tsv) preserve path, Git blob SHA and size metadata with conservative non-transfer decisions; no blob bodies were fetched for this addendum. Paths marked Vitality/security-sensitive remain metadata-only.
+
+The prior report's safe-path review of 355 text/evidence items remains **prior evidence**, but the report does not map all those content reviews to a row in the new path/hash index. The current TSV therefore does not certify all 473 paths without visible Vitality path labels as content-safe. Individual content review is incomplete; no bundle/patch/media/WIP is approved for replay. The source repo remains retained.
+
+
+**Public-index clarification:** the Box tree has 476 blobs, but the Gitbook TSV emits only 467 paths passing a conservative filename-disclosure screen. Nine path names are withheld from this public repository, including three Vitality-labelled names. The TSV is metadata-only and does not certify the contents of any listed blob.
