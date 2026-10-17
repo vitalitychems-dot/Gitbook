@@ -1,0 +1,8 @@
+
+
+## Post-merge access/source refresh — 2026-10-15 10:34 UTC
+
+- **Replit:** the user reports that the Sandbox login attempt did not work. The first supplied invitation URL redirected to login; the other invitation URLs were not tested. No invitation was accepted, no Replit project/session or source files were accessed, and no code was imported. GitHub PR #367 is now closed unmerged (no merge commit); its Replit-named branch does not establish live workspace access. The next safe source input is a read-only project export or accessible repository/snapshot; do not request credentials or expose invite tokens.
+- **GitMesh:** current `main` is `602d6559c7d3d912e8cc5b43914d1193700c02b0`, two commits after the previously audited `951acb79a7825fff181617fa48d5d37270418ea3`. The path-limited diff modified only `projects/local-vault/README.md` and `projects/local-vault/gitmesh-ultimate-core.mjs`: README adds an instruction to run a Replit-maintained regression harness; the CLI changes when it prints the hidden-input prompt and attempts to restore terminal raw mode after an error. The referenced Replit harness is not in the GitHub repository and was not accessed or run. The source-sync helper remains a separate proposal and was not executed; no GitMesh code was copied to TESSERA.
+- **TESSERA:** PR #372 is now merged at `564811dc5f74073802e38c701ec98b4c32402bc3`; PR #367 is closed unmerged; PR #361 remains conflicting and unreviewed. These are repository events, not evidence of a Replit login or session identity.
+- **Box / Vitality boundary:** Box branch `files` remains at `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`. No Box files or refs were changed. No Vitality-related content or identity-training material was added to TESSERA or Gitbook.

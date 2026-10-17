@@ -1,0 +1,3 @@
+# Workflow-run export format correction
+
+The historical `runs.json` file was a GitHub Actions API export whose JSON response was followed by an HTTP `Link` pagination header. That made the `.json` file invalid for the repository's JSON validator. The exact original bytes are retained unchanged in [`runs.json.raw.txt`](runs.json.raw.txt). `runs.json` now contains only the exact valid JSON response body from that original export; no response fields were removed. The trailing pagination header remains in the raw copy. This was a paginated API response, so consult the raw header before treating the response as a complete run list.

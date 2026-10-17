@@ -4,6 +4,21 @@ This ledger is the coordination lock for the [hybrid consolidation backlog](../.
 
 ## Active claims
 
+### TESSERA #369 repair + HYB-013 production Next theme (2026-10-14)
+
+```text
+TASK: TESSERA #369 + HYB-013 (HYB-025 board row for exact-head test repair)
+AGENT: Manus implementation collaborator (GitHub user vitalitychems-dot)
+SCOPE: TESSERA scripts/rea-registry.*, production artifacts/tessera theme and route manifest; Gitbook authoritative backlog/check-in reconciliation only
+START: 2026-10-14T20:53:13Z (claim comment on Gitbook issue #2)
+BASE: TESSERA main@0d367a9a16d2c940cb411e7dc6275e1a2aeb2cd2; Gitbook main@17cdbdbae3e98001cca1b2365b834ab10431ac54
+OVERLAP CHECK: #361 and #367 were found open/conflicting; neither branch was merged or edited. New branch is from current TESSERA main; no deletions, symlinks, Vitality files, or second product surface.
+STATUS: IN REVIEW — TESSERA PR #372, head 56c54a7150c1f4dcd5a041947302c40e6225b91e. All six GitHub checks pass; PR has no review decision/merge commit. Not published.
+CHANGED: TESSERA current production theme/first paint, theme control behavior tests, REA lockfile assertions/registry, source-derived route manifest; Gitbook backlog and consolidated TODO proposed for this ledger update.
+CHECKS: full applicable TESSERA workspace suite passed (scripts 148; console 3; Gitbook MCP 30; v2 157; GitAI 28; API optional boot 4; learning memory 5); scripts/web typechecks pass; full workspace build pass (existing large-chunk warning); local + public preview HTTP 200 for app/route manifest and fonts; desktop 1440x1000 and mobile 390x844 production key-gate screenshots reviewed. API integration tests skipped because no dedicated TESSERA_TEST_DATABASE_URL was configured. GitHub reports all six PR #372 checks successful. Gitbook shepherd tests 13/13 and scoreboard tests 5/5 passed; queue test `test_spawn` failed 5 assertions in protected gate cases. Gitbook PR #123 CI run 38644541275 advanced past `runs.json` after preserving its original 81,798 bytes and then failed on the next historical handoff JSON artifact `handoff/box-reset-2026-10-13/work/build-plan-2026-10-12/FULLPICTURE-LOADED.json`, line 36, column 2. This artifact contains Vitality metadata; do not edit or transfer until its authorized destination is named. The local sparse checkout separately cannot run full CI without `.codebase-memory/artifact.json`. Complete report, plan/TODO, four audits, and screenshots are attached in `handoff/tessera-next-2026-10-14/INDEX.md`.
+FOLLOW-UP: obtain required TESSERA review and merge; record actual merge SHA; then mark T-369/HYB-013 done if acceptance remains met. Route the JSON-scan scope to its CODEOWNERS owner (HYB-027), the Vitality destination choice to the repository owner (HYB-028), and the separate queue-test failures to their CODEOWNERS owner (HYB-026). No protected gate code or Vitality source file changed. Managed publication, archive deletion, retirement of other UI surfaces, and Pen identity are not completed.
+```
+
 ### LAUNCH-SYNC + Grok leftovers + ledger refresh + research landing (Oct 14) — Cursor Project (2026-10-14)
 
 ```text
@@ -345,4 +360,120 @@ SCOPE: Visual theme only across the existing TESSERA web UI. Ink #070b10, bone #
 STATUS: ACTIVE
 NEXT CHECK-IN: verify first paint, legacy accent mapping, all-route visual tokens, font request absence, and app boot
 BLOCKER: local checkout has eight unpublished commits plus pre-existing dirty changes; preserve them while using latest canonical main as the base. Do not merge or publish.
+```
+
+
+## Remote reconciliation — 2026-10-15
+
+```text
+IDENTITY: Manus consolidation session; not Replit, Cursor, Grok, or Tessera
+TASK: HYB-013 / HYB-025 / HYB-027 status and handoff refresh
+SCOPE: Gitbook coordination records and handoff only; no TESSERA product code, protected Gitbook paths, or Vitality-bearing file content
+START: 2026-10-15T06:40:00Z
+BASE: Gitbook PR #123 branch at f80f3a5eeb63fe3d7de8359bfa720c4e43dfe8e6; base main 17cdbdbae3e98001cca1b2365b834ab10431ac54
+STATUS: IN REVIEW / BLOCKED on independent review and protected-owner decisions
+CHECKS: remote read-only verification: TESSERA PR #372 six checks SUCCESS, open/unreviewed/unmerged; Gitbook PR #123 CI run 38653862921 FAILURE on excluded historical JSON at line 36 column 2; no release/deploy/Pages records; exact evidence linked in handoff/REMOTE-STATE-2026-10-15.md
+CHANGED: backlog, consolidated TODO, final status, handoff index, current implementation TODO/plan, audits/addenda, external-source inventory, Box metadata intake, duplicate ledger, repository synchronization matrix, deployment/rollback runbooks, blockers/owner matrix
+FOLLOW-UP: independent TESSERA review; Gitbook `.github`/JSON-scan owner decision; user exact authorized Vitality destination/scope; authorized host/project details
+LIMITATION: Box TSV is path/hash metadata, not item-level content safety approval. No external workspace access was obtained.
+```
+
+The immediately preceding 2026-10-14 HYB-013 block below is historical. Its Replit identity/branch claims are not treated as proof of a live Replit workspace or current authorization; the current candidate is the exact GitHub PR #372 head above.
+
+
+## 2026-10-15 07:15 UTC — consolidation follow-up (Manus coordinator)
+
+- **TESSERA PR #372:** exact head `56c54a7150c1f4dcd5a041947302c40e6225b91e`; six checks pass; still open and unreviewed. No merge or release.
+- **Replit intake:** no Replit connector/project/session was available. The only visible Replit-named GitHub candidate is TESSERA PR #367, head `b6b2a94d3acd2aac09990bc82566f8fa5f2acc52`; at 07:07 UTC it was open, conflicting/dirty, unreviewed, with two failing checks. Branch label is not evidence of a live Replit identity. Do not merge; obtain read-only session/project export before any merge proposal.
+- **Gitbook PR #123:** last exact remote check before this docs-only correction was head `0f5abca9ac753d1b849f8e6d785e29f2be57af12`; run [38695168036](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38695168036) failed JSON validity on the already documented historical excluded artifact. It was not opened or changed, and the scan was not weakened. Follow-up path redaction will have a new exact head/run.
+- **Box:** metadata-only comparison found six exact-byte matches to current main trees, not six confirmed moves; five destination commits predate the Box file-tree snapshot and one postdates it with separate-branch attribution. Twelve ambiguous migration/provenance path rows are being removed from the public TSV, leaving 455 rows and 21 withheld. No Box files or refs were altered or deleted.
+- **Still blocked:** Gitbook protected JSON-scan owner decision; independent TESSERA review; exact already-authorized host target for publication; exact Vitality destination/scope if any such material is to be handled.
+
+
+## 2026-10-15 10:40 UTC — consolidation follow-up (Manus coordinator)
+
+- **TESSERA PR #372:** GitHub records the PR merged by `vitalitychems-dot` at 10:25:58 UTC to `564811dc5f74073802e38c701ec98b4c32402bc3`. Six PR checks and post-merge CI, secret-scan, and provenance succeeded. The merge was not performed by this session; the PR review-decision field was empty. Permanent hosting and DB integration acceptance remain open.
+- **TESSERA PR #367:** closed unmerged at 10:26:01 UTC, no merge commit. No Replit source was imported.
+- **UI retirement:** TESSERA PR #361 remains open/conflicting with 201 reported changed files and 60,774 deletions; path metadata shows active UI deletions and a broad historical deletion surface. Do not merge as-is; scope conflicts with keeping a usable full-stack app until a replacement is ready.
+- **Replit access:** the first supplied invitation URL redirected to login; the user reports the login did not work. Other invitation URLs were not tested. No invite was accepted and no Replit source/session was accessed. Request a read-only export or accessible repository snapshot; do not request credentials.
+- **Gitbook:** issue #124 was refreshed with the post-merge status. PR #123 was last checked at `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4` and its exact-head run 38698025357 failed on the protected historical JSON scan. A redacted path-only UI assessment/manifest and handoff refresh are prepared as a docs-only proposal; the new PR head/check remains pending.
+- **Box / Vitality:** Box ref remains `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`; no source file/ref was altered or deleted. No Vitality or identity-training content was added to TESSERA/Gitbook.
+- **No action by this session merged code, deleted files, or deployed TESSERA.**
+
+## 2026-10-17 05:45 UTC — resumed consolidation claims (Manus)
+
+The older active-claim blocks and lane snapshots above are historical, not evidence of a current live Replit/Cursor/Grok session. This continuation reclaims only the interrupted Manus implementation/ledger scope. No outside agent has been contacted or represented as checked in.
+
+```text
+TASK: HYB-013 / TESSERA runtime-shell successor
+AGENT: Manus implementation collaborator
+SCOPE: current-base TESSERA runtime/chat/dual-brain/port fixes, narrow functional-shell retirement, regression tests and evidence; no protected paths, archive replay, or production settings
+START: 2026-10-17T05:31:00Z (referenced-task recovery)
+BASE: TESSERA main@564811dc5f74073802e38c701ec98b4c32402bc3
+BRANCH: manus/runtime-shell-recovery-20261017
+STATUS: IN REVIEW — final local validation and normal GitHub review pending
+NEXT CHECK-IN: after final validation and PR head receipt in this run
+BLOCKER: required human/owner review and release prerequisites; PR361 remains held
+```
+
+```text
+TASK: HYB-016 / current coordination reconciliation
+AGENT: Manus coordination collaborator
+SCOPE: authoritative backlog status cells; consolidated TODO; this ledger; handoff current status/index/evidence links; GitHub checklist comments
+START: 2026-10-17T05:45:00Z
+BASE: Gitbook PR123@e6879eb83e1f11771d4da6720c1032e95d36ec4b; main@17cdbdbae3e98001cca1b2365b834ab10431ac54
+BRANCH: manus/tessera-next-ledger-20261014
+STATUS: IN REVIEW
+NEXT CHECK-IN: after documentation validation and exact pushed PR123 head
+BLOCKER: protected JSON-scan owner decision (HYB-027) and queue owner authorization (HYB-026); no bypass
+```
+
+```text
+TASK: HYB-015 / compact topic navigation
+AGENT: Manus documentation collaborator
+SCOPE: new topics/*.md compact canonical-source navigation and SUMMARY.md links only; no historical instruction replay
+START: 2026-10-17T05:45:00Z
+BASE: Gitbook PR123@e6879eb83e1f11771d4da6720c1032e95d36ec4b
+BRANCH: manus/tessera-next-ledger-20261014
+STATUS: IN REVIEW
+NEXT CHECK-IN: after six-page link/provenance checks and exact documentation commit
+BLOCKER: normal review/merge of Gitbook PR123 remains separately gated
+```
+
+### 2026-10-17 05:52 UTC — Manus delivery check-in
+
+```text
+TASK: HYB-013 runtime/shell successor
+STATUS: IN REVIEW — implementation delivered as TESSERA PR373; no merge/deployment
+COMMIT: TESSERA 9e664bb050e6b4432066d261680f80b9f4ff34ce; base 564811dc5f74073802e38c701ec98b4c32402bc3
+CHECKS: final implementation source passed complete workspace tests (scripts148, console3, MCP30, v2157, GitAI28, API boot4, dedicated disposable API DB702 with2 conditional skips, learning-memory runner repeat5), workspace typecheck/build, diff check; existing chunk warning retained; production audit zero under unchanged existing policy; independent implementation findings recheck resolved; local/public static frontend JSON identical with113 routes; desktop1440x1000 and mobile390x844 unauthenticated gate captures inspected
+CHANGED: 53 source/test/checklist/retirement-document files in the narrow successor; no protected/queue/Pen-local implementation, dependency/lockfile, archived source or Vitality source edits
+FOLLOW-UP: required exact-head GitHub checks and human/owner review; approved hosted provider and deployed authenticated acceptance remain open
+NEXT CHECK-IN: after exact-head GitHub checks in this run, then on required reviewer/owner decision
+```
+
+```text
+TASK: HYB-015 compact topics + HYB-016 current ledger reconciliation (nonoverlapping documentation scopes)
+STATUS: IN REVIEW — documentation delivery complete locally; PR123 normal review/merge blocked separately
+BRANCH: manus/tessera-next-ledger-20261014; commits/remote check conclusions are in the final PR/issue124 exact-head receipt
+CHECKS: 8 new topic/current-receipt Markdown files complete;36 relative links resolved;7 SUMMARY entries present; original check-in history byte-preserved; diff check clean; no protected/excluded source edits
+CHANGED: topics/*.md, SUMMARY navigation, current board/TODO/check-in state, current handoff receipt/index, verified new gate images/recheck/hash evidence
+FOLLOW-UP: HYB026 CODEOWNER queue diagnosis/authorization; HYB027 protected JSON-scan owner policy and exact-head CI; HYB023 exact approved existing full-stack host/project; HYB010/011/028 source/privacy/destination decisions
+NEXT CHECK-IN: final pushed-head/check receipt in issue124 in this run; subsequent work needs the actual decision owner's reply
+```
+
+This check-in is Manus's own repository work, not an external Replit/Cursor/Grok/bot post or a claim that every historical source file has been reviewed. Existing archive symlink warnings were observed by Git status and left untouched. The temporary frontend preview/test database are only local validation infrastructure, not a permanent product deployment.
+
+
+## Follow-up — TESSERA runtime/shell merge and Gitbook sync (2026-10-17 08:13 UTC)
+
+```text
+TASK: Finish approved TESSERA merge; synchronize the Gitbook continuation with exact merge and source-disposition evidence.
+AGENT: Manus implementation collaborator (GitHub user vitalitychems-dot).
+SCOPE: TESSERA PR #374 merge; Gitbook continuation handoff/index, consolidated TODO, HYB-013/HYB-025 status and TESSERA plan. No protected Gitbook policy/queue/JSON artifact, no excluded archives, no source deletions, no hosting/deployment.
+AUTHORIZATION: User explicitly approved merging the corrected-attribution TESSERA replacement PR. PR #373 was left open and untouched as previously agreed.
+TESSERA RESULT: PR #374 head `23d6bc697983037c18406cab572f195f0677d3af` merged to main at 2026-10-17T08:13:32Z as merge commit `fb14695f8a9a6e0d85812d59575ee0a9d830d2a7`; its six PR checks passed. Post-merge CI run 39016559224 was still in progress at 08:14 UTC, so consult the live run for its outcome. No permanent deployment or live model/database/daemon capability is claimed.
+GITBOOK RESULT: PR #123 remains open; its checked prior head `2022db12ca1384b8e0551dabe2bd82b65d0cde71` failed protected JSON validation in run 39007876086. This update is intended for its existing PR branch; do not merge without a passing exact-head check and the responsible owner decision. No protected source/policy file changed.
+SOURCE HANDLING: User-provided Tessera prose was read as concept and requirements, not as runtime evidence. The private origin marker and personal details were not copied publicly. Redacted draft requirements were added to TESSERA-PLAN.md and explicitly marked not implemented.
+FOLLOW-UP: verify post-merge TESSERA main CI; update Gitbook PR #123 branch with this receipt and allow its checks to run; do not bypass the protected JSON gate. Product acceptance, operational-cycle implementation, live-provider verification and permanent hosting remain separate work.
 ```

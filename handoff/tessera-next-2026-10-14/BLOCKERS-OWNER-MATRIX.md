@@ -1,0 +1,16 @@
+
+
+## Current status update — 2026-10-15 10:34 UTC
+
+This section supersedes the earlier PR #372/#367 states above; those rows remain historical evidence.
+
+| Item | Current status | Owner / decision-maker | Exact next action |
+|---|---|---|---|
+| TESSERA #372 / HYB-025 | **MERGED, acceptance pending**. Merge commit `564811dc5f74073802e38c701ec98b4c32402bc3`; post-merge CI, secret scan, and provenance succeeded. No permanent deployment is evidenced; the API DB integration suite still requires a dedicated disposable database. The merge was performed by `vitalitychems-dot`, not by this session. | TESSERA product/maintainer and database owner | Record remaining product acceptance checks; run DB integration only with a dedicated disposable database; keep deployment/release claims blocked until host receipts exist. |
+| UI retirement / PR #361 | **BLOCKED / CONFLICTING.** Head `e8beb40086cb91dbe2c2ee59fc57ee8cd5b68f45`, base `00d6dc7ad7b5ebf390ed33345b28c698b89d2056`, no review decision; GitHub reports 201 changed files and 60,774 deletions. Path metadata includes active app/preview UI deletions; full diff exceeds 20,000 lines. | TESSERA product owner and independent reviewer; owner not separately identified | Resolve the meaning of “remove all UI” against the full-stack app requirement. Do not merge this PR as-is; require current-base conflict resolution, exact path/consumer mapping, replacement/rollback plan, and tests. |
+| TESSERA #367 / Replit intake | **CLOSED UNMERGED** at 2026-10-15 10:26:01Z; no merge commit. User reports Replit login did not work. First supplied invite URL redirected to login; other invite URLs were not tested; no invitation accepted or source reviewed. | User / Replit project owner | Provide read-only source export or accessible repository/snapshot; no credentials or invitation tokens in chat/public issues. |
+| HYB-027 / Gitbook JSON scan | **BLOCKED.** PR #123 was last checked at head `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4`; [run 38698025357](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38698025357) failed JSON validation. This docs-only follow-up requires a new exact-head run. | Protected `.github` / JSON-scan owner `@collink1007` or designated build-gate owner | Decide provenance-safe policy; do not change the protected historical artifact or suppress validation; rerun CI on the final reviewed head. |
+| Replit live session | **BLOCKED.** No connector, authenticated session, or source export. The first invite URL was tested and redirected to login; other invite URLs were not tested. | User / Replit project owner | Supply a read-only export or accessible branch; never send passwords or tokens. |
+| Hosting / publication | **BLOCKED.** No exact host/project/domain/database/secret-store target, production URL, or rollback receipt is verified. | User / hosting owner; exact operator not identified | Name/authorize the exact full-stack target, then follow the deployment runbook; do not infer publication from a merge or `.replit` file. |
+
+Box remains unchanged and non-deletable pending candidate-specific provenance, consumer, rollback, retention, and explicit approval. Vitality and identity-training content remain excluded from public implementation repositories absent exact approved destination/scope.
