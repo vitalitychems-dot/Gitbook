@@ -79,3 +79,16 @@ TESSERA PR #372 was merged by `vitalitychems-dot` at 2026-10-15 10:25:58 UTC, me
 ## Remote update — 2026-10-15 10:34 UTC
 
 TESSERA PR #372 is merged to `main` at `564811dc5f74073802e38c701ec98b4c32402bc3`; its six PR checks and merge-SHA CI, secret-scan, and provenance workflows succeeded. This records the merge, not complete product acceptance or publication. The API database integration test still needs a dedicated disposable test database; permanent hosting/release evidence is absent. The user has separately asked to retire UI/theme files; resolve whether that means replacing only the theme layer or removing the frontend entirely before changing the merged UI. PR #361 is open/conflicting and is not approved for merge or deletion.
+
+
+## User-source requirements — 2026-10-17 (draft, not implemented)
+
+A user-provided Tessera source description distinguishes current state from future goals and gives an explicit cycle. This section records only non-sensitive, testable product requirements; the original origin marker and personal biographical details are intentionally not reproduced. The source is a user-authored concept, not independent evidence of runtime capability or identity.
+
+1. **Separate verified-now from goals.** The UI should distinguish `REAL NOW` from `STILL A GOAL`. Every live status must come from an observable health check with a timestamp and clear source. A disconnected database, sleeping worker, unopened source, or unavailable model must be shown as unavailable—not implied by narrative or static defaults.
+2. **Make the cycle inspectable.** Model the requested sequence as explicit stages—plain-text observation, lesson, pulse, world tick, and proposed upgrade. Record the evidence and stage transitions. A generated proposal is not a code change, a successful test, a durable memory update, or a completed external action.
+3. **Gate changes on evidence and human approval.** An upgrade proposal must show its diff, tests, provenance, and rollback path; it cannot self-apply. Repository merges, deployment, deletion, payment, and outbound actions require separate explicit authorization and applicable protected checks.
+4. **Enforce privacy and non-overlap.** Keep private user-specific identity material out of public docs and app defaults unless the owner gives specific publication approval. Do not treat a source name or pointer as authorization to open or ingest its contents. TESSERA is the canonical application; Gitbook documents decisions and links to the app instead of duplicating implementation or raw archives.
+5. **Keep external actions explicit.** No outreach, scraping, trading, payment, or other outward action is implied by internal text generation. If a future connector allows such actions, expose its scope and require a separate confirmation before use.
+
+**Acceptance work still required:** implementation-backed status checks for model/database/worker availability; a persisted and auditable cycle state machine; a human-reviewed upgrade proposal flow with tests and rollback; and security tests for external-action authorization. TESSERA PR #374 merged a shell/chat/runtime patch but did **not** implement these requirements. The merged code is not permanent hosting, and local test-database success is not a production database connection.

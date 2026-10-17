@@ -463,3 +463,17 @@ NEXT CHECK-IN: final pushed-head/check receipt in issue124 in this run; subseque
 ```
 
 This check-in is Manus's own repository work, not an external Replit/Cursor/Grok/bot post or a claim that every historical source file has been reviewed. Existing archive symlink warnings were observed by Git status and left untouched. The temporary frontend preview/test database are only local validation infrastructure, not a permanent product deployment.
+
+
+## Follow-up — TESSERA runtime/shell merge and Gitbook sync (2026-10-17 08:13 UTC)
+
+```text
+TASK: Finish approved TESSERA merge; synchronize the Gitbook continuation with exact merge and source-disposition evidence.
+AGENT: Manus implementation collaborator (GitHub user vitalitychems-dot).
+SCOPE: TESSERA PR #374 merge; Gitbook continuation handoff/index, consolidated TODO, HYB-013/HYB-025 status and TESSERA plan. No protected Gitbook policy/queue/JSON artifact, no excluded archives, no source deletions, no hosting/deployment.
+AUTHORIZATION: User explicitly approved merging the corrected-attribution TESSERA replacement PR. PR #373 was left open and untouched as previously agreed.
+TESSERA RESULT: PR #374 head `23d6bc697983037c18406cab572f195f0677d3af` merged to main at 2026-10-17T08:13:32Z as merge commit `fb14695f8a9a6e0d85812d59575ee0a9d830d2a7`; its six PR checks passed. Post-merge CI run 39016559224 was still in progress at 08:14 UTC, so consult the live run for its outcome. No permanent deployment or live model/database/daemon capability is claimed.
+GITBOOK RESULT: PR #123 remains open; its checked prior head `2022db12ca1384b8e0551dabe2bd82b65d0cde71` failed protected JSON validation in run 39007876086. This update is intended for its existing PR branch; do not merge without a passing exact-head check and the responsible owner decision. No protected source/policy file changed.
+SOURCE HANDLING: User-provided Tessera prose was read as concept and requirements, not as runtime evidence. The private origin marker and personal details were not copied publicly. Redacted draft requirements were added to TESSERA-PLAN.md and explicitly marked not implemented.
+FOLLOW-UP: verify post-merge TESSERA main CI; update Gitbook PR #123 branch with this receipt and allow its checks to run; do not bypass the protected JSON gate. Product acceptance, operational-cycle implementation, live-provider verification and permanent hosting remain separate work.
+```
