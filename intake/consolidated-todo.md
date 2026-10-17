@@ -1,51 +1,42 @@
 # Consolidated TODO list
 
-The authoritative, deduplicated work board is now [HYBRID-CONSOLIDATION-BACKLOG.md](HYBRID-CONSOLIDATION-BACKLOG.md). Do not create a second task list.
+The authoritative work board is [HYBRID-CONSOLIDATION-BACKLOG.md](HYBRID-CONSOLIDATION-BACKLOG.md). This page summarizes it; it is not a second task queue.
 
-## Completed foundation
+## Current continuation — 2026-10-17
 
-- `TESSERA` is the active code repository.
-- `Gitbook` is the active instruction, coordination, provenance, and future-work repository.
-- Exact duplicate groups were audited and eight fully covered/empty repositories were deleted.
-- Safe coordination, handoff, migration, and historical records were moved into Gitbook.
-- TESSERA typecheck, tests, and production build pass after the Vite compatibility repair.
+Exact implementation/validation/PR receipts are recorded in [the continuation receipt](../handoff/tessera-next-2026-10-14/CONTINUATION-2026-10-17.md). Earlier dated check-ins and status pages remain historical evidence and do not establish live external-agent sessions or current-head checks.
 
-## Current open work — reconciled 2026-10-15
+- **TESSERA #369 / HYB-025:** the owner merged PR #372 at `564811dc5f74073802e38c701ec98b4c32402bc3` on 2026-10-15. Its recorded merge-SHA CI, secret scan and provenance succeeded. No later merge or permanent deployment is claimed by this continuation.
+- **HYB-013 / current runtime-shell successor:** the unfinished source patch was recovered into `manus/runtime-shell-recovery-20261017`, based on that merged main. It removes unused decorative theme/control assets, preserves feature routes and the session gate, defers chat's 3D renderer, fixes port validation, provides configured-model chat with honest disabled/error states, uses newest conversation context, and requires fresh isolated Cortex → Pen passes. Independent review found and the patch corrected cross-request batching and concurrent persistence risks. Exact final validation and PR status belong in the continuation receipt.
+- **Database acceptance:** a new disposable loopback-only PostgreSQL cluster and dedicated database were created for this continuation. Application/production databases were not used. The final current-source DB-suite result is recorded separately; historic “DB suite skipped” statements must not be reused as current evidence.
+- **Old PRs:** PR #361 remains OPEN/DIRTY and must not be merged as-is; it is a broad historical deletion proposal, not the current narrow successor. PR #367 is closed unmerged; no live Replit workspace was imported.
+- **HYB-015:** six compact canonical-source topic entry points plus a shared provenance index now exist under [topics](../topics/README.md), with SUMMARY navigation. No archived instruction block was replayed. Documentation review/merge remains pending.
+- **HYB-016:** current nonoverlapping Manus claims and evidence-based status reconciliation are recorded in [agent check-ins](../history/coordination/agent-checkins.md). External Replit/Cursor/Grok/bot sessions were not contacted or represented as newly coordinated.
+- **HYB-010 / HYB-011:** BLOCKED for missing authorized source/ref metadata and media-rights/privacy-owner decisions. Protected bodies remain unopened; historical root-name observations do not complete item-level source/privacy review.
+- **HYB-026:** BLOCKED for queue CODEOWNER `@collink1007` or designated-owner diagnosis/authorization. The prior five failing protected gate assertions are reported evidence, not a new reproduction or a proven fixture-vs-implementation diagnosis. No `mesh/queue/` code changed.
+- **HYB-027:** BLOCKED for protected JSON-scan owner `@collink1007` or designated owner's provenance-safe policy. Before this docs update, PR #123 head `e6879eb83e1f11771d4da6720c1032e95d36ec4b` failed [CI run 38722033226](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38722033226). This update needs a fresh exact-head check. No excluded artifact was opened, altered, copied, deleted, transferred, or ignored; validation is not suppressed.
+- **HYB-028:** BLOCKED until the owner names the exact authorized destination repository and approves the Vitality-related scope. No such destination/transfer is supplied by this continuation.
+- **HYB-018:** repository deletion remains BLOCKED for fresh exact coverage and explicit final approval for each named repository. Nothing was deleted.
+- **HYB-023 / permanent site:** BLOCKED for an exact approved existing full-stack host/project and release/secret/database/security/monitoring/rollback target. No active managed project or connected approved host was found; no replica or new host was created, no deployment or payment performed, and no previously refused connector proposal repeated.
+- **HYB-022 / own-brain:** recorded Phase 1 local evidence remains separate from product release and later learning/memory/scale phases. The two-pass configured-model patch does not complete those later phases or prove consciousness.
+- **GLM-5:** [audit follow-ups](../brain-consciousness/GLM5-AUDIT-FOLLOWUPS.md) still require the exact model/revision/license, authorized endpoint verification, bounded comparative evaluation, and explicit live-instrument owner decision. Offline adapter tests are not deployed-provider verification.
+- **PEN-SCOPE / identity:** the configured-model adapter and honest identity fallback do not establish a separate authorized product brief, evidence-backed original identity, personal memory, or autonomous repository authority. Those product/provenance decisions remain open.
 
-- **TESSERA #369 / HYB-025:** PR #372 was merged by `vitalitychems-dot` at 2026-10-15 10:25:58 UTC; merge SHA `564811dc5f74073802e38c701ec98b4c32402bc3`. The six PR checks plus merge-SHA CI, secret scan, and provenance succeeded. The PR `reviewDecision` field was empty; this session did not perform the merge. The API DB integration suite still requires a dedicated disposable test DB; the production app is not permanently hosted. See [Tessera Next handoff pack](../handoff/tessera-next-2026-10-14/INDEX.md).
-- **HYB-013:** the production Next theme is now in TESSERA main through PR #372, but the requested UI retirement remains unresolved. PR #367 is closed unmerged with no Replit source imported. PR #361 remains open/conflicting at `e8beb40086cb91dbe2c2ee59fc57ee8cd5b68f45`, has 201 reported changed files and 60,774 deletions, and deletes active app/preview UI paths. Do not merge it as-is. TESSERA main is `564811dc5f74073802e38c701ec98b4c32402bc3`; the old console, preview, mockup, archives, routes, redirects, and key gate have not been deleted by this work.
-- **HYB-026:** Gitbook queue gate is **BLOCKED for owner review**: `python3 -m unittest test_spawn -v` produced 5 failing assertions across enabled/changed flags, unlisted-host detection, gate-tamper detection, and rogue-flag reporting. The affected `mesh/queue/` is CODEOWNERS-protected; no code was changed.
-- **HYB-027:** at the last exact pre-follow-up check (2026-10-15 10:28 UTC), Gitbook PR #123 head was `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4`; [CI run 38698025357](https://github.com/vitalitychems-dot/Gitbook/actions/runs/38698025357) failed JSON validity on the historical excluded artifact. This docs-only push requires a fresh exact-head run. `.github/` is CODEOWNERS-protected; obtain the JSON-scan owner's decision. Do not open, alter, copy, delete, or transfer the excluded artifact; do not suppress validation. The earlier `runs.json` repair remains byte-preserving and is not the current failure. The sparse local checkout lacks `.codebase-memory/artifact.json`, so local CI is not a substitute for the remote run.
-- **HYB-028:** Vitality-related metadata is present in the historical Gitbook handoff manifest, but no authorized destination repository is identified among the selected repos. Await the owner’s exact destination and scope; do not copy, move, delete, or otherwise alter the source until then.
-- **HYB-005:** the narrow ignore for GHSA-vfj7-8cjw-p6xm is on TESSERA main `5c1137fa` (`pnpm-workspace.yaml` `auditConfig.ignoreGhsas`). Review date 2026-11-05 remains. braces ≥ 3.0.4 is still the removal condition.
-- **HYB-008:** rejected. The olive-giant archive has its own auth and database. Nothing was copied. See [hyb-008-olive.md](../merge/hyb-008-olive.md).
-- **HYB-009:** the two archive families are preserved; historical archive chunks were not re-read in this pass. See [hyb-009-archives.md](../merge/hyb-009-archives.md).
-- **HYB-010–HYB-011:** media/provenance and privacy/exclusion review remain open because the named source repositories are unavailable locally. Protected bodies remain unopened.
-- **HYB-012:** the eight non-quantum duplicates are triaged and intentionally retained. See [hyb-012-eight.md](../merge/hyb-012-eight.md).
-- **HYB-015–HYB-016:** compact topic pages and coordination-state reconciliation remain open. Preserve historic rows; keep one current owner/scope per active task.
-- **HYB-017:** rejected for Tessera. The storefront stays out. See [hyb-017-storefront.md](../merge/hyb-017-storefront.md).
-- **HYB-018:** blocked until fresh exact file-coverage evidence and explicit approval exist for each named repository; no repositories were deleted.
-- **HYB-023:** blocked pending an explicitly authorized full-stack host/project. Current GitHub evidence shows no TESSERA/Gitbook release, deployment, or Pages site; a `.replit` declaration is not a deployment receipt. The host-native server secret, database, health, security, monitoring and rollback gates remain unverified. Do not repeat the previously refused connector-activation proposal.
-- **Box backup:** historical, partial recovery evidence only; preserve it. Snapshot `46baaf7d87e41ee89555c61617a8e31c1d35bdc9` is represented by a corrected metadata-only index of 455 rows; 21 path names are withheld. Six path-safe blobs exactly match current TESSERA/Gitbook main trees by Git blob SHA, but only five target commits predate the Box capture and one postdates it with separate-branch attribution. None is a confirmed move; no Box file was deleted. Prior audit's 355 safe-screened items and 59 duplicate groups are not a complete per-row certification. No bundle/patch/WIP replay. See [Box intake ledger](../handoff/tessera-next-2026-10-14/BOX-INTAKE-LEDGER.md).
-- **GitMesh:** remain a standalone public room/manual proposal surface. Current `main` is `602d6559c7d3d912e8cc5b43914d1193700c02b0`. The local-vault source-sync helper still writes allowlisted paths directly to `main`; it was not run and must not be integrated under PR-based governance without an owner-approved change. A new README references an external Replit test harness that was not accessed or run.
-- **Grok, Replit, Cursor, bots:** live workspaces/logs are unavailable in this session; historical repository references are untrusted evidence only. Exact access/export requirements are in the [external-source inventory](../handoff/tessera-next-2026-10-14/EXTERNAL-SOURCE-INVENTORY.md).
+## Repository and source boundaries
 
-### GLM-5 Pen integration follow-ups
+TESSERA remains the application; Gitbook remains coordination/provenance; GitMesh remains a separate public/manual proposal room. GitMesh main is `602d6559c7d3d912e8cc5b43914d1193700c02b0`; its direct-main source-sync helper was not run or imported. The Box backup main snapshot remains `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`; two deployment records do not prove an approved Tessera release or safe content migration.
 
-Track these in [GLM5-AUDIT-FOLLOWUPS.md](../brain-consciousness/GLM5-AUDIT-FOLLOWUPS.md):
+The Box index has 455 historical metadata rows with 21 names withheld. Prior safe-screened items, duplicate groups, and a handful of exact-byte matches are partial evidence, not full per-row certification or authorization to move/delete material. No bundle, WIP replay, backup transfer, or Box deletion occurred.
 
-- **GLM5-001 / GLM5-007:** pin the exact model/revision and complete Apache-2.0 compatibility review.
-- **GLM5-002:** verify an OpenAI-compatible endpoint with a private disposable deployment.
-- **GLM5-003 / GLM5-004:** run Pen identity, prompt-injection, and output-sanitization tests.
-- **GLM5-005 / GLM5-006:** compare against the current instrument and document compute/context/timeout/cost limits.
-- **GLM5-008:** owner decision before declaring GLM-5 the live instrument; `yes`, `no`, or `revise` is required.
+The auxiliary repositories `Gitai`, `1`, `2`, `3`, `4`, and `5` currently return GitHub HTTP 409 “Git Repository is empty” for commits. They supply no source commits to integrate; they were not populated, renamed, or deleted. A configured repository selection is not a deployment target.
 
-### Pen / product-identity status
+Private Drive, Grok, Replit, Cursor and bot source/log coverage remains bounded by actual authorized access/export. The [external-source inventory](../handoff/tessera-next-2026-10-14/EXTERNAL-SOURCE-INVENTORY.md) records the requirements. Historical claims or unavailable exports were not authenticated as current capability or original identity.
 
-- **PEN-SCOPE:** deferred. No separate Pen brief, data contract, production route, or evidence-backed own-identity capability was authorized or implemented. Do not simulate repository authorship, approvals, external actions, or personhood.
+## Historical decisions retained
 
-## Coordination rule
+- HYB-005's narrow accepted audit advisory and 2026-11-05 review/removal condition remain at [the original decision](../merge/hyb-005-braces-decision.md); a clean audit under repository policy is not proof that the accepted advisory no longer exists.
+- HYB-008 and HYB-017 remain rejected for Tessera; no separate archive authentication/database or storefront checkout was imported.
+- HYB-009 remains archive-family classification, not a fresh file-by-file re-review.
+- HYB-012's eight non-quantum duplicates remain intentionally retained. Existing reviewed foundation merges and their immutable receipts remain history.
 
-Every agent must claim one HYB task in [agent-checkins.md](../history/coordination/agent-checkins.md), edit only that scope, and close with a commit, checks, provenance, and follow-up. Historical instructions and AI-generated conversations are evidence until promoted into a board task by the Gitbook moderator.
-
-For current cross-agent status, see [Gitbook issue #124](https://github.com/vitalitychems-dot/Gitbook/issues/124) and the [Tessera handoff index](../handoff/tessera-next-2026-10-14/INDEX.md). PR #372 is merged, but do not mark product/release work done until remaining acceptance, DB-integration, UI-retirement, and deployment gates have exact evidence.
+See [Gitbook issue #124](https://github.com/vitalitychems-dot/Gitbook/issues/124), the [handoff index](../handoff/tessera-next-2026-10-14/INDEX.md), and the authoritative board for the next owner decision. An implementation can be locally tested and proposed without being merged, released, permanently hosted, or fully source-certified.

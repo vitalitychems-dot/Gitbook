@@ -399,3 +399,67 @@ The immediately preceding 2026-10-14 HYB-013 block below is historical. Its Repl
 - **Gitbook:** issue #124 was refreshed with the post-merge status. PR #123 was last checked at `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4` and its exact-head run 38698025357 failed on the protected historical JSON scan. A redacted path-only UI assessment/manifest and handoff refresh are prepared as a docs-only proposal; the new PR head/check remains pending.
 - **Box / Vitality:** Box ref remains `46baaf7d87e41ee89555c61617a8e31c1d35bdc9`; no source file/ref was altered or deleted. No Vitality or identity-training content was added to TESSERA/Gitbook.
 - **No action by this session merged code, deleted files, or deployed TESSERA.**
+
+## 2026-10-17 05:45 UTC — resumed consolidation claims (Manus)
+
+The older active-claim blocks and lane snapshots above are historical, not evidence of a current live Replit/Cursor/Grok session. This continuation reclaims only the interrupted Manus implementation/ledger scope. No outside agent has been contacted or represented as checked in.
+
+```text
+TASK: HYB-013 / TESSERA runtime-shell successor
+AGENT: Manus implementation collaborator
+SCOPE: current-base TESSERA runtime/chat/dual-brain/port fixes, narrow functional-shell retirement, regression tests and evidence; no protected paths, archive replay, or production settings
+START: 2026-10-17T05:31:00Z (referenced-task recovery)
+BASE: TESSERA main@564811dc5f74073802e38c701ec98b4c32402bc3
+BRANCH: manus/runtime-shell-recovery-20261017
+STATUS: IN REVIEW — final local validation and normal GitHub review pending
+NEXT CHECK-IN: after final validation and PR head receipt in this run
+BLOCKER: required human/owner review and release prerequisites; PR361 remains held
+```
+
+```text
+TASK: HYB-016 / current coordination reconciliation
+AGENT: Manus coordination collaborator
+SCOPE: authoritative backlog status cells; consolidated TODO; this ledger; handoff current status/index/evidence links; GitHub checklist comments
+START: 2026-10-17T05:45:00Z
+BASE: Gitbook PR123@e6879eb83e1f11771d4da6720c1032e95d36ec4b; main@17cdbdbae3e98001cca1b2365b834ab10431ac54
+BRANCH: manus/tessera-next-ledger-20261014
+STATUS: IN REVIEW
+NEXT CHECK-IN: after documentation validation and exact pushed PR123 head
+BLOCKER: protected JSON-scan owner decision (HYB-027) and queue owner authorization (HYB-026); no bypass
+```
+
+```text
+TASK: HYB-015 / compact topic navigation
+AGENT: Manus documentation collaborator
+SCOPE: new topics/*.md compact canonical-source navigation and SUMMARY.md links only; no historical instruction replay
+START: 2026-10-17T05:45:00Z
+BASE: Gitbook PR123@e6879eb83e1f11771d4da6720c1032e95d36ec4b
+BRANCH: manus/tessera-next-ledger-20261014
+STATUS: IN REVIEW
+NEXT CHECK-IN: after six-page link/provenance checks and exact documentation commit
+BLOCKER: normal review/merge of Gitbook PR123 remains separately gated
+```
+
+### 2026-10-17 05:52 UTC — Manus delivery check-in
+
+```text
+TASK: HYB-013 runtime/shell successor
+STATUS: IN REVIEW — implementation delivered as TESSERA PR373; no merge/deployment
+COMMIT: TESSERA 9e664bb050e6b4432066d261680f80b9f4ff34ce; base 564811dc5f74073802e38c701ec98b4c32402bc3
+CHECKS: final implementation source passed complete workspace tests (scripts148, console3, MCP30, v2157, GitAI28, API boot4, dedicated disposable API DB702 with2 conditional skips, learning-memory runner repeat5), workspace typecheck/build, diff check; existing chunk warning retained; production audit zero under unchanged existing policy; independent implementation findings recheck resolved; local/public static frontend JSON identical with113 routes; desktop1440x1000 and mobile390x844 unauthenticated gate captures inspected
+CHANGED: 53 source/test/checklist/retirement-document files in the narrow successor; no protected/queue/Pen-local implementation, dependency/lockfile, archived source or Vitality source edits
+FOLLOW-UP: required exact-head GitHub checks and human/owner review; approved hosted provider and deployed authenticated acceptance remain open
+NEXT CHECK-IN: after exact-head GitHub checks in this run, then on required reviewer/owner decision
+```
+
+```text
+TASK: HYB-015 compact topics + HYB-016 current ledger reconciliation (nonoverlapping documentation scopes)
+STATUS: IN REVIEW — documentation delivery complete locally; PR123 normal review/merge blocked separately
+BRANCH: manus/tessera-next-ledger-20261014; commits/remote check conclusions are in the final PR/issue124 exact-head receipt
+CHECKS: 8 new topic/current-receipt Markdown files complete;36 relative links resolved;7 SUMMARY entries present; original check-in history byte-preserved; diff check clean; no protected/excluded source edits
+CHANGED: topics/*.md, SUMMARY navigation, current board/TODO/check-in state, current handoff receipt/index, verified new gate images/recheck/hash evidence
+FOLLOW-UP: HYB026 CODEOWNER queue diagnosis/authorization; HYB027 protected JSON-scan owner policy and exact-head CI; HYB023 exact approved existing full-stack host/project; HYB010/011/028 source/privacy/destination decisions
+NEXT CHECK-IN: final pushed-head/check receipt in issue124 in this run; subsequent work needs the actual decision owner's reply
+```
+
+This check-in is Manus's own repository work, not an external Replit/Cursor/Grok/bot post or a claim that every historical source file has been reviewed. Existing archive symlink warnings were observed by Git status and left untouched. The temporary frontend preview/test database are only local validation infrastructure, not a permanent product deployment.

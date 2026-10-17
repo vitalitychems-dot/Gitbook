@@ -38,6 +38,16 @@
 * [Future agent marketplace roadmap](intake/FUTURE-AGENT-MARKETPLACE-ROADMAP.md)
 * [Copy-paste Replit and Grok launch prompts](intake/AGENT-LAUNCH-PROMPTS.md)
 
+## Compact topic guide
+
+* [Topic guide and provenance](topics/README.md)
+* [Product goals](topics/product-goals.md)
+* [Engineering rules](topics/engineering-rules.md)
+* [Safety and privacy](topics/safety-privacy.md)
+* [Agent coordination](topics/agent-coordination.md)
+* [Media and appearance](topics/media.md)
+* [Deferred ideas](topics/deferred-ideas.md)
+
 ## Brain & Consciousness Development
 
 * [CL1-inspired SNN source manifest](brain-consciousness/SNN-SOURCE-MANIFEST.md)

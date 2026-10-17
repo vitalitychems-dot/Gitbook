@@ -1,8 +1,13 @@
-# Tessera consolidation handoff — 2026-10-15
+# Tessera consolidation handoff — current continuation 2026-10-17
 
-**Status snapshot:** GitHub state rechecked 2026-10-15 10:34 UTC. TESSERA PR #372 is merged at `564811dc5f74073802e38c701ec98b4c32402bc3`; the merge-commit CI, secret-scan, and provenance runs succeeded. TESSERA is not permanently deployed. PR #367 is closed unmerged; PR #361 remains open and conflicting. Gitbook PR #123 was last checked at head `4a9e68ef860a1ab2bf4e713eccffea1b7e5790a4` and its exact-head CI failed. This docs-only follow-up advances PR #123, so only checks on its new exact head can describe this update. This is a handoff, not a completion declaration.
+**Current receipt:** [Continuation — 2026-10-17](CONTINUATION-2026-10-17.md) records recovered runtime/shell [TESSERA PR #373](https://github.com/vitalitychems-dot/TESSERA/pull/373), code head `9e664bb050e6b4432066d261680f80b9f4ff34ce`, complete local validation including 702 passing API DB tests (2 conditional skips), fresh gate captures, six compact topic pages, and exact remaining owner gates. PR #372 remains the last recorded merge; this work is unmerged and not permanently deployed. Use the live PRs and issue #124 for the latest pushed-head checks. The dated records below are preserved history, not current-head or release evidence.
 
-## Remote records at the latest observed snapshot
+- [Compact topic guide and canonical provenance](../../topics/README.md)
+- [Implementation findings recheck](evidence/IMPLEMENTATION-RECHECK-20261017.md)
+- [Validation artifact hashes](evidence/VALIDATION-HASHES-20261017.md)
+- Current gate captures: [desktop](evidence/gate-desktop-20261017.png), [mobile](evidence/gate-mobile-20261017.png)
+
+## Historical remote records — 2026-10-15 snapshot
 
 - [TESSERA PR #372](https://github.com/vitalitychems-dot/TESSERA/pull/372) — merged by `vitalitychems-dot` at 2026-10-15 10:25:58 UTC; merge commit `564811dc5f74073802e38c701ec98b4c32402bc3`. Six PR checks passed. Post-merge [CI](https://github.com/vitalitychems-dot/TESSERA/actions/runs/38720223367), [secret scan](https://github.com/vitalitychems-dot/TESSERA/actions/runs/38720223533), and [provenance](https://github.com/vitalitychems-dot/TESSERA/actions/runs/38720223390) succeeded. This session did not merge it. [Issue #369](https://github.com/vitalitychems-dot/TESSERA/issues/369) remains open.
 - [TESSERA PR #367](https://github.com/vitalitychems-dot/TESSERA/pull/367) — closed unmerged at 2026-10-15 10:26:01 UTC; no merge commit. No Replit source was imported.
